@@ -12,4 +12,5 @@ Collection of useful AWS-related things
 - **snum**: Gigs of storage
 
 Find a list of all ec2 instances in json
+
 Comparison of ec2 instances
