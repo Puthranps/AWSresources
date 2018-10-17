@@ -41,5 +41,6 @@ jobs:
             cat ./err.log > body.json &&
             echo '"}' > body.json &&
             echo 'made it this far' &&
-            curl -X POST --data-binary "@./body.json" -H 'Authorization: token 4ea278356abca8a9552bf3289eebc7dc6ed2d6e4' https://github.com/jeremigendron/awsresources/issues/1/comments
+            cat body.json &&
+            curl -X POST -d "@./body.json" -H 'Authorization: token 4ea278356abca8a9552bf3289eebc7dc6ed2d6e4' https://github.com/jeremigendron/awsresources/issues/1/comments
           when: on_fail
