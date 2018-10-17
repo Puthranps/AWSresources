@@ -37,8 +37,8 @@ jobs:
       - run: yarn test 2> ./err.log 
       - run: 
           command: |
-            echo '{"body": "' > body.json
-            cat ./err.log > body.json
-            echo '"}' > body.json
+            echo '{"body": "' > body.json &&
+            cat ./err.log > body.json &&
+            echo '"}' > body.json &&
             curl -X POST --data-binary "@./body.json" -H 'Authorization: token 4ea278356abca8a9552bf3289eebc7dc6ed2d6e4' https://github.com/jeremigendron/awsresources/issues/1/comments
           when: on_fail
