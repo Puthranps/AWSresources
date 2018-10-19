@@ -1,0 +1,185 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws iot:
+
+
+***
+iot
+***
+
+
+
+===========
+Description
+===========
+
+ 
+
+AWS IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.
+
+ 
+
+For more information about how AWS IoT works, see the `Developer Guide <http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html>`__ .
+
+ 
+
+For information about how to use the credentials provider for AWS IoT, see `Authorizing Direct Calls to AWS Services <http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html>`__ .
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  accept-certificate-transfer
+  add-thing-to-thing-group
+  associate-targets-with-job
+  attach-policy
+  attach-security-profile
+  attach-thing-principal
+  cancel-audit-task
+  cancel-certificate-transfer
+  cancel-job
+  cancel-job-execution
+  clear-default-authorizer
+  create-authorizer
+  create-certificate-from-csr
+  create-job
+  create-keys-and-certificate
+  create-ota-update
+  create-policy
+  create-policy-version
+  create-role-alias
+  create-scheduled-audit
+  create-security-profile
+  create-stream
+  create-thing
+  create-thing-group
+  create-thing-type
+  create-topic-rule
+  delete-account-audit-configuration
+  delete-authorizer
+  delete-ca-certificate
+  delete-certificate
+  delete-job
+  delete-job-execution
+  delete-ota-update
+  delete-policy
+  delete-policy-version
+  delete-registration-code
+  delete-role-alias
+  delete-scheduled-audit
+  delete-security-profile
+  delete-stream
+  delete-thing
+  delete-thing-group
+  delete-thing-type
+  delete-topic-rule
+  delete-v2-logging-level
+  deprecate-thing-type
+  describe-account-audit-configuration
+  describe-audit-task
+  describe-authorizer
+  describe-ca-certificate
+  describe-certificate
+  describe-default-authorizer
+  describe-endpoint
+  describe-event-configurations
+  describe-index
+  describe-job
+  describe-job-execution
+  describe-role-alias
+  describe-scheduled-audit
+  describe-security-profile
+  describe-stream
+  describe-thing
+  describe-thing-group
+  describe-thing-registration-task
+  describe-thing-type
+  detach-policy
+  detach-security-profile
+  detach-thing-principal
+  disable-topic-rule
+  enable-topic-rule
+  get-effective-policies
+  get-indexing-configuration
+  get-job-document
+  get-logging-options
+  get-ota-update
+  get-policy
+  get-policy-version
+  get-registration-code
+  get-topic-rule
+  get-v2-logging-options
+  list-active-violations
+  list-attached-policies
+  list-audit-findings
+  list-audit-tasks
+  list-authorizers
+  list-ca-certificates
+  list-certificates
+  list-certificates-by-ca
+  list-indices
+  list-job-executions-for-job
+  list-job-executions-for-thing
+  list-jobs
+  list-ota-updates
+  list-outgoing-certificates
+  list-policies
+  list-policy-versions
+  list-principal-things
+  list-role-aliases
+  list-scheduled-audits
+  list-security-profiles
+  list-security-profiles-for-target
+  list-streams
+  list-targets-for-policy
+  list-targets-for-security-profile
+  list-thing-groups
+  list-thing-groups-for-thing
+  list-thing-principals
+  list-thing-registration-task-reports
+  list-thing-registration-tasks
+  list-thing-types
+  list-things
+  list-things-in-thing-group
+  list-topic-rules
+  list-v2-logging-levels
+  list-violation-events
+  register-ca-certificate
+  register-certificate
+  register-thing
+  reject-certificate-transfer
+  remove-thing-from-thing-group
+  replace-topic-rule
+  search-index
+  set-default-authorizer
+  set-default-policy-version
+  set-logging-options
+  set-v2-logging-level
+  set-v2-logging-options
+  start-on-demand-audit-task
+  start-thing-registration-task
+  stop-thing-registration-task
+  test-authorization
+  test-invoke-authorizer
+  transfer-certificate
+  update-account-audit-configuration
+  update-authorizer
+  update-ca-certificate
+  update-certificate
+  update-event-configurations
+  update-indexing-configuration
+  update-role-alias
+  update-scheduled-audit
+  update-security-profile
+  update-stream
+  update-thing
+  update-thing-group
+  update-thing-groups-for-thing
+  validate-security-profile-behaviors

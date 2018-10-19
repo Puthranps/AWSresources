@@ -1,0 +1,150 @@
+[ :ref:`aws <cli:aws>` . :ref:`opsworkscm <cli:aws opsworkscm>` ]
+
+.. _cli:aws opsworkscm export-server-engine-attribute:
+
+
+******************************
+export-server-engine-attribute
+******************************
+
+
+
+===========
+Description
+===========
+
+
+
+Exports a specified server engine attribute as a base64-encoded string. For example, you can export user data that you can use in EC2 to associate nodes with a server. 
+
+ 
+
+This operation is synchronous. 
+
+ 
+
+A ``ValidationException`` is raised when parameters of the request are not valid. A ``ResourceNotFoundException`` is thrown when the server does not exist. An ``InvalidStateException`` is thrown when the server is in any of the following states: CREATING, TERMINATED, FAILED or DELETING. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/opsworkscm-2016-11-01/ExportServerEngineAttribute>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    export-server-engine-attribute
+  --export-attribute-name <value>
+  --server-name <value>
+  [--input-attributes <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--export-attribute-name`` (string)
+
+
+  The name of the export attribute. Currently supported export attribute is "Userdata" which exports a userdata script filled out with parameters provided in the ``InputAttributes`` list.
+
+  
+
+``--server-name`` (string)
+
+
+  The name of the Server to which the attribute is being exported from 
+
+  
+
+``--input-attributes`` (list)
+
+
+  The list of engine attributes. The list type is ``EngineAttribute`` . ``EngineAttribute`` is a pair of attribute name and value. For ``ExportAttributeName`` "Userdata", currently supported input attribute names are: - "RunList": For Chef, an ordered list of roles and/or recipes that are run in the exact order. For Puppet, this parameter is ignored. - "OrganizationName": For Chef, an organization name. AWS OpsWorks for Chef Server always creates the organization "default". For Puppet, this parameter is ignored. - "NodeEnvironment": For Chef, a node environment (eg. development, staging, onebox). For Puppet, this parameter is ignored. - "NodeClientVersion": For Chef, version of Chef Engine (3 numbers separated by dots, eg. "13.8.5"). If empty, it uses the latest one. For Puppet, this parameter is ignored. 
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Value=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Value": "string"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+EngineAttribute -> (structure)
+
+  
+
+  The requested engine attribute pair with attribute name and value. 
+
+  
+
+  Name -> (string)
+
+    
+
+    The name of the engine attribute. 
+
+    
+
+    
+
+  Value -> (string)
+
+    
+
+    The value of the engine attribute. 
+
+    
+
+    
+
+  
+
+ServerName -> (string)
+
+  
+
+  The requested ServerName. 
+
+  
+
+  
+

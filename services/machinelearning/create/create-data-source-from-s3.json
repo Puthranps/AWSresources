@@ -1,0 +1,11 @@
+{
+    "DataSourceId": "",
+    "DataSourceName": "",
+    "DataSpec": {
+        "DataLocationS3": "",
+        "DataRearrangement": "",
+        "DataSchema": "",
+        "DataSchemaLocationS3": ""
+    },
+    "ComputeStatistics": true
+}

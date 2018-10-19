@@ -1,0 +1,465 @@
+[ :ref:`aws <cli:aws>` . :ref:`iotanalytics <cli:aws iotanalytics>` ]
+
+.. _cli:aws iotanalytics describe-dataset:
+
+
+****************
+describe-dataset
+****************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves information about a data set.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DescribeDataset>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-dataset
+  --dataset-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dataset-name`` (string)
+
+
+  The name of the data set whose information is retrieved.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+dataset -> (structure)
+
+  
+
+  An object that contains information about the data set.
+
+  
+
+  name -> (string)
+
+    
+
+    The name of the data set.
+
+    
+
+    
+
+  arn -> (string)
+
+    
+
+    The ARN of the data set.
+
+    
+
+    
+
+  actions -> (list)
+
+    
+
+    The "DatasetAction" objects that automatically create the data set contents.
+
+    
+
+    (structure)
+
+      
+
+      A "DatasetAction" object specifying the query that creates the data set content.
+
+      
+
+      actionName -> (string)
+
+        
+
+        The name of the data set action by which data set contents are automatically created.
+
+        
+
+        
+
+      queryAction -> (structure)
+
+        
+
+        An "SqlQueryDatasetAction" object that contains the SQL query to modify the message.
+
+        
+
+        sqlQuery -> (string)
+
+          
+
+          A SQL query string.
+
+          
+
+          
+
+        filters -> (list)
+
+          
+
+          Pre-filters applied to message data.
+
+          
+
+          (structure)
+
+            
+
+            Information which is used to filter message data, to segregate it according to the time frame in which it arrives.
+
+            
+
+            deltaTime -> (structure)
+
+              
+
+              Used to limit data to that which has arrived since the last execution of the action. When you create data set contents using message data from a specified time frame, some message data may still be "in flight" when processing begins, and so will not arrive in time to be processed. Use this field to make allowances for the "in flight" time of you message data, so that data not processed from a previous time frame will be included with the next time frame. Without this, missed message data would be excluded from processing during the next time frame as well, because its timestamp places it within the previous time frame.
+
+              
+
+              offsetSeconds -> (integer)
+
+                
+
+                The number of seconds of estimated "in flight" lag time of message data.
+
+                
+
+                
+
+              timeExpression -> (string)
+
+                
+
+                An expression by which the time of the message data may be determined. This may be the name of a timestamp field, or a SQL expression which is used to derive the time the message data was generated.
+
+                
+
+                
+
+              
+
+            
+
+          
+
+        
+
+      containerAction -> (structure)
+
+        
+
+        Information which allows the system to run a containerized application in order to create the data set contents. The application must be in a Docker container along with any needed support libraries.
+
+        
+
+        image -> (string)
+
+          
+
+          The ARN of the Docker container stored in your account. The Docker container contains an application and needed support libraries and is used to generate data set contents.
+
+          
+
+          
+
+        executionRoleArn -> (string)
+
+          
+
+          The ARN of the role which gives permission to the system to access needed resources in order to run the "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the input to the containerized application.
+
+          
+
+          
+
+        resourceConfiguration -> (structure)
+
+          
+
+          Configuration of the resource which executes the "containerAction".
+
+          
+
+          computeType -> (string)
+
+            
+
+            The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1 (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+
+            
+
+            
+
+          volumeSizeInGB -> (integer)
+
+            
+
+            The size (in GB) of the persistent storage available to the resource instance used to execute the "containerAction" (min: 1, max: 50).
+
+            
+
+            
+
+          
+
+        variables -> (list)
+
+          
+
+          The values of variables used within the context of the execution of the containerized application (basically, parameters passed to the application). Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+
+          
+
+          (structure)
+
+            
+
+            An instance of a variable to be passed to the "containerAction" execution. Each variable must have a name and a value given by one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+
+            
+
+            name -> (string)
+
+              
+
+              The name of the variable.
+
+              
+
+              
+
+            stringValue -> (string)
+
+              
+
+              The value of the variable as a string.
+
+              
+
+              
+
+            doubleValue -> (double)
+
+              
+
+              The value of the variable as a double (numeric).
+
+              
+
+              
+
+            datasetContentVersionValue -> (structure)
+
+              
+
+              The value of the variable as a structure that specifies a data set content version.
+
+              
+
+              datasetName -> (string)
+
+                
+
+                The name of the data set whose latest contents will be used as input to the notebook or application.
+
+                
+
+                
+
+              
+
+            outputFileUriValue -> (structure)
+
+              
+
+              The value of the variable as a structure that specifies an output file URI.
+
+              
+
+              fileName -> (string)
+
+                
+
+                The URI of the location where data set contents are stored, usually the URI of a file in an S3 bucket.
+
+                
+
+                
+
+              
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  triggers -> (list)
+
+    
+
+    The "DatasetTrigger" objects that specify when the data set is automatically updated.
+
+    
+
+    (structure)
+
+      
+
+      The "DatasetTrigger" that specifies when the data set is automatically updated.
+
+      
+
+      schedule -> (structure)
+
+        
+
+        The "Schedule" when the trigger is initiated.
+
+        
+
+        expression -> (string)
+
+          
+
+          The expression that defines when to trigger an update. For more information, see `Schedule Expressions for Rules <https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html>`__ in the Amazon CloudWatch documentation.
+
+          
+
+          
+
+        
+
+      dataset -> (structure)
+
+        
+
+        The data set whose content creation will trigger the creation of this data set's contents.
+
+        
+
+        name -> (string)
+
+          
+
+          The name of the data set whose content generation will trigger the new data set content generation.
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  status -> (string)
+
+    
+
+    The status of the data set.
+
+    
+
+    
+
+  creationTime -> (timestamp)
+
+    
+
+    When the data set was created.
+
+    
+
+    
+
+  lastUpdateTime -> (timestamp)
+
+    
+
+    The last time the data set was updated.
+
+    
+
+    
+
+  retentionPeriod -> (structure)
+
+    
+
+    [Optional] How long, in days, message data is kept for the data set.
+
+    
+
+    unlimited -> (boolean)
+
+      
+
+      If true, message data is kept indefinitely.
+
+      
+
+      
+
+    numberOfDays -> (integer)
+
+      
+
+      The number of days that message data is kept. The "unlimited" parameter must be false.
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,23 @@
+{
+    "ClientToken": "",
+    "NFSFileShareDefaults": {
+        "FileMode": "",
+        "DirectoryMode": "",
+        "GroupId": 0,
+        "OwnerId": 0
+    },
+    "GatewayARN": "",
+    "KMSEncrypted": true,
+    "KMSKey": "",
+    "Role": "",
+    "LocationARN": "",
+    "DefaultStorageClass": "",
+    "ObjectACL": "authenticated-read",
+    "ClientList": [
+        ""
+    ],
+    "Squash": "",
+    "ReadOnly": true,
+    "GuessMIMETypeEnabled": true,
+    "RequesterPays": true
+}

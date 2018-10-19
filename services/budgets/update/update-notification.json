@@ -1,0 +1,16 @@
+{
+    "AccountId": "",
+    "BudgetName": "",
+    "OldNotification": {
+        "NotificationType": "ACTUAL",
+        "ComparisonOperator": "EQUAL_TO",
+        "Threshold": null,
+        "ThresholdType": "PERCENTAGE"
+    },
+    "NewNotification": {
+        "NotificationType": "FORECASTED",
+        "ComparisonOperator": "GREATER_THAN",
+        "Threshold": null,
+        "ThresholdType": "ABSOLUTE_VALUE"
+    }
+}

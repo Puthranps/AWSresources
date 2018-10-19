@@ -1,0 +1,20 @@
+{
+    "InstanceInformationFilterList": [
+        {
+            "key": "ResourceType",
+            "valueSet": [
+                ""
+            ]
+        }
+    ],
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

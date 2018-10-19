@@ -1,0 +1,254 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-deployable-patch-snapshot-for-instance &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ssm" href="../ssm/index.html" />
+    <link rel="next" title="get-document" href="../ssm/get-document.html" />
+    <link rel="prev" title="get-default-patch-baseline" href="../ssm/get-default-patch-baseline.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/get-document.html" title="get-document"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/get-default-patch-baseline.html" title="get-default-patch-baseline"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" accesskey="U">ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/get-default-patch-baseline.html" title="previous chapter (use the left arrow)">&larr; get-default-patch-baseline</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/get-document.html" title="next chapter (use the right arrow)">get-document &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-deployable-patch-snapshot-for-instance</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/get-deployable-patch-snapshot-for-instance">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ssm/index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="get-deployable-patch-snapshot-for-instance">
+<span id="cli-aws-ssm-get-deployable-patch-snapshot-for-instance"></span><h1>get-deployable-patch-snapshot-for-instance<a class="headerlink" href="#get-deployable-patch-snapshot-for-instance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves the current snapshot for the patch baseline the instance uses. This API is primarily used by the AWS-RunPatchBaseline Systems Manager document.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetDeployablePatchSnapshotForInstance">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-deployable-patch-snapshot-for-instance
+--instance-id &lt;value&gt;
+--snapshot-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--instance-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the instance for which the appropriate patch snapshot should be retrieved.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--snapshot-id</span></tt> (string)</p>
+<blockquote>
+<div>The user-defined snapshot ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To retrieve the current snapshot for the patch baseline an instance uses</strong></p>
+<p>This example displays the current snapshot for the patch baseline used by an Instance. This command must be run from the instance using the instance credentials. To ensure it uses the instance credentials, run <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">configure</span></tt> and only specify the region of your instance but leave the <tt class="docutils literal"><span class="pre">Access</span> <span class="pre">Key</span></tt> and <tt class="docutils literal"><span class="pre">Secret</span> <span class="pre">Key</span></tt> fields blank.</p>
+<p>Use <tt class="docutils literal"><span class="pre">uuidgen</span></tt> to generate a <tt class="docutils literal"><span class="pre">snapshot-id</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm get-deployable-patch-snapshot-for-instance --instance-id &quot;i-0cb2b964d3e14fd9f&quot; --snapshot-id &quot;4681775b-098f-4435-a956-0ef33373ac11&quot;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;i-0cb2b964d3e14fd9f&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;SnapshotId&quot;</span><span class="p">:</span> <span class="s2">&quot;4681775b-098f-4435-a956-0ef33373ac11&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;SnapshotDownloadUrl&quot;</span><span class="p">:</span> <span class="s2">&quot;https://patch-baseline-snapshot-us-west-2.s3-us-west-2.amazonaws.com/853d0d3db0f0cafea3699f25b1c7ff101a13e25c3d05e832f613b0d2f79da62f-809632081692/4681775b-098f-4435-a956-0ef33373ac11?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Date=20170224T181926Z&amp;X-Amz-SignedHeaders=host&amp;X-Amz-Expires=86400&amp;X-Amz-Credential=AKIAJI6YDVV7XJKZL7ZA</span><span class="si">%2F</span><span class="s2">20170224</span><span class="si">%2F</span><span class="s2">us-west-2</span><span class="si">%2F</span><span class="s2">s3</span><span class="si">%2F</span><span class="s2">aws4_request&amp;X-Amz-Signature=2747799c958ffebf6f44bd698fd2071ccf9a303465febfab71ff29b46631a2d3&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance.</div></blockquote>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The user-defined snapshot ID.</div></blockquote>
+<p>SnapshotDownloadUrl -&gt; (string)</p>
+<blockquote>
+<div>A pre-signed Amazon S3 URL that can be used to download the patch snapshot.</div></blockquote>
+<p>Product -&gt; (string)</p>
+<blockquote>
+<div>Returns the specific operating system (for example Windows Server 2012 or Amazon Linux 2015.09) on the instance for the specified patch snapshot.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/get-default-patch-baseline.html" title="previous chapter (use the left arrow)">&larr; get-default-patch-baseline</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/get-document.html" title="next chapter (use the right arrow)">get-document &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/get-document.html" title="get-document"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/get-default-patch-baseline.html" title="get-default-patch-baseline"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" >ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

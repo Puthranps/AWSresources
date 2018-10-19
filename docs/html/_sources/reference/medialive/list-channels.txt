@@ -1,0 +1,567 @@
+[ :ref:`aws <cli:aws>` . :ref:`medialive <cli:aws medialive>` ]
+
+.. _cli:aws medialive list-channels:
+
+
+*************
+list-channels
+*************
+
+
+
+===========
+Description
+===========
+
+Produces list of channels that have been created
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListChannels>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``list-channels`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``Channels``
+
+
+========
+Synopsis
+========
+
+::
+
+    list-channels
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Channels -> (list)
+
+  Placeholder documentation for __listOfChannelSummary
+
+  (structure)
+
+    Placeholder documentation for ChannelSummary
+
+    Arn -> (string)
+
+      The unique arn of the channel.
+
+      
+
+    Destinations -> (list)
+
+      A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager. 
+
+      (structure)
+
+        Placeholder documentation for OutputDestination
+
+        Id -> (string)
+
+          User-specified id. This is used in an output group or an output.
+
+          
+
+        Settings -> (list)
+
+          Destination settings for output; one for each redundant encoder.
+
+          (structure)
+
+            Placeholder documentation for OutputDestinationSettings
+
+            PasswordParam -> (string)
+
+              key used to extract the password from EC2 Parameter store
+
+              
+
+            StreamName -> (string)
+
+              Stream name for RTMP destinations (URLs of type rtmp://)
+
+              
+
+            Url -> (string)
+
+              A URL specifying a destination
+
+              
+
+            Username -> (string)
+
+              username for destination
+
+              
+
+            
+
+          
+
+        
+
+      
+
+    EgressEndpoints -> (list)
+
+      The endpoints where outgoing connections initiate from
+
+      (structure)
+
+        Placeholder documentation for ChannelEgressEndpoint
+
+        SourceIp -> (string)
+
+          Public IP of where a channel's output comes from
+
+          
+
+        
+
+      
+
+    Id -> (string)
+
+      The unique id of the channel.
+
+      
+
+    InputAttachments -> (list)
+
+      List of input attachments for channel.
+
+      (structure)
+
+        Placeholder documentation for InputAttachment
+
+        InputId -> (string)
+
+          The ID of the input
+
+          
+
+        InputSettings -> (structure)
+
+          Settings of an input (caption selector, etc.)
+
+          AudioSelectors -> (list)
+
+            Used to select the audio stream to decode for inputs that have multiple available.
+
+            (structure)
+
+              Placeholder documentation for AudioSelector
+
+              Name -> (string)
+
+                The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.
+
+                
+
+              SelectorSettings -> (structure)
+
+                The audio selector settings.
+
+                AudioLanguageSelection -> (structure)
+
+                  Placeholder documentation for AudioLanguageSelection
+
+                  LanguageCode -> (string)
+
+                    Selects a specific three-letter language code from within an audio source.
+
+                    
+
+                  LanguageSelectionPolicy -> (string)
+
+                    When set to "strict", the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If "loose", then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.
+
+                    
+
+                  
+
+                AudioPidSelection -> (structure)
+
+                  Placeholder documentation for AudioPidSelection
+
+                  Pid -> (integer)
+
+                    Selects a specific PID from within a source.
+
+                    
+
+                  
+
+                
+
+              
+
+            
+
+          CaptionSelectors -> (list)
+
+            Used to select the caption input to use for inputs that have multiple available.
+
+            (structure)
+
+              Output groups for this Live Event. Output groups contain information about where streams should be distributed.
+
+              LanguageCode -> (string)
+
+                When specified this field indicates the three letter language code of the caption track to extract from the source.
+
+                
+
+              Name -> (string)
+
+                Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.
+
+                
+
+              SelectorSettings -> (structure)
+
+                Caption selector settings.
+
+                AribSourceSettings -> (structure)
+
+                  Placeholder documentation for AribSourceSettings
+
+                  
+
+                DvbSubSourceSettings -> (structure)
+
+                  Placeholder documentation for DvbSubSourceSettings
+
+                  Pid -> (integer)
+
+                    When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.
+
+                    
+
+                  
+
+                EmbeddedSourceSettings -> (structure)
+
+                  Placeholder documentation for EmbeddedSourceSettings
+
+                  Convert608To708 -> (string)
+
+                    If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+
+                    
+
+                  Scte20Detection -> (string)
+
+                    Set to "auto" to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.
+
+                    
+
+                  Source608ChannelNumber -> (integer)
+
+                    Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+
+                    
+
+                  Source608TrackNumber -> (integer)
+
+                    This field is unused and deprecated.
+
+                    
+
+                  
+
+                Scte20SourceSettings -> (structure)
+
+                  Placeholder documentation for Scte20SourceSettings
+
+                  Convert608To708 -> (string)
+
+                    If upconvert, 608 data is both passed through via the "608 compatibility bytes" fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+
+                    
+
+                  Source608ChannelNumber -> (integer)
+
+                    Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.
+
+                    
+
+                  
+
+                Scte27SourceSettings -> (structure)
+
+                  Placeholder documentation for Scte27SourceSettings
+
+                  Pid -> (integer)
+
+                    The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is "informational". - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.
+
+                    
+
+                  
+
+                TeletextSourceSettings -> (structure)
+
+                  Placeholder documentation for TeletextSourceSettings
+
+                  PageNumber -> (string)
+
+                    Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no "0x" prefix.
+
+                    
+
+                  
+
+                
+
+              
+
+            
+
+          DeblockFilter -> (string)
+
+            Enable or disable the deblock filter when filtering.
+
+            
+
+          DenoiseFilter -> (string)
+
+            Enable or disable the denoise filter when filtering.
+
+            
+
+          FilterStrength -> (integer)
+
+            Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).
+
+            
+
+          InputFilter -> (string)
+
+            Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type
+
+            
+
+          NetworkInputSettings -> (structure)
+
+            Input settings.
+
+            HlsInputSettings -> (structure)
+
+              Specifies HLS input settings when the uri is for a HLS manifest.
+
+              Bandwidth -> (integer)
+
+                When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.
+
+                
+
+              BufferSegments -> (integer)
+
+                When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.
+
+                
+
+              Retries -> (integer)
+
+                The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.
+
+                
+
+              RetryInterval -> (integer)
+
+                The number of seconds between retries when an attempt to read a manifest or segment fails.
+
+                
+
+              
+
+            ServerValidation -> (string)
+
+              Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.
+
+              
+
+            
+
+          SourceEndBehavior -> (string)
+
+            Loop input if it is a file. This allows a file input to be streamed indefinitely.
+
+            
+
+          VideoSelector -> (structure)
+
+            Informs which video elementary stream to decode for input types that have multiple available.
+
+            ColorSpace -> (string)
+
+              Specifies the colorspace of an input. This setting works in tandem with colorSpaceConversion to determine if any conversion will be performed.
+
+              
+
+            ColorSpaceUsage -> (string)
+
+              Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.
+
+              
+
+            SelectorSettings -> (structure)
+
+              The video selector settings.
+
+              VideoSelectorPid -> (structure)
+
+                Placeholder documentation for VideoSelectorPid
+
+                Pid -> (integer)
+
+                  Selects a specific PID from within a video source.
+
+                  
+
+                
+
+              VideoSelectorProgramId -> (structure)
+
+                Placeholder documentation for VideoSelectorProgramId
+
+                ProgramId -> (integer)
+
+                  Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.
+
+                  
+
+                
+
+              
+
+            
+
+          
+
+        
+
+      
+
+    InputSpecification -> (structure)
+
+      Placeholder documentation for InputSpecification
+
+      Codec -> (string)
+
+        Input codec
+
+        
+
+      MaximumBitrate -> (string)
+
+        Maximum input bitrate, categorized coarsely
+
+        
+
+      Resolution -> (string)
+
+        Input resolution, categorized coarsely
+
+        
+
+      
+
+    LogLevel -> (string)
+
+      The log level being written to CloudWatch Logs.
+
+      
+
+    Name -> (string)
+
+      The name of the channel. (user-mutable)
+
+      
+
+    PipelinesRunningCount -> (integer)
+
+      The number of currently healthy pipelines.
+
+      
+
+    RoleArn -> (string)
+
+      The Amazon Resource Name (ARN) of the role assumed when running the Channel.
+
+      
+
+    State -> (string)
+
+      Placeholder documentation for ChannelState
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  Placeholder documentation for __string
+
+  
+

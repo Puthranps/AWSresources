@@ -1,0 +1,473 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-cluster &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="emr" href="../emr/index.html" />
+    <link rel="next" title="describe-security-configuration" href="../emr/describe-security-configuration.html" />
+    <link rel="prev" title="delete-security-configuration" href="../emr/delete-security-configuration.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../emr/describe-security-configuration.html" title="describe-security-configuration"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../emr/delete-security-configuration.html" title="delete-security-configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../emr/index.html" accesskey="U">emr</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../emr/delete-security-configuration.html" title="previous chapter (use the left arrow)">&larr; delete-security-configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../emr/describe-security-configuration.html" title="next chapter (use the right arrow)">describe-security-configuration &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-cluster</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/emr/describe-cluster">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../emr/index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="describe-cluster">
+<span id="cli-aws-emr-describe-cluster"></span><h1>describe-cluster<a class="headerlink" href="#describe-cluster" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Provides  cluster-level details including status, hardware and software configuration, VPC settings, bootstrap actions, instance groups and so on. For information about the cluster steps, see &lt;code&gt;list-steps&lt;/code&gt;.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-cluster
+--cluster-id &lt;value&gt;</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>A unique string that identifies a cluster. The <tt class="docutils literal"><span class="pre">create-cluster</span></tt> command returns this identifier. You can use the <tt class="docutils literal"><span class="pre">list-clusters</span></tt> command to get cluster IDs.</div></blockquote>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr describe-cluster --cluster-id j-XXXXXXXX</pre>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><pre>For release-label based uniform instance groups cluster:
+
+        {
+            &quot;Cluster&quot;: {
+                &quot;Status&quot;: {
+                    &quot;Timeline&quot;: {
+                        &quot;ReadyDateTime&quot;: 1436475075.199,
+                        &quot;CreationDateTime&quot;: 1436474656.563,
+                    },
+                    &quot;State&quot;: &quot;WAITING&quot;,
+                    &quot;StateChangeReason&quot;: {
+                        &quot;Message&quot;: &quot;Waiting for steps to run&quot;
+                    }
+                },
+                &quot;Ec2InstanceAttributes&quot;: {
+                    &quot;ServiceAccessSecurityGroup&quot;: &quot;sg-xxxxxxxx&quot;,
+                    &quot;EmrManagedMasterSecurityGroup&quot;: &quot;sg-xxxxxxxx&quot;,
+                    &quot;IamInstanceProfile&quot;: &quot;EMR_EC2_DefaultRole&quot;,
+                    &quot;Ec2KeyName&quot;: &quot;myKey&quot;,
+                    &quot;Ec2AvailabilityZone&quot;: &quot;us-east-1c&quot;,
+                    &quot;EmrManagedSlaveSecurityGroup&quot;: &quot;sg-yyyyyyyyy&quot;
+                },
+                &quot;Name&quot;: &quot;My Cluster&quot;,
+                &quot;ServiceRole&quot;: &quot;EMR_DefaultRole&quot;,
+                &quot;Tags&quot;: [],
+                &quot;TerminationProtected&quot;: true,
+                &quot;ReleaseLabel&quot;: &quot;emr-4.0.0&quot;,
+                &quot;NormalizedInstanceHours&quot;: 96,
+                &quot;InstanceGroups&quot;: [
+                    {
+                        &quot;RequestedInstanceCount&quot;: 2,
+                        &quot;Status&quot;: {
+                            &quot;Timeline&quot;: {
+                                &quot;ReadyDateTime&quot;: 1436475074.245,
+                                &quot;CreationDateTime&quot;: 1436474656.564,
+                                &quot;EndDateTime&quot;: 1436638158.387
+                            },
+                            &quot;State&quot;: &quot;RUNNING&quot;,
+                            &quot;StateChangeReason&quot;: {
+                                &quot;Message&quot;: &quot;&quot;,
+                            }
+                        },
+                        &quot;Name&quot;: &quot;CORE&quot;,
+                        &quot;InstanceGroupType&quot;: &quot;CORE&quot;,
+                        &quot;Id&quot;: &quot;ig-YYYYYYY&quot;,
+                        &quot;Configurations&quot;: [],
+                        &quot;InstanceType&quot;: &quot;m3.large&quot;,
+                        &quot;Market&quot;: &quot;ON_DEMAND&quot;,
+                        &quot;RunningInstanceCount&quot;: 2
+                    },
+                    {
+                        &quot;RequestedInstanceCount&quot;: 1,
+                        &quot;Status&quot;: {
+                            &quot;Timeline&quot;: {
+                                &quot;ReadyDateTime&quot;: 1436475074.245,
+                                &quot;CreationDateTime&quot;: 1436474656.564,
+                                &quot;EndDateTime&quot;: 1436638158.387
+                            },
+                            &quot;State&quot;: &quot;RUNNING&quot;,
+                            &quot;StateChangeReason&quot;: {
+                                &quot;Message&quot;: &quot;&quot;,
+                            }
+                        },
+                        &quot;Name&quot;: &quot;MASTER&quot;,
+                        &quot;InstanceGroupType&quot;: &quot;MASTER&quot;,
+                        &quot;Id&quot;: &quot;ig-XXXXXXXXX&quot;,
+                        &quot;Configurations&quot;: [],
+                        &quot;InstanceType&quot;: &quot;m3.large&quot;,
+                        &quot;Market&quot;: &quot;ON_DEMAND&quot;,
+                        &quot;RunningInstanceCount&quot;: 1
+                    }
+                ],
+                &quot;Applications&quot;: [
+                    {
+                        &quot;Name&quot;: &quot;Hadoop&quot;
+                    }
+                ],
+                &quot;VisibleToAllUsers&quot;: true,
+                &quot;BootstrapActions&quot;: [],
+                &quot;MasterPublicDnsName&quot;: &quot;ec2-54-147-144-78.compute-1.amazonaws.com&quot;,
+                &quot;AutoTerminate&quot;: false,
+                &quot;Id&quot;: &quot;j-XXXXXXXX&quot;,
+                &quot;Configurations&quot;: [
+                    {
+                        &quot;Properties&quot;: {
+                            &quot;fs.s3.consistent.retryPeriodSeconds&quot;: &quot;20&quot;,
+                            &quot;fs.s3.enableServerSideEncryption&quot;: &quot;true&quot;,
+                            &quot;fs.s3.consistent&quot;: &quot;false&quot;,
+                            &quot;fs.s3.consistent.retryCount&quot;: &quot;2&quot;
+                        },
+                        &quot;Classification&quot;: &quot;emrfs-site&quot;
+                    }
+                ]
+            }
+        }
+
+
+For release-label based instance fleet cluster:
+{
+    &quot;Cluster&quot;: {
+        &quot;Status&quot;: {
+            &quot;Timeline&quot;: {
+                &quot;ReadyDateTime&quot;: 1487897289.705,
+                &quot;CreationDateTime&quot;: 1487896933.942
+            },
+            &quot;State&quot;: &quot;WAITING&quot;,
+            &quot;StateChangeReason&quot;: {
+                &quot;Message&quot;: &quot;Waiting for steps to run&quot;
+            }
+        },
+        &quot;Ec2InstanceAttributes&quot;: {
+            &quot;EmrManagedMasterSecurityGroup&quot;: &quot;sg-xxxxx&quot;,
+            &quot;RequestedEc2AvailabilityZones&quot;: [],
+            &quot;RequestedEc2SubnetIds&quot;: [],
+            &quot;IamInstanceProfile&quot;: &quot;EMR_EC2_DefaultRole&quot;,
+            &quot;Ec2AvailabilityZone&quot;: &quot;us-east-1a&quot;,
+            &quot;EmrManagedSlaveSecurityGroup&quot;: &quot;sg-xxxxx&quot;
+        },
+        &quot;Name&quot;: &quot;My Cluster&quot;,
+        &quot;ServiceRole&quot;: &quot;EMR_DefaultRole&quot;,
+        &quot;Tags&quot;: [],
+        &quot;TerminationProtected&quot;: false,
+        &quot;ReleaseLabel&quot;: &quot;emr-5.2.0&quot;,
+        &quot;NormalizedInstanceHours&quot;: 472,
+        &quot;InstanceCollectionType&quot;: &quot;INSTANCE_FLEET&quot;,
+        &quot;InstanceFleets&quot;: [
+            {
+                &quot;Status&quot;: {
+                    &quot;Timeline&quot;: {
+                        &quot;ReadyDateTime&quot;: 1487897212.74,
+                        &quot;CreationDateTime&quot;: 1487896933.948
+                    },
+                    &quot;State&quot;: &quot;RUNNING&quot;,
+                    &quot;StateChangeReason&quot;: {
+                        &quot;Message&quot;: &quot;&quot;
+                    }
+                },
+                &quot;ProvisionedSpotCapacity&quot;: 1,
+                &quot;Name&quot;: &quot;MASTER&quot;,
+                &quot;InstanceFleetType&quot;: &quot;MASTER&quot;,
+                &quot;LaunchSpecifications&quot;: {
+                    &quot;SpotSpecification&quot;: {
+                        &quot;TimeoutDurationMinutes&quot;: 60,
+                        &quot;TimeoutAction&quot;: &quot;TERMINATE_CLUSTER&quot;
+                    }
+                },
+                &quot;TargetSpotCapacity&quot;: 1,
+                &quot;ProvisionedOnDemandCapacity&quot;: 0,
+                &quot;InstanceTypeSpecifications&quot;: [
+                    {
+                        &quot;BidPrice&quot;: &quot;0.5&quot;,
+                        &quot;InstanceType&quot;: &quot;m3.xlarge&quot;,
+                        &quot;WeightedCapacity&quot;: 1
+                    }
+                ],
+                &quot;Id&quot;: &quot;if-xxxxxxx&quot;,
+                &quot;TargetOnDemandCapacity&quot;: 0
+            }
+        ],
+        &quot;Applications&quot;: [
+            {
+                &quot;Version&quot;: &quot;2.7.3&quot;,
+                &quot;Name&quot;: &quot;Hadoop&quot;
+            }
+        ],
+        &quot;ScaleDownBehavior&quot;: &quot;TERMINATE_AT_INSTANCE_HOUR&quot;,
+        &quot;VisibleToAllUsers&quot;: true,
+        &quot;BootstrapActions&quot;: [],
+        &quot;MasterPublicDnsName&quot;: &quot;ec2-xxx-xx-xxx-xx.compute-1.amazonaws.com&quot;,
+        &quot;AutoTerminate&quot;: false,
+        &quot;Id&quot;: &quot;j-xxxxx&quot;,
+        &quot;Configurations&quot;: []
+    }
+}
+
+For ami based uniform instance group cluster:
+
+    {
+        &quot;Cluster&quot;: {
+            &quot;Status&quot;: {
+                &quot;Timeline&quot;: {
+                    &quot;ReadyDateTime&quot;: 1399400564.432,
+                    &quot;CreationDateTime&quot;: 1399400268.62
+                },
+                &quot;State&quot;: &quot;WAITING&quot;,
+                &quot;StateChangeReason&quot;: {
+                    &quot;Message&quot;: &quot;Waiting for steps to run&quot;
+                }
+            },
+            &quot;Ec2InstanceAttributes&quot;: {
+                &quot;IamInstanceProfile&quot;: &quot;EMR_EC2_DefaultRole&quot;,
+                &quot;Ec2AvailabilityZone&quot;: &quot;us-east-1c&quot;
+            },
+            &quot;Name&quot;: &quot;My Cluster&quot;,
+            &quot;Tags&quot;: [],
+            &quot;TerminationProtected&quot;: true,
+            &quot;RunningAmiVersion&quot;: &quot;2.5.4&quot;,
+            &quot;InstanceGroups&quot;: [
+                {
+                    &quot;RequestedInstanceCount&quot;: 1,
+                    &quot;Status&quot;: {
+                        &quot;Timeline&quot;: {
+                            &quot;ReadyDateTime&quot;: 1399400558.848,
+                            &quot;CreationDateTime&quot;: 1399400268.621
+                        },
+                        &quot;State&quot;: &quot;RUNNING&quot;,
+                        &quot;StateChangeReason&quot;: {
+                            &quot;Message&quot;: &quot;&quot;
+                        }
+                    },
+                    &quot;Name&quot;: &quot;Master instance group&quot;,
+                    &quot;InstanceGroupType&quot;: &quot;MASTER&quot;,
+                    &quot;InstanceType&quot;: &quot;m1.small&quot;,
+                    &quot;Id&quot;: &quot;ig-ABCD&quot;,
+                    &quot;Market&quot;: &quot;ON_DEMAND&quot;,
+                    &quot;RunningInstanceCount&quot;: 1
+                },
+                {
+                    &quot;RequestedInstanceCount&quot;: 2,
+                    &quot;Status&quot;: {
+                        &quot;Timeline&quot;: {
+                            &quot;ReadyDateTime&quot;: 1399400564.439,
+                            &quot;CreationDateTime&quot;: 1399400268.621
+                        },
+                        &quot;State&quot;: &quot;RUNNING&quot;,
+                        &quot;StateChangeReason&quot;: {
+                            &quot;Message&quot;: &quot;&quot;
+                        }
+                    },
+                    &quot;Name&quot;: &quot;Core instance group&quot;,
+                    &quot;InstanceGroupType&quot;: &quot;CORE&quot;,
+                    &quot;InstanceType&quot;: &quot;m1.small&quot;,
+                    &quot;Id&quot;: &quot;ig-DEF&quot;,
+                    &quot;Market&quot;: &quot;ON_DEMAND&quot;,
+                    &quot;RunningInstanceCount&quot;: 2
+                }
+            ],
+            &quot;Applications&quot;: [
+                {
+                    &quot;Version&quot;: &quot;1.0.3&quot;,
+                    &quot;Name&quot;: &quot;hadoop&quot;
+                }
+            ],
+            &quot;BootstrapActions&quot;: [],
+            &quot;VisibleToAllUsers&quot;: false,
+            &quot;RequestedAmiVersion&quot;: &quot;2.4.2&quot;,
+            &quot;LogUri&quot;: &quot;s3://myLogUri/&quot;,
+            &quot;AutoTerminate&quot;: false,
+            &quot;Id&quot;: &quot;j-XXXXXXXX&quot;
+        }
+    }</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../emr/delete-security-configuration.html" title="previous chapter (use the left arrow)">&larr; delete-security-configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../emr/describe-security-configuration.html" title="next chapter (use the right arrow)">describe-security-configuration &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../emr/describe-security-configuration.html" title="describe-security-configuration"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../emr/delete-security-configuration.html" title="delete-security-configuration"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../emr/index.html" >emr</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

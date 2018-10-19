@@ -1,0 +1,18 @@
+{
+    "ByteMatchSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "ByteMatchTuple": {
+                "FieldToMatch": {
+                    "Type": "URI",
+                    "Data": ""
+                },
+                "TargetString": null,
+                "TextTransformation": "COMPRESS_WHITE_SPACE",
+                "PositionalConstraint": "CONTAINS_WORD"
+            }
+        }
+    ]
+}

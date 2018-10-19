@@ -1,0 +1,312 @@
+[ :ref:`aws <cli:aws>` . :ref:`dynamodb <cli:aws dynamodb>` ]
+
+.. _cli:aws dynamodb list-backups:
+
+
+************
+list-backups
+************
+
+
+
+===========
+Description
+===========
+
+
+
+List backups associated with an AWS account. To list backups for a given table, specify ``TableName`` . ``ListBackups`` returns a paginated list of results with at most 1MB worth of items in a page. You can also specify a limit for the maximum number of entries to be returned in a page. 
+
+ 
+
+In the request, start time is inclusive but end time is exclusive. Note that these limits are for the time at which the original backup was requested.
+
+ 
+
+You can call ``ListBackups`` a maximum of 5 times per second.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListBackups>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``list-backups`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``BackupSummaries``
+
+
+========
+Synopsis
+========
+
+::
+
+    list-backups
+  [--table-name <value>]
+  [--time-range-lower-bound <value>]
+  [--time-range-upper-bound <value>]
+  [--backup-type <value>]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--table-name`` (string)
+
+
+  The backups from the table specified by ``TableName`` are listed. 
+
+  
+
+``--time-range-lower-bound`` (timestamp)
+
+
+  Only backups created after this time are listed. ``TimeRangeLowerBound`` is inclusive.
+
+  
+
+``--time-range-upper-bound`` (timestamp)
+
+
+  Only backups created before this time are listed. ``TimeRangeUpperBound`` is exclusive. 
+
+  
+
+``--backup-type`` (string)
+
+
+  The backups from the table specified by ``BackupType`` are listed.
+
+   
+
+  Where ``BackupType`` can be:
+
+   
+
+   
+  * ``USER`` - On-demand backup created by you. 
+   
+  * ``SYSTEM`` - On-demand backup automatically created by DynamoDB. 
+   
+  * ``ALL`` - All types of on-demand backups (USER and SYSTEM). 
+   
+
+  
+
+  Possible values:
+
+  
+  *   ``USER``
+
+  
+  *   ``SYSTEM``
+
+  
+  *   ``ALL``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+BackupSummaries -> (list)
+
+  
+
+  List of ``BackupSummary`` objects.
+
+  
+
+  (structure)
+
+    
+
+    Contains details for the backup.
+
+    
+
+    TableName -> (string)
+
+      
+
+      Name of the table.
+
+      
+
+      
+
+    TableId -> (string)
+
+      
+
+      Unique identifier for the table.
+
+      
+
+      
+
+    TableArn -> (string)
+
+      
+
+      ARN associated with the table.
+
+      
+
+      
+
+    BackupArn -> (string)
+
+      
+
+      ARN associated with the backup.
+
+      
+
+      
+
+    BackupName -> (string)
+
+      
+
+      Name of the specified backup.
+
+      
+
+      
+
+    BackupCreationDateTime -> (timestamp)
+
+      
+
+      Time at which the backup was created.
+
+      
+
+      
+
+    BackupExpiryDateTime -> (timestamp)
+
+      
+
+      Time at which the automatic on-demand backup created by DynamoDB will expire. This ``SYSTEM`` on-demand backup expires automatically 35 days after its creation.
+
+      
+
+      
+
+    BackupStatus -> (string)
+
+      
+
+      Backup can be in one of the following states: CREATING, ACTIVE, DELETED.
+
+      
+
+      
+
+    BackupType -> (string)
+
+      
+
+      BackupType:
+
+       
+
+       
+      * ``USER`` - On-demand backup created by you. 
+       
+      * ``SYSTEM`` - On-demand backup automatically created by DynamoDB. 
+       
+
+      
+
+      
+
+    BackupSizeBytes -> (long)
+
+      
+
+      Size of the backup in bytes.
+
+      
+
+      
+
+    
+
+  
+
+LastEvaluatedBackupArn -> (string)
+
+  
+
+  The ARN of the backup last evaluated when the current page of results was returned, inclusive of the current page of results. This value may be specified as the ``ExclusiveStartBackupArn`` of a new ``ListBackups`` operation in order to fetch the next page of results. 
+
+   
+
+  If ``LastEvaluatedBackupArn`` is empty, then the last page of results has been processed and there are no more results to be retrieved. 
+
+   
+
+  If ``LastEvaluatedBackupArn`` is not empty, this may or may not indicate there is more data to be returned. All results are guaranteed to have been returned if and only if no value for ``LastEvaluatedBackupArn`` is returned. 
+
+  
+
+  
+

@@ -1,0 +1,14 @@
+{
+    "AutoScalingGroupName": "",
+    "ScheduledUpdateGroupActions": [
+        {
+            "ScheduledActionName": "",
+            "StartTime": "1970-01-01T00:00:00",
+            "EndTime": "1970-01-01T00:00:00",
+            "Recurrence": "",
+            "MinSize": 0,
+            "MaxSize": 0,
+            "DesiredCapacity": 0
+        }
+    ]
+}

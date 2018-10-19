@@ -1,0 +1,221 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint get-import-jobs:
+
+
+***************
+get-import-jobs
+***************
+
+
+
+===========
+Description
+===========
+
+Returns information about your import jobs.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetImportJobs>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-import-jobs
+  --application-id <value>
+  [--page-size <value>]
+  [--token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-id`` (string)
+The unique ID of your Amazon Pinpoint application.
+
+``--page-size`` (string)
+The number of entries you want on each page in the response.
+
+``--token`` (string)
+The NextToken string returned on a previous page that you use to get the next page of results in a paginated response.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ImportJobsResponse -> (structure)
+
+  Import job list.
+
+  Item -> (list)
+
+    A list of import jobs for the application.
+
+    (structure)
+
+      Import job response.
+
+      ApplicationId -> (string)
+
+        The unique ID of the application to which the import job applies.
+
+        
+
+      CompletedPieces -> (integer)
+
+        The number of pieces that have successfully imported as of the time of the request.
+
+        
+
+      CompletionDate -> (string)
+
+        The date the import job completed in ISO 8601 format.
+
+        
+
+      CreationDate -> (string)
+
+        The date the import job was created in ISO 8601 format.
+
+        
+
+      Definition -> (structure)
+
+        The import job settings.
+
+        DefineSegment -> (boolean)
+
+          Sets whether the endpoints create a segment when they are imported.
+
+          
+
+        ExternalId -> (string)
+
+          (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles assumed by Amazon Pinpoint.
+
+          
+
+        Format -> (string)
+
+          The format of the files that contain the endpoint definitions. Valid values: CSV, JSON
+
+          
+
+        RegisterEndpoints -> (boolean)
+
+          Sets whether the endpoints are registered with Amazon Pinpoint when they are imported.
+
+          
+
+        RoleArn -> (string)
+
+          The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the Amazon S3 location that contains the endpoints to import.
+
+          
+
+        S3Url -> (string)
+
+          The URL of the S3 bucket that contains the segment information to import. The location can be a folder or a single file. The URL should use the following format: s3://bucket-name/folder-name/file-name Amazon Pinpoint imports endpoints from this location and any subfolders it contains.
+
+          
+
+        SegmentId -> (string)
+
+          The ID of the segment to update if the import job is meant to update an existing segment.
+
+          
+
+        SegmentName -> (string)
+
+          A custom name for the segment created by the import job. Use if DefineSegment is true.
+
+          
+
+        
+
+      FailedPieces -> (integer)
+
+        The number of pieces that have failed to import as of the time of the request.
+
+        
+
+      Failures -> (list)
+
+        Provides up to 100 of the first failed entries for the job, if any exist.
+
+        (string)
+
+          
+
+          
+
+        
+
+      Id -> (string)
+
+        The unique ID of the import job.
+
+        
+
+      JobStatus -> (string)
+
+        The status of the import job. Valid values: CREATED, INITIALIZING, PROCESSING, COMPLETING, COMPLETED, FAILING, FAILED The job status is FAILED if one or more pieces failed to import.
+
+        
+
+      TotalFailures -> (integer)
+
+        The number of endpoints that failed to import; for example, because of syntax errors.
+
+        
+
+      TotalPieces -> (integer)
+
+        The total number of pieces that must be imported to finish the job. Each piece is an approximately equal portion of the endpoints to import.
+
+        
+
+      TotalProcessed -> (integer)
+
+        The number of endpoints that were processed by the import job.
+
+        
+
+      Type -> (string)
+
+        The job type. Will be Import.
+
+        
+
+      
+
+    
+
+  NextToken -> (string)
+
+    The string that you use in a subsequent request to get the next page of results in a paginated response.
+
+    
+
+  
+

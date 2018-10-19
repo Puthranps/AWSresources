@@ -1,0 +1,31 @@
+{
+    "cluster": "",
+    "task": "",
+    "status": "",
+    "reason": "",
+    "containers": [
+        {
+            "containerName": "",
+            "exitCode": 0,
+            "networkBindings": [
+                {
+                    "bindIP": "",
+                    "containerPort": 0,
+                    "hostPort": 0,
+                    "protocol": "tcp"
+                }
+            ],
+            "reason": "",
+            "status": ""
+        }
+    ],
+    "attachments": [
+        {
+            "attachmentArn": "",
+            "status": ""
+        }
+    ],
+    "pullStartedAt": "1970-01-01T00:00:00",
+    "pullStoppedAt": "1970-01-01T00:00:00",
+    "executionStoppedAt": "1970-01-01T00:00:00"
+}

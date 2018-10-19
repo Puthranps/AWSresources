@@ -1,0 +1,250 @@
+[ :ref:`aws <cli:aws>` . :ref:`acm <cli:aws acm>` ]
+
+.. _cli:aws acm request-certificate:
+
+
+*******************
+request-certificate
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Requests an ACM certificate for use with other AWS services. To request an ACM certificate, you must specify a fully qualified domain name (FQDN) in the ``DomainName`` parameter. You can also specify additional FQDNs in the ``SubjectAlternativeNames`` parameter. 
+
+ 
+
+If you are requesting a private certificate, domain validation is not required. If you are requesting a public certificate, each domain name that you specify must be validated to verify that you own or control the domain. You can use `DNS validation <http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html>`__ or `email validation <http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html>`__ . We recommend that you use DNS validation. ACM issues public certificates after receiving approval from the domain owner. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/acm-2015-12-08/RequestCertificate>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    request-certificate
+  --domain-name <value>
+  [--validation-method <value>]
+  [--subject-alternative-names <value>]
+  [--idempotency-token <value>]
+  [--domain-validation-options <value>]
+  [--options <value>]
+  [--certificate-authority-arn <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--domain-name`` (string)
+
+
+  Fully qualified domain name (FQDN), such as www.example.com, that you want to secure with an ACM certificate. Use an asterisk (*) to create a wildcard certificate that protects several sites in the same domain. For example, *.example.com protects www.example.com, site.example.com, and images.example.com. 
+
+   
+
+  The first domain name you enter cannot exceed 63 octets, including periods. Each subsequent Subject Alternative Name (SAN), however, can be up to 253 octets in length. 
+
+  
+
+``--validation-method`` (string)
+
+
+  The method you want to use if you are requesting a public certificate to validate that you own or control domain. You can `validate with DNS <http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-dns.html>`__ or `validate with email <http://docs.aws.amazon.com/acm/latest/userguide/gs-acm-validate-email.html>`__ . We recommend that you use DNS validation. 
+
+  
+
+  Possible values:
+
+  
+  *   ``EMAIL``
+
+  
+  *   ``DNS``
+
+  
+
+  
+
+``--subject-alternative-names`` (list)
+
+
+  Additional FQDNs to be included in the Subject Alternative Name extension of the ACM certificate. For example, add the name www.example.net to a certificate for which the ``DomainName`` field is www.example.com if users can reach your site by using either name. The maximum number of domain names that you can add to an ACM certificate is 100. However, the initial limit is 10 domain names. If you need more than 10 names, you must request a limit increase. For more information, see `Limits <http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html>`__ .
+
+   
+
+  The maximum length of a SAN DNS name is 253 octets. The name is made up of multiple labels separated by periods. No label can be longer than 63 octets. Consider the following examples: 
+
+   
+
+   
+  * ``(63 octets).(63 octets).(63 octets).(61 octets)`` is legal because the total length is 253 octets (63+1+63+1+63+1+61) and no label exceeds 63 octets. 
+   
+  * ``(64 octets).(63 octets).(63 octets).(61 octets)`` is not legal because the total length exceeds 253 octets (64+1+63+1+63+1+61) and the first label exceeds 63 octets. 
+   
+  * ``(63 octets).(63 octets).(63 octets).(62 octets)`` is not legal because the total length of the DNS name (63+1+63+1+63+1+62) exceeds 253 octets. 
+   
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--idempotency-token`` (string)
+
+
+  Customer chosen string that can be used to distinguish between calls to ``RequestCertificate`` . Idempotency tokens time out after one hour. Therefore, if you call ``RequestCertificate`` multiple times with the same idempotency token within one hour, ACM recognizes that you are requesting only one certificate and will issue only one. If you change the idempotency token for each call, ACM recognizes that you are requesting multiple certificates.
+
+  
+
+``--domain-validation-options`` (list)
+
+
+  The domain name that you want ACM to use to send you emails so that you can validate domain ownership.
+
+  
+
+
+
+Shorthand Syntax::
+
+    DomainName=string,ValidationDomain=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "DomainName": "string",
+      "ValidationDomain": "string"
+    }
+    ...
+  ]
+
+
+
+``--options`` (structure)
+
+
+  Currently, you can use this parameter to specify whether to add the certificate to a certificate transparency log. Certificate transparency makes it possible to detect SSL/TLS certificates that have been mistakenly or maliciously issued. Certificates that have not been logged typically produce an error message in a browser. For more information, see `Opting Out of Certificate Transparency Logging <http://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency>`__ .
+
+  
+
+
+
+Shorthand Syntax::
+
+    CertificateTransparencyLoggingPreference=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "CertificateTransparencyLoggingPreference": "ENABLED"|"DISABLED"
+  }
+
+
+
+``--certificate-authority-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the private certificate authority (CA) that will be used to issue the certificate. If you do not provide an ARN and you are trying to request a private certificate, ACM will attempt to issue a public certificate. For more information about private CAs, see the `AWS Certificate Manager Private Certificate Authority (PCA) <http://docs.aws.amazon.com/acm-pca/latest/userguide/PcaWelcome.html>`__ user guide. The ARN must have the following form: 
+
+   
+
+   ``arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012``  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To request a new ACM certificate**
+
+The following ``request-certificate`` command requests a new certificate for the www.example.com domain using DNS validation::
+
+  aws acm request-certificate --domain-name www.example.com --validation-method DNS  
+
+You can enter an idempotency token to distinguish between calls to ``request-certificate``::
+
+  aws acm request-certificate --domain-name www.example.com --validation-method DNS --idempotency-token 91adc45q
+
+You can enter one or more subject alternative names to request a certificate that will protect more than one apex domain::
+
+  aws acm request-certificate --domain-name example.com --validation-method DNS --idempotency-token 91adc45q --subject-alternative-names www.example.net
+  
+You can enter an alternative name that can also be used to reach your website::
+  
+  aws acm request-certificate --domain-name example.com --validation-method DNS --idempotency-token 91adc45q --subject-alternative-names www.example.com
+  
+You can use an asterisk (*) as a wildcard to create a certificate for several subdomains in the same domain::
+
+  aws acm request-certificate --domain-name example.com --validation-method DNS --idempotency-token 91adc45q --subject-alternative-names *.example.com
+
+You can also enter multiple alternative names::
+
+  aws acm request-certificate --domain-name example.com --validation-method DNS --subject-alternative-names b.example.com c.example.com d.example.com 
+
+If you are using email for validation, you can enter domain validation options to specify the domain to which the validation email will be sent::
+
+  aws acm request-certificate --domain-name example.com --validation-method EMAIL --subject-alternative-names www.example.com --domain-validation-options DomainName=example.com,ValidationDomain=mail.example.com
+  
+The following command opts out of certificate transparency logging when you request a new certificate::
+
+  aws acm request-certificate --domain-name www.example.com --validation-method DNS --certificate-options CertificateTransparencyLoggingPreference=DISABLED --idempotency-token 184627
+
+
+======
+Output
+======
+
+CertificateArn -> (string)
+
+  
+
+  String that contains the ARN of the issued certificate. This must be of the form:
+
+   
+
+   ``arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012``  
+
+  
+
+  
+

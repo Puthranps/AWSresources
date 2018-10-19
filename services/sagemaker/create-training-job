@@ -1,0 +1,53 @@
+{
+    "TrainingJobName": "",
+    "HyperParameters": {
+        "KeyName": ""
+    },
+    "AlgorithmSpecification": {
+        "TrainingImage": "",
+        "TrainingInputMode": "File"
+    },
+    "RoleArn": "",
+    "InputDataConfig": [
+        {
+            "ChannelName": "",
+            "DataSource": {
+                "S3DataSource": {
+                    "S3DataType": "ManifestFile",
+                    "S3Uri": "",
+                    "S3DataDistributionType": "ShardedByS3Key"
+                }
+            },
+            "ContentType": "",
+            "CompressionType": "None",
+            "RecordWrapperType": "None"
+        }
+    ],
+    "OutputDataConfig": {
+        "KmsKeyId": "",
+        "S3OutputPath": ""
+    },
+    "ResourceConfig": {
+        "InstanceType": "ml.c4.2xlarge",
+        "InstanceCount": 0,
+        "VolumeSizeInGB": 0,
+        "VolumeKmsKeyId": ""
+    },
+    "VpcConfig": {
+        "SecurityGroupIds": [
+            ""
+        ],
+        "Subnets": [
+            ""
+        ]
+    },
+    "StoppingCondition": {
+        "MaxRuntimeInSeconds": 0
+    },
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

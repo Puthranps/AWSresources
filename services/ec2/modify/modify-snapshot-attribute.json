@@ -1,0 +1,26 @@
+{
+    "Attribute": "productCodes",
+    "CreateVolumePermission": {
+        "Add": [
+            {
+                "Group": "all",
+                "UserId": ""
+            }
+        ],
+        "Remove": [
+            {
+                "Group": "all",
+                "UserId": ""
+            }
+        ]
+    },
+    "GroupNames": [
+        ""
+    ],
+    "OperationType": "add",
+    "SnapshotId": "",
+    "UserIds": [
+        ""
+    ],
+    "DryRun": true
+}

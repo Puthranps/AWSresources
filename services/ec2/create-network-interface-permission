@@ -1,0 +1,7 @@
+{
+    "NetworkInterfaceId": "",
+    "AwsAccountId": "",
+    "AwsService": "",
+    "Permission": "INSTANCE-ATTACH",
+    "DryRun": true
+}

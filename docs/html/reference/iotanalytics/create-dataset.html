@@ -1,0 +1,333 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-dataset &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="iotanalytics" href="../iotanalytics/index.html" />
+    <link rel="next" title="create-dataset-content" href="../iotanalytics/create-dataset-content.html" />
+    <link rel="prev" title="create-channel" href="../iotanalytics/create-channel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../iotanalytics/create-dataset-content.html" title="create-dataset-content"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iotanalytics/create-channel.html" title="create-channel"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iotanalytics/index.html" accesskey="U">iotanalytics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iotanalytics/create-channel.html" title="previous chapter (use the left arrow)">&larr; create-channel</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iotanalytics/create-dataset-content.html" title="next chapter (use the right arrow)">create-dataset-content &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-dataset</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/iotanalytics/create-dataset">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../iotanalytics/index.html#cli-aws-iotanalytics"><em>iotanalytics</em></a> ]</p>
+<div class="section" id="create-dataset">
+<span id="cli-aws-iotanalytics-create-dataset"></span><h1>create-dataset<a class="headerlink" href="#create-dataset" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a data set. A data set stores data retrieved from a data store by applying a &quot;queryAction&quot; (a SQL query) or a &quot;containerAction&quot; (executing a containerized application). This operation creates the skeleton of a data set. The data set can be populated manually by calling &quot;CreateDatasetContent&quot; or automatically according to a &quot;trigger&quot; you specify.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CreateDataset">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-dataset
+--dataset-name &lt;value&gt;
+--actions &lt;value&gt;
+[--triggers &lt;value&gt;]
+[--retention-period &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--dataset-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the data set.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--actions</span></tt> (list)</p>
+<blockquote>
+<div>A list of actions that create the data set contents.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;actionName&quot;: &quot;string&quot;,
+    &quot;queryAction&quot;: {
+      &quot;sqlQuery&quot;: &quot;string&quot;,
+      &quot;filters&quot;: [
+        {
+          &quot;deltaTime&quot;: {
+            &quot;offsetSeconds&quot;: integer,
+            &quot;timeExpression&quot;: &quot;string&quot;
+          }
+        }
+        ...
+      ]
+    },
+    &quot;containerAction&quot;: {
+      &quot;image&quot;: &quot;string&quot;,
+      &quot;executionRoleArn&quot;: &quot;string&quot;,
+      &quot;resourceConfiguration&quot;: {
+        &quot;computeType&quot;: &quot;ACU_1&quot;|&quot;ACU_2&quot;,
+        &quot;volumeSizeInGB&quot;: integer
+      },
+      &quot;variables&quot;: [
+        {
+          &quot;name&quot;: &quot;string&quot;,
+          &quot;stringValue&quot;: &quot;string&quot;,
+          &quot;doubleValue&quot;: double,
+          &quot;datasetContentVersionValue&quot;: {
+            &quot;datasetName&quot;: &quot;string&quot;
+          },
+          &quot;outputFileUriValue&quot;: {
+            &quot;fileName&quot;: &quot;string&quot;
+          }
+        }
+        ...
+      ]
+    }
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--triggers</span></tt> (list)</p>
+<blockquote>
+<div>A list of triggers. A trigger causes data set contents to be populated at a specified time interval or when another data set's contents are created. The list of triggers can be empty or contain up to five <strong>DataSetTrigger</strong> objects.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>schedule={expression=string},dataset={name=string} ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;schedule&quot;: {
+      &quot;expression&quot;: &quot;string&quot;
+    },
+    &quot;dataset&quot;: {
+      &quot;name&quot;: &quot;string&quot;
+    }
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--retention-period</span></tt> (structure)</p>
+<blockquote>
+<div>[Optional] How long, in days, message data is kept for the data set. If not given or set to null, the latest version of the dataset content plus the latest succeeded version (if they are different) are retained for at most 90 days.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">unlimited</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">numberOfDays</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;unlimited&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;numberOfDays&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>Metadata which can be used to manage the data set.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>key=string,value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;key&quot;: &quot;string&quot;,
+    &quot;value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>datasetName -&gt; (string)</p>
+<blockquote>
+<div>The name of the data set.</div></blockquote>
+<p>datasetArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the data set.</div></blockquote>
+<p>retentionPeriod -&gt; (structure)</p>
+<blockquote>
+<div><p>How long, in days, message data is kept for the data set.</p>
+<p>unlimited -&gt; (boolean)</p>
+<blockquote>
+<div>If true, message data is kept indefinitely.</div></blockquote>
+<p>numberOfDays -&gt; (integer)</p>
+<blockquote>
+<div>The number of days that message data is kept. The &quot;unlimited&quot; parameter must be false.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iotanalytics/create-channel.html" title="previous chapter (use the left arrow)">&larr; create-channel</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iotanalytics/create-dataset-content.html" title="next chapter (use the right arrow)">create-dataset-content &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../iotanalytics/create-dataset-content.html" title="create-dataset-content"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iotanalytics/create-channel.html" title="create-channel"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iotanalytics/index.html" >iotanalytics</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,147 @@
+[ :ref:`aws <cli:aws>` . :ref:`workspaces <cli:aws workspaces>` ]
+
+.. _cli:aws workspaces rebuild-workspaces:
+
+
+******************
+rebuild-workspaces
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Rebuilds the specified WorkSpace.
+
+ 
+
+You cannot rebuild a WorkSpace unless its state is ``AVAILABLE`` , ``ERROR`` , or ``UNHEALTHY`` .
+
+ 
+
+Rebuilding a WorkSpace is a potentially destructive action that can result in the loss of data. For more information, see `Rebuild a WorkSpace <http://docs.aws.amazon.com/workspaces/latest/adminguide/reset-workspace.html>`__ .
+
+ 
+
+This operation is asynchronous and returns before the WorkSpaces have been completely rebuilt.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RebuildWorkspaces>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    rebuild-workspaces
+  --rebuild-workspace-requests <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--rebuild-workspace-requests`` (list)
+
+
+  The WorkSpace to rebuild. You can specify a single WorkSpace.
+
+  
+
+
+
+Shorthand Syntax::
+
+    --rebuild-workspace-requests WorkspaceId1 WorkspaceId2 WorkspaceId3
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "WorkspaceId": "string"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+FailedRequests -> (list)
+
+  
+
+  Information about the WorkSpace if it could not be rebuilt.
+
+  
+
+  (structure)
+
+    
+
+    Information about a WorkSpace that could not be rebooted ( RebootWorkspaces ), rebuilt ( RebuildWorkspaces ), terminated ( TerminateWorkspaces ), started ( StartWorkspaces ), or stopped ( StopWorkspaces ).
+
+    
+
+    WorkspaceId -> (string)
+
+      
+
+      The identifier of the WorkSpace.
+
+      
+
+      
+
+    ErrorCode -> (string)
+
+      
+
+      The error code.
+
+      
+
+      
+
+    ErrorMessage -> (string)
+
+      
+
+      The textual error message.
+
+      
+
+      
+
+    
+
+  
+

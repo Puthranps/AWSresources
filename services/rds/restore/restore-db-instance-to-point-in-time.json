@@ -1,0 +1,43 @@
+{
+    "SourceDBInstanceIdentifier": "",
+    "TargetDBInstanceIdentifier": "",
+    "RestoreTime": "1970-01-01T00:00:00",
+    "UseLatestRestorableTime": true,
+    "DBInstanceClass": "",
+    "Port": 0,
+    "AvailabilityZone": "",
+    "DBSubnetGroupName": "",
+    "MultiAZ": true,
+    "PubliclyAccessible": true,
+    "AutoMinorVersionUpgrade": true,
+    "LicenseModel": "",
+    "DBName": "",
+    "Engine": "",
+    "Iops": 0,
+    "OptionGroupName": "",
+    "CopyTagsToSnapshot": true,
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "StorageType": "",
+    "TdeCredentialArn": "",
+    "TdeCredentialPassword": "",
+    "Domain": "",
+    "DomainIAMRoleName": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "EnableCloudwatchLogsExports": [
+        ""
+    ],
+    "ProcessorFeatures": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "UseDefaultProcessorFeatures": true,
+    "DBParameterGroupName": "",
+    "DeletionProtection": true
+}

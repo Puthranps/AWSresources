@@ -1,0 +1,14 @@
+{
+    "UserPoolId": "",
+    "ProviderName": "",
+    "ProviderType": "LoginWithAmazon",
+    "ProviderDetails": {
+        "KeyName": ""
+    },
+    "AttributeMapping": {
+        "KeyName": ""
+    },
+    "IdpIdentifiers": [
+        ""
+    ]
+}

@@ -1,0 +1,165 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint phone-number-validate:
+
+
+*********************
+phone-number-validate
+*********************
+
+
+
+===========
+Description
+===========
+
+Returns information about the specified phone number.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PhoneNumberValidate>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    phone-number-validate
+  --number-validate-request <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--number-validate-request`` (structure)
+Phone Number Information request.
+
+
+
+Shorthand Syntax::
+
+    IsoCountryCode=string,PhoneNumber=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "IsoCountryCode": "string",
+    "PhoneNumber": "string"
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+NumberValidateResponse -> (structure)
+
+  Phone Number Information response.
+
+  Carrier -> (string)
+
+    The carrier or servive provider that the phone number is currently registered with.
+
+    
+
+  City -> (string)
+
+    The city where the phone number was originally registered.
+
+    
+
+  CleansedPhoneNumberE164 -> (string)
+
+    The cleansed phone number, shown in E.164 format.
+
+    
+
+  CleansedPhoneNumberNational -> (string)
+
+    The cleansed phone number, shown in the local phone number format.
+
+    
+
+  Country -> (string)
+
+    The country or region where the phone number was originally registered.
+
+    
+
+  CountryCodeIso2 -> (string)
+
+    The two-character ISO code for the country or region where the phone number was originally registered.
+
+    
+
+  CountryCodeNumeric -> (string)
+
+    The numeric code for the country or region where the phone number was originally registered.
+
+    
+
+  County -> (string)
+
+    The county where the phone number was originally registered.
+
+    
+
+  OriginalCountryCodeIso2 -> (string)
+
+    The two-character ISO code for the country or region that you included in the request body.
+
+    
+
+  OriginalPhoneNumber -> (string)
+
+    The phone number that you included in the request body.
+
+    
+
+  PhoneType -> (string)
+
+    A description of the phone type. Possible values are MOBILE, LANDLINE, VOIP, INVALID, PREPAID, and OTHER.
+
+    
+
+  PhoneTypeCode -> (integer)
+
+    The phone type, represented by an integer. Possible values include 0 (MOBILE), 1 (LANDLINE), 2 (VOIP), 3 (INVALID), 4 (OTHER), and 5 (PREPAID).
+
+    
+
+  Timezone -> (string)
+
+    The time zone for the location where the phone number was originally registered.
+
+    
+
+  ZipCode -> (string)
+
+    The postal code for the location where the phone number was originally registered.
+
+    
+
+  
+

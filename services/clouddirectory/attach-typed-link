@@ -1,0 +1,25 @@
+{
+    "DirectoryArn": "",
+    "SourceObjectReference": {
+        "Selector": ""
+    },
+    "TargetObjectReference": {
+        "Selector": ""
+    },
+    "TypedLinkFacet": {
+        "SchemaArn": "",
+        "TypedLinkName": ""
+    },
+    "Attributes": [
+        {
+            "AttributeName": "",
+            "Value": {
+                "StringValue": "",
+                "BinaryValue": null,
+                "BooleanValue": true,
+                "NumberValue": "",
+                "DatetimeValue": "1970-01-01T00:00:00"
+            }
+        }
+    ]
+}

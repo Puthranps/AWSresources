@@ -1,0 +1,699 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker <cli:aws sagemaker>` ]
+
+.. _cli:aws sagemaker describe-training-job:
+
+
+*********************
+describe-training-job
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about a training job.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTrainingJob>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-training-job
+  --training-job-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--training-job-name`` (string)
+
+
+  The name of the training job.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+TrainingJobName -> (string)
+
+  
+
+  Name of the model training job. 
+
+  
+
+  
+
+TrainingJobArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the training job.
+
+  
+
+  
+
+TuningJobArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the associated hyperparameter tuning job if the training job was launched by a hyperparameter tuning job.
+
+  
+
+  
+
+ModelArtifacts -> (structure)
+
+  
+
+  Information about the Amazon S3 location that is configured for storing model artifacts. 
+
+  
+
+  S3ModelArtifacts -> (string)
+
+    
+
+    The path of the S3 object that contains the model artifacts. For example, ``s3://bucket-name/keynameprefix/model.tar.gz`` .
+
+    
+
+    
+
+  
+
+TrainingJobStatus -> (string)
+
+  
+
+  The status of the training job. 
+
+   
+
+  For the ``InProgress`` status, Amazon SageMaker can return these secondary statuses:
+
+   
+
+   
+  * Starting - Preparing for training. 
+   
+  * Downloading - Optional stage for algorithms that support File training input mode. It indicates data is being downloaded to ML storage volumes. 
+   
+  * Training - Training is in progress. 
+   
+  * Uploading - Training is complete and model upload is in progress. 
+   
+
+   
+
+  For the ``Stopped`` training status, Amazon SageMaker can return these secondary statuses:
+
+   
+
+   
+  * MaxRuntimeExceeded - Job stopped as a result of maximum allowed runtime exceeded. 
+   
+
+  
+
+  
+
+SecondaryStatus -> (string)
+
+  
+
+  Provides granular information about the system state. For more information, see ``TrainingJobStatus`` . 
+
+   
+
+   
+  * ``Starting`` - starting the training job. 
+   
+  * ``Downloading`` - downloading the input data. 
+   
+  * ``Training`` - model training is in progress. 
+   
+  * ``Uploading`` - uploading the trained model. 
+   
+  * ``Stopping`` - stopping the training job. 
+   
+  * ``Stopped`` - the training job has stopped. 
+   
+  * ``MaxRuntimeExceeded`` - the training job exceeded the specified max run time and has been stopped. 
+   
+  * ``Completed`` - the training job has completed. 
+   
+  * ``Failed`` - the training job has failed. The failure reason is stored in the ``FailureReason`` field of ``DescribeTrainingJobResponse`` . 
+   
+
+   
+
+  .. warning::
+
+     
+
+    The valid values for ``SecondaryStatus`` are subject to change. They primarily provide information on the progress of the training job.
+
+     
+
+  
+
+  
+
+FailureReason -> (string)
+
+  
+
+  If the training job failed, the reason it failed. 
+
+  
+
+  
+
+HyperParameters -> (map)
+
+  
+
+  Algorithm-specific parameters. 
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (string)
+
+    
+
+    
+
+  
+
+AlgorithmSpecification -> (structure)
+
+  
+
+  Information about the algorithm used for training, and algorithm metadata. 
+
+  
+
+  TrainingImage -> (string)
+
+    
+
+    The registry path of the Docker image that contains the training algorithm. For information about docker registry paths for built-in algorithms, see  sagemaker-algo-docker-registry-paths .
+
+    
+
+    
+
+  TrainingInputMode -> (string)
+
+    
+
+    The input mode that the algorithm supports. For the input modes that Amazon SageMaker algorithms support, see `Algorithms <http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html>`__ . If an algorithm supports the ``File`` input mode, Amazon SageMaker downloads the training data from S3 to the provisioned ML storage Volume, and mounts the directory to docker volume for training container. If an algorithm supports the ``Pipe`` input mode, Amazon SageMaker streams data directly from S3 to the container. 
+
+     
+
+    In File mode, make sure you provision ML storage volume with sufficient capacity to accommodate the data download from S3. In addition to the training data, the ML storage volume also stores the output model. The algorithm container use ML storage volume to also store intermediate information, if any. 
+
+     
+
+    For distributed algorithms using File mode, training data is distributed uniformly, and your training duration is predictable if the input data objects size is approximately same. Amazon SageMaker does not split the files any further for model training. If the object sizes are skewed, training won't be optimal as the data distribution is also skewed where one host in a training cluster is overloaded, thus becoming bottleneck in training. 
+
+    
+
+    
+
+  
+
+RoleArn -> (string)
+
+  
+
+  The AWS Identity and Access Management (IAM) role configured for the training job. 
+
+  
+
+  
+
+InputDataConfig -> (list)
+
+  
+
+  An array of ``Channel`` objects that describes each data input channel. 
+
+  
+
+  (structure)
+
+    
+
+    A channel is a named input source that training algorithms can consume. 
+
+    
+
+    ChannelName -> (string)
+
+      
+
+      The name of the channel. 
+
+      
+
+      
+
+    DataSource -> (structure)
+
+      
+
+      The location of the channel data.
+
+      
+
+      S3DataSource -> (structure)
+
+        
+
+        The S3 location of the data source that is associated with a channel.
+
+        
+
+        S3DataType -> (string)
+
+          
+
+          If you choose ``S3Prefix`` , ``S3Uri`` identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for model training. 
+
+           
+
+          If you choose ``ManifestFile`` , ``S3Uri`` identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training. 
+
+          
+
+          
+
+        S3Uri -> (string)
+
+          
+
+          Depending on the value specified for the ``S3DataType`` , identifies either a key name prefix or a manifest. For example: 
+
+           
+
+           
+          * A key name prefix might look like this: ``s3://bucketname/exampleprefix`` .  
+           
+          * A manifest might look like this: ``s3://bucketname/example.manifest``   The manifest is an S3 object which is a JSON file with the following format:   ``[``    ``{"prefix": "s3://customer_bucket/some/prefix/"},``    ``"relative/path/to/custdata-1",``    ``"relative/path/custdata-2",``    ``...``    ``]``   The preceding JSON matches the following ``s3Uris`` :   ``s3://customer_bucket/some/prefix/relative/path/to/custdata-1``    ``s3://customer_bucket/some/prefix/relative/path/custdata-1``    ``...``   The complete set of ``s3uris`` in this manifest constitutes the input data for the channel for this datasource. The object that each ``s3uris`` points to must readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.  
+           
+
+          
+
+          
+
+        S3DataDistributionType -> (string)
+
+          
+
+          If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify ``FullyReplicated`` . 
+
+           
+
+          If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify ``ShardedByS3Key`` . If there are *n* ML compute instances launched for a training job, each instance gets approximately 1/*n* of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. 
+
+           
+
+          Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both FILE and PIPE modes. Keep this in mind when developing algorithms. 
+
+           
+
+          In distributed training, where you use multiple ML compute EC2 instances, you might choose ``ShardedByS3Key`` . If the algorithm requires copying training data to the ML storage volume (when ``TrainingInputMode`` is set to ``File`` ), this copies 1/*n* of the number of objects. 
+
+          
+
+          
+
+        
+
+      
+
+    ContentType -> (string)
+
+      
+
+      The MIME type of the data.
+
+      
+
+      
+
+    CompressionType -> (string)
+
+      
+
+      If training data is compressed, the compression type. The default value is ``None`` . ``CompressionType`` is used only in Pipe input mode. In File mode, leave this field unset or set it to None.
+
+      
+
+      
+
+    RecordWrapperType -> (string)
+
+      
+
+      
+
+       
+
+      Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see `Create a Dataset Using RecordIO <https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format>`__ . 
+
+       
+
+      In FILE mode, leave this field unset or set it to None.
+
+       
+
+      
+
+      
+
+      
+
+    
+
+  
+
+OutputDataConfig -> (structure)
+
+  
+
+  The S3 path where model artifacts that you configured when creating the job are stored. Amazon SageMaker creates subfolders for model artifacts. 
+
+  
+
+  KmsKeyId -> (string)
+
+    
+
+    The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. 
+
+     
+
+    .. note::
+
+       
+
+      If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see `KMS-Managed Encryption Keys <https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html>`__ in Amazon Simple Storage Service developer guide.
+
+       
+
+     
+
+    .. note::
+
+       
+
+      The KMS key policy must grant permission to the IAM role you specify in your ``CreateTrainingJob`` request. `Using Key Policies in AWS KMS <http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html>`__ in the AWS Key Management Service Developer Guide. 
+
+       
+
+    
+
+    
+
+  S3OutputPath -> (string)
+
+    
+
+    Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, ``s3://bucket-name/key-name-prefix`` . 
+
+    
+
+    
+
+  
+
+ResourceConfig -> (structure)
+
+  
+
+  Resources, including ML compute instances and ML storage volumes, that are configured for model training. 
+
+  
+
+  InstanceType -> (string)
+
+    
+
+    The ML compute instance type. 
+
+    
+
+    
+
+  InstanceCount -> (integer)
+
+    
+
+    The number of ML compute instances to use. For distributed training, provide a value greater than 1. 
+
+    
+
+    
+
+  VolumeSizeInGB -> (integer)
+
+    
+
+    The size of the ML storage volume that you want to provision. 
+
+     
+
+    ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose ``File`` as the ``TrainingInputMode`` in the algorithm specification. 
+
+     
+
+    You must specify sufficient ML storage for your scenario. 
+
+     
+
+    .. note::
+
+       
+
+      Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. 
+
+       
+
+    
+
+    
+
+  VolumeKmsKeyId -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.
+
+    
+
+    
+
+  
+
+VpcConfig -> (structure)
+
+  
+
+  A  VpcConfig object that specifies the VPC that this training job has access to. For more information, see  train-vpc .
+
+  
+
+  SecurityGroupIds -> (list)
+
+    
+
+    The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the ``Subnets`` field.
+
+    
+
+    (string)
+
+      
+
+      
+
+    
+
+  Subnets -> (list)
+
+    
+
+    The ID of the subnets in the VPC to which you want to connect your training job or model.
+
+    
+
+    (string)
+
+      
+
+      
+
+    
+
+  
+
+StoppingCondition -> (structure)
+
+  
+
+  The condition under which to stop the training job. 
+
+  
+
+  MaxRuntimeInSeconds -> (integer)
+
+    
+
+    The maximum length of time, in seconds, that the training job can run. If model training does not complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5 days.
+
+    
+
+    
+
+  
+
+CreationTime -> (timestamp)
+
+  
+
+  A timestamp that indicates when the training job was created.
+
+  
+
+  
+
+TrainingStartTime -> (timestamp)
+
+  
+
+  Indicates the time when the training job starts on training instances. You are billed for the time interval between this time and the value of ``TrainingEndTime`` . The start time in CloudWatch Logs might be later than this time. The difference is due to the time it takes to download the training data and to the size of the training container.
+
+  
+
+  
+
+TrainingEndTime -> (timestamp)
+
+  
+
+  Indicates the time when the training job ends on training instances. You are billed for the time interval between the value of ``TrainingStartTime`` and this time. For successful jobs and stopped jobs, this is the time after model artifacts are uploaded. For failed jobs, this is the time when Amazon SageMaker detects a job failure.
+
+  
+
+  
+
+LastModifiedTime -> (timestamp)
+
+  
+
+  A timestamp that indicates when the status of the training job was last modified.
+
+  
+
+  
+
+SecondaryStatusTransitions -> (list)
+
+  
+
+  To give an overview of the training job lifecycle, ``SecondaryStatusTransitions`` is a log of time-ordered secondary statuses that a training job has transitioned.
+
+  
+
+  (structure)
+
+    
+
+    Specifies a secondary status the job has transitioned into. It includes a start timestamp and later an end timestamp. The end timestamp is added either after the job transitions to a different secondary status or after the job has ended.
+
+    
+
+    Status -> (string)
+
+      
+
+      Provides granular information about the system state. For more information, see ``SecondaryStatus`` under the  DescribeTrainingJob response elements.
+
+      
+
+      
+
+    StartTime -> (timestamp)
+
+      
+
+      A timestamp that shows when the training job has entered this secondary status.
+
+      
+
+      
+
+    EndTime -> (timestamp)
+
+      
+
+      A timestamp that shows when the secondary status has ended and the job has transitioned into another secondary status. The ``EndTime`` timestamp is also set after the training job has ended.
+
+      
+
+      
+
+    StatusMessage -> (string)
+
+      
+
+      Shows a brief description and other information about the secondary status. For example, the ``LaunchingMLInstances`` secondary status could show a status message of "Insufficent capacity error while launching instances".
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,13 @@
+{
+    "memberAccountId": "",
+    "s3Resources": [
+        {
+            "bucketName": "",
+            "prefix": "",
+            "classificationType": {
+                "oneTime": "NONE",
+                "continuous": "FULL"
+            }
+        }
+    ]
+}

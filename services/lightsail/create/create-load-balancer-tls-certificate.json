@@ -1,0 +1,8 @@
+{
+    "loadBalancerName": "",
+    "certificateName": "",
+    "certificateDomainName": "",
+    "certificateAlternativeNames": [
+        ""
+    ]
+}

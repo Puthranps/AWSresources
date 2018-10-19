@@ -1,0 +1,20 @@
+{
+    "StackId": "",
+    "AppId": "",
+    "InstanceIds": [
+        ""
+    ],
+    "LayerIds": [
+        ""
+    ],
+    "Command": {
+        "Name": "rollback",
+        "Args": {
+            "KeyName": [
+                ""
+            ]
+        }
+    },
+    "Comment": "",
+    "CustomJson": ""
+}

@@ -1,0 +1,12 @@
+{
+    "restApiId": "",
+    "documentationVersion": "",
+    "patchOperations": [
+        {
+            "op": "add",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

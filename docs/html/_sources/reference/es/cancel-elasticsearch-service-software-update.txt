@@ -1,0 +1,145 @@
+[ :ref:`aws <cli:aws>` . :ref:`es <cli:aws es>` ]
+
+.. _cli:aws es cancel-elasticsearch-service-software-update:
+
+
+********************************************
+cancel-elasticsearch-service-software-update
+********************************************
+
+
+
+===========
+Description
+===========
+
+
+
+Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the ``AutomatedUpdateDate`` and when the ``UpdateStatus`` is in the ``PENDING_UPDATE`` state.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CancelElasticsearchServiceSoftwareUpdate>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    cancel-elasticsearch-service-software-update
+  --domain-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--domain-name`` (string)
+
+
+  The name of the domain that you want to stop the latest service software update on.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ServiceSoftwareOptions -> (structure)
+
+  
+
+  The current status of the Elasticsearch service software update.
+
+  
+
+  CurrentVersion -> (string)
+
+    
+
+    The current service software version that is present on the domain.
+
+    
+
+    
+
+  NewVersion -> (string)
+
+    
+
+    The new service software version if one is available.
+
+    
+
+    
+
+  UpdateAvailable -> (boolean)
+
+    
+
+    ``True`` if you are able to update you service software version. ``False`` if you are not able to update your service software version. 
+
+    
+
+    
+
+  Cancellable -> (boolean)
+
+    
+
+    ``True`` if you are able to cancel your service software version update. ``False`` if you are not able to cancel your service software version. 
+
+    
+
+    
+
+  UpdateStatus -> (string)
+
+    
+
+    The status of your service software update. This field can take the following values: ``ELIGIBLE`` , ``PENDING_UPDATE`` , ``IN_PROGRESS`` , ``COMPLETED`` , and ``NOT_ELIGIBLE`` .
+
+    
+
+    
+
+  Description -> (string)
+
+    
+
+    The description of the ``UpdateStatus`` .
+
+    
+
+    
+
+  AutomatedUpdateDate -> (timestamp)
+
+    
+
+    Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.
+
+    
+
+    
+
+  
+

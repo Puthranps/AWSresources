@@ -1,0 +1,917 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-account-authorization-details &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="iam" href="../iam/index.html" />
+    <link rel="next" title="get-account-password-policy" href="../iam/get-account-password-policy.html" />
+    <link rel="prev" title="get-access-key-last-used" href="../iam/get-access-key-last-used.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../iam/get-account-password-policy.html" title="get-account-password-policy"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iam/get-access-key-last-used.html" title="get-access-key-last-used"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iam/index.html" accesskey="U">iam</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iam/get-access-key-last-used.html" title="previous chapter (use the left arrow)">&larr; get-access-key-last-used</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iam/get-account-password-policy.html" title="next chapter (use the right arrow)">get-account-password-policy &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-account-authorization-details</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/iam/get-account-authorization-details">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../iam/index.html#cli-aws-iam"><em>iam</em></a> ]</p>
+<div class="section" id="get-account-authorization-details">
+<span id="cli-aws-iam-get-account-authorization-details"></span><h1>get-account-authorization-details<a class="headerlink" href="#get-account-authorization-details" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves information about all IAM users, groups, roles, and policies in your AWS account, including their relationships to one another. Use this API to obtain a snapshot of the configuration of IAM permissions (users, groups, roles, and policies) in your account.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Policies returned by this API are URL-encoded compliant with <a class="reference external" href="https://tools.ietf.org/html/rfc3986">RFC 3986</a> . You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you use Java, you can use the <tt class="docutils literal"><span class="pre">decode</span></tt> method of the <tt class="docutils literal"><span class="pre">java.net.URLDecoder</span></tt> utility class in the Java SDK. Other languages and SDKs provide similar functionality.</p>
+</div>
+<p>You can optionally filter the results using the <tt class="docutils literal"><span class="pre">Filter</span></tt> parameter. You can paginate the results using the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> and <tt class="docutils literal"><span class="pre">Marker</span></tt> parameters.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/GetAccountAuthorizationDetails">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">get-account-authorization-details</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">UserDetailList</span></tt>, <tt class="docutils literal"><span class="pre">GroupDetailList</span></tt>, <tt class="docutils literal"><span class="pre">RoleDetailList</span></tt>, <tt class="docutils literal"><span class="pre">Policies</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-account-authorization-details
+[--filter &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--filter</span></tt> (list)</p>
+<blockquote>
+<div><p>A list of entity types used to filter the results. Only the entities that match the types you specify are included in the output. Use the value <tt class="docutils literal"><span class="pre">LocalManagedPolicy</span></tt> to include customer managed policies.</p>
+<p>The format for this parameter is a comma-separated (if more than one) list of strings. Each string value in the list must be one of the valid values listed below.</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...
+
+Where valid values are:
+  User
+  Role
+  Group
+  LocalManagedPolicy
+  AWSManagedPolicy</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div><p>The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following <tt class="docutils literal"><span class="pre">get-account-authorization-details</span></tt> command returns information about all IAM users, groups, roles, and policies in the AWS account:</p>
+<div class="highlight-python"><pre>aws iam get-account-authorization-details</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;RoleDetailList&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;AssumeRolePolicyDocument&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">&quot;Sid&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Effect&quot;</span><span class="p">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Principal&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Service&quot;</span><span class="p">:</span> <span class="s2">&quot;ec2.amazonaws.com&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="s2">&quot;sts:AssumeRole&quot;</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;RoleId&quot;</span><span class="p">:</span> <span class="s2">&quot;AROAFP4BKI7Y7TEXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-30T17:09:20Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;InstanceProfileList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;InstanceProfileId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIPAFFYRBHWXW2EXAMPLE&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Roles&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+              <span class="s2">&quot;AssumeRolePolicyDocument&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="p">{</span>
+                    <span class="s2">&quot;Sid&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Principal&quot;</span><span class="p">:</span> <span class="p">{</span>
+                      <span class="s2">&quot;Service&quot;</span><span class="p">:</span><span class="s2">&quot;ec2.amazonaws.com&quot;</span>
+                    <span class="p">},</span>
+                    <span class="s2">&quot;Action&quot;</span><span class="p">:</span><span class="s2">&quot;sts:AssumeRole&quot;</span>
+                  <span class="p">}</span>
+                <span class="p">]</span>
+              <span class="p">},</span>
+              <span class="s2">&quot;RoleId&quot;</span><span class="p">:</span> <span class="s2">&quot;AROAFP4BKI7Y7TEXAMPLE&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-30T17:09:20Z&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;RoleName&quot;</span><span class="p">:</span> <span class="s2">&quot;EC2role&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/EC2role&quot;</span>
+            <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-07-30T17:09:20Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;InstanceProfileName&quot;</span><span class="p">:</span> <span class="s2">&quot;EC2role&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:instance-profile/EC2role&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;RoleName&quot;</span><span class="p">:</span> <span class="s2">&quot;EC2role&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;AmazonS3FullAccess&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;PolicyArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::aws:policy/AmazonS3FullAccess&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;AmazonDynamoDBFullAccess&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;PolicyArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::aws:policy/AmazonDynamoDBFullAccess&quot;</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;RolePolicyList&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/EC2role&quot;</span>
+    <span class="p">}],</span>
+  <span class="s2">&quot;GroupDetailList&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;GroupId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIDACKCEVSQ6C7EXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;AdministratorAccess&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PolicyArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::aws:policy/AdministratorAccess&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;GroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;Admins&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:group/Admins&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-14T18:32:24Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;GroupPolicyList&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;GroupId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIDACKCEVSQ6C8EXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;PowerUserAccess&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;PolicyArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::aws:policy/PowerUserAccess&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;GroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;Dev&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:group/Dev&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-14T18:33:55Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;GroupPolicyList&quot;</span><span class="p">:</span> <span class="p">[]</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;GroupId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIDACKCEVSQ6C9EXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;GroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;Finance&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:group/Finance&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-14T18:57:48Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;GroupPolicyList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;policygen-201310141157&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;PolicyDocument&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="s2">&quot;aws-portal:*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Sid&quot;</span><span class="p">:</span><span class="s2">&quot;Stmt1381777017000&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+    <span class="p">}],</span>
+  <span class="s2">&quot;UserDetailList&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;UserName&quot;</span><span class="p">:</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;GroupList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Admins&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-14T18:32:24Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UserId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIDACKCEVSQ6C2EXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UserPolicyList&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:user/Alice&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;UserName&quot;</span><span class="p">:</span> <span class="s2">&quot;Bob&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;GroupList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Admins&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-14T18:32:25Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UserId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIDACKCEVSQ6C3EXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UserPolicyList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;DenyBillingAndIAMPolicy&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;PolicyDocument&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Deny&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;aws-portal:*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:*&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Resource&quot;</span><span class="p">:</span><span class="s2">&quot;*&quot;</span>
+            <span class="p">}</span>
+          <span class="p">}</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:user/Bob&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;UserName&quot;</span><span class="p">:</span> <span class="s2">&quot;Charlie&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;GroupList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;Dev&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-14T18:33:56Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UserId&quot;</span><span class="p">:</span> <span class="s2">&quot;AIDACKCEVSQ6C4EXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UserPolicyList&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachedManagedPolicies&quot;</span><span class="p">:</span> <span class="p">[],</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:user/Charlie&quot;</span>
+    <span class="p">}],</span>
+  <span class="s2">&quot;Policies&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;create-update-delete-set-managed-policies&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-02-06T19:58:34Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachmentCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;IsAttachable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;PolicyId&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPAJ2UCCR6DPCEXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DefaultVersionId&quot;</span><span class="p">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PolicyVersionList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-02-06T19:58:34Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;VersionId&quot;</span><span class="p">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Document&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;iam:CreatePolicy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:CreatePolicyVersion&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:DeletePolicy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:DeletePolicyVersion&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:GetPolicy&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:GetPolicyVersion&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:ListPolicies&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:ListPolicyVersions&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;iam:SetDefaultPolicyVersion&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="s2">&quot;*&quot;</span>
+            <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;IsDefaultVersion&quot;</span><span class="p">:</span> <span class="n">true</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:policy/create-update-delete-set-managed-policies&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UpdateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-02-06T19:58:34Z&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;S3-read-only-specific-bucket&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-01-21T21:39:41Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachmentCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;IsAttachable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;PolicyId&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPAJ4AE5446DAEXAMPLE&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DefaultVersionId&quot;</span><span class="p">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PolicyVersionList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-01-21T21:39:41Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;VersionId&quot;</span><span class="p">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Document&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Action&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;s3:Get*&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;s3:List*&quot;</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;Resource&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;arn:aws:s3:::example-bucket&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;arn:aws:s3:::example-bucket/*&quot;</span>
+                <span class="p">]</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;IsDefaultVersion&quot;</span><span class="p">:</span> <span class="n">true</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:policy/S3-read-only-specific-bucket&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UpdateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-01-21T23:39:41Z&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;PolicyName&quot;</span><span class="p">:</span> <span class="s2">&quot;AmazonEC2FullAccess&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-02-06T18:40:15Z&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;AttachmentCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;IsAttachable&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;PolicyId&quot;</span><span class="p">:</span> <span class="s2">&quot;ANPAE3QWE5YT46TQ34WLG&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DefaultVersionId&quot;</span><span class="p">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PolicyVersionList&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+          <span class="s2">&quot;CreateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-10-30T20:59:46Z&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;VersionId&quot;</span><span class="p">:</span> <span class="s2">&quot;v1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Document&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Version&quot;</span><span class="p">:</span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Statement&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                <span class="s2">&quot;Action&quot;</span><span class="p">:</span><span class="s2">&quot;ec2:*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Resource&quot;</span><span class="p">:</span><span class="s2">&quot;*&quot;</span>
+              <span class="p">},</span>
+              <span class="p">{</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Action&quot;</span><span class="p">:</span><span class="s2">&quot;elasticloadbalancing:*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Resource&quot;</span><span class="p">:</span><span class="s2">&quot;*&quot;</span>
+              <span class="p">},</span>
+              <span class="p">{</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Action&quot;</span><span class="p">:</span><span class="s2">&quot;cloudwatch:*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Resource&quot;</span><span class="p">:</span><span class="s2">&quot;*&quot;</span>
+              <span class="p">},</span>
+              <span class="p">{</span>
+                <span class="s2">&quot;Effect&quot;</span><span class="p">:</span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Action&quot;</span><span class="p">:</span><span class="s2">&quot;autoscaling:*&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Resource&quot;</span><span class="p">:</span><span class="s2">&quot;*&quot;</span>
+              <span class="p">}</span>
+            <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;IsDefaultVersion&quot;</span><span class="p">:</span> <span class="n">true</span>
+        <span class="p">}</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;Path&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::aws:policy/AmazonEC2FullAccess&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;UpdateDate&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-02-06T18:40:15Z&quot;</span>
+    <span class="p">}],</span>
+  <span class="s2">&quot;Marker&quot;</span><span class="p">:</span> <span class="s2">&quot;EXAMPLEkakv9BCuUNFDtxWSyfzetYwEx2ADc8dnzfvERF5S6YMvXKx41t6gCl/eeaCX3Jo94/bKqezEAg8TEVS99EKFLxm3jtbpl25FDWEXAMPLE&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;IsTruncated&quot;</span><span class="p">:</span> <span class="n">true</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>UserDetailList -&gt; (list)</p>
+<blockquote>
+<div><p>A list containing information about IAM users.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM user, including all the user's policies and all the IAM groups the user is in.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div>The path to the user. For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>UserName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name identifying the user.</div></blockquote>
+<p>UserId -&gt; (string)</p>
+<blockquote>
+<div>The stable and unique string identifying the user. For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the user was created.</div></blockquote>
+<p>UserPolicyList -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the inline policies embedded in the user.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM policy, including the policy document.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the policy.</div></blockquote>
+<p>PolicyDocument -&gt; (string)</p>
+<blockquote>
+<div>The policy document.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GroupList -&gt; (list)</p>
+<blockquote>
+<div><p>A list of IAM groups that the user is in.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>AttachedManagedPolicies -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the managed policies attached to the user.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an attached policy.</p>
+<p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the  ListAttachedGroupPolicies ,  ListAttachedRolePolicies ,  ListAttachedUserPolicies , and  GetAccountAuthorizationDetails operations.</p>
+<p>For more information about managed policies, refer to <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <em>Using IAM</em> guide.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name of the attached policy.</div></blockquote>
+<p>PolicyArn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PermissionsBoundary -&gt; (structure)</p>
+<blockquote>
+<div><p>The ARN of the policy used to set the permissions boundary for the user.</p>
+<p>For more information about permissions boundaries, see <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities</a> in the <em>IAM User Guide</em> .</p>
+<p>PermissionsBoundaryType -&gt; (string)</p>
+<blockquote>
+<div>The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <tt class="docutils literal"><span class="pre">Policy</span></tt> .</div></blockquote>
+<p>PermissionsBoundaryArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the policy used to set the permissions boundary for the user or role.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GroupDetailList -&gt; (list)</p>
+<blockquote>
+<div><p>A list containing information about IAM groups.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM group, including all of the group's policies.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div>The path to the group. For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name that identifies the group.</div></blockquote>
+<p>GroupId -&gt; (string)</p>
+<blockquote>
+<div>The stable and unique string identifying the group. For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the group was created.</div></blockquote>
+<p>GroupPolicyList -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the inline policies embedded in the group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM policy, including the policy document.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the policy.</div></blockquote>
+<p>PolicyDocument -&gt; (string)</p>
+<blockquote>
+<div>The policy document.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AttachedManagedPolicies -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the managed policies attached to the group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an attached policy.</p>
+<p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the  ListAttachedGroupPolicies ,  ListAttachedRolePolicies ,  ListAttachedUserPolicies , and  GetAccountAuthorizationDetails operations.</p>
+<p>For more information about managed policies, refer to <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <em>Using IAM</em> guide.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name of the attached policy.</div></blockquote>
+<p>PolicyArn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RoleDetailList -&gt; (list)</p>
+<blockquote>
+<div><p>A list containing information about IAM roles.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM role, including all of the role's policies.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div>The path to the role. For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>RoleName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name that identifies the role.</div></blockquote>
+<p>RoleId -&gt; (string)</p>
+<blockquote>
+<div>The stable and unique string identifying the role. For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the role was created.</div></blockquote>
+<p>AssumeRolePolicyDocument -&gt; (string)</p>
+<blockquote>
+<div>The trust policy that grants permission to assume the role.</div></blockquote>
+<p>InstanceProfileList -&gt; (list)</p>
+<blockquote>
+<div><p>A list of instance profiles that contain this role.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an instance profile.</p>
+<p>This data type is used as a response element in the following operations:</p>
+<ul class="simple">
+<li>CreateInstanceProfile</li>
+<li>GetInstanceProfile</li>
+<li>ListInstanceProfiles</li>
+<li>ListInstanceProfilesForRole</li>
+</ul>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div>The path to the instance profile. For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>InstanceProfileName -&gt; (string)</p>
+<blockquote>
+<div>The name identifying the instance profile.</div></blockquote>
+<p>InstanceProfileId -&gt; (string)</p>
+<blockquote>
+<div>The stable and unique string identifying the instance profile. For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) specifying the instance profile. For more information about ARNs and how to use them in policies, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the instance profile was created.</div></blockquote>
+<p>Roles -&gt; (list)</p>
+<blockquote>
+<div><p>The role associated with the instance profile.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM role. This structure is returned as a response element in several API operations that interact with roles.</p>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div>The path to the role. For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>RoleName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name that identifies the role.</div></blockquote>
+<p>RoleId -&gt; (string)</p>
+<blockquote>
+<div>The stable and unique string identifying the role. For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in policies, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>IAM User Guide</em> guide.</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the role was created.</div></blockquote>
+<p>AssumeRolePolicyDocument -&gt; (string)</p>
+<blockquote>
+<div>The policy that grants an entity permission to assume the role.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the role that you provide.</div></blockquote>
+<p>MaxSessionDuration -&gt; (integer)</p>
+<blockquote>
+<div>The maximum session duration (in seconds) for the specified role. Anyone who uses the AWS CLI or API to assume the role can specify the duration using the optional <tt class="docutils literal"><span class="pre">DurationSeconds</span></tt> API parameter or <tt class="docutils literal"><span class="pre">duration-seconds</span></tt> CLI parameter.</div></blockquote>
+<p>PermissionsBoundary -&gt; (structure)</p>
+<blockquote>
+<div><p>The ARN of the policy used to set the permissions boundary for the role.</p>
+<p>For more information about permissions boundaries, see <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities</a> in the <em>IAM User Guide</em> .</p>
+<p>PermissionsBoundaryType -&gt; (string)</p>
+<blockquote>
+<div>The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <tt class="docutils literal"><span class="pre">Policy</span></tt> .</div></blockquote>
+<p>PermissionsBoundaryArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the policy used to set the permissions boundary for the user or role.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RolePolicyList -&gt; (list)</p>
+<blockquote>
+<div><p>A list of inline policies embedded in the role. These policies are the role's access (permissions) policies.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an IAM policy, including the policy document.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the policy.</div></blockquote>
+<p>PolicyDocument -&gt; (string)</p>
+<blockquote>
+<div>The policy document.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AttachedManagedPolicies -&gt; (list)</p>
+<blockquote>
+<div><p>A list of managed policies attached to the role. These policies are the role's access (permissions) policies.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an attached policy.</p>
+<p>An attached policy is a managed policy that has been attached to a user, group, or role. This data type is used as a response element in the  ListAttachedGroupPolicies ,  ListAttachedRolePolicies ,  ListAttachedUserPolicies , and  GetAccountAuthorizationDetails operations.</p>
+<p>For more information about managed policies, refer to <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <em>Using IAM</em> guide.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name of the attached policy.</div></blockquote>
+<p>PolicyArn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>PermissionsBoundary -&gt; (structure)</p>
+<blockquote>
+<div><p>The ARN of the policy used to set the permissions boundary for the role.</p>
+<p>For more information about permissions boundaries, see <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities</a> in the <em>IAM User Guide</em> .</p>
+<p>PermissionsBoundaryType -&gt; (string)</p>
+<blockquote>
+<div>The permissions boundary usage type that indicates what type of IAM resource is used as the permissions boundary for an entity. This data type can only have a value of <tt class="docutils literal"><span class="pre">Policy</span></tt> .</div></blockquote>
+<p>PermissionsBoundaryArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the policy used to set the permissions boundary for the user or role.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Policies -&gt; (list)</p>
+<blockquote>
+<div><p>A list containing information about managed policies.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about a managed policy, including the policy's ARN, versions, and the number of principal entities (users, groups, and roles) that the policy is attached to.</p>
+<p>This data type is used as a response element in the  GetAccountAuthorizationDetails operation.</p>
+<p>For more information about managed policies, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <em>Using IAM</em> guide.</p>
+<p>PolicyName -&gt; (string)</p>
+<blockquote>
+<div>The friendly name (not ARN) identifying the policy.</div></blockquote>
+<p>PolicyId -&gt; (string)</p>
+<blockquote>
+<div><p>The stable and unique string identifying the policy.</p>
+<p>For more information about IDs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</p>
+</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN). ARNs are unique identifiers for AWS resources.</p>
+<p>For more information about ARNs, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and AWS Service Namespaces</a> in the <em>AWS General Reference</em> .</p>
+</div></blockquote>
+<p>Path -&gt; (string)</p>
+<blockquote>
+<div><p>The path to the policy.</p>
+<p>For more information about paths, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <em>Using IAM</em> guide.</p>
+</div></blockquote>
+<p>DefaultVersionId -&gt; (string)</p>
+<blockquote>
+<div><p>The identifier for the version of the policy that is set as the default (operative) version.</p>
+<p>For more information about policy versions, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed Policies</a> in the <em>Using IAM</em> guide.</p>
+</div></blockquote>
+<p>AttachmentCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of principal entities (users, groups, and roles) that the policy is attached to.</div></blockquote>
+<p>PermissionsBoundaryUsageCount -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of entities (users and roles) for which the policy is used as the permissions boundary.</p>
+<p>For more information about permissions boundaries, see <a class="reference external" href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries for IAM Identities</a> in the <em>IAM User Guide</em> .</p>
+</div></blockquote>
+<p>IsAttachable -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the policy can be attached to an IAM user, group, or role.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A friendly description of the policy.</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the policy was created.</div></blockquote>
+<p>UpdateDate -&gt; (timestamp)</p>
+<blockquote>
+<div><p>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the policy was last updated.</p>
+<p>When a policy has only one version, this field contains the date and time when the policy was created. When a policy has more than one version, this field contains the date and time when the most recent policy version was created.</p>
+</div></blockquote>
+<p>PolicyVersionList -&gt; (list)</p>
+<blockquote>
+<div><p>A list containing information about the versions of the policy.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about a version of a managed policy.</p>
+<p>This data type is used as a response element in the  CreatePolicyVersion ,  GetPolicyVersion ,  ListPolicyVersions , and  GetAccountAuthorizationDetails operations.</p>
+<p>For more information about managed policies, refer to <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline Policies</a> in the <em>Using IAM</em> guide.</p>
+<p>Document -&gt; (string)</p>
+<blockquote>
+<div><p>The policy document.</p>
+<p>The policy document is returned in the response to the  GetPolicyVersion and  GetAccountAuthorizationDetails operations. It is not returned in the response to the  CreatePolicyVersion or  ListPolicyVersions operations.</p>
+<p>The policy document returned in this structure is URL-encoded compliant with <a class="reference external" href="https://tools.ietf.org/html/rfc3986">RFC 3986</a> . You can use a URL decoding method to convert the policy back to plain JSON text. For example, if you use Java, you can use the <tt class="docutils literal"><span class="pre">decode</span></tt> method of the <tt class="docutils literal"><span class="pre">java.net.URLDecoder</span></tt> utility class in the Java SDK. Other languages and SDKs provide similar functionality.</p>
+</div></blockquote>
+<p>VersionId -&gt; (string)</p>
+<blockquote>
+<div><p>The identifier for the policy version.</p>
+<p>Policy version identifiers always begin with <tt class="docutils literal"><span class="pre">v</span></tt> (always lowercase). When a policy is created, the first policy version is <tt class="docutils literal"><span class="pre">v1</span></tt> .</p>
+</div></blockquote>
+<p>IsDefaultVersion -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the policy version is set as the policy's default version.</div></blockquote>
+<p>CreateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time, in <a class="reference external" href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> , when the policy version was created.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div>A flag that indicates whether there are more items to return. If your results were truncated, you can make a subsequent pagination request using the <tt class="docutils literal"><span class="pre">Marker</span></tt> request parameter to retrieve more items. Note that IAM might return fewer than the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> number of results even when there are more results available. We recommend that you check <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> after every call to ensure that you receive all of your results.</div></blockquote>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>When <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> , this element is present and contains the value to use for the <tt class="docutils literal"><span class="pre">Marker</span></tt> parameter in a subsequent pagination request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iam/get-access-key-last-used.html" title="previous chapter (use the left arrow)">&larr; get-access-key-last-used</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iam/get-account-password-policy.html" title="next chapter (use the right arrow)">get-account-password-policy &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../iam/get-account-password-policy.html" title="get-account-password-policy"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iam/get-access-key-last-used.html" title="get-access-key-last-used"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iam/index.html" >iam</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

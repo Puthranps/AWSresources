@@ -1,0 +1,8 @@
+{
+    "ClusterId": "",
+    "InstanceFleet": {
+        "InstanceFleetId": "",
+        "TargetOnDemandCapacity": 0,
+        "TargetSpotCapacity": 0
+    }
+}

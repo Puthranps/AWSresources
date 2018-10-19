@@ -1,0 +1,16 @@
+{
+    "XssMatchSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "XssMatchTuple": {
+                "FieldToMatch": {
+                    "Type": "QUERY_STRING",
+                    "Data": ""
+                },
+                "TextTransformation": "URL_DECODE"
+            }
+        }
+    ]
+}

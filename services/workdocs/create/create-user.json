@@ -1,0 +1,14 @@
+{
+    "OrganizationId": "",
+    "Username": "",
+    "EmailAddress": "",
+    "GivenName": "",
+    "Surname": "",
+    "Password": "",
+    "TimeZoneId": "",
+    "StorageRule": {
+        "StorageAllocatedInBytes": 0,
+        "StorageType": "UNLIMITED"
+    },
+    "AuthenticationToken": ""
+}

@@ -1,0 +1,10 @@
+{
+    "CacheParameterGroupName": "",
+    "ResetAllParameters": true,
+    "ParameterNameValues": [
+        {
+            "ParameterName": "",
+            "ParameterValue": ""
+        }
+    ]
+}

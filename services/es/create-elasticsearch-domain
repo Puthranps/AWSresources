@@ -1,0 +1,52 @@
+{
+    "DomainName": "",
+    "ElasticsearchVersion": "",
+    "ElasticsearchClusterConfig": {
+        "InstanceType": "i3.16xlarge.elasticsearch",
+        "InstanceCount": 0,
+        "DedicatedMasterEnabled": true,
+        "ZoneAwarenessEnabled": true,
+        "DedicatedMasterType": "m4.large.elasticsearch",
+        "DedicatedMasterCount": 0
+    },
+    "EBSOptions": {
+        "EBSEnabled": true,
+        "VolumeType": "standard",
+        "VolumeSize": 0,
+        "Iops": 0
+    },
+    "AccessPolicies": "",
+    "SnapshotOptions": {
+        "AutomatedSnapshotStartHour": 0
+    },
+    "VPCOptions": {
+        "SubnetIds": [
+            ""
+        ],
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "CognitoOptions": {
+        "Enabled": true,
+        "UserPoolId": "",
+        "IdentityPoolId": "",
+        "RoleArn": ""
+    },
+    "EncryptionAtRestOptions": {
+        "Enabled": true,
+        "KmsKeyId": ""
+    },
+    "NodeToNodeEncryptionOptions": {
+        "Enabled": true
+    },
+    "AdvancedOptions": {
+        "KeyName": ""
+    },
+    "LogPublishingOptions": {
+        "KeyName": {
+            "CloudWatchLogsLogGroupArn": "",
+            "Enabled": true
+        }
+    }
+}

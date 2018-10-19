@@ -1,0 +1,19 @@
+{
+    "ReplicationGroupId": "",
+    "NodeGroupCount": 0,
+    "ApplyImmediately": true,
+    "ReshardingConfiguration": [
+        {
+            "NodeGroupId": "",
+            "PreferredAvailabilityZones": [
+                ""
+            ]
+        }
+    ],
+    "NodeGroupsToRemove": [
+        ""
+    ],
+    "NodeGroupsToRetain": [
+        ""
+    ]
+}

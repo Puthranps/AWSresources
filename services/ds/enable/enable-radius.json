@@ -1,0 +1,15 @@
+{
+    "DirectoryId": "",
+    "RadiusSettings": {
+        "RadiusServers": [
+            ""
+        ],
+        "RadiusPort": 0,
+        "RadiusTimeout": 0,
+        "RadiusRetries": 0,
+        "SharedSecret": "",
+        "AuthenticationProtocol": "PAP",
+        "DisplayLabel": "",
+        "UseSameUsername": true
+    }
+}

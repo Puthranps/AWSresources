@@ -1,0 +1,14 @@
+{
+    "DomainName": "",
+    "AnalysisScheme": {
+        "AnalysisSchemeName": "",
+        "AnalysisSchemeLanguage": "es",
+        "AnalysisOptions": {
+            "Synonyms": "",
+            "Stopwords": "",
+            "StemmingDictionary": "",
+            "JapaneseTokenizationDictionary": "",
+            "AlgorithmicStemming": "full"
+        }
+    }
+}

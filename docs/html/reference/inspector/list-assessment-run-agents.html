@@ -1,0 +1,513 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-assessment-run-agents &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="inspector" href="../inspector/index.html" />
+    <link rel="next" title="list-assessment-runs" href="../inspector/list-assessment-runs.html" />
+    <link rel="prev" title="get-telemetry-metadata" href="../inspector/get-telemetry-metadata.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../inspector/list-assessment-runs.html" title="list-assessment-runs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../inspector/get-telemetry-metadata.html" title="get-telemetry-metadata"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../inspector/index.html" accesskey="U">inspector</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../inspector/get-telemetry-metadata.html" title="previous chapter (use the left arrow)">&larr; get-telemetry-metadata</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../inspector/list-assessment-runs.html" title="next chapter (use the right arrow)">list-assessment-runs &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-assessment-run-agents</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/inspector/list-assessment-run-agents">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../inspector/index.html#cli-aws-inspector"><em>inspector</em></a> ]</p>
+<div class="section" id="list-assessment-run-agents">
+<span id="cli-aws-inspector-list-assessment-run-agents"></span><h1>list-assessment-run-agents<a class="headerlink" href="#list-assessment-run-agents" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Lists the agents of the assessment runs that are specified by the ARNs of the assessment runs.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/ListAssessmentRunAgents">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">list-assessment-run-agents</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">assessmentRunAgents</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  list-assessment-run-agents
+--assessment-run-arn &lt;value&gt;
+[--filter &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--assessment-run-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN that specifies the assessment run whose agents you want to list.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--filter</span></tt> (structure)</p>
+<blockquote>
+<div><p>You can use this parameter to specify a subset of data to be included in the action's response.</p>
+<p>For a record to match a filter, all specified filter attributes must match. When multiple values are specified for a filter attribute, any of the values can match.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">agentHealths</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">agentHealthCodes</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;agentHealths&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;HEALTHY&quot;</span><span class="o">|</span><span class="s2">&quot;UNHEALTHY&quot;</span><span class="o">|</span><span class="s2">&quot;UNKNOWN&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;agentHealthCodes&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;IDLE&quot;</span><span class="o">|</span><span class="s2">&quot;RUNNING&quot;</span><span class="o">|</span><span class="s2">&quot;SHUTDOWN&quot;</span><span class="o">|</span><span class="s2">&quot;UNHEALTHY&quot;</span><span class="o">|</span><span class="s2">&quot;THROTTLED&quot;</span><span class="o">|</span><span class="s2">&quot;UNKNOWN&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div><p>The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To list assessment run agents</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">list-assessment-run-agents</span></tt> command lists the agents of the assessment run with the ARN of <tt class="docutils literal"><span class="pre">arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE</span></tt>:</p>
+<div class="highlight-python"><pre>aws inspector list-assessment-run-agents --assessment-run-arn arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><pre>{</pre>
+</div>
+<blockquote>
+<div><blockquote>
+<div><dl class="docutils">
+<dt>&quot;assessmentRunAgents&quot;: [</dt>
+<dd><dl class="first docutils">
+<dt>{</dt>
+<dd><p class="first">&quot;agentHealth&quot;: &quot;HEALTHY&quot;,
+&quot;agentHealthCode&quot;: &quot;HEALTHY&quot;,
+&quot;agentId&quot;: &quot;i-49113b93&quot;,
+&quot;assessmentRunArn&quot;: &quot;arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE&quot;,
+&quot;telemetryMetadata&quot;: [</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>{</dt>
+<dd>&quot;count&quot;: 2,
+&quot;dataSize&quot;: 345,
+&quot;messageType&quot;: &quot;InspectorDuplicateProcess&quot;</dd>
+</dl>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 3,
+&quot;dataSize&quot;: 255,
+&quot;messageType&quot;: &quot;InspectorTimeEventMsg&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 4,
+&quot;dataSize&quot;: 1082,
+&quot;messageType&quot;: &quot;InspectorNetworkInterface&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 2,
+&quot;dataSize&quot;: 349,
+&quot;messageType&quot;: &quot;InspectorDnsEntry&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 11,
+&quot;dataSize&quot;: 2514,
+&quot;messageType&quot;: &quot;InspectorDirectoryInfoMsg&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 179,
+&quot;messageType&quot;: &quot;InspectorTcpV6ListeningPort&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 101,
+&quot;dataSize&quot;: 10949,
+&quot;messageType&quot;: &quot;InspectorTerminal&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 26,
+&quot;dataSize&quot;: 5916,
+&quot;messageType&quot;: &quot;InspectorUser&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 282,
+&quot;dataSize&quot;: 32148,
+&quot;messageType&quot;: &quot;InspectorDynamicallyLoadedCodeModule&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 18,
+&quot;dataSize&quot;: 10172,
+&quot;messageType&quot;: &quot;InspectorCreateProcess&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 3,
+&quot;dataSize&quot;: 8001,
+&quot;messageType&quot;: &quot;InspectorProcessPerformance&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 360,
+&quot;messageType&quot;: &quot;InspectorOperatingSystem&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 6,
+&quot;dataSize&quot;: 546,
+&quot;messageType&quot;: &quot;InspectorStopProcess&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 1553,
+&quot;messageType&quot;: &quot;InspectorInstanceMetaData&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 2,
+&quot;dataSize&quot;: 434,
+&quot;messageType&quot;: &quot;InspectorTcpV4Connection&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 474,
+&quot;dataSize&quot;: 2960322,
+&quot;messageType&quot;: &quot;InspectorPackageInfo&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 3,
+&quot;dataSize&quot;: 2235,
+&quot;messageType&quot;: &quot;InspectorSystemPerformance&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 105,
+&quot;dataSize&quot;: 46048,
+&quot;messageType&quot;: &quot;InspectorCodeModule&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 182,
+&quot;messageType&quot;: &quot;InspectorUdpV6ListeningPort&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 2,
+&quot;dataSize&quot;: 371,
+&quot;messageType&quot;: &quot;InspectorUdpV4ListeningPort&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 18,
+&quot;dataSize&quot;: 8362,
+&quot;messageType&quot;: &quot;InspectorKernelModule&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 29,
+&quot;dataSize&quot;: 48788,
+&quot;messageType&quot;: &quot;InspectorConfigurationInfo&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 79,
+&quot;messageType&quot;: &quot;InspectorMonitoringStart&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 5,
+&quot;dataSize&quot;: 0,
+&quot;messageType&quot;: &quot;InspectorSplitMsgBegin&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 51,
+&quot;dataSize&quot;: 4593,
+&quot;messageType&quot;: &quot;InspectorGroup&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 184,
+&quot;messageType&quot;: &quot;InspectorTcpV4ListeningPort&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1159,
+&quot;dataSize&quot;: 3146579,
+&quot;messageType&quot;: &quot;Total&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 5,
+&quot;dataSize&quot;: 0,
+&quot;messageType&quot;: &quot;InspectorSplitMsgEnd&quot;</div></blockquote>
+<p>},
+{</p>
+<blockquote>
+<div>&quot;count&quot;: 1,
+&quot;dataSize&quot;: 612,
+&quot;messageType&quot;: &quot;InspectorLoadImageInProcess&quot;</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p class="last">]</p>
+</dd>
+</dl>
+<p class="last">}</p>
+</dd>
+</dl>
+<p>]</p>
+</div></blockquote>
+<p>}</p>
+</div></blockquote>
+<p>For more information, see <a class="reference external" href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_agents.html">AWS Agents</a> in the <em>Amazon Inspector</em> guide.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>assessmentRunAgents -&gt; (list)</p>
+<blockquote>
+<div><p>A list of ARNs that specifies the agents returned by the action.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about an Amazon Inspector agent. This data type is used as a response element in the  ListAssessmentRunAgents action.</p>
+<p>agentId -&gt; (string)</p>
+<blockquote>
+<div>The AWS account of the EC2 instance where the agent is installed.</div></blockquote>
+<p>assessmentRunArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the assessment run that is associated with the agent.</div></blockquote>
+<p>agentHealth -&gt; (string)</p>
+<blockquote>
+<div>The current health state of the agent.</div></blockquote>
+<p>agentHealthCode -&gt; (string)</p>
+<blockquote>
+<div>The detailed health state of the agent.</div></blockquote>
+<p>agentHealthDetails -&gt; (string)</p>
+<blockquote>
+<div>The description for the agent health code.</div></blockquote>
+<p>autoScalingGroup -&gt; (string)</p>
+<blockquote>
+<div>The Auto Scaling group of the EC2 instance that is specified by the agent ID.</div></blockquote>
+<p>telemetryMetadata -&gt; (list)</p>
+<blockquote>
+<div><p>The Amazon Inspector application data metrics that are collected by the agent.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the  GetTelemetryMetadata action.</p>
+<p>messageType -&gt; (string)</p>
+<blockquote>
+<div>A specific type of behavioral data that is collected by the agent.</div></blockquote>
+<p>count -&gt; (long)</p>
+<blockquote>
+<div>The count of messages that the agent sends to the Amazon Inspector service.</div></blockquote>
+<p>dataSize -&gt; (long)</p>
+<blockquote>
+<div>The data size of messages that the agent sends to the Amazon Inspector service.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextToken -&gt; (string)</p>
+<blockquote>
+<div>When a response is generated, if there is more data to be listed, this parameter is present in the response and contains the value to use for the <strong>nextToken</strong> parameter in a subsequent pagination request. If there is no more data to be listed, this parameter is set to null.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../inspector/get-telemetry-metadata.html" title="previous chapter (use the left arrow)">&larr; get-telemetry-metadata</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../inspector/list-assessment-runs.html" title="next chapter (use the right arrow)">list-assessment-runs &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../inspector/list-assessment-runs.html" title="list-assessment-runs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../inspector/get-telemetry-metadata.html" title="get-telemetry-metadata"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../inspector/index.html" >inspector</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

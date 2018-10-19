@@ -1,0 +1,86 @@
+{
+    "Bucket": "",
+    "Key": "",
+    "VersionId": "",
+    "RestoreRequest": {
+        "Days": 0,
+        "GlacierJobParameters": {
+            "Tier": "Expedited"
+        },
+        "Type": "SELECT",
+        "Tier": "Bulk",
+        "Description": "",
+        "SelectParameters": {
+            "InputSerialization": {
+                "CSV": {
+                    "FileHeaderInfo": "USE",
+                    "Comments": "",
+                    "QuoteEscapeCharacter": "",
+                    "RecordDelimiter": "",
+                    "FieldDelimiter": "",
+                    "QuoteCharacter": "",
+                    "AllowQuotedRecordDelimiter": true
+                },
+                "CompressionType": "GZIP",
+                "JSON": {
+                    "Type": "DOCUMENT"
+                },
+                "Parquet": {}
+            },
+            "ExpressionType": "SQL",
+            "Expression": "",
+            "OutputSerialization": {
+                "CSV": {
+                    "QuoteFields": "ASNEEDED",
+                    "QuoteEscapeCharacter": "",
+                    "RecordDelimiter": "",
+                    "FieldDelimiter": "",
+                    "QuoteCharacter": ""
+                },
+                "JSON": {
+                    "RecordDelimiter": ""
+                }
+            }
+        },
+        "OutputLocation": {
+            "S3": {
+                "BucketName": "",
+                "Prefix": "",
+                "Encryption": {
+                    "EncryptionType": "AES256",
+                    "KMSKeyId": "",
+                    "KMSContext": ""
+                },
+                "CannedACL": "authenticated-read",
+                "AccessControlList": [
+                    {
+                        "Grantee": {
+                            "DisplayName": "",
+                            "EmailAddress": "",
+                            "ID": "",
+                            "Type": "CanonicalUser",
+                            "URI": ""
+                        },
+                        "Permission": "FULL_CONTROL"
+                    }
+                ],
+                "Tagging": {
+                    "TagSet": [
+                        {
+                            "Key": "",
+                            "Value": ""
+                        }
+                    ]
+                },
+                "UserMetadata": [
+                    {
+                        "Name": "",
+                        "Value": ""
+                    }
+                ],
+                "StorageClass": "ONEZONE_IA"
+            }
+        }
+    },
+    "RequestPayer": "requester"
+}

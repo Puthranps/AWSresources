@@ -1,0 +1,11 @@
+{
+    "CatalogId": "",
+    "Filter": {
+        "MatchCriteria": [
+            ""
+        ],
+        "ConnectionType": "SFTP"
+    },
+    "NextToken": "",
+    "MaxResults": 0
+}

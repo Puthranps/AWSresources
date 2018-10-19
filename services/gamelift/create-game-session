@@ -1,0 +1,16 @@
+{
+    "FleetId": "",
+    "AliasId": "",
+    "MaximumPlayerSessionCount": 0,
+    "Name": "",
+    "GameProperties": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "CreatorId": "",
+    "GameSessionId": "",
+    "IdempotencyToken": "",
+    "GameSessionData": ""
+}

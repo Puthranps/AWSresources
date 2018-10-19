@@ -1,0 +1,20 @@
+{
+    "DryRun": true,
+    "LaunchTemplateId": "",
+    "LaunchTemplateName": "",
+    "Versions": [
+        ""
+    ],
+    "MinVersion": "",
+    "MaxVersion": "",
+    "NextToken": "",
+    "MaxResults": 0,
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ]
+}

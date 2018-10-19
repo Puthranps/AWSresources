@@ -1,0 +1,34 @@
+[ :ref:`aws <cli:aws>` . :ref:`dynamodb <cli:aws dynamodb>` ]
+
+.. _cli:aws dynamodb wait:
+
+
+****
+wait
+****
+
+
+
+===========
+Description
+===========
+
+Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  table-exists
+  table-not-exists

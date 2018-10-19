@@ -1,0 +1,7 @@
+{
+    "AutoScalingGroupName": "",
+    "PolicyName": "",
+    "HonorCooldown": true,
+    "MetricValue": null,
+    "BreachThreshold": null
+}

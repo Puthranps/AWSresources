@@ -1,0 +1,13 @@
+{
+    "Policy": "",
+    "Description": "",
+    "KeyUsage": "ENCRYPT_DECRYPT",
+    "Origin": "AWS_KMS",
+    "BypassPolicyLockoutSafetyCheck": true,
+    "Tags": [
+        {
+            "TagKey": "",
+            "TagValue": ""
+        }
+    ]
+}

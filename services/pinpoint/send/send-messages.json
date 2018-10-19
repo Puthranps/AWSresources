@@ -1,0 +1,173 @@
+{
+    "ApplicationId": "",
+    "MessageRequest": {
+        "Addresses": {
+            "KeyName": {
+                "BodyOverride": "",
+                "ChannelType": "APNS_VOIP",
+                "Context": {
+                    "KeyName": ""
+                },
+                "RawContent": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "TitleOverride": ""
+            }
+        },
+        "Context": {
+            "KeyName": ""
+        },
+        "Endpoints": {
+            "KeyName": {
+                "BodyOverride": "",
+                "Context": {
+                    "KeyName": ""
+                },
+                "RawContent": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "TitleOverride": ""
+            }
+        },
+        "MessageConfiguration": {
+            "ADMMessage": {
+                "Action": "URL",
+                "Body": "",
+                "ConsolidationKey": "",
+                "Data": {
+                    "KeyName": ""
+                },
+                "ExpiresAfter": "",
+                "IconReference": "",
+                "ImageIconUrl": "",
+                "ImageUrl": "",
+                "MD5": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "SmallImageIconUrl": "",
+                "Sound": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "Title": "",
+                "Url": ""
+            },
+            "APNSMessage": {
+                "Action": "DEEP_LINK",
+                "Badge": 0,
+                "Body": "",
+                "Category": "",
+                "CollapseId": "",
+                "Data": {
+                    "KeyName": ""
+                },
+                "MediaUrl": "",
+                "PreferredAuthenticationMethod": "",
+                "Priority": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "Sound": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "ThreadId": "",
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "BaiduMessage": {
+                "Action": "URL",
+                "Body": "",
+                "Data": {
+                    "KeyName": ""
+                },
+                "IconReference": "",
+                "ImageIconUrl": "",
+                "ImageUrl": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "SmallImageIconUrl": "",
+                "Sound": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "DefaultMessage": {
+                "Body": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                }
+            },
+            "DefaultPushNotificationMessage": {
+                "Action": "DEEP_LINK",
+                "Body": "",
+                "Data": {
+                    "KeyName": ""
+                },
+                "SilentPush": true,
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "Title": "",
+                "Url": ""
+            },
+            "GCMMessage": {
+                "Action": "URL",
+                "Body": "",
+                "CollapseKey": "",
+                "Data": {
+                    "KeyName": ""
+                },
+                "IconReference": "",
+                "ImageIconUrl": "",
+                "ImageUrl": "",
+                "Priority": "",
+                "RawContent": "",
+                "RestrictedPackageName": "",
+                "SilentPush": true,
+                "SmallImageIconUrl": "",
+                "Sound": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                },
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "SMSMessage": {
+                "Body": "",
+                "Keyword": "",
+                "MessageType": "TRANSACTIONAL",
+                "OriginationNumber": "",
+                "SenderId": "",
+                "Substitutions": {
+                    "KeyName": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "TraceId": ""
+    }
+}

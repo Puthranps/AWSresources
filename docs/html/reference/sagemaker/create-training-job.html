@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-training-job &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sagemaker" href="../sagemaker/index.html" />
+    <link rel="next" title="create-transform-job" href="../sagemaker/create-transform-job.html" />
+    <link rel="prev" title="create-presigned-notebook-instance-url" href="../sagemaker/create-presigned-notebook-instance-url.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/create-transform-job.html" title="create-transform-job"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/create-presigned-notebook-instance-url.html" title="create-presigned-notebook-instance-url"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" accesskey="U">sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/create-presigned-notebook-instance-url.html" title="previous chapter (use the left arrow)">&larr; create-presigned-notebook-instance-url</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/create-transform-job.html" title="next chapter (use the right arrow)">create-transform-job &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-training-job</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sagemaker/create-training-job">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sagemaker/index.html#cli-aws-sagemaker"><em>sagemaker</em></a> ]</p>
+<div class="section" id="create-training-job">
+<span id="cli-aws-sagemaker-create-training-job"></span><h1>create-training-job<a class="headerlink" href="#create-training-job" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Starts a model training job. After training completes, Amazon SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify.</p>
+<p>If you choose to host your model using Amazon SageMaker hosting services, you can use the resulting model artifacts as part of the model. You can also use the artifacts in a deep learning service other than Amazon SageMaker, provided that you know how to use them for inferences.</p>
+<p>In the request body, you provide the following:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AlgorithmSpecification</span></tt> - Identifies the training algorithm to use.</li>
+<li><tt class="docutils literal"><span class="pre">HyperParameters</span></tt> - Specify these algorithm-specific parameters to influence the quality of the final model. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a> .</li>
+<li><tt class="docutils literal"><span class="pre">InputDataConfig</span></tt> - Describes the training dataset and the Amazon S3 location where it is stored.</li>
+<li><tt class="docutils literal"><span class="pre">OutputDataConfig</span></tt> - Identifies the Amazon S3 location where you want Amazon SageMaker to save the results of model training.</li>
+<li><tt class="docutils literal"><span class="pre">ResourceConfig</span></tt> - Identifies the resources, ML compute instances, and ML storage volumes to deploy for model training. In distributed training, you specify more than one instance.</li>
+<li><tt class="docutils literal"><span class="pre">RoleARN</span></tt> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can successfully complete model training.</li>
+<li><tt class="docutils literal"><span class="pre">StoppingCondition</span></tt> - Sets a duration for training. Use this parameter to cap model training costs.</li>
+</ul>
+<p>For more information about Amazon SageMaker, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrainingJob">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-training-job
+--training-job-name &lt;value&gt;
+[--hyper-parameters &lt;value&gt;]
+--algorithm-specification &lt;value&gt;
+--role-arn &lt;value&gt;
+--input-data-config &lt;value&gt;
+--output-data-config &lt;value&gt;
+--resource-config &lt;value&gt;
+[--vpc-config &lt;value&gt;]
+--stopping-condition &lt;value&gt;
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--training-job-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the training job. The name must be unique within an AWS Region in an AWS account.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--hyper-parameters</span></tt> (map)</p>
+<blockquote>
+<div><p>Algorithm-specific parameters that influence the quality of the model. You set hyperparameters before you start the learning process. For a list of hyperparameters for each training algorithm provided by Amazon SageMaker, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a> .</p>
+<p>You can specify a maximum of 100 hyperparameters. Each hyperparameter is a key-value pair. Each key and value is limited to 256 characters, as specified by the <tt class="docutils literal"><span class="pre">Length</span> <span class="pre">Constraint</span></tt> .</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{&quot;string&quot;: &quot;string&quot;
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--algorithm-specification</span></tt> (structure)</p>
+<blockquote>
+<div>The registry path of the Docker image that contains the training algorithm and algorithm-specific metadata, including the input mode. For more information about algorithms provided by Amazon SageMaker, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a> . For information about providing your own algorithms, see  your-algorithms .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">TrainingImage</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">TrainingInputMode</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TrainingImage&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;TrainingInputMode&quot;</span><span class="p">:</span> <span class="s2">&quot;Pipe&quot;</span><span class="o">|</span><span class="s2">&quot;File&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--role-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker can assume to perform tasks on your behalf.</p>
+<p>During model training, Amazon SageMaker needs your permission to read input data from an S3 bucket, download a Docker image that contains training code, write model artifacts to an S3 bucket, write logs to Amazon CloudWatch Logs, and publish metrics to Amazon CloudWatch. You grant permissions for all of these tasks to an IAM role. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To be able to pass this role to Amazon SageMaker, the caller of this API must have the <tt class="docutils literal"><span class="pre">iam:PassRole</span></tt> permission.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--input-data-config</span></tt> (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">Channel</span></tt> objects. Each channel is a named input source. <tt class="docutils literal"><span class="pre">InputDataConfig</span></tt> describes the input data and its location.</p>
+<p>Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of input data, <tt class="docutils literal"><span class="pre">training_data</span></tt> and <tt class="docutils literal"><span class="pre">validation_data</span></tt> . The configuration for each channel provides the S3 location where the input data is stored. It also provides information about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.</p>
+<p>Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an S3 bucket to a local directory in the Docker container, or makes it available as input streams.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>ChannelName=string,DataSource={S3DataSource={S3DataType=string,S3Uri=string,S3DataDistributionType=string}},ContentType=string,CompressionType=string,RecordWrapperType=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;ChannelName&quot;: &quot;string&quot;,
+    &quot;DataSource&quot;: {
+      &quot;S3DataSource&quot;: {
+        &quot;S3DataType&quot;: &quot;ManifestFile&quot;|&quot;S3Prefix&quot;,
+        &quot;S3Uri&quot;: &quot;string&quot;,
+        &quot;S3DataDistributionType&quot;: &quot;FullyReplicated&quot;|&quot;ShardedByS3Key&quot;
+      }
+    },
+    &quot;ContentType&quot;: &quot;string&quot;,
+    &quot;CompressionType&quot;: &quot;None&quot;|&quot;Gzip&quot;,
+    &quot;RecordWrapperType&quot;: &quot;None&quot;|&quot;RecordIO&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--output-data-config</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders for the artifacts.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KmsKeyId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">S3OutputPath</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;KmsKeyId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;S3OutputPath&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--resource-config</span></tt> (structure)</p>
+<blockquote>
+<div><p>The resources, including the ML compute instances and ML storage volumes, to use for model training.</p>
+<p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use ML storage volumes for scratch space. If you want Amazon SageMaker to use the ML storage volume to store the training data, choose <tt class="docutils literal"><span class="pre">File</span></tt> as the <tt class="docutils literal"><span class="pre">TrainingInputMode</span></tt> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">InstanceType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">InstanceCount</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">VolumeSizeInGB</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">VolumeKmsKeyId</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;ml.m4.xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m4.2xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m4.4xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m4.10xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m4.16xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m5.large&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m5.xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m5.2xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m5.4xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m5.12xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.m5.24xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c4.xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c4.2xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c4.4xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c4.8xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.p2.xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.p2.8xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.p2.16xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.p3.2xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.p3.8xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.p3.16xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c5.xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c5.2xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c5.4xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c5.9xlarge&quot;</span><span class="o">|</span><span class="s2">&quot;ml.c5.18xlarge&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;InstanceCount&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;VolumeSizeInGB&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;VolumeKmsKeyId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--vpc-config</span></tt> (structure)</p>
+<blockquote>
+<div>A  VpcConfig object that specifies the VPC that you want your training job to connect to. Control access to and from your training container by configuring the VPC. For more information, see  train-vpc</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Subnets</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Subnets&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--stopping-condition</span></tt> (structure)</p>
+<blockquote>
+<div><p>Sets a duration for training. Use this parameter to cap model training costs. To stop a job, Amazon SageMaker sends the algorithm the <tt class="docutils literal"><span class="pre">SIGTERM</span></tt> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.</p>
+<p>When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided by Amazon SageMaker save the intermediate results of the job. This intermediate data is a valid model artifact. You can use it to create a model using the <tt class="docutils literal"><span class="pre">CreateModel</span></tt> API.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">MaxRuntimeInSeconds</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;MaxRuntimeInSeconds&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>An array of key-value pairs. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <em>AWS Billing and Cost Management User Guide</em> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>TrainingJobArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the training job.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/create-presigned-notebook-instance-url.html" title="previous chapter (use the left arrow)">&larr; create-presigned-notebook-instance-url</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/create-transform-job.html" title="next chapter (use the right arrow)">create-transform-job &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/create-transform-job.html" title="create-transform-job"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/create-presigned-notebook-instance-url.html" title="create-presigned-notebook-instance-url"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" >sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

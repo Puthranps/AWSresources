@@ -1,0 +1,41 @@
+{
+    "StackId": "",
+    "Shortname": "",
+    "Name": "",
+    "Description": "",
+    "DataSources": [
+        {
+            "Type": "",
+            "Arn": "",
+            "DatabaseName": ""
+        }
+    ],
+    "Type": "aws-flow-ruby",
+    "AppSource": {
+        "Type": "svn",
+        "Url": "",
+        "Username": "",
+        "Password": "",
+        "SshKey": "",
+        "Revision": ""
+    },
+    "Domains": [
+        ""
+    ],
+    "EnableSsl": true,
+    "SslConfiguration": {
+        "Certificate": "",
+        "PrivateKey": "",
+        "Chain": ""
+    },
+    "Attributes": {
+        "KeyName": ""
+    },
+    "Environment": [
+        {
+            "Key": "",
+            "Value": "",
+            "Secure": true
+        }
+    ]
+}

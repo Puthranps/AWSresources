@@ -1,0 +1,14 @@
+{
+    "arn": "",
+    "name": "",
+    "description": "",
+    "type": "PRIVATE",
+    "uplinkBandwidthBits": 0,
+    "downlinkBandwidthBits": 0,
+    "uplinkDelayMs": 0,
+    "downlinkDelayMs": 0,
+    "uplinkJitterMs": 0,
+    "downlinkJitterMs": 0,
+    "uplinkLossPercent": 0,
+    "downlinkLossPercent": 0
+}

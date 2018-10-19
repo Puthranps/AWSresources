@@ -1,0 +1,19 @@
+{
+    "restApiId": "",
+    "resourceId": "",
+    "httpMethod": "",
+    "pathWithQueryString": "",
+    "body": "",
+    "headers": {
+        "KeyName": ""
+    },
+    "multiValueHeaders": {
+        "KeyName": [
+            ""
+        ]
+    },
+    "clientCertificateId": "",
+    "stageVariables": {
+        "KeyName": ""
+    }
+}

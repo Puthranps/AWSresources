@@ -1,0 +1,260 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 describe-elastic-gpus:
+
+
+*********************
+describe-elastic-gpus
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Describes the Elastic GPUs associated with your instances. For more information about Elastic GPUs, see `Amazon EC2 Elastic GPUs <http://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-gpus.html>`__ .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeElasticGpus>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-elastic-gpus
+  [--elastic-gpu-ids <value>]
+  [--dry-run | --no-dry-run]
+  [--filters <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--elastic-gpu-ids`` (list)
+
+
+  One or more Elastic GPU IDs.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--filters`` (list)
+
+
+  One or more filters.
+
+   
+
+   
+  * ``availability-zone`` - The Availability Zone in which the Elastic GPU resides. 
+   
+  * ``elastic-gpu-health`` - The status of the Elastic GPU (``OK`` | ``IMPAIRED`` ). 
+   
+  * ``elastic-gpu-state`` - The state of the Elastic GPU (``ATTACHED`` ). 
+   
+  * ``elastic-gpu-type`` - The type of Elastic GPU; for example, ``eg1.medium`` . 
+   
+  * ``instance-id`` - The ID of the instance to which the Elastic GPU is associated. 
+   
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned ``NextToken`` value. This value can be between 5 and 1000.
+
+  
+
+``--next-token`` (string)
+
+
+  The token to request the next page of results.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To describe an Elastic GPU**
+
+Command::
+
+  aws ec2 describe-elastic-gpus --elastic-gpu-ids egpu-12345678901234567890abcdefghijkl
+
+======
+Output
+======
+
+ElasticGpuSet -> (list)
+
+  
+
+  Information about the Elastic GPUs.
+
+  
+
+  (structure)
+
+    
+
+    Describes an Elastic GPU.
+
+    
+
+    ElasticGpuId -> (string)
+
+      
+
+      The ID of the Elastic GPU.
+
+      
+
+      
+
+    AvailabilityZone -> (string)
+
+      
+
+      The Availability Zone in the which the Elastic GPU resides.
+
+      
+
+      
+
+    ElasticGpuType -> (string)
+
+      
+
+      The type of Elastic GPU.
+
+      
+
+      
+
+    ElasticGpuHealth -> (structure)
+
+      
+
+      The status of the Elastic GPU.
+
+      
+
+      Status -> (string)
+
+        
+
+        The health status.
+
+        
+
+        
+
+      
+
+    ElasticGpuState -> (string)
+
+      
+
+      The state of the Elastic GPU.
+
+      
+
+      
+
+    InstanceId -> (string)
+
+      
+
+      The ID of the instance to which the Elastic GPU is attached.
+
+      
+
+      
+
+    
+
+  
+
+MaxResults -> (integer)
+
+  
+
+  The total number of items to return. If the total number of items available is more than the value specified in max-items then a Next-Token will be provided in the output that you can use to resume pagination.
+
+  
+
+  
+
+NextToken -> (string)
+
+  
+
+  The token to use to retrieve the next page of results. This value is ``null`` when there are no more results to return.
+
+  
+
+  
+

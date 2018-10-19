@@ -1,0 +1,10 @@
+{
+    "ClientToken": "",
+    "DryRun": true,
+    "PurchaseRequests": [
+        {
+            "InstanceCount": 0,
+            "PurchaseToken": ""
+        }
+    ]
+}

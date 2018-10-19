@@ -1,0 +1,9 @@
+{
+    "SubscriptionName": "",
+    "SnsTopicArn": "",
+    "SourceType": "",
+    "EventCategories": [
+        ""
+    ],
+    "Enabled": true
+}

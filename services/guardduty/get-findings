@@ -1,0 +1,10 @@
+{
+    "DetectorId": "",
+    "FindingIds": [
+        ""
+    ],
+    "SortCriteria": {
+        "AttributeName": "",
+        "OrderBy": "DESC"
+    }
+}

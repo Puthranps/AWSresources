@@ -1,0 +1,15 @@
+{
+    "RuleId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "Predicate": {
+                "Negated": true,
+                "Type": "SizeConstraint",
+                "DataId": ""
+            }
+        }
+    ],
+    "RateLimit": 0
+}

@@ -1,0 +1,12 @@
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument subcommand: Invalid choice, valid choices are:
+
+endpoint-deleted                         | endpoint-in-service                     
+notebook-instance-deleted                | notebook-instance-in-service            
+notebook-instance-stopped                | training-job-completed-or-stopped       
+transform-job-completed-or-stopped      

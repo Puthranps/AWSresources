@@ -1,0 +1,12 @@
+{
+    "ACL": "public-read",
+    "Bucket": "",
+    "CreateBucketConfiguration": {
+        "LocationConstraint": "EU"
+    },
+    "GrantFullControl": "",
+    "GrantRead": "",
+    "GrantReadACP": "",
+    "GrantWrite": "",
+    "GrantWriteACP": ""
+}

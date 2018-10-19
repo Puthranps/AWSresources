@@ -1,0 +1,243 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>glacier &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="abort-multipart-upload" href="../glacier/abort-multipart-upload.html" />
+    <link rel="prev" title="validate-matchmaking-rule-set" href="../gamelift/validate-matchmaking-rule-set.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../glacier/abort-multipart-upload.html" title="abort-multipart-upload"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../gamelift/validate-matchmaking-rule-set.html" title="validate-matchmaking-rule-set"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../gamelift/validate-matchmaking-rule-set.html" title="previous chapter (use the left arrow)">&larr; validate-matchmaking-rule-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glacier/abort-multipart-upload.html" title="next chapter (use the right arrow)">abort-multipart-upload &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">glacier</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/glacier/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="glacier">
+<span id="cli-aws-glacier"></span><h1>glacier<a class="headerlink" href="#glacier" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon Glacier is a storage solution for &quot;cold data.&quot;</p>
+<p>Amazon Glacier is an extremely low-cost storage service that provides secure, durable, and easy-to-use storage for data backup and archival. With Amazon Glacier, customers can store their data cost effectively for months, years, or decades. Amazon Glacier also enables customers to offload the administrative burdens of operating and scaling storage to AWS, so they don't have to worry about capacity planning, hardware provisioning, data replication, hardware failure and recovery, or time-consuming hardware migrations.</p>
+<p>Amazon Glacier is a great storage choice when low storage cost is paramount and your data is rarely retrieved. If your application requires fast or frequent access to your data, consider using Amazon S3. For more information, see <a class="reference external" href="http://aws.amazon.com/s3/">Amazon Simple Storage Service (Amazon S3)</a> .</p>
+<p>You can store any kind of data in any format. There is no maximum limit on the total amount of data you can store in Amazon Glacier.</p>
+<p>If you are a first-time user of Amazon Glacier, we recommend that you begin by reading the following sections in the <em>Amazon Glacier Developer Guide</em> :</p>
+<ul class="simple">
+<li><a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/introduction.html">What is Amazon Glacier</a> - This section of the Developer Guide describes the underlying data model, the operations it supports, and the AWS SDKs that you can use to interact with the service.</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/amazon-glacier-getting-started.html">Getting Started with Amazon Glacier</a> - The Getting Started section walks you through the process of creating a vault, uploading archives, creating jobs to download archives, retrieving the job output, and deleting archives.</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/abort-multipart-upload.html">abort-multipart-upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/abort-vault-lock.html">abort-vault-lock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/add-tags-to-vault.html">add-tags-to-vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/complete-multipart-upload.html">complete-multipart-upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/complete-vault-lock.html">complete-vault-lock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/create-vault.html">create-vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/delete-archive.html">delete-archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/delete-vault.html">delete-vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/delete-vault-access-policy.html">delete-vault-access-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/delete-vault-notifications.html">delete-vault-notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/describe-job.html">describe-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/describe-vault.html">describe-vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/get-data-retrieval-policy.html">get-data-retrieval-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/get-job-output.html">get-job-output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/get-vault-access-policy.html">get-vault-access-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/get-vault-lock.html">get-vault-lock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/get-vault-notifications.html">get-vault-notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/initiate-job.html">initiate-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/initiate-multipart-upload.html">initiate-multipart-upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/initiate-vault-lock.html">initiate-vault-lock</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/list-jobs.html">list-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/list-multipart-uploads.html">list-multipart-uploads</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/list-parts.html">list-parts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/list-provisioned-capacity.html">list-provisioned-capacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/list-tags-for-vault.html">list-tags-for-vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/list-vaults.html">list-vaults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/purchase-provisioned-capacity.html">purchase-provisioned-capacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/remove-tags-from-vault.html">remove-tags-from-vault</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/set-data-retrieval-policy.html">set-data-retrieval-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/set-vault-access-policy.html">set-vault-access-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/set-vault-notifications.html">set-vault-notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/upload-archive.html">upload-archive</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/upload-multipart-part.html">upload-multipart-part</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glacier/wait/index.html">wait</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../gamelift/validate-matchmaking-rule-set.html" title="previous chapter (use the left arrow)">&larr; validate-matchmaking-rule-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glacier/abort-multipart-upload.html" title="next chapter (use the right arrow)">abort-multipart-upload &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../glacier/abort-multipart-upload.html" title="abort-multipart-upload"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../gamelift/validate-matchmaking-rule-set.html" title="validate-matchmaking-rule-set"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

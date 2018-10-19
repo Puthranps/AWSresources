@@ -1,0 +1,10 @@
+{
+    "GatewayARN": "",
+    "DiskId": "",
+    "SnapshotId": "",
+    "PreserveExistingData": true,
+    "TargetName": "",
+    "NetworkInterfaceId": "",
+    "KMSEncrypted": true,
+    "KMSKey": ""
+}

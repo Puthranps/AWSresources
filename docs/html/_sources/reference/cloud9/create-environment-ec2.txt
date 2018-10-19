@@ -1,0 +1,149 @@
+[ :ref:`aws <cli:aws>` . :ref:`cloud9 <cli:aws cloud9>` ]
+
+.. _cli:aws cloud9 create-environment-ec2:
+
+
+**********************
+create-environment-ec2
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an AWS Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/cloud9-2017-09-23/CreateEnvironmentEC2>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-environment-ec2
+  --name <value>
+  [--description <value>]
+  [--client-request-token <value>]
+  --instance-type <value>
+  [--subnet-id <value>]
+  [--automatic-stop-time-minutes <value>]
+  [--owner-arn <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--name`` (string)
+
+
+  The name of the environment to create.
+
+   
+
+  This name is visible to other AWS IAM users in the same AWS account.
+
+  
+
+``--description`` (string)
+
+
+  The description of the environment to create.
+
+  
+
+``--client-request-token`` (string)
+
+
+  A unique, case-sensitive string that helps AWS Cloud9 to ensure this operation completes no more than one time.
+
+   
+
+  For more information, see `Client Tokens <http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html>`__ in the *Amazon EC2 API Reference* .
+
+  
+
+``--instance-type`` (string)
+
+
+  The type of instance to connect to the environment (for example, ``t2.micro`` ).
+
+  
+
+``--subnet-id`` (string)
+
+
+  The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate with the Amazon EC2 instance.
+
+  
+
+``--automatic-stop-time-minutes`` (integer)
+
+
+  The number of minutes until the running instance is shut down after the environment has last been used.
+
+  
+
+``--owner-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the environment owner. This ARN can be the ARN of any AWS IAM principal. If this value is not specified, the ARN defaults to this environment's creator.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create an AWS Cloud9 EC2 development environment**
+
+This example creates an AWS Cloud9 development environment with the specified settings, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.
+
+Command::
+
+  aws cloud9 create-environment-ec2 --name my-demo-env --description "My demonstration development environment." --instance-type t2.micro --subnet-id subnet-1fab8aEX --automatic-stop-time-minutes 60 --owner-arn arn:aws:iam::123456789012:user/MyDemoUser
+
+Output::
+
+  {
+    "environmentId": "8a34f51ce1e04a08882f1e811bd706EX"
+  }
+
+======
+Output
+======
+
+environmentId -> (string)
+
+  
+
+  The ID of the environment that was created.
+
+  
+
+  
+

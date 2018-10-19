@@ -1,0 +1,160 @@
+[ :ref:`aws <cli:aws>` . :ref:`clouddirectory <cli:aws clouddirectory>` ]
+
+.. _cli:aws clouddirectory get-object-information:
+
+
+**********************
+get-object-information
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves metadata about an object.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectInformation>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-object-information
+  --directory-arn <value>
+  --object-reference <value>
+  [--consistency-level <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--directory-arn`` (string)
+
+
+  The ARN of the directory being retrieved.
+
+  
+
+``--object-reference`` (structure)
+
+
+  A reference to the object.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Selector=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Selector": "string"
+  }
+
+
+
+``--consistency-level`` (string)
+
+
+  The consistency level at which to retrieve the object information.
+
+  
+
+  Possible values:
+
+  
+  *   ``SERIALIZABLE``
+
+  
+  *   ``EVENTUAL``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+SchemaFacets -> (list)
+
+  
+
+  The facets attached to the specified object. Although the response does not include minor version information, the most recently applied minor version of each Facet is in effect. See  GetAppliedSchemaVersion for details.
+
+  
+
+  (structure)
+
+    
+
+    A facet.
+
+    
+
+    SchemaArn -> (string)
+
+      
+
+      The ARN of the schema that contains the facet with no minor component. See  arns and `In-Place Schema Upgrade <http://docs.aws.amazon.com/directoryservice/latest/admin-guide/inplaceschemaupgrade.html>`__ for a description of when to provide minor versions.
+
+      
+
+      
+
+    FacetName -> (string)
+
+      
+
+      The name of the facet.
+
+      
+
+      
+
+    
+
+  
+
+ObjectIdentifier -> (string)
+
+  
+
+  The ``ObjectIdentifier`` of the specified object.
+
+  
+
+  
+

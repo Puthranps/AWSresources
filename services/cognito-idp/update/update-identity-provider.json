@@ -1,0 +1,13 @@
+{
+    "UserPoolId": "",
+    "ProviderName": "",
+    "ProviderDetails": {
+        "KeyName": ""
+    },
+    "AttributeMapping": {
+        "KeyName": ""
+    },
+    "IdpIdentifiers": [
+        ""
+    ]
+}

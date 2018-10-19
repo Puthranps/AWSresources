@@ -1,0 +1,109 @@
+[ :ref:`aws <cli:aws>` . :ref:`sqs <cli:aws sqs>` ]
+
+.. _cli:aws sqs get-queue-url:
+
+
+*************
+get-queue-url
+*************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the URL of an existing Amazon SQS queue.
+
+ 
+
+To access a queue that belongs to another AWS account, use the ``QueueOwnerAWSAccountId`` parameter to specify the account ID of the queue's owner. The queue's owner must grant you permission to access the queue. For more information about shared queue access, see ``  AddPermission `` or see `Allow Developers to Write Messages to a Shared Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue>`__ in the *Amazon Simple Queue Service Developer Guide* . 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-queue-url
+  --queue-name <value>
+  [--queue-owner-aws-account-id <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--queue-name`` (string)
+
+
+  The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (``-`` ), and underscores (``_`` ).
+
+   
+
+  Queue URLs and names are case-sensitive.
+
+  
+
+``--queue-owner-aws-account-id`` (string)
+
+
+  The AWS account ID of the account that created the queue.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To get a queue URL**
+
+This example gets the specified queue's URL.
+
+Command::
+
+  aws sqs get-queue-url --queue-name MyQueue
+
+Output::
+
+  {
+    "QueueUrl": "https://queue.amazonaws.com/80398EXAMPLE/MyQueue"
+  }
+
+======
+Output
+======
+
+QueueUrl -> (string)
+
+  
+
+  The URL of the queue.
+
+  
+
+  
+

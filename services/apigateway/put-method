@@ -1,0 +1,19 @@
+{
+    "restApiId": "",
+    "resourceId": "",
+    "httpMethod": "",
+    "authorizationType": "",
+    "authorizerId": "",
+    "apiKeyRequired": true,
+    "operationName": "",
+    "requestParameters": {
+        "KeyName": true
+    },
+    "requestModels": {
+        "KeyName": ""
+    },
+    "requestValidatorId": "",
+    "authorizationScopes": [
+        ""
+    ]
+}

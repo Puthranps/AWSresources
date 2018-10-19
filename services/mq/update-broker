@@ -1,0 +1,13 @@
+{
+    "AutoMinorVersionUpgrade": true,
+    "BrokerId": "",
+    "Configuration": {
+        "Id": "",
+        "Revision": 0
+    },
+    "EngineVersion": "",
+    "Logs": {
+        "Audit": true,
+        "General": true
+    }
+}

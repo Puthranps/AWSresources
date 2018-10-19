@@ -1,0 +1,12 @@
+{
+    "restApiId": "",
+    "requestValidatorId": "",
+    "patchOperations": [
+        {
+            "op": "copy",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

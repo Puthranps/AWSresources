@@ -1,0 +1,10 @@
+{
+    "AliasId": "",
+    "Name": "",
+    "Description": "",
+    "RoutingStrategy": {
+        "Type": "TERMINAL",
+        "FleetId": "",
+        "Message": ""
+    }
+}

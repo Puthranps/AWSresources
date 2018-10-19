@@ -1,0 +1,9 @@
+{
+    "EnableDnsHostnames": {
+        "Value": true
+    },
+    "EnableDnsSupport": {
+        "Value": true
+    },
+    "VpcId": ""
+}

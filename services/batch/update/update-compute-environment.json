@@ -1,0 +1,10 @@
+{
+    "computeEnvironment": "",
+    "state": "DISABLED",
+    "computeResources": {
+        "minvCpus": 0,
+        "maxvCpus": 0,
+        "desiredvCpus": 0
+    },
+    "serviceRole": ""
+}

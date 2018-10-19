@@ -1,0 +1,68 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws guardduty:
+
+
+*********
+guardduty
+*********
+
+
+
+===========
+Description
+===========
+
+Assess, monitor, manage, and remediate security issues across your AWS infrastructure, applications, and data.
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  accept-invitation
+  archive-findings
+  create-detector
+  create-filter
+  create-ip-set
+  create-members
+  create-sample-findings
+  create-threat-intel-set
+  decline-invitations
+  delete-detector
+  delete-filter
+  delete-invitations
+  delete-ip-set
+  delete-members
+  delete-threat-intel-set
+  disassociate-from-master-account
+  disassociate-members
+  get-detector
+  get-filter
+  get-findings
+  get-findings-statistics
+  get-invitations-count
+  get-ip-set
+  get-master-account
+  get-members
+  get-threat-intel-set
+  invite-members
+  list-detectors
+  list-filters
+  list-findings
+  list-invitations
+  list-ip-sets
+  list-members
+  list-threat-intel-sets
+  start-monitoring-members
+  stop-monitoring-members
+  unarchive-findings
+  update-detector
+  update-filter
+  update-findings-feedback
+  update-ip-set
+  update-threat-intel-set

@@ -1,0 +1,11 @@
+{
+    "LoadBalancerName": "",
+    "PolicyName": "",
+    "PolicyTypeName": "",
+    "PolicyAttributes": [
+        {
+            "AttributeName": "",
+            "AttributeValue": ""
+        }
+    ]
+}

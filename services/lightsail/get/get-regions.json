@@ -1,0 +1,4 @@
+{
+    "includeAvailabilityZones": true,
+    "includeRelationalDatabaseAvailabilityZones": true
+}

@@ -1,0 +1,108 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws ses:
+
+
+***
+ses
+***
+
+
+
+===========
+Description
+===========
+
+ 
+
+This document contains reference information for the `Amazon Simple Email Service <https://aws.amazon.com/ses/>`__ (Amazon SES) API, version 2010-12-01. This document is best used in conjunction with the `Amazon SES Developer Guide <http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html>`__ . 
+
+ 
+
+.. note::
+
+   
+
+  For a list of Amazon SES endpoints to use in service requests, see `Regions and Amazon SES <http://docs.aws.amazon.com/ses/latest/DeveloperGuide/regions.html>`__ in the `Amazon SES Developer Guide <http://docs.aws.amazon.com/ses/latest/DeveloperGuide/Welcome.html>`__ .
+
+   
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  clone-receipt-rule-set
+  create-configuration-set
+  create-configuration-set-event-destination
+  create-configuration-set-tracking-options
+  create-custom-verification-email-template
+  create-receipt-filter
+  create-receipt-rule
+  create-receipt-rule-set
+  create-template
+  delete-configuration-set
+  delete-configuration-set-event-destination
+  delete-configuration-set-tracking-options
+  delete-custom-verification-email-template
+  delete-identity
+  delete-identity-policy
+  delete-receipt-filter
+  delete-receipt-rule
+  delete-receipt-rule-set
+  delete-template
+  describe-active-receipt-rule-set
+  describe-configuration-set
+  describe-receipt-rule
+  describe-receipt-rule-set
+  get-account-sending-enabled
+  get-custom-verification-email-template
+  get-identity-dkim-attributes
+  get-identity-mail-from-domain-attributes
+  get-identity-notification-attributes
+  get-identity-policies
+  get-identity-verification-attributes
+  get-send-quota
+  get-send-statistics
+  get-template
+  list-configuration-sets
+  list-custom-verification-email-templates
+  list-identities
+  list-identity-policies
+  list-receipt-filters
+  list-receipt-rule-sets
+  list-templates
+  put-identity-policy
+  reorder-receipt-rule-set
+  send-bounce
+  send-bulk-templated-email
+  send-custom-verification-email
+  send-email
+  send-raw-email
+  send-templated-email
+  set-active-receipt-rule-set
+  set-identity-dkim-enabled
+  set-identity-feedback-forwarding-enabled
+  set-identity-headers-in-notifications-enabled
+  set-identity-mail-from-domain
+  set-identity-notification-topic
+  set-receipt-rule-position
+  test-render-template
+  update-account-sending-enabled
+  update-configuration-set-event-destination
+  update-configuration-set-reputation-metrics-enabled
+  update-configuration-set-sending-enabled
+  update-configuration-set-tracking-options
+  update-custom-verification-email-template
+  update-receipt-rule
+  update-template
+  verify-domain-dkim
+  verify-domain-identity
+  verify-email-identity
+  wait/index

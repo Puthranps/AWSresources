@@ -1,0 +1,183 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint update-application-settings:
+
+
+***************************
+update-application-settings
+***************************
+
+
+
+===========
+Description
+===========
+
+Used to update the settings for an app.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApplicationSettings>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-application-settings
+  --application-id <value>
+  --write-application-settings-request <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-id`` (string)
+The unique ID of your Amazon Pinpoint application.
+
+``--write-application-settings-request`` (structure)
+Creating application setting request
+
+
+
+Shorthand Syntax::
+
+    CampaignHook={LambdaFunctionName=string,Mode=string,WebUrl=string},CloudWatchMetricsEnabled=boolean,Limits={Daily=integer,MaximumDuration=integer,MessagesPerSecond=integer,Total=integer},QuietTime={End=string,Start=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "CampaignHook": {
+      "LambdaFunctionName": "string",
+      "Mode": "DELIVERY"|"FILTER",
+      "WebUrl": "string"
+    },
+    "CloudWatchMetricsEnabled": true|false,
+    "Limits": {
+      "Daily": integer,
+      "MaximumDuration": integer,
+      "MessagesPerSecond": integer,
+      "Total": integer
+    },
+    "QuietTime": {
+      "End": "string",
+      "Start": "string"
+    }
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ApplicationSettingsResource -> (structure)
+
+  Application settings.
+
+  ApplicationId -> (string)
+
+    The unique ID for the application.
+
+    
+
+  CampaignHook -> (structure)
+
+    Default campaign hook.
+
+    LambdaFunctionName -> (string)
+
+      Lambda function name or arn to be called for delivery
+
+      
+
+    Mode -> (string)
+
+      What mode Lambda should be invoked in.
+
+      
+
+    WebUrl -> (string)
+
+      Web URL to call for hook. If the URL has authentication specified it will be added as authentication to the request
+
+      
+
+    
+
+  LastModifiedDate -> (string)
+
+    The date that the settings were last updated in ISO 8601 format.
+
+    
+
+  Limits -> (structure)
+
+    The default campaign limits for the app. These limits apply to each campaign for the app, unless the campaign overrides the default with limits of its own.
+
+    Daily -> (integer)
+
+      The maximum number of messages that the campaign can send daily.
+
+      
+
+    MaximumDuration -> (integer)
+
+      The length of time (in seconds) that the campaign can run before it ends and message deliveries stop. This duration begins at the scheduled start time for the campaign. The minimum value is 60.
+
+      
+
+    MessagesPerSecond -> (integer)
+
+      The number of messages that the campaign can send per second. The minimum value is 50, and the maximum is 20000.
+
+      
+
+    Total -> (integer)
+
+      The maximum total number of messages that the campaign can send.
+
+      
+
+    
+
+  QuietTime -> (structure)
+
+    The default quiet time for the app. Each campaign for this app sends no messages during this time unless the campaign overrides the default with a quiet time of its own.
+
+    End -> (string)
+
+      The default end time for quiet time in ISO 8601 format.
+
+      
+
+    Start -> (string)
+
+      The default start time for quiet time in ISO 8601 format.
+
+      
+
+    
+
+  
+

@@ -1,0 +1,7 @@
+{
+    "Query": "",
+    "MustBeRequestable": true,
+    "MustBeOwnedByCaller": true,
+    "NextToken": "",
+    "MaxResults": 0
+}

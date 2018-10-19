@@ -1,0 +1,18 @@
+{
+    "instanceNames": [
+        ""
+    ],
+    "attachedDiskMapping": {
+        "KeyName": [
+            {
+                "originalDiskPath": "",
+                "newDiskName": ""
+            }
+        ]
+    },
+    "availabilityZone": "",
+    "instanceSnapshotName": "",
+    "bundleId": "",
+    "userData": "",
+    "keyPairName": ""
+}

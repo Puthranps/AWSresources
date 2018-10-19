@@ -1,0 +1,27 @@
+{
+    "ACL": "bucket-owner-full-control",
+    "Bucket": "",
+    "CacheControl": "",
+    "ContentDisposition": "",
+    "ContentEncoding": "",
+    "ContentLanguage": "",
+    "ContentType": "",
+    "Expires": "1970-01-01T00:00:00",
+    "GrantFullControl": "",
+    "GrantRead": "",
+    "GrantReadACP": "",
+    "GrantWriteACP": "",
+    "Key": "",
+    "Metadata": {
+        "KeyName": ""
+    },
+    "ServerSideEncryption": "aws:kms",
+    "StorageClass": "STANDARD_IA",
+    "WebsiteRedirectLocation": "",
+    "SSECustomerAlgorithm": "",
+    "SSECustomerKey": "",
+    "SSECustomerKeyMD5": "",
+    "SSEKMSKeyId": "",
+    "RequestPayer": "requester",
+    "Tagging": ""
+}

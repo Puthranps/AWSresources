@@ -1,0 +1,298 @@
+
+
+.. _cli:aws:
+
+
+***
+aws
+***
+
+
+
+===========
+Description
+===========
+
+The AWS Command Line Interface is a unified tool to manage your AWS services.
+
+
+
+========
+Synopsis
+========
+
+::
+
+    aws [options] <command> <subcommand> [parameters]
+
+
+Use *aws command help* for information on a specific command. Use *aws help topics* to view a list of available help topics. The synopsis for each command shows its parameters and their usage. Optional parameters are shown in square brackets.
+
+
+
+=======
+Options
+=======
+
+``--debug`` (boolean)
+
+
+Turn on debug logging.
+
+``--endpoint-url`` (string)
+
+
+Override command's default URL with the given URL.
+
+``--no-verify-ssl`` (boolean)
+
+
+By default, the AWS CLI uses SSL when communicating with AWS services. For each SSL connection, the AWS CLI will verify SSL certificates. This option overrides the default behavior of verifying SSL certificates.
+
+``--no-paginate`` (boolean)
+
+
+Disable automatic pagination.
+
+``--output`` (string)
+
+
+The formatting style for command output.
+
+
+
+
+* json
+
+
+* text
+
+
+* table
+
+
+
+``--query`` (string)
+
+
+A JMESPath query to use in filtering the response data.
+
+``--profile`` (string)
+
+
+Use a specific profile from your credential file.
+
+``--region`` (string)
+
+
+The region to use. Overrides config/env settings.
+
+``--version`` (string)
+
+
+Display the version of this tool.
+
+``--color`` (string)
+
+
+Turn on/off color output.
+
+
+
+
+* on
+
+
+* off
+
+
+* auto
+
+
+
+``--no-sign-request`` (boolean)
+
+
+Do not sign requests. Credentials will not be loaded if this argument is provided.
+
+``--ca-bundle`` (string)
+
+
+The CA certificate bundle to use when verifying SSL certificates. Overrides config/env settings.
+
+``--cli-read-timeout`` (int)
+
+
+The maximum socket read time in seconds. If the value is set to 0, the socket read will be blocking and not timeout.
+
+``--cli-connect-timeout`` (int)
+
+
+The maximum socket connect time in seconds. If the value is set to 0, the socket connect will be blocking and not timeout.
+
+
+
+==================
+Available Services
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  acm/index
+  acm-pca/index
+  alexaforbusiness/index
+  apigateway/index
+  application-autoscaling/index
+  appstream/index
+  appsync/index
+  athena/index
+  autoscaling/index
+  autoscaling-plans/index
+  batch/index
+  budgets/index
+  ce/index
+  cloud9/index
+  clouddirectory/index
+  cloudformation/index
+  cloudfront/index
+  cloudhsm/index
+  cloudhsmv2/index
+  cloudsearch/index
+  cloudsearchdomain/index
+  cloudtrail/index
+  cloudwatch/index
+  codebuild/index
+  codecommit/index
+  codepipeline/index
+  codestar/index
+  cognito-identity/index
+  cognito-idp/index
+  cognito-sync/index
+  comprehend/index
+  configservice/index
+  configure/index
+  connect/index
+  cur/index
+  datapipeline/index
+  dax/index
+  deploy/index
+  devicefarm/index
+  directconnect/index
+  discovery/index
+  dlm/index
+  dms/index
+  ds/index
+  dynamodb/index
+  dynamodbstreams/index
+  ec2/index
+  ecr/index
+  ecs/index
+  efs/index
+  eks/index
+  elasticache/index
+  elasticbeanstalk/index
+  elastictranscoder/index
+  elb/index
+  elbv2/index
+  emr/index
+  es/index
+  events/index
+  firehose/index
+  fms/index
+  gamelift/index
+  glacier/index
+  glue/index
+  greengrass/index
+  guardduty/index
+  health/index
+  history/index
+  iam/index
+  importexport/index
+  inspector/index
+  iot/index
+  iot-data/index
+  iot-jobs-data/index
+  iot1click-devices/index
+  iot1click-projects/index
+  iotanalytics/index
+  kinesis/index
+  kinesis-video-archived-media/index
+  kinesis-video-media/index
+  kinesisanalytics/index
+  kinesisvideo/index
+  kms/index
+  lambda/index
+  lex-models/index
+  lex-runtime/index
+  lightsail/index
+  logs/index
+  machinelearning/index
+  macie/index
+  marketplace-entitlement/index
+  marketplacecommerceanalytics/index
+  mediaconvert/index
+  medialive/index
+  mediapackage/index
+  mediastore/index
+  mediastore-data/index
+  mediatailor/index
+  meteringmarketplace/index
+  mgh/index
+  mobile/index
+  mq/index
+  mturk/index
+  neptune/index
+  opsworks/index
+  opsworks-cm/index
+  organizations/index
+  pi/index
+  pinpoint/index
+  polly/index
+  pricing/index
+  rds/index
+  redshift/index
+  rekognition/index
+  resource-groups/index
+  resourcegroupstaggingapi/index
+  route53/index
+  route53domains/index
+  s3/index
+  s3api/index
+  sagemaker/index
+  sagemaker-runtime/index
+  sdb/index
+  secretsmanager/index
+  serverlessrepo/index
+  servicecatalog/index
+  servicediscovery/index
+  ses/index
+  shield/index
+  signer/index
+  sms/index
+  snowball/index
+  sns/index
+  sqs/index
+  ssm/index
+  stepfunctions/index
+  storagegateway/index
+  sts/index
+  support/index
+  swf/index
+  transcribe/index
+  translate/index
+  waf/index
+  waf-regional/index
+  workdocs/index
+  workmail/index
+  workspaces/index
+  xray/index
+
+
+========
+See Also
+========
+
+* :ref:`aws help topics <cli:aws help topics>`

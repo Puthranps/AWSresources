@@ -1,0 +1,10 @@
+{
+    "LoadBalancerName": "",
+    "HealthCheck": {
+        "Target": "",
+        "Interval": 0,
+        "Timeout": 0,
+        "UnhealthyThreshold": 0,
+        "HealthyThreshold": 0
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "CatalogId": "",
+    "DataCatalogEncryptionSettings": {
+        "EncryptionAtRest": {
+            "CatalogEncryptionMode": "DISABLED",
+            "SseAwsKmsKeyId": ""
+        }
+    }
+}

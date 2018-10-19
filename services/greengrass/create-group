@@ -1,0 +1,12 @@
+{
+    "AmznClientToken": "",
+    "InitialVersion": {
+        "CoreDefinitionVersionArn": "",
+        "DeviceDefinitionVersionArn": "",
+        "FunctionDefinitionVersionArn": "",
+        "LoggerDefinitionVersionArn": "",
+        "ResourceDefinitionVersionArn": "",
+        "SubscriptionDefinitionVersionArn": ""
+    },
+    "Name": ""
+}

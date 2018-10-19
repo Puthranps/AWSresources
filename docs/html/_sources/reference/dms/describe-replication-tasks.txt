@@ -1,0 +1,428 @@
+[ :ref:`aws <cli:aws>` . :ref:`dms <cli:aws dms>` ]
+
+.. _cli:aws dms describe-replication-tasks:
+
+
+**************************
+describe-replication-tasks
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about replication tasks for your account in the current region.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DescribeReplicationTasks>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``describe-replication-tasks`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``ReplicationTasks``
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-replication-tasks
+  [--filters <value>]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--filters`` (list)
+
+
+  Filters applied to the describe action.
+
+   
+
+  Valid filter names: replication-task-arn | replication-task-id | migration-type | endpoint-arn | replication-instance-arn
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Marker -> (string)
+
+  
+
+  An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by ``MaxRecords`` . 
+
+  
+
+  
+
+ReplicationTasks -> (list)
+
+  
+
+  A description of the replication tasks.
+
+  
+
+  (structure)
+
+    
+
+    
+
+    
+
+    ReplicationTaskIdentifier -> (string)
+
+      
+
+      The user-assigned replication task identifier or name.
+
+       
+
+      Constraints:
+
+       
+
+       
+      * Must contain from 1 to 255 alphanumeric characters or hyphens. 
+       
+      * First character must be a letter. 
+       
+      * Cannot end with a hyphen or contain two consecutive hyphens. 
+       
+
+      
+
+      
+
+    SourceEndpointArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+
+      
+
+      
+
+    TargetEndpointArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+
+      
+
+      
+
+    ReplicationInstanceArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the replication instance.
+
+      
+
+      
+
+    MigrationType -> (string)
+
+      
+
+      The type of migration.
+
+      
+
+      
+
+    TableMappings -> (string)
+
+      
+
+      Table mappings specified in the task.
+
+      
+
+      
+
+    ReplicationTaskSettings -> (string)
+
+      
+
+      The settings for the replication task.
+
+      
+
+      
+
+    Status -> (string)
+
+      
+
+      The status of the replication task.
+
+      
+
+      
+
+    LastFailureMessage -> (string)
+
+      
+
+      The last error (failure) message generated for the replication instance.
+
+      
+
+      
+
+    StopReason -> (string)
+
+      
+
+      The reason the replication task was stopped.
+
+      
+
+      
+
+    ReplicationTaskCreationDate -> (timestamp)
+
+      
+
+      The date the replication task was created.
+
+      
+
+      
+
+    ReplicationTaskStartDate -> (timestamp)
+
+      
+
+      The date the replication task is scheduled to start.
+
+      
+
+      
+
+    CdcStartPosition -> (string)
+
+      
+
+      Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+
+       
+
+      The value can be in date, checkpoint, or LSN/SCN format.
+
+       
+
+      Date Example: --cdc-start-position “2018-03-08T12:12:12”
+
+       
+
+      Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+
+       
+
+      LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+
+      
+
+      
+
+    CdcStopPosition -> (string)
+
+      
+
+      Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.
+
+       
+
+      Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+
+       
+
+      Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+
+      
+
+      
+
+    RecoveryCheckpoint -> (string)
+
+      
+
+      Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the ``CdcStartPosition`` parameter to start a CDC operation that begins at that checkpoint.
+
+      
+
+      
+
+    ReplicationTaskArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the replication task.
+
+      
+
+      
+
+    ReplicationTaskStats -> (structure)
+
+      
+
+      The statistics for the task, including elapsed time, tables loaded, and table errors.
+
+      
+
+      FullLoadProgressPercent -> (integer)
+
+        
+
+        The percent complete for the full load migration task.
+
+        
+
+        
+
+      ElapsedTimeMillis -> (long)
+
+        
+
+        The elapsed time of the task, in milliseconds.
+
+        
+
+        
+
+      TablesLoaded -> (integer)
+
+        
+
+        The number of tables loaded for this task.
+
+        
+
+        
+
+      TablesLoading -> (integer)
+
+        
+
+        The number of tables currently loading for this task.
+
+        
+
+        
+
+      TablesQueued -> (integer)
+
+        
+
+        The number of tables queued for this task.
+
+        
+
+        
+
+      TablesErrored -> (integer)
+
+        
+
+        The number of errors that have occurred during this task.
+
+        
+
+        
+
+      
+
+    
+
+  
+

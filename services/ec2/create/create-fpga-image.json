@@ -1,0 +1,14 @@
+{
+    "DryRun": true,
+    "InputStorageLocation": {
+        "Bucket": "",
+        "Key": ""
+    },
+    "LogsStorageLocation": {
+        "Bucket": "",
+        "Key": ""
+    },
+    "Description": "",
+    "Name": "",
+    "ClientToken": ""
+}

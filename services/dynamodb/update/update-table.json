@@ -1,0 +1,55 @@
+{
+    "AttributeDefinitions": [
+        {
+            "AttributeName": "",
+            "AttributeType": "S"
+        }
+    ],
+    "TableName": "",
+    "ProvisionedThroughput": {
+        "ReadCapacityUnits": 0,
+        "WriteCapacityUnits": 0
+    },
+    "GlobalSecondaryIndexUpdates": [
+        {
+            "Update": {
+                "IndexName": "",
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                }
+            },
+            "Create": {
+                "IndexName": "",
+                "KeySchema": [
+                    {
+                        "AttributeName": "",
+                        "KeyType": "RANGE"
+                    }
+                ],
+                "Projection": {
+                    "ProjectionType": "ALL",
+                    "NonKeyAttributes": [
+                        ""
+                    ]
+                },
+                "ProvisionedThroughput": {
+                    "ReadCapacityUnits": 0,
+                    "WriteCapacityUnits": 0
+                }
+            },
+            "Delete": {
+                "IndexName": ""
+            }
+        }
+    ],
+    "StreamSpecification": {
+        "StreamEnabled": true,
+        "StreamViewType": "NEW_IMAGE"
+    },
+    "SSESpecification": {
+        "Enabled": true,
+        "SSEType": "KMS",
+        "KMSMasterKeyId": ""
+    }
+}

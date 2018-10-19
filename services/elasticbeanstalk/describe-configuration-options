@@ -1,0 +1,14 @@
+{
+    "ApplicationName": "",
+    "TemplateName": "",
+    "EnvironmentName": "",
+    "SolutionStackName": "",
+    "PlatformArn": "",
+    "Options": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": ""
+        }
+    ]
+}

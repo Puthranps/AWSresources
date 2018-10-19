@@ -1,0 +1,301 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-domains &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="lightsail" href="../lightsail/index.html" />
+    <link rel="next" title="get-instance" href="../lightsail/get-instance.html" />
+    <link rel="prev" title="get-domain" href="../lightsail/get-domain.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../lightsail/get-instance.html" title="get-instance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../lightsail/get-domain.html" title="get-domain"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lightsail/index.html" accesskey="U">lightsail</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lightsail/get-domain.html" title="previous chapter (use the left arrow)">&larr; get-domain</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lightsail/get-instance.html" title="next chapter (use the right arrow)">get-instance &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-domains</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/lightsail/get-domains">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../lightsail/index.html#cli-aws-lightsail"><em>lightsail</em></a> ]</p>
+<div class="section" id="get-domains">
+<span id="cli-aws-lightsail-get-domains"></span><h1>get-domains<a class="headerlink" href="#get-domains" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of all domains in the user's account.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetDomains">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">get-domains</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">domains</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-domains
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>domains -&gt; (list)</p>
+<blockquote>
+<div><p>An array of key-value pairs containing information about each of the domain entries in the user's account.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a domain where you are storing recordsets in Lightsail.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the domain.</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the domain recordset (e.g., <tt class="docutils literal"><span class="pre">arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</span></tt> ).</div></blockquote>
+<p>supportCode -&gt; (string)</p>
+<blockquote>
+<div>The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The date when the domain recordset was created.</div></blockquote>
+<p>location -&gt; (structure)</p>
+<blockquote>
+<div><p>The AWS Region and Availability Zones where the domain recordset was created.</p>
+<p>availabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone. Follows the format <tt class="docutils literal"><span class="pre">us-east-2a</span></tt> (case-sensitive).</div></blockquote>
+<p>regionName -&gt; (string)</p>
+<blockquote>
+<div>The AWS Region name.</div></blockquote>
+</div></blockquote>
+<p>resourceType -&gt; (string)</p>
+<blockquote>
+<div>The resource type.</div></blockquote>
+<p>domainEntries -&gt; (list)</p>
+<blockquote>
+<div><p>An array of key-value pairs containing information about the domain entries.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a domain recordset entry.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the domain recordset entry.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the domain.</div></blockquote>
+<p>target -&gt; (string)</p>
+<blockquote>
+<div><p>The target AWS name server (e.g., <tt class="docutils literal"><span class="pre">ns-111.awsdns-22.com.</span></tt> ).</p>
+<p>For Lightsail load balancers, the value looks like <tt class="docutils literal"><span class="pre">ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</span></tt> . Be sure to also set <tt class="docutils literal"><span class="pre">isAlias</span></tt> to <tt class="docutils literal"><span class="pre">true</span></tt> when setting up an A record for a load balancer.</p>
+</div></blockquote>
+<p>isAlias -&gt; (boolean)</p>
+<blockquote>
+<div>When <tt class="docutils literal"><span class="pre">true</span></tt> , specifies whether the domain entry is an alias used by the Lightsail load balancer. You can include an alias (A type) record in your request, which points to a load balancer DNS name and routes traffic to your load balancer</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of domain entry (e.g., <tt class="docutils literal"><span class="pre">SOA</span></tt> or <tt class="docutils literal"><span class="pre">NS</span></tt> ).</div></blockquote>
+<p>options -&gt; (map)</p>
+<blockquote>
+<div><p>(Deprecated) The options for the domain entry.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In releases prior to November 29, 2017, this parameter was not included in the API response. It is now deprecated.</p>
+</div>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextPageToken -&gt; (string)</p>
+<blockquote>
+<div>A token used for advancing to the next page of results from your get active names request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lightsail/get-domain.html" title="previous chapter (use the left arrow)">&larr; get-domain</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lightsail/get-instance.html" title="next chapter (use the right arrow)">get-instance &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../lightsail/get-instance.html" title="get-instance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../lightsail/get-domain.html" title="get-domain"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lightsail/index.html" >lightsail</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

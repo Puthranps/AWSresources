@@ -1,0 +1,437 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-target-group &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="elbv2" href="../elbv2/index.html" />
+    <link rel="next" title="delete-listener" href="../elbv2/delete-listener.html" />
+    <link rel="prev" title="create-rule" href="../elbv2/create-rule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../elbv2/delete-listener.html" title="delete-listener"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../elbv2/create-rule.html" title="create-rule"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../elbv2/index.html" accesskey="U">elbv2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elbv2/create-rule.html" title="previous chapter (use the left arrow)">&larr; create-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elbv2/delete-listener.html" title="next chapter (use the right arrow)">delete-listener &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-target-group</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/elbv2/create-target-group">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../elbv2/index.html#cli-aws-elbv2"><em>elbv2</em></a> ]</p>
+<div class="section" id="create-target-group">
+<span id="cli-aws-elbv2-create-target-group"></span><h1>create-target-group<a class="headerlink" href="#create-target-group" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a target group.</p>
+<p>To register targets with the target group, use  RegisterTargets . To update the health check settings for the target group, use  ModifyTargetGroup . To monitor the health of targets in the target group, use  DescribeTargetHealth .</p>
+<p>To route traffic to the targets in a target group, specify the target group in an action using  CreateListener or  CreateRule .</p>
+<p>To delete a target group, use  DeleteTargetGroup .</p>
+<p>This operation is idempotent, which means that it completes at most one time. If you attempt to create multiple target groups with the same settings, each call succeeds.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html">Target Groups for Your Application Load Balancers</a> in the <em>Application Load Balancers Guide</em> or <a class="reference external" href="http://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-target-groups.html">Target Groups for Your Network Load Balancers</a> in the <em>Network Load Balancers Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/CreateTargetGroup">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-target-group
+--name &lt;value&gt;
+--protocol &lt;value&gt;
+--port &lt;value&gt;
+--vpc-id &lt;value&gt;
+[--health-check-protocol &lt;value&gt;]
+[--health-check-port &lt;value&gt;]
+[--health-check-path &lt;value&gt;]
+[--health-check-interval-seconds &lt;value&gt;]
+[--health-check-timeout-seconds &lt;value&gt;]
+[--healthy-threshold-count &lt;value&gt;]
+[--unhealthy-threshold-count &lt;value&gt;]
+[--matcher &lt;value&gt;]
+[--target-type &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the target group.</p>
+<p>This name must be unique per region per account, can have a maximum of 32 characters, must contain only alphanumeric characters or hyphens, and must not begin or end with a hyphen.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--protocol</span></tt> (string)</p>
+<blockquote>
+<div><p>The protocol to use for routing traffic to the targets. For Application Load Balancers, the supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocol is TCP.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">HTTP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">HTTPS</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TCP</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--port</span></tt> (integer)</p>
+<blockquote>
+<div>The port on which the targets receive traffic. This port is used unless you specify a port override when registering the target.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--vpc-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier of the virtual private cloud (VPC).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--health-check-protocol</span></tt> (string)</p>
+<blockquote>
+<div><p>The protocol the load balancer uses when performing health checks on targets. The TCP protocol is supported only if the protocol of the target group is TCP. For Application Load Balancers, the default is HTTP. For Network Load Balancers, the default is TCP.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">HTTP</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">HTTPS</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TCP</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--health-check-port</span></tt> (string)</p>
+<blockquote>
+<div>The port the load balancer uses when performing health checks on targets. The default is <tt class="docutils literal"><span class="pre">traffic-port</span></tt> , which is the port on which each target receives traffic from the load balancer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--health-check-path</span></tt> (string)</p>
+<blockquote>
+<div>[HTTP/HTTPS health checks] The ping path that is the destination on the targets for health checks. The default is /.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--health-check-interval-seconds</span></tt> (integer)</p>
+<blockquote>
+<div>The approximate amount of time, in seconds, between health checks of an individual target. For Application Load Balancers, the range is 5–300 seconds. For Network Load Balancers, the supported values are 10 or 30 seconds. The default is 30 seconds.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--health-check-timeout-seconds</span></tt> (integer)</p>
+<blockquote>
+<div>The amount of time, in seconds, during which no response from a target means a failed health check. For Application Load Balancers, the range is 2–60 seconds and the default is 5 seconds. For Network Load Balancers, this is 10 seconds for TCP and HTTPS health checks and 6 seconds for HTTP health checks.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--healthy-threshold-count</span></tt> (integer)</p>
+<blockquote>
+<div>The number of consecutive health checks successes required before considering an unhealthy target healthy. For Application Load Balancers, the default is 5. For Network Load Balancers, the default is 3.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--unhealthy-threshold-count</span></tt> (integer)</p>
+<blockquote>
+<div>The number of consecutive health check failures required before considering a target unhealthy. For Application Load Balancers, the default is 2. For Network Load Balancers, this value must be the same as the healthy threshold count.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--matcher</span></tt> (structure)</p>
+<blockquote>
+<div>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a successful response from a target.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">HttpCode</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;HttpCode&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--target-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of target that you must specify when registering targets with this target group. The possible values are <tt class="docutils literal"><span class="pre">instance</span></tt> (targets are specified by instance ID) or <tt class="docutils literal"><span class="pre">ip</span></tt> (targets are specified by IP address). The default is <tt class="docutils literal"><span class="pre">instance</span></tt> . You can't specify targets for a target group using both instance IDs and IP addresses.</p>
+<p>If the target type is <tt class="docutils literal"><span class="pre">ip</span></tt> , specify IP addresses from the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify publicly routable IP addresses.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">instance</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ip</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a target group for an Application Load Balancer</strong></p>
+<p>This example creates a target group that you can use to route traffic to targets using HTTP on port 80. This target group uses the default health check configuration for an HTTP or HTTPS target group.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elbv2 create-target-group --name my-targets --protocol HTTP --port 80 --vpc-id vpc-3ac0fb5f</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TargetGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;TargetGroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-targets&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Port&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+          <span class="s2">&quot;VpcId&quot;</span><span class="p">:</span> <span class="s2">&quot;vpc-3ac0fb5f&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;TargetType&quot;</span><span class="p">:</span> <span class="s2">&quot;instance&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthyThresholdCount&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">&quot;Matcher&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;HttpCode&quot;</span><span class="p">:</span> <span class="s2">&quot;200&quot;</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;UnhealthyThresholdCount&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckPath&quot;</span><span class="p">:</span> <span class="s2">&quot;/&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckProtocol&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTP&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckPort&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic-port&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckIntervalSeconds&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckTimeoutSeconds&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+          <span class="s2">&quot;TargetGroupArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>By default, targets are registered by instance ID. To register targets by IP address, create a target group with a target type of <tt class="docutils literal"><span class="pre">ip</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elbv2 create-target-group --name my-ip-targets --protocol HTTP --port 80 --target-type ip --vpc-id vpc-3ac0fb5f</pre>
+</div>
+<p><strong>To create a target group for a Network Load Balancer</strong></p>
+<p>This example creates a target group that you can use to route traffic to targets using TCP on port 80. This target group uses the default health check configuration for a TCP target group.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elbv2 create-target-group --name my-tcp-targets --protocol TCP --port 80 --vpc-id vpc-3ac0fb5f</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TargetGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;TargetGroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-tcp-targets&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Protocol&quot;</span><span class="p">:</span> <span class="s2">&quot;TCP&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Port&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+          <span class="s2">&quot;VpcId&quot;</span><span class="p">:</span> <span class="s2">&quot;vpc-3ac0fb5f&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;TargetType&quot;</span><span class="p">:</span> <span class="s2">&quot;instance&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthyThresholdCount&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+          <span class="s2">&quot;Matcher&quot;</span><span class="p">:</span> <span class="p">{},</span>
+          <span class="s2">&quot;UnhealthyThresholdCount&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckProtocol&quot;</span><span class="p">:</span> <span class="s2">&quot;TCP&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckPort&quot;</span><span class="p">:</span> <span class="s2">&quot;traffic-port&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckIntervalSeconds&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+          <span class="s2">&quot;HealthCheckTimeoutSeconds&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="s2">&quot;TargetGroupArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-tcp-targets/b6bba954d1361c78&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>By default, targets are registered by instance ID. To register targets by IP address, create a target group with a target type of <tt class="docutils literal"><span class="pre">ip</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elbv2 create-target-group --name my-tcp-ip-targets --protocol TCP --port 80 --target-type ip --vpc-id vpc-3ac0fb5f</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>TargetGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the target group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a target group.</p>
+<p>TargetGroupArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the target group.</div></blockquote>
+<p>TargetGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the target group.</div></blockquote>
+<p>Protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol to use for routing traffic to the targets.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port on which the targets are listening.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC for the targets.</div></blockquote>
+<p>HealthCheckProtocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol to use to connect with the target.</div></blockquote>
+<p>HealthCheckPort -&gt; (string)</p>
+<blockquote>
+<div>The port to use to connect with the target.</div></blockquote>
+<p>HealthCheckIntervalSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The approximate amount of time, in seconds, between health checks of an individual target.</div></blockquote>
+<p>HealthCheckTimeoutSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time, in seconds, during which no response means a failed health check.</div></blockquote>
+<p>HealthyThresholdCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of consecutive health checks successes required before considering an unhealthy target healthy.</div></blockquote>
+<p>UnhealthyThresholdCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of consecutive health check failures required before considering the target unhealthy.</div></blockquote>
+<p>HealthCheckPath -&gt; (string)</p>
+<blockquote>
+<div>The destination for the health check request.</div></blockquote>
+<p>Matcher -&gt; (structure)</p>
+<blockquote>
+<div><p>The HTTP codes to use when checking for a successful response from a target.</p>
+<p>HttpCode -&gt; (string)</p>
+<blockquote>
+<div><p>The HTTP codes.</p>
+<p>For Application Load Balancers, you can specify values between 200 and 499, and the default value is 200. You can specify multiple values (for example, &quot;200,202&quot;) or a range of values (for example, &quot;200-299&quot;).</p>
+<p>For Network Load Balancers, this is 200–399.</p>
+</div></blockquote>
+</div></blockquote>
+<p>LoadBalancerArns -&gt; (list)</p>
+<blockquote>
+<div><p>The Amazon Resource Names (ARN) of the load balancers that route traffic to this target group.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>TargetType -&gt; (string)</p>
+<blockquote>
+<div>The type of target that you must specify when registering targets with this target group. The possible values are <tt class="docutils literal"><span class="pre">instance</span></tt> (targets are specified by instance ID) or <tt class="docutils literal"><span class="pre">ip</span></tt> (targets are specified by IP address).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elbv2/create-rule.html" title="previous chapter (use the left arrow)">&larr; create-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elbv2/delete-listener.html" title="next chapter (use the right arrow)">delete-listener &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../elbv2/delete-listener.html" title="delete-listener"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../elbv2/create-rule.html" title="create-rule"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../elbv2/index.html" >elbv2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

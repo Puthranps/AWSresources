@@ -1,0 +1,343 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 describe-launch-templates:
+
+
+*************************
+describe-launch-templates
+*************************
+
+
+
+===========
+Description
+===========
+
+
+
+Describes one or more launch templates.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeLaunchTemplates>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-launch-templates
+  [--dry-run | --no-dry-run]
+  [--launch-template-ids <value>]
+  [--launch-template-names <value>]
+  [--filters <value>]
+  [--next-token <value>]
+  [--max-results <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--launch-template-ids`` (list)
+
+
+  One or more launch template IDs.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--launch-template-names`` (list)
+
+
+  One or more launch template names.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--filters`` (list)
+
+
+  One or more filters.
+
+   
+
+   
+  * ``create-time`` - The time the launch template was created. 
+   
+  * ``launch-template-name`` - The name of the launch template. 
+   
+  * ``tag`` :<key> - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key ``Owner`` and the value ``TeamA`` , specify ``tag:Owner`` for the filter name and ``TeamA`` for the filter value. 
+   
+  * ``tag-key`` - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value. 
+   
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--next-token`` (string)
+
+
+  The token to request the next page of results.
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned ``NextToken`` value. This value can be between 5 and 1000.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To describe launch templates**
+
+This example describes your launch templates.
+
+Command::
+
+  aws ec2 describe-launch-templates
+
+Output::
+
+  {
+    "LaunchTemplates": [
+        {
+            "LatestVersionNumber": 2, 
+            "LaunchTemplateId": "lt-0e06d290751193123", 
+            "LaunchTemplateName": "TemplateForWebServer", 
+            "DefaultVersionNumber": 2, 
+            "CreatedBy": "arn:aws:iam::123456789012:root", 
+            "CreateTime": "2017-11-27T09:30:23.000Z"
+        }, 
+        {
+            "LatestVersionNumber": 6, 
+            "LaunchTemplateId": "lt-0c45b5e061ec98456", 
+            "LaunchTemplateName": "DBServersTemplate", 
+            "DefaultVersionNumber": 1, 
+            "CreatedBy": "arn:aws:iam::123456789012:root", 
+            "CreateTime": "2017-11-20T09:25:22.000Z"
+        }, 
+        {
+            "LatestVersionNumber": 1, 
+            "LaunchTemplateId": "lt-0d47d774e8e52dabc", 
+            "LaunchTemplateName": "MyLaunchTemplate2", 
+            "DefaultVersionNumber": 1, 
+            "CreatedBy": "arn:aws:iam::123456789012:root", 
+            "CreateTime": "2017-11-02T12:06:21.000Z"
+        },
+        {
+            "LatestVersionNumber": 3, 
+            "LaunchTemplateId": "lt-01e5f948eb4f589d6", 
+            "LaunchTemplateName": "testingtemplate2", 
+            "DefaultVersionNumber": 1, 
+            "CreatedBy": "arn:aws:sts::123456789012:assumed-role/AdminRole/i-03ee35176e2e5aabc", 
+            "CreateTime": "2017-12-01T08:19:48.000Z"
+        }, 
+    ]
+  }
+
+======
+Output
+======
+
+LaunchTemplates -> (list)
+
+  
+
+  Information about the launch templates.
+
+  
+
+  (structure)
+
+    
+
+    Describes a launch template.
+
+    
+
+    LaunchTemplateId -> (string)
+
+      
+
+      The ID of the launch template.
+
+      
+
+      
+
+    LaunchTemplateName -> (string)
+
+      
+
+      The name of the launch template.
+
+      
+
+      
+
+    CreateTime -> (timestamp)
+
+      
+
+      The time launch template was created.
+
+      
+
+      
+
+    CreatedBy -> (string)
+
+      
+
+      The principal that created the launch template. 
+
+      
+
+      
+
+    DefaultVersionNumber -> (long)
+
+      
+
+      The version number of the default version of the launch template.
+
+      
+
+      
+
+    LatestVersionNumber -> (long)
+
+      
+
+      The version number of the latest version of the launch template.
+
+      
+
+      
+
+    Tags -> (list)
+
+      
+
+      The tags for the launch template.
+
+      
+
+      (structure)
+
+        
+
+        Describes a tag.
+
+        
+
+        Key -> (string)
+
+          
+
+          The key of the tag.
+
+           
+
+          Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with ``aws:`` .
+
+          
+
+          
+
+        Value -> (string)
+
+          
+
+          The value of the tag.
+
+           
+
+          Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The token to use to retrieve the next page of results. This value is ``null`` when there are no more results to return.
+
+  
+
+  
+

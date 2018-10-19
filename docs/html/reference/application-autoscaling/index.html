@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>application-autoscaling &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="delete-scaling-policy" href="../application-autoscaling/delete-scaling-policy.html" />
+    <link rel="prev" title="update-vpc-link" href="../apigateway/update-vpc-link.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../application-autoscaling/delete-scaling-policy.html" title="delete-scaling-policy"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../apigateway/update-vpc-link.html" title="update-vpc-link"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../apigateway/update-vpc-link.html" title="previous chapter (use the left arrow)">&larr; update-vpc-link</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../application-autoscaling/delete-scaling-policy.html" title="next chapter (use the right arrow)">delete-scaling-policy &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">application-autoscaling</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/application-autoscaling/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="application-autoscaling">
+<span id="cli-aws-application-autoscaling"></span><h1>application-autoscaling<a class="headerlink" href="#application-autoscaling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>With Application Auto Scaling, you can configure automatic scaling for your scalable resources. You can use Application Auto Scaling to accomplish the following tasks:</p>
+<ul class="simple">
+<li>Define scaling policies to automatically scale your AWS or custom resources</li>
+<li>Scale your resources in response to CloudWatch alarms</li>
+<li>Schedule one-time or recurring scaling actions</li>
+<li>View the history of your scaling events</li>
+</ul>
+<p>Application Auto Scaling can scale the following resources:</p>
+<ul class="simple">
+<li>Amazon ECS services. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service Auto Scaling</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</li>
+<li>Amazon EC2 Spot fleets. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/fleet-auto-scaling.html">Automatic Scaling for Spot Fleet</a> in the <em>Amazon EC2 User Guide</em> .</li>
+<li>Amazon EMR clusters. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticMapReduce/latest/ManagementGuide/emr-automatic-scaling.html">Using Automatic Scaling in Amazon EMR</a> in the <em>Amazon EMR Management Guide</em> .</li>
+<li>AppStream 2.0 fleets. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/appstream2/latest/developerguide/autoscaling.html">Fleet Auto Scaling for Amazon AppStream 2.0</a> in the <em>Amazon AppStream 2.0 Developer Guide</em> .</li>
+<li>Provisioned read and write capacity for Amazon DynamoDB tables and global secondary indexes. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/AutoScaling.html">Managing Throughput Capacity Automatically with DynamoDB Auto Scaling</a> in the <em>Amazon DynamoDB Developer Guide</em> .</li>
+<li>Amazon Aurora Replicas. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Aurora.Integrating.AutoScaling.html">Using Amazon Aurora Auto Scaling with Aurora Replicas</a> .</li>
+<li>Amazon SageMaker endpoint variants. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/endpoint-auto-scaling.html">Automatically Scaling Amazon SageMaker Models</a> .</li>
+<li>Custom resources provided by your own applications or services. More information is available in our <a class="reference external" href="https://github.com/aws/aws-auto-scaling-custom-resource">GitHub repository</a> .</li>
+</ul>
+<p>To learn more about Application Auto Scaling, see the <a class="reference external" href="http://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application Auto Scaling User Guide</a> .</p>
+<p>To configure automatic scaling for multiple resources across multiple services, use AWS Auto Scaling to create a scaling plan for your application. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS Auto Scaling User Guide</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/delete-scaling-policy.html">delete-scaling-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/delete-scheduled-action.html">delete-scheduled-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/deregister-scalable-target.html">deregister-scalable-target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/describe-scalable-targets.html">describe-scalable-targets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/describe-scaling-activities.html">describe-scaling-activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/describe-scaling-policies.html">describe-scaling-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/describe-scheduled-actions.html">describe-scheduled-actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/put-scaling-policy.html">put-scaling-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/put-scheduled-action.html">put-scheduled-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../application-autoscaling/register-scalable-target.html">register-scalable-target</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../apigateway/update-vpc-link.html" title="previous chapter (use the left arrow)">&larr; update-vpc-link</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../application-autoscaling/delete-scaling-policy.html" title="next chapter (use the right arrow)">delete-scaling-policy &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../application-autoscaling/delete-scaling-policy.html" title="delete-scaling-policy"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../apigateway/update-vpc-link.html" title="update-vpc-link"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

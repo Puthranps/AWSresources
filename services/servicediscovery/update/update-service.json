@@ -1,0 +1,19 @@
+{
+    "Id": "",
+    "Service": {
+        "Description": "",
+        "DnsConfig": {
+            "DnsRecords": [
+                {
+                    "Type": "AAAA",
+                    "TTL": 0
+                }
+            ]
+        },
+        "HealthCheckConfig": {
+            "Type": "TCP",
+            "ResourcePath": "",
+            "FailureThreshold": 0
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "HITId": "",
+    "PolicyLevels": [
+        "HIT"
+    ],
+    "RetrieveActions": true,
+    "RetrieveResults": true,
+    "NextToken": "",
+    "MaxResults": 0
+}

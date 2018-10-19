@@ -1,0 +1,13 @@
+{
+    "DBSubnetGroupName": "",
+    "DBSubnetGroupDescription": "",
+    "SubnetIds": [
+        ""
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

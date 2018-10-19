@@ -1,0 +1,12 @@
+{
+    "relationalDatabaseName": "",
+    "availabilityZone": "",
+    "relationalDatabaseBlueprintId": "",
+    "relationalDatabaseBundleId": "",
+    "masterDatabaseName": "",
+    "masterUsername": "",
+    "masterUserPassword": "",
+    "preferredBackupWindow": "",
+    "preferredMaintenanceWindow": "",
+    "publiclyAccessible": true
+}

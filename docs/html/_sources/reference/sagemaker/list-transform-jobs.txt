@@ -1,0 +1,285 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker <cli:aws sagemaker>` ]
+
+.. _cli:aws sagemaker list-transform-jobs:
+
+
+*******************
+list-transform-jobs
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists transform jobs.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-transform-jobs
+  [--creation-time-after <value>]
+  [--creation-time-before <value>]
+  [--last-modified-time-after <value>]
+  [--last-modified-time-before <value>]
+  [--name-contains <value>]
+  [--status-equals <value>]
+  [--sort-by <value>]
+  [--sort-order <value>]
+  [--next-token <value>]
+  [--max-results <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--creation-time-after`` (timestamp)
+
+
+  A filter that returns only transform jobs created after the specified time.
+
+  
+
+``--creation-time-before`` (timestamp)
+
+
+  A filter that returns only transform jobs created before the specified time.
+
+  
+
+``--last-modified-time-after`` (timestamp)
+
+
+  A filter that returns only transform jobs modified after the specified time.
+
+  
+
+``--last-modified-time-before`` (timestamp)
+
+
+  A filter that returns only transform jobs modified before the specified time.
+
+  
+
+``--name-contains`` (string)
+
+
+  A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.
+
+  
+
+``--status-equals`` (string)
+
+
+  A filter that retrieves only transform jobs with a specific status.
+
+  
+
+  Possible values:
+
+  
+  *   ``InProgress``
+
+  
+  *   ``Completed``
+
+  
+  *   ``Failed``
+
+  
+  *   ``Stopping``
+
+  
+  *   ``Stopped``
+
+  
+
+  
+
+``--sort-by`` (string)
+
+
+  The field to sort results by. The default is ``CreationTime`` .
+
+  
+
+  Possible values:
+
+  
+  *   ``Name``
+
+  
+  *   ``CreationTime``
+
+  
+  *   ``Status``
+
+  
+
+  
+
+``--sort-order`` (string)
+
+
+  The sort order for results. The default is ``Descending`` .
+
+  
+
+  Possible values:
+
+  
+  *   ``Ascending``
+
+  
+  *   ``Descending``
+
+  
+
+  
+
+``--next-token`` (string)
+
+
+  If the result of the previous ``ListTransformJobs`` request was truncated, the response includes a ``NextToken`` . To retrieve the next set of transform jobs, use the token in the next request.
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of transform jobs to return in the response. The default value is ``10`` .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+TransformJobSummaries -> (list)
+
+  
+
+  An array of ``TransformJobSummary`` objects.
+
+  
+
+  (structure)
+
+    
+
+    Provides a summary information for a transform job. Multiple TransformJobSummary objects are returned as a list after calling  ListTransformJobs .
+
+    
+
+    TransformJobName -> (string)
+
+      
+
+      The name of the transform job.
+
+      
+
+      
+
+    TransformJobArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the transform job.
+
+      
+
+      
+
+    CreationTime -> (timestamp)
+
+      
+
+      A timestamp that shows when the transform Job was created.
+
+      
+
+      
+
+    TransformEndTime -> (timestamp)
+
+      
+
+      Indicates when the transform job ends on compute instances. For successful jobs and stopped jobs, this is the exact time recorded after the results are uploaded. For failed jobs, this is when Amazon SageMaker detected that the job failed.
+
+      
+
+      
+
+    LastModifiedTime -> (timestamp)
+
+      
+
+      Indicates when the transform job was last modified.
+
+      
+
+      
+
+    TransformJobStatus -> (string)
+
+      
+
+      The status of the transform job.
+
+      
+
+      
+
+    FailureReason -> (string)
+
+      
+
+      If the transform job failed, the reason it failed.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.
+
+  
+
+  
+

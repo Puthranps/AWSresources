@@ -1,0 +1,68 @@
+{
+    "pipelineName": "",
+    "pipelineActivities": [
+        {
+            "channel": {
+                "name": "",
+                "channelName": "",
+                "next": ""
+            },
+            "lambda": {
+                "name": "",
+                "lambdaName": "",
+                "batchSize": 0,
+                "next": ""
+            },
+            "datastore": {
+                "name": "",
+                "datastoreName": ""
+            },
+            "addAttributes": {
+                "name": "",
+                "attributes": {
+                    "KeyName": ""
+                },
+                "next": ""
+            },
+            "removeAttributes": {
+                "name": "",
+                "attributes": [
+                    ""
+                ],
+                "next": ""
+            },
+            "selectAttributes": {
+                "name": "",
+                "attributes": [
+                    ""
+                ],
+                "next": ""
+            },
+            "filter": {
+                "name": "",
+                "filter": "",
+                "next": ""
+            },
+            "math": {
+                "name": "",
+                "attribute": "",
+                "math": "",
+                "next": ""
+            },
+            "deviceRegistryEnrich": {
+                "name": "",
+                "attribute": "",
+                "thingName": "",
+                "roleArn": "",
+                "next": ""
+            },
+            "deviceShadowEnrich": {
+                "name": "",
+                "attribute": "",
+                "thingName": "",
+                "roleArn": "",
+                "next": ""
+            }
+        }
+    ]
+}

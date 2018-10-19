@@ -1,0 +1,40 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws dlm:
+
+
+***
+dlm
+***
+
+
+
+===========
+Description
+===========
+
+ 
+
+With Amazon Data Lifecycle Manager, you can manage the lifecycle of your AWS resources. You create lifecycle policies, which are used to automate operations on the specified resources.
+
+ 
+
+Amazon DLM supports Amazon EBS volumes and snapshots. For information about using Amazon DLM with Amazon EBS, see `Automating the Amazon EBS Snapshot Lifecycle <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-lifecycle.html>`__ in the *Amazon EC2 User Guide* .
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-default-role
+  create-lifecycle-policy
+  delete-lifecycle-policy
+  get-lifecycle-policies
+  get-lifecycle-policy
+  update-lifecycle-policy

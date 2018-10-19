@@ -1,0 +1,18 @@
+{
+    "DomainName": "",
+    "ValidationMethod": "EMAIL",
+    "SubjectAlternativeNames": [
+        ""
+    ],
+    "IdempotencyToken": "",
+    "DomainValidationOptions": [
+        {
+            "DomainName": "",
+            "ValidationDomain": ""
+        }
+    ],
+    "Options": {
+        "CertificateTransparencyLoggingPreference": "ENABLED"
+    },
+    "CertificateAuthorityArn": ""
+}

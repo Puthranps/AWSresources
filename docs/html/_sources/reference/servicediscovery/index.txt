@@ -1,0 +1,48 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws servicediscovery:
+
+
+****************
+servicediscovery
+****************
+
+
+
+===========
+Description
+===========
+
+
+
+Amazon Route 53 auto naming lets you configure public or private namespaces that your microservice applications run in. When instances of the service become available, you can call the auto naming API to register the instance, and Route 53 automatically creates up to five DNS records and an optional health check. Clients that submit DNS queries for the service receive an answer that contains up to eight healthy records.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-private-dns-namespace
+  create-public-dns-namespace
+  create-service
+  delete-namespace
+  delete-service
+  deregister-instance
+  get-instance
+  get-instances-health-status
+  get-namespace
+  get-operation
+  get-service
+  list-instances
+  list-namespaces
+  list-operations
+  list-services
+  register-instance
+  update-instance-custom-health-status
+  update-service

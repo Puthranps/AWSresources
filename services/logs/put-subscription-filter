@@ -1,0 +1,8 @@
+{
+    "logGroupName": "",
+    "filterName": "",
+    "filterPattern": "",
+    "destinationArn": "",
+    "roleArn": "",
+    "distribution": "ByLogStream"
+}

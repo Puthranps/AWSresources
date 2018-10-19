@@ -1,0 +1,40 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws firehose:
+
+
+********
+firehose
+********
+
+
+
+===========
+Description
+===========
+
+ 
+
+Amazon Kinesis Data Firehose is a fully managed service that delivers real-time streaming data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon Elasticsearch Service (Amazon ES), Amazon Redshift, and Splunk.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-delivery-stream
+  delete-delivery-stream
+  describe-delivery-stream
+  list-delivery-streams
+  list-tags-for-delivery-stream
+  put-record
+  put-record-batch
+  tag-delivery-stream
+  untag-delivery-stream
+  update-destination

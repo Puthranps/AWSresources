@@ -1,0 +1,25 @@
+{
+    "Workspaces": [
+        {
+            "DirectoryId": "",
+            "UserName": "",
+            "BundleId": "",
+            "VolumeEncryptionKey": "",
+            "UserVolumeEncryptionEnabled": true,
+            "RootVolumeEncryptionEnabled": true,
+            "WorkspaceProperties": {
+                "RunningMode": "AUTO_STOP",
+                "RunningModeAutoStopTimeoutInMinutes": 0,
+                "RootVolumeSizeGib": 0,
+                "UserVolumeSizeGib": 0,
+                "ComputeTypeName": "VALUE"
+            },
+            "Tags": [
+                {
+                    "Key": "",
+                    "Value": ""
+                }
+            ]
+        }
+    ]
+}

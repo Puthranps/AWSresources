@@ -1,0 +1,14 @@
+{
+    "restApiId": "",
+    "resourceId": "",
+    "httpMethod": "",
+    "statusCode": "",
+    "selectionPattern": "",
+    "responseParameters": {
+        "KeyName": ""
+    },
+    "responseTemplates": {
+        "KeyName": ""
+    },
+    "contentHandling": "CONVERT_TO_TEXT"
+}

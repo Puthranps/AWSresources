@@ -1,0 +1,8 @@
+{
+    "DomainName": "",
+    "ScalingParameters": {
+        "DesiredInstanceType": "search.m3.xlarge",
+        "DesiredReplicationCount": 0,
+        "DesiredPartitionCount": 0
+    }
+}

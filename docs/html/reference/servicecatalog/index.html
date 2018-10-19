@@ -1,0 +1,275 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>servicecatalog &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="accept-portfolio-share" href="../servicecatalog/accept-portfolio-share.html" />
+    <link rel="prev" title="update-application" href="../serverlessrepo/update-application.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../servicecatalog/accept-portfolio-share.html" title="accept-portfolio-share"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../serverlessrepo/update-application.html" title="update-application"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../serverlessrepo/update-application.html" title="previous chapter (use the left arrow)">&larr; update-application</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../servicecatalog/accept-portfolio-share.html" title="next chapter (use the right arrow)">accept-portfolio-share &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">servicecatalog</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/servicecatalog/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="servicecatalog">
+<span id="cli-aws-servicecatalog"></span><h1>servicecatalog<a class="headerlink" href="#servicecatalog" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><a class="reference external" href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be familiar with the terminology discussed in <a class="reference external" href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog Concepts</a> .</div></blockquote>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/accept-portfolio-share.html">accept-portfolio-share</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/associate-principal-with-portfolio.html">associate-principal-with-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/associate-product-with-portfolio.html">associate-product-with-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/associate-service-action-with-provisioning-artifact.html">associate-service-action-with-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/associate-tag-option-with-resource.html">associate-tag-option-with-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/batch-associate-service-action-with-provisioning-artifact.html">batch-associate-service-action-with-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/batch-disassociate-service-action-from-provisioning-artifact.html">batch-disassociate-service-action-from-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/copy-product.html">copy-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-constraint.html">create-constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-portfolio.html">create-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-portfolio-share.html">create-portfolio-share</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-product.html">create-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-provisioned-product-plan.html">create-provisioned-product-plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-provisioning-artifact.html">create-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-service-action.html">create-service-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/create-tag-option.html">create-tag-option</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-constraint.html">delete-constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-portfolio.html">delete-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-portfolio-share.html">delete-portfolio-share</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-product.html">delete-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-provisioned-product-plan.html">delete-provisioned-product-plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-provisioning-artifact.html">delete-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-service-action.html">delete-service-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/delete-tag-option.html">delete-tag-option</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-constraint.html">describe-constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-copy-product-status.html">describe-copy-product-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-portfolio.html">describe-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-product.html">describe-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-product-as-admin.html">describe-product-as-admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-product-view.html">describe-product-view</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-provisioned-product.html">describe-provisioned-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-provisioned-product-plan.html">describe-provisioned-product-plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-provisioning-artifact.html">describe-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-provisioning-parameters.html">describe-provisioning-parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-record.html">describe-record</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-service-action.html">describe-service-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/describe-tag-option.html">describe-tag-option</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/disassociate-principal-from-portfolio.html">disassociate-principal-from-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/disassociate-product-from-portfolio.html">disassociate-product-from-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/disassociate-service-action-from-provisioning-artifact.html">disassociate-service-action-from-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/disassociate-tag-option-from-resource.html">disassociate-tag-option-from-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/execute-provisioned-product-plan.html">execute-provisioned-product-plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/execute-provisioned-product-service-action.html">execute-provisioned-product-service-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/generate/index.html">generate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-accepted-portfolio-shares.html">list-accepted-portfolio-shares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-constraints-for-portfolio.html">list-constraints-for-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-launch-paths.html">list-launch-paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-portfolio-access.html">list-portfolio-access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-portfolios.html">list-portfolios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-portfolios-for-product.html">list-portfolios-for-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-principals-for-portfolio.html">list-principals-for-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-provisioned-product-plans.html">list-provisioned-product-plans</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-provisioning-artifacts.html">list-provisioning-artifacts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-provisioning-artifacts-for-service-action.html">list-provisioning-artifacts-for-service-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-record-history.html">list-record-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-resources-for-tag-option.html">list-resources-for-tag-option</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-service-actions.html">list-service-actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-service-actions-for-provisioning-artifact.html">list-service-actions-for-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/list-tag-options.html">list-tag-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/provision-product.html">provision-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/reject-portfolio-share.html">reject-portfolio-share</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/scan-provisioned-products.html">scan-provisioned-products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/search-products.html">search-products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/search-products-as-admin.html">search-products-as-admin</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/search-provisioned-products.html">search-provisioned-products</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/terminate-provisioned-product.html">terminate-provisioned-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-constraint.html">update-constraint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-portfolio.html">update-portfolio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-product.html">update-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-provisioned-product.html">update-provisioned-product</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-provisioning-artifact.html">update-provisioning-artifact</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-service-action.html">update-service-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../servicecatalog/update-tag-option.html">update-tag-option</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../serverlessrepo/update-application.html" title="previous chapter (use the left arrow)">&larr; update-application</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../servicecatalog/accept-portfolio-share.html" title="next chapter (use the right arrow)">accept-portfolio-share &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../servicecatalog/accept-portfolio-share.html" title="accept-portfolio-share"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../serverlessrepo/update-application.html" title="update-application"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

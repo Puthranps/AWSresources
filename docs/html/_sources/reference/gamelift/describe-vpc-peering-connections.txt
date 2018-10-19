@@ -1,0 +1,209 @@
+[ :ref:`aws <cli:aws>` . :ref:`gamelift <cli:aws gamelift>` ]
+
+.. _cli:aws gamelift describe-vpc-peering-connections:
+
+
+********************************
+describe-vpc-peering-connections
+********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves information on VPC peering connections. Use this operation to get peering information for all fleets or for one specific fleet ID. 
+
+ 
+
+To retrieve connection information, call this operation from the AWS account that is used to manage the Amazon GameLift fleets. Specify a fleet ID or leave the parameter empty to retrieve all connection records. If successful, the retrieved information includes both active and pending connections. Active connections identify the IpV4 CIDR block that the VPC uses to connect. 
+
+ 
+
+VPC peering connection operations include:
+
+ 
+
+ 
+*  CreateVpcPeeringAuthorization   
+ 
+*  DescribeVpcPeeringAuthorizations   
+ 
+*  DeleteVpcPeeringAuthorization   
+ 
+*  CreateVpcPeeringConnection   
+ 
+*  DescribeVpcPeeringConnections   
+ 
+*  DeleteVpcPeeringConnection   
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeVpcPeeringConnections>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-vpc-peering-connections
+  [--fleet-id <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--fleet-id`` (string)
+
+
+  Unique identifier for a fleet.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+VpcPeeringConnections -> (list)
+
+  
+
+  Collection of VPC peering connection records that match the request.
+
+  
+
+  (structure)
+
+    
+
+    Represents a peering connection between a VPC on one of your AWS accounts and the VPC for your Amazon GameLift fleets. This record may be for an active peering connection or a pending connection that has not yet been established.
+
+     
+
+    VPC peering connection operations include:
+
+     
+
+     
+    *  CreateVpcPeeringAuthorization   
+     
+    *  DescribeVpcPeeringAuthorizations   
+     
+    *  DeleteVpcPeeringAuthorization   
+     
+    *  CreateVpcPeeringConnection   
+     
+    *  DescribeVpcPeeringConnections   
+     
+    *  DeleteVpcPeeringConnection   
+     
+
+    
+
+    FleetId -> (string)
+
+      
+
+      Unique identifier for a fleet. This ID determines the ID of the Amazon GameLift VPC for your fleet.
+
+      
+
+      
+
+    IpV4CidrBlock -> (string)
+
+      
+
+      CIDR block of IPv4 addresses assigned to the VPC peering connection for the GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it; these blocks cannot overlap or the peering connection cannot be created. 
+
+      
+
+      
+
+    VpcPeeringConnectionId -> (string)
+
+      
+
+      Unique identifier that is automatically assigned to the connection record. This ID is referenced in VPC peering connection events, and is used when deleting a connection with  DeleteVpcPeeringConnection . 
+
+      
+
+      
+
+    Status -> (structure)
+
+      
+
+      Object that contains status information about the connection. Status indicates if a connection is pending, successful, or failed.
+
+      
+
+      Code -> (string)
+
+        
+
+        Code indicating the status of a VPC peering connection.
+
+        
+
+        
+
+      Message -> (string)
+
+        
+
+        Additional messaging associated with the connection status. 
+
+        
+
+        
+
+      
+
+    PeerVpcId -> (string)
+
+      
+
+      Unique identifier for a VPC with resources to be accessed by your Amazon GameLift fleet. The VPC must be in the same region where your fleet is deployed. To get VPC information, including IDs, use the Virtual Private Cloud service tools, including the VPC Dashboard in the AWS Management Console.
+
+      
+
+      
+
+    GameLiftVpcId -> (string)
+
+      
+
+      Unique identifier for the VPC that contains the Amazon GameLift fleet for this connection. This VPC is managed by Amazon GameLift and does not appear in your AWS account. 
+
+      
+
+      
+
+    
+
+  
+

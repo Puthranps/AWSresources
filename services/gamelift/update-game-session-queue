@@ -1,0 +1,15 @@
+{
+    "Name": "",
+    "TimeoutInSeconds": 0,
+    "PlayerLatencyPolicies": [
+        {
+            "MaximumIndividualPlayerLatencyMilliseconds": 0,
+            "PolicyDurationSeconds": 0
+        }
+    ],
+    "Destinations": [
+        {
+            "DestinationArn": ""
+        }
+    ]
+}

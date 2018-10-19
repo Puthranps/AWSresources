@@ -1,0 +1,31 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws sagemaker-runtime:
+
+
+*****************
+sagemaker-runtime
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+The Amazon SageMaker runtime API. 
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  invoke-endpoint

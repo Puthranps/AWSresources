@@ -1,0 +1,19 @@
+{
+    "FleetId": "",
+    "InboundPermissionAuthorizations": [
+        {
+            "FromPort": 0,
+            "ToPort": 0,
+            "IpRange": "",
+            "Protocol": "TCP"
+        }
+    ],
+    "InboundPermissionRevocations": [
+        {
+            "FromPort": 0,
+            "ToPort": 0,
+            "IpRange": "",
+            "Protocol": "UDP"
+        }
+    ]
+}

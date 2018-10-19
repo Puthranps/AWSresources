@@ -1,0 +1,31 @@
+{
+    "ConfigRule": {
+        "ConfigRuleName": "",
+        "ConfigRuleArn": "",
+        "ConfigRuleId": "",
+        "Description": "",
+        "Scope": {
+            "ComplianceResourceTypes": [
+                ""
+            ],
+            "TagKey": "",
+            "TagValue": "",
+            "ComplianceResourceId": ""
+        },
+        "Source": {
+            "Owner": "AWS",
+            "SourceIdentifier": "",
+            "SourceDetails": [
+                {
+                    "EventSource": "aws.config",
+                    "MessageType": "ScheduledNotification",
+                    "MaximumExecutionFrequency": "Six_Hours"
+                }
+            ]
+        },
+        "InputParameters": "",
+        "MaximumExecutionFrequency": "TwentyFour_Hours",
+        "ConfigRuleState": "EVALUATING",
+        "CreatedBy": ""
+    }
+}

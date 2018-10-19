@@ -1,0 +1,11 @@
+{
+    "logGroupName": "",
+    "logStreamName": "",
+    "logEvents": [
+        {
+            "timestamp": 0,
+            "message": ""
+        }
+    ],
+    "sequenceToken": ""
+}

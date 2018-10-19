@@ -1,0 +1,351 @@
+[ :ref:`aws <cli:aws>` . :ref:`mq <cli:aws mq>` ]
+
+.. _cli:aws mq describe-broker:
+
+
+***************
+describe-broker
+***************
+
+
+
+===========
+Description
+===========
+
+Returns information about the specified broker.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/DescribeBroker>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-broker
+  --broker-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--broker-id`` (string)
+The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+AutoMinorVersionUpgrade -> (boolean)
+
+  Required. Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+
+  
+
+BrokerArn -> (string)
+
+  The Amazon Resource Name (ARN) of the broker.
+
+  
+
+BrokerId -> (string)
+
+  The unique ID that Amazon MQ generates for the broker.
+
+  
+
+BrokerInstances -> (list)
+
+  A list of information about allocated brokers.
+
+  (structure)
+
+    Returns information about all brokers.
+
+    ConsoleURL -> (string)
+
+      The URL of the broker's ActiveMQ Web Console.
+
+      
+
+    Endpoints -> (list)
+
+      The broker's wire-level protocol endpoints.
+
+      (string)
+
+        
+
+        
+
+      
+
+    IpAddress -> (string)
+
+      The IP address of the Elastic Network Interface (ENI) attached to the broker.
+
+      
+
+    
+
+  
+
+BrokerName -> (string)
+
+  The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+
+  
+
+BrokerState -> (string)
+
+  The status of the broker.
+
+  
+
+Configurations -> (structure)
+
+  The list of all revisions for the specified configuration.
+
+  Current -> (structure)
+
+    The current configuration of the broker.
+
+    Id -> (string)
+
+      Required. The unique ID that Amazon MQ generates for the configuration.
+
+      
+
+    Revision -> (integer)
+
+      The revision number of the configuration.
+
+      
+
+    
+
+  History -> (list)
+
+    The history of configurations applied to the broker.
+
+    (structure)
+
+      A list of information about the configuration.
+
+      Id -> (string)
+
+        Required. The unique ID that Amazon MQ generates for the configuration.
+
+        
+
+      Revision -> (integer)
+
+        The revision number of the configuration.
+
+        
+
+      
+
+    
+
+  Pending -> (structure)
+
+    The pending configuration of the broker.
+
+    Id -> (string)
+
+      Required. The unique ID that Amazon MQ generates for the configuration.
+
+      
+
+    Revision -> (integer)
+
+      The revision number of the configuration.
+
+      
+
+    
+
+  
+
+Created -> (timestamp)
+
+  The time when the broker was created.
+
+  
+
+DeploymentMode -> (string)
+
+  Required. The deployment mode of the broker.
+
+  
+
+EngineType -> (string)
+
+  Required. The type of broker engine. Note: Currently, Amazon MQ supports only ACTIVEMQ.
+
+  
+
+EngineVersion -> (string)
+
+  The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+
+  
+
+HostInstanceType -> (string)
+
+  The broker's instance type.
+
+  
+
+Logs -> (structure)
+
+  The list of information about logs currently enabled and pending to be deployed for the specified broker.
+
+  Audit -> (boolean)
+
+    Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+
+    
+
+  AuditLogGroup -> (string)
+
+    The location of the CloudWatch Logs log group where audit logs are sent.
+
+    
+
+  General -> (boolean)
+
+    Enables general logging.
+
+    
+
+  GeneralLogGroup -> (string)
+
+    The location of the CloudWatch Logs log group where general logs are sent.
+
+    
+
+  Pending -> (structure)
+
+    The list of information about logs pending to be deployed for the specified broker.
+
+    Audit -> (boolean)
+
+      Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+
+      
+
+    General -> (boolean)
+
+      Enables general logging.
+
+      
+
+    
+
+  
+
+MaintenanceWindowStartTime -> (structure)
+
+  The parameters that determine the WeeklyStartTime.
+
+  DayOfWeek -> (string)
+
+    Required. The day of the week.
+
+    
+
+  TimeOfDay -> (string)
+
+    Required. The time, in 24-hour format.
+
+    
+
+  TimeZone -> (string)
+
+    The time zone, UTC by default, in either the Country/City format, or the UTC offset format.
+
+    
+
+  
+
+PendingEngineVersion -> (string)
+
+  The version of the broker engine to upgrade to.
+
+  
+
+PubliclyAccessible -> (boolean)
+
+  Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
+
+  
+
+SecurityGroups -> (list)
+
+  Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+
+  (string)
+
+    
+
+    
+
+  
+
+SubnetIds -> (list)
+
+  The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different Availability Zones. A SINGLE_INSTANCE deployment requires one subnet (for example, the default subnet). An ACTIVE_STANDBY_MULTI_AZ deployment requires two subnets.
+
+  (string)
+
+    
+
+    
+
+  
+
+Users -> (list)
+
+  The list of all ActiveMQ usernames for the specified broker.
+
+  (structure)
+
+    Returns a list of all ActiveMQ users.
+
+    PendingChange -> (string)
+
+      The type of change pending for the ActiveMQ user.
+
+      
+
+    Username -> (string)
+
+      Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes, periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+
+      
+
+    
+
+  
+

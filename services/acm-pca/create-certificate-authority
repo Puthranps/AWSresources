@@ -1,0 +1,32 @@
+{
+    "CertificateAuthorityConfiguration": {
+        "KeyAlgorithm": "EC_prime256v1",
+        "SigningAlgorithm": "SHA256WITHECDSA",
+        "Subject": {
+            "Country": "",
+            "Organization": "",
+            "OrganizationalUnit": "",
+            "DistinguishedNameQualifier": "",
+            "State": "",
+            "CommonName": "",
+            "SerialNumber": "",
+            "Locality": "",
+            "Title": "",
+            "Surname": "",
+            "GivenName": "",
+            "Initials": "",
+            "Pseudonym": "",
+            "GenerationQualifier": ""
+        }
+    },
+    "RevocationConfiguration": {
+        "CrlConfiguration": {
+            "Enabled": true,
+            "ExpirationInDays": 0,
+            "CustomCname": "",
+            "S3BucketName": ""
+        }
+    },
+    "CertificateAuthorityType": "SUBORDINATE",
+    "IdempotencyToken": ""
+}

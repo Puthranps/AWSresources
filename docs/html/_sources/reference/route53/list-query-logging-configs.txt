@@ -1,0 +1,165 @@
+[ :ref:`aws <cli:aws>` . :ref:`route53 <cli:aws route53>` ]
+
+.. _cli:aws route53 list-query-logging-configs:
+
+
+**************************
+list-query-logging-configs
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the configurations for DNS query logging that are associated with the current AWS account or the configuration that is associated with a specified hosted zone.
+
+ 
+
+For more information about DNS query logs, see  CreateQueryLoggingConfig . Additional information, including the format of DNS query logs, appears in `Logging DNS Queries <http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/query-logs.html>`__ in the *Amazon Route 53 Developer Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListQueryLoggingConfigs>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-query-logging-configs
+  [--hosted-zone-id <value>]
+  [--next-token <value>]
+  [--max-results <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--hosted-zone-id`` (string)
+
+
+  (Optional) If you want to list the query logging configuration that is associated with a hosted zone, specify the ID in ``HostedZoneId`` . 
+
+   
+
+  If you don't specify a hosted zone ID, ``ListQueryLoggingConfigs`` returns all of the configurations that are associated with the current AWS account.
+
+  
+
+``--next-token`` (string)
+
+
+  (Optional) If the current AWS account has more than ``MaxResults`` query logging configurations, use ``NextToken`` to get the second and subsequent pages of results.
+
+   
+
+  For the first ``ListQueryLoggingConfigs`` request, omit this value.
+
+   
+
+  For the second and subsequent requests, get the value of ``NextToken`` from the previous response and specify that value for ``NextToken`` in the request.
+
+  
+
+``--max-results`` (string)
+
+
+  (Optional) The maximum number of query logging configurations that you want Amazon Route 53 to return in response to the current request. If the current AWS account has more than ``MaxResults`` configurations, use the value of  ListQueryLoggingConfigsResponse$NextToken in the response to get the next page of results.
+
+   
+
+  If you don't specify a value for ``MaxResults`` , Amazon Route 53 returns up to 100 configurations.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+QueryLoggingConfigs -> (list)
+
+  
+
+  An array that contains one  QueryLoggingConfig element for each configuration for DNS query logging that is associated with the current AWS account.
+
+  
+
+  (structure)
+
+    
+
+    A complex type that contains information about a configuration for DNS query logging.
+
+    
+
+    Id -> (string)
+
+      
+
+      The ID for a configuration for DNS query logging.
+
+      
+
+      
+
+    HostedZoneId -> (string)
+
+      
+
+      The ID of the hosted zone that CloudWatch Logs is logging queries for. 
+
+      
+
+      
+
+    CloudWatchLogsLogGroupArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon Route 53 is publishing logs to.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  If a response includes the last of the query logging configurations that are associated with the current AWS account, ``NextToken`` doesn't appear in the response.
+
+   
+
+  If a response doesn't include the last of the configurations, you can get more configurations by submitting another  ListQueryLoggingConfigs request. Get the value of ``NextToken`` that Amazon Route 53 returned in the previous response and include it in ``NextToken`` in the next request.
+
+  
+
+  
+

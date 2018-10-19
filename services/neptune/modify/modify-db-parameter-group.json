@@ -1,0 +1,17 @@
+{
+    "DBParameterGroupName": "",
+    "Parameters": [
+        {
+            "ParameterName": "",
+            "ParameterValue": "",
+            "Description": "",
+            "Source": "",
+            "ApplyType": "",
+            "DataType": "",
+            "AllowedValues": "",
+            "IsModifiable": true,
+            "MinimumEngineVersion": "",
+            "ApplyMethod": "pending-reboot"
+        }
+    ]
+}

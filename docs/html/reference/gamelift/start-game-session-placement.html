@@ -1,0 +1,422 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>start-game-session-placement &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="gamelift" href="../gamelift/index.html" />
+    <link rel="next" title="start-match-backfill" href="../gamelift/start-match-backfill.html" />
+    <link rel="prev" title="start-fleet-actions" href="../gamelift/start-fleet-actions.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../gamelift/start-match-backfill.html" title="start-match-backfill"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../gamelift/start-fleet-actions.html" title="start-fleet-actions"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../gamelift/index.html" accesskey="U">gamelift</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../gamelift/start-fleet-actions.html" title="previous chapter (use the left arrow)">&larr; start-fleet-actions</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../gamelift/start-match-backfill.html" title="next chapter (use the right arrow)">start-match-backfill &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">start-game-session-placement</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/gamelift/start-game-session-placement">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../gamelift/index.html#cli-aws-gamelift"><em>gamelift</em></a> ]</p>
+<div class="section" id="start-game-session-placement">
+<span id="cli-aws-gamelift-start-game-session-placement"></span><h1>start-game-session-placement<a class="headerlink" href="#start-game-session-placement" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Places a request for a new game session in a queue (see  CreateGameSessionQueue ). When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>
+<p>A game session placement request can also request player sessions. When a new game session is successfully created, Amazon GameLift creates a player session for each player included in the request.</p>
+<p>When placing a game session, by default Amazon GameLift tries each fleet in the order they are listed in the queue configuration. Ideally, a queue's destinations are listed in preference order.</p>
+<p>Alternatively, when requesting a game session with players, you can also provide latency data for each player in relevant regions. Latency data indicates the performance lag a player experiences when connected to a fleet in the region. Amazon GameLift uses latency data to reorder the list of destinations to place the game session in a region with minimal lag. If latency data is provided for multiple players, Amazon GameLift calculates each region's average lag for all players and reorders to get the best game play across all players.</p>
+<p>To place a new game session request, specify the following:</p>
+<ul class="simple">
+<li>The queue name and a set of game session properties and settings</li>
+<li>A unique ID (such as a UUID) for the placement. You use this ID to track the status of the placement request</li>
+<li>(Optional) A set of IDs and player data for each player you want to join to the new game session</li>
+<li>Latency data for all players (if you want to optimize game play for the players)</li>
+</ul>
+<p>If successful, a new game session placement is created.</p>
+<p>To track the status of a placement request, call  DescribeGameSessionPlacement and check the request's status. If the status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> , a new game session has been created and a game session ARN and region are referenced. If the placement request times out, you can resubmit the request or retry it with a different queue.</p>
+<p>Game-session-related operations include:</p>
+<ul class="simple">
+<li>CreateGameSession</li>
+<li>DescribeGameSessions</li>
+<li>DescribeGameSessionDetails</li>
+<li>SearchGameSessions</li>
+<li>UpdateGameSession</li>
+<li>GetGameSessionLogUrl</li>
+<li>Game session placements<ul>
+<li>StartGameSessionPlacement</li>
+<li>DescribeGameSessionPlacement</li>
+<li>StopGameSessionPlacement</li>
+</ul>
+</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartGameSessionPlacement">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  start-game-session-placement
+--placement-id &lt;value&gt;
+--game-session-queue-name &lt;value&gt;
+[--game-properties &lt;value&gt;]
+--maximum-player-session-count &lt;value&gt;
+[--game-session-name &lt;value&gt;]
+[--player-latencies &lt;value&gt;]
+[--desired-player-sessions &lt;value&gt;]
+[--game-session-data &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--placement-id</span></tt> (string)</p>
+<blockquote>
+<div>Unique identifier to assign to the new game session placement. This value is developer-defined. The value must be unique across all regions and cannot be reused unless you are resubmitting a canceled or timed-out placement request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--game-session-queue-name</span></tt> (string)</p>
+<blockquote>
+<div>Name of the queue to use to place the new game session.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--game-properties</span></tt> (list)</p>
+<blockquote>
+<div>Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the  GameSession object with a request to start a new game session (see <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a> ).</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--maximum-player-session-count</span></tt> (integer)</p>
+<blockquote>
+<div>Maximum number of players that can be connected simultaneously to the game session.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--game-session-name</span></tt> (string)</p>
+<blockquote>
+<div>Descriptive label that is associated with a game session. Session names do not need to be unique.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--player-latencies</span></tt> (list)</p>
+<blockquote>
+<div>Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when connected to AWS regions. This information is used to try to place the new game session where it can offer the best possible gameplay experience for the players.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>PlayerId=string,RegionIdentifier=string,LatencyInMilliseconds=float ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;PlayerId&quot;: &quot;string&quot;,
+    &quot;RegionIdentifier&quot;: &quot;string&quot;,
+    &quot;LatencyInMilliseconds&quot;: float
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--desired-player-sessions</span></tt> (list)</p>
+<blockquote>
+<div>Set of information on each player to create a player session for.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>PlayerId=string,PlayerData=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;PlayerId&quot;: &quot;string&quot;,
+    &quot;PlayerData&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--game-session-data</span></tt> (string)</p>
+<blockquote>
+<div>Set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the  GameSession object with a request to start a new game session (see <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a> ).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>GameSessionPlacement -&gt; (structure)</p>
+<blockquote>
+<div><p>Object that describes the newly created game session placement. This object includes all the information provided in the request, as well as start/end time stamps and placement status.</p>
+<p>PlacementId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for a game session placement.</div></blockquote>
+<p>GameSessionQueueName -&gt; (string)</p>
+<blockquote>
+<div>Descriptive label that is associated with game session queue. Queue names must be unique within each region.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>Current status of the game session placement request.</p>
+<ul class="simple">
+<li><strong>PENDING</strong> -- The placement request is currently in the queue waiting to be processed.</li>
+<li><strong>FULFILLED</strong> -- A new game session and player sessions (if requested) have been successfully created. Values for <em>GameSessionArn</em> and <em>GameSessionRegion</em> are available.</li>
+<li><strong>CANCELLED</strong> -- The placement request was canceled with a call to  StopGameSessionPlacement .</li>
+<li><strong>TIMED_OUT</strong> -- A new game session was not successfully created before the time limit expired. You can resubmit the placement request as needed.</li>
+</ul>
+</div></blockquote>
+<p>GameProperties -&gt; (list)</p>
+<blockquote>
+<div><p>Set of custom properties for a game session, formatted as key:value pairs. These properties are passed to a game server process in the  GameSession object with a request to start a new game session (see <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a> ).</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Set of key-value pairs that contain information about a game session. When included in a game session request, these properties communicate details to be used when setting up the new game session, such as to specify a game mode, level, or map. Game properties are passed to the game server process when initiating a new game session; the server process uses the properties as appropriate. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-client-api.html#gamelift-sdk-client-api-create">Amazon GameLift Developer Guide</a> .</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>Game property identifier.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>Game property value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>MaximumPlayerSessionCount -&gt; (integer)</p>
+<blockquote>
+<div>Maximum number of players that can be connected simultaneously to the game session.</div></blockquote>
+<p>GameSessionName -&gt; (string)</p>
+<blockquote>
+<div>Descriptive label that is associated with a game session. Session names do not need to be unique.</div></blockquote>
+<p>GameSessionId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for the game session. This value is set once the new game session is placed (placement status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> ).</div></blockquote>
+<p>GameSessionArn -&gt; (string)</p>
+<blockquote>
+<div>Identifier for the game session created by this placement request. This value is set once the new game session is placed (placement status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> ). This identifier is unique across all regions. You can use this value as a <tt class="docutils literal"><span class="pre">GameSessionId</span></tt> value as needed.</div></blockquote>
+<p>GameSessionRegion -&gt; (string)</p>
+<blockquote>
+<div>Name of the region where the game session created by this placement request is running. This value is set once the new game session is placed (placement status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> ).</div></blockquote>
+<p>PlayerLatencies -&gt; (list)</p>
+<blockquote>
+<div><p>Set of values, expressed in milliseconds, indicating the amount of latency that a player experiences when connected to AWS regions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Regional latency information for a player, used when requesting a new game session with  StartGameSessionPlacement . This value indicates the amount of time lag that exists when the player is connected to a fleet in the specified region. The relative difference between a player's latency values for multiple regions are used to determine which fleets are best suited to place a new game session for the player.</p>
+<p>PlayerId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for a player associated with the latency data.</div></blockquote>
+<p>RegionIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Name of the region that is associated with the latency value.</div></blockquote>
+<p>LatencyInMilliseconds -&gt; (float)</p>
+<blockquote>
+<div>Amount of time that represents the time lag experienced by the player when connected to the specified region.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Time stamp indicating when this request was placed in the queue. Format is a number expressed in Unix time as milliseconds (for example &quot;1469498468.057&quot;).</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Time stamp indicating when this request was completed, canceled, or timed out.</div></blockquote>
+<p>IpAddress -&gt; (string)</p>
+<blockquote>
+<div>IP address of the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> ).</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address and port number. This value is set once the new game session is placed (placement status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> ).</div></blockquote>
+<p>PlacedPlayerSessions -&gt; (list)</p>
+<blockquote>
+<div><p>Collection of information on player sessions created in response to the game session placement request. These player sessions are created only once a new game session is successfully placed (placement status is <tt class="docutils literal"><span class="pre">FULFILLED</span></tt> ). This information includes the player ID (as provided in the placement request) and the corresponding player session ID. Retrieve full player sessions by calling  DescribePlayerSessions with the player session ID.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a player session that was created as part of a  StartGameSessionPlacement request. This object contains only the player ID and player session ID. To retrieve full details on a player session, call  DescribePlayerSessions with the player session ID.</p>
+<p>Player-session-related operations include:</p>
+<ul class="simple">
+<li>CreatePlayerSession</li>
+<li>CreatePlayerSessions</li>
+<li>DescribePlayerSessions</li>
+<li>Game session placements<ul>
+<li>StartGameSessionPlacement</li>
+<li>DescribeGameSessionPlacement</li>
+<li>StopGameSessionPlacement</li>
+</ul>
+</li>
+</ul>
+<p>PlayerId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for a player that is associated with this player session.</div></blockquote>
+<p>PlayerSessionId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for a player session.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GameSessionData -&gt; (string)</p>
+<blockquote>
+<div>Set of custom game session properties, formatted as a single string value. This data is passed to a game server process in the  GameSession object with a request to start a new game session (see <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start a Game Session</a> ).</div></blockquote>
+<p>MatchmakerData -&gt; (string)</p>
+<blockquote>
+<div>Information on the matchmaking process for this game. Data is in JSON syntax, formatted as a string. It identifies the matchmaking configuration used to create the match, and contains data on all players assigned to the match, including player attributes and team assignments. For more details on matchmaker data, see <a class="reference external" href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-server.html#match-server-data">Match Data</a> .</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../gamelift/start-fleet-actions.html" title="previous chapter (use the left arrow)">&larr; start-fleet-actions</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../gamelift/start-match-backfill.html" title="next chapter (use the right arrow)">start-match-backfill &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../gamelift/start-match-backfill.html" title="start-match-backfill"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../gamelift/start-fleet-actions.html" title="start-fleet-actions"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../gamelift/index.html" >gamelift</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,48 @@
+{
+    "ClusterId": "",
+    "InstanceFleet": {
+        "Name": "",
+        "InstanceFleetType": "MASTER",
+        "TargetOnDemandCapacity": 0,
+        "TargetSpotCapacity": 0,
+        "InstanceTypeConfigs": [
+            {
+                "InstanceType": "",
+                "WeightedCapacity": 0,
+                "BidPrice": "",
+                "BidPriceAsPercentageOfOnDemandPrice": null,
+                "EbsConfiguration": {
+                    "EbsBlockDeviceConfigs": [
+                        {
+                            "VolumeSpecification": {
+                                "VolumeType": "",
+                                "Iops": 0,
+                                "SizeInGB": 0
+                            },
+                            "VolumesPerInstance": 0
+                        }
+                    ],
+                    "EbsOptimized": true
+                },
+                "Configurations": [
+                    {
+                        "Classification": "",
+                        "Configurations": [
+                            {}
+                        ],
+                        "Properties": {
+                            "KeyName": ""
+                        }
+                    }
+                ]
+            }
+        ],
+        "LaunchSpecifications": {
+            "SpotSpecification": {
+                "TimeoutDurationMinutes": 0,
+                "TimeoutAction": "TERMINATE_CLUSTER",
+                "BlockDurationMinutes": 0
+            }
+        }
+    }
+}

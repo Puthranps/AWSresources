@@ -1,0 +1,187 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 allocate-hosts:
+
+
+**************
+allocate-hosts
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Allocates a Dedicated Host to your account. At a minimum, specify the instance size type, Availability Zone, and quantity of hosts to allocate.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AllocateHosts>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    allocate-hosts
+  [--auto-placement <value>]
+  --availability-zone <value>
+  [--client-token <value>]
+  --instance-type <value>
+  --quantity <value>
+  [--tag-specifications <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--auto-placement`` (string)
+
+
+  This is enabled by default. This property allows instances to be automatically placed onto available Dedicated Hosts, when you are launching instances without specifying a host ID.
+
+   
+
+  Default: Enabled
+
+  
+
+  Possible values:
+
+  
+  *   ``on``
+
+  
+  *   ``off``
+
+  
+
+  
+
+``--availability-zone`` (string)
+
+
+  The Availability Zone for the Dedicated Hosts.
+
+  
+
+``--client-token`` (string)
+
+
+  Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see `How to Ensure Idempotency <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html>`__ in the *Amazon Elastic Compute Cloud User Guide* . 
+
+  
+
+``--instance-type`` (string)
+
+
+  Specify the instance type for which to configure your Dedicated Hosts. When you specify the instance type, that is the only instance type that you can launch onto that host.
+
+  
+
+``--quantity`` (integer)
+
+
+  The number of Dedicated Hosts to allocate to your account with these parameters.
+
+  
+
+``--tag-specifications`` (list)
+
+
+  The tags to apply to the Dedicated Host during creation.
+
+  
+
+
+
+Shorthand Syntax::
+
+    ResourceType=string,Tags=[{Key=string,Value=string},{Key=string,Value=string}] ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "ResourceType": "customer-gateway"|"dedicated-host"|"dhcp-options"|"image"|"instance"|"internet-gateway"|"network-acl"|"network-interface"|"reserved-instances"|"route-table"|"snapshot"|"spot-instances-request"|"subnet"|"security-group"|"volume"|"vpc"|"vpn-connection"|"vpn-gateway",
+      "Tags": [
+        {
+          "Key": "string",
+          "Value": "string"
+        }
+        ...
+      ]
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To allocate a Dedicated host to your account**
+
+This example allocates a single Dedicated host in a specific Availability Zone, onto which you can launch m3.medium instances, to your account. 
+
+Command::
+
+    aws ec2 allocate-hosts --instance-type m3.medium --availability-zone us-east-1b --quantity 1
+
+Output::
+
+  {
+      "HostIds": [
+      "h-029e7409a337631f"
+      ]
+  }
+
+
+
+
+======
+Output
+======
+
+HostIds -> (list)
+
+  
+
+  The ID of the allocated Dedicated Host. This is used to launch an instance onto a specific host.
+
+  
+
+  (string)
+
+    
+
+    
+
+  
+

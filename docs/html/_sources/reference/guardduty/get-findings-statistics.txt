@@ -1,0 +1,127 @@
+[ :ref:`aws <cli:aws>` . :ref:`guardduty <cli:aws guardduty>` ]
+
+.. _cli:aws guardduty get-findings-statistics:
+
+
+***********************
+get-findings-statistics
+***********************
+
+
+
+===========
+Description
+===========
+
+Lists Amazon GuardDuty findings' statistics for the specified detector ID.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindingsStatistics>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-findings-statistics
+  --detector-id <value>
+  [--finding-criteria <value>]
+  --finding-statistic-types <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--detector-id`` (string)
+The ID of the detector that specifies the GuardDuty service whose findings' statistics you want to retrieve.
+
+``--finding-criteria`` (structure)
+Represents the criteria used for querying findings.
+
+
+
+Shorthand Syntax::
+
+    Criterion={KeyName1={Eq=[string,string],Gt=integer,Gte=integer,Lt=integer,Lte=integer,Neq=[string,string]},KeyName2={Eq=[string,string],Gt=integer,Gte=integer,Lt=integer,Lte=integer,Neq=[string,string]}}
+
+
+
+
+JSON Syntax::
+
+  {
+    "Criterion": {"string": {
+          "Eq": ["string", ...],
+          "Gt": integer,
+          "Gte": integer,
+          "Lt": integer,
+          "Lte": integer,
+          "Neq": ["string", ...]
+        }
+      ...}
+  }
+
+
+
+``--finding-statistic-types`` (list)
+Types of finding statistics to retrieve.
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+  Where valid values are:
+    COUNT_BY_SEVERITY
+
+
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+FindingStatistics -> (structure)
+
+  Finding statistics object.
+
+  CountBySeverity -> (map)
+
+    Represents a map of severity to count statistic for a set of findings
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (integer)
+
+      The count of findings for the given severity.
+
+      
+
+    
+
+  
+

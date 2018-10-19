@@ -1,0 +1,105 @@
+[ :ref:`aws <cli:aws>` . :ref:`waf <cli:aws waf>` ]
+
+.. _cli:aws waf put-permission-policy:
+
+
+*********************
+put-permission-policy
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Attaches a IAM policy to the specified resource. The only supported use for this action is to share a RuleGroup across accounts.
+
+ 
+
+The ``PutPermissionPolicy`` is subject to the following restrictions:
+
+ 
+
+ 
+* You can attach only one policy with each ``PutPermissionPolicy`` request. 
+ 
+* The policy must include an ``Effect`` , ``Action`` and ``Principal`` .  
+ 
+* ``Effect`` must specify ``Allow`` . 
+ 
+* The ``Action`` in the policy must be ``waf:UpdateWebACL`` , ``waf-regional:UpdateWebACL`` , ``waf:GetRuleGroup`` and ``waf-regional:GetRuleGroup`` . Any extra or wildcard actions in the policy will be rejected. 
+ 
+* The policy cannot include a ``Resource`` parameter. 
+ 
+* The ARN in the request must be a valid WAF RuleGroup ARN and the RuleGroup must exist in the same region. 
+ 
+* The user making the request must be the owner of the RuleGroup. 
+ 
+* Your policy must be composed using IAM Policy version 2012-10-17. 
+ 
+
+ 
+
+For more information, see `IAM Policies <https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html>`__ . 
+
+ 
+
+An example of a valid policy parameter is shown in the Examples section below.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/waf-2015-08-24/PutPermissionPolicy>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-permission-policy
+  --resource-arn <value>
+  --policy <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--resource-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the RuleGroup to which you want to attach the policy.
+
+  
+
+``--policy`` (string)
+
+
+  The policy to attach to the specified RuleGroup.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+

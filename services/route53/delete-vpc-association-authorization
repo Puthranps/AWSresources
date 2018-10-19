@@ -1,0 +1,7 @@
+{
+    "HostedZoneId": "",
+    "VPC": {
+        "VPCRegion": "ap-northeast-3",
+        "VPCId": ""
+    }
+}

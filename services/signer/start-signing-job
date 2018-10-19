@@ -1,0 +1,17 @@
+{
+    "source": {
+        "s3": {
+            "bucketName": "",
+            "key": "",
+            "version": ""
+        }
+    },
+    "destination": {
+        "s3": {
+            "bucketName": "",
+            "prefix": ""
+        }
+    },
+    "profileName": "",
+    "clientRequestToken": ""
+}

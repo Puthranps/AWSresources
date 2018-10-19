@@ -1,0 +1,8 @@
+{
+    "DryRun": true,
+    "EgressOnlyInternetGatewayIds": [
+        ""
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

@@ -1,0 +1,8 @@
+{
+    "ApplicationId": "",
+    "BaiduChannelRequest": {
+        "ApiKey": "",
+        "Enabled": true,
+        "SecretKey": ""
+    }
+}

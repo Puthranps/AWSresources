@@ -1,0 +1,582 @@
+[ :ref:`aws <cli:aws>` . :ref:`events <cli:aws events>` ]
+
+.. _cli:aws events list-targets-by-rule:
+
+
+********************
+list-targets-by-rule
+********************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the targets assigned to the specified rule.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListTargetsByRule>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-targets-by-rule
+  --rule <value>
+  [--next-token <value>]
+  [--limit <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--rule`` (string)
+
+
+  The name of the rule.
+
+  
+
+``--next-token`` (string)
+
+
+  The token returned by a previous call to retrieve the next set of results.
+
+  
+
+``--limit`` (integer)
+
+
+  The maximum number of results to return.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To display all the targets for a CloudWatch Events rule**
+
+This example displays all the targets of the rule named DailyLambdaFunction::
+
+  aws events list-targets-by-rule --rule  "DailyLambdaFunction"
+
+
+======
+Output
+======
+
+Targets -> (list)
+
+  
+
+  The targets assigned to the rule.
+
+  
+
+  (structure)
+
+    
+
+    Targets are the resources to be invoked when a rule is triggered. For a complete list of services and resources that can be set as a target, see  PutTargets .
+
+    
+
+    Id -> (string)
+
+      
+
+      The ID of the target.
+
+      
+
+      
+
+    Arn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the target.
+
+      
+
+      
+
+    RoleArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the IAM role to be used for this target when the rule is triggered. If one rule triggers multiple targets, you can use a different IAM role for each target.
+
+      
+
+      
+
+    Input -> (string)
+
+      
+
+      Valid JSON text passed to the target. In this case, nothing from the event itself is passed to the target. For more information, see `The JavaScript Object Notation (JSON) Data Interchange Format <http://www.rfc-editor.org/rfc/rfc7159.txt>`__ .
+
+      
+
+      
+
+    InputPath -> (string)
+
+      
+
+      The value of the JSONPath that is used for extracting part of the matched event when passing it to the target. You must use JSON dot notation, not bracket notation. For more information about JSON paths, see `JSONPath <http://goessner.net/articles/JsonPath/>`__ .
+
+      
+
+      
+
+    InputTransformer -> (structure)
+
+      
+
+      Settings to enable you to provide custom input to a target based on certain event data. You can extract one or more key-value pairs from the event and then use that data to send customized input to the target.
+
+      
+
+      InputPathsMap -> (map)
+
+        
+
+        Map of JSON paths to be extracted from the event. You can then insert these in the template in ``InputTemplate`` to produce the output you want to be sent to the target.
+
+         
+
+         ``InputPathsMap`` is an array key-value pairs, where each value is a valid JSON path. You can have as many as 10 key-value pairs. You must use JSON dot notation, not bracket notation.
+
+         
+
+        The keys cannot start with "AWS." 
+
+        
+
+        key -> (string)
+
+          
+
+          
+
+        value -> (string)
+
+          
+
+          
+
+        
+
+      InputTemplate -> (string)
+
+        
+
+        Input template where you specify placeholders that will be filled with the values of the keys from ``InputPathsMap`` to customize the data sent to the target. Enclose each ``InputPathsMaps`` value in brackets: <*value* > The InputTemplate must be valid JSON.
+
+         
+
+        If ``InputTemplate`` is a JSON object (surrounded by curly braces), the following restrictions apply:
+
+         
+
+         
+        * The placeholder cannot be used as an object key. 
+         
+        * Object values cannot include quote marks. 
+         
+
+         
+
+        The following example shows the syntax for using ``InputPathsMap`` and ``InputTemplate`` .
+
+         
+
+         ``"InputTransformer":``  
+
+         
+
+         ``{``  
+
+         
+
+         ``"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},``  
+
+         
+
+         ``"InputTemplate": "<instance> is in state <status>"``  
+
+         
+
+         ``}``  
+
+         
+
+        To have the ``InputTemplate`` include quote marks within a JSON string, escape each quote marks with a slash, as in the following example:
+
+         
+
+         ``"InputTransformer":``  
+
+         
+
+         ``{``  
+
+         
+
+         ``"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},``  
+
+         
+
+         ``"InputTemplate": "<instance> is in state \"<status>\""``  
+
+         
+
+         ``}``  
+
+        
+
+        
+
+      
+
+    KinesisParameters -> (structure)
+
+      
+
+      The custom parameter you can use to control the shard assignment, when the target is a Kinesis data stream. If you do not include this parameter, the default is to use the ``eventId`` as the partition key.
+
+      
+
+      PartitionKeyPath -> (string)
+
+        
+
+        The JSON path to be extracted from the event and used as the partition key. For more information, see `Amazon Kinesis Streams Key Concepts <http://docs.aws.amazon.com/streams/latest/dev/key-concepts.html#partition-key>`__ in the *Amazon Kinesis Streams Developer Guide* .
+
+        
+
+        
+
+      
+
+    RunCommandParameters -> (structure)
+
+      
+
+      Parameters used when you are using the rule to invoke Amazon EC2 Run Command.
+
+      
+
+      RunCommandTargets -> (list)
+
+        
+
+        Currently, we support including only one RunCommandTarget block, which specifies either an array of InstanceIds or a tag.
+
+        
+
+        (structure)
+
+          
+
+          Information about the EC2 instances that are to be sent the command, specified as key-value pairs. Each ``RunCommandTarget`` block can include only one key, but this key may specify multiple values.
+
+          
+
+          Key -> (string)
+
+            
+
+            Can be either ``tag:``  *tag-key* or ``InstanceIds`` .
+
+            
+
+            
+
+          Values -> (list)
+
+            
+
+            If ``Key`` is ``tag:``  *tag-key* , ``Values`` is a list of tag values. If ``Key`` is ``InstanceIds`` , ``Values`` is a list of Amazon EC2 instance IDs.
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          
+
+        
+
+      
+
+    EcsParameters -> (structure)
+
+      
+
+      Contains the Amazon ECS task definition and task count to be used, if the event target is an Amazon ECS task. For more information about Amazon ECS tasks, see `Task Definitions <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html>`__ in the *Amazon EC2 Container Service Developer Guide* .
+
+      
+
+      TaskDefinitionArn -> (string)
+
+        
+
+        The ARN of the task definition to use if the event target is an Amazon ECS task. 
+
+        
+
+        
+
+      TaskCount -> (integer)
+
+        
+
+        The number of tasks to create based on ``TaskDefinition`` . The default is 1.
+
+        
+
+        
+
+      LaunchType -> (string)
+
+        
+
+        Specifies the launch type on which your task is running. The launch type that you specify here must match one of the launch type (compatibilities) of the target task. The ``FARGATE`` value is supported only in the Regions where AWS Fargate with Amazon ECS is supported. For more information, see `AWS Fargate on Amazon ECS <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+        
+
+        
+
+      NetworkConfiguration -> (structure)
+
+        
+
+        Use this structure if the ECS task uses the ``awsvpc`` network mode. This structure specifies the VPC subnets and security groups associated with the task, and whether a public IP address is to be used. This structure is required if ``LaunchType`` is ``FARGATE`` because the ``awsvpc`` mode is required for Fargate tasks.
+
+         
+
+        If you specify ``NetworkConfiguration`` when the target ECS task does not use the ``awsvpc`` network mode, the task fails.
+
+        
+
+        awsvpcConfiguration -> (structure)
+
+          
+
+          Use this structure to specify the VPC subnets and security groups for the task, and whether a public IP address is to be used. This structure is relevant only for ECS tasks that use the ``awsvpc`` network mode.
+
+          
+
+          Subnets -> (list)
+
+            
+
+            Specifies the subnets associated with the task. These subnets must all be in the same VPC. You can specify as many as 16 subnets.
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          SecurityGroups -> (list)
+
+            
+
+            Specifies the security groups associated with the task. These security groups must all be in the same VPC. You can specify as many as five security groups. If you do not specify a security group, the default security group for the VPC is used.
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          AssignPublicIp -> (string)
+
+            
+
+            Specifies whether the task's elastic network interface receives a public IP address. You can specify ``ENABLED`` only when ``LaunchType`` in ``EcsParameters`` is set to ``FARGATE`` .
+
+            
+
+            
+
+          
+
+        
+
+      PlatformVersion -> (string)
+
+        
+
+        Specifies the platform version for the task. Specify only the numeric portion of the platform version, such as ``1.1.0`` .
+
+         
+
+        This structure is used only if ``LaunchType`` is ``FARGATE`` . For more information about valid platform versions, see `AWS Fargate Platform Versions <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+        
+
+        
+
+      Group -> (string)
+
+        
+
+        Specifies an ECS task group for the task. The maximum length is 255 characters.
+
+        
+
+        
+
+      
+
+    BatchParameters -> (structure)
+
+      
+
+      If the event target is an AWS Batch job, this contains the job definition, job name, and other parameters. For more information, see `Jobs <http://docs.aws.amazon.com/batch/latest/userguide/jobs.html>`__ in the *AWS Batch User Guide* .
+
+      
+
+      JobDefinition -> (string)
+
+        
+
+        The ARN or name of the job definition to use if the event target is an AWS Batch job. This job definition must already exist.
+
+        
+
+        
+
+      JobName -> (string)
+
+        
+
+        The name to use for this execution of the job, if the target is an AWS Batch job.
+
+        
+
+        
+
+      ArrayProperties -> (structure)
+
+        
+
+        The array properties for the submitted job, such as the size of the array. The array size can be between 2 and 10,000. If you specify array properties for a job, it becomes an array job. This parameter is used only if the target is an AWS Batch job.
+
+        
+
+        Size -> (integer)
+
+          
+
+          The size of the array, if this is an array batch job. Valid values are integers between 2 and 10,000.
+
+          
+
+          
+
+        
+
+      RetryStrategy -> (structure)
+
+        
+
+        The retry strategy to use for failed jobs, if the target is an AWS Batch job. The retry strategy is the number of times to retry the failed job execution. Valid values are 1–10. When you specify a retry strategy here, it overrides the retry strategy defined in the job definition.
+
+        
+
+        Attempts -> (integer)
+
+          
+
+          The number of times to attempt to retry, if the job fails. Valid values are 1–10.
+
+          
+
+          
+
+        
+
+      
+
+    SqsParameters -> (structure)
+
+      
+
+      Contains the message group ID to use when the target is a FIFO queue.
+
+       
+
+      If you specify an SQS FIFO queue as a target, the queue must have content-based deduplication enabled.
+
+      
+
+      MessageGroupId -> (string)
+
+        
+
+        The FIFO message group ID to use as the target.
+
+        
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  Indicates whether there are additional results to retrieve. If there are no more results, the value is null.
+
+  
+
+  
+

@@ -1,0 +1,22 @@
+{
+    "Name": "",
+    "ImageName": "",
+    "ImageArn": "",
+    "InstanceType": "",
+    "Description": "",
+    "DisplayName": "",
+    "VpcConfig": {
+        "SubnetIds": [
+            ""
+        ],
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "EnableDefaultInternetAccess": true,
+    "DomainJoinInfo": {
+        "DirectoryName": "",
+        "OrganizationalUnitDistinguishedName": ""
+    },
+    "AppstreamAgentVersion": ""
+}

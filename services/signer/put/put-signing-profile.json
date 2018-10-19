@@ -1,0 +1,16 @@
+{
+    "profileName": "",
+    "signingMaterial": {
+        "certificateArn": ""
+    },
+    "platformId": "",
+    "overrides": {
+        "signingConfiguration": {
+            "encryptionAlgorithm": "ECDSA",
+            "hashAlgorithm": "SHA1"
+        }
+    },
+    "signingParameters": {
+        "KeyName": ""
+    }
+}

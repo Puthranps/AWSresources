@@ -1,0 +1,12 @@
+{
+    "AssociationId": "",
+    "ExecutionId": "",
+    "Filters": [
+        {
+            "Key": "ResourceType",
+            "Value": ""
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

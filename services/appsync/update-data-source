@@ -1,0 +1,22 @@
+{
+    "apiId": "",
+    "name": "",
+    "description": "",
+    "type": "AMAZON_ELASTICSEARCH",
+    "serviceRoleArn": "",
+    "dynamodbConfig": {
+        "tableName": "",
+        "awsRegion": "",
+        "useCallerCredentials": true
+    },
+    "lambdaConfig": {
+        "lambdaFunctionArn": ""
+    },
+    "elasticsearchConfig": {
+        "endpoint": "",
+        "awsRegion": ""
+    },
+    "httpConfig": {
+        "endpoint": ""
+    }
+}

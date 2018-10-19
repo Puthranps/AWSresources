@@ -1,0 +1,7 @@
+{
+    "loggingOptions": {
+        "roleArn": "",
+        "level": "ERROR",
+        "enabled": true
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "ReportDefinition": {
+        "ReportName": "",
+        "TimeUnit": "HOURLY",
+        "Format": "textORcsv",
+        "Compression": "GZIP",
+        "AdditionalSchemaElements": [
+            "RESOURCES"
+        ],
+        "S3Bucket": "",
+        "S3Prefix": "",
+        "S3Region": "ap-southeast-2",
+        "AdditionalArtifacts": [
+            "QUICKSIGHT"
+        ]
+    }
+}

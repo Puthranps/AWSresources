@@ -1,0 +1,30 @@
+{
+    "category": "Build",
+    "provider": "",
+    "version": "",
+    "settings": {
+        "thirdPartyConfigurationUrl": "",
+        "entityUrlTemplate": "",
+        "executionUrlTemplate": "",
+        "revisionUrlTemplate": ""
+    },
+    "configurationProperties": [
+        {
+            "name": "",
+            "required": true,
+            "key": true,
+            "secret": true,
+            "queryable": true,
+            "description": "",
+            "type": "String"
+        }
+    ],
+    "inputArtifactDetails": {
+        "minimumCount": 0,
+        "maximumCount": 0
+    },
+    "outputArtifactDetails": {
+        "minimumCount": 0,
+        "maximumCount": 0
+    }
+}

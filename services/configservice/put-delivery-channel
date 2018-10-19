@@ -1,0 +1,11 @@
+{
+    "DeliveryChannel": {
+        "name": "",
+        "s3BucketName": "",
+        "s3KeyPrefix": "",
+        "snsTopicARN": "",
+        "configSnapshotDeliveryProperties": {
+            "deliveryFrequency": "Twelve_Hours"
+        }
+    }
+}

@@ -1,0 +1,284 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-model &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sagemaker" href="../sagemaker/index.html" />
+    <link rel="next" title="create-notebook-instance" href="../sagemaker/create-notebook-instance.html" />
+    <link rel="prev" title="create-hyper-parameter-tuning-job" href="../sagemaker/create-hyper-parameter-tuning-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/create-notebook-instance.html" title="create-notebook-instance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/create-hyper-parameter-tuning-job.html" title="create-hyper-parameter-tuning-job"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" accesskey="U">sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/create-hyper-parameter-tuning-job.html" title="previous chapter (use the left arrow)">&larr; create-hyper-parameter-tuning-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/create-notebook-instance.html" title="next chapter (use the right arrow)">create-notebook-instance &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-model</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sagemaker/create-model">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sagemaker/index.html#cli-aws-sagemaker"><em>sagemaker</em></a> ]</p>
+<div class="section" id="create-model">
+<span id="cli-aws-sagemaker-create-model"></span><h1>create-model<a class="headerlink" href="#create-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a model in Amazon SageMaker. In the request, you name the model and describe a primary container. For the primary container, you specify the docker image containing inference code, artifacts (from prior training), and custom environment map that the inference code uses when you deploy the model for predictions.</p>
+<p>Use this API to create a model if you want to use Amazon SageMaker hosting services or run a batch transform job.</p>
+<p>To host your model, you create an endpoint configuration with the <tt class="docutils literal"><span class="pre">CreateEndpointConfig</span></tt> API, and then create an endpoint with the <tt class="docutils literal"><span class="pre">CreateEndpoint</span></tt> API. Amazon SageMaker then deploys all of the containers that you defined for the model in the hosting environment.</p>
+<p>To run a batch transform using your model, you start a job with the <tt class="docutils literal"><span class="pre">CreateTransformJob</span></tt> API. Amazon SageMaker uses your model and your dataset to get inferences which are then saved to a specified S3 location.</p>
+<p>In the <tt class="docutils literal"><span class="pre">CreateModel</span></tt> request, you must define a container with the <tt class="docutils literal"><span class="pre">PrimaryContainer</span></tt> parameter.</p>
+<p>In the request, you also provide an IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute hosting instances or for batch transform jobs. In addition, you also use the IAM role to manage permissions the inference code needs. For example, if the inference code access any other AWS resources, you grant necessary permissions via this role.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateModel">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-model
+--model-name &lt;value&gt;
+--primary-container &lt;value&gt;
+--execution-role-arn &lt;value&gt;
+[--tags &lt;value&gt;]
+[--vpc-config &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--model-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the new model.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--primary-container</span></tt> (structure)</p>
+<blockquote>
+<div>The location of the primary docker image containing inference code, associated artifacts, and custom environment map that the inference code uses when the model is deployed for predictions.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>ContainerHostname=string,Image=string,ModelDataUrl=string,Environment={KeyName1=string,KeyName2=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;ContainerHostname&quot;: &quot;string&quot;,
+  &quot;Image&quot;: &quot;string&quot;,
+  &quot;ModelDataUrl&quot;: &quot;string&quot;,
+  &quot;Environment&quot;: {&quot;string&quot;: &quot;string&quot;
+    ...}
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--execution-role-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute instances is part of model hosting. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To be able to pass this role to Amazon SageMaker, the caller of this API must have the <tt class="docutils literal"><span class="pre">iam:PassRole</span></tt> permission.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>An array of key-value pairs. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using Cost Allocation Tags</a> in the <em>AWS Billing and Cost Management User Guide</em> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--vpc-config</span></tt> (structure)</p>
+<blockquote>
+<div>A  VpcConfig object that specifies the VPC that you want your model to connect to. Control access to and from your model container by configuring the VPC. <tt class="docutils literal"><span class="pre">VpcConfig</span></tt> is currently used in hosting services but not in batch transform. For more information, see  host-vpc .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Subnets</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Subnets&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ModelArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the model created in Amazon SageMaker.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/create-hyper-parameter-tuning-job.html" title="previous chapter (use the left arrow)">&larr; create-hyper-parameter-tuning-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/create-notebook-instance.html" title="next chapter (use the right arrow)">create-notebook-instance &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/create-notebook-instance.html" title="create-notebook-instance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/create-hyper-parameter-tuning-job.html" title="create-hyper-parameter-tuning-job"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" >sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

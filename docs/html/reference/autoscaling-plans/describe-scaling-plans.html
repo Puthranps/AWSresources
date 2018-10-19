@@ -1,0 +1,431 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-scaling-plans &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="autoscaling-plans" href="../autoscaling-plans/index.html" />
+    <link rel="next" title="update-scaling-plan" href="../autoscaling-plans/update-scaling-plan.html" />
+    <link rel="prev" title="describe-scaling-plan-resources" href="../autoscaling-plans/describe-scaling-plan-resources.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../autoscaling-plans/update-scaling-plan.html" title="update-scaling-plan"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../autoscaling-plans/describe-scaling-plan-resources.html" title="describe-scaling-plan-resources"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../autoscaling-plans/index.html" accesskey="U">autoscaling-plans</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../autoscaling-plans/describe-scaling-plan-resources.html" title="previous chapter (use the left arrow)">&larr; describe-scaling-plan-resources</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling-plans/update-scaling-plan.html" title="next chapter (use the right arrow)">update-scaling-plan &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-scaling-plans</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/autoscaling-plans/describe-scaling-plans">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../autoscaling-plans/index.html#cli-aws-autoscaling-plans"><em>autoscaling-plans</em></a> ]</p>
+<div class="section" id="describe-scaling-plans">
+<span id="cli-aws-autoscaling-plans-describe-scaling-plans"></span><h1>describe-scaling-plans<a class="headerlink" href="#describe-scaling-plans" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes the specified scaling plans or all of your scaling plans.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/DescribeScalingPlans">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-scaling-plans
+[--scaling-plan-names &lt;value&gt;]
+[--scaling-plan-version &lt;value&gt;]
+[--application-sources &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--scaling-plan-names</span></tt> (list)</p>
+<blockquote>
+<div>The names of the scaling plans (up to 10). If you specify application sources, you cannot specify scaling plan names.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--scaling-plan-version</span></tt> (long)</p>
+<blockquote>
+<div>The version of the scaling plan. If you specify a scaling plan version, you must also specify a scaling plan name.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--application-sources</span></tt> (list)</p>
+<blockquote>
+<div>The sources for the applications (up to 10). If you specify scaling plan names, you cannot specify application sources.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;CloudFormationStackARN&quot;: &quot;string&quot;,
+    &quot;TagFilters&quot;: [
+      {
+        &quot;Key&quot;: &quot;string&quot;,
+        &quot;Values&quot;: [&quot;string&quot;, ...]
+      }
+      ...
+    ]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of scalable resources to return. This value can be between 1 and 50. The default value is 50.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of results.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ScalingPlans -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the scaling plans.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a scaling plan.</p>
+<p>ScalingPlanName -&gt; (string)</p>
+<blockquote>
+<div>The name of the scaling plan.</div></blockquote>
+<p>ScalingPlanVersion -&gt; (long)</p>
+<blockquote>
+<div>The version of the scaling plan.</div></blockquote>
+<p>ApplicationSource -&gt; (structure)</p>
+<blockquote>
+<div><p>The application source.</p>
+<p>CloudFormationStackARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of a CloudFormation stack.</div></blockquote>
+<p>TagFilters -&gt; (list)</p>
+<blockquote>
+<div><p>A set of tags (up to 50).</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>The tag key.</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>The tag values (0 to 20).</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ScalingInstructions -&gt; (list)</p>
+<blockquote>
+<div><p>The scaling instructions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Specifies the scaling configuration for a scalable resource.</p>
+<p>ServiceNamespace -&gt; (string)</p>
+<blockquote>
+<div>The namespace of the AWS service.</div></blockquote>
+<p>ResourceId -&gt; (string)</p>
+<blockquote>
+<div><p>The ID of the resource. This string consists of the resource type and unique identifier.</p>
+<ul class="simple">
+<li>Auto Scaling group - The resource type is <tt class="docutils literal"><span class="pre">autoScalingGroup</span></tt> and the unique identifier is the name of the Auto Scaling group. Example: <tt class="docutils literal"><span class="pre">autoScalingGroup/my-asg</span></tt> .</li>
+<li>ECS service - The resource type is <tt class="docutils literal"><span class="pre">service</span></tt> and the unique identifier is the cluster name and service name. Example: <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</li>
+<li>Spot fleet request - The resource type is <tt class="docutils literal"><span class="pre">spot-fleet-request</span></tt> and the unique identifier is the Spot fleet request ID. Example: <tt class="docutils literal"><span class="pre">spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</span></tt> .</li>
+<li>DynamoDB table - The resource type is <tt class="docutils literal"><span class="pre">table</span></tt> and the unique identifier is the resource ID. Example: <tt class="docutils literal"><span class="pre">table/my-table</span></tt> .</li>
+<li>DynamoDB global secondary index - The resource type is <tt class="docutils literal"><span class="pre">index</span></tt> and the unique identifier is the resource ID. Example: <tt class="docutils literal"><span class="pre">table/my-table/index/my-table-index</span></tt> .</li>
+<li>Aurora DB cluster - The resource type is <tt class="docutils literal"><span class="pre">cluster</span></tt> and the unique identifier is the cluster name. Example: <tt class="docutils literal"><span class="pre">cluster:my-db-cluster</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>ScalableDimension -&gt; (string)</p>
+<blockquote>
+<div><p>The scalable dimension associated with the resource.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">autoscaling:autoScalingGroup:DesiredCapacity</span></tt> - The desired capacity of an Auto Scaling group.</li>
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> - The desired task count of an ECS service.</li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt> - The target capacity of a Spot fleet request.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:table:ReadCapacityUnits</span></tt> - The provisioned read capacity for a DynamoDB table.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:table:WriteCapacityUnits</span></tt> - The provisioned write capacity for a DynamoDB table.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:index:ReadCapacityUnits</span></tt> - The provisioned read capacity for a DynamoDB global secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:index:WriteCapacityUnits</span></tt> - The provisioned write capacity for a DynamoDB global secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">rds:cluster:ReadReplicaCount</span></tt> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition.</li>
+</ul>
+</div></blockquote>
+<p>MinCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The minimum value to scale to in response to a scale in event.</div></blockquote>
+<p>MaxCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The maximum value to scale to in response to a scale out event.</div></blockquote>
+<p>TargetTrackingConfigurations -&gt; (list)</p>
+<blockquote>
+<div><p>The target tracking scaling policies (up to 10).</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a target tracking scaling policy.</p>
+<p>PredefinedScalingMetricSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>A predefined metric.</p>
+<p>PredefinedScalingMetricType -&gt; (string)</p>
+<blockquote>
+<div>The metric type. The <tt class="docutils literal"><span class="pre">ALBRequestCountPerTarget</span></tt> metric type applies only to Auto Scaling groups, Sport Fleet requests, and ECS services.</div></blockquote>
+<p>ResourceLabel -&gt; (string)</p>
+<blockquote>
+<div><p>Identifies the resource associated with the metric type. You can't specify a resource label unless the metric type is <tt class="docutils literal"><span class="pre">ALBRequestCountPerTarget</span></tt> and there is a target group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet request, or ECS service.</p>
+<p>The format is app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;, where:</p>
+<ul class="simple">
+<li>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt; is the final portion of the load balancer ARN</li>
+<li>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final portion of the target group ARN.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>CustomizedScalingMetricSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>A customized metric.</p>
+<p>MetricName -&gt; (string)</p>
+<blockquote>
+<div>The name of the metric.</div></blockquote>
+<p>Namespace -&gt; (string)</p>
+<blockquote>
+<div>The namespace of the metric.</div></blockquote>
+<p>Dimensions -&gt; (list)</p>
+<blockquote>
+<div><p>The dimensions of the metric.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a dimension for a customized metric.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the dimension.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value of the dimension.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Statistic -&gt; (string)</p>
+<blockquote>
+<div>The statistic of the metric.</div></blockquote>
+<p>Unit -&gt; (string)</p>
+<blockquote>
+<div>The unit of the metric.</div></blockquote>
+</div></blockquote>
+<p>TargetValue -&gt; (double)</p>
+<blockquote>
+<div>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base 2).</div></blockquote>
+<p>DisableScaleIn -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether scale in by the target tracking policy is disabled. If the value is <tt class="docutils literal"><span class="pre">true</span></tt> , scale in is disabled and the target tracking policy won't remove capacity from the scalable resource. Otherwise, scale in is enabled and the target tracking policy can remove capacity from the scalable resource. The default value is <tt class="docutils literal"><span class="pre">false</span></tt> .</div></blockquote>
+<p>ScaleOutCooldown -&gt; (integer)</p>
+<blockquote>
+<div><p>The amount of time, in seconds, after a scale out activity completes before another scale out activity can start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+<p>While the cooldown period is in effect, the capacity that has been added by the previous scale out event that initiated the cooldown is calculated as part of the desired capacity for the next scale out. The intention is to continuously (but not excessively) scale out.</p>
+</div></blockquote>
+<p>ScaleInCooldown -&gt; (integer)</p>
+<blockquote>
+<div><p>The amount of time, in seconds, after a scale in activity completes before another scale in activity can start. This value is not used if the scalable resource is an Auto Scaling group.</p>
+<p>The cooldown period is used to block subsequent scale in requests until it has expired. The intention is to scale in conservatively to protect your application's availability. However, if another alarm triggers a scale out policy during the cooldown period after a scale-in, AWS Auto Scaling scales out your scalable target immediately.</p>
+</div></blockquote>
+<p>EstimatedInstanceWarmup -&gt; (integer)</p>
+<blockquote>
+<div>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. This value is used only if the resource is an Auto Scaling group.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>StatusCode -&gt; (string)</p>
+<blockquote>
+<div><p>The status of the scaling plan.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Active</span></tt> - The scaling plan is active.</li>
+<li><tt class="docutils literal"><span class="pre">ActiveWithProblems</span></tt> - The scaling plan is active, but the scaling configuration for one or more resources could not be applied.</li>
+<li><tt class="docutils literal"><span class="pre">CreationInProgress</span></tt> - The scaling plan is being created.</li>
+<li><tt class="docutils literal"><span class="pre">CreationFailed</span></tt> - The scaling plan could not be created.</li>
+<li><tt class="docutils literal"><span class="pre">DeletionInProgress</span></tt> - The scaling plan is being deleted.</li>
+<li><tt class="docutils literal"><span class="pre">DeletionFailed</span></tt> - The scaling plan could not be deleted.</li>
+</ul>
+</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>A simple message about the current status of the scaling plan.</div></blockquote>
+<p>StatusStartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix timestamp when the scaling plan entered the current status.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix timestamp when the scaling plan was created.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token required to get the next set of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> if there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../autoscaling-plans/describe-scaling-plan-resources.html" title="previous chapter (use the left arrow)">&larr; describe-scaling-plan-resources</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling-plans/update-scaling-plan.html" title="next chapter (use the right arrow)">update-scaling-plan &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../autoscaling-plans/update-scaling-plan.html" title="update-scaling-plan"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../autoscaling-plans/describe-scaling-plan-resources.html" title="describe-scaling-plan-resources"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../autoscaling-plans/index.html" >autoscaling-plans</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

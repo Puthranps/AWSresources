@@ -1,0 +1,5 @@
+{
+    "DBInstanceIdentifier": "",
+    "SkipFinalSnapshot": true,
+    "FinalDBSnapshotIdentifier": ""
+}

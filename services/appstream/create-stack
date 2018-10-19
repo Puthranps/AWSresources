@@ -1,0 +1,26 @@
+{
+    "Name": "",
+    "Description": "",
+    "DisplayName": "",
+    "StorageConnectors": [
+        {
+            "ConnectorType": "HOMEFOLDERS",
+            "ResourceIdentifier": "",
+            "Domains": [
+                ""
+            ]
+        }
+    ],
+    "RedirectURL": "",
+    "FeedbackURL": "",
+    "UserSettings": [
+        {
+            "Action": "CLIPBOARD_COPY_TO_LOCAL_DEVICE",
+            "Permission": "DISABLED"
+        }
+    ],
+    "ApplicationSettings": {
+        "Enabled": true,
+        "SettingsGroup": ""
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ],
+            "Type": "LESS_THAN"
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

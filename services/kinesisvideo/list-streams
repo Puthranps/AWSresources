@@ -1,0 +1,8 @@
+{
+    "MaxResults": 0,
+    "NextToken": "",
+    "StreamNameCondition": {
+        "ComparisonOperator": "BEGINS_WITH",
+        "ComparisonValue": ""
+    }
+}

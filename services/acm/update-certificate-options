@@ -1,0 +1,6 @@
+{
+    "CertificateArn": "",
+    "Options": {
+        "CertificateTransparencyLoggingPreference": "ENABLED"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "NetworkInterfacePermissionIds": [
+        ""
+    ],
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

@@ -1,0 +1,36 @@
+[ :ref:`aws <cli:aws>` . :ref:`machinelearning <cli:aws machinelearning>` ]
+
+.. _cli:aws machinelearning wait:
+
+
+****
+wait
+****
+
+
+
+===========
+Description
+===========
+
+Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  batch-prediction-available
+  data-source-available
+  evaluation-available
+  ml-model-available

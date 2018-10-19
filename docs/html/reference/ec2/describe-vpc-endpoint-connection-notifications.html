@@ -1,0 +1,320 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-vpc-endpoint-connection-notifications &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ec2" href="../ec2/index.html" />
+    <link rel="next" title="describe-vpc-endpoint-connections" href="../ec2/describe-vpc-endpoint-connections.html" />
+    <link rel="prev" title="describe-vpc-classic-link-dns-support" href="../ec2/describe-vpc-classic-link-dns-support.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/describe-vpc-endpoint-connections.html" title="describe-vpc-endpoint-connections"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/describe-vpc-classic-link-dns-support.html" title="describe-vpc-classic-link-dns-support"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" accesskey="U">ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/describe-vpc-classic-link-dns-support.html" title="previous chapter (use the left arrow)">&larr; describe-vpc-classic-link-dns-support</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/describe-vpc-endpoint-connections.html" title="next chapter (use the right arrow)">describe-vpc-endpoint-connections &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-vpc-endpoint-connection-notifications</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/describe-vpc-endpoint-connection-notifications">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="describe-vpc-endpoint-connection-notifications">
+<span id="cli-aws-ec2-describe-vpc-endpoint-connection-notifications"></span><h1>describe-vpc-endpoint-connection-notifications<a class="headerlink" href="#describe-vpc-endpoint-connection-notifications" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes the connection notifications for VPC endpoints and VPC endpoint services.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVpcEndpointConnectionNotifications">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-vpc-endpoint-connection-notifications
+[--dry-run | --no-dry-run]
+[--connection-notification-id &lt;value&gt;]
+[--filters &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--connection-notification-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the notification.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">connection-notification-arn</span></tt> - The ARN of SNS topic for the notification.</li>
+<li><tt class="docutils literal"><span class="pre">connection-notification-id</span></tt> - The ID of the notification.</li>
+<li><tt class="docutils literal"><span class="pre">connection-notification-state</span></tt> - The state of the notification (<tt class="docutils literal"><span class="pre">Enabled</span></tt> | <tt class="docutils literal"><span class="pre">Disabled</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">connection-notification-type</span></tt> - The type of notification (<tt class="docutils literal"><span class="pre">Topic</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">service-id</span></tt> - The ID of the endpoint service.</li>
+<li><tt class="docutils literal"><span class="pre">vpc-endpoint-id</span></tt> - The ID of the VPC endpoint.</li>
+</ul>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Values&quot;: [&quot;string&quot;, ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of results to return in a single call. To retrieve the remaining results, make another request with the returned <tt class="docutils literal"><span class="pre">NextToken</span></tt> value.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token to request the next page of results.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe endpoint connection notifications</strong></p>
+<p>This example describe all of your endpoint connection notifications.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-vpc-endpoint-connection-notifications</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="s2">&quot;ConnectionNotificationSet&quot;</span><span class="p">:</span> <span class="p">[</span>
+       <span class="p">{</span>
+           <span class="s2">&quot;ConnectionNotificationState&quot;</span><span class="p">:</span> <span class="s2">&quot;Enabled&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ConnectionNotificationType&quot;</span><span class="p">:</span> <span class="s2">&quot;Topic&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ConnectionEvents&quot;</span><span class="p">:</span> <span class="p">[</span>
+               <span class="s2">&quot;Accept&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Reject&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Delete&quot;</span><span class="p">,</span>
+               <span class="s2">&quot;Connect&quot;</span>
+           <span class="p">],</span>
+           <span class="s2">&quot;ConnectionNotificationId&quot;</span><span class="p">:</span> <span class="s2">&quot;vpce-nfn-04bcb952bc8af7abc&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;ConnectionNotificationArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:sns:us-east-1:123456789012:VpceNotification&quot;</span><span class="p">,</span>
+           <span class="s2">&quot;VpcEndpointId&quot;</span><span class="p">:</span> <span class="s2">&quot;vpce-0324151a02f327123&quot;</span>
+       <span class="p">}</span>
+   <span class="p">]</span>
+ <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ConnectionNotificationSet -&gt; (list)</p>
+<blockquote>
+<div><p>One or more notifications.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a connection notification for a VPC endpoint or VPC endpoint service.</p>
+<p>ConnectionNotificationId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the notification.</div></blockquote>
+<p>ServiceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the endpoint service.</div></blockquote>
+<p>VpcEndpointId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC endpoint.</div></blockquote>
+<p>ConnectionNotificationType -&gt; (string)</p>
+<blockquote>
+<div>The type of notification.</div></blockquote>
+<p>ConnectionNotificationArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the SNS topic for the notification.</div></blockquote>
+<p>ConnectionEvents -&gt; (list)</p>
+<blockquote>
+<div><p>The events for the notification. Valid values are <tt class="docutils literal"><span class="pre">Accept</span></tt> , <tt class="docutils literal"><span class="pre">Connect</span></tt> , <tt class="docutils literal"><span class="pre">Delete</span></tt> , and <tt class="docutils literal"><span class="pre">Reject</span></tt> .</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ConnectionNotificationState -&gt; (string)</p>
+<blockquote>
+<div>The state of the notification.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/describe-vpc-classic-link-dns-support.html" title="previous chapter (use the left arrow)">&larr; describe-vpc-classic-link-dns-support</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/describe-vpc-endpoint-connections.html" title="next chapter (use the right arrow)">describe-vpc-endpoint-connections &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/describe-vpc-endpoint-connections.html" title="describe-vpc-endpoint-connections"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/describe-vpc-classic-link-dns-support.html" title="describe-vpc-classic-link-dns-support"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" >ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

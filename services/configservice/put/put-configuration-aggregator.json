@@ -1,0 +1,21 @@
+{
+    "ConfigurationAggregatorName": "",
+    "AccountAggregationSources": [
+        {
+            "AccountIds": [
+                ""
+            ],
+            "AllAwsRegions": true,
+            "AwsRegions": [
+                ""
+            ]
+        }
+    ],
+    "OrganizationAggregationSource": {
+        "RoleArn": "",
+        "AwsRegions": [
+            ""
+        ],
+        "AllAwsRegions": true
+    }
+}

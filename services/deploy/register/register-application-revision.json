@@ -1,0 +1,22 @@
+{
+    "applicationName": "",
+    "description": "",
+    "revision": {
+        "revisionType": "String",
+        "s3Location": {
+            "bucket": "",
+            "key": "",
+            "bundleType": "YAML",
+            "version": "",
+            "eTag": ""
+        },
+        "gitHubLocation": {
+            "repository": "",
+            "commitId": ""
+        },
+        "string": {
+            "content": "",
+            "sha256": ""
+        }
+    }
+}

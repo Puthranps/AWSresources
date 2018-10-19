@@ -1,0 +1,30 @@
+{
+    "MetricDataQueries": [
+        {
+            "Id": "",
+            "MetricStat": {
+                "Metric": {
+                    "Namespace": "",
+                    "MetricName": "",
+                    "Dimensions": [
+                        {
+                            "Name": "",
+                            "Value": ""
+                        }
+                    ]
+                },
+                "Period": 0,
+                "Stat": "",
+                "Unit": "Gigabytes"
+            },
+            "Expression": "",
+            "Label": "",
+            "ReturnData": true
+        }
+    ],
+    "StartTime": "1970-01-01T00:00:00",
+    "EndTime": "1970-01-01T00:00:00",
+    "NextToken": "",
+    "ScanBy": "TimestampDescending",
+    "MaxDatapoints": 0
+}

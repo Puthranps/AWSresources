@@ -1,0 +1,11 @@
+{
+    "UsageRecords": [
+        {
+            "Timestamp": "1970-01-01T00:00:00",
+            "CustomerIdentifier": "",
+            "Dimension": "",
+            "Quantity": 0
+        }
+    ],
+    "ProductCode": ""
+}

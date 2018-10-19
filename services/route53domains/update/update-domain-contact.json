@@ -1,0 +1,66 @@
+{
+    "DomainName": "",
+    "AdminContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "PERSON",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "PA",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "BIRTH_DATE_IN_YYYY_MM_DD",
+                "Value": ""
+            }
+        ]
+    },
+    "RegistrantContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "PUBLIC_BODY",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "CL",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "FI_BUSINESS_NUMBER",
+                "Value": ""
+            }
+        ]
+    },
+    "TechContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "COMPANY",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "AS",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "DOCUMENT_NUMBER",
+                "Value": ""
+            }
+        ]
+    }
+}

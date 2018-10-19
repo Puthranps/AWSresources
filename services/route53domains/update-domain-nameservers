@@ -1,0 +1,12 @@
+{
+    "DomainName": "",
+    "FIAuthKey": "",
+    "Nameservers": [
+        {
+            "Name": "",
+            "GlueIps": [
+                ""
+            ]
+        }
+    ]
+}

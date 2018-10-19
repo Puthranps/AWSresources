@@ -1,0 +1,103 @@
+[ :ref:`aws <cli:aws>` . :ref:`route53domains <cli:aws route53domains>` ]
+
+.. _cli:aws route53domains update-domain-contact-privacy:
+
+
+*****************************
+update-domain-contact-privacy
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+This operation updates the specified domain contact's privacy setting. When privacy protection is enabled, contact information such as email address is replaced either with contact information for Amazon Registrar (for .com, .net, and .org domains) or with contact information for our registrar associate, Gandi.
+
+ 
+
+This operation affects only the contact information for the specified contact type (registrant, administrator, or tech). If the request succeeds, Amazon Route 53 returns an operation ID that you can use with  GetOperationDetail to track the progress and completion of the action. If the request doesn't complete successfully, the domain registrant will be notified by email.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/route53domains-2014-05-15/UpdateDomainContactPrivacy>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-domain-contact-privacy
+  --domain-name <value>
+  [--admin-privacy | --no-admin-privacy]
+  [--registrant-privacy | --no-registrant-privacy]
+  [--tech-privacy | --no-tech-privacy]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--domain-name`` (string)
+
+
+  The name of the domain that you want to update the privacy setting for.
+
+  
+
+``--admin-privacy`` | ``--no-admin-privacy`` (boolean)
+
+
+  Whether you want to conceal contact information from WHOIS queries. If you specify ``true`` , WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify ``false`` , WHOIS queries return the information that you entered for the admin contact.
+
+  
+
+``--registrant-privacy`` | ``--no-registrant-privacy`` (boolean)
+
+
+  Whether you want to conceal contact information from WHOIS queries. If you specify ``true`` , WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify ``false`` , WHOIS queries return the information that you entered for the registrant contact (domain owner).
+
+  
+
+``--tech-privacy`` | ``--no-tech-privacy`` (boolean)
+
+
+  Whether you want to conceal contact information from WHOIS queries. If you specify ``true`` , WHOIS ("who is") queries return contact information either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi (for all other TLDs). If you specify ``false`` , WHOIS queries return the information that you entered for the technical contact.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+OperationId -> (string)
+
+  
+
+  Identifier for tracking the progress of the request. To use this ID to query the operation status, use GetOperationDetail.
+
+  
+
+  
+

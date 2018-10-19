@@ -1,0 +1,33 @@
+{
+    "OptionGroupName": "",
+    "OptionsToInclude": [
+        {
+            "OptionName": "",
+            "Port": 0,
+            "OptionVersion": "",
+            "DBSecurityGroupMemberships": [
+                ""
+            ],
+            "VpcSecurityGroupMemberships": [
+                ""
+            ],
+            "OptionSettings": [
+                {
+                    "Name": "",
+                    "Value": "",
+                    "DefaultValue": "",
+                    "Description": "",
+                    "ApplyType": "",
+                    "DataType": "",
+                    "AllowedValues": "",
+                    "IsModifiable": true,
+                    "IsCollection": true
+                }
+            ]
+        }
+    ],
+    "OptionsToRemove": [
+        ""
+    ],
+    "ApplyImmediately": true
+}

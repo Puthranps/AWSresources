@@ -1,0 +1,82 @@
+{
+    "GlobalTableName": "",
+    "GlobalTableProvisionedWriteCapacityUnits": 0,
+    "GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate": {
+        "MinimumUnits": 0,
+        "MaximumUnits": 0,
+        "AutoScalingDisabled": true,
+        "AutoScalingRoleArn": "",
+        "ScalingPolicyUpdate": {
+            "PolicyName": "",
+            "TargetTrackingScalingPolicyConfiguration": {
+                "DisableScaleIn": true,
+                "ScaleInCooldown": 0,
+                "ScaleOutCooldown": 0,
+                "TargetValue": null
+            }
+        }
+    },
+    "GlobalTableGlobalSecondaryIndexSettingsUpdate": [
+        {
+            "IndexName": "",
+            "ProvisionedWriteCapacityUnits": 0,
+            "ProvisionedWriteCapacityAutoScalingSettingsUpdate": {
+                "MinimumUnits": 0,
+                "MaximumUnits": 0,
+                "AutoScalingDisabled": true,
+                "AutoScalingRoleArn": "",
+                "ScalingPolicyUpdate": {
+                    "PolicyName": "",
+                    "TargetTrackingScalingPolicyConfiguration": {
+                        "DisableScaleIn": true,
+                        "ScaleInCooldown": 0,
+                        "ScaleOutCooldown": 0,
+                        "TargetValue": null
+                    }
+                }
+            }
+        }
+    ],
+    "ReplicaSettingsUpdate": [
+        {
+            "RegionName": "",
+            "ReplicaProvisionedReadCapacityUnits": 0,
+            "ReplicaProvisionedReadCapacityAutoScalingSettingsUpdate": {
+                "MinimumUnits": 0,
+                "MaximumUnits": 0,
+                "AutoScalingDisabled": true,
+                "AutoScalingRoleArn": "",
+                "ScalingPolicyUpdate": {
+                    "PolicyName": "",
+                    "TargetTrackingScalingPolicyConfiguration": {
+                        "DisableScaleIn": true,
+                        "ScaleInCooldown": 0,
+                        "ScaleOutCooldown": 0,
+                        "TargetValue": null
+                    }
+                }
+            },
+            "ReplicaGlobalSecondaryIndexSettingsUpdate": [
+                {
+                    "IndexName": "",
+                    "ProvisionedReadCapacityUnits": 0,
+                    "ProvisionedReadCapacityAutoScalingSettingsUpdate": {
+                        "MinimumUnits": 0,
+                        "MaximumUnits": 0,
+                        "AutoScalingDisabled": true,
+                        "AutoScalingRoleArn": "",
+                        "ScalingPolicyUpdate": {
+                            "PolicyName": "",
+                            "TargetTrackingScalingPolicyConfiguration": {
+                                "DisableScaleIn": true,
+                                "ScaleInCooldown": 0,
+                                "ScaleOutCooldown": 0,
+                                "TargetValue": null
+                            }
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

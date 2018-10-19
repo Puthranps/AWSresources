@@ -1,0 +1,10 @@
+{
+    "ClusterIdentifier": "",
+    "SnapshotIdentifier": "",
+    "SourceDatabaseName": "",
+    "SourceSchemaName": "",
+    "SourceTableName": "",
+    "TargetDatabaseName": "",
+    "TargetSchemaName": "",
+    "NewTableName": ""
+}

@@ -1,0 +1,41 @@
+{
+    "DBInstanceIdentifier": "",
+    "SourceDBInstanceIdentifier": "",
+    "DBInstanceClass": "",
+    "AvailabilityZone": "",
+    "Port": 0,
+    "MultiAZ": true,
+    "AutoMinorVersionUpgrade": true,
+    "Iops": 0,
+    "OptionGroupName": "",
+    "PubliclyAccessible": true,
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "DBSubnetGroupName": "",
+    "StorageType": "",
+    "CopyTagsToSnapshot": true,
+    "MonitoringInterval": 0,
+    "MonitoringRoleArn": "",
+    "KmsKeyId": "",
+    "PreSignedUrl": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "EnablePerformanceInsights": true,
+    "PerformanceInsightsKMSKeyId": "",
+    "PerformanceInsightsRetentionPeriod": 0,
+    "EnableCloudwatchLogsExports": [
+        ""
+    ],
+    "ProcessorFeatures": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "UseDefaultProcessorFeatures": true,
+    "DeletionProtection": true,
+    "SourceRegion": ""
+}

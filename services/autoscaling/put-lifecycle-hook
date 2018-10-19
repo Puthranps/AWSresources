@@ -1,0 +1,10 @@
+{
+    "LifecycleHookName": "",
+    "AutoScalingGroupName": "",
+    "LifecycleTransition": "",
+    "RoleARN": "",
+    "NotificationTargetARN": "",
+    "NotificationMetadata": "",
+    "HeartbeatTimeout": 0,
+    "DefaultResult": ""
+}

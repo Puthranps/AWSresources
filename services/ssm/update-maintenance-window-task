@@ -1,0 +1,72 @@
+{
+    "WindowId": "",
+    "WindowTaskId": "",
+    "Targets": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "TaskArn": "",
+    "ServiceRoleArn": "",
+    "TaskParameters": {
+        "KeyName": {
+            "Values": [
+                ""
+            ]
+        }
+    },
+    "TaskInvocationParameters": {
+        "RunCommand": {
+            "Comment": "",
+            "DocumentHash": "",
+            "DocumentHashType": "Sha1",
+            "NotificationConfig": {
+                "NotificationArn": "",
+                "NotificationEvents": [
+                    "Failed"
+                ],
+                "NotificationType": "Command"
+            },
+            "OutputS3BucketName": "",
+            "OutputS3KeyPrefix": "",
+            "Parameters": {
+                "KeyName": [
+                    ""
+                ]
+            },
+            "ServiceRoleArn": "",
+            "TimeoutSeconds": 0
+        },
+        "Automation": {
+            "DocumentVersion": "",
+            "Parameters": {
+                "KeyName": [
+                    ""
+                ]
+            }
+        },
+        "StepFunctions": {
+            "Input": "",
+            "Name": ""
+        },
+        "Lambda": {
+            "ClientContext": "",
+            "Qualifier": "",
+            "Payload": null
+        }
+    },
+    "Priority": 0,
+    "MaxConcurrency": "",
+    "MaxErrors": "",
+    "LoggingInfo": {
+        "S3BucketName": "",
+        "S3KeyPrefix": "",
+        "S3Region": ""
+    },
+    "Name": "",
+    "Description": "",
+    "Replace": true
+}

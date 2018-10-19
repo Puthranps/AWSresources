@@ -1,0 +1,12 @@
+{
+    "usagePlanId": "",
+    "keyId": "",
+    "patchOperations": [
+        {
+            "op": "copy",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

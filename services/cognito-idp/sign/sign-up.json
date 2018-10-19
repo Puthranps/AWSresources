@@ -1,0 +1,24 @@
+{
+    "ClientId": "",
+    "SecretHash": "",
+    "Username": "",
+    "Password": "",
+    "UserAttributes": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "ValidationData": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "AnalyticsMetadata": {
+        "AnalyticsEndpointId": ""
+    },
+    "UserContextData": {
+        "EncodedData": ""
+    }
+}

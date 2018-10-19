@@ -1,0 +1,12 @@
+{
+    "ProfileArn": "",
+    "ProfileName": "",
+    "Timezone": "",
+    "Address": "",
+    "DistanceUnit": "METRIC",
+    "TemperatureUnit": "FAHRENHEIT",
+    "WakeWord": "COMPUTER",
+    "SetupModeDisabled": true,
+    "MaxVolumeLimit": 0,
+    "PSTNEnabled": true
+}

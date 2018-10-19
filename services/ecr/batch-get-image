@@ -1,0 +1,13 @@
+{
+    "registryId": "",
+    "repositoryName": "",
+    "imageIds": [
+        {
+            "imageDigest": "",
+            "imageTag": ""
+        }
+    ],
+    "acceptedMediaTypes": [
+        ""
+    ]
+}

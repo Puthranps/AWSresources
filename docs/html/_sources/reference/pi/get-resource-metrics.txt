@@ -1,0 +1,418 @@
+[ :ref:`aws <cli:aws>` . :ref:`pi <cli:aws pi>` ]
+
+.. _cli:aws pi get-resource-metrics:
+
+
+********************
+get-resource-metrics
+********************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetResourceMetrics>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-resource-metrics
+  --service-type <value>
+  --identifier <value>
+  --metric-queries <value>
+  --start-time <value>
+  --end-time <value>
+  [--period-in-seconds <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--service-type`` (string)
+
+
+  The AWS service for which Performance Insights will return metrics. The only valid value for *ServiceType* is: ``RDS``  
+
+  
+
+  Possible values:
+
+  
+  *   ``RDS``
+
+  
+
+  
+
+``--identifier`` (string)
+
+
+  An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.
+
+   
+
+  To use an Amazon RDS instance as a data source, you specify its ``DbiResourceId`` value - for example: ``db-FAIHNTYBKTGAUSUZQYPDS2GW4A``  
+
+  
+
+``--metric-queries`` (list)
+
+
+  An array of one or more queries to perform. Each query must specify a Performance Insights metric, and can optionally specify aggregation and filtering criteria.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Metric=string,GroupBy={Group=string,Dimensions=[string,string],Limit=integer},Filter={KeyName1=string,KeyName2=string} ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Metric": "string",
+      "GroupBy": {
+        "Group": "string",
+        "Dimensions": ["string", ...],
+        "Limit": integer
+      },
+      "Filter": {"string": "string"
+        ...}
+    }
+    ...
+  ]
+
+
+
+``--start-time`` (timestamp)
+
+
+  The date and time specifying the beginning of the requested time series data. You can't specify a ``StartTime`` that's earlier than 7 days ago. The value specified is *inclusive* - data points equal to or greater than ``StartTime`` will be returned.
+
+   
+
+  The value for ``StartTime`` must be earlier than the value for ``EndTime`` .
+
+  
+
+``--end-time`` (timestamp)
+
+
+  The date and time specifiying the end of the requested time series data. The value specified is *exclusive* - data points less than (but not equal to) ``EndTime`` will be returned.
+
+   
+
+  The value for ``EndTime`` must be later than the value for ``StartTime`` .
+
+  
+
+``--period-in-seconds`` (integer)
+
+
+  The granularity, in seconds, of the data points returned from Performance Insights. A period can be as short as one second, or as long as one day (86400 seconds). Valid values are:
+
+   
+
+   
+  * ``1`` (one second) 
+   
+  * ``60`` (one minute) 
+   
+  * ``300`` (five minutes) 
+   
+  * ``3600`` (one hour) 
+   
+  * ``86400`` (twenty-four hours) 
+   
+
+   
+
+  If you don't specify ``PeriodInSeconds`` , then Performance Insights will choose a value for you, with a goal of returning roughly 100-200 data points in the response.
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of items to return in the response. If more items exist than the specified ``MaxRecords`` value, a pagination token is included in the response so that the remaining results can be retrieved. 
+
+  
+
+``--next-token`` (string)
+
+
+  An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by ``MaxRecords`` .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To get resource metrics**
+
+This example requests data points for the *db.wait_event* dimension group, and for the *db.wait_event.name* dimension within that group. In the response, the relevant data points are grouped by the requested dimension (*db.wait_event.name*).
+
+
+
+Command::
+
+  aws pi get-resource-metrics --service-type RDS --identifier db-LKCGOBK26374TPTDFXOIWVCPPM --start-time 1527026400 --end-time 1527080400 --period-in-seconds 300 --metric db.load.avg --metric-queries file://metric-queries.json
+
+The arguments for ``--metric-queries`` are stored in a JSON file, ``metric-queries.json``.  Here are the contents of that file::
+
+  [
+      {
+          "Metric": "db.load.avg",
+          "GroupBy": { 
+              "Group":"db.wait_event" 
+          }
+      }
+  ]
+
+
+Output::
+
+  {
+      "AlignedEndTime": 1.5270804E9,
+      "AlignedStartTime": 1.5270264E9,
+      "Identifier": "db-LKCGOBK26374TPTDFXOIWVCPPM",
+      "MetricList": [
+          {
+              "Key": {
+                  "Metric": "db.load.avg"
+              },
+              "DataPoints": [
+                  {
+                      "Timestamp": 1527026700.0,
+                      "Value": 1.3533333333333333
+                  },
+                  {
+                      "Timestamp": 1527027000.0,
+                      "Value": 0.88
+                  },
+                  <...remaining output omitted...>
+              ]
+          },
+          {
+              "Key": {
+                  "Metric": "db.load.avg",
+                  "Dimensions": {
+                      "db.wait_event.name": "wait/synch/mutex/innodb/aurora_lock_thread_slot_futex"
+                  }
+              },
+              "DataPoints": [
+                  {
+                      "Timestamp": 1527026700.0,
+                      "Value": 0.8566666666666667
+                  },
+                  {
+                      "Timestamp": 1527027000.0,
+                      "Value": 0.8633333333333333
+                  },
+                  <...remaining output omitted...>
+              ],
+          },
+              <...remaining output omitted...>
+      ]
+  }
+
+
+======
+Output
+======
+
+AlignedStartTime -> (timestamp)
+
+  
+
+  The start time for the returned metrics, after alignment to a granular boundary (as specified by ``PeriodInSeconds`` ). ``AlignedStartTime`` will be less than or equal to the value of the user-specified ``StartTime`` .
+
+  
+
+  
+
+AlignedEndTime -> (timestamp)
+
+  
+
+  The end time for the returned metrics, after alignment to a granular boundary (as specified by ``PeriodInSeconds`` ). ``AlignedEndTime`` will be greater than or equal to the value of the user-specified ``Endtime`` .
+
+  
+
+  
+
+Identifier -> (string)
+
+  
+
+  An immutable, AWS Region-unique identifier for a data source. Performance Insights gathers metrics from this data source.
+
+   
+
+  To use an Amazon RDS instance as a data source, you specify its ``DbiResourceId`` value - for example: ``db-FAIHNTYBKTGAUSUZQYPDS2GW4A``  
+
+  
+
+  
+
+MetricList -> (list)
+
+  
+
+  An array of metric results,, where each array element contains all of the data points for a particular dimension.
+
+  
+
+  (structure)
+
+    
+
+    A time-ordered series of data points, correpsonding to a dimension of a Performance Insights metric.
+
+    
+
+    Key -> (structure)
+
+      
+
+      The dimension(s) to which the data points apply.
+
+      
+
+      Metric -> (string)
+
+        
+
+        The name of a Performance Insights metric to be measured.
+
+         
+
+        Valid values for ``Metric`` are:
+
+         
+
+         
+        * ``db.load.avg`` - a scaled representation of the number of active sessions for the database engine. 
+         
+        * ``db.sampledload.avg`` - the raw number of active sessions for the database engine. 
+         
+
+        
+
+        
+
+      Dimensions -> (map)
+
+        
+
+        The valid dimensions for the metric.
+
+        
+
+        key -> (string)
+
+          
+
+          
+
+        value -> (string)
+
+          
+
+          
+
+        
+
+      
+
+    DataPoints -> (list)
+
+      
+
+      An array of timestamp-value pairs, representing measurements over a period of time.
+
+      
+
+      (structure)
+
+        
+
+        A timestamp, and a single numerical value, which together represent a measurement at a particular point in time.
+
+        
+
+        Timestamp -> (timestamp)
+
+          
+
+          The time, in epoch format, associated with a particular ``Value`` .
+
+          
+
+          
+
+        Value -> (double)
+
+          
+
+          The actual value associated with a particular ``Timestamp`` .
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the token, up to the value specified by ``MaxRecords`` .
+
+  
+
+  
+

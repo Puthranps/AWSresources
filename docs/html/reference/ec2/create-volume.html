@@ -1,0 +1,423 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-volume &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ec2" href="../ec2/index.html" />
+    <link rel="next" title="create-vpc" href="../ec2/create-vpc.html" />
+    <link rel="prev" title="create-tags" href="../ec2/create-tags.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/create-vpc.html" title="create-vpc"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/create-tags.html" title="create-tags"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" accesskey="U">ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/create-tags.html" title="previous chapter (use the left arrow)">&larr; create-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/create-vpc.html" title="next chapter (use the right arrow)">create-vpc &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-volume</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/create-volume">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="create-volume">
+<span id="cli-aws-ec2-create-volume"></span><h1>create-volume<a class="headerlink" href="#create-volume" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates an EBS volume that can be attached to an instance in the same Availability Zone. The volume is created in the regional endpoint that you send the HTTP request to. For more information see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and Endpoints</a> .</p>
+<p>You can create a new empty volume or restore a volume from an EBS snapshot. Any AWS Marketplace product codes from the snapshot are propagated to the volume.</p>
+<p>You can create encrypted volumes with the <tt class="docutils literal"><span class="pre">Encrypted</span></tt> parameter. Encrypted volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are also automatically encrypted. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>You can tag your volumes during creation. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging Your Amazon EC2 Resources</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-creating-volume.html">Creating an Amazon EBS Volume</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVolume">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-volume
+--availability-zone &lt;value&gt;
+[--encrypted | --no-encrypted]
+[--iops &lt;value&gt;]
+[--kms-key-id &lt;value&gt;]
+[--size &lt;value&gt;]
+[--snapshot-id &lt;value&gt;]
+[--volume-type &lt;value&gt;]
+[--dry-run | --no-dry-run]
+[--tag-specifications &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--availability-zone</span></tt> (string)</p>
+<blockquote>
+<div>The Availability Zone in which to create the volume. Use  DescribeAvailabilityZones to list the Availability Zones that are currently available to you.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--encrypted</span></tt> | <tt class="docutils literal"><span class="pre">--no-encrypted</span></tt> (boolean)</p>
+<blockquote>
+<div>Specifies whether the volume should be encrypted. Encrypted Amazon EBS volumes may only be attached to instances that support Amazon EBS encryption. Volumes that are created from encrypted snapshots are automatically encrypted. There is no way to create an encrypted volume from an unencrypted snapshot or vice versa. If your AMI uses encrypted volumes, you can only launch it on supported instance types. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--iops</span></tt> (integer)</p>
+<blockquote>
+<div><p>The number of I/O operations per second (IOPS) to provision for the volume, with a maximum ratio of 50 IOPS/GiB. Range is 100 to 32000 IOPS for volumes in most regions. For exceptions, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>This parameter is valid only for Provisioned IOPS SSD (io1) volumes.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div><p>An identifier for the AWS Key Management Service (AWS KMS) customer master key (CMK) to use when creating the encrypted volume. This parameter is only required if you want to use a non-default CMK; if this parameter is not specified, the default CMK for EBS is used. If a <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> is specified, the <tt class="docutils literal"><span class="pre">Encrypted</span></tt> flag must also be set.</p>
+<p>The CMK identifier may be provided in any of the following formats:</p>
+<ul class="simple">
+<li>Key ID</li>
+<li>Key alias</li>
+<li>ARN using key ID. The ID ARN contains the <tt class="docutils literal"><span class="pre">arn:aws:kms</span></tt> namespace, followed by the region of the CMK, the AWS account ID of the CMK owner, the <tt class="docutils literal"><span class="pre">key</span></tt> namespace, and then the CMK ID. For example, arn:aws:kms:<em>us-east-1</em> :<em>012345678910</em> :key/<em>abcd1234-a123-456a-a12b-a123b4cd56ef</em> .</li>
+<li>ARN using key alias. The alias ARN contains the <tt class="docutils literal"><span class="pre">arn:aws:kms</span></tt> namespace, followed by the region of the CMK, the AWS account ID of the CMK owner, the <tt class="docutils literal"><span class="pre">alias</span></tt> namespace, and then the CMK alias. For example, arn:aws:kms:<em>us-east-1</em> :<em>012345678910</em> :alias/<em>ExampleAlias</em> .</li>
+</ul>
+<p>AWS parses <tt class="docutils literal"><span class="pre">KmsKeyId</span></tt> asynchronously, meaning that the action you call may appear to complete even though you provided an invalid identifier. The action will eventually fail.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--size</span></tt> (integer)</p>
+<blockquote>
+<div><p>The size of the volume, in GiBs.</p>
+<p>Constraints: 1-16384 for <tt class="docutils literal"><span class="pre">gp2</span></tt> , 4-16384 for <tt class="docutils literal"><span class="pre">io1</span></tt> , 500-16384 for <tt class="docutils literal"><span class="pre">st1</span></tt> , 500-16384 for <tt class="docutils literal"><span class="pre">sc1</span></tt> , and 1-1024 for <tt class="docutils literal"><span class="pre">standard</span></tt> . If you specify a snapshot, the volume size must be equal to or larger than the snapshot size.</p>
+<p>Default: If you're creating the volume from a snapshot and don't specify a volume size, the default is the snapshot size.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--snapshot-id</span></tt> (string)</p>
+<blockquote>
+<div>The snapshot from which to create the volume.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--volume-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The volume type. This can be <tt class="docutils literal"><span class="pre">gp2</span></tt> for General Purpose SSD, <tt class="docutils literal"><span class="pre">io1</span></tt> for Provisioned IOPS SSD, <tt class="docutils literal"><span class="pre">st1</span></tt> for Throughput Optimized HDD, <tt class="docutils literal"><span class="pre">sc1</span></tt> for Cold HDD, or <tt class="docutils literal"><span class="pre">standard</span></tt> for Magnetic volumes.</p>
+<p>Defaults: If no volume type is specified, the default is <tt class="docutils literal"><span class="pre">standard</span></tt> in us-east-1, eu-west-1, eu-central-1, us-west-2, us-west-1, sa-east-1, ap-northeast-1, ap-northeast-2, ap-southeast-1, ap-southeast-2, ap-south-1, us-gov-west-1, and cn-north-1. In all other regions, EBS defaults to <tt class="docutils literal"><span class="pre">gp2</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">standard</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">io1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">gp2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sc1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">st1</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tag-specifications</span></tt> (list)</p>
+<blockquote>
+<div>The tags to apply to the volume during creation.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>ResourceType=string,Tags=[{Key=string,Value=string},{Key=string,Value=string}] ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;ResourceType&quot;: &quot;customer-gateway&quot;|&quot;dedicated-host&quot;|&quot;dhcp-options&quot;|&quot;image&quot;|&quot;instance&quot;|&quot;internet-gateway&quot;|&quot;network-acl&quot;|&quot;network-interface&quot;|&quot;reserved-instances&quot;|&quot;route-table&quot;|&quot;snapshot&quot;|&quot;spot-instances-request&quot;|&quot;subnet&quot;|&quot;security-group&quot;|&quot;volume&quot;|&quot;vpc&quot;|&quot;vpn-connection&quot;|&quot;vpn-gateway&quot;,
+    &quot;Tags&quot;: [
+      {
+        &quot;Key&quot;: &quot;string&quot;,
+        &quot;Value&quot;: &quot;string&quot;
+      }
+      ...
+    ]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a new volume</strong></p>
+<p>This example command creates an 80 GiB General Purpose (SSD) volume in the Availability Zone <tt class="docutils literal"><span class="pre">us-east-1a</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-volume --size 80 --region us-east-1 --availability-zone us-east-1a --volume-type gp2</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;AvailabilityZone&quot;</span><span class="p">:</span> <span class="s2">&quot;us-east-1a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;Tags&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;VolumeType&quot;</span><span class="p">:</span> <span class="s2">&quot;gp2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;VolumeId&quot;</span><span class="p">:</span> <span class="s2">&quot;vol-1234567890abcdef0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;creating&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;SnapshotId&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+    <span class="s2">&quot;CreateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;YYYY-MM-DDTHH:MM:SS.000Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Size&quot;</span><span class="p">:</span> <span class="mi">80</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To create a new Provisioned IOPS (SSD) volume from a snapshot</strong></p>
+<p>This example command creates a new Provisioned IOPS (SSD) volume with 1000 provisioned IOPS from a snapshot in the Availability Zone <tt class="docutils literal"><span class="pre">us-east-1a</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-volume --region us-east-1 --availability-zone us-east-1a --snapshot-id snap-066877671789bd71b --volume-type io1 --iops 1000</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;AvailabilityZone&quot;</span><span class="p">:</span> <span class="s2">&quot;us-east-1a&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Attachments&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;Tags&quot;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s2">&quot;VolumeType&quot;</span><span class="p">:</span> <span class="s2">&quot;io1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;VolumeId&quot;</span><span class="p">:</span> <span class="s2">&quot;vol-1234567890abcdef0&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;creating&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Iops&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="s2">&quot;SnapshotId&quot;</span><span class="p">:</span> <span class="s2">&quot;snap-066877671789bd71b&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;CreateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;YYYY-MM-DDTHH:MM:SS.000Z&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Size&quot;</span><span class="p">:</span> <span class="mi">500</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To create a volume with tags</strong></p>
+<p>This example creates a volume and applies two tags: <tt class="docutils literal"><span class="pre">purpose</span></tt> = <tt class="docutils literal"><span class="pre">production</span></tt>, and <tt class="docutils literal"><span class="pre">cost-center</span></tt> = <tt class="docutils literal"><span class="pre">cc123</span></tt>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-volume --availability-zone us-east-1a --volume-type gp2 --size 80 --tag-specifications &#x27;ResourceType=volume,Tags=[{Key=purpose,Value=production},{Key=cost-center,Value=cc123}]&#x27;</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Attachments -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the volume attachments.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes volume attachment details.</p>
+<p>AttachTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when the attachment initiated.</div></blockquote>
+<p>Device -&gt; (string)</p>
+<blockquote>
+<div>The device name.</div></blockquote>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The attachment state of the volume.</div></blockquote>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the volume.</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the EBS volume is deleted on instance termination.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone for the volume.</div></blockquote>
+<p>CreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when volume creation was initiated.</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the volume will be encrypted.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The full ARN of the AWS Key Management Service (AWS KMS) customer master key (CMK) that was used to protect the volume encryption key for the volume.</div></blockquote>
+<p>Size -&gt; (integer)</p>
+<blockquote>
+<div>The size of the volume, in GiBs.</div></blockquote>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The snapshot from which the volume was created, if applicable.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The volume state.</div></blockquote>
+<p>VolumeId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the volume.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of I/O operations per second (IOPS) that the volume supports. For Provisioned IOPS SSD volumes, this represents the number of IOPS that are provisioned for the volume. For General Purpose SSD volumes, this represents the baseline performance of the volume and the rate at which the volume accumulates I/O credits for bursting. For more information about General Purpose SSD baseline performance, I/O credits, and bursting, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>Constraint: Range is 100-32000 IOPS for io1 volumes and 100-10000 IOPS for <tt class="docutils literal"><span class="pre">gp2</span></tt> volumes.</p>
+<p>Condition: This parameter is required for requests to create <tt class="docutils literal"><span class="pre">io1</span></tt> volumes; it is not used in requests to create <tt class="docutils literal"><span class="pre">gp2</span></tt> , <tt class="docutils literal"><span class="pre">st1</span></tt> , <tt class="docutils literal"><span class="pre">sc1</span></tt> , or <tt class="docutils literal"><span class="pre">standard</span></tt> volumes.</p>
+</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the volume.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt> .</p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div>The volume type. This can be <tt class="docutils literal"><span class="pre">gp2</span></tt> for General Purpose SSD, <tt class="docutils literal"><span class="pre">io1</span></tt> for Provisioned IOPS SSD, <tt class="docutils literal"><span class="pre">st1</span></tt> for Throughput Optimized HDD, <tt class="docutils literal"><span class="pre">sc1</span></tt> for Cold HDD, or <tt class="docutils literal"><span class="pre">standard</span></tt> for Magnetic volumes.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/create-tags.html" title="previous chapter (use the left arrow)">&larr; create-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/create-vpc.html" title="next chapter (use the right arrow)">create-vpc &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/create-vpc.html" title="create-vpc"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/create-tags.html" title="create-tags"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" >ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

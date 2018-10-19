@@ -1,0 +1,98 @@
+{
+    "applicationName": "",
+    "deploymentGroupName": "",
+    "deploymentConfigName": "",
+    "ec2TagFilters": [
+        {
+            "Key": "",
+            "Value": "",
+            "Type": "KEY_ONLY"
+        }
+    ],
+    "onPremisesInstanceTagFilters": [
+        {
+            "Key": "",
+            "Value": "",
+            "Type": "KEY_ONLY"
+        }
+    ],
+    "autoScalingGroups": [
+        ""
+    ],
+    "serviceRoleArn": "",
+    "triggerConfigurations": [
+        {
+            "triggerName": "",
+            "triggerTargetArn": "",
+            "triggerEvents": [
+                "DeploymentFailure"
+            ]
+        }
+    ],
+    "alarmConfiguration": {
+        "enabled": true,
+        "ignorePollAlarmFailure": true,
+        "alarms": [
+            {
+                "name": ""
+            }
+        ]
+    },
+    "autoRollbackConfiguration": {
+        "enabled": true,
+        "events": [
+            "DEPLOYMENT_STOP_ON_ALARM"
+        ]
+    },
+    "deploymentStyle": {
+        "deploymentType": "IN_PLACE",
+        "deploymentOption": "WITHOUT_TRAFFIC_CONTROL"
+    },
+    "blueGreenDeploymentConfiguration": {
+        "terminateBlueInstancesOnDeploymentSuccess": {
+            "action": "KEEP_ALIVE",
+            "terminationWaitTimeInMinutes": 0
+        },
+        "deploymentReadyOption": {
+            "actionOnTimeout": "STOP_DEPLOYMENT",
+            "waitTimeInMinutes": 0
+        },
+        "greenFleetProvisioningOption": {
+            "action": "DISCOVER_EXISTING"
+        }
+    },
+    "loadBalancerInfo": {
+        "elbInfoList": [
+            {
+                "name": ""
+            }
+        ],
+        "targetGroupInfoList": [
+            {
+                "name": ""
+            }
+        ]
+    },
+    "ec2TagSet": {
+        "ec2TagSetList": [
+            [
+                {
+                    "Key": "",
+                    "Value": "",
+                    "Type": "VALUE_ONLY"
+                }
+            ]
+        ]
+    },
+    "onPremisesTagSet": {
+        "onPremisesTagSetList": [
+            [
+                {
+                    "Key": "",
+                    "Value": "",
+                    "Type": "KEY_AND_VALUE"
+                }
+            ]
+        ]
+    }
+}

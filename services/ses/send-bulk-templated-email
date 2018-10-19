@@ -1,0 +1,41 @@
+{
+    "Source": "",
+    "SourceArn": "",
+    "ReplyToAddresses": [
+        ""
+    ],
+    "ReturnPath": "",
+    "ReturnPathArn": "",
+    "ConfigurationSetName": "",
+    "DefaultTags": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "Template": "",
+    "TemplateArn": "",
+    "DefaultTemplateData": "",
+    "Destinations": [
+        {
+            "Destination": {
+                "ToAddresses": [
+                    ""
+                ],
+                "CcAddresses": [
+                    ""
+                ],
+                "BccAddresses": [
+                    ""
+                ]
+            },
+            "ReplacementTags": [
+                {
+                    "Name": "",
+                    "Value": ""
+                }
+            ],
+            "ReplacementTemplateData": ""
+        }
+    ]
+}

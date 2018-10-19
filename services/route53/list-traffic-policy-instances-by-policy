@@ -1,0 +1,8 @@
+{
+    "TrafficPolicyId": "",
+    "TrafficPolicyVersion": 0,
+    "HostedZoneIdMarker": "",
+    "TrafficPolicyInstanceNameMarker": "",
+    "TrafficPolicyInstanceTypeMarker": "NS",
+    "MaxItems": ""
+}

@@ -1,0 +1,302 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-content-moderation &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="rekognition" href="../rekognition/index.html" />
+    <link rel="next" title="get-face-detection" href="../rekognition/get-face-detection.html" />
+    <link rel="prev" title="get-celebrity-recognition" href="../rekognition/get-celebrity-recognition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../rekognition/get-face-detection.html" title="get-face-detection"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../rekognition/get-celebrity-recognition.html" title="get-celebrity-recognition"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../rekognition/index.html" accesskey="U">rekognition</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../rekognition/get-celebrity-recognition.html" title="previous chapter (use the left arrow)">&larr; get-celebrity-recognition</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../rekognition/get-face-detection.html" title="next chapter (use the right arrow)">get-face-detection &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-content-moderation</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/rekognition/get-content-moderation">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../rekognition/index.html#cli-aws-rekognition"><em>rekognition</em></a> ]</p>
+<div class="section" id="get-content-moderation">
+<span id="cli-aws-rekognition-get-content-moderation"></span><h1>get-content-moderation<a class="headerlink" href="#get-content-moderation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Gets the content moderation analysis results for a Amazon Rekognition Video analysis started by .</p>
+<p>Content moderation analysis of a video is an asynchronous operation. You start analysis by calling . which returns a job identifier (<tt class="docutils literal"><span class="pre">JobId</span></tt> ). When analysis finishes, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic registered in the initial call to <tt class="docutils literal"><span class="pre">StartContentModeration</span></tt> . To get the results of the content moderation analysis, first check that the status value published to the Amazon SNS topic is <tt class="docutils literal"><span class="pre">SUCCEEDED</span></tt> . If so, call <tt class="docutils literal"><span class="pre">GetCelebrityDetection</span></tt> and pass the job identifier (<tt class="docutils literal"><span class="pre">JobId</span></tt> ) from the initial call to <tt class="docutils literal"><span class="pre">StartCelebrityDetection</span></tt> .</p>
+<p>For more information, see Working with Stored Videos in the Amazon Rekognition Devlopers Guide.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">GetContentModeration</span></tt> returns detected content moderation labels, and the time they are detected, in an array, <tt class="docutils literal"><span class="pre">ModerationLabels</span></tt> , of objects.</div></blockquote>
+<p>By default, the moderated labels are returned sorted by time, in milliseconds from the start of the video. You can also sort them by moderated label by specifying <tt class="docutils literal"><span class="pre">NAME</span></tt> for the <tt class="docutils literal"><span class="pre">SortBy</span></tt> input parameter.</p>
+<p>Since video analysis can return a large number of results, use the <tt class="docutils literal"><span class="pre">MaxResults</span></tt> parameter to limit the number of labels returned in a single call to <tt class="docutils literal"><span class="pre">GetContentModeration</span></tt> . If there are more results than specified in <tt class="docutils literal"><span class="pre">MaxResults</span></tt> , the value of <tt class="docutils literal"><span class="pre">NextToken</span></tt> in the operation response contains a pagination token for getting the next set of results. To get the next page of results, call <tt class="docutils literal"><span class="pre">GetContentModeration</span></tt> and populate the <tt class="docutils literal"><span class="pre">NextToken</span></tt> request parameter with the value of <tt class="docutils literal"><span class="pre">NextToken</span></tt> returned from the previous call to <tt class="docutils literal"><span class="pre">GetContentModeration</span></tt> .</p>
+<p>For more information, see Detecting Unsafe Content in the Amazon Rekognition Developer Guide.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetContentModeration">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-content-moderation
+--job-id &lt;value&gt;
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--sort-by &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--job-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier for the content moderation job. Use <tt class="docutils literal"><span class="pre">JobId</span></tt> to identify the job in a subsequent call to <tt class="docutils literal"><span class="pre">GetContentModeration</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>Maximum number of results to return per paginated call. The largest value you can specify is 1000. If you specify a value greater than 1000, a maximum of 1000 results is returned. The default value is 1000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a pagination token in the response. You can use this pagination token to retrieve the next set of content moderation labels.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sort-by</span></tt> (string)</p>
+<blockquote>
+<div><p>Sort to use for elements in the <tt class="docutils literal"><span class="pre">ModerationLabelDetections</span></tt> array. Use <tt class="docutils literal"><span class="pre">TIMESTAMP</span></tt> to sort array elements by the time labels are detected. Use <tt class="docutils literal"><span class="pre">NAME</span></tt> to alphabetically group elements for a label together. Within each label group, the array element are sorted by detection confidence. The default sort is by <tt class="docutils literal"><span class="pre">TIMESTAMP</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NAME</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">TIMESTAMP</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>JobStatus -&gt; (string)</p>
+<blockquote>
+<div>The current status of the content moderation job.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>If the job fails, <tt class="docutils literal"><span class="pre">StatusMessage</span></tt> provides a descriptive error message.</div></blockquote>
+<p>VideoMetadata -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about a video that Amazon Rekognition analyzed. <tt class="docutils literal"><span class="pre">Videometadata</span></tt> is returned in every page of paginated responses from <tt class="docutils literal"><span class="pre">GetContentModeration</span></tt> .</p>
+<p>Codec -&gt; (string)</p>
+<blockquote>
+<div>Type of compression used in the analyzed video.</div></blockquote>
+<p>DurationMillis -&gt; (long)</p>
+<blockquote>
+<div>Length of the video in milliseconds.</div></blockquote>
+<p>Format -&gt; (string)</p>
+<blockquote>
+<div>Format of the analyzed video. Possible values are MP4, MOV and AVI.</div></blockquote>
+<p>FrameRate -&gt; (float)</p>
+<blockquote>
+<div>Number of frames per second in the video.</div></blockquote>
+<p>FrameHeight -&gt; (long)</p>
+<blockquote>
+<div>Vertical pixel dimension of the video.</div></blockquote>
+<p>FrameWidth -&gt; (long)</p>
+<blockquote>
+<div>Horizontal pixel dimension of the video.</div></blockquote>
+</div></blockquote>
+<p>ModerationLabels -&gt; (list)</p>
+<blockquote>
+<div><p>The detected moderation labels and the time(s) they were detected.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a moderation label detection in a stored video.</p>
+<p>Timestamp -&gt; (long)</p>
+<blockquote>
+<div>Time, in milliseconds from the beginning of the video, that the moderation label was detected.</div></blockquote>
+<p>ModerationLabel -&gt; (structure)</p>
+<blockquote>
+<div><p>The moderation label detected by in the stored video.</p>
+<p>Confidence -&gt; (float)</p>
+<blockquote>
+<div><p>Specifies the confidence that Amazon Rekognition has that the label has been correctly identified.</p>
+<p>If you don't specify the <tt class="docutils literal"><span class="pre">MinConfidence</span></tt> parameter in the call to <tt class="docutils literal"><span class="pre">DetectModerationLabels</span></tt> , the operation returns labels with a confidence value greater than or equal to 50 percent.</p>
+</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The label name for the type of content detected in the image.</div></blockquote>
+<p>ParentName -&gt; (string)</p>
+<blockquote>
+<div>The name for the parent label. Labels at the top level of the hierarchy have the parent label <tt class="docutils literal"><span class="pre">&quot;&quot;</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If the response is truncated, Amazon Rekognition Video returns this token that you can use in the subsequent request to retrieve the next set of moderation labels.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../rekognition/get-celebrity-recognition.html" title="previous chapter (use the left arrow)">&larr; get-celebrity-recognition</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../rekognition/get-face-detection.html" title="next chapter (use the right arrow)">get-face-detection &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../rekognition/get-face-detection.html" title="get-face-detection"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../rekognition/get-celebrity-recognition.html" title="get-celebrity-recognition"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../rekognition/index.html" >rekognition</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

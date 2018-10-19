@@ -1,0 +1,475 @@
+[ :ref:`aws <cli:aws>` . :ref:`lightsail <cli:aws lightsail>` ]
+
+.. _cli:aws lightsail get-instance-snapshots:
+
+
+**********************
+get-instance-snapshots
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns all instance snapshots for the user's account.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceSnapshots>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``get-instance-snapshots`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``instanceSnapshots``
+
+
+========
+Synopsis
+========
+
+::
+
+    get-instance-snapshots
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+instanceSnapshots -> (list)
+
+  
+
+  An array of key-value pairs containing information about the results of your get instance snapshots request.
+
+  
+
+  (structure)
+
+    
+
+    Describes the snapshot of the virtual private server, or *instance* .
+
+    
+
+    name -> (string)
+
+      
+
+      The name of the snapshot.
+
+      
+
+      
+
+    arn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the snapshot (e.g., ``arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE`` ).
+
+      
+
+      
+
+    supportCode -> (string)
+
+      
+
+      The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.
+
+      
+
+      
+
+    createdAt -> (timestamp)
+
+      
+
+      The timestamp when the snapshot was created (e.g., ``1479907467.024`` ).
+
+      
+
+      
+
+    location -> (structure)
+
+      
+
+      The region name and Availability Zone where you created the snapshot.
+
+      
+
+      availabilityZone -> (string)
+
+        
+
+        The Availability Zone. Follows the format ``us-east-2a`` (case-sensitive).
+
+        
+
+        
+
+      regionName -> (string)
+
+        
+
+        The AWS Region name.
+
+        
+
+        
+
+      
+
+    resourceType -> (string)
+
+      
+
+      The type of resource (usually ``InstanceSnapshot`` ).
+
+      
+
+      
+
+    state -> (string)
+
+      
+
+      The state the snapshot is in.
+
+      
+
+      
+
+    progress -> (string)
+
+      
+
+      The progress of the snapshot.
+
+      
+
+      
+
+    fromAttachedDisks -> (list)
+
+      
+
+      An array of disk objects containing information about all block storage disks.
+
+      
+
+      (structure)
+
+        
+
+        Describes a system disk or an block storage disk.
+
+        
+
+        name -> (string)
+
+          
+
+          The unique name of the disk.
+
+          
+
+          
+
+        arn -> (string)
+
+          
+
+          The Amazon Resource Name (ARN) of the disk.
+
+          
+
+          
+
+        supportCode -> (string)
+
+          
+
+          The support code. Include this code in your email to support when you have questions about an instance or another resource in Lightsail. This code enables our support team to look up your Lightsail information more easily.
+
+          
+
+          
+
+        createdAt -> (timestamp)
+
+          
+
+          The date when the disk was created.
+
+          
+
+          
+
+        location -> (structure)
+
+          
+
+          The AWS Region and Availability Zone where the disk is located.
+
+          
+
+          availabilityZone -> (string)
+
+            
+
+            The Availability Zone. Follows the format ``us-east-2a`` (case-sensitive).
+
+            
+
+            
+
+          regionName -> (string)
+
+            
+
+            The AWS Region name.
+
+            
+
+            
+
+          
+
+        resourceType -> (string)
+
+          
+
+          The Lightsail resource type (e.g., ``Disk`` ).
+
+          
+
+          
+
+        sizeInGb -> (integer)
+
+          
+
+          The size of the disk in GB.
+
+          
+
+          
+
+        isSystemDisk -> (boolean)
+
+          
+
+          A Boolean value indicating whether this disk is a system disk (has an operating system loaded on it).
+
+          
+
+          
+
+        iops -> (integer)
+
+          
+
+          The input/output operations per second (IOPS) of the disk.
+
+          
+
+          
+
+        path -> (string)
+
+          
+
+          The disk path.
+
+          
+
+          
+
+        state -> (string)
+
+          
+
+          Describes the status of the disk.
+
+          
+
+          
+
+        attachedTo -> (string)
+
+          
+
+          The resources to which the disk is attached.
+
+          
+
+          
+
+        isAttached -> (boolean)
+
+          
+
+          A Boolean value indicating whether the disk is attached.
+
+          
+
+          
+
+        attachmentState -> (string)
+
+          
+
+          (Deprecated) The attachment state of the disk.
+
+           
+
+          .. note::
+
+             
+
+            In releases prior to November 14, 2017, this parameter returned ``attached`` for system disks in the API response. It is now deprecated, but still included in the response. Use ``isAttached`` instead.
+
+             
+
+          
+
+          
+
+        gbInUse -> (integer)
+
+          
+
+          (Deprecated) The number of GB in use by the disk.
+
+           
+
+          .. note::
+
+             
+
+            In releases prior to November 14, 2017, this parameter was not included in the API response. It is now deprecated.
+
+             
+
+          
+
+          
+
+        
+
+      
+
+    fromInstanceName -> (string)
+
+      
+
+      The instance from which the snapshot was created.
+
+      
+
+      
+
+    fromInstanceArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the instance from which the snapshot was created (e.g., ``arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE`` ).
+
+      
+
+      
+
+    fromBlueprintId -> (string)
+
+      
+
+      The blueprint ID from which you created the snapshot (e.g., ``os_debian_8_3`` ). A blueprint is a virtual private server (or *instance* ) image used to create instances quickly.
+
+      
+
+      
+
+    fromBundleId -> (string)
+
+      
+
+      The bundle ID from which you created the snapshot (e.g., ``micro_1_0`` ).
+
+      
+
+      
+
+    sizeInGb -> (integer)
+
+      
+
+      The size in GB of the SSD.
+
+      
+
+      
+
+    
+
+  
+
+nextPageToken -> (string)
+
+  
+
+  A token used for advancing to the next page of results from your get instance snapshots request.
+
+  
+
+  
+

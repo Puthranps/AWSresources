@@ -1,0 +1,12 @@
+{
+    "Name": "",
+    "Description": "",
+    "StartDate": "",
+    "EndDate": "",
+    "Schedule": "",
+    "ScheduleTimezone": "",
+    "Duration": 0,
+    "Cutoff": 0,
+    "AllowUnassociatedTargets": true,
+    "ClientToken": ""
+}

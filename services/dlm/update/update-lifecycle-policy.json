@@ -1,0 +1,38 @@
+{
+    "PolicyId": "",
+    "ExecutionRoleArn": "",
+    "State": "ENABLED",
+    "Description": "",
+    "PolicyDetails": {
+        "ResourceTypes": [
+            "VOLUME"
+        ],
+        "TargetTags": [
+            {
+                "Key": "",
+                "Value": ""
+            }
+        ],
+        "Schedules": [
+            {
+                "Name": "",
+                "TagsToAdd": [
+                    {
+                        "Key": "",
+                        "Value": ""
+                    }
+                ],
+                "CreateRule": {
+                    "Interval": 0,
+                    "IntervalUnit": "HOURS",
+                    "Times": [
+                        ""
+                    ]
+                },
+                "RetainRule": {
+                    "Count": 0
+                }
+            }
+        ]
+    }
+}

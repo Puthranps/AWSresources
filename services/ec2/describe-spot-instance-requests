@@ -1,0 +1,14 @@
+{
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "DryRun": true,
+    "SpotInstanceRequestIds": [
+        ""
+    ]
+}

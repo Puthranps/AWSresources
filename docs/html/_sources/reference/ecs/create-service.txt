@@ -1,0 +1,1300 @@
+[ :ref:`aws <cli:aws>` . :ref:`ecs <cli:aws ecs>` ]
+
+.. _cli:aws ecs create-service:
+
+
+**************
+create-service
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in a service drops below ``desiredCount`` , Amazon ECS spawns another copy of the task in the specified cluster. To update an existing service, see  UpdateService .
+
+ 
+
+In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind a load balancer. The load balancer distributes traffic across the tasks that are associated with the service. For more information, see `Service Load Balancing <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+ 
+
+You can optionally specify a deployment configuration for your service. During a deployment, the service scheduler uses the ``minimumHealthyPercent`` and ``maximumPercent`` parameters to determine the deployment strategy. The deployment is triggered by changing the task definition or the desired count of a service with an  UpdateService operation.
+
+ 
+
+The ``minimumHealthyPercent`` represents a lower limit on the number of your service's tasks that must remain in the ``RUNNING`` state during a deployment, as a percentage of the ``desiredCount`` (rounded up to the nearest integer). This parameter enables you to deploy without using additional cluster capacity. For example, if your service has a ``desiredCount`` of four tasks and a ``minimumHealthyPercent`` of 50%, the scheduler can stop two existing tasks to free up cluster capacity before starting two new tasks. Tasks for services that *do not* use a load balancer are considered healthy if they are in the ``RUNNING`` state. Tasks for services that *do* use a load balancer are considered healthy if they are in the ``RUNNING`` state and the container instance they are hosted on is reported as healthy by the load balancer. The default value for a replica service for ``minimumHealthyPercent`` is 50% in the console and 100% for the AWS CLI, the AWS SDKs, and the APIs. The default value for a daemon service for ``minimumHealthyPercent`` is 0% for the AWS CLI, the AWS SDKs, and the APIs and 50% for the console.
+
+ 
+
+The ``maximumPercent`` parameter represents an upper limit on the number of your service's tasks that are allowed in the ``RUNNING`` or ``PENDING`` state during a deployment, as a percentage of the ``desiredCount`` (rounded down to the nearest integer). This parameter enables you to define the deployment batch size. For example, if your replica service has a ``desiredCount`` of four tasks and a ``maximumPercent`` value of 200%, the scheduler can start four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). The default value for a replica service for ``maximumPercent`` is 200%. If you are using a daemon service type, the ``maximumPercent`` should remain at 100%, which is the default value.
+
+ 
+
+When the service scheduler launches new tasks, it determines task placement in your cluster using the following logic:
+
+ 
+
+ 
+* Determine which of the container instances in your cluster can support your service's task definition (for example, they have the required CPU, memory, ports, and container instance attributes). 
+ 
+* By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although you can choose a different placement strategy) with the ``placementStrategy`` parameter): 
+
+   
+  * Sort the valid container instances, giving priority to instances that have the fewest number of running tasks for this service in their respective Availability Zone. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement. 
+   
+  * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service. 
+   
+
+ 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateService>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-service
+  [--cluster <value>]
+  --service-name <value>
+  --task-definition <value>
+  [--load-balancers <value>]
+  [--service-registries <value>]
+  [--desired-count <value>]
+  [--client-token <value>]
+  [--launch-type <value>]
+  [--platform-version <value>]
+  [--role <value>]
+  [--deployment-configuration <value>]
+  [--placement-constraints <value>]
+  [--placement-strategy <value>]
+  [--network-configuration <value>]
+  [--health-check-grace-period-seconds <value>]
+  [--scheduling-strategy <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster`` (string)
+
+
+  The short name or full Amazon Resource Name (ARN) of the cluster on which to run your service. If you do not specify a cluster, the default cluster is assumed.
+
+  
+
+``--service-name`` (string)
+
+
+  The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.
+
+  
+
+``--task-definition`` (string)
+
+
+  The ``family`` and ``revision`` (``family:revision`` ) or full ARN of the task definition to run in your service. If a ``revision`` is not specified, the latest ``ACTIVE`` revision is used.
+
+  
+
+``--load-balancers`` (list)
+
+
+  A load balancer object representing the load balancer to use with your service. Currently, you are limited to one load balancer or target group per service. After you create a service, the load balancer name or target group ARN, container name, and container port specified in the service definition are immutable.
+
+   
+
+  For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer. When a task from this service is placed on a container instance, the container instance is registered with the load balancer specified here.
+
+   
+
+  For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target group ARN, the container name (as it appears in a container definition), and the container port to access from the load balancer. When a task from this service is placed on a container instance, the container instance and port combination is registered as a target in the target group specified here.
+
+   
+
+  Services with tasks that use the ``awsvpc`` network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+  
+
+
+
+Shorthand Syntax::
+
+    targetGroupArn=string,loadBalancerName=string,containerName=string,containerPort=integer ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "targetGroupArn": "string",
+      "loadBalancerName": "string",
+      "containerName": "string",
+      "containerPort": integer
+    }
+    ...
+  ]
+
+
+
+``--service-registries`` (list)
+
+
+  The details of the service discovery registries to assign to this service. For more information, see `Service Discovery <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html>`__ .
+
+   
+
+  .. note::
+
+     
+
+    Service discovery is supported for Fargate tasks if using platform version v1.1.0 or later. For more information, see `AWS Fargate Platform Versions <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html>`__ .
+
+     
+
+  
+
+
+
+Shorthand Syntax::
+
+    registryArn=string,port=integer,containerName=string,containerPort=integer ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "registryArn": "string",
+      "port": integer,
+      "containerName": "string",
+      "containerPort": integer
+    }
+    ...
+  ]
+
+
+
+``--desired-count`` (integer)
+
+
+  The number of instantiations of the specified task definition to place and keep running on your cluster.
+
+  
+
+``--client-token`` (string)
+
+
+  Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Up to 32 ASCII characters are allowed.
+
+  
+
+``--launch-type`` (string)
+
+
+  The launch type on which to run your service.
+
+  
+
+  Possible values:
+
+  
+  *   ``EC2``
+
+  
+  *   ``FARGATE``
+
+  
+
+  
+
+``--platform-version`` (string)
+
+
+  The platform version on which to run your service. If one is not specified, the latest version is used by default.
+
+  
+
+``--role`` (string)
+
+
+  The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS to make calls to your load balancer on your behalf. This parameter is only permitted if you are using a load balancer with your service and your task definition does not use the ``awsvpc`` network mode. If you specify the ``role`` parameter, you must also specify a load balancer object with the ``loadBalancers`` parameter.
+
+   
+
+  .. warning::
+
+     
+
+    If your account has already created the Amazon ECS service-linked role, that role is used by default for your service unless you specify a role here. The service-linked role is required if your task definition uses the ``awsvpc`` network mode, in which case you should not specify a role here. For more information, see `Using Service-Linked Roles for Amazon ECS <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+     
+
+   
+
+  If your specified role has a path other than ``/`` , then you must either specify the full role ARN (this is recommended) or prefix the role name with the path. For example, if a role with the name ``bar`` has a path of ``/foo/`` then you would specify ``/foo/bar`` as the role name. For more information, see `Friendly Names and Paths <http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names>`__ in the *IAM User Guide* .
+
+  
+
+``--deployment-configuration`` (structure)
+
+
+  Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
+
+  
+
+
+
+Shorthand Syntax::
+
+    maximumPercent=integer,minimumHealthyPercent=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "maximumPercent": integer,
+    "minimumHealthyPercent": integer
+  }
+
+
+
+``--placement-constraints`` (list)
+
+
+  An array of placement constraint objects to use for tasks in your service. You can specify a maximum of 10 constraints per task (this limit includes constraints in the task definition and those specified at run time). 
+
+  
+
+
+
+Shorthand Syntax::
+
+    type=string,expression=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "type": "distinctInstance"|"memberOf",
+      "expression": "string"
+    }
+    ...
+  ]
+
+
+
+``--placement-strategy`` (list)
+
+
+  The placement strategy objects to use for tasks in your service. You can specify a maximum of five strategy rules per service.
+
+  
+
+
+
+Shorthand Syntax::
+
+    type=string,field=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "type": "random"|"spread"|"binpack",
+      "field": "string"
+    }
+    ...
+  ]
+
+
+
+``--network-configuration`` (structure)
+
+
+  The network configuration for the service. This parameter is required for task definitions that use the ``awsvpc`` network mode to receive their own Elastic Network Interface, and it is not supported for other network modes. For more information, see `Task Networking <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+  
+
+
+
+Shorthand Syntax::
+
+    awsvpcConfiguration={subnets=[string,string],securityGroups=[string,string],assignPublicIp=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "awsvpcConfiguration": {
+      "subnets": ["string", ...],
+      "securityGroups": ["string", ...],
+      "assignPublicIp": "ENABLED"|"DISABLED"
+    }
+  }
+
+
+
+``--health-check-grace-period-seconds`` (integer)
+
+
+  The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 7,200 seconds during which the ECS service scheduler ignores health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+
+  
+
+``--scheduling-strategy`` (string)
+
+
+  The scheduling strategy to use for the service. For more information, see `Services <http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html>`__ .
+
+   
+
+  There are two service scheduler strategies available:
+
+   
+
+   
+  * ``REPLICA`` -The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. 
+   
+  * ``DAEMON`` -The daemon scheduling strategy deploys exactly one task on each active container instance that meets all of the task placement constraints that you specify in your cluster. When using this strategy, there is no need to specify a desired number of tasks, a task placement strategy, or use Service Auto Scaling policies. 
+
+  .. note::
+
+     Fargate tasks do not support the ``DAEMON`` scheduling strategy. 
+
+   
+   
+
+  
+
+  Possible values:
+
+  
+  *   ``REPLICA``
+
+  
+  *   ``DAEMON``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create a new service**
+
+This example command creates a service in your default region called ``ecs-simple-service``. The service uses the ``ecs-demo`` task definition and it maintains 10 instantiations of that task.
+
+Command::
+
+  aws ecs create-service --service-name ecs-simple-service --task-definition ecs-demo --desired-count 10
+
+Output::
+
+	{
+	    "service": {
+	        "status": "ACTIVE",
+	        "taskDefinition": "arn:aws:ecs:<region>:<aws_account_id>:task-definition/ecs-demo:1",
+	        "pendingCount": 0,
+	        "loadBalancers": [],
+	        "desiredCount": 10,
+	        "serviceName": "ecs-simple-service",
+	        "clusterArn": "arn:aws:ecs:<region>:<aws_account_id>:cluster/default",
+	        "serviceArn": "arn:aws:ecs:<region>:<aws_account_id>:service/ecs-simple-service",
+	        "deployments": [
+	            {
+	                "status": "PRIMARY",
+	                "pendingCount": 0,
+	                "createdAt": 1428096748.604,
+	                "desiredCount": 10,
+	                "taskDefinition": "arn:aws:ecs:<region>:<aws_account_id>:task-definition/ecs-demo:1",
+	                "updatedAt": 1428096748.604,
+	                "id": "ecs-svc/<deployment_id>",
+	                "runningCount": 0
+	            }
+	        ],
+	        "events": [],
+	        "runningCount": 0
+	    }
+	}
+
+	
+**To create a new service behind a load balancer**
+
+This example command creates a service in your default region called ``ecs-simple-service-elb``. The service uses the ``ecs-demo`` task definition and it maintains 10 instantiations of that task. You must have a load balancer configured in the same region as your container instances.
+
+This example uses the ``--cli-input-json`` option and a JSON input file called ``ecs-simple-service-elb.json`` with the below format.
+
+Input file::
+
+    {
+        "serviceName": "ecs-simple-service-elb",
+        "taskDefinition": "ecs-demo",
+        "loadBalancers": [
+            {
+                "loadBalancerName": "EC2Contai-EcsElast-S06278JGSJCM",
+                "containerName": "simple-demo",
+                "containerPort": 80
+            }
+        ],
+        "desiredCount": 10,
+        "role": "ecsServiceRole"
+    }
+
+Command::
+
+  aws ecs create-service --service-name ecs-simple-service-elb --cli-input-json file://ecs-simple-service-elb.json
+
+Output::
+
+	{
+	    "service": {
+	        "status": "ACTIVE",
+	        "taskDefinition": "arn:aws:ecs:<region>:<aws_account_id>:task-definition/ecs-demo:1",
+	        "pendingCount": 0,
+	        "loadBalancers": [
+	            {
+	                "containerName": "ecs-demo",
+	                "containerPort": 80,
+	                "loadBalancerName": "EC2Contai-EcsElast-S06278JGSJCM"
+	            }
+	        ],
+	        "roleArn": "arn:aws:iam::<aws_account_id>:role/ecsServiceRole",
+	        "desiredCount": 10,
+	        "serviceName": "ecs-simple-service-elb",
+	        "clusterArn": "arn:aws:ecs:<region>:<aws_account_id>:cluster/default",
+	        "serviceArn": "arn:aws:ecs:<region>:<aws_account_id>:service/ecs-simple-service-elb",
+	        "deployments": [
+	            {
+	                "status": "PRIMARY",
+	                "pendingCount": 0,
+	                "createdAt": 1428100239.123,
+	                "desiredCount": 10,
+	                "taskDefinition": "arn:aws:ecs:<region>:<aws_account_id>:task-definition/ecs-demo:1",
+	                "updatedAt": 1428100239.123,
+	                "id": "ecs-svc/<deployment_id>",
+	                "runningCount": 0
+	            }
+	        ],
+	        "events": [],
+	        "runningCount": 0
+	    }
+	}
+
+======
+Output
+======
+
+service -> (structure)
+
+  
+
+  The full description of your service following the create call.
+
+  
+
+  serviceArn -> (string)
+
+    
+
+    The ARN that identifies the service. The ARN contains the ``arn:aws:ecs`` namespace, followed by the Region of the service, the AWS account ID of the service owner, the ``service`` namespace, and then the service name. For example, ``arn:aws:ecs:*region* :*012345678910* :service/*my-service* `` .
+
+    
+
+    
+
+  serviceName -> (string)
+
+    
+
+    The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.
+
+    
+
+    
+
+  clusterArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the cluster that hosts the service.
+
+    
+
+    
+
+  loadBalancers -> (list)
+
+    
+
+    A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.
+
+     
+
+    Services with tasks that use the ``awsvpc`` network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+    
+
+    (structure)
+
+      
+
+      Details on a load balancer that is used with a service.
+
+       
+
+      Services with tasks that use the ``awsvpc`` network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+      
+
+      targetGroupArn -> (string)
+
+        
+
+        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+
+         
+
+        .. warning::
+
+           
+
+          If your service's task definition uses the ``awsvpc`` network mode (which is required for the Fargate launch type), you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+           
+
+        
+
+        
+
+      loadBalancerName -> (string)
+
+        
+
+        The name of a load balancer.
+
+        
+
+        
+
+      containerName -> (string)
+
+        
+
+        The name of the container (as it appears in a container definition) to associate with the load balancer.
+
+        
+
+        
+
+      containerPort -> (integer)
+
+        
+
+        The port on the container to associate with the load balancer. This port must correspond to a ``containerPort`` in the service's task definition. Your container instances must allow ingress traffic on the ``hostPort`` of the port mapping.
+
+        
+
+        
+
+      
+
+    
+
+  serviceRegistries -> (list)
+
+    
+
+    
+
+    
+
+    (structure)
+
+      
+
+      Details of the service registry.
+
+      
+
+      registryArn -> (string)
+
+        
+
+        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route 53 Auto Naming. For more information, see `Service <https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html>`__ .
+
+        
+
+        
+
+      port -> (integer)
+
+        
+
+        The port value used if your service discovery service specified an SRV record. This field may be used if both the ``awsvpc`` network mode and SRV records are used.
+
+        
+
+        
+
+      containerName -> (string)
+
+        
+
+        The container name value, already specified in the task definition, to be used for your service discovery service. If the task definition that your service task specifies uses the ``bridge`` or ``host`` network mode, you must specify a ``containerName`` and ``containerPort`` combination from the task definition. If the task definition that your service task specifies uses the ``awsvpc`` network mode and a type SRV DNS record is used, you must specify either a ``containerName`` and ``containerPort`` combination or a ``port`` value, but not both.
+
+        
+
+        
+
+      containerPort -> (integer)
+
+        
+
+        The port value, already specified in the task definition, to be used for your service discovery service. If the task definition your service task specifies uses the ``bridge`` or ``host`` network mode, you must specify a ``containerName`` and ``containerPort`` combination from the task definition. If the task definition your service task specifies uses the ``awsvpc`` network mode and a type SRV DNS record is used, you must specify either a ``containerName`` and ``containerPort`` combination or a ``port`` value, but not both.
+
+        
+
+        
+
+      
+
+    
+
+  status -> (string)
+
+    
+
+    The status of the service. The valid values are ``ACTIVE`` , ``DRAINING`` , or ``INACTIVE`` .
+
+    
+
+    
+
+  desiredCount -> (integer)
+
+    
+
+    The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with  CreateService , and it can be modified with  UpdateService .
+
+    
+
+    
+
+  runningCount -> (integer)
+
+    
+
+    The number of tasks in the cluster that are in the ``RUNNING`` state.
+
+    
+
+    
+
+  pendingCount -> (integer)
+
+    
+
+    The number of tasks in the cluster that are in the ``PENDING`` state.
+
+    
+
+    
+
+  launchType -> (string)
+
+    
+
+    The launch type on which your service is running.
+
+    
+
+    
+
+  platformVersion -> (string)
+
+    
+
+    The platform version on which your task is running. For more information, see `AWS Fargate Platform Versions <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+    
+
+    
+
+  taskDefinition -> (string)
+
+    
+
+    The task definition to use for tasks in the service. This value is specified when the service is created with  CreateService , and it can be modified with  UpdateService .
+
+    
+
+    
+
+  deploymentConfiguration -> (structure)
+
+    
+
+    Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
+
+    
+
+    maximumPercent -> (integer)
+
+      
+
+      The upper limit (as a percentage of the service's ``desiredCount`` ) of the number of tasks that are allowed in the ``RUNNING`` or ``PENDING`` state in a service during a deployment. The maximum number of tasks during a deployment is the ``desiredCount`` multiplied by ``maximumPercent`` /100, rounded down to the nearest integer value.
+
+      
+
+      
+
+    minimumHealthyPercent -> (integer)
+
+      
+
+      The lower limit (as a percentage of the service's ``desiredCount`` ) of the number of running tasks that must remain in the ``RUNNING`` state in a service during a deployment. The minimum number of healthy tasks during a deployment is the ``desiredCount`` multiplied by ``minimumHealthyPercent`` /100, rounded up to the nearest integer value.
+
+      
+
+      
+
+    
+
+  deployments -> (list)
+
+    
+
+    The current state of deployments for the service.
+
+    
+
+    (structure)
+
+      
+
+      The details of an Amazon ECS service deployment.
+
+      
+
+      id -> (string)
+
+        
+
+        The ID of the deployment.
+
+        
+
+        
+
+      status -> (string)
+
+        
+
+        The status of the deployment. Valid values are ``PRIMARY`` (for the most recent deployment), ``ACTIVE`` (for previous deployments that still have tasks running, but are being replaced with the ``PRIMARY`` deployment), and ``INACTIVE`` (for deployments that have been completely replaced).
+
+        
+
+        
+
+      taskDefinition -> (string)
+
+        
+
+        The most recent task definition that was specified for the service to use.
+
+        
+
+        
+
+      desiredCount -> (integer)
+
+        
+
+        The most recent desired count of tasks that was specified for the service to deploy or maintain.
+
+        
+
+        
+
+      pendingCount -> (integer)
+
+        
+
+        The number of tasks in the deployment that are in the ``PENDING`` status.
+
+        
+
+        
+
+      runningCount -> (integer)
+
+        
+
+        The number of tasks in the deployment that are in the ``RUNNING`` status.
+
+        
+
+        
+
+      createdAt -> (timestamp)
+
+        
+
+        The Unix time stamp for when the service was created.
+
+        
+
+        
+
+      updatedAt -> (timestamp)
+
+        
+
+        The Unix time stamp for when the service was last updated.
+
+        
+
+        
+
+      launchType -> (string)
+
+        
+
+        The launch type on which your service is running.
+
+        
+
+        
+
+      platformVersion -> (string)
+
+        
+
+        The platform version on which your service is running.
+
+        
+
+        
+
+      networkConfiguration -> (structure)
+
+        
+
+        The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the ``awsvpc`` networking mode.
+
+        
+
+        awsvpcConfiguration -> (structure)
+
+          
+
+          The VPC subnets and security groups associated with a task.
+
+           
+
+          .. note::
+
+             
+
+            All specified subnets and security groups must be from the same VPC.
+
+             
+
+          
+
+          subnets -> (list)
+
+            
+
+            The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per ``AwsVpcConfiguration`` .
+
+             
+
+            .. note::
+
+               
+
+              All specified subnets must be from the same VPC.
+
+               
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          securityGroups -> (list)
+
+            
+
+            The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups able to be specified per ``AwsVpcConfiguration`` .
+
+             
+
+            .. note::
+
+               
+
+              All specified security groups must be from the same VPC.
+
+               
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          assignPublicIp -> (string)
+
+            
+
+            Whether the task's elastic network interface receives a public IP address. The default value is ``DISABLED`` .
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  roleArn -> (string)
+
+    
+
+    The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.
+
+    
+
+    
+
+  events -> (list)
+
+    
+
+    The event stream for your service. A maximum of 100 of the latest events are displayed.
+
+    
+
+    (structure)
+
+      
+
+      Details on an event associated with a service.
+
+      
+
+      id -> (string)
+
+        
+
+        The ID string of the event.
+
+        
+
+        
+
+      createdAt -> (timestamp)
+
+        
+
+        The Unix time stamp for when the event was triggered.
+
+        
+
+        
+
+      message -> (string)
+
+        
+
+        The event message.
+
+        
+
+        
+
+      
+
+    
+
+  createdAt -> (timestamp)
+
+    
+
+    The Unix time stamp for when the service was created.
+
+    
+
+    
+
+  placementConstraints -> (list)
+
+    
+
+    The placement constraints for the tasks in the service.
+
+    
+
+    (structure)
+
+      
+
+      An object representing a constraint on task placement. For more information, see `Task Placement Constraints <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+      
+
+      type -> (string)
+
+        
+
+        The type of constraint. Use ``distinctInstance`` to ensure that each task in a particular group is running on a different container instance. Use ``memberOf`` to restrict the selection to a group of valid candidates. The value ``distinctInstance`` is not supported in task definitions.
+
+        
+
+        
+
+      expression -> (string)
+
+        
+
+        A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is ``distinctInstance`` . For more information, see `Cluster Query Language <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+        
+
+        
+
+      
+
+    
+
+  placementStrategy -> (list)
+
+    
+
+    The placement strategy that determines how tasks for the service are placed.
+
+    
+
+    (structure)
+
+      
+
+      The task placement strategy for a task or service. For more information, see `Task Placement Strategies <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+      
+
+      type -> (string)
+
+        
+
+        The type of placement strategy. The ``random`` placement strategy randomly places tasks on available candidates. The ``spread`` placement strategy spreads placement across available candidates evenly based on the ``field`` parameter. The ``binpack`` strategy places tasks on available candidates that have the least available amount of the resource that is specified with the ``field`` parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).
+
+        
+
+        
+
+      field -> (string)
+
+        
+
+        The field to apply the placement strategy against. For the ``spread`` placement strategy, valid values are ``instanceId`` (or ``host`` , which has the same effect), or any platform or custom attribute that is applied to a container instance, such as ``attribute:ecs.availability-zone`` . For the ``binpack`` placement strategy, valid values are ``cpu`` and ``memory`` . For the ``random`` placement strategy, this field is not used.
+
+        
+
+        
+
+      
+
+    
+
+  networkConfiguration -> (structure)
+
+    
+
+    The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the ``awsvpc`` networking mode.
+
+    
+
+    awsvpcConfiguration -> (structure)
+
+      
+
+      The VPC subnets and security groups associated with a task.
+
+       
+
+      .. note::
+
+         
+
+        All specified subnets and security groups must be from the same VPC.
+
+         
+
+      
+
+      subnets -> (list)
+
+        
+
+        The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per ``AwsVpcConfiguration`` .
+
+         
+
+        .. note::
+
+           
+
+          All specified subnets must be from the same VPC.
+
+           
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      securityGroups -> (list)
+
+        
+
+        The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups able to be specified per ``AwsVpcConfiguration`` .
+
+         
+
+        .. note::
+
+           
+
+          All specified security groups must be from the same VPC.
+
+           
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      assignPublicIp -> (string)
+
+        
+
+        Whether the task's elastic network interface receives a public IP address. The default value is ``DISABLED`` .
+
+        
+
+        
+
+      
+
+    
+
+  healthCheckGracePeriodSeconds -> (integer)
+
+    
+
+    The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.
+
+    
+
+    
+
+  schedulingStrategy -> (string)
+
+    
+
+    The scheduling strategy to use for the service. For more information, see `Services <http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html>`__ .
+
+     
+
+    There are two service scheduler strategies available:
+
+     
+
+     
+    * ``REPLICA`` -The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. 
+     
+    * ``DAEMON`` -The daemon scheduling strategy deploys exactly one task on each container instance in your cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies. 
+
+    .. note::
+
+       Fargate tasks do not support the ``DAEMON`` scheduling strategy. 
+
+     
+     
+
+    
+
+    
+
+  
+

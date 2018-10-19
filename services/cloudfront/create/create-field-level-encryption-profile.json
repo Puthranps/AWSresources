@@ -1,0 +1,22 @@
+{
+    "FieldLevelEncryptionProfileConfig": {
+        "Name": "",
+        "CallerReference": "",
+        "Comment": "",
+        "EncryptionEntities": {
+            "Quantity": 0,
+            "Items": [
+                {
+                    "PublicKeyId": "",
+                    "ProviderId": "",
+                    "FieldPatterns": {
+                        "Quantity": 0,
+                        "Items": [
+                            ""
+                        ]
+                    }
+                }
+            ]
+        }
+    }
+}

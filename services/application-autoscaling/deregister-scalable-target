@@ -1,0 +1,5 @@
+{
+    "ServiceNamespace": "custom-resource",
+    "ResourceId": "",
+    "ScalableDimension": "dynamodb:index:ReadCapacityUnits"
+}

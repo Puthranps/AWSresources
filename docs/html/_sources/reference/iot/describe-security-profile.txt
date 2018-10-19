@@ -1,0 +1,297 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot <cli:aws iot>` ]
+
+.. _cli:aws iot describe-security-profile:
+
+
+*************************
+describe-security-profile
+*************************
+
+
+
+===========
+Description
+===========
+
+
+
+Gets information about a Device Defender security profile.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DescribeSecurityProfile>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-security-profile
+  --security-profile-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--security-profile-name`` (string)
+
+
+  The name of the security profile whose information you want to get.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+securityProfileName -> (string)
+
+  
+
+  The name of the security profile.
+
+  
+
+  
+
+securityProfileArn -> (string)
+
+  
+
+  The ARN of the security profile.
+
+  
+
+  
+
+securityProfileDescription -> (string)
+
+  
+
+  A description of the security profile (associated with the security profile when it was created or updated).
+
+  
+
+  
+
+behaviors -> (list)
+
+  
+
+  Specifies the behaviors that, when violated by a device (thing), cause an alert.
+
+  
+
+  (structure)
+
+    
+
+    A Device Defender security profile behavior.
+
+    
+
+    name -> (string)
+
+      
+
+      The name you have given to the behavior.
+
+      
+
+      
+
+    metric -> (string)
+
+      
+
+      What is measured by the behavior.
+
+      
+
+      
+
+    criteria -> (structure)
+
+      
+
+      The criteria that determine if a device is behaving normally in regard to the ``metric`` .
+
+      
+
+      comparisonOperator -> (string)
+
+        
+
+        The operator that relates the thing measured (``metric`` ) to the criteria (``value`` ).
+
+        
+
+        
+
+      value -> (structure)
+
+        
+
+        The value to be compared with the ``metric`` .
+
+        
+
+        count -> (long)
+
+          
+
+          If the ``comparisonOperator`` calls for a numeric value, use this to specify that numeric value to be compared with the ``metric`` .
+
+          
+
+          
+
+        cidrs -> (list)
+
+          
+
+          If the ``comparisonOperator`` calls for a set of CIDRs, use this to specify that set to be compared with the ``metric`` .
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        ports -> (list)
+
+          
+
+          If the ``comparisonOperator`` calls for a set of ports, use this to specify that set to be compared with the ``metric`` .
+
+          
+
+          (integer)
+
+            
+
+            
+
+          
+
+        
+
+      durationSeconds -> (integer)
+
+        
+
+        Use this to specify the period of time over which the behavior is evaluated, for those criteria which have a time dimension (for example, ``NUM_MESSAGES_SENT`` ).
+
+        
+
+        
+
+      
+
+    
+
+  
+
+alertTargets -> (map)
+
+  
+
+  Where the alerts are sent. (Alerts are always sent to the console.)
+
+  
+
+  key -> (string)
+
+    
+
+    The type of alert target: one of "SNS".
+
+    
+
+    
+
+  value -> (structure)
+
+    
+
+    A structure containing the alert target ARN and the role ARN.
+
+    
+
+    alertTargetArn -> (string)
+
+      
+
+      The ARN of the notification target to which alerts are sent.
+
+      
+
+      
+
+    roleArn -> (string)
+
+      
+
+      The ARN of the role that grants permission to send alerts to the notification target.
+
+      
+
+      
+
+    
+
+  
+
+version -> (long)
+
+  
+
+  The version of the security profile. A new version is generated whenever the security profile is updated.
+
+  
+
+  
+
+creationDate -> (timestamp)
+
+  
+
+  The time the security profile was created.
+
+  
+
+  
+
+lastModifiedDate -> (timestamp)
+
+  
+
+  The time the security profile was last modified.
+
+  
+
+  
+

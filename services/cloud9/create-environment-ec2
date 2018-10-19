@@ -1,0 +1,9 @@
+{
+    "name": "",
+    "description": "",
+    "clientRequestToken": "",
+    "instanceType": "",
+    "subnetId": "",
+    "automaticStopTimeMinutes": 0,
+    "ownerArn": ""
+}

@@ -1,0 +1,970 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-patch-baseline &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ssm" href="../ssm/index.html" />
+    <link rel="next" title="get-patch-baseline-for-patch-group" href="../ssm/get-patch-baseline-for-patch-group.html" />
+    <link rel="prev" title="get-parameters-by-path" href="../ssm/get-parameters-by-path.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/get-patch-baseline-for-patch-group.html" title="get-patch-baseline-for-patch-group"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/get-parameters-by-path.html" title="get-parameters-by-path"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" accesskey="U">ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/get-parameters-by-path.html" title="previous chapter (use the left arrow)">&larr; get-parameters-by-path</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/get-patch-baseline-for-patch-group.html" title="next chapter (use the right arrow)">get-patch-baseline-for-patch-group &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-patch-baseline</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/get-patch-baseline">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ssm/index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="get-patch-baseline">
+<span id="cli-aws-ssm-get-patch-baseline"></span><h1>get-patch-baseline<a class="headerlink" href="#get-patch-baseline" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves information about a patch baseline.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-patch-baseline
+--baseline-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--baseline-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the patch baseline to retrieve.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To display a patch baseline</strong></p>
+<p>This example displays the details for a patch baseline.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm get-patch-baseline --baseline-id &quot;pb-00dbb759999aa2bc3&quot;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+      <span class="s2">&quot;BaselineId&quot;</span><span class="p">:</span><span class="s2">&quot;pb-00dbb759999aa2bc3&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Name&quot;</span><span class="p">:</span><span class="s2">&quot;Windows-Server-2012R2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;PatchGroups&quot;</span><span class="p">:[</span>
+              <span class="s2">&quot;Web Servers&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;RejectedPatches&quot;</span><span class="p">:[</span>
+
+      <span class="p">],</span>
+      <span class="s2">&quot;GlobalFilters&quot;</span><span class="p">:{</span>
+              <span class="s2">&quot;PatchFilters&quot;</span><span class="p">:[</span>
+
+              <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;ApprovalRules&quot;</span><span class="p">:{</span>
+              <span class="s2">&quot;PatchRules&quot;</span><span class="p">:[</span>
+                      <span class="p">{</span>
+                              <span class="s2">&quot;PatchFilterGroup&quot;</span><span class="p">:{</span>
+                              <span class="s2">&quot;PatchFilters&quot;</span><span class="p">:[</span>
+                                      <span class="p">{</span>
+                                              <span class="s2">&quot;Values&quot;</span><span class="p">:[</span>
+                                                      <span class="s2">&quot;Important&quot;</span><span class="p">,</span>
+                                                      <span class="s2">&quot;Critical&quot;</span>
+                                              <span class="p">],</span>
+                                              <span class="s2">&quot;Key&quot;</span><span class="p">:</span><span class="s2">&quot;MSRC_SEVERITY&quot;</span>
+                                      <span class="p">},</span>
+                                      <span class="p">{</span>
+                                              <span class="s2">&quot;Values&quot;</span><span class="p">:[</span>
+                                                      <span class="s2">&quot;SecurityUpdates&quot;</span>
+                                              <span class="p">],</span>
+                                              <span class="s2">&quot;Key&quot;</span><span class="p">:</span><span class="s2">&quot;CLASSIFICATION&quot;</span>
+                                      <span class="p">},</span>
+                                      <span class="p">{</span>
+                                              <span class="s2">&quot;Values&quot;</span><span class="p">:[</span>
+                                                      <span class="s2">&quot;WindowsServer2012R2&quot;</span>
+                                              <span class="p">],</span>
+                                              <span class="s2">&quot;Key&quot;</span><span class="p">:</span><span class="s2">&quot;PRODUCT&quot;</span>
+                                      <span class="p">}</span>
+                              <span class="p">]</span>
+                              <span class="p">},</span>
+                              <span class="s2">&quot;ApproveAfterDays&quot;</span><span class="p">:</span><span class="mi">5</span>
+                      <span class="p">}</span>
+              <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;ModifiedDate&quot;</span><span class="p">:</span><span class="mf">1480997823.81</span><span class="p">,</span>
+      <span class="s2">&quot;CreatedDate&quot;</span><span class="p">:</span><span class="mf">1480997823.81</span><span class="p">,</span>
+      <span class="s2">&quot;ApprovedPatches&quot;</span><span class="p">:[</span>
+
+      <span class="p">],</span>
+      <span class="s2">&quot;Description&quot;</span><span class="p">:</span><span class="s2">&quot;Windows Server 2012 R2, Important and Critical security updates&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>BaselineId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the retrieved patch baseline.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the patch baseline.</div></blockquote>
+<p>OperatingSystem -&gt; (string)</p>
+<blockquote>
+<div>Returns the operating system specified for the patch baseline.</div></blockquote>
+<p>GlobalFilters -&gt; (structure)</p>
+<blockquote>
+<div><p>A set of global filters used to exclude patches from the baseline.</p>
+<p>PatchFilters -&gt; (list)</p>
+<blockquote>
+<div><p>The set of patch filters that make up the group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines a patch filter.</p>
+<p>A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> is valid for all supported operating system types. The key <tt class="docutils literal"><span class="pre">MSRC_SEVERITY</span></tt> , however, is valid only for Windows operating systems, and the key <tt class="docutils literal"><span class="pre">SECTION</span></tt> is valid only for Ubuntu operating systems.</p>
+<p>Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.</p>
+<blockquote>
+<div><strong>Windows Operating Systems</strong></div></blockquote>
+<p>The supported keys for Windows operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">MSRC_SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Windows7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows8.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows8Embedded</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows10</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows10LTSB</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2008</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2008R2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2012</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2012R2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2016</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CriticalUpdates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DefinitionUpdates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Drivers</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">FeaturePacks</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">SecurityUpdates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ServicePacks</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Tools</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UpdateRollups</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Updates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Upgrades</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">MSRC_SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Moderate</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Unspecified</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Ubuntu Operating Systems</strong></div></blockquote>
+<p>The supported keys for Ubuntu operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">PRIORITY</span></tt> , and <tt class="docutils literal"><span class="pre">SECTION</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Ubuntu14.04</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Ubuntu16.04</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRIORITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Required</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Standard</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Optional</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Extra</span></tt></li>
+</ul>
+<blockquote>
+<div><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SECTION</span></tt></div></blockquote>
+<p>Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.</p>
+<blockquote>
+<div><strong>Amazon Linux Operating Systems</strong></div></blockquote>
+<p>The supported keys for Amazon Linux operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2012.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2012.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2013.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2013.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2014.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2014.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2015.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2015.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2016.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2016.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2017.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2017.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Amazon Linux 2 Operating Systems</strong></div></blockquote>
+<p>The supported keys for Amazon Linux 2 operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>RedHat Enterprise Linux (RHEL) Operating Systems</strong></div></blockquote>
+<p>The supported keys for RedHat Enterprise Linux operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>SUSE Linux Enterprise Server (SLES) Operating Systems</strong></div></blockquote>
+<p>The supported keys for SLES operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Suse12.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Optional</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Feature</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Document</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Yast</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Moderate</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>CentOS Operating Systems</strong></div></blockquote>
+<p>The supported keys for CentOS operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CentOS6.5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key for the filter.</p>
+<p>See  PatchFilter for lists of valid keys for each operating system type.</p>
+</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>The value for the filter key.</p>
+<p>See  PatchFilter for lists of valid values for each key based on operating system type.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApprovalRules -&gt; (structure)</p>
+<blockquote>
+<div><p>A set of rules used to include patches in the baseline.</p>
+<p>PatchRules -&gt; (list)</p>
+<blockquote>
+<div><p>The rules that make up the rule group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines an approval rule for a patch baseline.</p>
+<p>PatchFilterGroup -&gt; (structure)</p>
+<blockquote>
+<div><p>The patch filter group that defines the criteria for the rule.</p>
+<p>PatchFilters -&gt; (list)</p>
+<blockquote>
+<div><p>The set of patch filters that make up the group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines a patch filter.</p>
+<p>A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> is valid for all supported operating system types. The key <tt class="docutils literal"><span class="pre">MSRC_SEVERITY</span></tt> , however, is valid only for Windows operating systems, and the key <tt class="docutils literal"><span class="pre">SECTION</span></tt> is valid only for Ubuntu operating systems.</p>
+<p>Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.</p>
+<blockquote>
+<div><strong>Windows Operating Systems</strong></div></blockquote>
+<p>The supported keys for Windows operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">MSRC_SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Windows7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows8.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows8Embedded</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows10</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Windows10LTSB</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2008</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2008R2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2012</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2012R2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WindowsServer2016</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CriticalUpdates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DefinitionUpdates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Drivers</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">FeaturePacks</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">SecurityUpdates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ServicePacks</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Tools</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UpdateRollups</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Updates</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Upgrades</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">MSRC_SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Moderate</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Unspecified</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Ubuntu Operating Systems</strong></div></blockquote>
+<p>The supported keys for Ubuntu operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">PRIORITY</span></tt> , and <tt class="docutils literal"><span class="pre">SECTION</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Ubuntu14.04</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Ubuntu16.04</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRIORITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Required</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Standard</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Optional</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Extra</span></tt></li>
+</ul>
+<blockquote>
+<div><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SECTION</span></tt></div></blockquote>
+<p>Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.</p>
+<blockquote>
+<div><strong>Amazon Linux Operating Systems</strong></div></blockquote>
+<p>The supported keys for Amazon Linux operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2012.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2012.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2013.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2013.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2014.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2014.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2015.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2015.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2016.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2016.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2017.03</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2017.09</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>Amazon Linux 2 Operating Systems</strong></div></blockquote>
+<p>The supported keys for Amazon Linux 2 operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AmazonLinux2.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>RedHat Enterprise Linux (RHEL) Operating Systems</strong></div></blockquote>
+<p>The supported keys for RedHat Enterprise Linux operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux6.9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RedhatEnterpriseLinux7.4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>SUSE Linux Enterprise Server (SLES) Operating Systems</strong></div></blockquote>
+<p>The supported keys for SLES operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Suse12.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Suse12.9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Optional</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Feature</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Document</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Yast</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Moderate</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<blockquote>
+<div><strong>CentOS Operating Systems</strong></div></blockquote>
+<p>The supported keys for CentOS operating systems are <tt class="docutils literal"><span class="pre">PRODUCT</span></tt> , <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt> , and <tt class="docutils literal"><span class="pre">SEVERITY</span></tt> . See the following lists for valid values for each of these keys.</p>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">PRODUCT</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CentOS6.5</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS6.9</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CentOS7.4</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">*</span></tt>    <em>Use a wildcard character (</em>) to target all supported operating system versions.*</li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">CLASSIFICATION</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Security</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bugfix</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Enhancement</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Recommended</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Newpackage</span></tt></li>
+</ul>
+<blockquote>
+<div><p><em>Supported key:</em>  <tt class="docutils literal"><span class="pre">SEVERITY</span></tt></p>
+<p><em>Supported values:</em></p>
+</div></blockquote>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Critical</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Important</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Low</span></tt></li>
+</ul>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key for the filter.</p>
+<p>See  PatchFilter for lists of valid keys for each operating system type.</p>
+</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>The value for the filter key.</p>
+<p>See  PatchFilter for lists of valid values for each key based on operating system type.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ComplianceLevel -&gt; (string)</p>
+<blockquote>
+<div>A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels include the following: Unspecified, Critical, High, Medium, Low, and Informational.</div></blockquote>
+<p>ApproveAfterDays -&gt; (integer)</p>
+<blockquote>
+<div>The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of <tt class="docutils literal"><span class="pre">7</span></tt> means that patches are approved seven days after they are released.</div></blockquote>
+<p>EnableNonSecurity -&gt; (boolean)</p>
+<blockquote>
+<div>For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is 'false'. Applies to Linux instances only.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApprovedPatches -&gt; (list)</p>
+<blockquote>
+<div><p>A list of explicitly approved patches for the baseline.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ApprovedPatchesComplianceLevel -&gt; (string)</p>
+<blockquote>
+<div>Returns the specified compliance severity level for approved patches in the patch baseline.</div></blockquote>
+<p>ApprovedPatchesEnableNonSecurity -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.</div></blockquote>
+<p>RejectedPatches -&gt; (list)</p>
+<blockquote>
+<div><p>A list of explicitly rejected patches for the baseline.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>RejectedPatchesAction -&gt; (string)</p>
+<blockquote>
+<div>The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.</div></blockquote>
+<p>PatchGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Patch groups included in the patch baseline.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>CreatedDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the patch baseline was created.</div></blockquote>
+<p>ModifiedDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the patch baseline was last modified.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description of the patch baseline.</div></blockquote>
+<p>Sources -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name specified to identify the patch source.</div></blockquote>
+<p>Products -&gt; (list)</p>
+<blockquote>
+<div><p>The specific operating system versions a patch repository applies to, such as &quot;Ubuntu16.04&quot;, &quot;AmazonLinux2016.09&quot;, &quot;RedhatEnterpriseLinux7.2&quot; or &quot;Suse12.7&quot;. For lists of supported product values, see  PatchFilter .</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Configuration -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the yum repo configuration. For example:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">cachedir=/var/cache/yum/$basesearch</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">$releasever</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">keepcache=0</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">debuglevel=2</span></tt></p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/get-parameters-by-path.html" title="previous chapter (use the left arrow)">&larr; get-parameters-by-path</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/get-patch-baseline-for-patch-group.html" title="next chapter (use the right arrow)">get-patch-baseline-for-patch-group &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/get-patch-baseline-for-patch-group.html" title="get-patch-baseline-for-patch-group"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/get-parameters-by-path.html" title="get-parameters-by-path"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" >ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

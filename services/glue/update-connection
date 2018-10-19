@@ -1,0 +1,22 @@
+{
+    "CatalogId": "",
+    "Name": "",
+    "ConnectionInput": {
+        "Name": "",
+        "Description": "",
+        "ConnectionType": "JDBC",
+        "MatchCriteria": [
+            ""
+        ],
+        "ConnectionProperties": {
+            "KeyName": ""
+        },
+        "PhysicalConnectionRequirements": {
+            "SubnetId": "",
+            "SecurityGroupIdList": [
+                ""
+            ],
+            "AvailabilityZone": ""
+        }
+    }
+}

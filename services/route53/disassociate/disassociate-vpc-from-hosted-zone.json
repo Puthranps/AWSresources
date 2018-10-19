@@ -1,0 +1,8 @@
+{
+    "HostedZoneId": "",
+    "VPC": {
+        "VPCRegion": "ap-southeast-2",
+        "VPCId": ""
+    },
+    "Comment": ""
+}

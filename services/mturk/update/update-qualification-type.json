@@ -1,0 +1,11 @@
+{
+    "QualificationTypeId": "",
+    "Description": "",
+    "QualificationTypeStatus": "Inactive",
+    "Test": "",
+    "AnswerKey": "",
+    "TestDurationInSeconds": 0,
+    "RetryDelayInSeconds": 0,
+    "AutoGranted": true,
+    "AutoGrantedValue": 0
+}

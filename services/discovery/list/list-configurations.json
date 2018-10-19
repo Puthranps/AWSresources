@@ -1,0 +1,20 @@
+{
+    "configurationType": "SERVER",
+    "filters": [
+        {
+            "name": "",
+            "values": [
+                ""
+            ],
+            "condition": ""
+        }
+    ],
+    "maxResults": 0,
+    "nextToken": "",
+    "orderBy": [
+        {
+            "fieldName": "",
+            "sortOrder": "DESC"
+        }
+    ]
+}

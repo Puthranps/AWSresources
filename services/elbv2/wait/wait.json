@@ -1,0 +1,11 @@
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument subcommand: Invalid choice, valid choices are:
+
+load-balancer-available                  | load-balancer-exists                    
+load-balancers-deleted                   | target-deregistered                     
+target-in-service                       

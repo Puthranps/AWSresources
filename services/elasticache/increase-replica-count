@@ -1,0 +1,14 @@
+{
+    "ReplicationGroupId": "",
+    "NewReplicaCount": 0,
+    "ReplicaConfiguration": [
+        {
+            "NodeGroupId": "",
+            "NewReplicaCount": 0,
+            "PreferredAvailabilityZones": [
+                ""
+            ]
+        }
+    ],
+    "ApplyImmediately": true
+}

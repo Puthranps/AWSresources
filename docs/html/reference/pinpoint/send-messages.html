@@ -1,0 +1,418 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>send-messages &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="pinpoint" href="../pinpoint/index.html" />
+    <link rel="next" title="send-users-messages" href="../pinpoint/send-users-messages.html" />
+    <link rel="prev" title="remove-attributes" href="../pinpoint/remove-attributes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../pinpoint/send-users-messages.html" title="send-users-messages"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../pinpoint/remove-attributes.html" title="remove-attributes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../pinpoint/index.html" accesskey="U">pinpoint</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../pinpoint/remove-attributes.html" title="previous chapter (use the left arrow)">&larr; remove-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../pinpoint/send-users-messages.html" title="next chapter (use the right arrow)">send-users-messages &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">send-messages</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/pinpoint/send-messages">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../pinpoint/index.html#cli-aws-pinpoint"><em>pinpoint</em></a> ]</p>
+<div class="section" id="send-messages">
+<span id="cli-aws-pinpoint-send-messages"></span><h1>send-messages<a class="headerlink" href="#send-messages" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Used to send a direct message.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  send-messages
+--application-id &lt;value&gt;
+--message-request &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--application-id</span></tt> (string)
+The unique ID of your Amazon Pinpoint application.</p>
+<p><tt class="docutils literal"><span class="pre">--message-request</span></tt> (structure)
+Send message request.</p>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;Addresses&quot;: {&quot;string&quot;: {
+        &quot;BodyOverride&quot;: &quot;string&quot;,
+        &quot;ChannelType&quot;: &quot;GCM&quot;|&quot;APNS&quot;|&quot;APNS_SANDBOX&quot;|&quot;APNS_VOIP&quot;|&quot;APNS_VOIP_SANDBOX&quot;|&quot;ADM&quot;|&quot;SMS&quot;|&quot;EMAIL&quot;|&quot;BAIDU&quot;|&quot;CUSTOM&quot;,
+        &quot;Context&quot;: {&quot;string&quot;: &quot;string&quot;
+          ...},
+        &quot;RawContent&quot;: &quot;string&quot;,
+        &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+          ...},
+        &quot;TitleOverride&quot;: &quot;string&quot;
+      }
+    ...},
+  &quot;Context&quot;: {&quot;string&quot;: &quot;string&quot;
+    ...},
+  &quot;Endpoints&quot;: {&quot;string&quot;: {
+        &quot;BodyOverride&quot;: &quot;string&quot;,
+        &quot;Context&quot;: {&quot;string&quot;: &quot;string&quot;
+          ...},
+        &quot;RawContent&quot;: &quot;string&quot;,
+        &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+          ...},
+        &quot;TitleOverride&quot;: &quot;string&quot;
+      }
+    ...},
+  &quot;MessageConfiguration&quot;: {
+    &quot;ADMMessage&quot;: {
+      &quot;Action&quot;: &quot;OPEN_APP&quot;|&quot;DEEP_LINK&quot;|&quot;URL&quot;,
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;ConsolidationKey&quot;: &quot;string&quot;,
+      &quot;Data&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;ExpiresAfter&quot;: &quot;string&quot;,
+      &quot;IconReference&quot;: &quot;string&quot;,
+      &quot;ImageIconUrl&quot;: &quot;string&quot;,
+      &quot;ImageUrl&quot;: &quot;string&quot;,
+      &quot;MD5&quot;: &quot;string&quot;,
+      &quot;RawContent&quot;: &quot;string&quot;,
+      &quot;SilentPush&quot;: true|false,
+      &quot;SmallImageIconUrl&quot;: &quot;string&quot;,
+      &quot;Sound&quot;: &quot;string&quot;,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...},
+      &quot;Title&quot;: &quot;string&quot;,
+      &quot;Url&quot;: &quot;string&quot;
+    },
+    &quot;APNSMessage&quot;: {
+      &quot;Action&quot;: &quot;OPEN_APP&quot;|&quot;DEEP_LINK&quot;|&quot;URL&quot;,
+      &quot;Badge&quot;: integer,
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;Category&quot;: &quot;string&quot;,
+      &quot;CollapseId&quot;: &quot;string&quot;,
+      &quot;Data&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;MediaUrl&quot;: &quot;string&quot;,
+      &quot;PreferredAuthenticationMethod&quot;: &quot;string&quot;,
+      &quot;Priority&quot;: &quot;string&quot;,
+      &quot;RawContent&quot;: &quot;string&quot;,
+      &quot;SilentPush&quot;: true|false,
+      &quot;Sound&quot;: &quot;string&quot;,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...},
+      &quot;ThreadId&quot;: &quot;string&quot;,
+      &quot;TimeToLive&quot;: integer,
+      &quot;Title&quot;: &quot;string&quot;,
+      &quot;Url&quot;: &quot;string&quot;
+    },
+    &quot;BaiduMessage&quot;: {
+      &quot;Action&quot;: &quot;OPEN_APP&quot;|&quot;DEEP_LINK&quot;|&quot;URL&quot;,
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;Data&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;IconReference&quot;: &quot;string&quot;,
+      &quot;ImageIconUrl&quot;: &quot;string&quot;,
+      &quot;ImageUrl&quot;: &quot;string&quot;,
+      &quot;RawContent&quot;: &quot;string&quot;,
+      &quot;SilentPush&quot;: true|false,
+      &quot;SmallImageIconUrl&quot;: &quot;string&quot;,
+      &quot;Sound&quot;: &quot;string&quot;,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...},
+      &quot;TimeToLive&quot;: integer,
+      &quot;Title&quot;: &quot;string&quot;,
+      &quot;Url&quot;: &quot;string&quot;
+    },
+    &quot;DefaultMessage&quot;: {
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...}
+    },
+    &quot;DefaultPushNotificationMessage&quot;: {
+      &quot;Action&quot;: &quot;OPEN_APP&quot;|&quot;DEEP_LINK&quot;|&quot;URL&quot;,
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;Data&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;SilentPush&quot;: true|false,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...},
+      &quot;Title&quot;: &quot;string&quot;,
+      &quot;Url&quot;: &quot;string&quot;
+    },
+    &quot;GCMMessage&quot;: {
+      &quot;Action&quot;: &quot;OPEN_APP&quot;|&quot;DEEP_LINK&quot;|&quot;URL&quot;,
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;CollapseKey&quot;: &quot;string&quot;,
+      &quot;Data&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;IconReference&quot;: &quot;string&quot;,
+      &quot;ImageIconUrl&quot;: &quot;string&quot;,
+      &quot;ImageUrl&quot;: &quot;string&quot;,
+      &quot;Priority&quot;: &quot;string&quot;,
+      &quot;RawContent&quot;: &quot;string&quot;,
+      &quot;RestrictedPackageName&quot;: &quot;string&quot;,
+      &quot;SilentPush&quot;: true|false,
+      &quot;SmallImageIconUrl&quot;: &quot;string&quot;,
+      &quot;Sound&quot;: &quot;string&quot;,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...},
+      &quot;TimeToLive&quot;: integer,
+      &quot;Title&quot;: &quot;string&quot;,
+      &quot;Url&quot;: &quot;string&quot;
+    },
+    &quot;SMSMessage&quot;: {
+      &quot;Body&quot;: &quot;string&quot;,
+      &quot;Keyword&quot;: &quot;string&quot;,
+      &quot;MessageType&quot;: &quot;TRANSACTIONAL&quot;|&quot;PROMOTIONAL&quot;,
+      &quot;OriginationNumber&quot;: &quot;string&quot;,
+      &quot;SenderId&quot;: &quot;string&quot;,
+      &quot;Substitutions&quot;: {&quot;string&quot;: [&quot;string&quot;, ...]
+        ...}
+    }
+  },
+  &quot;TraceId&quot;: &quot;string&quot;
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>MessageResponse -&gt; (structure)</p>
+<blockquote>
+<div><p>Send message response.</p>
+<p>ApplicationId -&gt; (string)</p>
+<blockquote>
+<div>Application id of the message.</div></blockquote>
+<p>EndpointResult -&gt; (map)</p>
+<blockquote>
+<div><p>A map containing a multi part response for each address, with the endpointId as the key and the result as the value.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>The result from sending a message to an endpoint.</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>Address that endpoint message was delivered to.</div></blockquote>
+<p>DeliveryStatus -&gt; (string)</p>
+<blockquote>
+<div>The delivery status of the message. Possible values: SUCCESS - The message was successfully delivered to the endpoint. TRANSIENT_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later. FAILURE_PERMANENT - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again. TIMEOUT - The message couldn't be sent within the timeout period. QUIET_TIME - The local time for the endpoint was within the Quiet Hours for the campaign. DAILY_CAP - The endpoint has received the maximum number of messages it can receive within a 24-hour period. HOLDOUT - The endpoint was in a hold out treatment for the campaign. THROTTLED - Amazon Pinpoint throttled sending to this endpoint. EXPIRED - The endpoint address is expired. CAMPAIGN_CAP - The endpoint received the maximum number of messages allowed by the campaign. SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint from delivering the message. UNKNOWN - An unknown error occurred.</div></blockquote>
+<p>MessageId -&gt; (string)</p>
+<blockquote>
+<div>Unique message identifier associated with the message that was sent.</div></blockquote>
+<p>StatusCode -&gt; (integer)</p>
+<blockquote>
+<div>Downstream service status code.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>Status message for message delivery.</div></blockquote>
+<p>UpdatedToken -&gt; (string)</p>
+<blockquote>
+<div>If token was updated as part of delivery. (This is GCM Specific)</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RequestId -&gt; (string)</p>
+<blockquote>
+<div>Original request Id for which this message was delivered.</div></blockquote>
+<p>Result -&gt; (map)</p>
+<blockquote>
+<div><p>A map containing a multi part response for each address, with the address as the key(Email address, phone number or push token) and the result as the value.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>The result from sending a message to an address.</p>
+<p>DeliveryStatus -&gt; (string)</p>
+<blockquote>
+<div>The delivery status of the message. Possible values: SUCCESS - The message was successfully delivered to the endpoint. TRANSIENT_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later. FAILURE_PERMANENT - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again. TIMEOUT - The message couldn't be sent within the timeout period. QUIET_TIME - The local time for the endpoint was within the Quiet Hours for the campaign. DAILY_CAP - The endpoint has received the maximum number of messages it can receive within a 24-hour period. HOLDOUT - The endpoint was in a hold out treatment for the campaign. THROTTLED - Amazon Pinpoint throttled sending to this endpoint. EXPIRED - The endpoint address is expired. CAMPAIGN_CAP - The endpoint received the maximum number of messages allowed by the campaign. SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint from delivering the message. UNKNOWN - An unknown error occurred.</div></blockquote>
+<p>MessageId -&gt; (string)</p>
+<blockquote>
+<div>Unique message identifier associated with the message that was sent.</div></blockquote>
+<p>StatusCode -&gt; (integer)</p>
+<blockquote>
+<div>Downstream service status code.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>Status message for message delivery.</div></blockquote>
+<p>UpdatedToken -&gt; (string)</p>
+<blockquote>
+<div>If token was updated as part of delivery. (This is GCM Specific)</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../pinpoint/remove-attributes.html" title="previous chapter (use the left arrow)">&larr; remove-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../pinpoint/send-users-messages.html" title="next chapter (use the right arrow)">send-users-messages &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../pinpoint/send-users-messages.html" title="send-users-messages"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../pinpoint/remove-attributes.html" title="remove-attributes"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../pinpoint/index.html" >pinpoint</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,171 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 update-security-group-rule-descriptions-egress:
+
+
+**********************************************
+update-security-group-rule-descriptions-egress
+**********************************************
+
+
+
+===========
+Description
+===========
+
+
+
+[EC2-VPC only] Updates the description of an egress (outbound) security group rule. You can replace an existing description, or add a description to a rule that did not have one previously.
+
+ 
+
+You specify the description as part of the IP permissions structure. You can remove a description for a security group rule by omitting the description parameter in the request.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UpdateSecurityGroupRuleDescriptionsEgress>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-security-group-rule-descriptions-egress
+  [--dry-run | --no-dry-run]
+  [--group-id <value>]
+  [--group-name <value>]
+  --ip-permissions <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--group-id`` (string)
+
+
+  The ID of the security group. You must specify either the security group ID or the security group name in the request. For security groups in a nondefault VPC, you must specify the security group ID.
+
+  
+
+``--group-name`` (string)
+
+
+  [Default VPC] The name of the security group. You must specify either the security group ID or the security group name in the request.
+
+  
+
+``--ip-permissions`` (list)
+
+
+  The IP permissions for the security group rule.
+
+  
+
+
+
+Shorthand Syntax::
+
+    FromPort=integer,IpProtocol=string,IpRanges=[{CidrIp=string,Description=string},{CidrIp=string,Description=string}],Ipv6Ranges=[{CidrIpv6=string,Description=string},{CidrIpv6=string,Description=string}],PrefixListIds=[{Description=string,PrefixListId=string},{Description=string,PrefixListId=string}],ToPort=integer,UserIdGroupPairs=[{Description=string,GroupId=string,GroupName=string,PeeringStatus=string,UserId=string,VpcId=string,VpcPeeringConnectionId=string},{Description=string,GroupId=string,GroupName=string,PeeringStatus=string,UserId=string,VpcId=string,VpcPeeringConnectionId=string}] ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "FromPort": integer,
+      "IpProtocol": "string",
+      "IpRanges": [
+        {
+          "CidrIp": "string",
+          "Description": "string"
+        }
+        ...
+      ],
+      "Ipv6Ranges": [
+        {
+          "CidrIpv6": "string",
+          "Description": "string"
+        }
+        ...
+      ],
+      "PrefixListIds": [
+        {
+          "Description": "string",
+          "PrefixListId": "string"
+        }
+        ...
+      ],
+      "ToPort": integer,
+      "UserIdGroupPairs": [
+        {
+          "Description": "string",
+          "GroupId": "string",
+          "GroupName": "string",
+          "PeeringStatus": "string",
+          "UserId": "string",
+          "VpcId": "string",
+          "VpcPeeringConnectionId": "string"
+        }
+        ...
+      ]
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To update an outbound security group rule description**
+
+This example updates the description for the security group rule that allows outbound access over port 80 to the ``203.0.113.0/24`` IPv4 address range. The description '``Outbound HTTP access to server 2``' replaces any existing description for the rule. If the command succeeds, no output is returned.
+
+Command::
+
+  aws ec2 update-security-group-rule-descriptions-egress --group-id sg-123abc12 --ip-permissions '[{"IpProtocol": "tcp", "FromPort": 80, "ToPort": 80, "IpRanges": [{"CidrIp": "203.0.113.0/24", "Description": "Outbound HTTP access to server 2"}]}]'
+
+
+======
+Output
+======
+
+Return -> (boolean)
+
+  
+
+  Returns ``true`` if the request succeeds; otherwise, returns an error.
+
+  
+
+  
+

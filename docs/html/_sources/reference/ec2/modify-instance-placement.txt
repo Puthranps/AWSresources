@@ -1,0 +1,174 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 modify-instance-placement:
+
+
+*************************
+modify-instance-placement
+*************************
+
+
+
+===========
+Description
+===========
+
+
+
+Modifies the placement attributes for a specified instance. You can do the following:
+
+ 
+
+ 
+* Modify the affinity between an instance and a `Dedicated Host <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html>`__ . When affinity is set to ``host`` and the instance is not associated with a specific Dedicated Host, the next time the instance is launched, it is automatically associated with the host on which it lands. If the instance is restarted or rebooted, this relationship persists. 
+ 
+* Change the Dedicated Host with which an instance is associated. 
+ 
+* Change the instance tenancy of an instance from ``host`` to ``dedicated`` , or from ``dedicated`` to ``host`` . 
+ 
+* Move an instance to or from a `placement group <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html>`__ . 
+ 
+
+ 
+
+At least one attribute for affinity, host ID, tenancy, or placement group name must be specified in the request. Affinity and tenancy can be modified in the same request.
+
+ 
+
+To modify the host ID, tenancy, or placement group for an instance, the instance must be in the ``stopped`` state.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstancePlacement>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    modify-instance-placement
+  [--affinity <value>]
+  [--group-name <value>]
+  [--host-id <value>]
+  --instance-id <value>
+  [--tenancy <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--affinity`` (string)
+
+
+  The affinity setting for the instance.
+
+  
+
+  Possible values:
+
+  
+  *   ``default``
+
+  
+  *   ``host``
+
+  
+
+  
+
+``--group-name`` (string)
+
+
+  The name of the placement group in which to place the instance. For spread placement groups, the instance must have a tenancy of ``default`` . For cluster placement groups, the instance must have a tenancy of ``default`` or ``dedicated`` .
+
+   
+
+  To remove an instance from a placement group, specify an empty string ("").
+
+  
+
+``--host-id`` (string)
+
+
+  The ID of the Dedicated Host with which to associate the instance.
+
+  
+
+``--instance-id`` (string)
+
+
+  The ID of the instance that you are modifying.
+
+  
+
+``--tenancy`` (string)
+
+
+  The tenancy for the instance.
+
+  
+
+  Possible values:
+
+  
+  *   ``dedicated``
+
+  
+  *   ``host``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To set the instance affinity value for a specific stopped Dedicated Host**
+
+To modify the affinity of an instance so it always has affinity with the specified Dedicated Host . 
+
+Command::
+
+  aws ec2 modify-instance-placement --instance-id=i-1234567890abcdef0 --host-id h-029e7409a3350a31f
+
+Output::
+
+  { 
+    "Return":  true
+   }
+
+
+======
+Output
+======
+
+Return -> (boolean)
+
+  
+
+  Is ``true`` if the request succeeds, and an error otherwise.
+
+  
+
+  
+

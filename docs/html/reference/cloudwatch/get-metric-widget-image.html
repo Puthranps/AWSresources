@@ -1,0 +1,251 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-metric-widget-image &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="cloudwatch" href="../cloudwatch/index.html" />
+    <link rel="next" title="list-dashboards" href="../cloudwatch/list-dashboards.html" />
+    <link rel="prev" title="get-metric-statistics" href="../cloudwatch/get-metric-statistics.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../cloudwatch/list-dashboards.html" title="list-dashboards"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cloudwatch/get-metric-statistics.html" title="get-metric-statistics"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cloudwatch/index.html" accesskey="U">cloudwatch</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/get-metric-statistics.html" title="previous chapter (use the left arrow)">&larr; get-metric-statistics</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cloudwatch/list-dashboards.html" title="next chapter (use the right arrow)">list-dashboards &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-metric-widget-image</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/cloudwatch/get-metric-widget-image">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../cloudwatch/index.html#cli-aws-cloudwatch"><em>cloudwatch</em></a> ]</p>
+<div class="section" id="get-metric-widget-image">
+<span id="cli-aws-cloudwatch-get-metric-widget-image"></span><h1>get-metric-widget-image<a class="headerlink" href="#get-metric-widget-image" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>You can use the <tt class="docutils literal"><span class="pre">GetMetricWidgetImage</span></tt> API to retrieve a snapshot graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your own custom live dashboard.</p>
+<p>The graph you retrieve can include all CloudWatch metric graph features, including metric math and horizontal and vertical annotations.</p>
+<p>There is a limit of 20 transactions per second for this API. Each <tt class="docutils literal"><span class="pre">GetMetricWidgetImage</span></tt> action has the following limits:</p>
+<ul class="simple">
+<li>As many as 100 metrics in the graph.</li>
+<li>Up to 100 KB uncompressed payload.</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricWidgetImage">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-metric-widget-image
+--metric-widget &lt;value&gt;
+[--output-format &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--metric-widget</span></tt> (string)</p>
+<blockquote>
+<div><p>A JSON string that defines the bitmap graph to be retrieved. The string includes the metrics to include in the graph, statistics, annotations, title, axis limits, and so on. You can include only one <tt class="docutils literal"><span class="pre">MetricWidget</span></tt> parameter in each <tt class="docutils literal"><span class="pre">GetMetricWidgetImage</span></tt> call.</p>
+<p>For more information about the syntax of <tt class="docutils literal"><span class="pre">MetricWidget</span></tt> see  CloudWatch-Metric-Widget-Structure .</p>
+<p>If any metric on the graph could not load all the requested data points, an orange triangle with an exclamation point appears next to the graph legend.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--output-format</span></tt> (string)</p>
+<blockquote>
+<div><p>The format of the resulting image. Only PNG images are supported.</p>
+<p>The default is <tt class="docutils literal"><span class="pre">png</span></tt> . If you specify <tt class="docutils literal"><span class="pre">png</span></tt> , the API returns an HTTP response with the content-type set to <tt class="docutils literal"><span class="pre">text/xml</span></tt> . The image data is in a <tt class="docutils literal"><span class="pre">MetricWidgetImage</span></tt> field. For example:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">&lt;GetMetricWidgetImageResponse</span> <span class="pre">xmlns=&quot;http://monitoring.amazonaws.com/doc/2010-08-01/&quot;&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;GetMetricWidgetImageResult&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;MetricWidgetImage&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">iVBORw0KGgoAAAANSUhEUgAAAlgAAAGQEAYAAAAip...</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;/MetricWidgetImage&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;/GetMetricWidgetImageResult&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;ResponseMetadata&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;RequestId&gt;6f0d4192-4d42-11e8-82c1-f539a07e0e3b&lt;/RequestId&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;/ResponseMetadata&gt;</span></tt></p>
+<p><tt class="docutils literal"><span class="pre">&lt;/GetMetricWidgetImageResponse&gt;</span></tt></p>
+</div></blockquote>
+<p>The <tt class="docutils literal"><span class="pre">image/png</span></tt> setting is intended only for custom HTTP requests. For most use cases, and all actions using an AWS SDK, you should use <tt class="docutils literal"><span class="pre">png</span></tt> . If you specify <tt class="docutils literal"><span class="pre">image/png</span></tt> , the HTTP response has a content-type set to <tt class="docutils literal"><span class="pre">image/png</span></tt> , and the body of the response is a PNG image.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>MetricWidgetImage -&gt; (blob)</p>
+<blockquote>
+<div>The image of the graph, in the output format specified.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/get-metric-statistics.html" title="previous chapter (use the left arrow)">&larr; get-metric-statistics</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cloudwatch/list-dashboards.html" title="next chapter (use the right arrow)">list-dashboards &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../cloudwatch/list-dashboards.html" title="list-dashboards"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cloudwatch/get-metric-statistics.html" title="get-metric-statistics"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cloudwatch/index.html" >cloudwatch</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

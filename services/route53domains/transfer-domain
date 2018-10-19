@@ -1,0 +1,81 @@
+{
+    "DomainName": "",
+    "IdnLangCode": "",
+    "DurationInYears": 0,
+    "Nameservers": [
+        {
+            "Name": "",
+            "GlueIps": [
+                ""
+            ]
+        }
+    ],
+    "AuthCode": "",
+    "AutoRenew": true,
+    "AdminContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "ASSOCIATION",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "BD",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "FI_NATIONALITY",
+                "Value": ""
+            }
+        ]
+    },
+    "RegistrantContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "COMPANY",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "HK",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "BRAND_NUMBER",
+                "Value": ""
+            }
+        ]
+    },
+    "TechContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "PUBLIC_BODY",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "PL",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "ES_IDENTIFICATION",
+                "Value": ""
+            }
+        ]
+    },
+    "PrivacyProtectAdminContact": true,
+    "PrivacyProtectRegistrantContact": true,
+    "PrivacyProtectTechContact": true
+}

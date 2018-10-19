@@ -1,0 +1,35 @@
+{
+    "TimePeriod": {
+        "Start": "",
+        "End": ""
+    },
+    "GroupBy": [
+        {
+            "Type": "DIMENSION",
+            "Key": ""
+        }
+    ],
+    "Granularity": "DAILY",
+    "Filter": {
+        "Or": [
+            {}
+        ],
+        "And": [
+            {}
+        ],
+        "Not": {},
+        "Dimensions": {
+            "Key": "SERVICE",
+            "Values": [
+                ""
+            ]
+        },
+        "Tags": {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    },
+    "NextPageToken": ""
+}

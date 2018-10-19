@@ -1,0 +1,16 @@
+{
+    "ParameterGroupName": "",
+    "Parameters": [
+        {
+            "ParameterName": "",
+            "ParameterValue": "",
+            "Description": "",
+            "Source": "",
+            "DataType": "",
+            "AllowedValues": "",
+            "ApplyType": "static",
+            "IsModifiable": true,
+            "MinimumEngineVersion": ""
+        }
+    ]
+}

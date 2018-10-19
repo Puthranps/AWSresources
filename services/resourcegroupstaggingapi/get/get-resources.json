@@ -1,0 +1,16 @@
+{
+    "PaginationToken": "",
+    "TagFilters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "ResourcesPerPage": 0,
+    "TagsPerPage": 0,
+    "ResourceTypeFilters": [
+        ""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "AmznClientToken": "",
+    "InitialVersion": {
+        "Loggers": [
+            {
+                "Component": "GreengrassSystem",
+                "Id": "",
+                "Level": "WARN",
+                "Space": 0,
+                "Type": "FileSystem"
+            }
+        ]
+    },
+    "Name": ""
+}

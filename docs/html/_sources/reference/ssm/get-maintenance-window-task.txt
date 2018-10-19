@@ -1,0 +1,629 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm get-maintenance-window-task:
+
+
+***************************
+get-maintenance-window-task
+***************************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the tasks in a Maintenance Window.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowTask>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-maintenance-window-task
+  --window-id <value>
+  --window-task-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--window-id`` (string)
+
+
+  The Maintenance Window ID that includes the task to retrieve.
+
+  
+
+``--window-task-id`` (string)
+
+
+  The Maintenance Window task ID to retrieve.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+WindowId -> (string)
+
+  
+
+  The retrieved Maintenance Window ID.
+
+  
+
+  
+
+WindowTaskId -> (string)
+
+  
+
+  The retrieved Maintenance Window task ID.
+
+  
+
+  
+
+Targets -> (list)
+
+  
+
+  The targets where the task should execute.
+
+  
+
+  (structure)
+
+    
+
+    An array of search criteria that targets instances using a Key,Value combination that you specify. ``Targets`` is required if you don't provide one or more instance IDs in the call.
+
+     
+
+    
+
+    
+
+    Key -> (string)
+
+      
+
+      User-defined criteria for sending commands that target instances that meet the criteria. Key can be tag:<Amazon EC2 tag> or InstanceIds. For more information about how to send commands that target instances using Key,Value parameters, see `Targeting Multiple Instances <http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting>`__ in the *AWS Systems Manager User Guide* .
+
+      
+
+      
+
+    Values -> (list)
+
+      
+
+      User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send commands that target instances using Key,Value parameters, see `Sending Commands to a Fleet <http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html>`__ in the *AWS Systems Manager User Guide* .
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  
+
+TaskArn -> (string)
+
+  
+
+  The resource that the task used during execution. For RUN_COMMAND and AUTOMATION task types, the TaskArn is the Systems Manager Document name/ARN. For LAMBDA tasks, the value is the function name/ARN. For STEP_FUNCTION tasks, the value is the state machine ARN.
+
+  
+
+  
+
+ServiceRoleArn -> (string)
+
+  
+
+  The IAM service role to assume during task execution.
+
+  
+
+  
+
+TaskType -> (string)
+
+  
+
+  The type of task to execute.
+
+  
+
+  
+
+TaskParameters -> (map)
+
+  
+
+  The parameters to pass to the task when it executes.
+
+   
+
+  .. note::
+
+     
+
+     ``TaskParameters`` has been deprecated. To specify parameters to pass to a task when it runs, instead use the ``Parameters`` option in the ``TaskInvocationParameters`` structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see  MaintenanceWindowTaskInvocationParameters .
+
+     
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (structure)
+
+    
+
+    Defines the values for a task parameter.
+
+    
+
+    Values -> (list)
+
+      
+
+      This field contains an array of 0 or more strings, each 1 to 255 characters in length.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  
+
+TaskInvocationParameters -> (structure)
+
+  
+
+  The parameters to pass to the task when it executes.
+
+  
+
+  RunCommand -> (structure)
+
+    
+
+    The parameters for a RUN_COMMAND task type.
+
+    
+
+    Comment -> (string)
+
+      
+
+      Information about the command(s) to execute.
+
+      
+
+      
+
+    DocumentHash -> (string)
+
+      
+
+      The SHA-256 or SHA-1 hash created by the system when the document was created. SHA-1 hashes have been deprecated.
+
+      
+
+      
+
+    DocumentHashType -> (string)
+
+      
+
+      SHA-256 or SHA-1. SHA-1 hashes have been deprecated.
+
+      
+
+      
+
+    NotificationConfig -> (structure)
+
+      
+
+      Configurations for sending notifications about command status changes on a per-instance basis.
+
+      
+
+      NotificationArn -> (string)
+
+        
+
+        An Amazon Resource Name (ARN) for a Simple Notification Service (SNS) topic. Run Command pushes notifications about command status changes to this topic.
+
+        
+
+        
+
+      NotificationEvents -> (list)
+
+        
+
+        The different events for which you can receive notifications. These events include the following: All (events), InProgress, Success, TimedOut, Cancelled, Failed. To learn more about these events, see `Configuring Amazon SNS Notifications for Run Command <http://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html>`__ in the *AWS Systems Manager User Guide* .
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      NotificationType -> (string)
+
+        
+
+        Command: Receive notification when the status of a command changes. Invocation: For commands sent to multiple instances, receive notification on a per-instance basis when the status of a command changes. 
+
+        
+
+        
+
+      
+
+    OutputS3BucketName -> (string)
+
+      
+
+      The name of the Amazon S3 bucket.
+
+      
+
+      
+
+    OutputS3KeyPrefix -> (string)
+
+      
+
+      The Amazon S3 bucket subfolder.
+
+      
+
+      
+
+    Parameters -> (map)
+
+      
+
+      The parameters for the RUN_COMMAND task execution.
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (list)
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      
+
+    ServiceRoleArn -> (string)
+
+      
+
+      The IAM service role to assume during task execution.
+
+      
+
+      
+
+    TimeoutSeconds -> (integer)
+
+      
+
+      If this time is reached and the command has not already started executing, it doesn not execute.
+
+      
+
+      
+
+    
+
+  Automation -> (structure)
+
+    
+
+    The parameters for an AUTOMATION task type.
+
+    
+
+    DocumentVersion -> (string)
+
+      
+
+      The version of an Automation document to use during task execution.
+
+      
+
+      
+
+    Parameters -> (map)
+
+      
+
+      The parameters for the AUTOMATION task.
+
+       
+
+      For information about specifying and updating task parameters, see  RegisterTaskWithMaintenanceWindow and  UpdateMaintenanceWindowTask .
+
+       
+
+      .. note::
+
+         
+
+         ``LoggingInfo`` has been deprecated. To specify an S3 bucket to contain logs, instead use the ``OutputS3BucketName`` and ``OutputS3KeyPrefix`` options in the ``TaskInvocationParameters`` structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see  MaintenanceWindowTaskInvocationParameters .
+
+         
+
+         ``TaskParameters`` has been deprecated. To specify parameters to pass to a task when it runs, instead use the ``Parameters`` option in the ``TaskInvocationParameters`` structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see  MaintenanceWindowTaskInvocationParameters .
+
+         
+
+        For AUTOMATION task types, Systems Manager ignores any values specified for these parameters.
+
+         
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (list)
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  StepFunctions -> (structure)
+
+    
+
+    The parameters for a STEP_FUNCTION task type.
+
+    
+
+    Input -> (string)
+
+      
+
+      The inputs for the STEP_FUNCTION task.
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The name of the STEP_FUNCTION task.
+
+      
+
+      
+
+    
+
+  Lambda -> (structure)
+
+    
+
+    The parameters for a LAMBDA task type.
+
+    
+
+    ClientContext -> (string)
+
+      
+
+      Pass client-specific information to the Lambda function that you are invoking. You can then process the client information in your Lambda function as you choose through the context variable.
+
+      
+
+      
+
+    Qualifier -> (string)
+
+      
+
+      (Optional) Specify a Lambda function version or alias name. If you specify a function version, the action uses the qualified function ARN to invoke a specific Lambda function. If you specify an alias name, the action uses the alias ARN to invoke the Lambda function version to which the alias points.
+
+      
+
+      
+
+    Payload -> (blob)
+
+      
+
+      JSON to provide to your Lambda function as input.
+
+      
+
+      
+
+    
+
+  
+
+Priority -> (integer)
+
+  
+
+  The priority of the task when it executes. The lower the number, the higher the priority. Tasks that have the same priority are scheduled in parallel.
+
+  
+
+  
+
+MaxConcurrency -> (string)
+
+  
+
+  The maximum number of targets allowed to run this task in parallel.
+
+  
+
+  
+
+MaxErrors -> (string)
+
+  
+
+  The maximum number of errors allowed before the task stops being scheduled.
+
+  
+
+  
+
+LoggingInfo -> (structure)
+
+  
+
+  The location in Amazon S3 where the task results are logged.
+
+   
+
+  .. note::
+
+     
+
+     ``LoggingInfo`` has been deprecated. To specify an S3 bucket to contain logs, instead use the ``OutputS3BucketName`` and ``OutputS3KeyPrefix`` options in the ``TaskInvocationParameters`` structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see  MaintenanceWindowTaskInvocationParameters .
+
+     
+
+  
+
+  S3BucketName -> (string)
+
+    
+
+    The name of an Amazon S3 bucket where execution logs are stored .
+
+    
+
+    
+
+  S3KeyPrefix -> (string)
+
+    
+
+    (Optional) The Amazon S3 bucket subfolder. 
+
+    
+
+    
+
+  S3Region -> (string)
+
+    
+
+    The region where the Amazon S3 bucket is located.
+
+    
+
+    
+
+  
+
+Name -> (string)
+
+  
+
+  The retrieved task name.
+
+  
+
+  
+
+Description -> (string)
+
+  
+
+  The retrieved task description.
+
+  
+
+  
+

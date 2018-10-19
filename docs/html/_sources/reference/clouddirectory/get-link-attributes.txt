@@ -1,0 +1,261 @@
+[ :ref:`aws <cli:aws>` . :ref:`clouddirectory <cli:aws clouddirectory>` ]
+
+.. _cli:aws clouddirectory get-link-attributes:
+
+
+*******************
+get-link-attributes
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves attributes that are associated with a typed link.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetLinkAttributes>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-link-attributes
+  --directory-arn <value>
+  --typed-link-specifier <value>
+  --attribute-names <value>
+  [--consistency-level <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--directory-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) that is associated with the Directory where the typed link resides. For more information, see  arns or `Typed link <http://docs.aws.amazon.com/directoryservice/latest/admin-guide/objectsandlinks.html#typedlink>`__ .
+
+  
+
+``--typed-link-specifier`` (structure)
+
+
+  Allows a typed link specifier to be accepted as input.
+
+  
+
+
+
+JSON Syntax::
+
+  {
+    "TypedLinkFacet": {
+      "SchemaArn": "string",
+      "TypedLinkName": "string"
+    },
+    "SourceObjectReference": {
+      "Selector": "string"
+    },
+    "TargetObjectReference": {
+      "Selector": "string"
+    },
+    "IdentityAttributeValues": [
+      {
+        "AttributeName": "string",
+        "Value": {
+          "StringValue": "string",
+          "BinaryValue": blob,
+          "BooleanValue": true|false,
+          "NumberValue": "string",
+          "DatetimeValue": timestamp
+        }
+      }
+      ...
+    ]
+  }
+
+
+
+``--attribute-names`` (list)
+
+
+  A list of attribute names whose values will be retrieved.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--consistency-level`` (string)
+
+
+  The consistency level at which to retrieve the attributes on a typed link.
+
+  
+
+  Possible values:
+
+  
+  *   ``SERIALIZABLE``
+
+  
+  *   ``EVENTUAL``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Attributes -> (list)
+
+  
+
+  The attributes that are associated with the typed link.
+
+  
+
+  (structure)
+
+    
+
+    The combination of an attribute key and an attribute value.
+
+    
+
+    Key -> (structure)
+
+      
+
+      The key of the attribute.
+
+      
+
+      SchemaArn -> (string)
+
+        
+
+        The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
+
+        
+
+        
+
+      FacetName -> (string)
+
+        
+
+        The name of the facet that the attribute exists within.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the attribute.
+
+        
+
+        
+
+      
+
+    Value -> (structure)
+
+      
+
+      The value of the attribute.
+
+      
+
+      StringValue -> (string)
+
+        
+
+        A string data value.
+
+        
+
+        
+
+      BinaryValue -> (blob)
+
+        
+
+        A binary data value.
+
+        
+
+        
+
+      BooleanValue -> (boolean)
+
+        
+
+        A Boolean data value.
+
+        
+
+        
+
+      NumberValue -> (string)
+
+        
+
+        A number data value.
+
+        
+
+        
+
+      DatetimeValue -> (timestamp)
+
+        
+
+        A date and time value.
+
+        
+
+        
+
+      
+
+    
+
+  
+

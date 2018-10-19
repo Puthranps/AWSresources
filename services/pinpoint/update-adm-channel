@@ -1,0 +1,8 @@
+{
+    "ADMChannelRequest": {
+        "ClientId": "",
+        "ClientSecret": "",
+        "Enabled": true
+    },
+    "ApplicationId": ""
+}

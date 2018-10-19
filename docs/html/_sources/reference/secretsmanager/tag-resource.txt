@@ -1,0 +1,179 @@
+[ :ref:`aws <cli:aws>` . :ref:`secretsmanager <cli:aws secretsmanager>` ]
+
+.. _cli:aws secretsmanager tag-resource:
+
+
+************
+tag-resource
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Attaches one or more tags, each consisting of a key name and a value, to the specified secret. Tags are part of the secret's overall metadata, and are not associated with any specific version of the secret. This operation only appends tags to the existing list of tags. To remove tags, you must use  UntagResource .
+
+ 
+
+The following basic restrictions apply to tags:
+
+ 
+
+ 
+* Maximum number of tags per secret—50 
+ 
+* Maximum key length—127 Unicode characters in UTF-8 
+ 
+* Maximum value length—255 Unicode characters in UTF-8 
+ 
+* Tag keys and values are case sensitive. 
+ 
+* Do not use the ``aws:`` prefix in your tag names or values because it is reserved for AWS use. You can't edit or delete tag names or values with this prefix. Tags with this prefix do not count against your tags per secret limit. 
+ 
+* If your tagging schema will be used across multiple services and resources, remember that other services might have restrictions on allowed characters. Generally allowed characters are: letters, spaces, and numbers representable in UTF-8, plus the following special characters: + - = . _ : / @. 
+ 
+
+ 
+
+.. warning::
+
+   
+
+  If you use tags as part of your security strategy, then adding or removing a tag can change permissions. If successfully completing this operation would result in you losing your permissions for this secret, then the operation is blocked and returns an Access Denied error.
+
+   
+
+ 
+
+ **Minimum permissions**  
+
+ 
+
+To run this command, you must have the following permissions:
+
+ 
+
+ 
+* secretsmanager:TagResource 
+ 
+
+ 
+
+ **Related operations**  
+
+ 
+
+ 
+* To remove one or more tags from the collection attached to a secret, use  UntagResource . 
+ 
+* To view the list of tags attached to a secret, use  DescribeSecret . 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/secretsmanager-2017-10-17/TagResource>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    tag-resource
+  --secret-id <value>
+  --tags <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--secret-id`` (string)
+
+
+  The identifier for the secret that you want to attach tags to. You can specify either the Amazon Resource Name (ARN) or the friendly name of the secret.
+
+   
+
+  .. note::
+
+     
+
+    If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager adds at the end of the ARN when you created the secret. A partial ARN match can work as long as it uniquely matches only one secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a hyphen followed by six characters.
+
+     
+
+  
+
+``--tags`` (list)
+
+
+  The tags to attach to the secret. Each element in the list consists of a ``Key`` and a ``Value`` .
+
+   
+
+  This parameter to the API requires a JSON text string argument. For information on how to format a JSON parameter for the various command line tool environments, see `Using JSON for Parameters <http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json>`__ in the *AWS CLI User Guide* . For the AWS CLI, you can also use the syntax: ``--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]``  
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Value=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Value": "string"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To add tags to a secret**
+
+The following example shows how to attach two tags each with a Key and Value to a secret. ::
+
+	aws secretsmanager tag-resource --secret-id MyTestDatabaseSecret \
+	  --tags '[{"Key": "FirstTag", "Value": "SomeValue"}, {"Key": "SecondTag", "Value": "AnotherValue"}]'
+
+There is no output from this API. To see the result, use the describe-secret operation.
+
+
+======
+Output
+======
+
+None

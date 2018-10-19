@@ -1,0 +1,11 @@
+{
+    "DryRun": true,
+    "ExcessCapacityTerminationPolicy": "termination",
+    "FleetId": "",
+    "TargetCapacitySpecification": {
+        "TotalTargetCapacity": 0,
+        "OnDemandTargetCapacity": 0,
+        "SpotTargetCapacity": 0,
+        "DefaultTargetCapacityType": "on-demand"
+    }
+}

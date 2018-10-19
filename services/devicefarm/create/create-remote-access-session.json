@@ -1,0 +1,19 @@
+{
+    "projectArn": "",
+    "deviceArn": "",
+    "instanceArn": "",
+    "sshPublicKey": "",
+    "remoteDebugEnabled": true,
+    "remoteRecordEnabled": true,
+    "remoteRecordAppArn": "",
+    "name": "",
+    "clientId": "",
+    "configuration": {
+        "billingMethod": "UNMETERED",
+        "vpceConfigurationArns": [
+            ""
+        ]
+    },
+    "interactionMode": "INTERACTIVE",
+    "skipAppResign": true
+}

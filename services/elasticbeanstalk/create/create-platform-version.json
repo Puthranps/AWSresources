@@ -1,0 +1,17 @@
+{
+    "PlatformName": "",
+    "PlatformVersion": "",
+    "PlatformDefinitionBundle": {
+        "S3Bucket": "",
+        "S3Key": ""
+    },
+    "EnvironmentName": "",
+    "OptionSettings": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": "",
+            "Value": ""
+        }
+    ]
+}

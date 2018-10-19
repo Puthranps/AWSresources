@@ -1,0 +1,13 @@
+{
+    "FleetId": "",
+    "Name": "",
+    "Description": "",
+    "NewGameSessionProtectionPolicy": "NoProtection",
+    "ResourceCreationLimitPolicy": {
+        "NewGameSessionsPerCreator": 0,
+        "PolicyPeriodInMinutes": 0
+    },
+    "MetricGroups": [
+        ""
+    ]
+}

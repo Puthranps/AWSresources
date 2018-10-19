@@ -1,0 +1,9 @@
+{
+    "TopicArn": "",
+    "Protocol": "",
+    "Endpoint": "",
+    "Attributes": {
+        "KeyName": ""
+    },
+    "ReturnSubscriptionArn": true
+}

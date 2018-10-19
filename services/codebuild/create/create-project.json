@@ -1,0 +1,104 @@
+{
+    "name": "",
+    "description": "",
+    "source": {
+        "type": "BITBUCKET",
+        "location": "",
+        "gitCloneDepth": 0,
+        "buildspec": "",
+        "auth": {
+            "type": "OAUTH",
+            "resource": ""
+        },
+        "reportBuildStatus": true,
+        "insecureSsl": true,
+        "sourceIdentifier": ""
+    },
+    "secondarySources": [
+        {
+            "type": "BITBUCKET",
+            "location": "",
+            "gitCloneDepth": 0,
+            "buildspec": "",
+            "auth": {
+                "type": "OAUTH",
+                "resource": ""
+            },
+            "reportBuildStatus": true,
+            "insecureSsl": true,
+            "sourceIdentifier": ""
+        }
+    ],
+    "artifacts": {
+        "type": "CODEPIPELINE",
+        "location": "",
+        "path": "",
+        "namespaceType": "BUILD_ID",
+        "name": "",
+        "packaging": "NONE",
+        "overrideArtifactName": true,
+        "encryptionDisabled": true,
+        "artifactIdentifier": ""
+    },
+    "secondaryArtifacts": [
+        {
+            "type": "CODEPIPELINE",
+            "location": "",
+            "path": "",
+            "namespaceType": "BUILD_ID",
+            "name": "",
+            "packaging": "ZIP",
+            "overrideArtifactName": true,
+            "encryptionDisabled": true,
+            "artifactIdentifier": ""
+        }
+    ],
+    "cache": {
+        "type": "S3",
+        "location": ""
+    },
+    "environment": {
+        "type": "LINUX_CONTAINER",
+        "image": "",
+        "computeType": "BUILD_GENERAL1_MEDIUM",
+        "environmentVariables": [
+            {
+                "name": "",
+                "value": "",
+                "type": "PARAMETER_STORE"
+            }
+        ],
+        "privilegedMode": true,
+        "certificate": ""
+    },
+    "serviceRole": "",
+    "timeoutInMinutes": 0,
+    "encryptionKey": "",
+    "tags": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ],
+    "vpcConfig": {
+        "vpcId": "",
+        "subnets": [
+            ""
+        ],
+        "securityGroupIds": [
+            ""
+        ]
+    },
+    "badgeEnabled": true,
+    "logsConfig": {
+        "cloudWatchLogs": {
+            "status": "ENABLED",
+            "groupName": "",
+            "streamName": ""
+        },
+        "s3Logs": {
+            "status": "DISABLED",
+            "location": ""
+        }
+    }
+}

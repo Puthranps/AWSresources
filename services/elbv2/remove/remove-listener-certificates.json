@@ -1,0 +1,9 @@
+{
+    "ListenerArn": "",
+    "Certificates": [
+        {
+            "CertificateArn": "",
+            "IsDefault": true
+        }
+    ]
+}

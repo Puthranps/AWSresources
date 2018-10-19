@@ -1,0 +1,60 @@
+{
+    "AccountId": "",
+    "Budget": {
+        "BudgetName": "",
+        "BudgetLimit": {
+            "Amount": "",
+            "Unit": ""
+        },
+        "CostFilters": {
+            "KeyName": [
+                ""
+            ]
+        },
+        "CostTypes": {
+            "IncludeTax": true,
+            "IncludeSubscription": true,
+            "UseBlended": true,
+            "IncludeRefund": true,
+            "IncludeCredit": true,
+            "IncludeUpfront": true,
+            "IncludeRecurring": true,
+            "IncludeOtherSubscription": true,
+            "IncludeSupport": true,
+            "IncludeDiscount": true,
+            "UseAmortized": true
+        },
+        "TimeUnit": "ANNUALLY",
+        "TimePeriod": {
+            "Start": "1970-01-01T00:00:00",
+            "End": "1970-01-01T00:00:00"
+        },
+        "CalculatedSpend": {
+            "ActualSpend": {
+                "Amount": "",
+                "Unit": ""
+            },
+            "ForecastedSpend": {
+                "Amount": "",
+                "Unit": ""
+            }
+        },
+        "BudgetType": "RI_COVERAGE"
+    },
+    "NotificationsWithSubscribers": [
+        {
+            "Notification": {
+                "NotificationType": "ACTUAL",
+                "ComparisonOperator": "LESS_THAN",
+                "Threshold": null,
+                "ThresholdType": "ABSOLUTE_VALUE"
+            },
+            "Subscribers": [
+                {
+                    "SubscriptionType": "SNS",
+                    "Address": ""
+                }
+            ]
+        }
+    ]
+}

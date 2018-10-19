@@ -1,0 +1,191 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue batch-stop-job-run:
+
+
+******************
+batch-stop-job-run
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Stops one or more job runs for a specified job definition.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/BatchStopJobRun>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    batch-stop-job-run
+  --job-name <value>
+  --job-run-ids <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--job-name`` (string)
+
+
+  The name of the job definition for which to stop job runs.
+
+  
+
+``--job-run-ids`` (list)
+
+
+  A list of the JobRunIds that should be stopped for that job definition.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+SuccessfulSubmissions -> (list)
+
+  
+
+  A list of the JobRuns that were successfully submitted for stopping.
+
+  
+
+  (structure)
+
+    
+
+    Records a successful request to stop a specified JobRun.
+
+    
+
+    JobName -> (string)
+
+      
+
+      The name of the job definition used in the job run that was stopped.
+
+      
+
+      
+
+    JobRunId -> (string)
+
+      
+
+      The JobRunId of the job run that was stopped.
+
+      
+
+      
+
+    
+
+  
+
+Errors -> (list)
+
+  
+
+  A list of the errors that were encountered in tryng to stop JobRuns, including the JobRunId for which each error was encountered and details about the error.
+
+  
+
+  (structure)
+
+    
+
+    Records an error that occurred when attempting to stop a specified job run.
+
+    
+
+    JobName -> (string)
+
+      
+
+      The name of the job definition used in the job run in question.
+
+      
+
+      
+
+    JobRunId -> (string)
+
+      
+
+      The JobRunId of the job run in question.
+
+      
+
+      
+
+    ErrorDetail -> (structure)
+
+      
+
+      Specifies details about the error that was encountered.
+
+      
+
+      ErrorCode -> (string)
+
+        
+
+        The code associated with this error.
+
+        
+
+        
+
+      ErrorMessage -> (string)
+
+        
+
+        A message describing the error.
+
+        
+
+        
+
+      
+
+    
+
+  
+

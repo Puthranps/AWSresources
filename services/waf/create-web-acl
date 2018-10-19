@@ -1,0 +1,8 @@
+{
+    "Name": "",
+    "MetricName": "",
+    "DefaultAction": {
+        "Type": "ALLOW"
+    },
+    "ChangeToken": ""
+}

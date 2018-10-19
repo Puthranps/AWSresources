@@ -1,0 +1,13 @@
+{
+    "CiphertextBlob": null,
+    "SourceEncryptionContext": {
+        "KeyName": ""
+    },
+    "DestinationKeyId": "",
+    "DestinationEncryptionContext": {
+        "KeyName": ""
+    },
+    "GrantTokens": [
+        ""
+    ]
+}

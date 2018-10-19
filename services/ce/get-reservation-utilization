@@ -1,0 +1,35 @@
+{
+    "TimePeriod": {
+        "Start": "",
+        "End": ""
+    },
+    "GroupBy": [
+        {
+            "Type": "DIMENSION",
+            "Key": ""
+        }
+    ],
+    "Granularity": "MONTHLY",
+    "Filter": {
+        "Or": [
+            {}
+        ],
+        "And": [
+            {}
+        ],
+        "Not": {},
+        "Dimensions": {
+            "Key": "USAGE_TYPE",
+            "Values": [
+                ""
+            ]
+        },
+        "Tags": {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    },
+    "NextPageToken": ""
+}

@@ -1,0 +1,14 @@
+{
+    "restApiId": "",
+    "name": "",
+    "type": "COGNITO_USER_POOLS",
+    "providerARNs": [
+        ""
+    ],
+    "authType": "",
+    "authorizerUri": "",
+    "authorizerCredentials": "",
+    "identitySource": "",
+    "identityValidationExpression": "",
+    "authorizerResultTtlInSeconds": 0
+}

@@ -1,0 +1,9 @@
+{
+    "DirectoryArn": "",
+    "TargetReference": {
+        "Selector": ""
+    },
+    "NextToken": "",
+    "MaxResults": 0,
+    "ConsistencyLevel": "EVENTUAL"
+}

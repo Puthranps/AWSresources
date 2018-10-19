@@ -1,0 +1,116 @@
+{
+    "ChannelId": "",
+    "CmafPackage": {
+        "Encryption": {
+            "KeyRotationIntervalSeconds": 0,
+            "SpekeKeyProvider": {
+                "ResourceId": "",
+                "RoleArn": "",
+                "SystemIds": [
+                    ""
+                ],
+                "Url": ""
+            }
+        },
+        "HlsManifests": [
+            {
+                "AdMarkers": "SCTE35_ENHANCED",
+                "Id": "",
+                "IncludeIframeOnlyStream": true,
+                "ManifestName": "",
+                "PlaylistType": "EVENT",
+                "PlaylistWindowSeconds": 0,
+                "ProgramDateTimeIntervalSeconds": 0
+            }
+        ],
+        "SegmentDurationSeconds": 0,
+        "SegmentPrefix": "",
+        "StreamSelection": {
+            "MaxVideoBitsPerSecond": 0,
+            "MinVideoBitsPerSecond": 0,
+            "StreamOrder": "VIDEO_BITRATE_DESCENDING"
+        }
+    },
+    "DashPackage": {
+        "Encryption": {
+            "KeyRotationIntervalSeconds": 0,
+            "SpekeKeyProvider": {
+                "ResourceId": "",
+                "RoleArn": "",
+                "SystemIds": [
+                    ""
+                ],
+                "Url": ""
+            }
+        },
+        "ManifestWindowSeconds": 0,
+        "MinBufferTimeSeconds": 0,
+        "MinUpdatePeriodSeconds": 0,
+        "PeriodTriggers": [
+            "ADS"
+        ],
+        "Profile": "NONE",
+        "SegmentDurationSeconds": 0,
+        "StreamSelection": {
+            "MaxVideoBitsPerSecond": 0,
+            "MinVideoBitsPerSecond": 0,
+            "StreamOrder": "VIDEO_BITRATE_DESCENDING"
+        },
+        "SuggestedPresentationDelaySeconds": 0
+    },
+    "Description": "",
+    "HlsPackage": {
+        "AdMarkers": "PASSTHROUGH",
+        "Encryption": {
+            "ConstantInitializationVector": "",
+            "EncryptionMethod": "AES_128",
+            "KeyRotationIntervalSeconds": 0,
+            "RepeatExtXKey": true,
+            "SpekeKeyProvider": {
+                "ResourceId": "",
+                "RoleArn": "",
+                "SystemIds": [
+                    ""
+                ],
+                "Url": ""
+            }
+        },
+        "IncludeIframeOnlyStream": true,
+        "PlaylistType": "EVENT",
+        "PlaylistWindowSeconds": 0,
+        "ProgramDateTimeIntervalSeconds": 0,
+        "SegmentDurationSeconds": 0,
+        "StreamSelection": {
+            "MaxVideoBitsPerSecond": 0,
+            "MinVideoBitsPerSecond": 0,
+            "StreamOrder": "ORIGINAL"
+        },
+        "UseAudioRenditionGroup": true
+    },
+    "Id": "",
+    "ManifestName": "",
+    "MssPackage": {
+        "Encryption": {
+            "SpekeKeyProvider": {
+                "ResourceId": "",
+                "RoleArn": "",
+                "SystemIds": [
+                    ""
+                ],
+                "Url": ""
+            }
+        },
+        "ManifestWindowSeconds": 0,
+        "SegmentDurationSeconds": 0,
+        "StreamSelection": {
+            "MaxVideoBitsPerSecond": 0,
+            "MinVideoBitsPerSecond": 0,
+            "StreamOrder": "ORIGINAL"
+        }
+    },
+    "StartoverWindowSeconds": 0,
+    "TimeDelaySeconds": 0,
+    "Whitelist": [
+        ""
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "DirectoryArn": "",
+    "OrderedIndexedAttributeList": [
+        {
+            "SchemaArn": "",
+            "FacetName": "",
+            "Name": ""
+        }
+    ],
+    "IsUnique": true,
+    "ParentReference": {
+        "Selector": ""
+    },
+    "LinkName": ""
+}

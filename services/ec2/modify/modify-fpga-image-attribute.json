@@ -1,0 +1,31 @@
+{
+    "DryRun": true,
+    "FpgaImageId": "",
+    "Attribute": "loadPermission",
+    "OperationType": "add",
+    "UserIds": [
+        ""
+    ],
+    "UserGroups": [
+        ""
+    ],
+    "ProductCodes": [
+        ""
+    ],
+    "LoadPermission": {
+        "Add": [
+            {
+                "Group": "all",
+                "UserId": ""
+            }
+        ],
+        "Remove": [
+            {
+                "Group": "all",
+                "UserId": ""
+            }
+        ]
+    },
+    "Description": "",
+    "Name": ""
+}

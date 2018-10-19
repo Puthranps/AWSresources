@@ -1,0 +1,13 @@
+{
+    "ConfigurationRecorder": {
+        "name": "",
+        "roleARN": "",
+        "recordingGroup": {
+            "allSupported": true,
+            "includeGlobalResourceTypes": true,
+            "resourceTypes": [
+                "AWS::IAM::Policy"
+            ]
+        }
+    }
+}

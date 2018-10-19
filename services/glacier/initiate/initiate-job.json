@@ -1,0 +1,73 @@
+{
+    "accountId": "",
+    "vaultName": "",
+    "jobParameters": {
+        "Format": "",
+        "Type": "",
+        "ArchiveId": "",
+        "Description": "",
+        "SNSTopic": "",
+        "RetrievalByteRange": "",
+        "Tier": "",
+        "InventoryRetrievalParameters": {
+            "StartDate": "",
+            "EndDate": "",
+            "Limit": "",
+            "Marker": ""
+        },
+        "SelectParameters": {
+            "InputSerialization": {
+                "csv": {
+                    "FileHeaderInfo": "NONE",
+                    "Comments": "",
+                    "QuoteEscapeCharacter": "",
+                    "RecordDelimiter": "",
+                    "FieldDelimiter": "",
+                    "QuoteCharacter": ""
+                }
+            },
+            "ExpressionType": "SQL",
+            "Expression": "",
+            "OutputSerialization": {
+                "csv": {
+                    "QuoteFields": "ALWAYS",
+                    "QuoteEscapeCharacter": "",
+                    "RecordDelimiter": "",
+                    "FieldDelimiter": "",
+                    "QuoteCharacter": ""
+                }
+            }
+        },
+        "OutputLocation": {
+            "S3": {
+                "BucketName": "",
+                "Prefix": "",
+                "Encryption": {
+                    "EncryptionType": "AES256",
+                    "KMSKeyId": "",
+                    "KMSContext": ""
+                },
+                "CannedACL": "authenticated-read",
+                "AccessControlList": [
+                    {
+                        "Grantee": {
+                            "Type": "AmazonCustomerByEmail",
+                            "DisplayName": "",
+                            "URI": "",
+                            "ID": "",
+                            "EmailAddress": ""
+                        },
+                        "Permission": "READ"
+                    }
+                ],
+                "Tagging": {
+                    "KeyName": ""
+                },
+                "UserMetadata": {
+                    "KeyName": ""
+                },
+                "StorageClass": "REDUCED_REDUNDANCY"
+            }
+        }
+    }
+}

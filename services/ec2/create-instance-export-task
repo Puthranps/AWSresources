@@ -1,0 +1,11 @@
+{
+    "Description": "",
+    "ExportToS3Task": {
+        "ContainerFormat": "ova",
+        "DiskImageFormat": "VMDK",
+        "S3Bucket": "",
+        "S3Prefix": ""
+    },
+    "InstanceId": "",
+    "TargetEnvironment": "microsoft"
+}

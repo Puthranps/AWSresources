@@ -1,0 +1,41 @@
+{
+    "DBName": "",
+    "ClusterIdentifier": "",
+    "ClusterType": "",
+    "NodeType": "",
+    "MasterUsername": "",
+    "MasterUserPassword": "",
+    "ClusterSecurityGroups": [
+        ""
+    ],
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "ClusterSubnetGroupName": "",
+    "AvailabilityZone": "",
+    "PreferredMaintenanceWindow": "",
+    "ClusterParameterGroupName": "",
+    "AutomatedSnapshotRetentionPeriod": 0,
+    "Port": 0,
+    "ClusterVersion": "",
+    "AllowVersionUpgrade": true,
+    "NumberOfNodes": 0,
+    "PubliclyAccessible": true,
+    "Encrypted": true,
+    "HsmClientCertificateIdentifier": "",
+    "HsmConfigurationIdentifier": "",
+    "ElasticIp": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "KmsKeyId": "",
+    "EnhancedVpcRouting": true,
+    "AdditionalInfo": "",
+    "IamRoles": [
+        ""
+    ],
+    "MaintenanceTrackName": ""
+}

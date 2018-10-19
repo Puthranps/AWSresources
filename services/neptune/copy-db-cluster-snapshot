@@ -1,0 +1,14 @@
+{
+    "SourceDBClusterSnapshotIdentifier": "",
+    "TargetDBClusterSnapshotIdentifier": "",
+    "KmsKeyId": "",
+    "PreSignedUrl": "",
+    "CopyTags": true,
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "SourceRegion": ""
+}

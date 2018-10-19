@@ -1,0 +1,163 @@
+[ :ref:`aws <cli:aws>` . :ref:`mq <cli:aws mq>` ]
+
+.. _cli:aws mq update-broker:
+
+
+*************
+update-broker
+*************
+
+
+
+===========
+Description
+===========
+
+Adds a pending configuration change to a broker.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UpdateBroker>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-broker
+  [--auto-minor-version-upgrade | --no-auto-minor-version-upgrade]
+  --broker-id <value>
+  [--configuration <value>]
+  [--engine-version <value>]
+  [--logs <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--auto-minor-version-upgrade`` | ``--no-auto-minor-version-upgrade`` (boolean)
+Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic upgrades occur during the maintenance window of the broker or after a manual broker reboot.
+
+``--broker-id`` (string)
+The name of the broker. This value must be unique in your AWS account, 1-50 characters long, must contain only letters, numbers, dashes, and underscores, and must not contain whitespaces, brackets, wildcard characters, or special characters.
+
+``--configuration`` (structure)
+A list of information about the configuration.
+
+
+
+Shorthand Syntax::
+
+    Id=string,Revision=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "Id": "string",
+    "Revision": integer
+  }
+
+
+
+``--engine-version`` (string)
+The version of the broker engine. Note: Currently, Amazon MQ supports only 5.15.6 and 5.15.0.
+
+``--logs`` (structure)
+Enables Amazon CloudWatch logging for brokers.
+
+
+
+Shorthand Syntax::
+
+    Audit=boolean,General=boolean
+
+
+
+
+JSON Syntax::
+
+  {
+    "Audit": true|false,
+    "General": true|false
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+AutoMinorVersionUpgrade -> (boolean)
+
+  The new value of automatic upgrades to new minor version for brokers.
+
+  
+
+BrokerId -> (string)
+
+  Required. The unique ID that Amazon MQ generates for the broker.
+
+  
+
+Configuration -> (structure)
+
+  The ID of the updated configuration.
+
+  Id -> (string)
+
+    Required. The unique ID that Amazon MQ generates for the configuration.
+
+    
+
+  Revision -> (integer)
+
+    The revision number of the configuration.
+
+    
+
+  
+
+EngineVersion -> (string)
+
+  The version of the broker engine to upgrade to.
+
+  
+
+Logs -> (structure)
+
+  The list of information about logs to be enabled for the specified broker.
+
+  Audit -> (boolean)
+
+    Enables audit logging. Every user management action made using JMX or the ActiveMQ Web Console is logged.
+
+    
+
+  General -> (boolean)
+
+    Enables general logging.
+
+    
+
+  
+

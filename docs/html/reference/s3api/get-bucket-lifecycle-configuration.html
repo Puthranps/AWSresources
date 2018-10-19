@@ -1,0 +1,358 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-bucket-lifecycle-configuration &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="s3api" href="../s3api/index.html" />
+    <link rel="next" title="get-bucket-location" href="../s3api/get-bucket-location.html" />
+    <link rel="prev" title="get-bucket-inventory-configuration" href="../s3api/get-bucket-inventory-configuration.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-location.html" title="get-bucket-location"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-inventory-configuration.html" title="get-bucket-inventory-configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../s3api/index.html" accesskey="U">s3api</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../s3api/get-bucket-inventory-configuration.html" title="previous chapter (use the left arrow)">&larr; get-bucket-inventory-configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../s3api/get-bucket-location.html" title="next chapter (use the right arrow)">get-bucket-location &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-bucket-lifecycle-configuration</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/s3api/get-bucket-lifecycle-configuration">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../s3api/index.html#cli-aws-s3api"><em>s3api</em></a> ]</p>
+<div class="section" id="get-bucket-lifecycle-configuration">
+<span id="cli-aws-s3api-get-bucket-lifecycle-configuration"></span><h1>get-bucket-lifecycle-configuration<a class="headerlink" href="#get-bucket-lifecycle-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns the lifecycle configuration information set on the bucket.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketLifecycleConfiguration">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-bucket-lifecycle-configuration
+--bucket &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--bucket</span></tt> (string)</p>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following command retrieves the lifecycle configuration for a bucket named <tt class="docutils literal"><span class="pre">my-bucket</span></tt>:</p>
+<div class="highlight-python"><pre>aws s3api get-bucket-lifecycle-configuration --bucket my-bucket</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;Rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;Move rotated logs to Glacier&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;rotated/&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Enabled&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Transitions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Date&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-11-10T00:00:00.000Z&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;StorageClass&quot;</span><span class="p">:</span> <span class="s2">&quot;GLACIER&quot;</span>
+                <span class="p">}</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Enabled&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;NoncurrentVersionTransitions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;NoncurrentDays&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                    <span class="s2">&quot;StorageClass&quot;</span><span class="p">:</span> <span class="s2">&quot;GLACIER&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;Move old versions to Glacier&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Rules -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Expiration -&gt; (structure)</p>
+<blockquote>
+<div><p>Date -&gt; (timestamp)</p>
+<blockquote>
+<div>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</div></blockquote>
+<p>Days -&gt; (integer)</p>
+<blockquote>
+<div>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</div></blockquote>
+<p>ExpiredObjectDeleteMarker -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether Amazon S3 will remove a delete marker with no noncurrent versions. If set to true, the delete marker will be expired; if set to false the policy takes no action. This cannot be specified with Days or Date in a Lifecycle Expiration Policy.</div></blockquote>
+</div></blockquote>
+<p>ID -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for the rule. The value cannot be longer than 255 characters.</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>Prefix identifying one or more objects to which the rule applies. This is deprecated; use Filter instead.</div></blockquote>
+<p>Filter -&gt; (structure)</p>
+<blockquote>
+<div><p>The Filter is used to identify objects that a Lifecycle Rule applies to. A Filter must have exactly one of Prefix, Tag, or And specified.</p>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>Prefix identifying one or more objects to which the rule applies.</div></blockquote>
+<p>Tag -&gt; (structure)</p>
+<blockquote>
+<div><p>This tag must exist in the object's tag set in order for the rule to apply.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>Name of the tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>Value of the tag.</div></blockquote>
+</div></blockquote>
+<p>And -&gt; (structure)</p>
+<blockquote>
+<div><p>This is used in a Lifecycle Rule Filter to apply a logical AND to two or more predicates. The Lifecycle Rule will apply to any object matching all of the predicates configured inside the And operator.</p>
+<p>Prefix -&gt; (string)</p>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>All of these tags must exist in the object's tag set in order for the rule to apply.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Key -&gt; (string)</p>
+<blockquote>
+<div>Name of the tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>Value of the tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is not currently being applied.</div></blockquote>
+<p>Transitions -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Date -&gt; (timestamp)</p>
+<blockquote>
+<div>Indicates at what date the object is to be moved or deleted. Should be in GMT ISO 8601 Format.</div></blockquote>
+<p>Days -&gt; (integer)</p>
+<blockquote>
+<div>Indicates the lifetime, in days, of the objects that are subject to the rule. The value must be a non-zero positive integer.</div></blockquote>
+<p>StorageClass -&gt; (string)</p>
+<blockquote>
+<div>The class of storage used to store the object.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NoncurrentVersionTransitions -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Container for the transition rule that describes when noncurrent objects transition to the STANDARD_IA, ONEZONE_IA or GLACIER storage class. If your bucket is versioning-enabled (or versioning is suspended), you can set this action to request that Amazon S3 transition noncurrent object versions to the STANDARD_IA, ONEZONE_IA or GLACIER storage class at a specific period in the object's lifetime.</p>
+<p>NoncurrentDays -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple Storage Service Developer Guide.</div></blockquote>
+<p>StorageClass -&gt; (string)</p>
+<blockquote>
+<div>The class of storage used to store the object.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NoncurrentVersionExpiration -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies when noncurrent object versions expire. Upon expiration, Amazon S3 permanently deletes the noncurrent object versions. You set this lifecycle configuration action on a bucket that has versioning enabled (or suspended) to request that Amazon S3 delete noncurrent object versions at a specific period in the object's lifetime.</p>
+<p>NoncurrentDays -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the number of days an object is noncurrent before Amazon S3 can perform the associated action. For information about the noncurrent days calculations, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">How Amazon S3 Calculates When an Object Became Noncurrent</a> in the Amazon Simple Storage Service Developer Guide.</div></blockquote>
+</div></blockquote>
+<p>AbortIncompleteMultipartUpload -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the days since the initiation of an Incomplete Multipart Upload that Lifecycle will wait before permanently removing all parts of the upload.</p>
+<p>DaysAfterInitiation -&gt; (integer)</p>
+<blockquote>
+<div>Indicates the number of days that must pass since initiation for Lifecycle to abort an Incomplete Multipart Upload.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../s3api/get-bucket-inventory-configuration.html" title="previous chapter (use the left arrow)">&larr; get-bucket-inventory-configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../s3api/get-bucket-location.html" title="next chapter (use the right arrow)">get-bucket-location &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-location.html" title="get-bucket-location"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-inventory-configuration.html" title="get-bucket-inventory-configuration"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../s3api/index.html" >s3api</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

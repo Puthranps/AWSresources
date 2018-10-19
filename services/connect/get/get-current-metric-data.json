@@ -1,0 +1,22 @@
+{
+    "InstanceId": "",
+    "Filters": {
+        "Queues": [
+            ""
+        ],
+        "Channels": [
+            "VOICE"
+        ]
+    },
+    "Groupings": [
+        "QUEUE"
+    ],
+    "CurrentMetrics": [
+        {
+            "Name": "AGENTS_AFTER_CONTACT_WORK",
+            "Unit": "PERCENT"
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

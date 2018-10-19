@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>logs &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="associate-kms-key" href="../logs/associate-kms-key.html" />
+    <link rel="prev" title="update-relational-database-parameters" href="../lightsail/update-relational-database-parameters.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../logs/associate-kms-key.html" title="associate-kms-key"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../lightsail/update-relational-database-parameters.html" title="update-relational-database-parameters"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lightsail/update-relational-database-parameters.html" title="previous chapter (use the left arrow)">&larr; update-relational-database-parameters</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../logs/associate-kms-key.html" title="next chapter (use the right arrow)">associate-kms-key &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">logs</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/logs/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="logs">
+<span id="cli-aws-logs"></span><h1>logs<a class="headerlink" href="#logs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>You can use Amazon CloudWatch Logs to monitor, store, and access your log files from Amazon EC2 instances, AWS CloudTrail, or other sources. You can then retrieve the associated log data from CloudWatch Logs using the CloudWatch console, CloudWatch Logs commands in the AWS CLI, CloudWatch Logs API, or CloudWatch Logs SDK.</p>
+<p>You can use CloudWatch Logs to:</p>
+<ul class="simple">
+<li><strong>Monitor logs from EC2 instances in real-time</strong> : You can use CloudWatch Logs to monitor applications and systems using log data. For example, CloudWatch Logs can track the number of errors that occur in your application logs and send you a notification whenever the rate of errors exceeds a threshold that you specify. CloudWatch Logs uses your log data for monitoring; so, no code changes are required. For example, you can monitor application logs for specific literal terms (such as &quot;NullReferenceException&quot;) or count the number of occurrences of a literal term at a particular position in log data (such as &quot;404&quot; status codes in an Apache access log). When the term you are searching for is found, CloudWatch Logs reports the data to a CloudWatch metric that you specify.</li>
+<li><strong>Monitor AWS CloudTrail logged events</strong> : You can create alarms in CloudWatch and receive notifications of particular API activity as captured by CloudTrail and use the notification to perform troubleshooting.</li>
+<li><strong>Archive log data</strong> : You can use CloudWatch Logs to store your log data in highly durable storage. You can change the log retention setting so that any log events older than this setting are automatically deleted. The CloudWatch Logs agent makes it easy to quickly send both rotated and non-rotated log data off of a host and into the log service. You can then access the raw log data when you need it.</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../logs/associate-kms-key.html">associate-kms-key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/cancel-export-task.html">cancel-export-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/create-export-task.html">create-export-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/create-log-group.html">create-log-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/create-log-stream.html">create-log-stream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-destination.html">delete-destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-log-group.html">delete-log-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-log-stream.html">delete-log-stream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-metric-filter.html">delete-metric-filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-resource-policy.html">delete-resource-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-retention-policy.html">delete-retention-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/delete-subscription-filter.html">delete-subscription-filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-destinations.html">describe-destinations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-export-tasks.html">describe-export-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-log-groups.html">describe-log-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-log-streams.html">describe-log-streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-metric-filters.html">describe-metric-filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-resource-policies.html">describe-resource-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/describe-subscription-filters.html">describe-subscription-filters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/disassociate-kms-key.html">disassociate-kms-key</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/filter-log-events.html">filter-log-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/get-log-events.html">get-log-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/list-tags-log-group.html">list-tags-log-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-destination.html">put-destination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-destination-policy.html">put-destination-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-log-events.html">put-log-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-metric-filter.html">put-metric-filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-resource-policy.html">put-resource-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-retention-policy.html">put-retention-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/put-subscription-filter.html">put-subscription-filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/tag-log-group.html">tag-log-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/test-metric-filter.html">test-metric-filter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../logs/untag-log-group.html">untag-log-group</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lightsail/update-relational-database-parameters.html" title="previous chapter (use the left arrow)">&larr; update-relational-database-parameters</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../logs/associate-kms-key.html" title="next chapter (use the right arrow)">associate-kms-key &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../logs/associate-kms-key.html" title="associate-kms-key"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../lightsail/update-relational-database-parameters.html" title="update-relational-database-parameters"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

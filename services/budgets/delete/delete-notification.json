@@ -1,0 +1,10 @@
+{
+    "AccountId": "",
+    "BudgetName": "",
+    "Notification": {
+        "NotificationType": "ACTUAL",
+        "ComparisonOperator": "LESS_THAN",
+        "Threshold": null,
+        "ThresholdType": "ABSOLUTE_VALUE"
+    }
+}

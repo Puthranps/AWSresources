@@ -1,0 +1,31 @@
+{
+    "Name": "",
+    "TriggerUpdate": {
+        "Name": "",
+        "Description": "",
+        "Schedule": "",
+        "Actions": [
+            {
+                "JobName": "",
+                "Arguments": {
+                    "KeyName": ""
+                },
+                "Timeout": 0,
+                "NotificationProperty": {
+                    "NotifyDelayAfter": 0
+                },
+                "SecurityConfiguration": ""
+            }
+        ],
+        "Predicate": {
+            "Logical": "ANY",
+            "Conditions": [
+                {
+                    "LogicalOperator": "EQUALS",
+                    "JobName": "",
+                    "State": "RUNNING"
+                }
+            ]
+        }
+    }
+}

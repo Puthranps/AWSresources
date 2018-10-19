@@ -1,0 +1,10 @@
+{
+    "EndpointName": "",
+    "DesiredWeightsAndCapacities": [
+        {
+            "VariantName": "",
+            "DesiredWeight": 0.0,
+            "DesiredInstanceCount": 0
+        }
+    ]
+}

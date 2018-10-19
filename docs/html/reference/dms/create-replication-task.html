@@ -1,0 +1,448 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-replication-task &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="dms" href="../dms/index.html" />
+    <link rel="next" title="delete-certificate" href="../dms/delete-certificate.html" />
+    <link rel="prev" title="create-replication-subnet-group" href="../dms/create-replication-subnet-group.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../dms/delete-certificate.html" title="delete-certificate"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dms/create-replication-subnet-group.html" title="create-replication-subnet-group"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../dms/index.html" accesskey="U">dms</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/create-replication-subnet-group.html" title="previous chapter (use the left arrow)">&larr; create-replication-subnet-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../dms/delete-certificate.html" title="next chapter (use the right arrow)">delete-certificate &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-replication-task</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/dms/create-replication-task">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../dms/index.html#cli-aws-dms"><em>dms</em></a> ]</p>
+<div class="section" id="create-replication-task">
+<span id="cli-aws-dms-create-replication-task"></span><h1>create-replication-task<a class="headerlink" href="#create-replication-task" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a replication task using the specified parameters.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateReplicationTask">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-replication-task
+--replication-task-identifier &lt;value&gt;
+--source-endpoint-arn &lt;value&gt;
+--target-endpoint-arn &lt;value&gt;
+--replication-instance-arn &lt;value&gt;
+--migration-type &lt;value&gt;
+--table-mappings &lt;value&gt;
+[--replication-task-settings &lt;value&gt;]
+[--cdc-start-time &lt;value&gt;]
+[--cdc-start-position &lt;value&gt;]
+[--cdc-stop-position &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--replication-task-identifier</span></tt> (string)</p>
+<blockquote>
+<div><p>The replication task identifier.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
+<li>First character must be a letter.</li>
+<li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--source-endpoint-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--target-endpoint-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--replication-instance-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the replication instance.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--migration-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The migration type.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">full-load</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">cdc</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">full-load-and-cdc</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--table-mappings</span></tt> (string)</p>
+<blockquote>
+<div><p>When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the path with &quot;<a class="reference external" href="file://">file://</a>&quot;. When working with the DMS API, provide the JSON as the parameter value.</p>
+<p>For example, --table-mappings <a class="reference external" href="file://mappingfile.json">file://mappingfile.json</a></p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--replication-task-settings</span></tt> (string)</p>
+<blockquote>
+<div>Settings for the task, such as target metadata settings. For a complete list of task settings, see <a class="reference external" href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TaskSettings.html">Task Settings for AWS Database Migration Service Tasks</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cdc-start-time</span></tt> (timestamp)</p>
+<blockquote>
+<div><p>Indicates the start time for a change data capture (CDC) operation. Use either CdcStartTime or CdcStartPosition to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+<p>Timestamp Example: --cdc-start-time “2018-03-08T12:12:12”</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cdc-start-position</span></tt> (string)</p>
+<blockquote>
+<div><p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+<p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+<p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+<p>Checkpoint Example: --cdc-start-position &quot;checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93&quot;</p>
+<p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cdc-stop-position</span></tt> (string)</p>
+<blockquote>
+<div><p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
+<p>Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”</p>
+<p>Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>Tags to be added to the replication instance.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following command creates a replication task to copy data from one DB instance behind a DMS endpoint to another using a replication instance:</p>
+<div class="highlight-python"><pre>aws dms create-replication-task --replicationtask-identifier my-replication-task --target-endpoint-arn arn:aws:dms:us-east-1:123456789012:endpoint:HTWNT57CLN2WGVBUJQXJZASXWE --source-endpoint-arn arn:aws:dms:us-east-1:123456789012:endpoint:ZW5UAN6P4E77EC7YWHK4RZZ3BE --replication-instance-arn arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ --migration-type full-load --table-mappings &#x27;file://table-mappings.json&#x27;</pre>
+</div>
+<p>The file <tt class="docutils literal"><span class="pre">table-mappings.json</span></tt> is a JSON document in the current folder that specifies table mappings:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TableMappings&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Include&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;company&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceTable&quot;</span><span class="p">:</span> <span class="s2">&quot;emp%&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Include&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;employees&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceTable&quot;</span><span class="p">:</span> <span class="s2">&quot;%&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Exclude&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;source101&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceTable&quot;</span><span class="p">:</span> <span class="s2">&quot;dep%&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Exclude&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;source102&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceTable&quot;</span><span class="p">:</span> <span class="s2">&quot;%&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Explicit&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;company&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceTable&quot;</span><span class="p">:</span> <span class="s2">&quot;managers&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Explicit&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceSchema&quot;</span><span class="p">:</span> <span class="s2">&quot;company&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SourceTable&quot;</span><span class="p">:</span> <span class="s2">&quot;locations&quot;</span>
+    <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;ReplicationTask&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;SourceEndpointArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:dms:us-east-1:123456789012:endpoint:ZW5UAN6P4E77EC7YWHK4RZZ3BE&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ReplicationTaskIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;task1&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ReplicationInstanceArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:dms:us-east-1:123456789012:rep:6UTDJGBOUS3VI3SUWA66XFJCJQ&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TableMappings&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\n</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">TableMappings</span><span class="se">\&quot;</span><span class="s2">: [</span><span class="se">\n</span><span class="s2"> {</span><span class="se">\n</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">Type</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">Include</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">SourceSchema</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">/</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\n</span><span class="s2"> </span><span class="se">\&quot;</span><span class="s2">SourceTable</span><span class="se">\&quot;</span><span class="s2">: </span><span class="se">\&quot;</span><span class="s2">/</span><span class="se">\&quot;\n</span><span class="s2">}</span><span class="se">\n</span><span class="s2"> ]</span><span class="se">\n</span><span class="s2">}</span><span class="se">\n\n</span><span class="s2">&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;creating&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ReplicationTaskArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:dms:us-east-1:123456789012:task:OEAMB3NXSTZ6LFYZFEPPBBXPYM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ReplicationTaskCreationDate&quot;</span><span class="p">:</span> <span class="mf">1457658407.492</span><span class="p">,</span>
+    <span class="s2">&quot;MigrationType&quot;</span><span class="p">:</span> <span class="s2">&quot;full-load&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;TargetEndpointArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:dms:us-east-1:123456789012:endpoint:ASXWXJZLNWNT5HTWCGV2BUJQ7E&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;ReplicationTaskSettings&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">TargetMetadata</span><span class="se">\&quot;</span><span class="s2">:{</span><span class="se">\&quot;</span><span class="s2">TargetSchema</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">SupportLobs</span><span class="se">\&quot;</span><span class="s2">:true,</span><span class="se">\&quot;</span><span class="s2">FullLobMode</span><span class="se">\&quot;</span><span class="s2">:true,</span><span class="se">\&quot;</span><span class="s2">LobChunkSize</span><span class="se">\&quot;</span><span class="s2">:64,</span><span class="se">\&quot;</span><span class="s2">LimitedSizeLobMode</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">LobMaxSize</span><span class="se">\&quot;</span><span class="s2">:0},</span><span class="se">\&quot;</span><span class="s2">FullLoadSettings</span><span class="se">\&quot;</span><span class="s2">:{</span><span class="se">\&quot;</span><span class="s2">FullLoadEnabled</span><span class="se">\&quot;</span><span class="s2">:true,</span><span class="se">\&quot;</span><span class="s2">ApplyChangesEnabled</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">TargetTablePrepMode</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">DROP_AND_CREATE</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">CreatePkAfterFullLoad</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">StopTaskCachedChangesApplied</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">StopTaskCachedChangesNotApplied</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">ResumeEnabled</span><span class="se">\&quot;</span><span class="s2">:false,</span><span class="se">\&quot;</span><span class="s2">ResumeMinTableSize</span><span class="se">\&quot;</span><span class="s2">:100000,</span><span class="se">\&quot;</span><span class="s2">ResumeOnlyClusteredPKTables</span><span class="se">\&quot;</span><span class="s2">:true,</span><span class="se">\&quot;</span><span class="s2">MaxFullLoadSubTasks</span><span class="se">\&quot;</span><span class="s2">:8,</span><span class="se">\&quot;</span><span class="s2">TransactionConsistencyTimeout</span><span class="se">\&quot;</span><span class="s2">:600,</span><span class="se">\&quot;</span><span class="s2">CommitRate</span><span class="se">\&quot;</span><span class="s2">:10000},</span><span class="se">\&quot;</span><span class="s2">Logging</span><span class="se">\&quot;</span><span class="s2">:{</span><span class="se">\&quot;</span><span class="s2">EnableLogging</span><span class="se">\&quot;</span><span class="s2">:false}}&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ReplicationTask -&gt; (structure)</p>
+<blockquote>
+<div><p>The replication task that was created.</p>
+<p>ReplicationTaskIdentifier -&gt; (string)</p>
+<blockquote>
+<div><p>The user-assigned replication task identifier or name.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>Must contain from 1 to 255 alphanumeric characters or hyphens.</li>
+<li>First character must be a letter.</li>
+<li>Cannot end with a hyphen or contain two consecutive hyphens.</li>
+</ul>
+</div></blockquote>
+<p>SourceEndpointArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+<p>TargetEndpointArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+<p>ReplicationInstanceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the replication instance.</div></blockquote>
+<p>MigrationType -&gt; (string)</p>
+<blockquote>
+<div>The type of migration.</div></blockquote>
+<p>TableMappings -&gt; (string)</p>
+<blockquote>
+<div>Table mappings specified in the task.</div></blockquote>
+<p>ReplicationTaskSettings -&gt; (string)</p>
+<blockquote>
+<div>The settings for the replication task.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the replication task.</div></blockquote>
+<p>LastFailureMessage -&gt; (string)</p>
+<blockquote>
+<div>The last error (failure) message generated for the replication instance.</div></blockquote>
+<p>StopReason -&gt; (string)</p>
+<blockquote>
+<div>The reason the replication task was stopped.</div></blockquote>
+<p>ReplicationTaskCreationDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the replication task was created.</div></blockquote>
+<p>ReplicationTaskStartDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the replication task is scheduled to start.</div></blockquote>
+<p>CdcStartPosition -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.</p>
+<p>The value can be in date, checkpoint, or LSN/SCN format.</p>
+<p>Date Example: --cdc-start-position “2018-03-08T12:12:12”</p>
+<p>Checkpoint Example: --cdc-start-position &quot;checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93&quot;</p>
+<p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+</div></blockquote>
+<p>CdcStopPosition -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.</p>
+<p>Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”</p>
+<p>Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+</div></blockquote>
+<p>RecoveryCheckpoint -&gt; (string)</p>
+<blockquote>
+<div>Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the <tt class="docutils literal"><span class="pre">CdcStartPosition</span></tt> parameter to start a CDC operation that begins at that checkpoint.</div></blockquote>
+<p>ReplicationTaskArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the replication task.</div></blockquote>
+<p>ReplicationTaskStats -&gt; (structure)</p>
+<blockquote>
+<div><p>The statistics for the task, including elapsed time, tables loaded, and table errors.</p>
+<p>FullLoadProgressPercent -&gt; (integer)</p>
+<blockquote>
+<div>The percent complete for the full load migration task.</div></blockquote>
+<p>ElapsedTimeMillis -&gt; (long)</p>
+<blockquote>
+<div>The elapsed time of the task, in milliseconds.</div></blockquote>
+<p>TablesLoaded -&gt; (integer)</p>
+<blockquote>
+<div>The number of tables loaded for this task.</div></blockquote>
+<p>TablesLoading -&gt; (integer)</p>
+<blockquote>
+<div>The number of tables currently loading for this task.</div></blockquote>
+<p>TablesQueued -&gt; (integer)</p>
+<blockquote>
+<div>The number of tables queued for this task.</div></blockquote>
+<p>TablesErrored -&gt; (integer)</p>
+<blockquote>
+<div>The number of errors that have occurred during this task.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/create-replication-subnet-group.html" title="previous chapter (use the left arrow)">&larr; create-replication-subnet-group</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../dms/delete-certificate.html" title="next chapter (use the right arrow)">delete-certificate &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../dms/delete-certificate.html" title="delete-certificate"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dms/create-replication-subnet-group.html" title="create-replication-subnet-group"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../dms/index.html" >dms</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

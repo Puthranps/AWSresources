@@ -1,0 +1,16 @@
+{
+    "InstanceId": "",
+    "LayerIds": [
+        ""
+    ],
+    "InstanceType": "",
+    "AutoScalingType": "load",
+    "Hostname": "",
+    "Os": "",
+    "AmiId": "",
+    "SshKeyName": "",
+    "Architecture": "x86_64",
+    "InstallUpdatesOnBoot": true,
+    "EbsOptimized": true,
+    "AgentVersion": ""
+}

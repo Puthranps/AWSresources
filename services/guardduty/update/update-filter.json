@@ -1,0 +1,23 @@
+{
+    "Action": "NOOP",
+    "Description": "",
+    "DetectorId": "",
+    "FilterName": "",
+    "FindingCriteria": {
+        "Criterion": {
+            "KeyName": {
+                "Eq": [
+                    ""
+                ],
+                "Gt": 0,
+                "Gte": 0,
+                "Lt": 0,
+                "Lte": 0,
+                "Neq": [
+                    ""
+                ]
+            }
+        }
+    },
+    "Rank": 0
+}

@@ -1,0 +1,14 @@
+{
+    "AmznClientToken": "",
+    "InitialVersion": {
+        "Devices": [
+            {
+                "CertificateArn": "",
+                "Id": "",
+                "SyncShadow": true,
+                "ThingArn": ""
+            }
+        ]
+    },
+    "Name": ""
+}

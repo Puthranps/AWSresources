@@ -1,0 +1,8 @@
+{
+    "ServiceNamespace": "rds",
+    "ResourceId": "",
+    "ScalableDimension": "dynamodb:index:WriteCapacityUnits",
+    "MinCapacity": 0,
+    "MaxCapacity": 0,
+    "RoleARN": ""
+}

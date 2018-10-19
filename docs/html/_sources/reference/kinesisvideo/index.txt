@@ -1,0 +1,40 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws kinesisvideo:
+
+
+************
+kinesisvideo
+************
+
+
+
+===========
+Description
+===========
+
+
+
+
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-stream
+  delete-stream
+  describe-stream
+  get-data-endpoint
+  list-streams
+  list-tags-for-stream
+  tag-stream
+  untag-stream
+  update-data-retention
+  update-stream

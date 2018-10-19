@@ -1,0 +1,357 @@
+[ :ref:`aws <cli:aws>` . :ref:`appstream <cli:aws appstream>` ]
+
+.. _cli:aws appstream describe-stacks:
+
+
+***************
+describe-stacks
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a list that describes one or more specified stacks, if the stack names are provided. Otherwise, all stacks in the account are described.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeStacks>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-stacks
+  [--names <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--names`` (list)
+
+
+  The names of the stacks to describe.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--next-token`` (string)
+
+
+  The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Stacks -> (list)
+
+  
+
+  Information about the stacks.
+
+  
+
+  (structure)
+
+    
+
+    Describes a stack.
+
+    
+
+    Arn -> (string)
+
+      
+
+      The ARN of the stack.
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The name of the stack.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      The description for display.
+
+      
+
+      
+
+    DisplayName -> (string)
+
+      
+
+      The stack name for display.
+
+      
+
+      
+
+    CreatedTime -> (timestamp)
+
+      
+
+      The time the stack was created.
+
+      
+
+      
+
+    StorageConnectors -> (list)
+
+      
+
+      The storage connectors to enable.
+
+      
+
+      (structure)
+
+        
+
+        Describes a connector to enable persistent storage for users.
+
+        
+
+        ConnectorType -> (string)
+
+          
+
+          The type of storage connector.
+
+          
+
+          
+
+        ResourceIdentifier -> (string)
+
+          
+
+          The ARN of the storage connector.
+
+          
+
+          
+
+        Domains -> (list)
+
+          
+
+          The names of the domains for the G Suite account.
+
+          
+
+          (string)
+
+            GSuite domain for GDrive integration.
+
+            
+
+          
+
+        
+
+      
+
+    RedirectURL -> (string)
+
+      
+
+      The URL that users are redirected to after their streaming session ends.
+
+      
+
+      
+
+    FeedbackURL -> (string)
+
+      
+
+      The URL that users are redirected to after they click the Send Feedback link. If no URL is specified, no Send Feedback link is displayed.
+
+      
+
+      
+
+    StackErrors -> (list)
+
+      
+
+      The errors for the stack.
+
+      
+
+      (structure)
+
+        
+
+        Describes a stack error.
+
+        
+
+        ErrorCode -> (string)
+
+          
+
+          The error code.
+
+          
+
+          
+
+        ErrorMessage -> (string)
+
+          
+
+          The error message.
+
+          
+
+          
+
+        
+
+      
+
+    UserSettings -> (list)
+
+      
+
+      The actions that are enabled or disabled for users during their streaming sessions. By default these actions are enabled.
+
+      
+
+      (structure)
+
+        
+
+        Describes an action and whether the action is enabled or disabled for users during their streaming sessions.
+
+        
+
+        Action -> (string)
+
+          
+
+          The action that is enabled or disabled.
+
+          
+
+          
+
+        Permission -> (string)
+
+          
+
+          Indicates whether the action is enabled or disabled.
+
+          
+
+          
+
+        
+
+      
+
+    ApplicationSettings -> (structure)
+
+      
+
+      The persistent application settings for users of the stack.
+
+      
+
+      Enabled -> (boolean)
+
+        
+
+        Specifies whether persistent application settings are enabled for users during their streaming sessions.
+
+        
+
+        
+
+      SettingsGroup -> (string)
+
+        
+
+        The path prefix for the S3 bucket where users’ persistent application settings are stored.
+
+        
+
+        
+
+      S3BucketName -> (string)
+
+        
+
+        The S3 bucket where users’ persistent application settings are stored. When persistent application settings are enabled for the first time for an account in an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account and the Region. 
+
+        
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.
+
+  
+
+  
+

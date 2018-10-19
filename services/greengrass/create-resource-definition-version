@@ -1,0 +1,35 @@
+{
+    "AmznClientToken": "",
+    "ResourceDefinitionId": "",
+    "Resources": [
+        {
+            "Id": "",
+            "Name": "",
+            "ResourceDataContainer": {
+                "LocalDeviceResourceData": {
+                    "GroupOwnerSetting": {
+                        "AutoAddGroupOwner": true,
+                        "GroupOwner": ""
+                    },
+                    "SourcePath": ""
+                },
+                "LocalVolumeResourceData": {
+                    "DestinationPath": "",
+                    "GroupOwnerSetting": {
+                        "AutoAddGroupOwner": true,
+                        "GroupOwner": ""
+                    },
+                    "SourcePath": ""
+                },
+                "S3MachineLearningModelResourceData": {
+                    "DestinationPath": "",
+                    "S3Uri": ""
+                },
+                "SageMakerMachineLearningModelResourceData": {
+                    "DestinationPath": "",
+                    "SageMakerJobArn": ""
+                }
+            }
+        }
+    ]
+}

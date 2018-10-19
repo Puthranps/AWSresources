@@ -1,0 +1,15 @@
+{
+    "CustomerGatewayId": "",
+    "Type": "",
+    "VpnGatewayId": "",
+    "DryRun": true,
+    "Options": {
+        "StaticRoutesOnly": true,
+        "TunnelOptions": [
+            {
+                "TunnelInsideCidr": "",
+                "PreSharedKey": ""
+            }
+        ]
+    }
+}

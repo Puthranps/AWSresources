@@ -1,0 +1,7 @@
+{
+    "StackId": "",
+    "IamUserArn": "",
+    "AllowSsh": true,
+    "AllowSudo": true,
+    "Level": ""
+}

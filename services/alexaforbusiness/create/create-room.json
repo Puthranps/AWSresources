@@ -1,0 +1,13 @@
+{
+    "RoomName": "",
+    "Description": "",
+    "ProfileArn": "",
+    "ProviderCalendarId": "",
+    "ClientRequestToken": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

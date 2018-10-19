@@ -1,0 +1,343 @@
+[ :ref:`aws <cli:aws>` . :ref:`dms <cli:aws dms>` ]
+
+.. _cli:aws dms start-replication-task-assessment:
+
+
+*********************************
+start-replication-task-assessment
+*********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Starts the replication task assessment for unsupported data types in the source database. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/StartReplicationTaskAssessment>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    start-replication-task-assessment
+  --replication-task-arn <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--replication-task-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the replication task. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ReplicationTask -> (structure)
+
+  
+
+  The assessed replication task. 
+
+  
+
+  ReplicationTaskIdentifier -> (string)
+
+    
+
+    The user-assigned replication task identifier or name.
+
+     
+
+    Constraints:
+
+     
+
+     
+    * Must contain from 1 to 255 alphanumeric characters or hyphens. 
+     
+    * First character must be a letter. 
+     
+    * Cannot end with a hyphen or contain two consecutive hyphens. 
+     
+
+    
+
+    
+
+  SourceEndpointArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+
+    
+
+    
+
+  TargetEndpointArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+
+    
+
+    
+
+  ReplicationInstanceArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the replication instance.
+
+    
+
+    
+
+  MigrationType -> (string)
+
+    
+
+    The type of migration.
+
+    
+
+    
+
+  TableMappings -> (string)
+
+    
+
+    Table mappings specified in the task.
+
+    
+
+    
+
+  ReplicationTaskSettings -> (string)
+
+    
+
+    The settings for the replication task.
+
+    
+
+    
+
+  Status -> (string)
+
+    
+
+    The status of the replication task.
+
+    
+
+    
+
+  LastFailureMessage -> (string)
+
+    
+
+    The last error (failure) message generated for the replication instance.
+
+    
+
+    
+
+  StopReason -> (string)
+
+    
+
+    The reason the replication task was stopped.
+
+    
+
+    
+
+  ReplicationTaskCreationDate -> (timestamp)
+
+    
+
+    The date the replication task was created.
+
+    
+
+    
+
+  ReplicationTaskStartDate -> (timestamp)
+
+    
+
+    The date the replication task is scheduled to start.
+
+    
+
+    
+
+  CdcStartPosition -> (string)
+
+    
+
+    Indicates when you want a change data capture (CDC) operation to start. Use either CdcStartPosition or CdcStartTime to specify when you want a CDC operation to start. Specifying both values results in an error.
+
+     
+
+    The value can be in date, checkpoint, or LSN/SCN format.
+
+     
+
+    Date Example: --cdc-start-position “2018-03-08T12:12:12”
+
+     
+
+    Checkpoint Example: --cdc-start-position "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"
+
+     
+
+    LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”
+
+    
+
+    
+
+  CdcStopPosition -> (string)
+
+    
+
+    Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time or commit time.
+
+     
+
+    Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+
+     
+
+    Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+
+    
+
+    
+
+  RecoveryCheckpoint -> (string)
+
+    
+
+    Indicates the last checkpoint that occurred during a change data capture (CDC) operation. You can provide this value to the ``CdcStartPosition`` parameter to start a CDC operation that begins at that checkpoint.
+
+    
+
+    
+
+  ReplicationTaskArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the replication task.
+
+    
+
+    
+
+  ReplicationTaskStats -> (structure)
+
+    
+
+    The statistics for the task, including elapsed time, tables loaded, and table errors.
+
+    
+
+    FullLoadProgressPercent -> (integer)
+
+      
+
+      The percent complete for the full load migration task.
+
+      
+
+      
+
+    ElapsedTimeMillis -> (long)
+
+      
+
+      The elapsed time of the task, in milliseconds.
+
+      
+
+      
+
+    TablesLoaded -> (integer)
+
+      
+
+      The number of tables loaded for this task.
+
+      
+
+      
+
+    TablesLoading -> (integer)
+
+      
+
+      The number of tables currently loading for this task.
+
+      
+
+      
+
+    TablesQueued -> (integer)
+
+      
+
+      The number of tables queued for this task.
+
+      
+
+      
+
+    TablesErrored -> (integer)
+
+      
+
+      The number of errors that have occurred during this task.
+
+      
+
+      
+
+    
+
+  
+

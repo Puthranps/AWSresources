@@ -1,0 +1,17 @@
+{
+    "IdentityPoolId": "",
+    "IdentityId": "",
+    "DatasetName": "",
+    "DeviceId": "",
+    "RecordPatches": [
+        {
+            "Op": "replace",
+            "Key": "",
+            "Value": "",
+            "SyncCount": 0,
+            "DeviceLastModifiedDate": "1970-01-01T00:00:00"
+        }
+    ],
+    "SyncSessionToken": "",
+    "ClientContext": ""
+}

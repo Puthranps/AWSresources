@@ -1,0 +1,13 @@
+{
+    "AcceptLanguage": "",
+    "AccessLevelFilter": {
+        "Key": "Role",
+        "Value": ""
+    },
+    "SearchFilter": {
+        "Key": "",
+        "Value": ""
+    },
+    "PageSize": 0,
+    "PageToken": ""
+}

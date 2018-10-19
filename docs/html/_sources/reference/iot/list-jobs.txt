@@ -1,0 +1,245 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot <cli:aws iot>` ]
+
+.. _cli:aws iot list-jobs:
+
+
+*********
+list-jobs
+*********
+
+
+
+===========
+Description
+===========
+
+
+
+Lists jobs.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobs>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-jobs
+  [--status <value>]
+  [--target-selection <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--thing-group-name <value>]
+  [--thing-group-id <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--status`` (string)
+
+
+  An optional filter that lets you search for jobs that have the specified status.
+
+  
+
+  Possible values:
+
+  
+  *   ``IN_PROGRESS``
+
+  
+  *   ``CANCELED``
+
+  
+  *   ``COMPLETED``
+
+  
+  *   ``DELETION_IN_PROGRESS``
+
+  
+
+  
+
+``--target-selection`` (string)
+
+
+  Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. 
+
+  
+
+  Possible values:
+
+  
+  *   ``CONTINUOUS``
+
+  
+  *   ``SNAPSHOT``
+
+  
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to return per request.
+
+  
+
+``--next-token`` (string)
+
+
+  The token to retrieve the next set of results.
+
+  
+
+``--thing-group-name`` (string)
+
+
+  A filter that limits the returned jobs to those for the specified group.
+
+  
+
+``--thing-group-id`` (string)
+
+
+  A filter that limits the returned jobs to those for the specified group.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+jobs -> (list)
+
+  
+
+  A list of jobs.
+
+  
+
+  (structure)
+
+    
+
+    The job summary.
+
+    
+
+    jobArn -> (string)
+
+      
+
+      The job ARN.
+
+      
+
+      
+
+    jobId -> (string)
+
+      
+
+      The unique identifier you assigned to this job when it was created.
+
+      
+
+      
+
+    thingGroupId -> (string)
+
+      
+
+      The ID of the thing group.
+
+      
+
+      
+
+    targetSelection -> (string)
+
+      
+
+      Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group.
+
+      
+
+      
+
+    status -> (string)
+
+      
+
+      The job summary status.
+
+      
+
+      
+
+    createdAt -> (timestamp)
+
+      
+
+      The time, in milliseconds since the epoch, when the job was created.
+
+      
+
+      
+
+    lastUpdatedAt -> (timestamp)
+
+      
+
+      The time, in milliseconds since the epoch, when the job was last updated.
+
+      
+
+      
+
+    completedAt -> (timestamp)
+
+      
+
+      The time, in milliseconds since the epoch, when the job completed.
+
+      
+
+      
+
+    
+
+  
+
+nextToken -> (string)
+
+  
+
+  The token for the next set of results, or **null** if there are no additional results.
+
+  
+
+  
+

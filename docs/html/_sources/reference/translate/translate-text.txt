@@ -1,0 +1,135 @@
+[ :ref:`aws <cli:aws>` . :ref:`translate <cli:aws translate>` ]
+
+.. _cli:aws translate translate-text:
+
+
+**************
+translate-text
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Translates input text from the source language to the target language. You can translate between English (en) and one of the following languages, or between one of the following languages and English.
+
+ 
+
+ 
+* Arabic (ar) 
+ 
+* Chinese (Simplified) (zh) 
+ 
+* French (fr) 
+ 
+* German (de) 
+ 
+* Portuguese (pt) 
+ 
+* Spanish (es) 
+ 
+
+ 
+
+To have Amazon Translate determine the source language of your text, you can specify ``auto`` in the ``SourceLanguageCode`` field. If you specify ``auto`` , Amazon Translate will call Amazon Comprehend to determine the source language.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateText>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    translate-text
+  --text <value>
+  --source-language-code <value>
+  --target-language-code <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--text`` (string)
+
+
+  The text to translate.
+
+  
+
+``--source-language-code`` (string)
+
+
+  One of the supported language codes for the source text. If the ``TargetLanguageCode`` is not "en", the ``SourceLanguageCode`` must be "en".
+
+   
+
+  To have Amazon Translate determine the source language of your text, you can specify ``auto`` in the ``SourceLanguageCode`` field. If you specify ``auto`` , Amazon Translate will call Amazon Comprehend to determine the source language.
+
+  
+
+``--target-language-code`` (string)
+
+
+  One of the supported language codes for the target text. If the ``SourceLanguageCode`` is not "en", the ``TargetLanguageCode`` must be "en".
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+TranslatedText -> (string)
+
+  
+
+  The text translated into the target language.
+
+  
+
+  
+
+SourceLanguageCode -> (string)
+
+  
+
+  The language code for the language of the input text. 
+
+  
+
+  
+
+TargetLanguageCode -> (string)
+
+  
+
+  The language code for the language of the translated text. 
+
+  
+
+  
+

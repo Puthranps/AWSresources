@@ -1,0 +1,79 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws alexaforbusiness:
+
+
+****************
+alexaforbusiness
+****************
+
+
+
+===========
+Description
+===========
+
+
+
+Alexa for Business makes it easy for you to use Alexa in your organization. Alexa for Business gives you the tools you need for managing Alexa devices, enroll your users, and assign skills, at scale. You can build your own context-aware voice skills using the Alexa Skills Kit and the Alexa for Business API operations. You can make also these available as private skills for your organization. Alexa for Business makes it easy to voice-enable your products and services, providing context-aware voice experiences for your customers.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  associate-contact-with-address-book
+  associate-device-with-room
+  associate-skill-group-with-room
+  create-address-book
+  create-contact
+  create-profile
+  create-room
+  create-skill-group
+  create-user
+  delete-address-book
+  delete-contact
+  delete-profile
+  delete-room
+  delete-room-skill-parameter
+  delete-skill-group
+  delete-user
+  disassociate-contact-from-address-book
+  disassociate-device-from-room
+  disassociate-skill-group-from-room
+  get-address-book
+  get-contact
+  get-device
+  get-profile
+  get-room
+  get-room-skill-parameter
+  get-skill-group
+  list-device-events
+  list-skills
+  list-tags
+  put-room-skill-parameter
+  resolve-room
+  revoke-invitation
+  search-address-books
+  search-contacts
+  search-devices
+  search-profiles
+  search-rooms
+  search-skill-groups
+  search-users
+  send-invitation
+  start-device-sync
+  tag-resource
+  untag-resource
+  update-address-book
+  update-contact
+  update-device
+  update-profile
+  update-room
+  update-skill-group

@@ -1,0 +1,70 @@
+{
+    "ApplicationId": "",
+    "EventsRequest": {
+        "BatchItem": {
+            "KeyName": {
+                "Endpoint": {
+                    "Address": "",
+                    "Attributes": {
+                        "KeyName": [
+                            ""
+                        ]
+                    },
+                    "ChannelType": "BAIDU",
+                    "Demographic": {
+                        "AppVersion": "",
+                        "Locale": "",
+                        "Make": "",
+                        "Model": "",
+                        "ModelVersion": "",
+                        "Platform": "",
+                        "PlatformVersion": "",
+                        "Timezone": ""
+                    },
+                    "EffectiveDate": "",
+                    "EndpointStatus": "",
+                    "Location": {
+                        "City": "",
+                        "Country": "",
+                        "Latitude": null,
+                        "Longitude": null,
+                        "PostalCode": "",
+                        "Region": ""
+                    },
+                    "Metrics": {
+                        "KeyName": null
+                    },
+                    "OptOut": "",
+                    "RequestId": "",
+                    "User": {
+                        "UserAttributes": {
+                            "KeyName": [
+                                ""
+                            ]
+                        },
+                        "UserId": ""
+                    }
+                },
+                "Events": {
+                    "KeyName": {
+                        "Attributes": {
+                            "KeyName": ""
+                        },
+                        "ClientSdkVersion": "",
+                        "EventType": "",
+                        "Metrics": {
+                            "KeyName": null
+                        },
+                        "Session": {
+                            "Duration": 0,
+                            "Id": "",
+                            "StartTimestamp": "",
+                            "StopTimestamp": ""
+                        },
+                        "Timestamp": ""
+                    }
+                }
+            }
+        }
+    }
+}

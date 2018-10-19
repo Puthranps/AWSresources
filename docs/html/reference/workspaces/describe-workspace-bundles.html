@@ -1,0 +1,412 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-workspace-bundles &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="workspaces" href="../workspaces/index.html" />
+    <link rel="next" title="describe-workspace-directories" href="../workspaces/describe-workspace-directories.html" />
+    <link rel="prev" title="describe-tags" href="../workspaces/describe-tags.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../workspaces/describe-workspace-directories.html" title="describe-workspace-directories"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../workspaces/describe-tags.html" title="describe-tags"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../workspaces/index.html" accesskey="U">workspaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../workspaces/describe-tags.html" title="previous chapter (use the left arrow)">&larr; describe-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workspaces/describe-workspace-directories.html" title="next chapter (use the right arrow)">describe-workspace-directories &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-workspace-bundles</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/workspaces/describe-workspace-bundles">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../workspaces/index.html#cli-aws-workspaces"><em>workspaces</em></a> ]</p>
+<div class="section" id="describe-workspace-bundles">
+<span id="cli-aws-workspaces-describe-workspace-bundles"></span><h1>describe-workspace-bundles<a class="headerlink" href="#describe-workspace-bundles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes the available WorkSpace bundles.</p>
+<p>You can filter the results using either bundle ID or owner, but not both.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceBundles">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">describe-workspace-bundles</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Bundles</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-workspace-bundles
+[--bundle-ids &lt;value&gt;]
+[--owner &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--bundle-ids</span></tt> (list)</p>
+<blockquote>
+<div>The IDs of the bundles. This parameter cannot be combined with any other filter.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--owner</span></tt> (string)</p>
+<blockquote>
+<div><p>The owner of the bundles. This parameter cannot be combined with any other filter.</p>
+<p>Specify <tt class="docutils literal"><span class="pre">AMAZON</span></tt> to describe the bundles provided by AWS or null to describe the bundles that belong to your account.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe your WorkSpace bundles</strong></p>
+<p>This example describes all of the WorkSpace bundles that are provided by AWS.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws workspaces describe-workspace-bundles --owner AMAZON</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;Bundles&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;PERFORMANCE&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance Bundle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-b0s22j3d7&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Base Bundle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-92tn3b7gx&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;STANDARD&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard Bundle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-3t36q0xfc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;PERFORMANCE&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance Plus Bundle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-1b5w6vnz6&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance Plus&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Plus Office 2013&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-fgy4lgypc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Plus Office 2013&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;PERFORMANCE&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance Plus Office 2013&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-vbsjd64y6&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Performance Plus Office 2013&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;VALUE&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Plus Bundle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-kgjp98lt8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;10&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Value Plus&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;STANDARD&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard Plus Office 2013&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-5h1pf1zxc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard Plus Office 2013&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ComputeType&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;STANDARD&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard Plus Bundle&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;BundleId&quot;</span><span class="p">:</span> <span class="s2">&quot;wsb-vlsvncjjf&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Owner&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;UserStorage&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Capacity&quot;</span><span class="p">:</span> <span class="s2">&quot;50&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard Plus&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Bundles -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the bundles.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a WorkSpace bundle.</p>
+<p>BundleId -&gt; (string)</p>
+<blockquote>
+<div>The bundle identifier.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the bundle.</div></blockquote>
+<p>Owner -&gt; (string)</p>
+<blockquote>
+<div>The owner of the bundle. This is the account identifier of the owner, or <tt class="docutils literal"><span class="pre">AMAZON</span></tt> if the bundle is provided by AWS.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description.</div></blockquote>
+<p>RootStorage -&gt; (structure)</p>
+<blockquote>
+<div><p>The size of the root volume.</p>
+<p>Capacity -&gt; (string)</p>
+<blockquote>
+<div>The size of the root volume.</div></blockquote>
+</div></blockquote>
+<p>UserStorage -&gt; (structure)</p>
+<blockquote>
+<div><p>The size of the user storage.</p>
+<p>Capacity -&gt; (string)</p>
+<blockquote>
+<div>The size of the user storage.</div></blockquote>
+</div></blockquote>
+<p>ComputeType -&gt; (structure)</p>
+<blockquote>
+<div><p>The compute type. For more information, see <a class="reference external" href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon WorkSpaces Bundles</a> .</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The compute type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to retrieve the next set of results, or null if there are no more results available. This token is valid for one day and must be used within that time frame.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../workspaces/describe-tags.html" title="previous chapter (use the left arrow)">&larr; describe-tags</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workspaces/describe-workspace-directories.html" title="next chapter (use the right arrow)">describe-workspace-directories &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../workspaces/describe-workspace-directories.html" title="describe-workspace-directories"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../workspaces/describe-tags.html" title="describe-tags"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../workspaces/index.html" >workspaces</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

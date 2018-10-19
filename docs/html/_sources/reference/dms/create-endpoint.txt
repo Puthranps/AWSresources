@@ -1,0 +1,915 @@
+[ :ref:`aws <cli:aws>` . :ref:`dms <cli:aws dms>` ]
+
+.. _cli:aws dms create-endpoint:
+
+
+***************
+create-endpoint
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an endpoint using the provided settings.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/CreateEndpoint>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-endpoint
+  --endpoint-identifier <value>
+  --endpoint-type <value>
+  --engine-name <value>
+  [--username <value>]
+  [--password <value>]
+  [--server-name <value>]
+  [--port <value>]
+  [--database-name <value>]
+  [--extra-connection-attributes <value>]
+  [--kms-key-id <value>]
+  [--tags <value>]
+  [--certificate-arn <value>]
+  [--ssl-mode <value>]
+  [--service-access-role-arn <value>]
+  [--external-table-definition <value>]
+  [--dynamo-db-settings <value>]
+  [--s3-settings <value>]
+  [--dms-transfer-settings <value>]
+  [--mongo-db-settings <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--endpoint-identifier`` (string)
+
+
+  The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+
+  
+
+``--endpoint-type`` (string)
+
+
+  The type of endpoint.
+
+  
+
+  Possible values:
+
+  
+  *   ``source``
+
+  
+  *   ``target``
+
+  
+
+  
+
+``--engine-name`` (string)
+
+
+  The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, dynamodb, mongodb, and sqlserver.
+
+  
+
+``--username`` (string)
+
+
+  The user name to be used to login to the endpoint database.
+
+  
+
+``--password`` (string)
+
+
+  The password to be used to login to the endpoint database.
+
+  
+
+``--server-name`` (string)
+
+
+  The name of the server where the endpoint database resides.
+
+  
+
+``--port`` (integer)
+
+
+  The port used by the endpoint database.
+
+  
+
+``--database-name`` (string)
+
+
+  The name of the endpoint database.
+
+  
+
+``--extra-connection-attributes`` (string)
+
+
+  Additional attributes associated with the connection.
+
+  
+
+``--kms-key-id`` (string)
+
+
+  The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+
+  
+
+``--tags`` (list)
+
+
+  Tags to be added to the endpoint.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Value=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Value": "string"
+    }
+    ...
+  ]
+
+
+
+``--certificate-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) for the certificate.
+
+  
+
+``--ssl-mode`` (string)
+
+
+  The SSL mode to use for the SSL connection.
+
+   
+
+  SSL mode can be one of four values: none, require, verify-ca, verify-full. 
+
+   
+
+  The default value is none.
+
+  
+
+  Possible values:
+
+  
+  *   ``none``
+
+  
+  *   ``require``
+
+  
+  *   ``verify-ca``
+
+  
+  *   ``verify-full``
+
+  
+
+  
+
+``--service-access-role-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) for the service access role you want to use to create the endpoint. 
+
+  
+
+``--external-table-definition`` (string)
+
+
+  The external table definition. 
+
+  
+
+``--dynamo-db-settings`` (structure)
+
+
+  Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available settings, see the **Using Object Mapping to Migrate Data to DynamoDB** section at `Using an Amazon DynamoDB Database as a Target for AWS Database Migration Service <http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html>`__ . 
+
+  
+
+
+
+Shorthand Syntax::
+
+    ServiceAccessRoleArn=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "ServiceAccessRoleArn": "string"
+  }
+
+
+
+``--s3-settings`` (structure)
+
+
+  Settings in JSON format for the target Amazon S3 endpoint. For more information about the available settings, see the **Extra Connection Attributes** section at `Using Amazon S3 as a Target for AWS Database Migration Service <http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html>`__ . 
+
+  
+
+
+
+Shorthand Syntax::
+
+    ServiceAccessRoleArn=string,ExternalTableDefinition=string,CsvRowDelimiter=string,CsvDelimiter=string,BucketFolder=string,BucketName=string,CompressionType=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "ServiceAccessRoleArn": "string",
+    "ExternalTableDefinition": "string",
+    "CsvRowDelimiter": "string",
+    "CsvDelimiter": "string",
+    "BucketFolder": "string",
+    "BucketName": "string",
+    "CompressionType": "none"|"gzip"
+  }
+
+
+
+``--dms-transfer-settings`` (structure)
+
+
+  The settings in JSON format for the DMS Transfer type source endpoint. 
+
+   
+
+  Attributes include:
+
+   
+
+   
+  * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket. 
+   
+  * bucketName - The name of the S3 bucket to use. 
+   
+  * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do not use to leave the files uncompressed. 
+   
+
+   
+
+  Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+
+   
+
+  JSON syntax:
+
+   
+
+  { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } 
+
+  
+
+
+
+Shorthand Syntax::
+
+    ServiceAccessRoleArn=string,BucketName=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "ServiceAccessRoleArn": "string",
+    "BucketName": "string"
+  }
+
+
+
+``--mongo-db-settings`` (structure)
+
+
+  Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the **Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service** section at `Using MongoDB as a Target for AWS Database Migration Service <http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html>`__ . 
+
+  
+
+
+
+Shorthand Syntax::
+
+    Username=string,Password=string,ServerName=string,Port=integer,DatabaseName=string,AuthType=string,AuthMechanism=string,NestingLevel=string,ExtractDocId=string,DocsToInvestigate=string,AuthSource=string,KmsKeyId=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Username": "string",
+    "Password": "string",
+    "ServerName": "string",
+    "Port": integer,
+    "DatabaseName": "string",
+    "AuthType": "no"|"password",
+    "AuthMechanism": "default"|"mongodb_cr"|"scram_sha_1",
+    "NestingLevel": "none"|"one",
+    "ExtractDocId": "string",
+    "DocsToInvestigate": "string",
+    "AuthSource": "string",
+    "KmsKeyId": "string"
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+The following command creates a source endpoint for a MySQL RDS DB instance named ``mydb.cx1llnox7iyx.uswest-2.rds.amazonaws.com``::
+
+  aws dms create-endpoint --endpoint-identifier test-endpoint-1 --endpoint-type source --engine-name mysql --username username --password password --server-name mydb.cx1llnox7iyx.uswest-2.rds.amazonaws.com --port 3306
+
+Output::
+
+  {
+    "Endpoint": {
+      "Username": "username",
+      "Status": "active",
+      "EndpointArn": "arn:aws:dms:us-east-1:123456789012:endpoint:RAAR3R22XSH46S3PWLC3NJAWKM",
+      "ServerName": "mydb.cx1llnox7iyx.us-west-2.rds.amazonaws.com",
+      "EndpointType": "SOURCE",
+      "KmsKeyId": "arn:aws:kms:us-east-1:123456789012:key/4c1731d6-5435-ed4d-be13-d53411a7cfbd",
+      "EngineName": "mysql",
+      "EndpointIdentifier": "test-endpoint-1",
+      "Port": 3306
+    }
+  }
+
+
+======
+Output
+======
+
+Endpoint -> (structure)
+
+  
+
+  The endpoint that was created.
+
+  
+
+  EndpointIdentifier -> (string)
+
+    
+
+    The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.
+
+    
+
+    
+
+  EndpointType -> (string)
+
+    
+
+    The type of endpoint.
+
+    
+
+    
+
+  EngineName -> (string)
+
+    
+
+    The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.
+
+    
+
+    
+
+  EngineDisplayName -> (string)
+
+    
+
+    The expanded name for the engine name. For example, if the ``EngineName`` parameter is "aurora," this value would be "Amazon Aurora MySQL."
+
+    
+
+    
+
+  Username -> (string)
+
+    
+
+    The user name used to connect to the endpoint.
+
+    
+
+    
+
+  ServerName -> (string)
+
+    
+
+    The name of the server at the endpoint.
+
+    
+
+    
+
+  Port -> (integer)
+
+    
+
+    The port value used to access the endpoint.
+
+    
+
+    
+
+  DatabaseName -> (string)
+
+    
+
+    The name of the database at the endpoint.
+
+    
+
+    
+
+  ExtraConnectionAttributes -> (string)
+
+    
+
+    Additional connection attributes used to connect to the endpoint.
+
+    
+
+    
+
+  Status -> (string)
+
+    
+
+    The status of the endpoint.
+
+    
+
+    
+
+  KmsKeyId -> (string)
+
+    
+
+    The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.
+
+    
+
+    
+
+  EndpointArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.
+
+    
+
+    
+
+  CertificateArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) used for SSL connection to the endpoint.
+
+    
+
+    
+
+  SslMode -> (string)
+
+    
+
+    The SSL mode used to connect to the endpoint.
+
+     
+
+    SSL mode can be one of four values: none, require, verify-ca, verify-full. 
+
+     
+
+    The default value is none.
+
+    
+
+    
+
+  ServiceAccessRoleArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) used by the service access IAM role.
+
+    
+
+    
+
+  ExternalTableDefinition -> (string)
+
+    
+
+    The external table definition.
+
+    
+
+    
+
+  ExternalId -> (string)
+
+    
+
+    Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account. 
+
+    
+
+    
+
+  DynamoDbSettings -> (structure)
+
+    
+
+    The settings for the target DynamoDB database. For more information, see the ``DynamoDBSettings`` structure.
+
+    
+
+    ServiceAccessRoleArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) used by the service access IAM role. 
+
+      
+
+      
+
+    
+
+  S3Settings -> (structure)
+
+    
+
+    The settings for the S3 target endpoint. For more information, see the ``S3Settings`` structure.
+
+    
+
+    ServiceAccessRoleArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) used by the service access IAM role. 
+
+      
+
+      
+
+    ExternalTableDefinition -> (string)
+
+      
+
+      The external table definition. 
+
+      
+
+      
+
+    CsvRowDelimiter -> (string)
+
+      
+
+      The delimiter used to separate rows in the source files. The default is a carriage return (\n). 
+
+      
+
+      
+
+    CsvDelimiter -> (string)
+
+      
+
+      The delimiter used to separate columns in the source files. The default is a comma. 
+
+      
+
+      
+
+    BucketFolder -> (string)
+
+      
+
+      An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path <bucketFolder>/<schema_name>/<table_name>/. If this parameter is not specified, then the path used is <schema_name>/<table_name>/. 
+
+      
+
+      
+
+    BucketName -> (string)
+
+      
+
+      The name of the S3 bucket. 
+
+      
+
+      
+
+    CompressionType -> (string)
+
+      
+
+      An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to NONE (the default) or do not use to leave the files uncompressed. 
+
+      
+
+      
+
+    
+
+  DmsTransferSettings -> (structure)
+
+    
+
+    The settings in JSON format for the DMS Transfer type source endpoint. 
+
+     
+
+    Attributes include:
+
+     
+
+     
+    * serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket. 
+     
+    * bucketName - The name of the S3 bucket to use. 
+     
+    * compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do not use to leave the files uncompressed. 
+     
+
+     
+
+    Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string
+
+     
+
+    JSON syntax:
+
+     
+
+    { "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType": "none"|"gzip" } 
+
+    
+
+    ServiceAccessRoleArn -> (string)
+
+      
+
+      The IAM role that has permission to access the Amazon S3 bucket. 
+
+      
+
+      
+
+    BucketName -> (string)
+
+      
+
+      The name of the S3 bucket to use. 
+
+      
+
+      
+
+    
+
+  MongoDbSettings -> (structure)
+
+    
+
+    The settings for the MongoDB source endpoint. For more information, see the ``MongoDbSettings`` structure.
+
+    
+
+    Username -> (string)
+
+      
+
+      The user name you use to access the MongoDB source endpoint. 
+
+      
+
+      
+
+    Password -> (string)
+
+      
+
+      The password for the user account you use to access the MongoDB source endpoint. 
+
+      
+
+      
+
+    ServerName -> (string)
+
+      
+
+      The name of the server on the MongoDB source endpoint. 
+
+      
+
+      
+
+    Port -> (integer)
+
+      
+
+      The port value for the MongoDB source endpoint. 
+
+      
+
+      
+
+    DatabaseName -> (string)
+
+      
+
+      The database name on the MongoDB source endpoint. 
+
+      
+
+      
+
+    AuthType -> (string)
+
+      
+
+      The authentication type you use to access the MongoDB source endpoint.
+
+       
+
+      Valid values: NO, PASSWORD 
+
+       
+
+      When NO is selected, user name and password parameters are not used and can be empty. 
+
+      
+
+      
+
+    AuthMechanism -> (string)
+
+      
+
+      The authentication mechanism you use to access the MongoDB source endpoint.
+
+       
+
+      Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 
+
+       
+
+      DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This attribute is not used when authType=No.
+
+      
+
+      
+
+    NestingLevel -> (string)
+
+      
+
+      Specifies either document or table mode. 
+
+       
+
+      Valid values: NONE, ONE
+
+       
+
+      Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.
+
+      
+
+      
+
+    ExtractDocId -> (string)
+
+      
+
+      Specifies the document ID. Use this attribute when ``NestingLevel`` is set to NONE. 
+
+       
+
+      Default value is false. 
+
+      
+
+      
+
+    DocsToInvestigate -> (string)
+
+      
+
+      Indicates the number of documents to preview to determine the document organization. Use this attribute when ``NestingLevel`` is set to ONE. 
+
+       
+
+      Must be a positive value greater than 0. Default value is 1000.
+
+      
+
+      
+
+    AuthSource -> (string)
+
+      
+
+      The MongoDB database name. This attribute is not used when ``authType=NO`` . 
+
+       
+
+      The default is admin.
+
+      
+
+      
+
+    KmsKeyId -> (string)
+
+      
+
+      The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region. 
+
+      
+
+      
+
+    
+
+  
+

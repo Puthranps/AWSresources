@@ -1,0 +1,18 @@
+{
+    "ReplicationTaskIdentifier": "",
+    "SourceEndpointArn": "",
+    "TargetEndpointArn": "",
+    "ReplicationInstanceArn": "",
+    "MigrationType": "full-load",
+    "TableMappings": "",
+    "ReplicationTaskSettings": "",
+    "CdcStartTime": "1970-01-01T00:00:00",
+    "CdcStartPosition": "",
+    "CdcStopPosition": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

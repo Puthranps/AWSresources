@@ -1,0 +1,625 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-elasticsearch-domain &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="es" href="../es/index.html" />
+    <link rel="next" title="delete-elasticsearch-domain" href="../es/delete-elasticsearch-domain.html" />
+    <link rel="prev" title="cancel-elasticsearch-service-software-update" href="../es/cancel-elasticsearch-service-software-update.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../es/delete-elasticsearch-domain.html" title="delete-elasticsearch-domain"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../es/cancel-elasticsearch-service-software-update.html" title="cancel-elasticsearch-service-software-update"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../es/index.html" accesskey="U">es</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../es/cancel-elasticsearch-service-software-update.html" title="previous chapter (use the left arrow)">&larr; cancel-elasticsearch-service-software-update</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../es/delete-elasticsearch-domain.html" title="next chapter (use the right arrow)">delete-elasticsearch-domain &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-elasticsearch-domain</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/es/create-elasticsearch-domain">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../es/index.html#cli-aws-es"><em>es</em></a> ]</p>
+<div class="section" id="create-elasticsearch-domain">
+<span id="cli-aws-es-create-elasticsearch-domain"></span><h1>create-elasticsearch-domain<a class="headerlink" href="#create-elasticsearch-domain" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a new Elasticsearch domain. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains">Creating Elasticsearch Domains</a> in the <em>Amazon Elasticsearch Service Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/es-2015-01-01/CreateElasticsearchDomain">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-elasticsearch-domain
+--domain-name &lt;value&gt;
+[--elasticsearch-version &lt;value&gt;]
+[--elasticsearch-cluster-config &lt;value&gt;]
+[--ebs-options &lt;value&gt;]
+[--access-policies &lt;value&gt;]
+[--snapshot-options &lt;value&gt;]
+[--vpc-options &lt;value&gt;]
+[--cognito-options &lt;value&gt;]
+[--encryption-at-rest-options &lt;value&gt;]
+[--node-to-node-encryption-options &lt;value&gt;]
+[--advanced-options &lt;value&gt;]
+[--log-publishing-options &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--domain-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Elasticsearch domain that you are creating. Domain names are unique across the domains owned by an account within an AWS region. Domain names must start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--elasticsearch-version</span></tt> (string)</p>
+<blockquote>
+<div>String of format X.Y to specify version for the Elasticsearch domain eg. &quot;1.5&quot; or &quot;2.3&quot;. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains">Creating Elasticsearch Domains</a> in the <em>Amazon Elasticsearch Service Developer Guide</em> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--elasticsearch-cluster-config</span></tt> (structure)</p>
+<blockquote>
+<div>Configuration options for an Elasticsearch domain. Specifies the instance type and number of instances in the domain cluster.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">InstanceType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">InstanceCount</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">DedicatedMasterEnabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">ZoneAwarenessEnabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">DedicatedMasterType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">DedicatedMasterCount</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;m3.medium.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m3.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m3.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m3.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.10xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;t2.micro.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;t2.small.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;t2.medium.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i2.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i2.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.16xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.16xlarge.elasticsearch&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;InstanceCount&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;DedicatedMasterEnabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;ZoneAwarenessEnabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;DedicatedMasterType&quot;</span><span class="p">:</span> <span class="s2">&quot;m3.medium.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m3.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m3.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m3.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;m4.10xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;t2.micro.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;t2.small.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;t2.medium.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r3.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i2.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i2.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;d2.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;c4.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;r4.16xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.large.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.2xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.4xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.8xlarge.elasticsearch&quot;</span><span class="o">|</span><span class="s2">&quot;i3.16xlarge.elasticsearch&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;DedicatedMasterCount&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--ebs-options</span></tt> (structure)</p>
+<blockquote>
+<div>Options to enable, disable and specify the type and size of EBS storage volumes.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">EBSEnabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">VolumeType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">VolumeSize</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">Iops</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;EBSEnabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;VolumeType&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="o">|</span><span class="s2">&quot;gp2&quot;</span><span class="o">|</span><span class="s2">&quot;io1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;VolumeSize&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;Iops&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--access-policies</span></tt> (string)</p>
+<blockquote>
+<div>IAM access policy as a JSON-formatted string.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--snapshot-options</span></tt> (structure)</p>
+<blockquote>
+<div>Option to set time, in UTC format, of the daily automated snapshot. Default value is 0 hours.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">AutomatedSnapshotStartHour</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;AutomatedSnapshotStartHour&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--vpc-options</span></tt> (structure)</p>
+<blockquote>
+<div>Options to specify the subnets and security groups for VPC endpoint. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-creating-vpc">Creating a VPC</a> in <em>VPC Endpoints for Amazon Elasticsearch Service Domains</em></div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SubnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SubnetIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;SecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cognito-options</span></tt> (structure)</p>
+<blockquote>
+<div>Options to specify the Cognito user and identity pools for Kibana authentication. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html">Amazon Cognito Authentication for Kibana</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Enabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">UserPoolId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">IdentityPoolId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">RoleArn</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;UserPoolId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;IdentityPoolId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;RoleArn&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--encryption-at-rest-options</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies the Encryption At Rest Options.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Enabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">KmsKeyId</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;KmsKeyId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--node-to-node-encryption-options</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies the NodeToNodeEncryptionOptions.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Enabled</span><span class="o">=</span><span class="n">boolean</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--advanced-options</span></tt> (map)</p>
+<blockquote>
+<div>Option to allow references to indices in an HTTP request body. Must be <tt class="docutils literal"><span class="pre">false</span></tt> when configuring access to individual sub-resources. By default, the value is <tt class="docutils literal"><span class="pre">true</span></tt> . See <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options">Configuration Advanced Options</a> for more information.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">KeyName1</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KeyName2</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{&quot;string&quot;: &quot;string&quot;
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--log-publishing-options</span></tt> (map)</p>
+<blockquote>
+<div>Map of <tt class="docutils literal"><span class="pre">LogType</span></tt> and <tt class="docutils literal"><span class="pre">LogPublishingOption</span></tt> , each containing options to publish a given type of Elasticsearch log.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>  KeyName1=CloudWatchLogsLogGroupArn=string,Enabled=boolean,KeyName2=CloudWatchLogsLogGroupArn=string,Enabled=boolean
+
+Where valid key names are:
+  INDEX_SLOW_LOGS
+  SEARCH_SLOW_LOGS
+  ES_APPLICATION_LOGS</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{&quot;INDEX_SLOW_LOGS&quot;|&quot;SEARCH_SLOW_LOGS&quot;|&quot;ES_APPLICATION_LOGS&quot;: {
+      &quot;CloudWatchLogsLogGroupArn&quot;: &quot;string&quot;,
+      &quot;Enabled&quot;: true|false
+    }
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following <tt class="docutils literal"><span class="pre">create-elasticsearch-domain</span></tt> command creates a new Amazon Elasticsearch Service domain within a VPC and restricts access to a single user. Amazon ES infers the VPC ID from the specified subnet and security group IDs:</p>
+<div class="highlight-python"><pre>aws es create-elasticsearch-domain --domain-name vpc-cli-example --elasticsearch-version 6.2 --elasticsearch-cluster-config InstanceType=m4.large.elasticsearch,InstanceCount=1 --ebs-options EBSEnabled=true,VolumeType=standard,VolumeSize=10 --access-policies &#x27;{&quot;Version&quot;: &quot;2012-10-17&quot;, &quot;Statement&quot;: [ { &quot;Effect&quot;: &quot;Allow&quot;, &quot;Principal&quot;: {&quot;AWS&quot;: &quot;arn:aws:iam::123456789012:root&quot; }, &quot;Action&quot;:&quot;es:*&quot;, &quot;Resource&quot;: &quot;arn:aws:es:us-west-1:123456789012:domain/vpc-cli-example/*&quot; } ] }&#x27; --vpc-options SubnetIds=subnet-1a2a3a4a,SecurityGroupIds=sg-2a3a4a5a</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;DomainStatus&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;ElasticsearchClusterConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;DedicatedMasterEnabled&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;InstanceCount&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="s2">&quot;ZoneAwarenessEnabled&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;m4.large.elasticsearch&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;DomainId&quot;</span><span class="p">:</span> <span class="s2">&quot;123456789012/vpc-cli-example&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;CognitoOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;VPCOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;SubnetIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;subnet-1a2a3a4a&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;VPCId&quot;</span><span class="p">:</span> <span class="s2">&quot;vpc-3a4a5a6a&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;sg-2a3a4a5a&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;AvailabilityZones&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;us-west-1c&quot;</span>
+            <span class="p">]</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Created&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;Deleted&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;EBSOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;VolumeSize&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;VolumeType&quot;</span><span class="p">:</span> <span class="s2">&quot;standard&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EBSEnabled&quot;</span><span class="p">:</span> <span class="n">true</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;Processing&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;DomainName&quot;</span><span class="p">:</span> <span class="s2">&quot;vpc-cli-example&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;SnapshotOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;AutomatedSnapshotStartHour&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;ElasticsearchVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;6.2&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;AccessPolicies&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">Version</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">2012-10-17</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">Statement</span><span class="se">\&quot;</span><span class="s2">:[{</span><span class="se">\&quot;</span><span class="s2">Effect</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">Allow</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">Principal</span><span class="se">\&quot;</span><span class="s2">:{</span><span class="se">\&quot;</span><span class="s2">AWS</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">arn:aws:iam::123456789012:root</span><span class="se">\&quot;</span><span class="s2">},</span><span class="se">\&quot;</span><span class="s2">Action</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">es:*</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">Resource</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">arn:aws:es:us-west-1:123456789012:domain/vpc-cli-example/*</span><span class="se">\&quot;</span><span class="s2">}]}&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;AdvancedOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;rest.action.multi.allow_explicit_index&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;EncryptionAtRestOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">false</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;ARN&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:es:us-west-1:123456789012:domain/vpc-cli-example&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>DomainStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>The status of the newly created Elasticsearch domain.</p>
+<p>DomainId -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier for the specified Elasticsearch domain.</div></blockquote>
+<p>DomainName -&gt; (string)</p>
+<blockquote>
+<div>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</div></blockquote>
+<p>ARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon resource name (ARN) of an Elasticsearch domain. See <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html">Identifiers for IAM Entities</a> in <em>Using AWS Identity and Access Management</em> for more information.</div></blockquote>
+<p>Created -&gt; (boolean)</p>
+<blockquote>
+<div>The domain creation status. <tt class="docutils literal"><span class="pre">True</span></tt> if the creation of an Elasticsearch domain is complete. <tt class="docutils literal"><span class="pre">False</span></tt> if domain creation is still in progress.</div></blockquote>
+<p>Deleted -&gt; (boolean)</p>
+<blockquote>
+<div>The domain deletion status. <tt class="docutils literal"><span class="pre">True</span></tt> if a delete request has been received for the domain but resource cleanup is still in progress. <tt class="docutils literal"><span class="pre">False</span></tt> if the domain has not been deleted. Once domain deletion is complete, the status of the domain is no longer returned.</div></blockquote>
+<p>Endpoint -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch domain endpoint that you use to submit index and search requests.</div></blockquote>
+<p>Endpoints -&gt; (map)</p>
+<blockquote>
+<div><p>Map containing the Elasticsearch domain endpoints used to submit index and search requests. Example <tt class="docutils literal"><span class="pre">key,</span> <span class="pre">value</span></tt> : <tt class="docutils literal"><span class="pre">'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</span></tt> .</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div>The endpoint to which service requests are submitted. For example, <tt class="docutils literal"><span class="pre">search-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</span></tt> or <tt class="docutils literal"><span class="pre">doc-imdb-movies-oopcnjfn6ugofer3zx5iadxxca.eu-west-1.es.amazonaws.com</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>Processing -&gt; (boolean)</p>
+<blockquote>
+<div>The status of the Elasticsearch domain configuration. <tt class="docutils literal"><span class="pre">True</span></tt> if Amazon Elasticsearch Service is processing configuration changes. <tt class="docutils literal"><span class="pre">False</span></tt> if the configuration is active.</div></blockquote>
+<p>UpgradeProcessing -&gt; (boolean)</p>
+<blockquote>
+<div>The status of an Elasticsearch domain version upgrade. <tt class="docutils literal"><span class="pre">True</span></tt> if Amazon Elasticsearch Service is undergoing a version upgrade. <tt class="docutils literal"><span class="pre">False</span></tt> if the configuration is active.</div></blockquote>
+<p>ElasticsearchVersion -&gt; (string)</p>
+<p>ElasticsearchClusterConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The type and number of instances in the domain cluster.</p>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type for an Elasticsearch cluster.</div></blockquote>
+<p>InstanceCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of instances in the specified domain cluster.</div></blockquote>
+<p>DedicatedMasterEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>A boolean value to indicate whether a dedicated master node is enabled. See <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-dedicatedmasternodes">About Dedicated Master Nodes</a> for more information.</div></blockquote>
+<p>ZoneAwarenessEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>A boolean value to indicate whether zone awareness is enabled. See <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-zoneawareness">About Zone Awareness</a> for more information.</div></blockquote>
+<p>DedicatedMasterType -&gt; (string)</p>
+<blockquote>
+<div>The instance type for a dedicated master node.</div></blockquote>
+<p>DedicatedMasterCount -&gt; (integer)</p>
+<blockquote>
+<div>Total number of dedicated master nodes, active and on standby, for the cluster.</div></blockquote>
+</div></blockquote>
+<p>EBSOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">EBSOptions</span></tt> for the specified domain. See <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs">Configuring EBS-based Storage</a> for more information.</p>
+<p>EBSEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether EBS-based storage is enabled.</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div>Specifies the volume type for EBS-based storage.</div></blockquote>
+<p>VolumeSize -&gt; (integer)</p>
+<blockquote>
+<div>Integer to specify the size of an EBS volume.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the IOPD for a Provisioned IOPS EBS volume (SSD).</div></blockquote>
+</div></blockquote>
+<p>AccessPolicies -&gt; (string)</p>
+<blockquote>
+<div>IAM access policy as a JSON-formatted string.</div></blockquote>
+<p>SnapshotOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the status of the <tt class="docutils literal"><span class="pre">SnapshotOptions</span></tt></p>
+<p>AutomatedSnapshotStartHour -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the time, in UTC format, when the service takes a daily automated snapshot of the specified Elasticsearch domain. Default value is <tt class="docutils literal"><span class="pre">0</span></tt> hours.</div></blockquote>
+</div></blockquote>
+<p>VPCOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">VPCOptions</span></tt> for the specified domain. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html">VPC Endpoints for Amazon Elasticsearch Service Domains</a> .</p>
+<p>VPCId -&gt; (string)</p>
+<blockquote>
+<div>The VPC Id for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</div></blockquote>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>Specifies the subnets for VPC endpoint.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>AvailabilityZones -&gt; (list)</p>
+<blockquote>
+<div><p>The availability zones for the Elasticsearch domain. Exists only if the domain was created with VPCOptions.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>Specifies the security groups for VPC endpoint.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>CognitoOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">CognitoOptions</span></tt> for the specified domain. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html">Amazon Cognito Authentication for Kibana</a> .</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies the option to enable Cognito for Kibana authentication.</div></blockquote>
+<p>UserPoolId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the Cognito user pool ID for Kibana authentication.</div></blockquote>
+<p>IdentityPoolId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the Cognito identity pool ID for Kibana authentication.</div></blockquote>
+<p>RoleArn -&gt; (string)</p>
+<blockquote>
+<div>Specifies the role ARN that provides Elasticsearch permissions for accessing Cognito resources.</div></blockquote>
+</div></blockquote>
+<p>EncryptionAtRestOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the status of the <tt class="docutils literal"><span class="pre">EncryptionAtRestOptions</span></tt> .</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies the option to enable Encryption At Rest.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the KMS Key ID for Encryption At Rest options.</div></blockquote>
+</div></blockquote>
+<p>NodeToNodeEncryptionOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the status of the <tt class="docutils literal"><span class="pre">NodeToNodeEncryptionOptions</span></tt> .</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specify true to enable node-to-node encryption.</div></blockquote>
+</div></blockquote>
+<p>AdvancedOptions -&gt; (map)</p>
+<blockquote>
+<div><p>Specifies the status of the <tt class="docutils literal"><span class="pre">AdvancedOptions</span></tt></p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>LogPublishingOptions -&gt; (map)</p>
+<blockquote>
+<div><p>Log publishing options for the given domain.</p>
+<p>key -&gt; (string)</p>
+<blockquote>
+<div><p>Type of Log File, it can be one of the following:</p>
+<ul class="simple">
+<li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li>
+<li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li>
+<li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li>
+</ul>
+</div></blockquote>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>Log Publishing option that is set for given domain. Attributes and their details:</p>
+<ul class="simple">
+<li>CloudWatchLogsLogGroupArn: ARN of the Cloudwatch log group to which log needs to be published.</li>
+<li>Enabled: Whether the log publishing for given log type is enabled or not</li>
+</ul>
+<p>CloudWatchLogsLogGroupArn -&gt; (string)</p>
+<blockquote>
+<div>ARN of the Cloudwatch log group to which log needs to be published.</div></blockquote>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether given log publishing option is enabled or not.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ServiceSoftwareOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The current status of the Elasticsearch domain's service software.</p>
+<p>CurrentVersion -&gt; (string)</p>
+<blockquote>
+<div>The current service software version that is present on the domain.</div></blockquote>
+<p>NewVersion -&gt; (string)</p>
+<blockquote>
+<div>The new service software version if one is available.</div></blockquote>
+<p>UpdateAvailable -&gt; (boolean)</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">True</span></tt> if you are able to update you service software version. <tt class="docutils literal"><span class="pre">False</span></tt> if you are not able to update your service software version.</div></blockquote>
+<p>Cancellable -&gt; (boolean)</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">True</span></tt> if you are able to cancel your service software version update. <tt class="docutils literal"><span class="pre">False</span></tt> if you are not able to cancel your service software version.</div></blockquote>
+<p>UpdateStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of your service software update. This field can take the following values: <tt class="docutils literal"><span class="pre">ELIGIBLE</span></tt> , <tt class="docutils literal"><span class="pre">PENDING_UPDATE</span></tt> , <tt class="docutils literal"><span class="pre">IN_PROGRESS</span></tt> , <tt class="docutils literal"><span class="pre">COMPLETED</span></tt> , and <tt class="docutils literal"><span class="pre">NOT_ELIGIBLE</span></tt> .</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description of the <tt class="docutils literal"><span class="pre">UpdateStatus</span></tt> .</div></blockquote>
+<p>AutomatedUpdateDate -&gt; (timestamp)</p>
+<blockquote>
+<div>Timestamp, in Epoch time, until which you can manually request a service software update. After this date, we automatically update your service software.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../es/cancel-elasticsearch-service-software-update.html" title="previous chapter (use the left arrow)">&larr; cancel-elasticsearch-service-software-update</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../es/delete-elasticsearch-domain.html" title="next chapter (use the right arrow)">delete-elasticsearch-domain &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../es/delete-elasticsearch-domain.html" title="delete-elasticsearch-domain"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../es/cancel-elasticsearch-service-software-update.html" title="cancel-elasticsearch-service-software-update"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../es/index.html" >es</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

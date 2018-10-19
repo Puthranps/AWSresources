@@ -1,0 +1,8 @@
+{
+    "jobId": "",
+    "failureDetails": {
+        "type": "JobFailed",
+        "message": "",
+        "externalExecutionId": ""
+    }
+}

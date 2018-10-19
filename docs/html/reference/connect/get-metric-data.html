@@ -1,0 +1,468 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-metric-data &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="connect" href="../connect/index.html" />
+    <link rel="next" title="list-routing-profiles" href="../connect/list-routing-profiles.html" />
+    <link rel="prev" title="get-federation-token" href="../connect/get-federation-token.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../connect/list-routing-profiles.html" title="list-routing-profiles"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../connect/get-federation-token.html" title="get-federation-token"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../connect/index.html" accesskey="U">connect</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../connect/get-federation-token.html" title="previous chapter (use the left arrow)">&larr; get-federation-token</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../connect/list-routing-profiles.html" title="next chapter (use the right arrow)">list-routing-profiles &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-metric-data</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/connect/get-metric-data">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../connect/index.html#cli-aws-connect"><em>connect</em></a> ]</p>
+<div class="section" id="get-metric-data">
+<span id="cli-aws-connect-get-metric-data"></span><h1>get-metric-data<a class="headerlink" href="#get-metric-data" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The <tt class="docutils literal"><span class="pre">GetMetricData</span></tt> operation retrieves historical metrics data from your Amazon Connect instance.</p>
+<p>If you are using an IAM account, it must have permission to the <tt class="docutils literal"><span class="pre">connect:GetMetricData</span></tt> action.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricData">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-metric-data
+--instance-id &lt;value&gt;
+--start-time &lt;value&gt;
+--end-time &lt;value&gt;
+--filters &lt;value&gt;
+[--groupings &lt;value&gt;]
+--historical-metrics &lt;value&gt;
+[--next-token &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--instance-id</span></tt> (string)</p>
+<blockquote>
+<div>The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in the Overview section of your instance settings. For example, the instance ID is the set of characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--start-time</span></tt> (timestamp)</p>
+<blockquote>
+<div><p>The timestamp, in UNIX Epoch time format, at which to start the reporting interval for the retrieval of historical metrics data. The time must be specified using a multiple of 5 minutes, such as 10:05, 10:10, 10:15.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">StartTime</span></tt> cannot be earlier than 24 hours before the time of the request. Historical metrics are available in Amazon Connect only for 24 hours.</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--end-time</span></tt> (timestamp)</p>
+<blockquote>
+<div><p>The timestamp, in UNIX Epoch time format, at which to end the reporting interval for the retrieval of historical metrics data. The time must be specified using an interval of 5 minutes, such as 11:00, 11:05, 11:10, and must be later than the <tt class="docutils literal"><span class="pre">StartTime</span></tt> timestamp.</p>
+<p>The time range between <tt class="docutils literal"><span class="pre">StartTime</span></tt> and <tt class="docutils literal"><span class="pre">EndTime</span></tt> must be less than 24 hours.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--filters</span></tt> (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">Filters</span></tt> object that contains a list of queue IDs or queue ARNs, up to 100, or a list of Channels to use to filter the metrics returned in the response. Metric data is retrieved only for the resources associated with the IDs, ARNs, or Channels included in the filter. You can use both IDs and ARNs together in a request. Only VOICE is supported for Channel.</p>
+<p>To find the ARN for a queue, open the queue you want to use in the Amazon Connect Queue editor. The ARN for the queue is displayed in the address bar as part of the URL. For example, the queue ARN is the set of characters at the end of the URL, after 'id=' such as <tt class="docutils literal"><span class="pre">arn:aws:connect:us-east-1:270923740243:instance/78fb859d-1b7d-44b1-8aa3-12f0835c5855/queue/1d1a4575-9618-40ab-bbeb-81e45795fe61</span></tt> . The queue ID is also included in the URL, and is the string after 'queue/'.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Queues</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Channels</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Queues&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Channels&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;VOICE&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--groupings</span></tt> (list)</p>
+<blockquote>
+<div><p>The grouping applied to the metrics returned. For example, when results are grouped by queueId, the metrics returned are grouped by queue. The values returned apply to the metrics for each queue rather than aggregated for all queues.</p>
+<p>The current version supports grouping by Queue</p>
+<p>If no <tt class="docutils literal"><span class="pre">Grouping</span></tt> is included in the request, a summary of <tt class="docutils literal"><span class="pre">HistoricalMetrics</span></tt> for all queues is returned.</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...
+
+Where valid values are:
+  QUEUE
+  CHANNEL</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--historical-metrics</span></tt> (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">HistoricalMetric</span></tt> objects that contain the metrics to retrieve with the request.</p>
+<p>A <tt class="docutils literal"><span class="pre">HistoricalMetric</span></tt> object contains: <tt class="docutils literal"><span class="pre">HistoricalMetricName</span></tt> , <tt class="docutils literal"><span class="pre">Statistic</span></tt> , <tt class="docutils literal"><span class="pre">Threshold</span></tt> , and <tt class="docutils literal"><span class="pre">Unit</span></tt> .</p>
+<p>For each historical metric you include in the request, you must include a <tt class="docutils literal"><span class="pre">Unit</span></tt> and a <tt class="docutils literal"><span class="pre">Statistic</span></tt> .</p>
+<p>The following historical metrics are available:</p>
+<blockquote>
+<div>CONTACTS_QUEUED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistic: SUM</p>
+<blockquote>
+<div>CONTACTS_HANDLED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_ABANDONED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_CONSULTED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_AGENT_HUNG_UP_FIRST</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_HANDLED_INCOMING</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_HANDLED_OUTBOUND</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_HOLD_ABANDONS</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_TRANSFERRED_IN</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_TRANSFERRED_OUT</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_TRANSFERRED_IN_FROM_QUEUE</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_TRANSFERRED_OUT_FROM_QUEUE</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CALLBACK_CONTACTS_HANDLED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CALLBACK_CONTACTS_HANDLED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>API_CONTACTS_HANDLED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>CONTACTS_MISSED</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>OCCUPANCY</div></blockquote>
+<p>Unit: PERCENT</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>HANDLE_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>AFTER_CONTACT_WORK_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>QUEUED_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: MAX</p>
+<blockquote>
+<div>ABANDON_TIME</div></blockquote>
+<p>Unit: COUNT</p>
+<p>Statistics: SUM</p>
+<blockquote>
+<div>QUEUE_ANSWER_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>HOLD_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>INTERACTION_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>INTERACTION_AND_HOLD_TIME</div></blockquote>
+<p>Unit: SECONDS</p>
+<p>Statistics: AVG</p>
+<blockquote>
+<div>SERVICE_LEVEL</div></blockquote>
+<p>Unit: PERCENT</p>
+<p>Statistics: AVG</p>
+<p>Threshold: Only &quot;Less than&quot; comparisons are supported, with the following service level thresholds: 15, 20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Threshold={Comparison=string,ThresholdValue=double},Statistic=string,Unit=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Name&quot;: &quot;CONTACTS_QUEUED&quot;|&quot;CONTACTS_HANDLED&quot;|&quot;CONTACTS_ABANDONED&quot;|&quot;CONTACTS_CONSULTED&quot;|&quot;CONTACTS_AGENT_HUNG_UP_FIRST&quot;|&quot;CONTACTS_HANDLED_INCOMING&quot;|&quot;CONTACTS_HANDLED_OUTBOUND&quot;|&quot;CONTACTS_HOLD_ABANDONS&quot;|&quot;CONTACTS_TRANSFERRED_IN&quot;|&quot;CONTACTS_TRANSFERRED_OUT&quot;|&quot;CONTACTS_TRANSFERRED_IN_FROM_QUEUE&quot;|&quot;CONTACTS_TRANSFERRED_OUT_FROM_QUEUE&quot;|&quot;CONTACTS_MISSED&quot;|&quot;CALLBACK_CONTACTS_HANDLED&quot;|&quot;API_CONTACTS_HANDLED&quot;|&quot;OCCUPANCY&quot;|&quot;HANDLE_TIME&quot;|&quot;AFTER_CONTACT_WORK_TIME&quot;|&quot;QUEUED_TIME&quot;|&quot;ABANDON_TIME&quot;|&quot;QUEUE_ANSWER_TIME&quot;|&quot;HOLD_TIME&quot;|&quot;INTERACTION_TIME&quot;|&quot;INTERACTION_AND_HOLD_TIME&quot;|&quot;SERVICE_LEVEL&quot;,
+    &quot;Threshold&quot;: {
+      &quot;Comparison&quot;: &quot;LT&quot;,
+      &quot;ThresholdValue&quot;: double
+    },
+    &quot;Statistic&quot;: &quot;SUM&quot;|&quot;MAX&quot;|&quot;AVG&quot;,
+    &quot;Unit&quot;: &quot;SECONDS&quot;|&quot;COUNT&quot;|&quot;PERCENT&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>Indicates the maximum number of results to return per page in the response, between 1-100.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div><p>A string returned in the response. Use the value returned in the response as the value of the NextToken in a subsequent request to retrieve the next set of results.</p>
+<p>The token expires after 5 minutes from the time it is created. Subsequent requests that use the NextToken must use the same request parameters as the request that generated the token.</p>
+</div></blockquote>
+<p>MetricResults -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">HistoricalMetricResult</span></tt> objects, organized by <tt class="docutils literal"><span class="pre">Dimensions</span></tt> , which is the ID of the resource specified in the <tt class="docutils literal"><span class="pre">Filters</span></tt> used for the request. The metrics are combined with the metrics included in <tt class="docutils literal"><span class="pre">Collections</span></tt> , which is a list of <tt class="docutils literal"><span class="pre">HisotricalMetricData</span></tt> objects.</p>
+<p>If no <tt class="docutils literal"><span class="pre">Grouping</span></tt> is specified in the request, <tt class="docutils literal"><span class="pre">Collections</span></tt> includes summary data for the <tt class="docutils literal"><span class="pre">HistoricalMetrics</span></tt> .</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The metrics data returned from a <tt class="docutils literal"><span class="pre">GetMetricData</span></tt> operation.</p>
+<p>Dimensions -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">Dimensions</span></tt> for the metrics.</p>
+<p>Queue -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">QueueReference</span></tt> object used as one part of dimension for the metrics results.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the queue associated with the metrics returned.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of queue.</div></blockquote>
+</div></blockquote>
+<p>Channel -&gt; (string)</p>
+<blockquote>
+<div>The channel used for grouping and filters. Only VOICE is supported.</div></blockquote>
+</div></blockquote>
+<p>Collections -&gt; (list)</p>
+<blockquote>
+<div><p>A list of <tt class="docutils literal"><span class="pre">HistoricalMetricData</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">HistoricalMetricData</span></tt> object than contains a <tt class="docutils literal"><span class="pre">Metric</span></tt> and a <tt class="docutils literal"><span class="pre">Value</span></tt> .</p>
+<p>Metric -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">HistoricalMetric</span></tt> object.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the historical metric.</div></blockquote>
+<p>Threshold -&gt; (structure)</p>
+<blockquote>
+<div><p>The threshold for the metric, used with service level metrics.</p>
+<p>Comparison -&gt; (string)</p>
+<blockquote>
+<div>The Threshold to use to compare service level metrics to. Only &quot;Less than&quot; (LT) comparisons are supported.</div></blockquote>
+<p>ThresholdValue -&gt; (double)</p>
+<blockquote>
+<div>The value of the threshold to compare the metric to. Only &quot;Less than&quot; (LT) comparisons are supported.</div></blockquote>
+</div></blockquote>
+<p>Statistic -&gt; (string)</p>
+<blockquote>
+<div>The statistic for the metric: SUM, MAX, or SUM.</div></blockquote>
+<p>Unit -&gt; (string)</p>
+<blockquote>
+<div>The unit for the metric: COUNT, PERCENT, or SECONDS.</div></blockquote>
+</div></blockquote>
+<p>Value -&gt; (double)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">Value</span></tt> of the metric.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../connect/get-federation-token.html" title="previous chapter (use the left arrow)">&larr; get-federation-token</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../connect/list-routing-profiles.html" title="next chapter (use the right arrow)">list-routing-profiles &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../connect/list-routing-profiles.html" title="list-routing-profiles"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../connect/get-federation-token.html" title="get-federation-token"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../connect/index.html" >connect</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

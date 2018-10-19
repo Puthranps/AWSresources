@@ -1,0 +1,2008 @@
+[ :ref:`aws <cli:aws>` . :ref:`dynamodb <cli:aws dynamodb>` ]
+
+.. _cli:aws dynamodb put-item:
+
+
+********
+put-item
+********
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a new item, or replaces an old item with a new item. If an item that has the same primary key as the new item already exists in the specified table, the new item completely replaces the existing item. You can perform a conditional put operation (add a new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute values. You can return the item's attribute values in the same operation, using the ``ReturnValues`` parameter.
+
+ 
+
+.. warning::
+
+   
+
+  This topic provides general information about the ``PutItem`` API.
+
+   
+
+  For information on how to call the ``PutItem`` API using the AWS SDK in specific languages, see the following:
+
+   
+
+   
+  * `PutItem in the AWS Command Line Interface <http://docs.aws.amazon.com/goto/aws-cli/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for .NET <http://docs.aws.amazon.com/goto/DotNetSDKV3/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for C++ <http://docs.aws.amazon.com/goto/SdkForCpp/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for Go <http://docs.aws.amazon.com/goto/SdkForGoV1/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for Java <http://docs.aws.amazon.com/goto/SdkForJava/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for JavaScript <http://docs.aws.amazon.com/goto/AWSJavaScriptSDK/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for PHP V3 <http://docs.aws.amazon.com/goto/SdkForPHPV3/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for Python <http://docs.aws.amazon.com/goto/boto3/dynamodb-2012-08-10/PutItem>`__   
+   
+  * `PutItem in the AWS SDK for Ruby V2 <http://docs.aws.amazon.com/goto/SdkForRubyV2/dynamodb-2012-08-10/PutItem>`__   
+   
+
+   
+
+ 
+
+When you add an item, the primary key attribute(s) are the only required attributes. Attribute values cannot be null. String and Binary type attributes must have lengths greater than zero. Set type attributes cannot be empty. Requests with empty values will be rejected with a ``ValidationException`` exception.
+
+ 
+
+.. note::
+
+   
+
+  To prevent a new item from replacing an existing item, use a conditional expression that contains the ``attribute_not_exists`` function with the name of the attribute being used as the partition key for the table. Since every record must contain that attribute, the ``attribute_not_exists`` function will only succeed if no matching item exists.
+
+   
+
+ 
+
+For more information about ``PutItem`` , see `Working with Items <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/PutItem>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-item
+  --table-name <value>
+  --item <value>
+  [--expected <value>]
+  [--return-values <value>]
+  [--return-consumed-capacity <value>]
+  [--return-item-collection-metrics <value>]
+  [--conditional-operator <value>]
+  [--condition-expression <value>]
+  [--expression-attribute-names <value>]
+  [--expression-attribute-values <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--table-name`` (string)
+
+
+  The name of the table to contain the item.
+
+  
+
+``--item`` (map)
+
+
+  A map of attribute name/value pairs, one for each attribute. Only the primary key attributes are required; you can optionally provide other attribute name-value pairs for the item.
+
+   
+
+  You must provide all of the attributes for the primary key. For example, with a simple primary key, you only need to provide a value for the partition key. For a composite primary key, you must provide both values for both the partition key and the sort key.
+
+   
+
+  If you specify any attributes that are part of an index key, then the data types for those attributes must match those of the schema in the table's attribute definition.
+
+   
+
+  For more information about primary keys, see `Primary Key <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey>`__ in the *Amazon DynamoDB Developer Guide* .
+
+   
+
+  Each element in the ``Item`` map is an ``AttributeValue`` object.
+
+  
+
+
+
+JSON Syntax::
+
+  {"string": {
+        "S": "string",
+        "N": "string",
+        "B": blob,
+        "SS": ["string", ...],
+        "NS": ["string", ...],
+        "BS": [blob, ...],
+        "M": {"string": {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+          ...},
+        "L": [
+          {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+          ...
+        ],
+        "NULL": true|false,
+        "BOOL": true|false
+      }
+    ...}
+
+
+
+``--expected`` (map)
+
+
+  This is a legacy parameter. Use ``ConditionExpression`` instead. For more information, see `Expected <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.Expected.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+  
+
+
+
+JSON Syntax::
+
+  {"string": {
+        "Value": {
+          "S": "string",
+          "N": "string",
+          "B": blob,
+          "SS": ["string", ...],
+          "NS": ["string", ...],
+          "BS": [blob, ...],
+          "M": {"string": {
+                "S": "string",
+                "N": "string",
+                "B": blob,
+                "SS": ["string", ...],
+                "NS": ["string", ...],
+                "BS": [blob, ...],
+                "M": {"string": { ... recursive ... }
+                  ...},
+                "L": [
+                  { ... recursive ... }
+                  ...
+                ],
+                "NULL": true|false,
+                "BOOL": true|false
+              }
+            ...},
+          "L": [
+            {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+            ...
+          ],
+          "NULL": true|false,
+          "BOOL": true|false
+        },
+        "Exists": true|false,
+        "ComparisonOperator": "EQ"|"NE"|"IN"|"LE"|"LT"|"GE"|"GT"|"BETWEEN"|"NOT_NULL"|"NULL"|"CONTAINS"|"NOT_CONTAINS"|"BEGINS_WITH",
+        "AttributeValueList": [
+          {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": {
+                  "S": "string",
+                  "N": "string",
+                  "B": blob,
+                  "SS": ["string", ...],
+                  "NS": ["string", ...],
+                  "BS": [blob, ...],
+                  "M": {"string": { ... recursive ... }
+                    ...},
+                  "L": [
+                    { ... recursive ... }
+                    ...
+                  ],
+                  "NULL": true|false,
+                  "BOOL": true|false
+                }
+              ...},
+            "L": [
+              {
+                "S": "string",
+                "N": "string",
+                "B": blob,
+                "SS": ["string", ...],
+                "NS": ["string", ...],
+                "BS": [blob, ...],
+                "M": {"string": { ... recursive ... }
+                  ...},
+                "L": [
+                  { ... recursive ... }
+                  ...
+                ],
+                "NULL": true|false,
+                "BOOL": true|false
+              }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+          ...
+        ]
+      }
+    ...}
+
+
+
+``--return-values`` (string)
+
+
+  Use ``ReturnValues`` if you want to get the item attributes as they appeared before they were updated with the ``PutItem`` request. For ``PutItem`` , the valid values are:
+
+   
+
+   
+  * ``NONE`` - If ``ReturnValues`` is not specified, or if its value is ``NONE`` , then nothing is returned. (This setting is the default for ``ReturnValues`` .) 
+   
+  * ``ALL_OLD`` - If ``PutItem`` overwrote an attribute name-value pair, then the content of the old item is returned. 
+   
+
+   
+
+  .. note::
+
+     
+
+    The ``ReturnValues`` parameter is used by several DynamoDB operations; however, ``PutItem`` does not recognize any values other than ``NONE`` or ``ALL_OLD`` .
+
+     
+
+  
+
+  Possible values:
+
+  
+  *   ``NONE``
+
+  
+  *   ``ALL_OLD``
+
+  
+  *   ``UPDATED_OLD``
+
+  
+  *   ``ALL_NEW``
+
+  
+  *   ``UPDATED_NEW``
+
+  
+
+  
+
+``--return-consumed-capacity`` (string)
+
+
+  Determines the level of detail about provisioned throughput consumption that is returned in the response:
+
+   
+
+   
+  * ``INDEXES`` - The response includes the aggregate ``ConsumedCapacity`` for the operation, together with ``ConsumedCapacity`` for each table and secondary index that was accessed. Note that some operations, such as ``GetItem`` and ``BatchGetItem`` , do not access any indexes at all. In these cases, specifying ``INDEXES`` will only return ``ConsumedCapacity`` information for table(s). 
+   
+  * ``TOTAL`` - The response includes only the aggregate ``ConsumedCapacity`` for the operation. 
+   
+  * ``NONE`` - No ``ConsumedCapacity`` details are included in the response. 
+   
+
+  
+
+  Possible values:
+
+  
+  *   ``INDEXES``
+
+  
+  *   ``TOTAL``
+
+  
+  *   ``NONE``
+
+  
+
+  
+
+``--return-item-collection-metrics`` (string)
+
+
+  Determines whether item collection metrics are returned. If set to ``SIZE`` , the response includes statistics about item collections, if any, that were modified during the operation are returned in the response. If set to ``NONE`` (the default), no statistics are returned.
+
+  
+
+  Possible values:
+
+  
+  *   ``SIZE``
+
+  
+  *   ``NONE``
+
+  
+
+  
+
+``--conditional-operator`` (string)
+
+
+  This is a legacy parameter. Use ``ConditionExpression`` instead. For more information, see `ConditionalOperator <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.ConditionalOperator.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+  
+
+  Possible values:
+
+  
+  *   ``AND``
+
+  
+  *   ``OR``
+
+  
+
+  
+
+``--condition-expression`` (string)
+
+
+  A condition that must be satisfied in order for a conditional ``PutItem`` operation to succeed.
+
+   
+
+  An expression can contain any of the following:
+
+   
+
+   
+  * Functions: ``attribute_exists | attribute_not_exists | attribute_type | contains | begins_with | size``   These function names are case-sensitive. 
+   
+  * Comparison operators: ``= | <> | < | > | <= | >= | BETWEEN | IN``   
+   
+  * Logical operators: ``AND | OR | NOT``   
+   
+
+   
+
+  For more information on condition expressions, see `Specifying Conditions <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+  
+
+``--expression-attribute-names`` (map)
+
+
+  One or more substitution tokens for attribute names in an expression. The following are some use cases for using ``ExpressionAttributeNames`` :
+
+   
+
+   
+  * To access an attribute whose name conflicts with a DynamoDB reserved word. 
+   
+  * To create a placeholder for repeating occurrences of an attribute name in an expression. 
+   
+  * To prevent special characters in an attribute name from being misinterpreted in an expression. 
+   
+
+   
+
+  Use the **#** character in an expression to dereference an attribute name. For example, consider the following attribute name:
+
+   
+
+   
+  * ``Percentile``   
+   
+
+   
+
+  The name of this attribute conflicts with a reserved word, so it cannot be used directly in an expression. (For the complete list of reserved words, see `Reserved Words <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html>`__ in the *Amazon DynamoDB Developer Guide* ). To work around this, you could specify the following for ``ExpressionAttributeNames`` :
+
+   
+
+   
+  * ``{"#P":"Percentile"}``   
+   
+
+   
+
+  You could then use this substitution in an expression, as in this example:
+
+   
+
+   
+  * ``#P = :val``   
+   
+
+   
+
+  .. note::
+
+     
+
+    Tokens that begin with the **:** character are *expression attribute values* , which are placeholders for the actual value at runtime.
+
+     
+
+   
+
+  For more information on expression attribute names, see `Accessing Item Attributes <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.AccessingItemAttributes.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,KeyName2=string
+
+
+
+
+JSON Syntax::
+
+  {"string": "string"
+    ...}
+
+
+
+``--expression-attribute-values`` (map)
+
+
+  One or more values that can be substituted in an expression.
+
+   
+
+  Use the **:** (colon) character in an expression to dereference an attribute value. For example, suppose that you wanted to check whether the value of the *ProductStatus* attribute was one of the following: 
+
+   
+
+   ``Available | Backordered | Discontinued``  
+
+   
+
+  You would first need to specify ``ExpressionAttributeValues`` as follows:
+
+   
+
+   ``{ ":avail":{"S":"Available"}, ":back":{"S":"Backordered"}, ":disc":{"S":"Discontinued"} }``  
+
+   
+
+  You could then use these values in an expression, such as this:
+
+   
+
+   ``ProductStatus IN (:avail, :back, :disc)``  
+
+   
+
+  For more information on expression attribute values, see `Specifying Conditions <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+  
+
+
+
+JSON Syntax::
+
+  {"string": {
+        "S": "string",
+        "N": "string",
+        "B": blob,
+        "SS": ["string", ...],
+        "NS": ["string", ...],
+        "BS": [blob, ...],
+        "M": {"string": {
+              "S": "string",
+              "N": "string",
+              "B": blob,
+              "SS": ["string", ...],
+              "NS": ["string", ...],
+              "BS": [blob, ...],
+              "M": {"string": { ... recursive ... }
+                ...},
+              "L": [
+                { ... recursive ... }
+                ...
+              ],
+              "NULL": true|false,
+              "BOOL": true|false
+            }
+          ...},
+        "L": [
+          {
+            "S": "string",
+            "N": "string",
+            "B": blob,
+            "SS": ["string", ...],
+            "NS": ["string", ...],
+            "BS": [blob, ...],
+            "M": {"string": { ... recursive ... }
+              ...},
+            "L": [
+              { ... recursive ... }
+              ...
+            ],
+            "NULL": true|false,
+            "BOOL": true|false
+          }
+          ...
+        ],
+        "NULL": true|false,
+        "BOOL": true|false
+      }
+    ...}
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To add an item to a table**
+
+This example adds a new item to the *MusicCollection* table.
+
+Command::
+
+  aws dynamodb put-item --table-name MusicCollection --item file://item.json --return-consumed-capacity TOTAL
+
+The arguments for ``--item`` are stored in a JSON file, ``item.json``.  Here are the contents of that file::
+
+  {
+      "Artist": {"S": "No One You Know"},
+      "SongTitle": {"S": "Call Me Today"},
+      "AlbumTitle": {"S": "Somewhat Famous"}
+  }
+
+Output::
+
+  {
+      "ConsumedCapacity": {
+          "CapacityUnits": 1.0,
+          "TableName": "MusicCollection"
+      }
+  }
+
+
+**Conditional Expressions**
+
+This example shows how to perform a one-line conditional expression operation. This put-item call to the table *MusicCollection* table will only succeed if the artist "Obscure Indie Band" does not exist in the table.
+
+Command::
+
+  aws dynamodb put-item --table-name MusicCollection --item '{"Artist": {"S": "Obscure Indie Band"}}' --condition-expression "attribute_not_exists(Artist)"
+
+
+If the key already exists, you should see:
+
+Output::
+
+  A client error (ConditionalCheckFailedException) occurred when calling the PutItem operation: The conditional request failed
+
+
+======
+Output
+======
+
+Attributes -> (map)
+
+  
+
+  The attribute values as they appeared before the ``PutItem`` operation, but only if ``ReturnValues`` is specified as ``ALL_OLD`` in the request. Each element consists of an attribute name and an attribute value.
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (structure)
+
+    
+
+    Represents the data for an attribute.
+
+     
+
+    Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+
+     
+
+    For more information, see `Data Types <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes>`__ in the *Amazon DynamoDB Developer Guide* .
+
+    
+
+    S -> (string)
+
+      
+
+      An attribute of type String. For example:
+
+       
+
+       ``"S": "Hello"``  
+
+      
+
+      
+
+    N -> (string)
+
+      
+
+      An attribute of type Number. For example:
+
+       
+
+       ``"N": "123.45"``  
+
+       
+
+      Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+      
+
+      
+
+    B -> (blob)
+
+      
+
+      An attribute of type Binary. For example:
+
+       
+
+       ``"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"``  
+
+      
+
+      
+
+    SS -> (list)
+
+      
+
+      An attribute of type String Set. For example:
+
+       
+
+       ``"SS": ["Giraffe", "Hippo" ,"Zebra"]``  
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    NS -> (list)
+
+      
+
+      An attribute of type Number Set. For example:
+
+       
+
+       ``"NS": ["42.2", "-19", "7.5", "3.14"]``  
+
+       
+
+      Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    BS -> (list)
+
+      
+
+      An attribute of type Binary Set. For example:
+
+       
+
+       ``"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]``  
+
+      
+
+      (blob)
+
+        
+
+        
+
+      
+
+    M -> (map)
+
+      
+
+      An attribute of type Map. For example:
+
+       
+
+       ``"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}``  
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (structure)
+
+        
+
+        Represents the data for an attribute.
+
+         
+
+        Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+
+         
+
+        For more information, see `Data Types <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes>`__ in the *Amazon DynamoDB Developer Guide* .
+
+        
+
+        S -> (string)
+
+          
+
+          An attribute of type String. For example:
+
+           
+
+           ``"S": "Hello"``  
+
+          
+
+          
+
+        N -> (string)
+
+          
+
+          An attribute of type Number. For example:
+
+           
+
+           ``"N": "123.45"``  
+
+           
+
+          Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+          
+
+          
+
+        B -> (blob)
+
+          
+
+          An attribute of type Binary. For example:
+
+           
+
+           ``"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"``  
+
+          
+
+          
+
+        SS -> (list)
+
+          
+
+          An attribute of type String Set. For example:
+
+           
+
+           ``"SS": ["Giraffe", "Hippo" ,"Zebra"]``  
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        NS -> (list)
+
+          
+
+          An attribute of type Number Set. For example:
+
+           
+
+           ``"NS": ["42.2", "-19", "7.5", "3.14"]``  
+
+           
+
+          Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        BS -> (list)
+
+          
+
+          An attribute of type Binary Set. For example:
+
+           
+
+           ``"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]``  
+
+          
+
+          (blob)
+
+            
+
+            
+
+          
+
+        M -> (map)
+
+          
+
+          An attribute of type Map. For example:
+
+           
+
+           ``"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}``  
+
+          
+
+          key -> (string)
+
+            
+
+            
+
+          ( ... recursive ... )
+
+        L -> (list)
+
+          
+
+          An attribute of type List. For example:
+
+           
+
+           ``"L": ["Cookies", "Coffee", 3.14159]``  
+
+          
+
+          ( ... recursive ... )
+
+        NULL -> (boolean)
+
+          
+
+          An attribute of type Null. For example:
+
+           
+
+           ``"NULL": true``  
+
+          
+
+          
+
+        BOOL -> (boolean)
+
+          
+
+          An attribute of type Boolean. For example:
+
+           
+
+           ``"BOOL": true``  
+
+          
+
+          
+
+        
+
+      
+
+    L -> (list)
+
+      
+
+      An attribute of type List. For example:
+
+       
+
+       ``"L": ["Cookies", "Coffee", 3.14159]``  
+
+      
+
+      (structure)
+
+        
+
+        Represents the data for an attribute.
+
+         
+
+        Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+
+         
+
+        For more information, see `Data Types <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes>`__ in the *Amazon DynamoDB Developer Guide* .
+
+        
+
+        S -> (string)
+
+          
+
+          An attribute of type String. For example:
+
+           
+
+           ``"S": "Hello"``  
+
+          
+
+          
+
+        N -> (string)
+
+          
+
+          An attribute of type Number. For example:
+
+           
+
+           ``"N": "123.45"``  
+
+           
+
+          Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+          
+
+          
+
+        B -> (blob)
+
+          
+
+          An attribute of type Binary. For example:
+
+           
+
+           ``"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"``  
+
+          
+
+          
+
+        SS -> (list)
+
+          
+
+          An attribute of type String Set. For example:
+
+           
+
+           ``"SS": ["Giraffe", "Hippo" ,"Zebra"]``  
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        NS -> (list)
+
+          
+
+          An attribute of type Number Set. For example:
+
+           
+
+           ``"NS": ["42.2", "-19", "7.5", "3.14"]``  
+
+           
+
+          Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        BS -> (list)
+
+          
+
+          An attribute of type Binary Set. For example:
+
+           
+
+           ``"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]``  
+
+          
+
+          (blob)
+
+            
+
+            
+
+          
+
+        M -> (map)
+
+          
+
+          An attribute of type Map. For example:
+
+           
+
+           ``"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}``  
+
+          
+
+          key -> (string)
+
+            
+
+            
+
+          ( ... recursive ... )
+
+        L -> (list)
+
+          
+
+          An attribute of type List. For example:
+
+           
+
+           ``"L": ["Cookies", "Coffee", 3.14159]``  
+
+          
+
+          ( ... recursive ... )
+
+        NULL -> (boolean)
+
+          
+
+          An attribute of type Null. For example:
+
+           
+
+           ``"NULL": true``  
+
+          
+
+          
+
+        BOOL -> (boolean)
+
+          
+
+          An attribute of type Boolean. For example:
+
+           
+
+           ``"BOOL": true``  
+
+          
+
+          
+
+        
+
+      
+
+    NULL -> (boolean)
+
+      
+
+      An attribute of type Null. For example:
+
+       
+
+       ``"NULL": true``  
+
+      
+
+      
+
+    BOOL -> (boolean)
+
+      
+
+      An attribute of type Boolean. For example:
+
+       
+
+       ``"BOOL": true``  
+
+      
+
+      
+
+    
+
+  
+
+ConsumedCapacity -> (structure)
+
+  
+
+  The capacity units consumed by the ``PutItem`` operation. The data returned includes the total provisioned throughput consumed, along with statistics for the table and any indexes involved in the operation. ``ConsumedCapacity`` is only returned if the ``ReturnConsumedCapacity`` parameter was specified. For more information, see `Provisioned Throughput <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html>`__ in the *Amazon DynamoDB Developer Guide* .
+
+  
+
+  TableName -> (string)
+
+    
+
+    The name of the table that was affected by the operation.
+
+    
+
+    
+
+  CapacityUnits -> (double)
+
+    
+
+    The total number of capacity units consumed by the operation.
+
+    
+
+    
+
+  Table -> (structure)
+
+    
+
+    The amount of throughput consumed on the table affected by the operation.
+
+    
+
+    CapacityUnits -> (double)
+
+      
+
+      The total number of capacity units consumed on a table or an index.
+
+      
+
+      
+
+    
+
+  LocalSecondaryIndexes -> (map)
+
+    
+
+    The amount of throughput consumed on each local index affected by the operation.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      
+
+      Represents the amount of provisioned throughput capacity consumed on a table or an index.
+
+      
+
+      CapacityUnits -> (double)
+
+        
+
+        The total number of capacity units consumed on a table or an index.
+
+        
+
+        
+
+      
+
+    
+
+  GlobalSecondaryIndexes -> (map)
+
+    
+
+    The amount of throughput consumed on each global index affected by the operation.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      
+
+      Represents the amount of provisioned throughput capacity consumed on a table or an index.
+
+      
+
+      CapacityUnits -> (double)
+
+        
+
+        The total number of capacity units consumed on a table or an index.
+
+        
+
+        
+
+      
+
+    
+
+  
+
+ItemCollectionMetrics -> (structure)
+
+  
+
+  Information about item collections, if any, that were affected by the ``PutItem`` operation. ``ItemCollectionMetrics`` is only returned if the ``ReturnItemCollectionMetrics`` parameter was specified. If the table does not have any local secondary indexes, this information is not returned in the response.
+
+   
+
+  Each ``ItemCollectionMetrics`` element consists of:
+
+   
+
+   
+  * ``ItemCollectionKey`` - The partition key value of the item collection. This is the same as the partition key value of the item itself. 
+   
+  * ``SizeEstimateRangeGB`` - An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit. The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate. 
+   
+
+  
+
+  ItemCollectionKey -> (map)
+
+    
+
+    The partition key value of the item collection. This value is the same as the partition key value of the item.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      
+
+      Represents the data for an attribute.
+
+       
+
+      Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+
+       
+
+      For more information, see `Data Types <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes>`__ in the *Amazon DynamoDB Developer Guide* .
+
+      
+
+      S -> (string)
+
+        
+
+        An attribute of type String. For example:
+
+         
+
+         ``"S": "Hello"``  
+
+        
+
+        
+
+      N -> (string)
+
+        
+
+        An attribute of type Number. For example:
+
+         
+
+         ``"N": "123.45"``  
+
+         
+
+        Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+        
+
+        
+
+      B -> (blob)
+
+        
+
+        An attribute of type Binary. For example:
+
+         
+
+         ``"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"``  
+
+        
+
+        
+
+      SS -> (list)
+
+        
+
+        An attribute of type String Set. For example:
+
+         
+
+         ``"SS": ["Giraffe", "Hippo" ,"Zebra"]``  
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      NS -> (list)
+
+        
+
+        An attribute of type Number Set. For example:
+
+         
+
+         ``"NS": ["42.2", "-19", "7.5", "3.14"]``  
+
+         
+
+        Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      BS -> (list)
+
+        
+
+        An attribute of type Binary Set. For example:
+
+         
+
+         ``"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]``  
+
+        
+
+        (blob)
+
+          
+
+          
+
+        
+
+      M -> (map)
+
+        
+
+        An attribute of type Map. For example:
+
+         
+
+         ``"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}``  
+
+        
+
+        key -> (string)
+
+          
+
+          
+
+        value -> (structure)
+
+          
+
+          Represents the data for an attribute.
+
+           
+
+          Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+
+           
+
+          For more information, see `Data Types <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes>`__ in the *Amazon DynamoDB Developer Guide* .
+
+          
+
+          S -> (string)
+
+            
+
+            An attribute of type String. For example:
+
+             
+
+             ``"S": "Hello"``  
+
+            
+
+            
+
+          N -> (string)
+
+            
+
+            An attribute of type Number. For example:
+
+             
+
+             ``"N": "123.45"``  
+
+             
+
+            Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+            
+
+            
+
+          B -> (blob)
+
+            
+
+            An attribute of type Binary. For example:
+
+             
+
+             ``"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"``  
+
+            
+
+            
+
+          SS -> (list)
+
+            
+
+            An attribute of type String Set. For example:
+
+             
+
+             ``"SS": ["Giraffe", "Hippo" ,"Zebra"]``  
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          NS -> (list)
+
+            
+
+            An attribute of type Number Set. For example:
+
+             
+
+             ``"NS": ["42.2", "-19", "7.5", "3.14"]``  
+
+             
+
+            Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          BS -> (list)
+
+            
+
+            An attribute of type Binary Set. For example:
+
+             
+
+             ``"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]``  
+
+            
+
+            (blob)
+
+              
+
+              
+
+            
+
+          M -> (map)
+
+            
+
+            An attribute of type Map. For example:
+
+             
+
+             ``"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}``  
+
+            
+
+            key -> (string)
+
+              
+
+              
+
+            ( ... recursive ... )
+
+          L -> (list)
+
+            
+
+            An attribute of type List. For example:
+
+             
+
+             ``"L": ["Cookies", "Coffee", 3.14159]``  
+
+            
+
+            ( ... recursive ... )
+
+          NULL -> (boolean)
+
+            
+
+            An attribute of type Null. For example:
+
+             
+
+             ``"NULL": true``  
+
+            
+
+            
+
+          BOOL -> (boolean)
+
+            
+
+            An attribute of type Boolean. For example:
+
+             
+
+             ``"BOOL": true``  
+
+            
+
+            
+
+          
+
+        
+
+      L -> (list)
+
+        
+
+        An attribute of type List. For example:
+
+         
+
+         ``"L": ["Cookies", "Coffee", 3.14159]``  
+
+        
+
+        (structure)
+
+          
+
+          Represents the data for an attribute.
+
+           
+
+          Each attribute value is described as a name-value pair. The name is the data type, and the value is the data itself.
+
+           
+
+          For more information, see `Data Types <http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html#HowItWorks.DataTypes>`__ in the *Amazon DynamoDB Developer Guide* .
+
+          
+
+          S -> (string)
+
+            
+
+            An attribute of type String. For example:
+
+             
+
+             ``"S": "Hello"``  
+
+            
+
+            
+
+          N -> (string)
+
+            
+
+            An attribute of type Number. For example:
+
+             
+
+             ``"N": "123.45"``  
+
+             
+
+            Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+            
+
+            
+
+          B -> (blob)
+
+            
+
+            An attribute of type Binary. For example:
+
+             
+
+             ``"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"``  
+
+            
+
+            
+
+          SS -> (list)
+
+            
+
+            An attribute of type String Set. For example:
+
+             
+
+             ``"SS": ["Giraffe", "Hippo" ,"Zebra"]``  
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          NS -> (list)
+
+            
+
+            An attribute of type Number Set. For example:
+
+             
+
+             ``"NS": ["42.2", "-19", "7.5", "3.14"]``  
+
+             
+
+            Numbers are sent across the network to DynamoDB as strings, to maximize compatibility across languages and libraries. However, DynamoDB treats them as number type attributes for mathematical operations.
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          BS -> (list)
+
+            
+
+            An attribute of type Binary Set. For example:
+
+             
+
+             ``"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]``  
+
+            
+
+            (blob)
+
+              
+
+              
+
+            
+
+          M -> (map)
+
+            
+
+            An attribute of type Map. For example:
+
+             
+
+             ``"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}``  
+
+            
+
+            key -> (string)
+
+              
+
+              
+
+            ( ... recursive ... )
+
+          L -> (list)
+
+            
+
+            An attribute of type List. For example:
+
+             
+
+             ``"L": ["Cookies", "Coffee", 3.14159]``  
+
+            
+
+            ( ... recursive ... )
+
+          NULL -> (boolean)
+
+            
+
+            An attribute of type Null. For example:
+
+             
+
+             ``"NULL": true``  
+
+            
+
+            
+
+          BOOL -> (boolean)
+
+            
+
+            An attribute of type Boolean. For example:
+
+             
+
+             ``"BOOL": true``  
+
+            
+
+            
+
+          
+
+        
+
+      NULL -> (boolean)
+
+        
+
+        An attribute of type Null. For example:
+
+         
+
+         ``"NULL": true``  
+
+        
+
+        
+
+      BOOL -> (boolean)
+
+        
+
+        An attribute of type Boolean. For example:
+
+         
+
+         ``"BOOL": true``  
+
+        
+
+        
+
+      
+
+    
+
+  SizeEstimateRangeGB -> (list)
+
+    
+
+    An estimate of item collection size, in gigabytes. This value is a two-element array containing a lower bound and an upper bound for the estimate. The estimate includes the size of all the items in the table, plus the size of all attributes projected into all of the local secondary indexes on that table. Use this estimate to measure whether a local secondary index is approaching its size limit.
+
+     
+
+    The estimate is subject to change over time; therefore, do not rely on the precision or accuracy of the estimate.
+
+    
+
+    (double)
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,17 @@
+{
+    "connectionId": "",
+    "newPublicVirtualInterface": {
+        "virtualInterfaceName": "",
+        "vlan": 0,
+        "asn": 0,
+        "authKey": "",
+        "amazonAddress": "",
+        "customerAddress": "",
+        "addressFamily": "ipv4",
+        "routeFilterPrefixes": [
+            {
+                "cidr": ""
+            }
+        ]
+    }
+}

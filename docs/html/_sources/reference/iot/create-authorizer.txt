@@ -1,0 +1,145 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot <cli:aws iot>` ]
+
+.. _cli:aws iot create-authorizer:
+
+
+*****************
+create-authorizer
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an authorizer.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateAuthorizer>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-authorizer
+  --authorizer-name <value>
+  --authorizer-function-arn <value>
+  --token-key-name <value>
+  --token-signing-public-keys <value>
+  [--status <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--authorizer-name`` (string)
+
+
+  The authorizer name.
+
+  
+
+``--authorizer-function-arn`` (string)
+
+
+  The ARN of the authorizer's Lambda function.
+
+  
+
+``--token-key-name`` (string)
+
+
+  The name of the token key used to extract the token from the HTTP headers.
+
+  
+
+``--token-signing-public-keys`` (map)
+
+
+  The public keys used to verify the digital signature returned by your custom authentication service.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,KeyName2=string
+
+
+
+
+JSON Syntax::
+
+  {"string": "string"
+    ...}
+
+
+
+``--status`` (string)
+
+
+  The status of the create authorizer request.
+
+  
+
+  Possible values:
+
+  
+  *   ``ACTIVE``
+
+  
+  *   ``INACTIVE``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+authorizerName -> (string)
+
+  
+
+  The authorizer's name.
+
+  
+
+  
+
+authorizerArn -> (string)
+
+  
+
+  The authorizer ARN.
+
+  
+
+  
+

@@ -1,0 +1,12 @@
+{
+    "ProfileName": "",
+    "Timezone": "",
+    "Address": "",
+    "DistanceUnit": "METRIC",
+    "TemperatureUnit": "CELSIUS",
+    "WakeWord": "ECHO",
+    "ClientRequestToken": "",
+    "SetupModeDisabled": true,
+    "MaxVolumeLimit": 0,
+    "PSTNEnabled": true
+}

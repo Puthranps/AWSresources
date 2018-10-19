@@ -1,0 +1,26 @@
+{
+    "ModelName": "",
+    "PrimaryContainer": {
+        "ContainerHostname": "",
+        "Image": "",
+        "ModelDataUrl": "",
+        "Environment": {
+            "KeyName": ""
+        }
+    },
+    "ExecutionRoleArn": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "VpcConfig": {
+        "SecurityGroupIds": [
+            ""
+        ],
+        "Subnets": [
+            ""
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "SearchString": "",
+    "TimePeriod": {
+        "Start": "",
+        "End": ""
+    },
+    "Dimension": "REGION",
+    "Context": "RESERVATIONS",
+    "NextPageToken": ""
+}

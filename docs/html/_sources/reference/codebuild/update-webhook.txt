@@ -1,0 +1,141 @@
+[ :ref:`aws <cli:aws>` . :ref:`codebuild <cli:aws codebuild>` ]
+
+.. _cli:aws codebuild update-webhook:
+
+
+**************
+update-webhook
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Updates the webhook associated with an AWS CodeBuild build project. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/UpdateWebhook>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-webhook
+  --project-name <value>
+  [--branch-filter <value>]
+  [--rotate-secret | --no-rotate-secret]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--project-name`` (string)
+
+
+  The name of the AWS CodeBuild project.
+
+  
+
+``--branch-filter`` (string)
+
+
+  A regular expression used to determine which branches in a repository are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If branchFilter is empty, then all branches are built.
+
+  
+
+``--rotate-secret`` | ``--no-rotate-secret`` (boolean)
+
+
+  A boolean value that specifies whether the associated repository's secret token should be updated. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+webhook -> (structure)
+
+  
+
+  Information about a repository's webhook that is associated with a project in AWS CodeBuild. 
+
+  
+
+  url -> (string)
+
+    
+
+    The URL to the webhook.
+
+    
+
+    
+
+  payloadUrl -> (string)
+
+    
+
+    The CodeBuild endpoint where webhook events are sent.
+
+    
+
+    
+
+  secret -> (string)
+
+    
+
+    The secret token of the associated repository. 
+
+    
+
+    
+
+  branchFilter -> (string)
+
+    
+
+    A regular expression used to determine which branches in a repository are built when a webhook is triggered. If the name of a branch matches the regular expression, then it is built. If it doesn't match, then it is not. If branchFilter is empty, then all branches are built.
+
+    
+
+    
+
+  lastModifiedSecret -> (timestamp)
+
+    
+
+    A timestamp indicating the last time a repository's secret token was modified. 
+
+    
+
+    
+
+  
+

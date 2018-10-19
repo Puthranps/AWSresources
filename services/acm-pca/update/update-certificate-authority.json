@@ -1,0 +1,12 @@
+{
+    "CertificateAuthorityArn": "",
+    "RevocationConfiguration": {
+        "CrlConfiguration": {
+            "Enabled": true,
+            "ExpirationInDays": 0,
+            "CustomCname": "",
+            "S3BucketName": ""
+        }
+    },
+    "Status": "PENDING_CERTIFICATE"
+}

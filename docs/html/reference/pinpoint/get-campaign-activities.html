@@ -1,0 +1,282 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-campaign-activities &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="pinpoint" href="../pinpoint/index.html" />
+    <link rel="next" title="get-campaign-version" href="../pinpoint/get-campaign-version.html" />
+    <link rel="prev" title="get-campaign" href="../pinpoint/get-campaign.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../pinpoint/get-campaign-version.html" title="get-campaign-version"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../pinpoint/get-campaign.html" title="get-campaign"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../pinpoint/index.html" accesskey="U">pinpoint</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../pinpoint/get-campaign.html" title="previous chapter (use the left arrow)">&larr; get-campaign</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../pinpoint/get-campaign-version.html" title="next chapter (use the right arrow)">get-campaign-version &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-campaign-activities</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/pinpoint/get-campaign-activities">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../pinpoint/index.html#cli-aws-pinpoint"><em>pinpoint</em></a> ]</p>
+<div class="section" id="get-campaign-activities">
+<span id="cli-aws-pinpoint-get-campaign-activities"></span><h1>get-campaign-activities<a class="headerlink" href="#get-campaign-activities" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns information about the activity performed by a campaign.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetCampaignActivities">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-campaign-activities
+--application-id &lt;value&gt;
+--campaign-id &lt;value&gt;
+[--page-size &lt;value&gt;]
+[--token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--application-id</span></tt> (string)
+The unique ID of your Amazon Pinpoint application.</p>
+<p><tt class="docutils literal"><span class="pre">--campaign-id</span></tt> (string)
+The unique ID of the campaign.</p>
+<p><tt class="docutils literal"><span class="pre">--page-size</span></tt> (string)
+The number of entries you want on each page in the response.</p>
+<p><tt class="docutils literal"><span class="pre">--token</span></tt> (string)
+The NextToken string returned on a previous page that you use to get the next page of results in a paginated response.</p>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ActivitiesResponse -&gt; (structure)</p>
+<blockquote>
+<div><p>Activities for campaign.</p>
+<p>Item -&gt; (list)</p>
+<blockquote>
+<div><p>List of campaign activities</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Activity definition</p>
+<p>ApplicationId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the application to which the campaign applies.</div></blockquote>
+<p>CampaignId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the campaign to which the activity applies.</div></blockquote>
+<p>End -&gt; (string)</p>
+<blockquote>
+<div>The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO 8601 format.</div></blockquote>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The unique activity ID.</div></blockquote>
+<p>Result -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether the activity succeeded. Valid values: SUCCESS, FAIL</div></blockquote>
+<p>ScheduledStart -&gt; (string)</p>
+<blockquote>
+<div>The scheduled start time for the activity in ISO 8601 format.</div></blockquote>
+<p>Start -&gt; (string)</p>
+<blockquote>
+<div>The actual start time of the activity in ISO 8601 format.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The state of the activity. Valid values: PENDING, INITIALIZING, RUNNING, PAUSED, CANCELLED, COMPLETED</div></blockquote>
+<p>SuccessfulEndpointCount -&gt; (integer)</p>
+<blockquote>
+<div>The total number of endpoints to which the campaign successfully delivered messages.</div></blockquote>
+<p>TimezonesCompletedCount -&gt; (integer)</p>
+<blockquote>
+<div>The total number of timezones completed.</div></blockquote>
+<p>TimezonesTotalCount -&gt; (integer)</p>
+<blockquote>
+<div>The total number of unique timezones present in the segment.</div></blockquote>
+<p>TotalEndpointCount -&gt; (integer)</p>
+<blockquote>
+<div>The total number of endpoints to which the campaign attempts to deliver messages.</div></blockquote>
+<p>TreatmentId -&gt; (string)</p>
+<blockquote>
+<div>The ID of a variation of the campaign used for A/B testing.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The string that you use in a subsequent request to get the next page of results in a paginated response.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../pinpoint/get-campaign.html" title="previous chapter (use the left arrow)">&larr; get-campaign</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../pinpoint/get-campaign-version.html" title="next chapter (use the right arrow)">get-campaign-version &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../pinpoint/get-campaign-version.html" title="get-campaign-version"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../pinpoint/get-campaign.html" title="get-campaign"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../pinpoint/index.html" >pinpoint</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

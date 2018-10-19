@@ -1,0 +1,19 @@
+{
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ],
+            "Type": "LESS_THAN"
+        }
+    ],
+    "ResourceIds": [
+        ""
+    ],
+    "ResourceTypes": [
+        ""
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

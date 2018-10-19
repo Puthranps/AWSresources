@@ -1,0 +1,35 @@
+{
+    "StackId": "",
+    "Name": "",
+    "Attributes": {
+        "KeyName": ""
+    },
+    "ServiceRoleArn": "",
+    "DefaultInstanceProfileArn": "",
+    "DefaultOs": "",
+    "HostnameTheme": "",
+    "DefaultAvailabilityZone": "",
+    "DefaultSubnetId": "",
+    "CustomJson": "",
+    "ConfigurationManager": {
+        "Name": "",
+        "Version": ""
+    },
+    "ChefConfiguration": {
+        "ManageBerkshelf": true,
+        "BerkshelfVersion": ""
+    },
+    "UseCustomCookbooks": true,
+    "CustomCookbooksSource": {
+        "Type": "svn",
+        "Url": "",
+        "Username": "",
+        "Password": "",
+        "SshKey": "",
+        "Revision": ""
+    },
+    "DefaultSshKeyName": "",
+    "DefaultRootDeviceType": "instance-store",
+    "UseOpsworksSecurityGroups": true,
+    "AgentVersion": ""
+}

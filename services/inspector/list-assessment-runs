@@ -1,0 +1,32 @@
+{
+    "assessmentTemplateArns": [
+        ""
+    ],
+    "filter": {
+        "namePattern": "",
+        "states": [
+            "ERROR"
+        ],
+        "durationRange": {
+            "minSeconds": 0,
+            "maxSeconds": 0
+        },
+        "rulesPackageArns": [
+            ""
+        ],
+        "startTimeRange": {
+            "beginDate": "1970-01-01T00:00:00",
+            "endDate": "1970-01-01T00:00:00"
+        },
+        "completionTimeRange": {
+            "beginDate": "1970-01-01T00:00:00",
+            "endDate": "1970-01-01T00:00:00"
+        },
+        "stateChangeTimeRange": {
+            "beginDate": "1970-01-01T00:00:00",
+            "endDate": "1970-01-01T00:00:00"
+        }
+    },
+    "nextToken": "",
+    "maxResults": 0
+}

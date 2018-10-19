@@ -1,0 +1,394 @@
+[ :ref:`aws <cli:aws>` . :ref:`autoscaling <cli:aws autoscaling>` ]
+
+.. _cli:aws autoscaling create-auto-scaling-group:
+
+
+*************************
+create-auto-scaling-group
+*************************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an Auto Scaling group with the specified name and attributes.
+
+ 
+
+If you exceed your maximum limit of Auto Scaling groups, the call fails. For information about viewing this limit, see  DescribeAccountLimits . For information about updating this limit, see `Auto Scaling Limits <http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-account-limits.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+ 
+
+For more information, see `Auto Scaling Groups <http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroup.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/CreateAutoScalingGroup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-auto-scaling-group
+  --auto-scaling-group-name <value>
+  [--launch-configuration-name <value>]
+  [--launch-template <value>]
+  [--instance-id <value>]
+  --min-size <value>
+  --max-size <value>
+  [--desired-capacity <value>]
+  [--default-cooldown <value>]
+  [--availability-zones <value>]
+  [--load-balancer-names <value>]
+  [--target-group-arns <value>]
+  [--health-check-type <value>]
+  [--health-check-grace-period <value>]
+  [--placement-group <value>]
+  [--vpc-zone-identifier <value>]
+  [--termination-policies <value>]
+  [--new-instances-protected-from-scale-in | --no-new-instances-protected-from-scale-in]
+  [--lifecycle-hook-specification-list <value>]
+  [--tags <value>]
+  [--service-linked-role-arn <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--auto-scaling-group-name`` (string)
+
+
+  The name of the Auto Scaling group. This name must be unique within the scope of your AWS account.
+
+  
+
+``--launch-configuration-name`` (string)
+
+
+  The name of the launch configuration. You must specify one of the following: a launch configuration, a launch template, or an EC2 instance.
+
+  
+
+``--launch-template`` (structure)
+
+
+  The launch template to use to launch instances. You must specify one of the following: a launch template, a launch configuration, or an EC2 instance.
+
+  
+
+
+
+Shorthand Syntax::
+
+    LaunchTemplateId=string,LaunchTemplateName=string,Version=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "LaunchTemplateId": "string",
+    "LaunchTemplateName": "string",
+    "Version": "string"
+  }
+
+
+
+``--instance-id`` (string)
+
+
+  The ID of the instance used to create a launch configuration for the group. You must specify one of the following: an EC2 instance, a launch configuration, or a launch template.
+
+   
+
+  When you specify an ID of an instance, Amazon EC2 Auto Scaling creates a new launch configuration and associates it with the group. This launch configuration derives its attributes from the specified instance, with the exception of the block device mapping.
+
+   
+
+  For more information, see `Create an Auto Scaling Group Using an EC2 Instance <http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+``--min-size`` (integer)
+
+
+  The minimum size of the group.
+
+  
+
+``--max-size`` (integer)
+
+
+  The maximum size of the group.
+
+  
+
+``--desired-capacity`` (integer)
+
+
+  The number of EC2 instances that should be running in the group. This number must be greater than or equal to the minimum size of the group and less than or equal to the maximum size of the group. If you do not specify a desired capacity, the default is the minimum size of the group.
+
+  
+
+``--default-cooldown`` (integer)
+
+
+  The amount of time, in seconds, after a scaling activity completes before another scaling activity can start. The default is 300.
+
+   
+
+  For more information, see `Scaling Cooldowns <http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+``--availability-zones`` (list)
+
+
+  One or more Availability Zones for the group. This parameter is optional if you specify one or more subnets.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--load-balancer-names`` (list)
+
+
+  One or more Classic Load Balancers. To specify an Application Load Balancer, use ``TargetGroupARNs`` instead.
+
+   
+
+  For more information, see `Using a Load Balancer With an Auto Scaling Group <http://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-from-instance.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--target-group-arns`` (list)
+
+
+  The Amazon Resource Names (ARN) of the target groups.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--health-check-type`` (string)
+
+
+  The service to use for the health checks. The valid values are ``EC2`` and ``ELB`` .
+
+   
+
+  By default, health checks use Amazon EC2 instance status checks to determine the health of an instance. For more information, see `Health Checks <http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+``--health-check-grace-period`` (integer)
+
+
+  The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking the health status of an EC2 instance that has come into service. During this time, any health check failures for the instance are ignored. The default is 0.
+
+   
+
+  This parameter is required if you are adding an ``ELB`` health check.
+
+   
+
+  For more information, see `Health Checks <http://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+``--placement-group`` (string)
+
+
+  The name of the placement group into which you'll launch your instances, if any. For more information, see `Placement Groups <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html>`__ in the *Amazon Elastic Compute Cloud User Guide* .
+
+  
+
+``--vpc-zone-identifier`` (string)
+
+
+  A comma-separated list of subnet identifiers for your virtual private cloud (VPC).
+
+   
+
+  If you specify subnets and Availability Zones with this call, ensure that the subnets' Availability Zones match the Availability Zones specified.
+
+   
+
+  For more information, see `Launching Auto Scaling Instances in a VPC <http://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+``--termination-policies`` (list)
+
+
+  One or more termination policies used to select the instance to terminate. These policies are executed in the order that they are listed.
+
+   
+
+  For more information, see `Controlling Which Instances Auto Scaling Terminates During Scale In <http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html>`__ in the *Auto Scaling User Guide* .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--new-instances-protected-from-scale-in`` | ``--no-new-instances-protected-from-scale-in`` (boolean)
+
+
+  Indicates whether newly launched instances are protected from termination by Auto Scaling when scaling in.
+
+  
+
+``--lifecycle-hook-specification-list`` (list)
+
+
+  One or more lifecycle hooks.
+
+  
+
+
+
+Shorthand Syntax::
+
+    LifecycleHookName=string,LifecycleTransition=string,NotificationMetadata=string,HeartbeatTimeout=integer,DefaultResult=string,NotificationTargetARN=string,RoleARN=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "LifecycleHookName": "string",
+      "LifecycleTransition": "string",
+      "NotificationMetadata": "string",
+      "HeartbeatTimeout": integer,
+      "DefaultResult": "string",
+      "NotificationTargetARN": "string",
+      "RoleARN": "string"
+    }
+    ...
+  ]
+
+
+
+``--tags`` (list)
+
+
+  One or more tags.
+
+   
+
+  For more information, see `Tagging Auto Scaling Groups and Instances <http://docs.aws.amazon.com/autoscaling/ec2/userguide/autoscaling-tagging.html>`__ in the *Amazon EC2 Auto Scaling User Guide* .
+
+  
+
+
+
+Shorthand Syntax::
+
+    ResourceId=string,ResourceType=string,Key=string,Value=string,PropagateAtLaunch=boolean ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "ResourceId": "string",
+      "ResourceType": "string",
+      "Key": "string",
+      "Value": "string",
+      "PropagateAtLaunch": true|false
+    }
+    ...
+  ]
+
+
+
+``--service-linked-role-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS services on your behalf. By default, Amazon EC2 Auto Scaling uses a service-linked role named AWSServiceRoleForAutoScaling, which it creates if it does not exist.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create an Auto Scaling group**
+
+This example creates an Auto Scaling group in a VPC::
+
+    aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --launch-configuration-name my-launch-config --min-size 1 --max-size 3 --vpc-zone-identifier subnet-41767929c
+
+This example creates an Auto Scaling group and configures it to use an Elastic Load Balancing load balancer::
+
+    aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --launch-configuration-name my-launch-config --load-balancer-names my-load-balancer --health-check-type ELB --health-check-grace-period 120
+
+This example creates an Auto Scaling group. It specifies Availability Zones instead of subnets. It also launches instances into a placement group and sets the termination policy to terminate the oldest instances first::
+
+    aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --launch-configuration-name my-launch-config --min-size 1 --max-size 3 --desired-capacity 2 --default-cooldown 600 --placement-group my-placement-group --termination-policies "OldestInstance" --availability-zones us-west-2c
+
+This example creates an Auto Scaling group from the specified EC2 instance and assigns a tag to instances in the group::
+
+    aws autoscaling create-auto-scaling-group --auto-scaling-group-name my-auto-scaling-group --instance-id i-22c99e2a --min-size 1 --max-size 3 --vpc-zone-identifier subnet-41767929 --tags ResourceId=my-auto-scaling-group,ResourceType=auto-scaling-group,Key=Role,Value=WebServer
+
+
+======
+Output
+======
+
+None

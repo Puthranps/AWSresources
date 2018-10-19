@@ -1,0 +1,10 @@
+{
+    "GroupName": "",
+    "GroupDesc": "",
+    "UserRules": [
+        {
+            "ipRule": "",
+            "ruleDesc": ""
+        }
+    ]
+}

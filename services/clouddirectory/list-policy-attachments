@@ -1,0 +1,9 @@
+{
+    "DirectoryArn": "",
+    "PolicyReference": {
+        "Selector": ""
+    },
+    "NextToken": "",
+    "MaxResults": 0,
+    "ConsistencyLevel": "SERIALIZABLE"
+}

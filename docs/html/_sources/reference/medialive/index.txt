@@ -1,0 +1,51 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws medialive:
+
+
+*********
+medialive
+*********
+
+
+
+===========
+Description
+===========
+
+API for AWS Elemental MediaLive
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  batch-update-schedule
+  create-channel
+  create-input
+  create-input-security-group
+  delete-channel
+  delete-input
+  delete-input-security-group
+  delete-reservation
+  describe-channel
+  describe-input
+  describe-input-security-group
+  describe-offering
+  describe-reservation
+  describe-schedule
+  list-channels
+  list-input-security-groups
+  list-inputs
+  list-offerings
+  list-reservations
+  purchase-offering
+  start-channel
+  stop-channel
+  update-channel
+  update-input
+  update-input-security-group

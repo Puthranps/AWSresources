@@ -1,0 +1,321 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint send-messages:
+
+
+*************
+send-messages
+*************
+
+
+
+===========
+Description
+===========
+
+Used to send a direct message.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/SendMessages>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    send-messages
+  --application-id <value>
+  --message-request <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-id`` (string)
+The unique ID of your Amazon Pinpoint application.
+
+``--message-request`` (structure)
+Send message request.
+
+
+
+JSON Syntax::
+
+  {
+    "Addresses": {"string": {
+          "BodyOverride": "string",
+          "ChannelType": "GCM"|"APNS"|"APNS_SANDBOX"|"APNS_VOIP"|"APNS_VOIP_SANDBOX"|"ADM"|"SMS"|"EMAIL"|"BAIDU"|"CUSTOM",
+          "Context": {"string": "string"
+            ...},
+          "RawContent": "string",
+          "Substitutions": {"string": ["string", ...]
+            ...},
+          "TitleOverride": "string"
+        }
+      ...},
+    "Context": {"string": "string"
+      ...},
+    "Endpoints": {"string": {
+          "BodyOverride": "string",
+          "Context": {"string": "string"
+            ...},
+          "RawContent": "string",
+          "Substitutions": {"string": ["string", ...]
+            ...},
+          "TitleOverride": "string"
+        }
+      ...},
+    "MessageConfiguration": {
+      "ADMMessage": {
+        "Action": "OPEN_APP"|"DEEP_LINK"|"URL",
+        "Body": "string",
+        "ConsolidationKey": "string",
+        "Data": {"string": "string"
+          ...},
+        "ExpiresAfter": "string",
+        "IconReference": "string",
+        "ImageIconUrl": "string",
+        "ImageUrl": "string",
+        "MD5": "string",
+        "RawContent": "string",
+        "SilentPush": true|false,
+        "SmallImageIconUrl": "string",
+        "Sound": "string",
+        "Substitutions": {"string": ["string", ...]
+          ...},
+        "Title": "string",
+        "Url": "string"
+      },
+      "APNSMessage": {
+        "Action": "OPEN_APP"|"DEEP_LINK"|"URL",
+        "Badge": integer,
+        "Body": "string",
+        "Category": "string",
+        "CollapseId": "string",
+        "Data": {"string": "string"
+          ...},
+        "MediaUrl": "string",
+        "PreferredAuthenticationMethod": "string",
+        "Priority": "string",
+        "RawContent": "string",
+        "SilentPush": true|false,
+        "Sound": "string",
+        "Substitutions": {"string": ["string", ...]
+          ...},
+        "ThreadId": "string",
+        "TimeToLive": integer,
+        "Title": "string",
+        "Url": "string"
+      },
+      "BaiduMessage": {
+        "Action": "OPEN_APP"|"DEEP_LINK"|"URL",
+        "Body": "string",
+        "Data": {"string": "string"
+          ...},
+        "IconReference": "string",
+        "ImageIconUrl": "string",
+        "ImageUrl": "string",
+        "RawContent": "string",
+        "SilentPush": true|false,
+        "SmallImageIconUrl": "string",
+        "Sound": "string",
+        "Substitutions": {"string": ["string", ...]
+          ...},
+        "TimeToLive": integer,
+        "Title": "string",
+        "Url": "string"
+      },
+      "DefaultMessage": {
+        "Body": "string",
+        "Substitutions": {"string": ["string", ...]
+          ...}
+      },
+      "DefaultPushNotificationMessage": {
+        "Action": "OPEN_APP"|"DEEP_LINK"|"URL",
+        "Body": "string",
+        "Data": {"string": "string"
+          ...},
+        "SilentPush": true|false,
+        "Substitutions": {"string": ["string", ...]
+          ...},
+        "Title": "string",
+        "Url": "string"
+      },
+      "GCMMessage": {
+        "Action": "OPEN_APP"|"DEEP_LINK"|"URL",
+        "Body": "string",
+        "CollapseKey": "string",
+        "Data": {"string": "string"
+          ...},
+        "IconReference": "string",
+        "ImageIconUrl": "string",
+        "ImageUrl": "string",
+        "Priority": "string",
+        "RawContent": "string",
+        "RestrictedPackageName": "string",
+        "SilentPush": true|false,
+        "SmallImageIconUrl": "string",
+        "Sound": "string",
+        "Substitutions": {"string": ["string", ...]
+          ...},
+        "TimeToLive": integer,
+        "Title": "string",
+        "Url": "string"
+      },
+      "SMSMessage": {
+        "Body": "string",
+        "Keyword": "string",
+        "MessageType": "TRANSACTIONAL"|"PROMOTIONAL",
+        "OriginationNumber": "string",
+        "SenderId": "string",
+        "Substitutions": {"string": ["string", ...]
+          ...}
+      }
+    },
+    "TraceId": "string"
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+MessageResponse -> (structure)
+
+  Send message response.
+
+  ApplicationId -> (string)
+
+    Application id of the message.
+
+    
+
+  EndpointResult -> (map)
+
+    A map containing a multi part response for each address, with the endpointId as the key and the result as the value.
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      The result from sending a message to an endpoint.
+
+      Address -> (string)
+
+        Address that endpoint message was delivered to.
+
+        
+
+      DeliveryStatus -> (string)
+
+        The delivery status of the message. Possible values: SUCCESS - The message was successfully delivered to the endpoint. TRANSIENT_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later. FAILURE_PERMANENT - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again. TIMEOUT - The message couldn't be sent within the timeout period. QUIET_TIME - The local time for the endpoint was within the Quiet Hours for the campaign. DAILY_CAP - The endpoint has received the maximum number of messages it can receive within a 24-hour period. HOLDOUT - The endpoint was in a hold out treatment for the campaign. THROTTLED - Amazon Pinpoint throttled sending to this endpoint. EXPIRED - The endpoint address is expired. CAMPAIGN_CAP - The endpoint received the maximum number of messages allowed by the campaign. SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint from delivering the message. UNKNOWN - An unknown error occurred.
+
+        
+
+      MessageId -> (string)
+
+        Unique message identifier associated with the message that was sent.
+
+        
+
+      StatusCode -> (integer)
+
+        Downstream service status code.
+
+        
+
+      StatusMessage -> (string)
+
+        Status message for message delivery.
+
+        
+
+      UpdatedToken -> (string)
+
+        If token was updated as part of delivery. (This is GCM Specific)
+
+        
+
+      
+
+    
+
+  RequestId -> (string)
+
+    Original request Id for which this message was delivered.
+
+    
+
+  Result -> (map)
+
+    A map containing a multi part response for each address, with the address as the key(Email address, phone number or push token) and the result as the value.
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      The result from sending a message to an address.
+
+      DeliveryStatus -> (string)
+
+        The delivery status of the message. Possible values: SUCCESS - The message was successfully delivered to the endpoint. TRANSIENT_FAILURE - A temporary error occurred. Amazon Pinpoint will attempt to deliver the message again later. FAILURE_PERMANENT - An error occurred when delivering the message to the endpoint. Amazon Pinpoint won't attempt to send the message again. TIMEOUT - The message couldn't be sent within the timeout period. QUIET_TIME - The local time for the endpoint was within the Quiet Hours for the campaign. DAILY_CAP - The endpoint has received the maximum number of messages it can receive within a 24-hour period. HOLDOUT - The endpoint was in a hold out treatment for the campaign. THROTTLED - Amazon Pinpoint throttled sending to this endpoint. EXPIRED - The endpoint address is expired. CAMPAIGN_CAP - The endpoint received the maximum number of messages allowed by the campaign. SERVICE_FAILURE - A service-level failure prevented Amazon Pinpoint from delivering the message. UNKNOWN - An unknown error occurred.
+
+        
+
+      MessageId -> (string)
+
+        Unique message identifier associated with the message that was sent.
+
+        
+
+      StatusCode -> (integer)
+
+        Downstream service status code.
+
+        
+
+      StatusMessage -> (string)
+
+        Status message for message delivery.
+
+        
+
+      UpdatedToken -> (string)
+
+        If token was updated as part of delivery. (This is GCM Specific)
+
+        
+
+      
+
+    
+
+  
+

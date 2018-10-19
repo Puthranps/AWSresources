@@ -1,0 +1,17 @@
+{
+    "GrokClassifier": {
+        "Classification": "",
+        "Name": "",
+        "GrokPattern": "",
+        "CustomPatterns": ""
+    },
+    "XMLClassifier": {
+        "Classification": "",
+        "Name": "",
+        "RowTag": ""
+    },
+    "JsonClassifier": {
+        "Name": "",
+        "JsonPath": ""
+    }
+}

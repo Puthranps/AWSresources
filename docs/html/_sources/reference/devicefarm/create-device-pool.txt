@@ -1,0 +1,301 @@
+[ :ref:`aws <cli:aws>` . :ref:`devicefarm <cli:aws devicefarm>` ]
+
+.. _cli:aws devicefarm create-device-pool:
+
+
+******************
+create-device-pool
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a device pool.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/CreateDevicePool>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-device-pool
+  --project-arn <value>
+  --name <value>
+  [--description <value>]
+  --rules <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--project-arn`` (string)
+
+
+  The ARN of the project for the device pool.
+
+  
+
+``--name`` (string)
+
+
+  The device pool's name.
+
+  
+
+``--description`` (string)
+
+
+  The device pool's description.
+
+  
+
+``--rules`` (list)
+
+
+  The device pool's rules.
+
+  
+
+
+
+Shorthand Syntax::
+
+    attribute=string,operator=string,value=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "attribute": "ARN"|"PLATFORM"|"FORM_FACTOR"|"MANUFACTURER"|"REMOTE_ACCESS_ENABLED"|"REMOTE_DEBUG_ENABLED"|"APPIUM_VERSION"|"INSTANCE_ARN"|"INSTANCE_LABELS"|"FLEET_TYPE",
+      "operator": "EQUALS"|"LESS_THAN"|"GREATER_THAN"|"IN"|"NOT_IN"|"CONTAINS",
+      "value": "string"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**Create a device pool**
+
+The following command creates an Android device pool for a project::
+
+  aws devicefarm create-device-pool --name pool1 --rules file://device-pool-rules.json --project-arn "arn:aws:devicefarm:us-west-2:123456789012:project:070fc3ca-7ec1-4741-9c1f-d3e044efc506"
+
+You can get the project ARN from the output of ``create-project`` or ``list-projects``. The file ``device-pool-rules.json`` is a JSON document in the current folder that specifies the device platform::
+
+  [
+      {
+          "attribute": "PLATFORM",
+          "operator": "EQUALS",
+          "value": "\"ANDROID\""
+      }
+  ]
+
+Output::
+
+  {
+      "devicePool": {
+          "rules": [
+              {
+                  "operator": "EQUALS",
+                  "attribute": "PLATFORM",
+                  "value": "\"ANDROID\""
+              }
+          ],
+          "type": "PRIVATE",
+          "name": "pool1",
+          "arn": "arn:aws:devicefarm:us-west-2:123456789012:devicepool:070fc3ca-7ec1-4741-9c1f-d3e044efc506/2aa8d2a9-5e73-47ca-b929-659cb34b7dcd"
+      }
+  }
+
+
+======
+Output
+======
+
+devicePool -> (structure)
+
+  
+
+  The newly created device pool.
+
+  
+
+  arn -> (string)
+
+    
+
+    The device pool's ARN.
+
+    
+
+    
+
+  name -> (string)
+
+    
+
+    The device pool's name.
+
+    
+
+    
+
+  description -> (string)
+
+    
+
+    The device pool's description.
+
+    
+
+    
+
+  type -> (string)
+
+    
+
+    The device pool's type.
+
+     
+
+    Allowed values include:
+
+     
+
+     
+    * CURATED: A device pool that is created and managed by AWS Device Farm. 
+     
+    * PRIVATE: A device pool that is created and managed by the device pool developer. 
+     
+
+    
+
+    
+
+  rules -> (list)
+
+    
+
+    Information about the device pool's rules.
+
+    
+
+    (structure)
+
+      
+
+      Represents a condition for a device pool.
+
+      
+
+      attribute -> (string)
+
+        
+
+        The rule's stringified attribute. For example, specify the value as ``"\"abc\""`` .
+
+         
+
+        Allowed values include:
+
+         
+
+         
+        * ARN: The ARN. 
+         
+        * FORM_FACTOR: The form factor (for example, phone or tablet). 
+         
+        * MANUFACTURER: The manufacturer. 
+         
+        * PLATFORM: The platform (for example, Android or iOS). 
+         
+        * REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access. 
+         
+        * APPIUM_VERSION: The Appium version for the test. 
+         
+        * INSTANCE_ARN: The Amazon Resource Name (ARN) of the device instance. 
+         
+        * INSTANCE_LABELS: The label of the device instance. 
+         
+
+        
+
+        
+
+      operator -> (string)
+
+        
+
+        The rule's operator.
+
+         
+
+         
+        * EQUALS: The equals operator. 
+         
+        * GREATER_THAN: The greater-than operator. 
+         
+        * IN: The in operator. 
+         
+        * LESS_THAN: The less-than operator. 
+         
+        * NOT_IN: The not-in operator. 
+         
+        * CONTAINS: The contains operator. 
+         
+
+        
+
+        
+
+      value -> (string)
+
+        
+
+        The rule's value.
+
+        
+
+        
+
+      
+
+    
+
+  
+

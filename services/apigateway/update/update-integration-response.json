@@ -1,0 +1,14 @@
+{
+    "restApiId": "",
+    "resourceId": "",
+    "httpMethod": "",
+    "statusCode": "",
+    "patchOperations": [
+        {
+            "op": "copy",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

@@ -1,0 +1,383 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-deployment &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="deploy" href="../deploy/index.html" />
+    <link rel="next" title="create-deployment-config" href="../deploy/create-deployment-config.html" />
+    <link rel="prev" title="create-application" href="../deploy/create-application.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../deploy/create-deployment-config.html" title="create-deployment-config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../deploy/create-application.html" title="create-application"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../deploy/index.html" accesskey="U">deploy</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../deploy/create-application.html" title="previous chapter (use the left arrow)">&larr; create-application</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../deploy/create-deployment-config.html" title="next chapter (use the right arrow)">create-deployment-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-deployment</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/deploy/create-deployment">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../deploy/index.html#cli-aws-deploy"><em>deploy</em></a> ]</p>
+<div class="section" id="create-deployment">
+<span id="cli-aws-deploy-create-deployment"></span><h1>create-deployment<a class="headerlink" href="#create-deployment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Deploys an application revision through the specified deployment group.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/CreateDeployment">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-deployment
+--application-name &lt;value&gt;
+[--deployment-group-name &lt;value&gt;]
+[--revision &lt;value&gt;]
+[--deployment-config-name &lt;value&gt;]
+[--description &lt;value&gt;]
+[--ignore-application-stop-failures | --no-ignore-application-stop-failures]
+[--target-instances &lt;value&gt;]
+[--auto-rollback-configuration &lt;value&gt;]
+[--update-outdated-instances-only | --no-update-outdated-instances-only]
+[--file-exists-behavior &lt;value&gt;]
+[--s3-location &lt;value&gt;]
+[--github-location &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--application-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of an AWS CodeDeploy application associated with the applicable IAM user or AWS account.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--deployment-group-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the deployment group.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--revision</span></tt> (structure)</p>
+<blockquote>
+<div>The type and location of the revision to deploy.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>revisionType=string,s3Location={bucket=string,key=string,bundleType=string,version=string,eTag=string},gitHubLocation={repository=string,commitId=string},string={content=string,sha256=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;revisionType&quot;</span><span class="p">:</span> <span class="s2">&quot;S3&quot;</span><span class="o">|</span><span class="s2">&quot;GitHub&quot;</span><span class="o">|</span><span class="s2">&quot;String&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;s3Location&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;bundleType&quot;</span><span class="p">:</span> <span class="s2">&quot;tar&quot;</span><span class="o">|</span><span class="s2">&quot;tgz&quot;</span><span class="o">|</span><span class="s2">&quot;zip&quot;</span><span class="o">|</span><span class="s2">&quot;YAML&quot;</span><span class="o">|</span><span class="s2">&quot;JSON&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;eTag&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;gitHubLocation&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;repository&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;commitId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;string&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;sha256&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--deployment-config-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of a deployment configuration associated with the applicable IAM user or AWS account.</p>
+<p>If not specified, the value configured in the deployment group will be used as the default. If the deployment group does not have a deployment configuration associated with it, then CodeDeployDefault.OneAtATime will be used by default.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>A comment about the deployment.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--ignore-application-stop-failures</span></tt> | <tt class="docutils literal"><span class="pre">--no-ignore-application-stop-failures</span></tt> (boolean)</p>
+<blockquote>
+<div><p>If set to true, then if the deployment causes the ApplicationStop deployment lifecycle event to an instance to fail, the deployment to that instance will not be considered to have failed at that point and will continue on to the BeforeInstall deployment lifecycle event.</p>
+<p>If set to false or not specified, then if the deployment causes the ApplicationStop deployment lifecycle event to fail to an instance, the deployment to that instance will stop, and the deployment to that instance will be considered to have failed.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--target-instances</span></tt> (structure)</p>
+<blockquote>
+<div>Information about the instances that will belong to the replacement environment in a blue/green deployment.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;tagFilters&quot;: [
+    {
+      &quot;Key&quot;: &quot;string&quot;,
+      &quot;Value&quot;: &quot;string&quot;,
+      &quot;Type&quot;: &quot;KEY_ONLY&quot;|&quot;VALUE_ONLY&quot;|&quot;KEY_AND_VALUE&quot;
+    }
+    ...
+  ],
+  &quot;autoScalingGroups&quot;: [&quot;string&quot;, ...],
+  &quot;ec2TagSet&quot;: {
+    &quot;ec2TagSetList&quot;: [
+      [
+        {
+          &quot;Key&quot;: &quot;string&quot;,
+          &quot;Value&quot;: &quot;string&quot;,
+          &quot;Type&quot;: &quot;KEY_ONLY&quot;|&quot;VALUE_ONLY&quot;|&quot;KEY_AND_VALUE&quot;
+        }
+        ...
+      ]
+      ...
+    ]
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--auto-rollback-configuration</span></tt> (structure)</p>
+<blockquote>
+<div>Configuration information for an automatic rollback that is added when a deployment is created.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">enabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">events</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;events&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;DEPLOYMENT_FAILURE&quot;</span><span class="o">|</span><span class="s2">&quot;DEPLOYMENT_STOP_ON_ALARM&quot;</span><span class="o">|</span><span class="s2">&quot;DEPLOYMENT_STOP_ON_REQUEST&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--update-outdated-instances-only</span></tt> | <tt class="docutils literal"><span class="pre">--no-update-outdated-instances-only</span></tt> (boolean)</p>
+<blockquote>
+<div>Indicates whether to deploy to all instances or only to instances that are not running the latest application revision.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--file-exists-behavior</span></tt> (string)</p>
+<blockquote>
+<div><p>Information about how AWS CodeDeploy handles files that already exist in a deployment target location but weren't part of the previous successful deployment.</p>
+<p>The fileExistsBehavior parameter takes any of the following values:</p>
+<ul class="simple">
+<li>DISALLOW: The deployment fails. This is also the default behavior if no option is specified.</li>
+<li>OVERWRITE: The version of the file from the application revision currently being deployed replaces the version already on the instance.</li>
+<li>RETAIN: The version of the file already on the instance is kept and used as part of the new deployment.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">DISALLOW</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">OVERWRITE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RETAIN</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--s3-location</span></tt> (structure)
+Information about the location of the application revision in Amazon S3. You must specify the bucket, the key, and bundleType. Optionally, you can also specify an eTag and version.</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">bucket</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">key</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">bundleType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">eTag</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">version</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;bucket&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;key&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;bundleType&quot;</span><span class="p">:</span> <span class="s2">&quot;tar&quot;</span><span class="o">|</span><span class="s2">&quot;tgz&quot;</span><span class="o">|</span><span class="s2">&quot;zip&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;eTag&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--github-location</span></tt> (structure)
+Information about the location of the application revision in GitHub. You must specify the repository and commit ID that references the application revision. For the repository, use the format GitHub-account/repository-name or GitHub-org/repository-name. For the commit ID, use the SHA1 Git commit reference.</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">repository</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">commitId</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;repository&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;commitId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a deployment</strong></p>
+<p>This example creates a deployment and associates it with the user's AWS account.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws deploy create-deployment --application-name WordPress_App --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name WordPress_DG --description &quot;My demo deployment&quot; --s3-location bucket=CodeDeployDemoBucket,bundleType=zip,eTag=dd56cfd59d434b8e768f9d77fEXAMPLE,key=WordPressApp.zip</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;deploymentId&quot;</span><span class="p">:</span> <span class="s2">&quot;d-N65YI7Gex&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>deploymentId -&gt; (string)</p>
+<blockquote>
+<div>A unique deployment ID.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../deploy/create-application.html" title="previous chapter (use the left arrow)">&larr; create-application</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../deploy/create-deployment-config.html" title="next chapter (use the right arrow)">create-deployment-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../deploy/create-deployment-config.html" title="create-deployment-config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../deploy/create-application.html" title="create-application"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../deploy/index.html" >deploy</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

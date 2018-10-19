@@ -1,0 +1,40 @@
+{
+    "StreamingDistributionConfigWithTags": {
+        "StreamingDistributionConfig": {
+            "CallerReference": "",
+            "S3Origin": {
+                "DomainName": "",
+                "OriginAccessIdentity": ""
+            },
+            "Aliases": {
+                "Quantity": 0,
+                "Items": [
+                    ""
+                ]
+            },
+            "Comment": "",
+            "Logging": {
+                "Enabled": true,
+                "Bucket": "",
+                "Prefix": ""
+            },
+            "TrustedSigners": {
+                "Enabled": true,
+                "Quantity": 0,
+                "Items": [
+                    ""
+                ]
+            },
+            "PriceClass": "PriceClass_100",
+            "Enabled": true
+        },
+        "Tags": {
+            "Items": [
+                {
+                    "Key": "",
+                    "Value": ""
+                }
+            ]
+        }
+    }
+}

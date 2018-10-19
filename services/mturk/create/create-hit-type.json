@@ -1,0 +1,25 @@
+{
+    "AutoApprovalDelayInSeconds": 0,
+    "AssignmentDurationInSeconds": 0,
+    "Reward": "",
+    "Title": "",
+    "Keywords": "",
+    "Description": "",
+    "QualificationRequirements": [
+        {
+            "QualificationTypeId": "",
+            "Comparator": "LessThanOrEqualTo",
+            "IntegerValues": [
+                0
+            ],
+            "LocaleValues": [
+                {
+                    "Country": "",
+                    "Subdivision": ""
+                }
+            ],
+            "RequiredToPreview": true,
+            "ActionsGuarded": "DiscoverPreviewAndAccept"
+        }
+    ]
+}

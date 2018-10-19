@@ -1,0 +1,536 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>modify-endpoint &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="dms" href="../dms/index.html" />
+    <link rel="next" title="modify-event-subscription" href="../dms/modify-event-subscription.html" />
+    <link rel="prev" title="list-tags-for-resource" href="../dms/list-tags-for-resource.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../dms/modify-event-subscription.html" title="modify-event-subscription"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dms/list-tags-for-resource.html" title="list-tags-for-resource"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../dms/index.html" accesskey="U">dms</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/list-tags-for-resource.html" title="previous chapter (use the left arrow)">&larr; list-tags-for-resource</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../dms/modify-event-subscription.html" title="next chapter (use the right arrow)">modify-event-subscription &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">modify-endpoint</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/dms/modify-endpoint">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../dms/index.html#cli-aws-dms"><em>dms</em></a> ]</p>
+<div class="section" id="modify-endpoint">
+<span id="cli-aws-dms-modify-endpoint"></span><h1>modify-endpoint<a class="headerlink" href="#modify-endpoint" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Modifies the specified endpoint.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/ModifyEndpoint">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  modify-endpoint
+--endpoint-arn &lt;value&gt;
+[--endpoint-identifier &lt;value&gt;]
+[--endpoint-type &lt;value&gt;]
+[--engine-name &lt;value&gt;]
+[--username &lt;value&gt;]
+[--password &lt;value&gt;]
+[--server-name &lt;value&gt;]
+[--port &lt;value&gt;]
+[--database-name &lt;value&gt;]
+[--extra-connection-attributes &lt;value&gt;]
+[--certificate-arn &lt;value&gt;]
+[--ssl-mode &lt;value&gt;]
+[--service-access-role-arn &lt;value&gt;]
+[--external-table-definition &lt;value&gt;]
+[--dynamo-db-settings &lt;value&gt;]
+[--s3-settings &lt;value&gt;]
+[--dms-transfer-settings &lt;value&gt;]
+[--mongo-db-settings &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--endpoint-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--endpoint-identifier</span></tt> (string)</p>
+<blockquote>
+<div>The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--endpoint-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of endpoint.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">source</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">target</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--engine-name</span></tt> (string)</p>
+<blockquote>
+<div>The type of engine for the endpoint. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--username</span></tt> (string)</p>
+<blockquote>
+<div>The user name to be used to login to the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--password</span></tt> (string)</p>
+<blockquote>
+<div>The password to be used to login to the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--server-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the server where the endpoint database resides.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--port</span></tt> (integer)</p>
+<blockquote>
+<div>The port used by the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--database-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the endpoint database.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--extra-connection-attributes</span></tt> (string)</p>
+<blockquote>
+<div>Additional attributes associated with the connection. To reset this parameter, pass the empty string (&quot;&quot;) as an argument.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--certificate-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the certificate used for SSL connection.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--ssl-mode</span></tt> (string)</p>
+<blockquote>
+<div><p>The SSL mode to be used.</p>
+<p>SSL mode can be one of four values: none, require, verify-ca, verify-full.</p>
+<p>The default value is none.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">none</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">require</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">verify-ca</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">verify-full</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--service-access-role-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the service access role you want to use to modify the endpoint.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--external-table-definition</span></tt> (string)</p>
+<blockquote>
+<div>The external table definition.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--dynamo-db-settings</span></tt> (structure)</p>
+<blockquote>
+<div>Settings in JSON format for the target Amazon DynamoDB endpoint. For more information about the available settings, see the <strong>Using Object Mapping to Migrate Data to DynamoDB</strong> section at <a class="reference external" href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using an Amazon DynamoDB Database as a Target for AWS Database Migration Service</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ServiceAccessRoleArn</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;ServiceAccessRoleArn&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--s3-settings</span></tt> (structure)</p>
+<blockquote>
+<div>Settings in JSON format for the target S3 endpoint. For more information about the available settings, see the <strong>Extra Connection Attributes</strong> section at <a class="reference external" href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html">Using Amazon S3 as a Target for AWS Database Migration Service</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ServiceAccessRoleArn</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">ExternalTableDefinition</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">CsvRowDelimiter</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">CsvDelimiter</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BucketFolder</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BucketName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">CompressionType</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;ServiceAccessRoleArn&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ExternalTableDefinition&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;CsvRowDelimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;CsvDelimiter&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;BucketFolder&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;BucketName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;CompressionType&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="o">|</span><span class="s2">&quot;gzip&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--dms-transfer-settings</span></tt> (structure)</p>
+<blockquote>
+<div><p>The settings in JSON format for the DMS Transfer type source endpoint.</p>
+<p>Attributes include:</p>
+<ul class="simple">
+<li>serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.</li>
+<li>BucketName - The name of the S3 bucket to use.</li>
+<li>compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do not use to leave the files uncompressed.</li>
+</ul>
+<p>Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string</p>
+<p>JSON syntax:</p>
+<p>{ &quot;ServiceAccessRoleArn&quot;: &quot;string&quot;, &quot;BucketName&quot;: &quot;string&quot;, &quot;CompressionType&quot;: &quot;none&quot;|&quot;gzip&quot; }</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ServiceAccessRoleArn</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">BucketName</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;ServiceAccessRoleArn&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;BucketName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--mongo-db-settings</span></tt> (structure)</p>
+<blockquote>
+<div>Settings in JSON format for the source MongoDB endpoint. For more information about the available settings, see the <strong>Configuration Properties When Using MongoDB as a Source for AWS Database Migration Service</strong> section at <a class="reference external" href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">Using Amazon S3 as a Target for AWS Database Migration Service</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Username</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Password</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">ServerName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Port</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">DatabaseName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AuthType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AuthMechanism</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">NestingLevel</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">ExtractDocId</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">DocsToInvestigate</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AuthSource</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">KmsKeyId</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Username&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Password&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ServerName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Port&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;DatabaseName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AuthType&quot;</span><span class="p">:</span> <span class="s2">&quot;no&quot;</span><span class="o">|</span><span class="s2">&quot;password&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AuthMechanism&quot;</span><span class="p">:</span> <span class="s2">&quot;default&quot;</span><span class="o">|</span><span class="s2">&quot;mongodb_cr&quot;</span><span class="o">|</span><span class="s2">&quot;scram_sha_1&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;NestingLevel&quot;</span><span class="p">:</span> <span class="s2">&quot;none&quot;</span><span class="o">|</span><span class="s2">&quot;one&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ExtractDocId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;DocsToInvestigate&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AuthSource&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;KmsKeyId&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Endpoint -&gt; (structure)</p>
+<blockquote>
+<div><p>The modified endpoint.</p>
+<p>EndpointIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The database endpoint identifier. Identifiers must begin with a letter; must contain only ASCII letters, digits, and hyphens; and must not end with a hyphen or contain two consecutive hyphens.</div></blockquote>
+<p>EndpointType -&gt; (string)</p>
+<blockquote>
+<div>The type of endpoint.</div></blockquote>
+<p>EngineName -&gt; (string)</p>
+<blockquote>
+<div>The database engine name. Valid values, depending on the EndPointType, include mysql, oracle, postgres, mariadb, aurora, aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb, mongodb, and sqlserver.</div></blockquote>
+<p>EngineDisplayName -&gt; (string)</p>
+<blockquote>
+<div>The expanded name for the engine name. For example, if the <tt class="docutils literal"><span class="pre">EngineName</span></tt> parameter is &quot;aurora,&quot; this value would be &quot;Amazon Aurora MySQL.&quot;</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>The user name used to connect to the endpoint.</div></blockquote>
+<p>ServerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the server at the endpoint.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port value used to access the endpoint.</div></blockquote>
+<p>DatabaseName -&gt; (string)</p>
+<blockquote>
+<div>The name of the database at the endpoint.</div></blockquote>
+<p>ExtraConnectionAttributes -&gt; (string)</p>
+<blockquote>
+<div>Additional connection attributes used to connect to the endpoint.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of the endpoint.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.</div></blockquote>
+<p>EndpointArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) string that uniquely identifies the endpoint.</div></blockquote>
+<p>CertificateArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) used for SSL connection to the endpoint.</div></blockquote>
+<p>SslMode -&gt; (string)</p>
+<blockquote>
+<div><p>The SSL mode used to connect to the endpoint.</p>
+<p>SSL mode can be one of four values: none, require, verify-ca, verify-full.</p>
+<p>The default value is none.</p>
+</div></blockquote>
+<p>ServiceAccessRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) used by the service access IAM role.</div></blockquote>
+<p>ExternalTableDefinition -&gt; (string)</p>
+<blockquote>
+<div>The external table definition.</div></blockquote>
+<p>ExternalId -&gt; (string)</p>
+<blockquote>
+<div>Value returned by a call to CreateEndpoint that can be used for cross-account validation. Use it on a subsequent call to CreateEndpoint to create the endpoint with a cross-account.</div></blockquote>
+<p>DynamoDbSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>The settings for the target DynamoDB database. For more information, see the <tt class="docutils literal"><span class="pre">DynamoDBSettings</span></tt> structure.</p>
+<p>ServiceAccessRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) used by the service access IAM role.</div></blockquote>
+</div></blockquote>
+<p>S3Settings -&gt; (structure)</p>
+<blockquote>
+<div><p>The settings for the S3 target endpoint. For more information, see the <tt class="docutils literal"><span class="pre">S3Settings</span></tt> structure.</p>
+<p>ServiceAccessRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) used by the service access IAM role.</div></blockquote>
+<p>ExternalTableDefinition -&gt; (string)</p>
+<blockquote>
+<div>The external table definition.</div></blockquote>
+<p>CsvRowDelimiter -&gt; (string)</p>
+<blockquote>
+<div>The delimiter used to separate rows in the source files. The default is a carriage return (n).</div></blockquote>
+<p>CsvDelimiter -&gt; (string)</p>
+<blockquote>
+<div>The delimiter used to separate columns in the source files. The default is a comma.</div></blockquote>
+<p>BucketFolder -&gt; (string)</p>
+<blockquote>
+<div>An optional parameter to set a folder name in the S3 bucket. If provided, tables are created in the path &lt;bucketFolder&gt;/&lt;schema_name&gt;/&lt;table_name&gt;/. If this parameter is not specified, then the path used is &lt;schema_name&gt;/&lt;table_name&gt;/.</div></blockquote>
+<p>BucketName -&gt; (string)</p>
+<blockquote>
+<div>The name of the S3 bucket.</div></blockquote>
+<p>CompressionType -&gt; (string)</p>
+<blockquote>
+<div>An optional parameter to use GZIP to compress the target files. Set to GZIP to compress the target files. Set to NONE (the default) or do not use to leave the files uncompressed.</div></blockquote>
+</div></blockquote>
+<p>DmsTransferSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>The settings in JSON format for the DMS Transfer type source endpoint.</p>
+<p>Attributes include:</p>
+<ul class="simple">
+<li>serviceAccessRoleArn - The IAM role that has permission to access the Amazon S3 bucket.</li>
+<li>bucketName - The name of the S3 bucket to use.</li>
+<li>compressionType - An optional parameter to use GZIP to compress the target files. Set to NONE (the default) or do not use to leave the files uncompressed.</li>
+</ul>
+<p>Shorthand syntax: ServiceAccessRoleArn=string ,BucketName=string,CompressionType=string</p>
+<p>JSON syntax:</p>
+<p>{ &quot;ServiceAccessRoleArn&quot;: &quot;string&quot;, &quot;BucketName&quot;: &quot;string&quot;, &quot;CompressionType&quot;: &quot;none&quot;|&quot;gzip&quot; }</p>
+<p>ServiceAccessRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that has permission to access the Amazon S3 bucket.</div></blockquote>
+<p>BucketName -&gt; (string)</p>
+<blockquote>
+<div>The name of the S3 bucket to use.</div></blockquote>
+</div></blockquote>
+<p>MongoDbSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>The settings for the MongoDB source endpoint. For more information, see the <tt class="docutils literal"><span class="pre">MongoDbSettings</span></tt> structure.</p>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>The user name you use to access the MongoDB source endpoint.</div></blockquote>
+<p>Password -&gt; (string)</p>
+<blockquote>
+<div>The password for the user account you use to access the MongoDB source endpoint.</div></blockquote>
+<p>ServerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the server on the MongoDB source endpoint.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port value for the MongoDB source endpoint.</div></blockquote>
+<p>DatabaseName -&gt; (string)</p>
+<blockquote>
+<div>The database name on the MongoDB source endpoint.</div></blockquote>
+<p>AuthType -&gt; (string)</p>
+<blockquote>
+<div><p>The authentication type you use to access the MongoDB source endpoint.</p>
+<p>Valid values: NO, PASSWORD</p>
+<p>When NO is selected, user name and password parameters are not used and can be empty.</p>
+</div></blockquote>
+<p>AuthMechanism -&gt; (string)</p>
+<blockquote>
+<div><p>The authentication mechanism you use to access the MongoDB source endpoint.</p>
+<p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1</p>
+<p>DEFAULT – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use SCRAM_SHA_1. This attribute is not used when authType=No.</p>
+</div></blockquote>
+<p>NestingLevel -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies either document or table mode.</p>
+<p>Valid values: NONE, ONE</p>
+<p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use table mode.</p>
+</div></blockquote>
+<p>ExtractDocId -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies the document ID. Use this attribute when <tt class="docutils literal"><span class="pre">NestingLevel</span></tt> is set to NONE.</p>
+<p>Default value is false.</p>
+</div></blockquote>
+<p>DocsToInvestigate -&gt; (string)</p>
+<blockquote>
+<div><p>Indicates the number of documents to preview to determine the document organization. Use this attribute when <tt class="docutils literal"><span class="pre">NestingLevel</span></tt> is set to ONE.</p>
+<p>Must be a positive value greater than 0. Default value is 1000.</p>
+</div></blockquote>
+<p>AuthSource -&gt; (string)</p>
+<blockquote>
+<div><p>The MongoDB database name. This attribute is not used when <tt class="docutils literal"><span class="pre">authType=NO</span></tt> .</p>
+<p>The default is admin.</p>
+</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The KMS key identifier that will be used to encrypt the connection parameters. If you do not specify a value for the KmsKeyId parameter, then AWS DMS will use your default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default encryption key for each AWS region.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/list-tags-for-resource.html" title="previous chapter (use the left arrow)">&larr; list-tags-for-resource</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../dms/modify-event-subscription.html" title="next chapter (use the right arrow)">modify-event-subscription &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../dms/modify-event-subscription.html" title="modify-event-subscription"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dms/list-tags-for-resource.html" title="list-tags-for-resource"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../dms/index.html" >dms</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

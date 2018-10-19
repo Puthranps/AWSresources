@@ -1,0 +1,15 @@
+{
+    "streamId": "",
+    "description": "",
+    "files": [
+        {
+            "fileId": 0,
+            "s3Location": {
+                "bucket": "",
+                "key": "",
+                "version": ""
+            }
+        }
+    ],
+    "roleArn": ""
+}

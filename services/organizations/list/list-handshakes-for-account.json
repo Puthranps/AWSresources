@@ -1,0 +1,8 @@
+{
+    "Filter": {
+        "ActionType": "ENABLE_ALL_FEATURES",
+        "ParentHandshakeId": ""
+    },
+    "NextToken": "",
+    "MaxResults": 0
+}

@@ -1,0 +1,90 @@
+{
+    "PoolName": "",
+    "Policies": {
+        "PasswordPolicy": {
+            "MinimumLength": 0,
+            "RequireUppercase": true,
+            "RequireLowercase": true,
+            "RequireNumbers": true,
+            "RequireSymbols": true
+        }
+    },
+    "LambdaConfig": {
+        "PreSignUp": "",
+        "CustomMessage": "",
+        "PostConfirmation": "",
+        "PreAuthentication": "",
+        "PostAuthentication": "",
+        "DefineAuthChallenge": "",
+        "CreateAuthChallenge": "",
+        "VerifyAuthChallengeResponse": "",
+        "PreTokenGeneration": "",
+        "UserMigration": ""
+    },
+    "AutoVerifiedAttributes": [
+        "phone_number"
+    ],
+    "AliasAttributes": [
+        "preferred_username"
+    ],
+    "UsernameAttributes": [
+        "phone_number"
+    ],
+    "SmsVerificationMessage": "",
+    "EmailVerificationMessage": "",
+    "EmailVerificationSubject": "",
+    "VerificationMessageTemplate": {
+        "SmsMessage": "",
+        "EmailMessage": "",
+        "EmailSubject": "",
+        "EmailMessageByLink": "",
+        "EmailSubjectByLink": "",
+        "DefaultEmailOption": "CONFIRM_WITH_CODE"
+    },
+    "SmsAuthenticationMessage": "",
+    "MfaConfiguration": "OFF",
+    "DeviceConfiguration": {
+        "ChallengeRequiredOnNewDevice": true,
+        "DeviceOnlyRememberedOnUserPrompt": true
+    },
+    "EmailConfiguration": {
+        "SourceArn": "",
+        "ReplyToEmailAddress": ""
+    },
+    "SmsConfiguration": {
+        "SnsCallerArn": "",
+        "ExternalId": ""
+    },
+    "UserPoolTags": {
+        "KeyName": ""
+    },
+    "AdminCreateUserConfig": {
+        "AllowAdminCreateUserOnly": true,
+        "UnusedAccountValidityDays": 0,
+        "InviteMessageTemplate": {
+            "SMSMessage": "",
+            "EmailMessage": "",
+            "EmailSubject": ""
+        }
+    },
+    "Schema": [
+        {
+            "Name": "",
+            "AttributeDataType": "DateTime",
+            "DeveloperOnlyAttribute": true,
+            "Mutable": true,
+            "Required": true,
+            "NumberAttributeConstraints": {
+                "MinValue": "",
+                "MaxValue": ""
+            },
+            "StringAttributeConstraints": {
+                "MinLength": "",
+                "MaxLength": ""
+            }
+        }
+    ],
+    "UserPoolAddOns": {
+        "AdvancedSecurityMode": "OFF"
+    }
+}

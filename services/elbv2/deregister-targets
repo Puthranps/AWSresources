@@ -1,0 +1,10 @@
+{
+    "TargetGroupArn": "",
+    "Targets": [
+        {
+            "Id": "",
+            "Port": 0,
+            "AvailabilityZone": ""
+        }
+    ]
+}

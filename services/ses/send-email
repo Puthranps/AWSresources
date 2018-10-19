@@ -1,0 +1,43 @@
+{
+    "Source": "",
+    "Destination": {
+        "ToAddresses": [
+            ""
+        ],
+        "CcAddresses": [
+            ""
+        ],
+        "BccAddresses": [
+            ""
+        ]
+    },
+    "Message": {
+        "Subject": {
+            "Data": "",
+            "Charset": ""
+        },
+        "Body": {
+            "Text": {
+                "Data": "",
+                "Charset": ""
+            },
+            "Html": {
+                "Data": "",
+                "Charset": ""
+            }
+        }
+    },
+    "ReplyToAddresses": [
+        ""
+    ],
+    "ReturnPath": "",
+    "SourceArn": "",
+    "ReturnPathArn": "",
+    "Tags": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "ConfigurationSetName": ""
+}

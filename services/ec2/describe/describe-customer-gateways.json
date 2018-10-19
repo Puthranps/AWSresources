@@ -1,0 +1,14 @@
+{
+    "CustomerGatewayIds": [
+        ""
+    ],
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "DryRun": true
+}

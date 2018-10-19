@@ -1,0 +1,46 @@
+{
+    "JobType": "IMPORT",
+    "Resources": {
+        "S3Resources": [
+            {
+                "BucketArn": "",
+                "KeyRange": {
+                    "BeginMarker": "",
+                    "EndMarker": ""
+                }
+            }
+        ],
+        "LambdaResources": [
+            {
+                "LambdaArn": "",
+                "EventTriggers": [
+                    {
+                        "EventResourceARN": ""
+                    }
+                ]
+            }
+        ],
+        "Ec2AmiResources": [
+            {
+                "AmiId": "",
+                "SnowballAmiId": ""
+            }
+        ]
+    },
+    "Description": "",
+    "AddressId": "",
+    "KmsKeyARN": "",
+    "RoleARN": "",
+    "SnowballCapacityPreference": "T100",
+    "ShippingOption": "SECOND_DAY",
+    "Notification": {
+        "SnsTopicARN": "",
+        "JobStatesToNotify": [
+            "PreparingAppliance"
+        ],
+        "NotifyAll": true
+    },
+    "ClusterId": "",
+    "SnowballType": "EDGE",
+    "ForwardingAddressId": ""
+}

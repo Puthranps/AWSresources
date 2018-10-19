@@ -1,0 +1,16 @@
+{
+    "SqlInjectionMatchSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "SqlInjectionMatchTuple": {
+                "FieldToMatch": {
+                    "Type": "HEADER",
+                    "Data": ""
+                },
+                "TextTransformation": "URL_DECODE"
+            }
+        }
+    ]
+}

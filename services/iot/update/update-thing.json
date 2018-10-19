@@ -1,0 +1,12 @@
+{
+    "thingName": "",
+    "thingTypeName": "",
+    "attributePayload": {
+        "attributes": {
+            "KeyName": ""
+        },
+        "merge": true
+    },
+    "expectedVersion": 0,
+    "removeThingType": true
+}

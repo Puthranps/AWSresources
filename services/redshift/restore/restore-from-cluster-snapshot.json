@@ -1,0 +1,31 @@
+{
+    "ClusterIdentifier": "",
+    "SnapshotIdentifier": "",
+    "SnapshotClusterIdentifier": "",
+    "Port": 0,
+    "AvailabilityZone": "",
+    "AllowVersionUpgrade": true,
+    "ClusterSubnetGroupName": "",
+    "PubliclyAccessible": true,
+    "OwnerAccount": "",
+    "HsmClientCertificateIdentifier": "",
+    "HsmConfigurationIdentifier": "",
+    "ElasticIp": "",
+    "ClusterParameterGroupName": "",
+    "ClusterSecurityGroups": [
+        ""
+    ],
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "PreferredMaintenanceWindow": "",
+    "AutomatedSnapshotRetentionPeriod": 0,
+    "KmsKeyId": "",
+    "NodeType": "",
+    "EnhancedVpcRouting": true,
+    "AdditionalInfo": "",
+    "IamRoles": [
+        ""
+    ],
+    "MaintenanceTrackName": ""
+}

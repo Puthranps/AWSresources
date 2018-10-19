@@ -1,0 +1,6 @@
+{
+    "loggingOptionsPayload": {
+        "roleArn": "",
+        "logLevel": "ERROR"
+    }
+}

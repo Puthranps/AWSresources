@@ -1,0 +1,10 @@
+{
+    "ReplicationTaskArn": "",
+    "ReplicationTaskIdentifier": "",
+    "MigrationType": "full-load-and-cdc",
+    "TableMappings": "",
+    "ReplicationTaskSettings": "",
+    "CdcStartTime": "1970-01-01T00:00:00",
+    "CdcStartPosition": "",
+    "CdcStopPosition": ""
+}

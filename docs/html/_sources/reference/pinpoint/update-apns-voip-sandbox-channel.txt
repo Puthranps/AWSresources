@@ -1,0 +1,163 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint update-apns-voip-sandbox-channel:
+
+
+********************************
+update-apns-voip-sandbox-channel
+********************************
+
+
+
+===========
+Description
+===========
+
+Update an APNS VoIP sandbox channel
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/UpdateApnsVoipSandboxChannel>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-apns-voip-sandbox-channel
+  --apns-voip-sandbox-channel-request <value>
+  --application-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--apns-voip-sandbox-channel-request`` (structure)
+Apple VoIP Developer Push Notification Service channel definition.
+
+
+
+Shorthand Syntax::
+
+    BundleId=string,Certificate=string,DefaultAuthenticationMethod=string,Enabled=boolean,PrivateKey=string,TeamId=string,TokenKey=string,TokenKeyId=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "BundleId": "string",
+    "Certificate": "string",
+    "DefaultAuthenticationMethod": "string",
+    "Enabled": true|false,
+    "PrivateKey": "string",
+    "TeamId": "string",
+    "TokenKey": "string",
+    "TokenKeyId": "string"
+  }
+
+
+
+``--application-id`` (string)
+The unique ID of your Amazon Pinpoint application.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+APNSVoipSandboxChannelResponse -> (structure)
+
+  Apple VoIP Developer Push Notification Service channel definition.
+
+  ApplicationId -> (string)
+
+    Application id
+
+    
+
+  CreationDate -> (string)
+
+    When was this segment created
+
+    
+
+  DefaultAuthenticationMethod -> (string)
+
+    The default authentication method used for APNs.
+
+    
+
+  Enabled -> (boolean)
+
+    If the channel is enabled for sending messages.
+
+    
+
+  HasCredential -> (boolean)
+
+    Not used. Retained for backwards compatibility.
+
+    
+
+  HasTokenKey -> (boolean)
+
+    If the channel is registered with a token key for authentication.
+
+    
+
+  Id -> (string)
+
+    Channel ID. Not used, only for backwards compatibility.
+
+    
+
+  IsArchived -> (boolean)
+
+    Is this channel archived
+
+    
+
+  LastModifiedBy -> (string)
+
+    Who made the last change
+
+    
+
+  LastModifiedDate -> (string)
+
+    Last date this was updated
+
+    
+
+  Platform -> (string)
+
+    The platform type. Will be APNS.
+
+    
+
+  Version -> (integer)
+
+    Version of channel
+
+    
+
+  
+

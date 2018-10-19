@@ -1,0 +1,89 @@
+[ :ref:`aws <cli:aws>` . :ref:`acm-pca <cli:aws acm-pca>` ]
+
+.. _cli:aws acm-pca get-certificate-authority-csr:
+
+
+*****************************
+get-certificate-authority-csr
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves the certificate signing request (CSR) for your private certificate authority (CA). The CSR is created when you call the  CreateCertificateAuthority operation. Take the CSR to your on-premises X.509 infrastructure and sign it by using your root or a subordinate CA. Then import the signed certificate back into ACM PCA by calling the  ImportCertificateAuthorityCertificate operation. The CSR is returned as a base64 PEM-encoded string. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificateAuthorityCsr>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-certificate-authority-csr
+  --certificate-authority-arn <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--certificate-authority-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) that was returned when you called the  CreateCertificateAuthority operation. This must be of the form: 
+
+   
+
+   ``arn:aws:acm-pca:*region* :*account* :certificate-authority/*12345678-1234-1234-1234-123456789012* ``  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To retrieve the certificate signing request for a certificate authority**
+
+The ``get-certificate-authority-csr`` command retrieves the CSR for your private CA::
+
+  aws acm-pca get-certificate-authority-csr --certificate-authority-arn arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 --output text
+
+======
+Output
+======
+
+Csr -> (string)
+
+  
+
+  The base64 PEM-encoded certificate signing request (CSR) for your private CA certificate.
+
+  
+
+  
+

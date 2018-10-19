@@ -1,0 +1,206 @@
+[ :ref:`aws <cli:aws>` . :ref:`s3api <cli:aws s3api>` ]
+
+.. _cli:aws s3api restore-object:
+
+
+**************
+restore-object
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Restores an archived copy of an object back into Amazon S3
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    restore-object
+  --bucket <value>
+  --key <value>
+  [--version-id <value>]
+  [--restore-request <value>]
+  [--request-payer <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--bucket`` (string)
+
+
+``--key`` (string)
+
+
+``--version-id`` (string)
+
+
+``--restore-request`` (structure)
+
+
+  Container for restore job parameters.
+
+  
+
+
+
+JSON Syntax::
+
+  {
+    "Days": integer,
+    "GlacierJobParameters": {
+      "Tier": "Standard"|"Bulk"|"Expedited"
+    },
+    "Type": "SELECT",
+    "Tier": "Standard"|"Bulk"|"Expedited",
+    "Description": "string",
+    "SelectParameters": {
+      "InputSerialization": {
+        "CSV": {
+          "FileHeaderInfo": "USE"|"IGNORE"|"NONE",
+          "Comments": "string",
+          "QuoteEscapeCharacter": "string",
+          "RecordDelimiter": "string",
+          "FieldDelimiter": "string",
+          "QuoteCharacter": "string",
+          "AllowQuotedRecordDelimiter": true|false
+        },
+        "CompressionType": "NONE"|"GZIP"|"BZIP2",
+        "JSON": {
+          "Type": "DOCUMENT"|"LINES"
+        },
+        "Parquet": {
+          
+        }
+      },
+      "ExpressionType": "SQL",
+      "Expression": "string",
+      "OutputSerialization": {
+        "CSV": {
+          "QuoteFields": "ALWAYS"|"ASNEEDED",
+          "QuoteEscapeCharacter": "string",
+          "RecordDelimiter": "string",
+          "FieldDelimiter": "string",
+          "QuoteCharacter": "string"
+        },
+        "JSON": {
+          "RecordDelimiter": "string"
+        }
+      }
+    },
+    "OutputLocation": {
+      "S3": {
+        "BucketName": "string",
+        "Prefix": "string",
+        "Encryption": {
+          "EncryptionType": "AES256"|"aws:kms",
+          "KMSKeyId": "string",
+          "KMSContext": "string"
+        },
+        "CannedACL": "private"|"public-read"|"public-read-write"|"authenticated-read"|"aws-exec-read"|"bucket-owner-read"|"bucket-owner-full-control",
+        "AccessControlList": [
+          {
+            "Grantee": {
+              "DisplayName": "string",
+              "EmailAddress": "string",
+              "ID": "string",
+              "Type": "CanonicalUser"|"AmazonCustomerByEmail"|"Group",
+              "URI": "string"
+            },
+            "Permission": "FULL_CONTROL"|"WRITE"|"WRITE_ACP"|"READ"|"READ_ACP"
+          }
+          ...
+        ],
+        "Tagging": {
+          "TagSet": [
+            {
+              "Key": "string",
+              "Value": "string"
+            }
+            ...
+          ]
+        },
+        "UserMetadata": [
+          {
+            "Name": "string",
+            "Value": "string"
+          }
+          ...
+        ],
+        "StorageClass": "STANDARD"|"REDUCED_REDUNDANCY"|"STANDARD_IA"|"ONEZONE_IA"
+      }
+    }
+  }
+
+
+
+``--request-payer`` (string)
+
+
+  Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html
+
+  
+
+  Possible values:
+
+  
+  *   ``requester``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+RequestCharged -> (string)
+
+  
+
+  If present, indicates that the requester was successfully charged for the request.
+
+  
+
+  
+
+RestoreOutputPath -> (string)
+
+  
+
+  Indicates the path in the provided S3 output location where Select results will be restored to.
+
+  
+
+  
+

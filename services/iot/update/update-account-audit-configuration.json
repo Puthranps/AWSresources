@@ -1,0 +1,15 @@
+{
+    "roleArn": "",
+    "auditNotificationTargetConfigurations": {
+        "KeyName": {
+            "targetArn": "",
+            "roleArn": "",
+            "enabled": true
+        }
+    },
+    "auditCheckConfigurations": {
+        "KeyName": {
+            "enabled": true
+        }
+    }
+}

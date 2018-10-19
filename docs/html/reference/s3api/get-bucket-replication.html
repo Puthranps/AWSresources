@@ -1,0 +1,372 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-bucket-replication &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="s3api" href="../s3api/index.html" />
+    <link rel="next" title="get-bucket-request-payment" href="../s3api/get-bucket-request-payment.html" />
+    <link rel="prev" title="get-bucket-policy" href="../s3api/get-bucket-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-request-payment.html" title="get-bucket-request-payment"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-policy.html" title="get-bucket-policy"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../s3api/index.html" accesskey="U">s3api</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../s3api/get-bucket-policy.html" title="previous chapter (use the left arrow)">&larr; get-bucket-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../s3api/get-bucket-request-payment.html" title="next chapter (use the right arrow)">get-bucket-request-payment &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-bucket-replication</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/s3api/get-bucket-replication">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../s3api/index.html#cli-aws-s3api"><em>s3api</em></a> ]</p>
+<div class="section" id="get-bucket-replication">
+<span id="cli-aws-s3api-get-bucket-replication"></span><h1>get-bucket-replication<a class="headerlink" href="#get-bucket-replication" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns the replication configuration of a bucket.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-bucket-replication
+--bucket &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--bucket</span></tt> (string)</p>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following command retrieves the replication configuration for a bucket named <tt class="docutils literal"><span class="pre">my-bucket</span></tt>:</p>
+<div class="highlight-python"><pre>aws s3api get-bucket-replication --bucket my-bucket</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;ReplicationConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;Rules&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Enabled&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Destination&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;Bucket&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:s3:::my-bucket-backup&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;StorageClass&quot;</span><span class="p">:</span> <span class="s2">&quot;STANDARD&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;ID&quot;</span><span class="p">:</span> <span class="s2">&quot;ZmUwNzE4ZmQ4tMjVhOS00MTlkLOGI4NDkzZTIWJjNTUtYTA1&quot;</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s2">&quot;Role&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/s3-replication-role&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ReplicationConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Container for replication rules. You can add as many as 1,000 rules. Total replication configuration size can be up to 2 MB.</p>
+<p>Role -&gt; (string)</p>
+<blockquote>
+<div>Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.</div></blockquote>
+<p>Rules -&gt; (list)</p>
+<blockquote>
+<div><p>Container for one or more replication rules. Replication configuration must have at least one rule and can contain up to 1,000 rules.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Container for information about a particular replication rule.</p>
+<p>ID -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier for the rule. The value cannot be longer than 255 characters.</div></blockquote>
+<p>Priority -&gt; (integer)</p>
+<blockquote>
+<div><p>The priority associated with the rule. If you specify multiple rules in a replication configuration, then Amazon S3 applies rule priority in the event there are conflicts (two or more rules identify the same object based on filter specified). The rule with higher priority takes precedence. For example,</p>
+<ul class="simple">
+<li>Same object quality prefix based filter criteria If prefixes you specified in multiple rules overlap.</li>
+<li>Same object qualify tag based filter criteria specified in multiple rules</li>
+</ul>
+<p>For more information, see <a href="#id1"><span class="problematic" id="id2">`Cross-Region Replication (CRR) &lt; https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html&gt;`__</span></a> in the Amazon S3 Developer Guide.</p>
+</div></blockquote>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters.</div></blockquote>
+<p>Filter -&gt; (structure)</p>
+<blockquote>
+<div><p>Filter that identifies subset of objects to which the replication rule applies. A <tt class="docutils literal"><span class="pre">Filter</span></tt> must specify exactly one <tt class="docutils literal"><span class="pre">Prefix</span></tt> , <tt class="docutils literal"><span class="pre">Tag</span></tt> , or an <tt class="docutils literal"><span class="pre">And</span></tt> child element.</p>
+<p>Prefix -&gt; (string)</p>
+<blockquote>
+<div>Object keyname prefix that identifies subset of objects to which the rule applies.</div></blockquote>
+<p>Tag -&gt; (structure)</p>
+<blockquote>
+<div><p>Container for specifying a tag key and value.</p>
+<p>The rule applies only to objects having the tag in its tagset.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div>Name of the tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>Value of the tag.</div></blockquote>
+</div></blockquote>
+<p>And -&gt; (structure)</p>
+<blockquote>
+<div><p>Container for specifying rule filters. These filters determine the subset of objects to which the rule applies. The element is required only if you specify more than one filter. For example:</p>
+<ul class="simple">
+<li>You specify both a <tt class="docutils literal"><span class="pre">Prefix</span></tt> and a <tt class="docutils literal"><span class="pre">Tag</span></tt> filters. Then you wrap these in an <tt class="docutils literal"><span class="pre">And</span></tt> tag.</li>
+<li>You specify filter based on multiple tags. Then you wrap the <tt class="docutils literal"><span class="pre">Tag</span></tt> elements in an <tt class="docutils literal"><span class="pre">And</span></tt> tag.</li>
+</ul>
+<p>Prefix -&gt; (string)</p>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Key -&gt; (string)</p>
+<blockquote>
+<div>Name of the tag.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>Value of the tag.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The rule is ignored if status is not Enabled.</div></blockquote>
+<p>SourceSelectionCriteria -&gt; (structure)</p>
+<blockquote>
+<div><p>Container that describes additional filters in identifying source objects that you want to replicate. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-managed key. You can choose to enable or disable replication of these objects.</p>
+<p>if you want Amazon S3 to replicate objects created with server-side encryption using AWS KMS-managed keys.</p>
+<p>SseKmsEncryptedObjects -&gt; (structure)</p>
+<blockquote>
+<div><p>Container for filter information of selection of KMS Encrypted S3 objects. The element is required if you include <tt class="docutils literal"><span class="pre">SourceSelectionCriteria</span></tt> in the replication configuration.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The replication for KMS encrypted S3 objects is disabled if status is not Enabled.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Destination -&gt; (structure)</p>
+<blockquote>
+<div><p>Container for replication destination information.</p>
+<p>Bucket -&gt; (string)</p>
+<blockquote>
+<div><p>Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule.</p>
+<p>If you have multiple rules in your replication configuration, all rules must specify the same bucket as the destination. A replication configuration can replicate objects only to one destination bucket.</p>
+</div></blockquote>
+<p>Account -&gt; (string)</p>
+<blockquote>
+<div><p>Account ID of the destination bucket. Currently Amazon S3 verifies this value only if Access Control Translation is enabled.</p>
+<p>In a cross-account scenario, if you tell Amazon S3 to change replica ownership to the AWS account that owns the destination bucket by adding the <tt class="docutils literal"><span class="pre">AccessControlTranslation</span></tt> element, this is the account ID of the destination bucket owner.</p>
+</div></blockquote>
+<p>StorageClass -&gt; (string)</p>
+<blockquote>
+<div>The class of storage used to store the object.</div></blockquote>
+<p>AccessControlTranslation -&gt; (structure)</p>
+<blockquote>
+<div><p>Container for information regarding the access control for replicas.</p>
+<p>Use only in a cross-account scenario, where source and destination bucket owners are not the same, when you want to change replica ownership to the AWS account that owns the destination bucket. If you don't add this element to the replication configuration, the replicas are owned by same AWS account that owns the source object.</p>
+<p>Owner -&gt; (string)</p>
+<blockquote>
+<div>The override value for the owner of the replica object.</div></blockquote>
+</div></blockquote>
+<p>EncryptionConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Container that provides encryption-related information. You must specify this element if the <tt class="docutils literal"><span class="pre">SourceSelectionCriteria</span></tt> is specified.</p>
+<p>ReplicaKmsKeyID -&gt; (string)</p>
+<blockquote>
+<div>The ID of the AWS KMS key for the region where the destination bucket resides. Amazon S3 uses this key to encrypt the replica object.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>DeleteMarkerReplication -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies whether Amazon S3 should replicate delete makers.</p>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>The status of the delete marker replication.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">In the current implementation, Amazon S3 does not replicate the delete markers. Therefore, the status must be <tt class="docutils literal"><span class="pre">Disabled</span></tt> .</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../s3api/get-bucket-policy.html" title="previous chapter (use the left arrow)">&larr; get-bucket-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../s3api/get-bucket-request-payment.html" title="next chapter (use the right arrow)">get-bucket-request-payment &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-request-payment.html" title="get-bucket-request-payment"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../s3api/get-bucket-policy.html" title="get-bucket-policy"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../s3api/index.html" >s3api</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

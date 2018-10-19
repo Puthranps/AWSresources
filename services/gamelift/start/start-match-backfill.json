@@ -1,0 +1,26 @@
+{
+    "TicketId": "",
+    "ConfigurationName": "",
+    "GameSessionArn": "",
+    "Players": [
+        {
+            "PlayerId": "",
+            "PlayerAttributes": {
+                "KeyName": {
+                    "S": "",
+                    "N": null,
+                    "SL": [
+                        ""
+                    ],
+                    "SDM": {
+                        "KeyName": null
+                    }
+                }
+            },
+            "Team": "",
+            "LatencyInMs": {
+                "KeyName": 0
+            }
+        }
+    ]
+}

@@ -1,0 +1,5 @@
+{
+    "otaUpdateId": "",
+    "deleteStream": true,
+    "forceDeleteAWSJob": true
+}

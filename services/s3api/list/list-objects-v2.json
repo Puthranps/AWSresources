@@ -1,0 +1,11 @@
+{
+    "Bucket": "",
+    "Delimiter": "",
+    "EncodingType": "url",
+    "MaxKeys": 0,
+    "Prefix": "",
+    "ContinuationToken": "",
+    "FetchOwner": true,
+    "StartAfter": "",
+    "RequestPayer": "requester"
+}

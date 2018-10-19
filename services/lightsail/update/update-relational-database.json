@@ -1,0 +1,11 @@
+{
+    "relationalDatabaseName": "",
+    "masterUserPassword": "",
+    "rotateMasterUserPassword": true,
+    "preferredBackupWindow": "",
+    "preferredMaintenanceWindow": "",
+    "enableBackupRetention": true,
+    "disableBackupRetention": true,
+    "publiclyAccessible": true,
+    "applyImmediately": true
+}

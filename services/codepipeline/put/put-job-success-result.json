@@ -1,0 +1,15 @@
+{
+    "jobId": "",
+    "currentRevision": {
+        "revision": "",
+        "changeIdentifier": "",
+        "created": "1970-01-01T00:00:00",
+        "revisionSummary": ""
+    },
+    "continuationToken": "",
+    "executionDetails": {
+        "summary": "",
+        "externalExecutionId": "",
+        "percentComplete": 0
+    }
+}

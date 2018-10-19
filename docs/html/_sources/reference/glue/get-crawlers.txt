@@ -1,0 +1,535 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue get-crawlers:
+
+
+************
+get-crawlers
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves metadata for all crawlers defined in the customer account.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetCrawlers>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``get-crawlers`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``Crawlers``
+
+
+========
+Synopsis
+========
+
+::
+
+    get-crawlers
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Crawlers -> (list)
+
+  
+
+  A list of crawler metadata.
+
+  
+
+  (structure)
+
+    
+
+    Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.
+
+    
+
+    Name -> (string)
+
+      
+
+      The crawler name.
+
+      
+
+      
+
+    Role -> (string)
+
+      
+
+      The IAM role (or ARN of an IAM role) used to access customer resources, such as data in Amazon S3.
+
+      
+
+      
+
+    Targets -> (structure)
+
+      
+
+      A collection of targets to crawl.
+
+      
+
+      S3Targets -> (list)
+
+        
+
+        Specifies Amazon S3 targets.
+
+        
+
+        (structure)
+
+          
+
+          Specifies a data store in Amazon S3.
+
+          
+
+          Path -> (string)
+
+            
+
+            The path to the Amazon S3 target.
+
+            
+
+            
+
+          Exclusions -> (list)
+
+            
+
+            A list of glob patterns used to exclude from the crawl. For more information, see `Catalog Tables with a Crawler <http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html>`__ .
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          
+
+        
+
+      JdbcTargets -> (list)
+
+        
+
+        Specifies JDBC targets.
+
+        
+
+        (structure)
+
+          
+
+          Specifies a JDBC data store to crawl.
+
+          
+
+          ConnectionName -> (string)
+
+            
+
+            The name of the connection to use to connect to the JDBC target.
+
+            
+
+            
+
+          Path -> (string)
+
+            
+
+            The path of the JDBC target.
+
+            
+
+            
+
+          Exclusions -> (list)
+
+            
+
+            A list of glob patterns used to exclude from the crawl. For more information, see `Catalog Tables with a Crawler <http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html>`__ .
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          
+
+        
+
+      DynamoDBTargets -> (list)
+
+        
+
+        Specifies DynamoDB targets.
+
+        
+
+        (structure)
+
+          
+
+          Specifies a DynamoDB table to crawl.
+
+          
+
+          Path -> (string)
+
+            
+
+            The name of the DynamoDB table to crawl.
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    DatabaseName -> (string)
+
+      
+
+      The database where metadata is written by this crawler.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      A description of the crawler.
+
+      
+
+      
+
+    Classifiers -> (list)
+
+      
+
+      A list of custom classifiers associated with the crawler.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    SchemaChangePolicy -> (structure)
+
+      
+
+      Sets the behavior when the crawler finds a changed or deleted object.
+
+      
+
+      UpdateBehavior -> (string)
+
+        
+
+        The update behavior when the crawler finds a changed schema.
+
+        
+
+        
+
+      DeleteBehavior -> (string)
+
+        
+
+        The deletion behavior when the crawler finds a deleted object.
+
+        
+
+        
+
+      
+
+    State -> (string)
+
+      
+
+      Indicates whether the crawler is running, or whether a run is pending.
+
+      
+
+      
+
+    TablePrefix -> (string)
+
+      
+
+      The prefix added to the names of tables that are created.
+
+      
+
+      
+
+    Schedule -> (structure)
+
+      
+
+      For scheduled crawlers, the schedule when the crawler runs.
+
+      
+
+      ScheduleExpression -> (string)
+
+        
+
+        A ``cron`` expression used to specify the schedule (see `Time-Based Schedules for Jobs and Crawlers <http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html>`__ . For example, to run something every day at 12:15 UTC, you would specify: ``cron(15 12 * * ? *)`` .
+
+        
+
+        
+
+      State -> (string)
+
+        
+
+        The state of the schedule.
+
+        
+
+        
+
+      
+
+    CrawlElapsedTime -> (long)
+
+      
+
+      If the crawler is running, contains the total time elapsed since the last crawl began.
+
+      
+
+      
+
+    CreationTime -> (timestamp)
+
+      
+
+      The time when the crawler was created.
+
+      
+
+      
+
+    LastUpdated -> (timestamp)
+
+      
+
+      The time the crawler was last updated.
+
+      
+
+      
+
+    LastCrawl -> (structure)
+
+      
+
+      The status of the last crawl, and potentially error information if an error occurred.
+
+      
+
+      Status -> (string)
+
+        
+
+        Status of the last crawl.
+
+        
+
+        
+
+      ErrorMessage -> (string)
+
+        
+
+        If an error occurred, the error information about the last crawl.
+
+        
+
+        
+
+      LogGroup -> (string)
+
+        
+
+        The log group for the last crawl.
+
+        
+
+        
+
+      LogStream -> (string)
+
+        
+
+        The log stream for the last crawl.
+
+        
+
+        
+
+      MessagePrefix -> (string)
+
+        
+
+        The prefix for a message about this crawl.
+
+        
+
+        
+
+      StartTime -> (timestamp)
+
+        
+
+        The time at which the crawl started.
+
+        
+
+        
+
+      
+
+    Version -> (long)
+
+      
+
+      The version of the crawler.
+
+      
+
+      
+
+    Configuration -> (string)
+
+      
+
+      Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see `Configuring a Crawler <http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html>`__ .
+
+      
+
+      
+
+    CrawlerSecurityConfiguration -> (string)
+
+      
+
+      The name of the SecurityConfiguration structure to be used by this Crawler.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  A continuation token, if the returned list has not reached the end of those defined in this customer account.
+
+  
+
+  
+

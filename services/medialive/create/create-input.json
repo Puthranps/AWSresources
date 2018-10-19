@@ -1,0 +1,20 @@
+{
+    "Destinations": [
+        {
+            "StreamName": ""
+        }
+    ],
+    "InputSecurityGroups": [
+        ""
+    ],
+    "Name": "",
+    "RequestId": "",
+    "Sources": [
+        {
+            "PasswordParam": "",
+            "Url": "",
+            "Username": ""
+        }
+    ],
+    "Type": "RTP_PUSH"
+}

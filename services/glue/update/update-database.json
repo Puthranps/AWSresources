@@ -1,0 +1,12 @@
+{
+    "CatalogId": "",
+    "Name": "",
+    "DatabaseInput": {
+        "Name": "",
+        "Description": "",
+        "LocationUri": "",
+        "Parameters": {
+            "KeyName": ""
+        }
+    }
+}

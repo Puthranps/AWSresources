@@ -1,0 +1,8 @@
+{
+    "ApplicationId": "",
+    "SMSChannelRequest": {
+        "Enabled": true,
+        "SenderId": "",
+        "ShortCode": ""
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "ApplicationId": "",
+    "GCMChannelRequest": {
+        "ApiKey": "",
+        "Enabled": true
+    }
+}

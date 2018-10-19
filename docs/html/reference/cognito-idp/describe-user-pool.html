@@ -1,0 +1,480 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-user-pool &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="cognito-idp" href="../cognito-idp/index.html" />
+    <link rel="next" title="describe-user-pool-client" href="../cognito-idp/describe-user-pool-client.html" />
+    <link rel="prev" title="describe-user-import-job" href="../cognito-idp/describe-user-import-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../cognito-idp/describe-user-pool-client.html" title="describe-user-pool-client"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cognito-idp/describe-user-import-job.html" title="describe-user-import-job"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cognito-idp/index.html" accesskey="U">cognito-idp</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-idp/describe-user-import-job.html" title="previous chapter (use the left arrow)">&larr; describe-user-import-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cognito-idp/describe-user-pool-client.html" title="next chapter (use the right arrow)">describe-user-pool-client &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-user-pool</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/cognito-idp/describe-user-pool">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../cognito-idp/index.html#cli-aws-cognito-idp"><em>cognito-idp</em></a> ]</p>
+<div class="section" id="describe-user-pool">
+<span id="cli-aws-cognito-idp-describe-user-pool"></span><h1>describe-user-pool<a class="headerlink" href="#describe-user-pool" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns the configuration information and metadata of the specified user pool.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/DescribeUserPool">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-user-pool
+--user-pool-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--user-pool-id</span></tt> (string)</p>
+<blockquote>
+<div>The user pool ID for the user pool you want to describe.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>UserPool -&gt; (structure)</p>
+<blockquote>
+<div><p>The container of metadata returned by the server to describe the pool.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the user pool.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the user pool.</div></blockquote>
+<p>Policies -&gt; (structure)</p>
+<blockquote>
+<div><p>The policies associated with the user pool.</p>
+<p>PasswordPolicy -&gt; (structure)</p>
+<blockquote>
+<div><p>The password policy.</p>
+<p>MinimumLength -&gt; (integer)</p>
+<blockquote>
+<div>The minimum length of the password policy that you have set. Cannot be less than 6.</div></blockquote>
+<p>RequireUppercase -&gt; (boolean)</p>
+<blockquote>
+<div>In the password policy that you have set, refers to whether you have required users to use at least one uppercase letter in their password.</div></blockquote>
+<p>RequireLowercase -&gt; (boolean)</p>
+<blockquote>
+<div>In the password policy that you have set, refers to whether you have required users to use at least one lowercase letter in their password.</div></blockquote>
+<p>RequireNumbers -&gt; (boolean)</p>
+<blockquote>
+<div>In the password policy that you have set, refers to whether you have required users to use at least one number in their password.</div></blockquote>
+<p>RequireSymbols -&gt; (boolean)</p>
+<blockquote>
+<div>In the password policy that you have set, refers to whether you have required users to use at least one symbol in their password.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>LambdaConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The AWS Lambda triggers associated with the user pool.</p>
+<p>PreSignUp -&gt; (string)</p>
+<blockquote>
+<div>A pre-registration AWS Lambda trigger.</div></blockquote>
+<p>CustomMessage -&gt; (string)</p>
+<blockquote>
+<div>A custom Message AWS Lambda trigger.</div></blockquote>
+<p>PostConfirmation -&gt; (string)</p>
+<blockquote>
+<div>A post-confirmation AWS Lambda trigger.</div></blockquote>
+<p>PreAuthentication -&gt; (string)</p>
+<blockquote>
+<div>A pre-authentication AWS Lambda trigger.</div></blockquote>
+<p>PostAuthentication -&gt; (string)</p>
+<blockquote>
+<div>A post-authentication AWS Lambda trigger.</div></blockquote>
+<p>DefineAuthChallenge -&gt; (string)</p>
+<blockquote>
+<div>Defines the authentication challenge.</div></blockquote>
+<p>CreateAuthChallenge -&gt; (string)</p>
+<blockquote>
+<div>Creates an authentication challenge.</div></blockquote>
+<p>VerifyAuthChallengeResponse -&gt; (string)</p>
+<blockquote>
+<div>Verifies the authentication challenge response.</div></blockquote>
+<p>PreTokenGeneration -&gt; (string)</p>
+<blockquote>
+<div>A Lambda trigger that is invoked before token generation.</div></blockquote>
+<p>UserMigration -&gt; (string)</p>
+<blockquote>
+<div>The user migration Lambda config type.</div></blockquote>
+</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>The status of a user pool.</div></blockquote>
+<p>LastModifiedDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the user pool was last modified.</div></blockquote>
+<p>CreationDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date the user pool was created.</div></blockquote>
+<p>SchemaAttributes -&gt; (list)</p>
+<blockquote>
+<div><p>A container with the schema attributes of a user pool.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains information about the schema attribute.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>A schema attribute of the name type.</div></blockquote>
+<p>AttributeDataType -&gt; (string)</p>
+<blockquote>
+<div>The attribute data type.</div></blockquote>
+<p>DeveloperOnlyAttribute -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the attribute type is developer only.</div></blockquote>
+<p>Mutable -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the value of the attribute can be changed.</div></blockquote>
+<p>Required -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether a user pool attribute is required. If the attribute is required and the user does not provide a value, registration or sign-in will fail.</div></blockquote>
+<p>NumberAttributeConstraints -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the constraints for an attribute of the number type.</p>
+<p>MinValue -&gt; (string)</p>
+<blockquote>
+<div>The minimum value of an attribute that is of the number data type.</div></blockquote>
+<p>MaxValue -&gt; (string)</p>
+<blockquote>
+<div>The maximum value of an attribute that is of the number data type.</div></blockquote>
+</div></blockquote>
+<p>StringAttributeConstraints -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the constraints for an attribute of the string type.</p>
+<p>MinLength -&gt; (string)</p>
+<blockquote>
+<div>The minimum length.</div></blockquote>
+<p>MaxLength -&gt; (string)</p>
+<blockquote>
+<div>The maximum length.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AutoVerifiedAttributes -&gt; (list)</p>
+<blockquote>
+<div><p>Specifies the attributes that are auto-verified in a user pool.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>AliasAttributes -&gt; (list)</p>
+<blockquote>
+<div><p>Specifies the attributes that are aliased in a user pool.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>UsernameAttributes -&gt; (list)</p>
+<blockquote>
+<div><p>Specifies whether email addresses or phone numbers can be specified as usernames when a user signs up.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SmsVerificationMessage -&gt; (string)</p>
+<blockquote>
+<div>The contents of the SMS verification message.</div></blockquote>
+<p>EmailVerificationMessage -&gt; (string)</p>
+<blockquote>
+<div>The contents of the email verification message.</div></blockquote>
+<p>EmailVerificationSubject -&gt; (string)</p>
+<blockquote>
+<div>The subject of the email verification message.</div></blockquote>
+<p>VerificationMessageTemplate -&gt; (structure)</p>
+<blockquote>
+<div><p>The template for verification messages.</p>
+<p>SmsMessage -&gt; (string)</p>
+<blockquote>
+<div>The SMS message template.</div></blockquote>
+<p>EmailMessage -&gt; (string)</p>
+<blockquote>
+<div>The email message template.</div></blockquote>
+<p>EmailSubject -&gt; (string)</p>
+<blockquote>
+<div>The subject line for the email message template.</div></blockquote>
+<p>EmailMessageByLink -&gt; (string)</p>
+<blockquote>
+<div>The email message template for sending a confirmation link to the user.</div></blockquote>
+<p>EmailSubjectByLink -&gt; (string)</p>
+<blockquote>
+<div>The subject line for the email message template for sending a confirmation link to the user.</div></blockquote>
+<p>DefaultEmailOption -&gt; (string)</p>
+<blockquote>
+<div>The default email option.</div></blockquote>
+</div></blockquote>
+<p>SmsAuthenticationMessage -&gt; (string)</p>
+<blockquote>
+<div>The contents of the SMS authentication message.</div></blockquote>
+<p>MfaConfiguration -&gt; (string)</p>
+<blockquote>
+<div><p>Can be one of the following values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">OFF</span></tt> - MFA tokens are not required and cannot be specified during user registration.</li>
+<li><tt class="docutils literal"><span class="pre">ON</span></tt> - MFA tokens are required for all user registrations. You can only specify required when you are initially creating a user pool.</li>
+<li><tt class="docutils literal"><span class="pre">OPTIONAL</span></tt> - Users have the option when registering to create an MFA token.</li>
+</ul>
+</div></blockquote>
+<p>DeviceConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The device configuration.</p>
+<p>ChallengeRequiredOnNewDevice -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether a challenge is required on a new device. Only applicable to a new device.</div></blockquote>
+<p>DeviceOnlyRememberedOnUserPrompt -&gt; (boolean)</p>
+<blockquote>
+<div>If true, a device is only remembered on user prompt.</div></blockquote>
+</div></blockquote>
+<p>EstimatedNumberOfUsers -&gt; (integer)</p>
+<blockquote>
+<div>A number estimating the size of the user pool.</div></blockquote>
+<p>EmailConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The email configuration.</p>
+<p>SourceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the email source.</div></blockquote>
+<p>ReplyToEmailAddress -&gt; (string)</p>
+<blockquote>
+<div>The destination to which the receiver of the email should reply to.</div></blockquote>
+</div></blockquote>
+<p>SmsConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The SMS configuration.</p>
+<p>SnsCallerArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.</div></blockquote>
+<p>ExternalId -&gt; (string)</p>
+<blockquote>
+<div>The external ID.</div></blockquote>
+</div></blockquote>
+<p>UserPoolTags -&gt; (map)</p>
+<blockquote>
+<div><p>The cost allocation tags for the user pool. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding Cost Allocation Tags to Your User Pool</a></p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>SmsConfigurationFailure -&gt; (string)</p>
+<blockquote>
+<div>The reason why the SMS configuration cannot send the messages to your users.</div></blockquote>
+<p>EmailConfigurationFailure -&gt; (string)</p>
+<blockquote>
+<div>The reason why the email configuration cannot send the messages to your users.</div></blockquote>
+<p>Domain -&gt; (string)</p>
+<blockquote>
+<div>Holds the domain prefix if the user pool has a domain associated with it.</div></blockquote>
+<p>CustomDomain -&gt; (string)</p>
+<p>AdminCreateUserConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The configuration for <tt class="docutils literal"><span class="pre">AdminCreateUser</span></tt> requests.</p>
+<p>AllowAdminCreateUserOnly -&gt; (boolean)</p>
+<blockquote>
+<div>Set to <tt class="docutils literal"><span class="pre">True</span></tt> if only the administrator is allowed to create user profiles. Set to <tt class="docutils literal"><span class="pre">False</span></tt> if users can sign themselves up via an app.</div></blockquote>
+<p>UnusedAccountValidityDays -&gt; (integer)</p>
+<blockquote>
+<div>The user account expiration limit, in days, after which the account is no longer usable. To reset the account after that time limit, you must call <tt class="docutils literal"><span class="pre">AdminCreateUser</span></tt> again, specifying <tt class="docutils literal"><span class="pre">&quot;RESEND&quot;</span></tt> for the <tt class="docutils literal"><span class="pre">MessageAction</span></tt> parameter. The default value for this parameter is 7.</div></blockquote>
+<p>InviteMessageTemplate -&gt; (structure)</p>
+<blockquote>
+<div><p>The message template to be used for the welcome message to new users.</p>
+<p>See also <a class="reference external" href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing User Invitation Messages</a> .</p>
+<p>SMSMessage -&gt; (string)</p>
+<blockquote>
+<div>The message template for SMS messages.</div></blockquote>
+<p>EmailMessage -&gt; (string)</p>
+<blockquote>
+<div>The message template for email messages.</div></blockquote>
+<p>EmailSubject -&gt; (string)</p>
+<blockquote>
+<div>The subject line for email messages.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>UserPoolAddOns -&gt; (structure)</p>
+<blockquote>
+<div><p>The user pool add-ons.</p>
+<p>AdvancedSecurityMode -&gt; (string)</p>
+<blockquote>
+<div>The advanced security mode.</div></blockquote>
+</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the user pool.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-idp/describe-user-import-job.html" title="previous chapter (use the left arrow)">&larr; describe-user-import-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cognito-idp/describe-user-pool-client.html" title="next chapter (use the right arrow)">describe-user-pool-client &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../cognito-idp/describe-user-pool-client.html" title="describe-user-pool-client"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cognito-idp/describe-user-import-job.html" title="describe-user-import-job"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cognito-idp/index.html" >cognito-idp</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

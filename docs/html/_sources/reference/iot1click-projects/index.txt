@@ -1,0 +1,43 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws iot1click-projects:
+
+
+******************
+iot1click-projects
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+The AWS IoT 1-Click Project API Reference
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  associate-device-with-placement
+  create-placement
+  create-project
+  delete-placement
+  delete-project
+  describe-placement
+  describe-project
+  disassociate-device-from-placement
+  get-devices-in-placement
+  list-placements
+  list-projects
+  update-placement
+  update-project

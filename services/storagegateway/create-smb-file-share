@@ -1,0 +1,20 @@
+{
+    "ClientToken": "",
+    "GatewayARN": "",
+    "KMSEncrypted": true,
+    "KMSKey": "",
+    "Role": "",
+    "LocationARN": "",
+    "DefaultStorageClass": "",
+    "ObjectACL": "authenticated-read",
+    "ReadOnly": true,
+    "GuessMIMETypeEnabled": true,
+    "RequesterPays": true,
+    "ValidUserList": [
+        ""
+    ],
+    "InvalidUserList": [
+        ""
+    ],
+    "Authentication": ""
+}

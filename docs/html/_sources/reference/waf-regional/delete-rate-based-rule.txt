@@ -1,0 +1,101 @@
+[ :ref:`aws <cli:aws>` . :ref:`waf-regional <cli:aws waf-regional>` ]
+
+.. _cli:aws waf-regional delete-rate-based-rule:
+
+
+**********************
+delete-rate-based-rule
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Permanently deletes a  RateBasedRule . You can't delete a rule if it's still used in any ``WebACL`` objects or if it still includes any predicates, such as ``ByteMatchSet`` objects.
+
+ 
+
+If you just want to remove a rule from a ``WebACL`` , use  UpdateWebACL .
+
+ 
+
+To permanently delete a ``RateBasedRule`` from AWS WAF, perform the following steps:
+
+ 
+
+ 
+* Update the ``RateBasedRule`` to remove predicates, if any. For more information, see  UpdateRateBasedRule . 
+ 
+* Use  GetChangeToken to get the change token that you provide in the ``ChangeToken`` parameter of a ``DeleteRateBasedRule`` request. 
+ 
+* Submit a ``DeleteRateBasedRule`` request. 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/DeleteRateBasedRule>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    delete-rate-based-rule
+  --rule-id <value>
+  --change-token <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--rule-id`` (string)
+
+
+  The ``RuleId`` of the  RateBasedRule that you want to delete. ``RuleId`` is returned by  CreateRateBasedRule and by  ListRateBasedRules .
+
+  
+
+``--change-token`` (string)
+
+
+  The value returned by the most recent call to  GetChangeToken .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ChangeToken -> (string)
+
+  
+
+  The ``ChangeToken`` that you used to submit the ``DeleteRateBasedRule`` request. You can also use this value to query the status of the request. For more information, see  GetChangeTokenStatus .
+
+  
+
+  
+

@@ -1,0 +1,62 @@
+{
+    "Bucket": "",
+    "NotificationConfiguration": {
+        "TopicConfigurations": [
+            {
+                "Id": "",
+                "TopicArn": "",
+                "Events": [
+                    "s3:ObjectCreated:Post"
+                ],
+                "Filter": {
+                    "Key": {
+                        "FilterRules": [
+                            {
+                                "Name": "suffix",
+                                "Value": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "QueueConfigurations": [
+            {
+                "Id": "",
+                "QueueArn": "",
+                "Events": [
+                    "s3:ObjectCreated:Put"
+                ],
+                "Filter": {
+                    "Key": {
+                        "FilterRules": [
+                            {
+                                "Name": "suffix",
+                                "Value": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        ],
+        "LambdaFunctionConfigurations": [
+            {
+                "Id": "",
+                "LambdaFunctionArn": "",
+                "Events": [
+                    "s3:ObjectCreated:Put"
+                ],
+                "Filter": {
+                    "Key": {
+                        "FilterRules": [
+                            {
+                                "Name": "prefix",
+                                "Value": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,715 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-topic-rule &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="iot" href="../iot/index.html" />
+    <link rel="next" title="get-v2-logging-options" href="../iot/get-v2-logging-options.html" />
+    <link rel="prev" title="get-registration-code" href="../iot/get-registration-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../iot/get-v2-logging-options.html" title="get-v2-logging-options"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iot/get-registration-code.html" title="get-registration-code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iot/index.html" accesskey="U">iot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iot/get-registration-code.html" title="previous chapter (use the left arrow)">&larr; get-registration-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iot/get-v2-logging-options.html" title="next chapter (use the right arrow)">get-v2-logging-options &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-topic-rule</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/iot/get-topic-rule">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../iot/index.html#cli-aws-iot"><em>iot</em></a> ]</p>
+<div class="section" id="get-topic-rule">
+<span id="cli-aws-iot-get-topic-rule"></span><h1>get-topic-rule<a class="headerlink" href="#get-topic-rule" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Gets information about the rule.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetTopicRule">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-topic-rule
+--rule-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--rule-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the rule.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ruleArn -&gt; (string)</p>
+<blockquote>
+<div>The rule ARN.</div></blockquote>
+<p>rule -&gt; (structure)</p>
+<blockquote>
+<div><p>The rule.</p>
+<p>ruleName -&gt; (string)</p>
+<blockquote>
+<div>The name of the rule.</div></blockquote>
+<p>sql -&gt; (string)</p>
+<blockquote>
+<div>The SQL statement used to query the topic. When using a SQL query with multiple lines, be sure to escape the newline characters.</div></blockquote>
+<p>description -&gt; (string)</p>
+<blockquote>
+<div>The description of the rule.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time the rule was created.</div></blockquote>
+<p>actions -&gt; (list)</p>
+<blockquote>
+<div><p>The actions associated with the rule.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the actions associated with a rule.</p>
+<p>dynamoDB -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to a DynamoDB table.</p>
+<p>tableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the DynamoDB table.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the DynamoDB table.</div></blockquote>
+<p>operation -&gt; (string)</p>
+<blockquote>
+<div>The type of operation to be performed. This follows the substitution template, so it can be <tt class="docutils literal"><span class="pre">${operation}</span></tt> , but the substitution must result in one of the following: <tt class="docutils literal"><span class="pre">INSERT</span></tt> , <tt class="docutils literal"><span class="pre">UPDATE</span></tt> , or <tt class="docutils literal"><span class="pre">DELETE</span></tt> .</div></blockquote>
+<p>hashKeyField -&gt; (string)</p>
+<blockquote>
+<div>The hash key name.</div></blockquote>
+<p>hashKeyValue -&gt; (string)</p>
+<blockquote>
+<div>The hash key value.</div></blockquote>
+<p>hashKeyType -&gt; (string)</p>
+<blockquote>
+<div>The hash key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;</div></blockquote>
+<p>rangeKeyField -&gt; (string)</p>
+<blockquote>
+<div>The range key name.</div></blockquote>
+<p>rangeKeyValue -&gt; (string)</p>
+<blockquote>
+<div>The range key value.</div></blockquote>
+<p>rangeKeyType -&gt; (string)</p>
+<blockquote>
+<div>The range key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;</div></blockquote>
+<p>payloadField -&gt; (string)</p>
+<blockquote>
+<div>The action payload. This name can be customized.</div></blockquote>
+</div></blockquote>
+<p>dynamoDBv2 -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the DynamoDB table.</div></blockquote>
+<p>putItem -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">{</span> <span class="pre">&quot;dynamoDBv2&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;roleArn&quot;:</span> <span class="pre">&quot;aws:iam:12341251:my-role&quot;</span> <span class="pre">&quot;putItem&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;tableName&quot;:</span> <span class="pre">&quot;my-table&quot;</span> <span class="pre">}</span> <span class="pre">}</span> <span class="pre">}</span></tt></div></blockquote>
+<p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
+<p>tableName -&gt; (string)</p>
+<blockquote>
+<div>The table where the message data will be written</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>lambda -&gt; (structure)</p>
+<blockquote>
+<div><p>Invoke a Lambda function.</p>
+<p>functionArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the Lambda function.</div></blockquote>
+</div></blockquote>
+<p>sns -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to an Amazon SNS topic.</p>
+<p>targetArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the SNS topic.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>messageFormat -&gt; (string)</p>
+<blockquote>
+<div>(Optional) The message format of the message to publish. Accepted values are &quot;JSON&quot; and &quot;RAW&quot;. The default value of the attribute is &quot;RAW&quot;. SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</div></blockquote>
+</div></blockquote>
+<p>sqs -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to an Amazon SQS queue.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>queueUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL of the Amazon SQS queue.</div></blockquote>
+<p>useBase64 -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether to use Base64 encoding.</div></blockquote>
+</div></blockquote>
+<p>kinesis -&gt; (structure)</p>
+<blockquote>
+<div><p>Write data to an Amazon Kinesis stream.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</div></blockquote>
+<p>streamName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon Kinesis stream.</div></blockquote>
+<p>partitionKey -&gt; (string)</p>
+<blockquote>
+<div>The partition key.</div></blockquote>
+</div></blockquote>
+<p>republish -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to another MQTT topic.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>topic -&gt; (string)</p>
+<blockquote>
+<div>The name of the MQTT topic.</div></blockquote>
+</div></blockquote>
+<p>s3 -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to an Amazon S3 bucket.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>bucketName -&gt; (string)</p>
+<blockquote>
+<div>The Amazon S3 bucket.</div></blockquote>
+<p>key -&gt; (string)</p>
+<blockquote>
+<div>The object key.</div></blockquote>
+<p>cannedAcl -&gt; (string)</p>
+<blockquote>
+<div>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a> .</div></blockquote>
+</div></blockquote>
+<p>firehose -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to an Amazon Kinesis Firehose stream.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that grants access to the Amazon Kinesis Firehose stream.</div></blockquote>
+<p>deliveryStreamName -&gt; (string)</p>
+<blockquote>
+<div>The delivery stream name.</div></blockquote>
+<p>separator -&gt; (string)</p>
+<blockquote>
+<div>A character separator that will be used to separate records written to the Firehose stream. Valid values are: 'n' (newline), 't' (tab), 'rn' (Windows newline), ',' (comma).</div></blockquote>
+</div></blockquote>
+<p>cloudwatchMetric -&gt; (structure)</p>
+<blockquote>
+<div><p>Capture a CloudWatch metric.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that allows access to the CloudWatch metric.</div></blockquote>
+<p>metricNamespace -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric namespace name.</div></blockquote>
+<p>metricName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric name.</div></blockquote>
+<p>metricValue -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric value.</div></blockquote>
+<p>metricUnit -&gt; (string)</p>
+<blockquote>
+<div>The <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</div></blockquote>
+<p>metricTimestamp -&gt; (string)</p>
+<blockquote>
+<div>An optional <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a> .</div></blockquote>
+</div></blockquote>
+<p>cloudwatchAlarm -&gt; (structure)</p>
+<blockquote>
+<div><p>Change the state of a CloudWatch alarm.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that allows access to the CloudWatch alarm.</div></blockquote>
+<p>alarmName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch alarm name.</div></blockquote>
+<p>stateReason -&gt; (string)</p>
+<blockquote>
+<div>The reason for the alarm change.</div></blockquote>
+<p>stateValue -&gt; (string)</p>
+<blockquote>
+<div>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</div></blockquote>
+</div></blockquote>
+<p>elasticsearch -&gt; (structure)</p>
+<blockquote>
+<div><p>Write data to an Amazon Elasticsearch Service domain.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role ARN that has access to Elasticsearch.</div></blockquote>
+<p>endpoint -&gt; (string)</p>
+<blockquote>
+<div>The endpoint of your Elasticsearch domain.</div></blockquote>
+<p>index -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch index where you want to store your data.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of document you are storing.</div></blockquote>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier for the document you are storing.</div></blockquote>
+</div></blockquote>
+<p>salesforce -&gt; (structure)</p>
+<blockquote>
+<div><p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+<p>token -&gt; (string)</p>
+<blockquote>
+<div>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</div></blockquote>
+<p>url -&gt; (string)</p>
+<blockquote>
+<div>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</div></blockquote>
+</div></blockquote>
+<p>iotAnalytics -&gt; (structure)</p>
+<blockquote>
+<div><p>Sends message data to an AWS IoT Analytics channel.</p>
+<p>channelArn -&gt; (string)</p>
+<blockquote>
+<div>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</div></blockquote>
+<p>channelName -&gt; (string)</p>
+<blockquote>
+<div>The name of the IoT Analytics channel to which message data will be sent.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</div></blockquote>
+</div></blockquote>
+<p>stepFunctions -&gt; (structure)</p>
+<blockquote>
+<div><p>Starts execution of a Step Functions state machine.</p>
+<p>executionNamePrefix -&gt; (string)</p>
+<blockquote>
+<div>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</div></blockquote>
+<p>stateMachineName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Step Functions state machine whose execution will be started.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the role that grants IoT permission to start execution of a state machine (&quot;Action&quot;:&quot;states:StartExecution&quot;).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ruleDisabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the rule is disabled.</div></blockquote>
+<p>awsIotSqlVersion -&gt; (string)</p>
+<blockquote>
+<div>The version of the SQL rules engine to use when evaluating the rule.</div></blockquote>
+<p>errorAction -&gt; (structure)</p>
+<blockquote>
+<div><p>The action to perform when an error occurs.</p>
+<p>dynamoDB -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to a DynamoDB table.</p>
+<p>tableName -&gt; (string)</p>
+<blockquote>
+<div>The name of the DynamoDB table.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the DynamoDB table.</div></blockquote>
+<p>operation -&gt; (string)</p>
+<blockquote>
+<div>The type of operation to be performed. This follows the substitution template, so it can be <tt class="docutils literal"><span class="pre">${operation}</span></tt> , but the substitution must result in one of the following: <tt class="docutils literal"><span class="pre">INSERT</span></tt> , <tt class="docutils literal"><span class="pre">UPDATE</span></tt> , or <tt class="docutils literal"><span class="pre">DELETE</span></tt> .</div></blockquote>
+<p>hashKeyField -&gt; (string)</p>
+<blockquote>
+<div>The hash key name.</div></blockquote>
+<p>hashKeyValue -&gt; (string)</p>
+<blockquote>
+<div>The hash key value.</div></blockquote>
+<p>hashKeyType -&gt; (string)</p>
+<blockquote>
+<div>The hash key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;</div></blockquote>
+<p>rangeKeyField -&gt; (string)</p>
+<blockquote>
+<div>The range key name.</div></blockquote>
+<p>rangeKeyValue -&gt; (string)</p>
+<blockquote>
+<div>The range key value.</div></blockquote>
+<p>rangeKeyType -&gt; (string)</p>
+<blockquote>
+<div>The range key type. Valid values are &quot;STRING&quot; or &quot;NUMBER&quot;</div></blockquote>
+<p>payloadField -&gt; (string)</p>
+<blockquote>
+<div>The action payload. This name can be customized.</div></blockquote>
+</div></blockquote>
+<p>dynamoDBv2 -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to a DynamoDB table. This is a new version of the DynamoDB action. It allows you to write each attribute in an MQTT message payload into a separate DynamoDB column.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the DynamoDB table.</div></blockquote>
+<p>putItem -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the DynamoDB table to which the message data will be written. For example:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">{</span> <span class="pre">&quot;dynamoDBv2&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;roleArn&quot;:</span> <span class="pre">&quot;aws:iam:12341251:my-role&quot;</span> <span class="pre">&quot;putItem&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;tableName&quot;:</span> <span class="pre">&quot;my-table&quot;</span> <span class="pre">}</span> <span class="pre">}</span> <span class="pre">}</span></tt></div></blockquote>
+<p>Each attribute in the message payload will be written to a separate column in the DynamoDB database.</p>
+<p>tableName -&gt; (string)</p>
+<blockquote>
+<div>The table where the message data will be written</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>lambda -&gt; (structure)</p>
+<blockquote>
+<div><p>Invoke a Lambda function.</p>
+<p>functionArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the Lambda function.</div></blockquote>
+</div></blockquote>
+<p>sns -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to an Amazon SNS topic.</p>
+<p>targetArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the SNS topic.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>messageFormat -&gt; (string)</p>
+<blockquote>
+<div>(Optional) The message format of the message to publish. Accepted values are &quot;JSON&quot; and &quot;RAW&quot;. The default value of the attribute is &quot;RAW&quot;. SNS uses this setting to determine if the payload should be parsed and relevant platform-specific bits of the payload should be extracted. To read more about SNS message formats, see <a class="reference external" href="http://docs.aws.amazon.com/sns/latest/dg/json-formats.html">http://docs.aws.amazon.com/sns/latest/dg/json-formats.html</a> refer to their official documentation.</div></blockquote>
+</div></blockquote>
+<p>sqs -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to an Amazon SQS queue.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>queueUrl -&gt; (string)</p>
+<blockquote>
+<div>The URL of the Amazon SQS queue.</div></blockquote>
+<p>useBase64 -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether to use Base64 encoding.</div></blockquote>
+</div></blockquote>
+<p>kinesis -&gt; (structure)</p>
+<blockquote>
+<div><p>Write data to an Amazon Kinesis stream.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</div></blockquote>
+<p>streamName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon Kinesis stream.</div></blockquote>
+<p>partitionKey -&gt; (string)</p>
+<blockquote>
+<div>The partition key.</div></blockquote>
+</div></blockquote>
+<p>republish -&gt; (structure)</p>
+<blockquote>
+<div><p>Publish to another MQTT topic.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>topic -&gt; (string)</p>
+<blockquote>
+<div>The name of the MQTT topic.</div></blockquote>
+</div></blockquote>
+<p>s3 -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to an Amazon S3 bucket.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role that grants access.</div></blockquote>
+<p>bucketName -&gt; (string)</p>
+<blockquote>
+<div>The Amazon S3 bucket.</div></blockquote>
+<p>key -&gt; (string)</p>
+<blockquote>
+<div>The object key.</div></blockquote>
+<p>cannedAcl -&gt; (string)</p>
+<blockquote>
+<div>The Amazon S3 canned ACL that controls access to the object identified by the object key. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">S3 canned ACLs</a> .</div></blockquote>
+</div></blockquote>
+<p>firehose -&gt; (structure)</p>
+<blockquote>
+<div><p>Write to an Amazon Kinesis Firehose stream.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that grants access to the Amazon Kinesis Firehose stream.</div></blockquote>
+<p>deliveryStreamName -&gt; (string)</p>
+<blockquote>
+<div>The delivery stream name.</div></blockquote>
+<p>separator -&gt; (string)</p>
+<blockquote>
+<div>A character separator that will be used to separate records written to the Firehose stream. Valid values are: 'n' (newline), 't' (tab), 'rn' (Windows newline), ',' (comma).</div></blockquote>
+</div></blockquote>
+<p>cloudwatchMetric -&gt; (structure)</p>
+<blockquote>
+<div><p>Capture a CloudWatch metric.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that allows access to the CloudWatch metric.</div></blockquote>
+<p>metricNamespace -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric namespace name.</div></blockquote>
+<p>metricName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric name.</div></blockquote>
+<p>metricValue -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch metric value.</div></blockquote>
+<p>metricUnit -&gt; (string)</p>
+<blockquote>
+<div>The <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#Unit">metric unit</a> supported by CloudWatch.</div></blockquote>
+<p>metricTimestamp -&gt; (string)</p>
+<blockquote>
+<div>An optional <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/cloudwatch_concepts.html#about_timestamp">Unix timestamp</a> .</div></blockquote>
+</div></blockquote>
+<p>cloudwatchAlarm -&gt; (structure)</p>
+<blockquote>
+<div><p>Change the state of a CloudWatch alarm.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role that allows access to the CloudWatch alarm.</div></blockquote>
+<p>alarmName -&gt; (string)</p>
+<blockquote>
+<div>The CloudWatch alarm name.</div></blockquote>
+<p>stateReason -&gt; (string)</p>
+<blockquote>
+<div>The reason for the alarm change.</div></blockquote>
+<p>stateValue -&gt; (string)</p>
+<blockquote>
+<div>The value of the alarm state. Acceptable values are: OK, ALARM, INSUFFICIENT_DATA.</div></blockquote>
+</div></blockquote>
+<p>elasticsearch -&gt; (structure)</p>
+<blockquote>
+<div><p>Write data to an Amazon Elasticsearch Service domain.</p>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM role ARN that has access to Elasticsearch.</div></blockquote>
+<p>endpoint -&gt; (string)</p>
+<blockquote>
+<div>The endpoint of your Elasticsearch domain.</div></blockquote>
+<p>index -&gt; (string)</p>
+<blockquote>
+<div>The Elasticsearch index where you want to store your data.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of document you are storing.</div></blockquote>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier for the document you are storing.</div></blockquote>
+</div></blockquote>
+<p>salesforce -&gt; (structure)</p>
+<blockquote>
+<div><p>Send a message to a Salesforce IoT Cloud Input Stream.</p>
+<p>token -&gt; (string)</p>
+<blockquote>
+<div>The token used to authenticate access to the Salesforce IoT Cloud Input Stream. The token is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</div></blockquote>
+<p>url -&gt; (string)</p>
+<blockquote>
+<div>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is available from the Salesforce IoT Cloud platform after creation of the Input Stream.</div></blockquote>
+</div></blockquote>
+<p>iotAnalytics -&gt; (structure)</p>
+<blockquote>
+<div><p>Sends message data to an AWS IoT Analytics channel.</p>
+<p>channelArn -&gt; (string)</p>
+<blockquote>
+<div>(deprecated) The ARN of the IoT Analytics channel to which message data will be sent.</div></blockquote>
+<p>channelName -&gt; (string)</p>
+<blockquote>
+<div>The name of the IoT Analytics channel to which message data will be sent.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</div></blockquote>
+</div></blockquote>
+<p>stepFunctions -&gt; (structure)</p>
+<blockquote>
+<div><p>Starts execution of a Step Functions state machine.</p>
+<p>executionNamePrefix -&gt; (string)</p>
+<blockquote>
+<div>(Optional) A name will be given to the state machine execution consisting of this prefix followed by a UUID. Step Functions automatically creates a unique name for each state machine execution if one is not provided.</div></blockquote>
+<p>stateMachineName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Step Functions state machine whose execution will be started.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the role that grants IoT permission to start execution of a state machine (&quot;Action&quot;:&quot;states:StartExecution&quot;).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iot/get-registration-code.html" title="previous chapter (use the left arrow)">&larr; get-registration-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iot/get-v2-logging-options.html" title="next chapter (use the right arrow)">get-v2-logging-options &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../iot/get-v2-logging-options.html" title="get-v2-logging-options"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iot/get-registration-code.html" title="get-registration-code"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iot/index.html" >iot</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

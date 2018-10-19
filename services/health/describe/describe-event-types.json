@@ -1,0 +1,16 @@
+{
+    "filter": {
+        "eventTypeCodes": [
+            ""
+        ],
+        "services": [
+            ""
+        ],
+        "eventTypeCategories": [
+            "scheduledChange"
+        ]
+    },
+    "locale": "",
+    "nextToken": "",
+    "maxResults": 0
+}

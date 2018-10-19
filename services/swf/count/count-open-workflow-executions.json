@@ -1,0 +1,17 @@
+{
+    "domain": "",
+    "startTimeFilter": {
+        "oldestDate": "1970-01-01T00:00:00",
+        "latestDate": "1970-01-01T00:00:00"
+    },
+    "typeFilter": {
+        "name": "",
+        "version": ""
+    },
+    "tagFilter": {
+        "tag": ""
+    },
+    "executionFilter": {
+        "workflowId": ""
+    }
+}

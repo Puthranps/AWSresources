@@ -1,0 +1,20 @@
+{
+    "FileShareARN": "",
+    "KMSEncrypted": true,
+    "KMSKey": "",
+    "NFSFileShareDefaults": {
+        "FileMode": "",
+        "DirectoryMode": "",
+        "GroupId": 0,
+        "OwnerId": 0
+    },
+    "DefaultStorageClass": "",
+    "ObjectACL": "aws-exec-read",
+    "ClientList": [
+        ""
+    ],
+    "Squash": "",
+    "ReadOnly": true,
+    "GuessMIMETypeEnabled": true,
+    "RequesterPays": true
+}

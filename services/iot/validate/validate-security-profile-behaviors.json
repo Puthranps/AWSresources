@@ -1,0 +1,21 @@
+{
+    "behaviors": [
+        {
+            "name": "",
+            "metric": "",
+            "criteria": {
+                "comparisonOperator": "in-port-set",
+                "value": {
+                    "count": 0,
+                    "cidrs": [
+                        ""
+                    ],
+                    "ports": [
+                        0
+                    ]
+                },
+                "durationSeconds": 0
+            }
+        }
+    ]
+}

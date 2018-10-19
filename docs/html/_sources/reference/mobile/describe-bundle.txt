@@ -1,0 +1,145 @@
+[ :ref:`aws <cli:aws>` . :ref:`mobile <cli:aws mobile>` ]
+
+.. _cli:aws mobile describe-bundle:
+
+
+***************
+describe-bundle
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Get the bundle details for the requested bundle id. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mobile-2017-07-01/DescribeBundle>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-bundle
+  --bundle-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--bundle-id`` (string)
+
+
+  Unique bundle identifier. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+details -> (structure)
+
+  
+
+  The details of the bundle. 
+
+  
+
+  bundleId -> (string)
+
+    
+
+    Unique bundle identifier. 
+
+    
+
+    
+
+  title -> (string)
+
+    
+
+    Title of the download bundle. 
+
+    
+
+    
+
+  version -> (string)
+
+    
+
+    Version of the download bundle. 
+
+    
+
+    
+
+  description -> (string)
+
+    
+
+    Description of the download bundle. 
+
+    
+
+    
+
+  iconUrl -> (string)
+
+    
+
+    Icon for the download bundle. 
+
+    
+
+    
+
+  availablePlatforms -> (list)
+
+    
+
+    Developer desktop or mobile app or website platforms. 
+
+    
+
+    (string)
+
+      
+
+      Developer desktop or target mobile app or website platform. 
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,5 @@
+{
+    "ReplicationGroupId": "",
+    "RetainPrimaryCluster": true,
+    "FinalSnapshotIdentifier": ""
+}

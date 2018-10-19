@@ -1,0 +1,16 @@
+{
+    "FileShareARN": "",
+    "KMSEncrypted": true,
+    "KMSKey": "",
+    "DefaultStorageClass": "",
+    "ObjectACL": "bucket-owner-read",
+    "ReadOnly": true,
+    "GuessMIMETypeEnabled": true,
+    "RequesterPays": true,
+    "ValidUserList": [
+        ""
+    ],
+    "InvalidUserList": [
+        ""
+    ]
+}

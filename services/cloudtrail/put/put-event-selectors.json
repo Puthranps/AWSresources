@@ -1,0 +1,17 @@
+{
+    "TrailName": "",
+    "EventSelectors": [
+        {
+            "ReadWriteType": "ReadOnly",
+            "IncludeManagementEvents": true,
+            "DataResources": [
+                {
+                    "Type": "",
+                    "Values": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    ]
+}

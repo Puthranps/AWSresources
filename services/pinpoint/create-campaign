@@ -1,0 +1,219 @@
+{
+    "ApplicationId": "",
+    "WriteCampaignRequest": {
+        "AdditionalTreatments": [
+            {
+                "MessageConfiguration": {
+                    "ADMMessage": {
+                        "Action": "OPEN_APP",
+                        "Body": "",
+                        "ImageIconUrl": "",
+                        "ImageSmallIconUrl": "",
+                        "ImageUrl": "",
+                        "JsonBody": "",
+                        "MediaUrl": "",
+                        "RawContent": "",
+                        "SilentPush": true,
+                        "TimeToLive": 0,
+                        "Title": "",
+                        "Url": ""
+                    },
+                    "APNSMessage": {
+                        "Action": "URL",
+                        "Body": "",
+                        "ImageIconUrl": "",
+                        "ImageSmallIconUrl": "",
+                        "ImageUrl": "",
+                        "JsonBody": "",
+                        "MediaUrl": "",
+                        "RawContent": "",
+                        "SilentPush": true,
+                        "TimeToLive": 0,
+                        "Title": "",
+                        "Url": ""
+                    },
+                    "BaiduMessage": {
+                        "Action": "OPEN_APP",
+                        "Body": "",
+                        "ImageIconUrl": "",
+                        "ImageSmallIconUrl": "",
+                        "ImageUrl": "",
+                        "JsonBody": "",
+                        "MediaUrl": "",
+                        "RawContent": "",
+                        "SilentPush": true,
+                        "TimeToLive": 0,
+                        "Title": "",
+                        "Url": ""
+                    },
+                    "DefaultMessage": {
+                        "Action": "OPEN_APP",
+                        "Body": "",
+                        "ImageIconUrl": "",
+                        "ImageSmallIconUrl": "",
+                        "ImageUrl": "",
+                        "JsonBody": "",
+                        "MediaUrl": "",
+                        "RawContent": "",
+                        "SilentPush": true,
+                        "TimeToLive": 0,
+                        "Title": "",
+                        "Url": ""
+                    },
+                    "EmailMessage": {
+                        "Body": "",
+                        "FromAddress": "",
+                        "HtmlBody": "",
+                        "Title": ""
+                    },
+                    "GCMMessage": {
+                        "Action": "OPEN_APP",
+                        "Body": "",
+                        "ImageIconUrl": "",
+                        "ImageSmallIconUrl": "",
+                        "ImageUrl": "",
+                        "JsonBody": "",
+                        "MediaUrl": "",
+                        "RawContent": "",
+                        "SilentPush": true,
+                        "TimeToLive": 0,
+                        "Title": "",
+                        "Url": ""
+                    },
+                    "SMSMessage": {
+                        "Body": "",
+                        "MessageType": "PROMOTIONAL",
+                        "SenderId": ""
+                    }
+                },
+                "Schedule": {
+                    "EndTime": "",
+                    "Frequency": "DAILY",
+                    "IsLocalTime": true,
+                    "QuietTime": {
+                        "End": "",
+                        "Start": ""
+                    },
+                    "StartTime": "",
+                    "Timezone": ""
+                },
+                "SizePercent": 0,
+                "TreatmentDescription": "",
+                "TreatmentName": ""
+            }
+        ],
+        "Description": "",
+        "HoldoutPercent": 0,
+        "Hook": {
+            "LambdaFunctionName": "",
+            "Mode": "FILTER",
+            "WebUrl": ""
+        },
+        "IsPaused": true,
+        "Limits": {
+            "Daily": 0,
+            "MaximumDuration": 0,
+            "MessagesPerSecond": 0,
+            "Total": 0
+        },
+        "MessageConfiguration": {
+            "ADMMessage": {
+                "Action": "DEEP_LINK",
+                "Body": "",
+                "ImageIconUrl": "",
+                "ImageSmallIconUrl": "",
+                "ImageUrl": "",
+                "JsonBody": "",
+                "MediaUrl": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "APNSMessage": {
+                "Action": "DEEP_LINK",
+                "Body": "",
+                "ImageIconUrl": "",
+                "ImageSmallIconUrl": "",
+                "ImageUrl": "",
+                "JsonBody": "",
+                "MediaUrl": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "BaiduMessage": {
+                "Action": "URL",
+                "Body": "",
+                "ImageIconUrl": "",
+                "ImageSmallIconUrl": "",
+                "ImageUrl": "",
+                "JsonBody": "",
+                "MediaUrl": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "DefaultMessage": {
+                "Action": "DEEP_LINK",
+                "Body": "",
+                "ImageIconUrl": "",
+                "ImageSmallIconUrl": "",
+                "ImageUrl": "",
+                "JsonBody": "",
+                "MediaUrl": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "EmailMessage": {
+                "Body": "",
+                "FromAddress": "",
+                "HtmlBody": "",
+                "Title": ""
+            },
+            "GCMMessage": {
+                "Action": "DEEP_LINK",
+                "Body": "",
+                "ImageIconUrl": "",
+                "ImageSmallIconUrl": "",
+                "ImageUrl": "",
+                "JsonBody": "",
+                "MediaUrl": "",
+                "RawContent": "",
+                "SilentPush": true,
+                "TimeToLive": 0,
+                "Title": "",
+                "Url": ""
+            },
+            "SMSMessage": {
+                "Body": "",
+                "MessageType": "PROMOTIONAL",
+                "SenderId": ""
+            }
+        },
+        "Name": "",
+        "Schedule": {
+            "EndTime": "",
+            "Frequency": "WEEKLY",
+            "IsLocalTime": true,
+            "QuietTime": {
+                "End": "",
+                "Start": ""
+            },
+            "StartTime": "",
+            "Timezone": ""
+        },
+        "SegmentId": "",
+        "SegmentVersion": 0,
+        "TreatmentDescription": "",
+        "TreatmentName": ""
+    }
+}

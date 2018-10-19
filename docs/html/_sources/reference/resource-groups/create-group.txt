@@ -1,0 +1,219 @@
+[ :ref:`aws <cli:aws>` . :ref:`resource-groups <cli:aws resource-groups>` ]
+
+.. _cli:aws resource-groups create-group:
+
+
+************
+create-group
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a group with a specified name, description, and resource query.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/CreateGroup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-group
+  --name <value>
+  [--description <value>]
+  --resource-query <value>
+  [--tags <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--name`` (string)
+
+
+  The name of the group, which is the identifier of the group in other operations. A resource group name cannot be updated after it is created. A resource group name can have a maximum of 128 characters, including letters, numbers, hyphens, dots, and underscores. The name cannot start with ``AWS`` or ``aws`` ; these are reserved. A resource group name must be unique within your account.
+
+  
+
+``--description`` (string)
+
+
+  The description of the resource group. Descriptions can have a maximum of 511 characters, including letters, numbers, hyphens, underscores, punctuation, and spaces.
+
+  
+
+``--resource-query`` (structure)
+
+
+  The resource query that determines which AWS resources are members of this group.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Type=string,Query=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Type": "TAG_FILTERS_1_0",
+    "Query": "string"
+  }
+
+
+
+``--tags`` (map)
+
+
+  The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,KeyName2=string
+
+
+
+
+JSON Syntax::
+
+  {"string": "string"
+    ...}
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Group -> (structure)
+
+  
+
+  A full description of the resource group after it is created.
+
+  
+
+  GroupArn -> (string)
+
+    
+
+    The ARN of a resource group.
+
+    
+
+    
+
+  Name -> (string)
+
+    
+
+    The name of a resource group.
+
+    
+
+    
+
+  Description -> (string)
+
+    
+
+    The description of the resource group.
+
+    
+
+    
+
+  
+
+ResourceQuery -> (structure)
+
+  
+
+  The resource query associated with the group.
+
+  
+
+  Type -> (string)
+
+    
+
+    The type of the query. The valid value in this release is ``TAG_FILTERS_1_0`` .
+
+     
+
+     * ``TAG_FILTERS_1_0:`` * A JSON syntax that lets you specify a collection of simple tag filters for resource types and tags, as supported by the AWS Tagging API GetResources operation. When more than one element is present, only resources that match all filters are part of the result. If a filter specifies more than one value for a key, a resource matches the filter if its tag value matches any of the specified values.
+
+    
+
+    
+
+  Query -> (string)
+
+    
+
+    The query that defines a group or a search.
+
+    
+
+    
+
+  
+
+Tags -> (map)
+
+  
+
+  The tags associated with the group.
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (string)
+
+    
+
+    
+
+  
+

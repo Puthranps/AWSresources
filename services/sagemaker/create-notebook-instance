@@ -1,0 +1,18 @@
+{
+    "NotebookInstanceName": "",
+    "InstanceType": "ml.t2.xlarge",
+    "SubnetId": "",
+    "SecurityGroupIds": [
+        ""
+    ],
+    "RoleArn": "",
+    "KmsKeyId": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "LifecycleConfigName": "",
+    "DirectInternetAccess": "Disabled"
+}

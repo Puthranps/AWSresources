@@ -1,0 +1,33 @@
+{
+    "Attribute": "",
+    "Description": {
+        "Value": ""
+    },
+    "ImageId": "",
+    "LaunchPermission": {
+        "Add": [
+            {
+                "Group": "all",
+                "UserId": ""
+            }
+        ],
+        "Remove": [
+            {
+                "Group": "all",
+                "UserId": ""
+            }
+        ]
+    },
+    "OperationType": "add",
+    "ProductCodes": [
+        ""
+    ],
+    "UserGroups": [
+        ""
+    ],
+    "UserIds": [
+        ""
+    ],
+    "Value": "",
+    "DryRun": true
+}

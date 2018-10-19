@@ -1,0 +1,42 @@
+{
+    "ClusterId": "",
+    "InstanceGroupId": "",
+    "AutoScalingPolicy": {
+        "Constraints": {
+            "MinCapacity": 0,
+            "MaxCapacity": 0
+        },
+        "Rules": [
+            {
+                "Name": "",
+                "Description": "",
+                "Action": {
+                    "Market": "SPOT",
+                    "SimpleScalingPolicyConfiguration": {
+                        "AdjustmentType": "PERCENT_CHANGE_IN_CAPACITY",
+                        "ScalingAdjustment": 0,
+                        "CoolDown": 0
+                    }
+                },
+                "Trigger": {
+                    "CloudWatchAlarmDefinition": {
+                        "ComparisonOperator": "LESS_THAN",
+                        "EvaluationPeriods": 0,
+                        "MetricName": "",
+                        "Namespace": "",
+                        "Period": 0,
+                        "Statistic": "MINIMUM",
+                        "Threshold": null,
+                        "Unit": "PERCENT",
+                        "Dimensions": [
+                            {
+                                "Key": "",
+                                "Value": ""
+                            }
+                        ]
+                    }
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "PolicyInputList": [
+        ""
+    ],
+    "ActionNames": [
+        ""
+    ],
+    "ResourceArns": [
+        ""
+    ],
+    "ResourcePolicy": "",
+    "ResourceOwner": "",
+    "CallerArn": "",
+    "ContextEntries": [
+        {
+            "ContextKeyName": "",
+            "ContextKeyValues": [
+                ""
+            ],
+            "ContextKeyType": "date"
+        }
+    ],
+    "ResourceHandlingOption": "",
+    "MaxItems": 0,
+    "Marker": ""
+}

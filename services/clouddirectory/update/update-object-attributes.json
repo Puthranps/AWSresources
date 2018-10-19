@@ -1,0 +1,25 @@
+{
+    "DirectoryArn": "",
+    "ObjectReference": {
+        "Selector": ""
+    },
+    "AttributeUpdates": [
+        {
+            "ObjectAttributeKey": {
+                "SchemaArn": "",
+                "FacetName": "",
+                "Name": ""
+            },
+            "ObjectAttributeAction": {
+                "ObjectAttributeActionType": "CREATE_OR_UPDATE",
+                "ObjectAttributeUpdateValue": {
+                    "StringValue": "",
+                    "BinaryValue": null,
+                    "BooleanValue": true,
+                    "NumberValue": "",
+                    "DatetimeValue": "1970-01-01T00:00:00"
+                }
+            }
+        }
+    ]
+}

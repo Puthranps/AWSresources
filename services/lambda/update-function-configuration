@@ -1,0 +1,30 @@
+{
+    "FunctionName": "",
+    "Role": "",
+    "Handler": "",
+    "Description": "",
+    "Timeout": 0,
+    "MemorySize": 0,
+    "VpcConfig": {
+        "SubnetIds": [
+            ""
+        ],
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "Environment": {
+        "Variables": {
+            "KeyName": ""
+        }
+    },
+    "Runtime": "java8",
+    "DeadLetterConfig": {
+        "TargetArn": ""
+    },
+    "KMSKeyArn": "",
+    "TracingConfig": {
+        "Mode": "PassThrough"
+    },
+    "RevisionId": ""
+}

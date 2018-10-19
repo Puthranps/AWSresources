@@ -1,0 +1,328 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-maintenance-window &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ssm" href="../ssm/index.html" />
+    <link rel="next" title="update-maintenance-window-target" href="../ssm/update-maintenance-window-target.html" />
+    <link rel="prev" title="update-document-default-version" href="../ssm/update-document-default-version.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/update-maintenance-window-target.html" title="update-maintenance-window-target"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/update-document-default-version.html" title="update-document-default-version"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" accesskey="U">ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/update-document-default-version.html" title="previous chapter (use the left arrow)">&larr; update-document-default-version</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/update-maintenance-window-target.html" title="next chapter (use the right arrow)">update-maintenance-window-target &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-maintenance-window</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/update-maintenance-window">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ssm/index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="update-maintenance-window">
+<span id="cli-aws-ssm-update-maintenance-window"></span><h1>update-maintenance-window<a class="headerlink" href="#update-maintenance-window" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates an existing Maintenance Window. Only specified parameters are modified.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindow">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-maintenance-window
+--window-id &lt;value&gt;
+[--name &lt;value&gt;]
+[--description &lt;value&gt;]
+[--start-date &lt;value&gt;]
+[--end-date &lt;value&gt;]
+[--schedule &lt;value&gt;]
+[--schedule-timezone &lt;value&gt;]
+[--duration &lt;value&gt;]
+[--cutoff &lt;value&gt;]
+[--allow-unassociated-targets | --no-allow-unassociated-targets]
+[--enabled | --no-enabled]
+[--replace | --no-replace]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--window-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the Maintenance Window to update.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Maintenance Window.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>An optional description for the update request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--start-date</span></tt> (string)</p>
+<blockquote>
+<div>The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: &quot;America/Los_Angeles&quot;, &quot;etc/UTC&quot;, or &quot;Asia/Seoul&quot;. For more information, see the <a class="reference external" href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--end-date</span></tt> (string)</p>
+<blockquote>
+<div>The date and time, in ISO-8601 Extended format, for when you want the Maintenance Window to become inactive. EndDate allows you to set a date and time in the future when the Maintenance Window will no longer run.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--schedule</span></tt> (string)</p>
+<blockquote>
+<div>The schedule of the Maintenance Window in the form of a cron or rate expression.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--schedule-timezone</span></tt> (string)</p>
+<blockquote>
+<div>The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: &quot;America/Los_Angeles&quot;, &quot;etc/UTC&quot;, or &quot;Asia/Seoul&quot;. For more information, see the <a class="reference external" href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--duration</span></tt> (integer)</p>
+<blockquote>
+<div>The duration of the Maintenance Window in hours.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cutoff</span></tt> (integer)</p>
+<blockquote>
+<div>The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for execution.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--allow-unassociated-targets</span></tt> | <tt class="docutils literal"><span class="pre">--no-allow-unassociated-targets</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--enabled</span></tt> | <tt class="docutils literal"><span class="pre">--no-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether the Maintenance Window is enabled.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--replace</span></tt> | <tt class="docutils literal"><span class="pre">--no-replace</span></tt> (boolean)</p>
+<blockquote>
+<div>If True, then all fields that are required by the CreateMaintenanceWindow action are also required for this API request. Optional fields that are not specified are set to null.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To update a maintenance window</strong></p>
+<p>This example updates the name of a maintenance window.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm update-maintenance-window --window-id &quot;mw-1a2b3c4d5e6f7g8h9&quot; --name &quot;My-Renamed-MW&quot;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+      <span class="s2">&quot;Cutoff&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;My-Renamed-MW&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Schedule&quot;</span><span class="p">:</span> <span class="s2">&quot;cron(0 16 ? * TUE *)&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;AllowUnassociatedTargets&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+      <span class="s2">&quot;WindowId&quot;</span><span class="p">:</span> <span class="s2">&quot;mw-1a2b3c4d5e6f7g8h9&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;Duration&quot;</span><span class="p">:</span> <span class="mi">4</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To enable a maintenance window</strong></p>
+<p>This example enables a maintenance window.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm update-maintenance-window --window-id &quot;mw-1a2b3c4d5e6f7g8h9&quot; --enabled</pre>
+</div>
+<p><strong>To disable a maintenance window</strong></p>
+<p>This example disables a maintenance window.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm update-maintenance-window --window-id &quot;mw-1a2b3c4d5e6f7g8h9&quot; --no-enabled</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>WindowId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the created Maintenance Window.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the Maintenance Window.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>An optional description of the update.</div></blockquote>
+<p>StartDate -&gt; (string)</p>
+<blockquote>
+<div>The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become active. The Maintenance Window will not run before this specified time.</div></blockquote>
+<p>EndDate -&gt; (string)</p>
+<blockquote>
+<div>The date and time, in ISO-8601 Extended format, for when the Maintenance Window is scheduled to become inactive. The Maintenance Window will not run after this specified time.</div></blockquote>
+<p>Schedule -&gt; (string)</p>
+<blockquote>
+<div>The schedule of the Maintenance Window in the form of a cron or rate expression.</div></blockquote>
+<p>ScheduleTimezone -&gt; (string)</p>
+<blockquote>
+<div>The time zone that the scheduled Maintenance Window executions are based on, in Internet Assigned Numbers Authority (IANA) format. For example: &quot;America/Los_Angeles&quot;, &quot;etc/UTC&quot;, or &quot;Asia/Seoul&quot;. For more information, see the <a class="reference external" href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.</div></blockquote>
+<p>Duration -&gt; (integer)</p>
+<blockquote>
+<div>The duration of the Maintenance Window in hours.</div></blockquote>
+<p>Cutoff -&gt; (integer)</p>
+<blockquote>
+<div>The number of hours before the end of the Maintenance Window that Systems Manager stops scheduling new tasks for execution.</div></blockquote>
+<p>AllowUnassociatedTargets -&gt; (boolean)</p>
+<blockquote>
+<div>Whether targets must be registered with the Maintenance Window before tasks can be defined for those targets.</div></blockquote>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the Maintenance Window is enabled.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/update-document-default-version.html" title="previous chapter (use the left arrow)">&larr; update-document-default-version</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/update-maintenance-window-target.html" title="next chapter (use the right arrow)">update-maintenance-window-target &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/update-maintenance-window-target.html" title="update-maintenance-window-target"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/update-document-default-version.html" title="update-document-default-version"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" >ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

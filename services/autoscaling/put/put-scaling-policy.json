@@ -1,0 +1,39 @@
+{
+    "AutoScalingGroupName": "",
+    "PolicyName": "",
+    "PolicyType": "",
+    "AdjustmentType": "",
+    "MinAdjustmentStep": 0,
+    "MinAdjustmentMagnitude": 0,
+    "ScalingAdjustment": 0,
+    "Cooldown": 0,
+    "MetricAggregationType": "",
+    "StepAdjustments": [
+        {
+            "MetricIntervalLowerBound": null,
+            "MetricIntervalUpperBound": null,
+            "ScalingAdjustment": 0
+        }
+    ],
+    "EstimatedInstanceWarmup": 0,
+    "TargetTrackingConfiguration": {
+        "PredefinedMetricSpecification": {
+            "PredefinedMetricType": "ASGAverageCPUUtilization",
+            "ResourceLabel": ""
+        },
+        "CustomizedMetricSpecification": {
+            "MetricName": "",
+            "Namespace": "",
+            "Dimensions": [
+                {
+                    "Name": "",
+                    "Value": ""
+                }
+            ],
+            "Statistic": "Minimum",
+            "Unit": ""
+        },
+        "TargetValue": null,
+        "DisableScaleIn": true
+    }
+}

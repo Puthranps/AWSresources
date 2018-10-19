@@ -1,0 +1,12 @@
+{
+    "AuthenticationToken": "",
+    "OrganizationId": "",
+    "UserIds": "",
+    "Query": "",
+    "Include": "ACTIVE_PENDING",
+    "Order": "ASCENDING",
+    "Sort": "USER_NAME",
+    "Marker": "",
+    "Limit": 0,
+    "Fields": ""
+}

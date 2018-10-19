@@ -1,0 +1,30 @@
+{
+    "Source": "",
+    "Destination": {
+        "ToAddresses": [
+            ""
+        ],
+        "CcAddresses": [
+            ""
+        ],
+        "BccAddresses": [
+            ""
+        ]
+    },
+    "ReplyToAddresses": [
+        ""
+    ],
+    "ReturnPath": "",
+    "SourceArn": "",
+    "ReturnPathArn": "",
+    "Tags": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "ConfigurationSetName": "",
+    "Template": "",
+    "TemplateArn": "",
+    "TemplateData": ""
+}

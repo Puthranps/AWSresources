@@ -1,0 +1,36 @@
+{
+    "Name": "",
+    "Region": "",
+    "VpcId": "",
+    "Attributes": {
+        "KeyName": ""
+    },
+    "ServiceRoleArn": "",
+    "DefaultInstanceProfileArn": "",
+    "DefaultOs": "",
+    "HostnameTheme": "",
+    "DefaultAvailabilityZone": "",
+    "DefaultSubnetId": "",
+    "CustomJson": "",
+    "ConfigurationManager": {
+        "Name": "",
+        "Version": ""
+    },
+    "ChefConfiguration": {
+        "ManageBerkshelf": true,
+        "BerkshelfVersion": ""
+    },
+    "UseCustomCookbooks": true,
+    "UseOpsworksSecurityGroups": true,
+    "CustomCookbooksSource": {
+        "Type": "git",
+        "Url": "",
+        "Username": "",
+        "Password": "",
+        "SshKey": "",
+        "Revision": ""
+    },
+    "DefaultSshKeyName": "",
+    "DefaultRootDeviceType": "instance-store",
+    "AgentVersion": ""
+}

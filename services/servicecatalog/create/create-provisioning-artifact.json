@@ -1,0 +1,13 @@
+{
+    "AcceptLanguage": "",
+    "ProductId": "",
+    "Parameters": {
+        "Name": "",
+        "Description": "",
+        "Info": {
+            "KeyName": ""
+        },
+        "Type": "MARKETPLACE_CAR"
+    },
+    "IdempotencyToken": ""
+}

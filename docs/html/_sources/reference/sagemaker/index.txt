@@ -1,0 +1,70 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws sagemaker:
+
+
+*********
+sagemaker
+*********
+
+
+
+===========
+Description
+===========
+
+Definition of the public APIs exposed by SageMaker
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  add-tags
+  create-endpoint
+  create-endpoint-config
+  create-hyper-parameter-tuning-job
+  create-model
+  create-notebook-instance
+  create-notebook-instance-lifecycle-config
+  create-presigned-notebook-instance-url
+  create-training-job
+  create-transform-job
+  delete-endpoint
+  delete-endpoint-config
+  delete-model
+  delete-notebook-instance
+  delete-notebook-instance-lifecycle-config
+  delete-tags
+  describe-endpoint
+  describe-endpoint-config
+  describe-hyper-parameter-tuning-job
+  describe-model
+  describe-notebook-instance
+  describe-notebook-instance-lifecycle-config
+  describe-training-job
+  describe-transform-job
+  list-endpoint-configs
+  list-endpoints
+  list-hyper-parameter-tuning-jobs
+  list-models
+  list-notebook-instance-lifecycle-configs
+  list-notebook-instances
+  list-tags
+  list-training-jobs
+  list-training-jobs-for-hyper-parameter-tuning-job
+  list-transform-jobs
+  start-notebook-instance
+  stop-hyper-parameter-tuning-job
+  stop-notebook-instance
+  stop-training-job
+  stop-transform-job
+  update-endpoint
+  update-endpoint-weights-and-capacities
+  update-notebook-instance
+  update-notebook-instance-lifecycle-config
+  wait/index

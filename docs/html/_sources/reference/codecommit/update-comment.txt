@@ -1,0 +1,187 @@
+[ :ref:`aws <cli:aws>` . :ref:`codecommit <cli:aws codecommit>` ]
+
+.. _cli:aws codecommit update-comment:
+
+
+**************
+update-comment
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Replaces the contents of a comment.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/UpdateComment>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-comment
+  --comment-id <value>
+  --content <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--comment-id`` (string)
+
+
+  The system-generated ID of the comment you want to update. To get this ID, use  GetCommentsForComparedCommit or  GetCommentsForPullRequest .
+
+  
+
+``--content`` (string)
+
+
+  The updated content with which you want to replace the existing content of the comment.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To update a comment on a commit**
+
+This example demonstrates how to add the content '"Fixed as requested. I'll update the pull request."' to a comment with an ID of '442b498bEXAMPLE5756813'::
+
+  aws codecommit update-comment --comment-id 442b498bEXAMPLE5756813 --content "Fixed as requested. I'll update the pull request."
+
+Output::
+
+  {
+    "comment": {
+        "authorArn": "arn:aws:iam::111111111111:user/Li_Juan",
+        "clientRequestToken": "",
+        "commentId": "442b498bEXAMPLE5756813",
+        "content": "Fixed as requested. I'll update the pull request.",
+        "creationDate": 1508369929.783,
+        "deleted": false,
+        "lastModifiedDate": 1508369929.287
+    }
+  }
+
+======
+Output
+======
+
+comment -> (structure)
+
+  
+
+  Information about the updated comment.
+
+  
+
+  commentId -> (string)
+
+    
+
+    The system-generated comment ID.
+
+    
+
+    
+
+  content -> (string)
+
+    
+
+    The content of the comment.
+
+    
+
+    
+
+  inReplyTo -> (string)
+
+    
+
+    The ID of the comment for which this comment is a reply, if any.
+
+    
+
+    
+
+  creationDate -> (timestamp)
+
+    
+
+    The date and time the comment was created, in timestamp format.
+
+    
+
+    
+
+  lastModifiedDate -> (timestamp)
+
+    
+
+    The date and time the comment was most recently modified, in timestamp format.
+
+    
+
+    
+
+  authorArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the person who posted the comment.
+
+    
+
+    
+
+  deleted -> (boolean)
+
+    
+
+    A Boolean value indicating whether the comment has been deleted.
+
+    
+
+    
+
+  clientRequestToken -> (string)
+
+    
+
+    A unique, client-generated idempotency token that when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request is received with the same parameters and a token is included, the request will return information about the initial request that used that token.
+
+    
+
+    
+
+  
+

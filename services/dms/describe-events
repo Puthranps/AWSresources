@@ -1,0 +1,20 @@
+{
+    "SourceIdentifier": "",
+    "SourceType": "replication-instance",
+    "StartTime": "1970-01-01T00:00:00",
+    "EndTime": "1970-01-01T00:00:00",
+    "Duration": 0,
+    "EventCategories": [
+        ""
+    ],
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxRecords": 0,
+    "Marker": ""
+}

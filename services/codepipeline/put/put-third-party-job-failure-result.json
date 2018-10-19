@@ -1,0 +1,9 @@
+{
+    "jobId": "",
+    "clientToken": "",
+    "failureDetails": {
+        "type": "SystemUnavailable",
+        "message": "",
+        "externalExecutionId": ""
+    }
+}

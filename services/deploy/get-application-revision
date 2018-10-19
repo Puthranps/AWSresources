@@ -1,0 +1,21 @@
+{
+    "applicationName": "",
+    "revision": {
+        "revisionType": "S3",
+        "s3Location": {
+            "bucket": "",
+            "key": "",
+            "bundleType": "tgz",
+            "version": "",
+            "eTag": ""
+        },
+        "gitHubLocation": {
+            "repository": "",
+            "commitId": ""
+        },
+        "string": {
+            "content": "",
+            "sha256": ""
+        }
+    }
+}

@@ -1,0 +1,62 @@
+[ :ref:`aws <cli:aws>` . :ref:`servicecatalog <cli:aws servicecatalog>` . :ref:`generate <cli:aws servicecatalog generate>` ]
+
+.. _cli:aws servicecatalog generate provisioning-artifact:
+
+
+*********************
+provisioning-artifact
+*********************
+
+
+
+===========
+Description
+===========
+
+Create a new provisioning artifact for the specified product using a CloudFormation template specified as a local file path
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    provisioning-artifact
+  --file-path <value>
+  --bucket-name <value>
+  --provisioning-artifact-name <value>
+  --provisioning-artifact-description <value>
+  --provisioning-artifact-type <value>
+  --product-id <value>
+
+
+
+
+=======
+Options
+=======
+
+``--file-path`` (string)
+A local file path that references the CloudFormation template
+
+``--bucket-name`` (string)
+Name of the S3 bucket name where the CloudFormation template will be uploaded to
+
+``--provisioning-artifact-name`` (string)
+The name assigned to the provisioning artifact
+
+``--provisioning-artifact-description`` (string)
+The text description of the provisioning artifact
+
+``--provisioning-artifact-type`` (string)
+The type of the provisioning artifact
+
+``--product-id`` (string)
+The product identifier
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

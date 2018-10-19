@@ -1,0 +1,14 @@
+{
+    "connectionId": "",
+    "ownerAccount": "",
+    "newPrivateVirtualInterfaceAllocation": {
+        "virtualInterfaceName": "",
+        "vlan": 0,
+        "asn": 0,
+        "mtu": 0,
+        "authKey": "",
+        "amazonAddress": "",
+        "addressFamily": "ipv4",
+        "customerAddress": ""
+    }
+}

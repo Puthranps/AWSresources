@@ -1,0 +1,335 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-instance-health &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="elb" href="../elb/index.html" />
+    <link rel="next" title="describe-load-balancer-attributes" href="../elb/describe-load-balancer-attributes.html" />
+    <link rel="prev" title="describe-account-limits" href="../elb/describe-account-limits.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../elb/describe-load-balancer-attributes.html" title="describe-load-balancer-attributes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../elb/describe-account-limits.html" title="describe-account-limits"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../elb/index.html" accesskey="U">elb</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elb/describe-account-limits.html" title="previous chapter (use the left arrow)">&larr; describe-account-limits</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elb/describe-load-balancer-attributes.html" title="next chapter (use the right arrow)">describe-load-balancer-attributes &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-instance-health</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/elb/describe-instance-health">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../elb/index.html#cli-aws-elb"><em>elb</em></a> ]</p>
+<div class="section" id="describe-instance-health">
+<span id="cli-aws-elb-describe-instance-health"></span><h1>describe-instance-health<a class="headerlink" href="#describe-instance-health" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancing-2012-06-01/DescribeInstanceHealth">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-instance-health
+--load-balancer-name &lt;value&gt;
+[--instances &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--load-balancer-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the load balancer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--instances</span></tt> (list)</p>
+<blockquote>
+<div>The IDs of the instances.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>--instances InstanceId1 InstanceId2 InstanceId3</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;InstanceId&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe the health of the instances for a load balancer</strong></p>
+<p>This example describes the health of the instances for the specified load balancer.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb describe-instance-health --load-balancer-name my-load-balancer</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstanceStates&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;i-207d9717&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;ReasonCode&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;InService&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;i-afefb49b&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;ReasonCode&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;InService&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;N/A&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To describe the health of an instance for a load balancer</strong></p>
+<p>This example describes the health of the specified instance for the specified load balancer.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws elb describe-instance-health --load-balancer-name my-load-balancer --instances i-7299c809</pre>
+</div>
+<p>The following is an example response for an instance that is registering.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstanceStates&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;i-7299c809&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;ReasonCode&quot;</span><span class="p">:</span> <span class="s2">&quot;ELB&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;OutOfService&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Instance registration is still in progress.&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following is an example response for an unhealthy instance.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstanceStates&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;i-7299c809&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;ReasonCode&quot;</span><span class="p">:</span> <span class="s2">&quot;Instance&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;State&quot;</span><span class="p">:</span> <span class="s2">&quot;OutOfService&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Instance has failed at least the UnhealthyThreshold number of health checks consecutively.&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>InstanceStates -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the health of the instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about the state of an EC2 instance.</p>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the instance.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div><p>The current state of the instance.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">InService</span></tt> | <tt class="docutils literal"><span class="pre">OutOfService</span></tt> | <tt class="docutils literal"><span class="pre">Unknown</span></tt></p>
+</div></blockquote>
+<p>ReasonCode -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the cause of <tt class="docutils literal"><span class="pre">OutOfService</span></tt> instances. Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+<p>Valid values: <tt class="docutils literal"><span class="pre">ELB</span></tt> | <tt class="docutils literal"><span class="pre">Instance</span></tt> | <tt class="docutils literal"><span class="pre">N/A</span></tt></p>
+</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div><p>A description of the instance state. This string can contain one or more of the following messages.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">N/A</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">A</span> <span class="pre">transient</span> <span class="pre">error</span> <span class="pre">occurred.</span> <span class="pre">Please</span> <span class="pre">try</span> <span class="pre">again</span> <span class="pre">later.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">has</span> <span class="pre">failed</span> <span class="pre">at</span> <span class="pre">least</span> <span class="pre">the</span> <span class="pre">UnhealthyThreshold</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">health</span> <span class="pre">checks</span> <span class="pre">consecutively.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">has</span> <span class="pre">not</span> <span class="pre">passed</span> <span class="pre">the</span> <span class="pre">configured</span> <span class="pre">HealthyThreshold</span> <span class="pre">number</span> <span class="pre">of</span> <span class="pre">health</span> <span class="pre">checks</span> <span class="pre">consecutively.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">registration</span> <span class="pre">is</span> <span class="pre">still</span> <span class="pre">in</span> <span class="pre">progress.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">the</span> <span class="pre">EC2</span> <span class="pre">Availability</span> <span class="pre">Zone</span> <span class="pre">for</span> <span class="pre">which</span> <span class="pre">LoadBalancer</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">configured</span> <span class="pre">to</span> <span class="pre">route</span> <span class="pre">traffic</span> <span class="pre">to.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">is</span> <span class="pre">not</span> <span class="pre">currently</span> <span class="pre">registered</span> <span class="pre">with</span> <span class="pre">the</span> <span class="pre">LoadBalancer.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">deregistration</span> <span class="pre">currently</span> <span class="pre">in</span> <span class="pre">progress.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Disable</span> <span class="pre">Availability</span> <span class="pre">Zone</span> <span class="pre">is</span> <span class="pre">currently</span> <span class="pre">in</span> <span class="pre">progress.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">pending</span> <span class="pre">state.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">stopped</span> <span class="pre">state.</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Instance</span> <span class="pre">is</span> <span class="pre">in</span> <span class="pre">terminated</span> <span class="pre">state.</span></tt></li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elb/describe-account-limits.html" title="previous chapter (use the left arrow)">&larr; describe-account-limits</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elb/describe-load-balancer-attributes.html" title="next chapter (use the right arrow)">describe-load-balancer-attributes &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../elb/describe-load-balancer-attributes.html" title="describe-load-balancer-attributes"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../elb/describe-account-limits.html" title="describe-account-limits"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../elb/index.html" >elb</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

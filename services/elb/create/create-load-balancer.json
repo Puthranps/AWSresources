@@ -1,0 +1,28 @@
+{
+    "LoadBalancerName": "",
+    "Listeners": [
+        {
+            "Protocol": "",
+            "LoadBalancerPort": 0,
+            "InstanceProtocol": "",
+            "InstancePort": 0,
+            "SSLCertificateId": ""
+        }
+    ],
+    "AvailabilityZones": [
+        ""
+    ],
+    "Subnets": [
+        ""
+    ],
+    "SecurityGroups": [
+        ""
+    ],
+    "Scheme": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

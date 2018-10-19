@@ -1,0 +1,50 @@
+{
+    "Bucket": "",
+    "ContentMD5": "",
+    "ReplicationConfiguration": {
+        "Role": "",
+        "Rules": [
+            {
+                "ID": "",
+                "Priority": 0,
+                "Prefix": "",
+                "Filter": {
+                    "Prefix": "",
+                    "Tag": {
+                        "Key": "",
+                        "Value": ""
+                    },
+                    "And": {
+                        "Prefix": "",
+                        "Tags": [
+                            {
+                                "Key": "",
+                                "Value": ""
+                            }
+                        ]
+                    }
+                },
+                "Status": "Disabled",
+                "SourceSelectionCriteria": {
+                    "SseKmsEncryptedObjects": {
+                        "Status": "Disabled"
+                    }
+                },
+                "Destination": {
+                    "Bucket": "",
+                    "Account": "",
+                    "StorageClass": "STANDARD",
+                    "AccessControlTranslation": {
+                        "Owner": "Destination"
+                    },
+                    "EncryptionConfiguration": {
+                        "ReplicaKmsKeyID": ""
+                    }
+                },
+                "DeleteMarkerReplication": {
+                    "Status": "Enabled"
+                }
+            }
+        ]
+    }
+}

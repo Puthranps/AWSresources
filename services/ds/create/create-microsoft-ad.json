@@ -1,0 +1,13 @@
+{
+    "Name": "",
+    "ShortName": "",
+    "Password": "",
+    "Description": "",
+    "VpcSettings": {
+        "VpcId": "",
+        "SubnetIds": [
+            ""
+        ]
+    },
+    "Edition": "Enterprise"
+}

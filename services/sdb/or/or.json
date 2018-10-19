@@ -1,0 +1,13 @@
+AWS CLI support for this service is only available in a preview stage.
+
+However, if you'd like to use the "aws sdb" commands with the
+AWS CLI, you can enable this service by adding the following to your CLI
+config file:
+
+    [preview]
+    sdb=true
+
+or by running:
+
+    aws configure set preview.sdb true
+

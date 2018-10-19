@@ -1,0 +1,13 @@
+{
+    "AmznClientToken": "",
+    "LoggerDefinitionId": "",
+    "Loggers": [
+        {
+            "Component": "GreengrassSystem",
+            "Id": "",
+            "Level": "INFO",
+            "Space": 0,
+            "Type": "FileSystem"
+        }
+    ]
+}

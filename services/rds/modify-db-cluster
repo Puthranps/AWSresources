@@ -1,0 +1,33 @@
+{
+    "DBClusterIdentifier": "",
+    "NewDBClusterIdentifier": "",
+    "ApplyImmediately": true,
+    "BackupRetentionPeriod": 0,
+    "DBClusterParameterGroupName": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "Port": 0,
+    "MasterUserPassword": "",
+    "OptionGroupName": "",
+    "PreferredBackupWindow": "",
+    "PreferredMaintenanceWindow": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "BacktrackWindow": 0,
+    "CloudwatchLogsExportConfiguration": {
+        "EnableLogTypes": [
+            ""
+        ],
+        "DisableLogTypes": [
+            ""
+        ]
+    },
+    "EngineVersion": "",
+    "ScalingConfiguration": {
+        "MinCapacity": 0,
+        "MaxCapacity": 0,
+        "AutoPause": true,
+        "SecondsUntilAutoPause": 0
+    },
+    "DeletionProtection": true
+}

@@ -1,0 +1,27 @@
+{
+    "Name": "",
+    "ImageName": "",
+    "ImageArn": "",
+    "InstanceType": "",
+    "FleetType": "ALWAYS_ON",
+    "ComputeCapacity": {
+        "DesiredInstances": 0
+    },
+    "VpcConfig": {
+        "SubnetIds": [
+            ""
+        ],
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "MaxUserDurationInSeconds": 0,
+    "DisconnectTimeoutInSeconds": 0,
+    "Description": "",
+    "DisplayName": "",
+    "EnableDefaultInternetAccess": true,
+    "DomainJoinInfo": {
+        "DirectoryName": "",
+        "OrganizationalUnitDistinguishedName": ""
+    }
+}

@@ -1,0 +1,312 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-notebook-instance &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sagemaker" href="../sagemaker/index.html" />
+    <link rel="next" title="create-notebook-instance-lifecycle-config" href="../sagemaker/create-notebook-instance-lifecycle-config.html" />
+    <link rel="prev" title="create-model" href="../sagemaker/create-model.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/create-notebook-instance-lifecycle-config.html" title="create-notebook-instance-lifecycle-config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/create-model.html" title="create-model"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" accesskey="U">sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/create-model.html" title="previous chapter (use the left arrow)">&larr; create-model</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/create-notebook-instance-lifecycle-config.html" title="next chapter (use the right arrow)">create-notebook-instance-lifecycle-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-notebook-instance</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sagemaker/create-notebook-instance">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sagemaker/index.html#cli-aws-sagemaker"><em>sagemaker</em></a> ]</p>
+<div class="section" id="create-notebook-instance">
+<span id="cli-aws-sagemaker-create-notebook-instance"></span><h1>create-notebook-instance<a class="headerlink" href="#create-notebook-instance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook.</p>
+<p>In a <tt class="docutils literal"><span class="pre">CreateNotebookInstance</span></tt> request, specify the type of ML compute instance that you want to run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model training, and attaches an ML storage volume to the notebook instance.</p>
+<p>Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker with a specific algorithm or with a machine learning framework.</p>
+<p>After receiving the request, Amazon SageMaker does the following:</p>
+<ul class="simple">
+<li>Creates a network interface in the Amazon SageMaker VPC.</li>
+<li>(Option) If you specified <tt class="docutils literal"><span class="pre">SubnetId</span></tt> , Amazon SageMaker creates a network interface in your own VPC, which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches the security group that you specified in the request to the network interface that it creates in your VPC.</li>
+<li>Launches an EC2 instance of the type specified in the request in the Amazon SageMaker VPC. If you specified <tt class="docutils literal"><span class="pre">SubnetId</span></tt> of your VPC, Amazon SageMaker specifies both network interfaces when launching this instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it.</li>
+</ul>
+<p>After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN).</p>
+<p>After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter notebooks. For example, you can write code to explore a dataset that you can use for model training, train a model, host models by creating Amazon SageMaker endpoints, and validate hosted models.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html">How It Works</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-notebook-instance
+--notebook-instance-name &lt;value&gt;
+--instance-type &lt;value&gt;
+[--subnet-id &lt;value&gt;]
+[--security-group-ids &lt;value&gt;]
+--role-arn &lt;value&gt;
+[--kms-key-id &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--lifecycle-config-name &lt;value&gt;]
+[--direct-internet-access &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--notebook-instance-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the new notebook instance.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--instance-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of ML compute instance to launch for the notebook instance.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ml.t2.medium</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.t2.large</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.t2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.t2.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.m4.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.m4.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.m4.4xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.m4.10xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.m4.16xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.p2.xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.p2.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.p2.16xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.p3.2xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.p3.8xlarge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ml.p3.16xlarge</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--subnet-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--security-group-ids</span></tt> (list)</p>
+<blockquote>
+<div>The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--role-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon SageMaker Roles</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To be able to pass this role to Amazon SageMaker, the caller of this API must have the <tt class="docutils literal"><span class="pre">iam:PassRole</span></tt> permission.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--kms-key-id</span></tt> (string)</p>
+<blockquote>
+<div>If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that is attached to your notebook instance.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div>A list of tags to associate with the notebook instance. You can add tags later by using the <tt class="docutils literal"><span class="pre">CreateTags</span></tt> API.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--lifecycle-config-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see  notebook-lifecycle-config .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--direct-internet-access</span></tt> (string)</p>
+<blockquote>
+<div><p>Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to <tt class="docutils literal"><span class="pre">Disabled</span></tt> this notebook instance will be able to access resources only in your VPC, and will not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your VPC.</p>
+<p>For more information, see  appendix-notebook-and-internet-access . You can set the value of this parameter to <tt class="docutils literal"><span class="pre">Disabled</span></tt> only if you set a value for the <tt class="docutils literal"><span class="pre">SubnetId</span></tt> parameter.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Enabled</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Disabled</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>NotebookInstanceArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the notebook instance.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/create-model.html" title="previous chapter (use the left arrow)">&larr; create-model</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/create-notebook-instance-lifecycle-config.html" title="next chapter (use the right arrow)">create-notebook-instance-lifecycle-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/create-notebook-instance-lifecycle-config.html" title="create-notebook-instance-lifecycle-config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/create-model.html" title="create-model"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" >sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

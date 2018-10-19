@@ -1,0 +1,13 @@
+{
+    "GeoMatchSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "GeoMatchConstraint": {
+                "Type": "Country",
+                "Value": "ZM"
+            }
+        }
+    ]
+}

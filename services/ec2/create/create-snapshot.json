@@ -1,0 +1,16 @@
+{
+    "Description": "",
+    "VolumeId": "",
+    "TagSpecifications": [
+        {
+            "ResourceType": "image",
+            "Tags": [
+                {
+                    "Key": "",
+                    "Value": ""
+                }
+            ]
+        }
+    ],
+    "DryRun": true
+}

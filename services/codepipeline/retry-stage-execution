@@ -1,0 +1,6 @@
+{
+    "pipelineName": "",
+    "stageName": "",
+    "pipelineExecutionId": "",
+    "retryMode": "FAILED_ACTIONS"
+}

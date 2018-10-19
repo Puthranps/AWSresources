@@ -1,0 +1,23 @@
+{
+    "WebACLId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "ActivatedRule": {
+                "Priority": 0,
+                "RuleId": "",
+                "Action": {
+                    "Type": "BLOCK"
+                },
+                "OverrideAction": {
+                    "Type": "NONE"
+                },
+                "Type": "REGULAR"
+            }
+        }
+    ],
+    "DefaultAction": {
+        "Type": "ALLOW"
+    }
+}

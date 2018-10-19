@@ -1,0 +1,381 @@
+[ :ref:`aws <cli:aws>` . :ref:`appstream <cli:aws appstream>` ]
+
+.. _cli:aws appstream describe-image-builders:
+
+
+***********************
+describe-image-builders
+***********************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeImageBuilders>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-image-builders
+  [--names <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--names`` (list)
+
+
+  The names of the image builders to describe.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--max-results`` (integer)
+
+
+  The maximum size of each page of results.
+
+  
+
+``--next-token`` (string)
+
+
+  The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ImageBuilders -> (list)
+
+  
+
+  Information about the image builders.
+
+  
+
+  (structure)
+
+    
+
+    Describes a streaming instance used for editing an image. New images are created from a snapshot through an image builder.
+
+    
+
+    Name -> (string)
+
+      
+
+      The name of the image builder.
+
+      
+
+      
+
+    Arn -> (string)
+
+      
+
+      The ARN for the image builder.
+
+      
+
+      
+
+    ImageArn -> (string)
+
+      
+
+      The ARN of the image from which this builder was created.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      The description for display.
+
+      
+
+      
+
+    DisplayName -> (string)
+
+      
+
+      The image builder name for display.
+
+      
+
+      
+
+    VpcConfig -> (structure)
+
+      
+
+      The VPC configuration of the image builder.
+
+      
+
+      SubnetIds -> (list)
+
+        
+
+        The subnets to which a network interface is established from the fleet instance.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      SecurityGroupIds -> (list)
+
+        
+
+        The security groups for the fleet.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      
+
+    InstanceType -> (string)
+
+      
+
+      The instance type for the image builder.
+
+      
+
+      
+
+    Platform -> (string)
+
+      
+
+      The operating system platform of the image builder.
+
+      
+
+      
+
+    State -> (string)
+
+      
+
+      The state of the image builder.
+
+      
+
+      
+
+    StateChangeReason -> (structure)
+
+      
+
+      The reason why the last state change occurred.
+
+      
+
+      Code -> (string)
+
+        
+
+        The state change reason code.
+
+        
+
+        
+
+      Message -> (string)
+
+        
+
+        The state change reason message.
+
+        
+
+        
+
+      
+
+    CreatedTime -> (timestamp)
+
+      
+
+      The time stamp when the image builder was created.
+
+      
+
+      
+
+    EnableDefaultInternetAccess -> (boolean)
+
+      
+
+      Enables or disables default internet access for the image builder.
+
+      
+
+      
+
+    DomainJoinInfo -> (structure)
+
+      
+
+      The information needed to join a Microsoft Active Directory domain.
+
+      
+
+      DirectoryName -> (string)
+
+        
+
+        The fully qualified name of the directory (for example, corp.example.com).
+
+        
+
+        
+
+      OrganizationalUnitDistinguishedName -> (string)
+
+        
+
+        The distinguished name of the organizational unit for computer accounts.
+
+        
+
+        
+
+      
+
+    ImageBuilderErrors -> (list)
+
+      
+
+      The image builder errors.
+
+      
+
+      (structure)
+
+        
+
+        Describes a resource error.
+
+        
+
+        ErrorCode -> (string)
+
+          
+
+          The error code.
+
+          
+
+          
+
+        ErrorMessage -> (string)
+
+          
+
+          The error message.
+
+          
+
+          
+
+        ErrorTimestamp -> (timestamp)
+
+          
+
+          The time the error occurred.
+
+          
+
+          
+
+        
+
+      
+
+    AppstreamAgentVersion -> (string)
+
+      
+
+      The version of the AppStream 2.0 agent that is currently being used by this image builder. 
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.
+
+  
+
+  
+

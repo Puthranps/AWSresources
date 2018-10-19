@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>configservice &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="batch-get-resource-config" href="../configservice/batch-get-resource-config.html" />
+    <link rel="prev" title="stop-sentiment-detection-job" href="../comprehend/stop-sentiment-detection-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../configservice/batch-get-resource-config.html" title="batch-get-resource-config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../comprehend/stop-sentiment-detection-job.html" title="stop-sentiment-detection-job"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../comprehend/stop-sentiment-detection-job.html" title="previous chapter (use the left arrow)">&larr; stop-sentiment-detection-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../configservice/batch-get-resource-config.html" title="next chapter (use the right arrow)">batch-get-resource-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">configservice</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/configservice/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="configservice">
+<span id="cli-aws-configservice"></span><h1>configservice<a class="headerlink" href="#configservice" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS Config provides a way to keep track of the configurations of all the AWS resources associated with your AWS account. You can use AWS Config to get the current and historical configurations of each AWS resource and also to get information about the relationship between the resources. An AWS resource can be an Amazon Compute Cloud (Amazon EC2) instance, an Elastic Block Store (EBS) volume, an elastic network Interface (ENI), or a security group. For a complete list of resources currently supported by AWS Config, see <a class="reference external" href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported AWS Resources</a> .</p>
+<p>You can access and manage AWS Config through the AWS Management Console, the AWS Command Line Interface (AWS CLI), the AWS Config API, or the AWS SDKs for AWS Config. This reference guide contains documentation for the AWS Config API and the AWS CLI commands that you can use to manage AWS Config. The AWS Config API uses the Signature Version 4 protocol for signing requests. For more information about how to sign a request with this protocol, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature Version 4 Signing Process</a> . For detailed information about AWS Config features and their associated actions or commands, as well as how to work with AWS Management Console, see <a class="reference external" href="http://docs.aws.amazon.com/config/latest/developerguide/WhatIsConfig.html">What Is AWS Config</a> in the <em>AWS Config Developer Guide</em> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/batch-get-resource-config.html">batch-get-resource-config</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-aggregation-authorization.html">delete-aggregation-authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-config-rule.html">delete-config-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-configuration-aggregator.html">delete-configuration-aggregator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-configuration-recorder.html">delete-configuration-recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-delivery-channel.html">delete-delivery-channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-evaluation-results.html">delete-evaluation-results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-pending-aggregation-request.html">delete-pending-aggregation-request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/delete-retention-configuration.html">delete-retention-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/deliver-config-snapshot.html">deliver-config-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-aggregate-compliance-by-config-rules.html">describe-aggregate-compliance-by-config-rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-aggregation-authorizations.html">describe-aggregation-authorizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-compliance-by-config-rule.html">describe-compliance-by-config-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-compliance-by-resource.html">describe-compliance-by-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-config-rule-evaluation-status.html">describe-config-rule-evaluation-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-config-rules.html">describe-config-rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-configuration-aggregator-sources-status.html">describe-configuration-aggregator-sources-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-configuration-aggregators.html">describe-configuration-aggregators</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-configuration-recorder-status.html">describe-configuration-recorder-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-configuration-recorders.html">describe-configuration-recorders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-delivery-channel-status.html">describe-delivery-channel-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-delivery-channels.html">describe-delivery-channels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-pending-aggregation-requests.html">describe-pending-aggregation-requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/describe-retention-configurations.html">describe-retention-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-aggregate-compliance-details-by-config-rule.html">get-aggregate-compliance-details-by-config-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-aggregate-config-rule-compliance-summary.html">get-aggregate-config-rule-compliance-summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-compliance-details-by-config-rule.html">get-compliance-details-by-config-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-compliance-details-by-resource.html">get-compliance-details-by-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-compliance-summary-by-config-rule.html">get-compliance-summary-by-config-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-compliance-summary-by-resource-type.html">get-compliance-summary-by-resource-type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-discovered-resource-counts.html">get-discovered-resource-counts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-resource-config-history.html">get-resource-config-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/get-status.html">get-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/list-discovered-resources.html">list-discovered-resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-aggregation-authorization.html">put-aggregation-authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-config-rule.html">put-config-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-configuration-aggregator.html">put-configuration-aggregator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-configuration-recorder.html">put-configuration-recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-delivery-channel.html">put-delivery-channel</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-evaluations.html">put-evaluations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/put-retention-configuration.html">put-retention-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/start-config-rules-evaluation.html">start-config-rules-evaluation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/start-configuration-recorder.html">start-configuration-recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/stop-configuration-recorder.html">stop-configuration-recorder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configservice/subscribe.html">subscribe</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../comprehend/stop-sentiment-detection-job.html" title="previous chapter (use the left arrow)">&larr; stop-sentiment-detection-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../configservice/batch-get-resource-config.html" title="next chapter (use the right arrow)">batch-get-resource-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../configservice/batch-get-resource-config.html" title="batch-get-resource-config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../comprehend/stop-sentiment-detection-job.html" title="stop-sentiment-detection-job"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

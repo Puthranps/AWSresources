@@ -1,0 +1,10 @@
+{
+    "Filter": {
+        "JobName": "",
+        "JobStatus": "STOPPED",
+        "SubmitTimeBefore": "1970-01-01T00:00:00",
+        "SubmitTimeAfter": "1970-01-01T00:00:00"
+    },
+    "NextToken": "",
+    "MaxResults": 0
+}

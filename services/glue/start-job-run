@@ -1,0 +1,13 @@
+{
+    "JobName": "",
+    "JobRunId": "",
+    "Arguments": {
+        "KeyName": ""
+    },
+    "AllocatedCapacity": 0,
+    "Timeout": 0,
+    "NotificationProperty": {
+        "NotifyDelayAfter": 0
+    },
+    "SecurityConfiguration": ""
+}

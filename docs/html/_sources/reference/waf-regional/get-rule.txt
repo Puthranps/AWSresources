@@ -1,0 +1,171 @@
+[ :ref:`aws <cli:aws>` . :ref:`waf-regional <cli:aws waf-regional>` ]
+
+.. _cli:aws waf-regional get-rule:
+
+
+********
+get-rule
+********
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the  Rule that is specified by the ``RuleId`` that you included in the ``GetRule`` request.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/GetRule>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-rule
+  --rule-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--rule-id`` (string)
+
+
+  The ``RuleId`` of the  Rule that you want to get. ``RuleId`` is returned by  CreateRule and by  ListRules .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Rule -> (structure)
+
+  
+
+  Information about the  Rule that you specified in the ``GetRule`` request. For more information, see the following topics:
+
+   
+
+   
+  *  Rule : Contains ``MetricName`` , ``Name`` , an array of ``Predicate`` objects, and ``RuleId``   
+   
+  *  Predicate : Each ``Predicate`` object contains ``DataId`` , ``Negated`` , and ``Type``   
+   
+
+  
+
+  RuleId -> (string)
+
+    
+
+    A unique identifier for a ``Rule`` . You use ``RuleId`` to get more information about a ``Rule`` (see  GetRule ), update a ``Rule`` (see  UpdateRule ), insert a ``Rule`` into a ``WebACL`` or delete a one from a ``WebACL`` (see  UpdateWebACL ), or delete a ``Rule`` from AWS WAF (see  DeleteRule ).
+
+     
+
+     ``RuleId`` is returned by  CreateRule and by  ListRules .
+
+    
+
+    
+
+  Name -> (string)
+
+    
+
+    The friendly name or description for the ``Rule`` . You can't change the name of a ``Rule`` after you create it.
+
+    
+
+    
+
+  MetricName -> (string)
+
+    
+
+    A friendly name or description for the metrics for this ``Rule`` . The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name can't contain whitespace. You can't change ``MetricName`` after you create the ``Rule`` .
+
+    
+
+    
+
+  Predicates -> (list)
+
+    
+
+    The ``Predicates`` object contains one ``Predicate`` element for each  ByteMatchSet ,  IPSet , or  SqlInjectionMatchSet object that you want to include in a ``Rule`` .
+
+    
+
+    (structure)
+
+      
+
+      Specifies the  ByteMatchSet ,  IPSet ,  SqlInjectionMatchSet ,  XssMatchSet ,  RegexMatchSet ,  GeoMatchSet , and  SizeConstraintSet objects that you want to add to a ``Rule`` and, for each object, indicates whether you want to negate the settings, for example, requests that do NOT originate from the IP address 192.0.2.44. 
+
+      
+
+      Negated -> (boolean)
+
+        
+
+        Set ``Negated`` to ``False`` if you want AWS WAF to allow, block, or count requests based on the settings in the specified  ByteMatchSet ,  IPSet ,  SqlInjectionMatchSet ,  XssMatchSet ,  RegexMatchSet ,  GeoMatchSet , or  SizeConstraintSet . For example, if an ``IPSet`` includes the IP address ``192.0.2.44`` , AWS WAF will allow or block requests based on that IP address.
+
+         
+
+        Set ``Negated`` to ``True`` if you want AWS WAF to allow or block a request based on the negation of the settings in the  ByteMatchSet ,  IPSet ,  SqlInjectionMatchSet ,  XssMatchSet ,  RegexMatchSet ,  GeoMatchSet , or  SizeConstraintSet . For example, if an ``IPSet`` includes the IP address ``192.0.2.44`` , AWS WAF will allow, block, or count requests based on all IP addresses *except*  ``192.0.2.44`` .
+
+        
+
+        
+
+      Type -> (string)
+
+        
+
+        The type of predicate in a ``Rule`` , such as ``ByteMatch`` or ``IPSet`` .
+
+        
+
+        
+
+      DataId -> (string)
+
+        
+
+        A unique identifier for a predicate in a ``Rule`` , such as ``ByteMatchSetId`` or ``IPSetId`` . The ID is returned by the corresponding ``Create`` or ``List`` command.
+
+        
+
+        
+
+      
+
+    
+
+  
+

@@ -1,0 +1,29 @@
+{
+    "InstanceId": "",
+    "StartTime": "1970-01-01T00:00:00",
+    "EndTime": "1970-01-01T00:00:00",
+    "Filters": {
+        "Queues": [
+            ""
+        ],
+        "Channels": [
+            "VOICE"
+        ]
+    },
+    "Groupings": [
+        "CHANNEL"
+    ],
+    "HistoricalMetrics": [
+        {
+            "Name": "API_CONTACTS_HANDLED",
+            "Threshold": {
+                "Comparison": "LT",
+                "ThresholdValue": null
+            },
+            "Statistic": "AVG",
+            "Unit": "SECONDS"
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>autoscaling &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="attach-instances" href="../autoscaling/attach-instances.html" />
+    <link rel="prev" title="stop-query-execution" href="../athena/stop-query-execution.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../autoscaling/attach-instances.html" title="attach-instances"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../athena/stop-query-execution.html" title="stop-query-execution"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../athena/stop-query-execution.html" title="previous chapter (use the left arrow)">&larr; stop-query-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling/attach-instances.html" title="next chapter (use the right arrow)">attach-instances &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">autoscaling</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/autoscaling/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="autoscaling">
+<span id="cli-aws-autoscaling"></span><h1>autoscaling<a class="headerlink" href="#autoscaling" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon EC2 Auto Scaling is designed to automatically launch or terminate EC2 instances based on user-defined policies, schedules, and health checks. Use this service in conjunction with the AWS Auto Scaling, Amazon CloudWatch, and Elastic Load Balancing services.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/attach-instances.html">attach-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/attach-load-balancer-target-groups.html">attach-load-balancer-target-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/attach-load-balancers.html">attach-load-balancers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/batch-delete-scheduled-action.html">batch-delete-scheduled-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/batch-put-scheduled-update-group-action.html">batch-put-scheduled-update-group-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/complete-lifecycle-action.html">complete-lifecycle-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/create-auto-scaling-group.html">create-auto-scaling-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/create-launch-configuration.html">create-launch-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/create-or-update-tags.html">create-or-update-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-auto-scaling-group.html">delete-auto-scaling-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-launch-configuration.html">delete-launch-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-lifecycle-hook.html">delete-lifecycle-hook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-notification-configuration.html">delete-notification-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-policy.html">delete-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-scheduled-action.html">delete-scheduled-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/delete-tags.html">delete-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-account-limits.html">describe-account-limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-adjustment-types.html">describe-adjustment-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-auto-scaling-groups.html">describe-auto-scaling-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-auto-scaling-instances.html">describe-auto-scaling-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-auto-scaling-notification-types.html">describe-auto-scaling-notification-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-launch-configurations.html">describe-launch-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-lifecycle-hook-types.html">describe-lifecycle-hook-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-lifecycle-hooks.html">describe-lifecycle-hooks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-load-balancer-target-groups.html">describe-load-balancer-target-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-load-balancers.html">describe-load-balancers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-metric-collection-types.html">describe-metric-collection-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-notification-configurations.html">describe-notification-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-policies.html">describe-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-scaling-activities.html">describe-scaling-activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-scaling-process-types.html">describe-scaling-process-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-scheduled-actions.html">describe-scheduled-actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-tags.html">describe-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/describe-termination-policy-types.html">describe-termination-policy-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/detach-instances.html">detach-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/detach-load-balancer-target-groups.html">detach-load-balancer-target-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/detach-load-balancers.html">detach-load-balancers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/disable-metrics-collection.html">disable-metrics-collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/enable-metrics-collection.html">enable-metrics-collection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/enter-standby.html">enter-standby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/execute-policy.html">execute-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/exit-standby.html">exit-standby</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/put-lifecycle-hook.html">put-lifecycle-hook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/put-notification-configuration.html">put-notification-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/put-scaling-policy.html">put-scaling-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/put-scheduled-update-group-action.html">put-scheduled-update-group-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/record-lifecycle-action-heartbeat.html">record-lifecycle-action-heartbeat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/resume-processes.html">resume-processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/set-desired-capacity.html">set-desired-capacity</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/set-instance-health.html">set-instance-health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/set-instance-protection.html">set-instance-protection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/suspend-processes.html">suspend-processes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/terminate-instance-in-auto-scaling-group.html">terminate-instance-in-auto-scaling-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../autoscaling/update-auto-scaling-group.html">update-auto-scaling-group</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../athena/stop-query-execution.html" title="previous chapter (use the left arrow)">&larr; stop-query-execution</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling/attach-instances.html" title="next chapter (use the right arrow)">attach-instances &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../autoscaling/attach-instances.html" title="attach-instances"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../athena/stop-query-execution.html" title="stop-query-execution"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "UserPoolId": "",
+    "SmsMfaConfiguration": {
+        "SmsAuthenticationMessage": "",
+        "SmsConfiguration": {
+            "SnsCallerArn": "",
+            "ExternalId": ""
+        }
+    },
+    "SoftwareTokenMfaConfiguration": {
+        "Enabled": true
+    },
+    "MfaConfiguration": "OPTIONAL"
+}

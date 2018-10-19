@@ -1,0 +1,77 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws cloudfront:
+
+
+**********
+cloudfront
+**********
+
+
+
+===========
+Description
+===========
+
+ 
+
+This is the *Amazon CloudFront API Reference* . This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the *Amazon CloudFront Developer Guide* .
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-cloud-front-origin-access-identity
+  create-distribution
+  create-distribution-with-tags
+  create-field-level-encryption-config
+  create-field-level-encryption-profile
+  create-invalidation
+  create-public-key
+  create-streaming-distribution
+  create-streaming-distribution-with-tags
+  delete-cloud-front-origin-access-identity
+  delete-distribution
+  delete-field-level-encryption-config
+  delete-field-level-encryption-profile
+  delete-public-key
+  delete-streaming-distribution
+  get-cloud-front-origin-access-identity
+  get-cloud-front-origin-access-identity-config
+  get-distribution
+  get-distribution-config
+  get-field-level-encryption
+  get-field-level-encryption-config
+  get-field-level-encryption-profile
+  get-field-level-encryption-profile-config
+  get-invalidation
+  get-public-key
+  get-public-key-config
+  get-streaming-distribution
+  get-streaming-distribution-config
+  list-cloud-front-origin-access-identities
+  list-distributions
+  list-distributions-by-web-acl-id
+  list-field-level-encryption-configs
+  list-field-level-encryption-profiles
+  list-invalidations
+  list-public-keys
+  list-streaming-distributions
+  list-tags-for-resource
+  sign
+  tag-resource
+  untag-resource
+  update-cloud-front-origin-access-identity
+  update-distribution
+  update-field-level-encryption-config
+  update-field-level-encryption-profile
+  update-public-key
+  update-streaming-distribution
+  wait/index

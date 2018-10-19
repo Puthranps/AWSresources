@@ -1,0 +1,9 @@
+{
+    "actionTypeId": {
+        "category": "Approval",
+        "owner": "AWS",
+        "provider": "",
+        "version": ""
+    },
+    "maxBatchSize": 0
+}

@@ -1,0 +1,12 @@
+{
+    "ClientToken": "",
+    "InstanceCount": 0,
+    "PriceSchedules": [
+        {
+            "CurrencyCode": "USD",
+            "Price": null,
+            "Term": 0
+        }
+    ],
+    "ReservedInstancesId": ""
+}

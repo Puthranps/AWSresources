@@ -1,0 +1,5 @@
+{
+    "StreamName": "",
+    "TargetShardCount": 0,
+    "ScalingType": "UNIFORM_SCALING"
+}

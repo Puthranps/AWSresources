@@ -1,0 +1,25 @@
+{
+    "DryRun": true,
+    "VpcEndpointId": "",
+    "ResetPolicy": true,
+    "PolicyDocument": "",
+    "AddRouteTableIds": [
+        ""
+    ],
+    "RemoveRouteTableIds": [
+        ""
+    ],
+    "AddSubnetIds": [
+        ""
+    ],
+    "RemoveSubnetIds": [
+        ""
+    ],
+    "AddSecurityGroupIds": [
+        ""
+    ],
+    "RemoveSecurityGroupIds": [
+        ""
+    ],
+    "PrivateDnsEnabled": true
+}

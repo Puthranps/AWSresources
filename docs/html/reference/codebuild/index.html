@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>codebuild &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="batch-delete-builds" href="../codebuild/batch-delete-builds.html" />
+    <link rel="prev" title="alarm-exists" href="../cloudwatch/wait/alarm-exists.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../codebuild/batch-delete-builds.html" title="batch-delete-builds"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cloudwatch/wait/alarm-exists.html" title="alarm-exists"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/wait/alarm-exists.html" title="previous chapter (use the left arrow)">&larr; alarm-exists</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codebuild/batch-delete-builds.html" title="next chapter (use the right arrow)">batch-delete-builds &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">codebuild</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/codebuild/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="codebuild">
+<span id="cli-aws-codebuild"></span><h1>codebuild<a class="headerlink" href="#codebuild" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS CodeBuild is a fully managed build service in the cloud. AWS CodeBuild compiles your source code, runs unit tests, and produces artifacts that are ready to deploy. AWS CodeBuild eliminates the need to provision, manage, and scale your own build servers. It provides prepackaged build environments for the most popular programming languages and build tools, such as Apache Maven, Gradle, and more. You can also fully customize build environments in AWS CodeBuild to use your own build tools. AWS CodeBuild scales automatically to meet peak build requests, and you pay only for the build time you consume. For more information about AWS CodeBuild, see the <em>AWS CodeBuild User Guide</em> .</p>
+<p>AWS CodeBuild supports these operations:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BatchDeleteBuilds</span></tt> : Deletes one or more builds.</li>
+<li><tt class="docutils literal"><span class="pre">BatchGetProjects</span></tt> : Gets information about one or more build projects. A <em>build project</em> defines how AWS CodeBuild will run a build. This includes information such as where to get the source code to build, the build environment to use, the build commands to run, and where to store the build output. A <em>build environment</em> represents a combination of operating system, programming language runtime, and tools that AWS CodeBuild will use to run a build. Also, you can add tags to build projects to help manage your resources and costs.</li>
+<li><tt class="docutils literal"><span class="pre">CreateProject</span></tt> : Creates a build project.</li>
+<li><tt class="docutils literal"><span class="pre">CreateWebhook</span></tt> : For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, enables AWS CodeBuild to begin automatically rebuilding the source code every time a code change is pushed to the repository.</li>
+<li><tt class="docutils literal"><span class="pre">UpdateWebhook</span></tt> : Changes the settings of an existing webhook.</li>
+<li><tt class="docutils literal"><span class="pre">DeleteProject</span></tt> : Deletes a build project.</li>
+<li><tt class="docutils literal"><span class="pre">DeleteWebhook</span></tt> : For an existing AWS CodeBuild build project that has its source code stored in a GitHub repository, stops AWS CodeBuild from automatically rebuilding the source code every time a code change is pushed to the repository.</li>
+<li><tt class="docutils literal"><span class="pre">ListProjects</span></tt> : Gets a list of build project names, with each build project name representing a single build project.</li>
+<li><tt class="docutils literal"><span class="pre">UpdateProject</span></tt> : Changes the settings of an existing build project.</li>
+<li><tt class="docutils literal"><span class="pre">BatchGetBuilds</span></tt> : Gets information about one or more builds.</li>
+<li><tt class="docutils literal"><span class="pre">ListBuilds</span></tt> : Gets a list of build IDs, with each build ID representing a single build.</li>
+<li><tt class="docutils literal"><span class="pre">ListBuildsForProject</span></tt> : Gets a list of build IDs for the specified build project, with each build ID representing a single build.</li>
+<li><tt class="docutils literal"><span class="pre">StartBuild</span></tt> : Starts running a build.</li>
+<li><tt class="docutils literal"><span class="pre">StopBuild</span></tt> : Attempts to stop running a build.</li>
+<li><tt class="docutils literal"><span class="pre">ListCuratedEnvironmentImages</span></tt> : Gets information about Docker images that are managed by AWS CodeBuild.</li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/batch-delete-builds.html">batch-delete-builds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/batch-get-builds.html">batch-get-builds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/batch-get-projects.html">batch-get-projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/create-project.html">create-project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/create-webhook.html">create-webhook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/delete-project.html">delete-project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/delete-webhook.html">delete-webhook</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/invalidate-project-cache.html">invalidate-project-cache</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/list-builds.html">list-builds</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/list-builds-for-project.html">list-builds-for-project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/list-curated-environment-images.html">list-curated-environment-images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/list-projects.html">list-projects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/start-build.html">start-build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/stop-build.html">stop-build</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/update-project.html">update-project</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codebuild/update-webhook.html">update-webhook</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/wait/alarm-exists.html" title="previous chapter (use the left arrow)">&larr; alarm-exists</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codebuild/batch-delete-builds.html" title="next chapter (use the right arrow)">batch-delete-builds &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../codebuild/batch-delete-builds.html" title="batch-delete-builds"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cloudwatch/wait/alarm-exists.html" title="alarm-exists"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

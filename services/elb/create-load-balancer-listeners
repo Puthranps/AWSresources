@@ -1,0 +1,12 @@
+{
+    "LoadBalancerName": "",
+    "Listeners": [
+        {
+            "Protocol": "",
+            "LoadBalancerPort": 0,
+            "InstanceProtocol": "",
+            "InstancePort": 0,
+            "SSLCertificateId": ""
+        }
+    ]
+}

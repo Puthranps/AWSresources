@@ -1,0 +1,131 @@
+[ :ref:`aws <cli:aws>` . :ref:`kms <cli:aws kms>` ]
+
+.. _cli:aws kms tag-resource:
+
+
+************
+tag-resource
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Adds or edits tags for a customer master key (CMK). You cannot perform this operation on a CMK in a different AWS account.
+
+ 
+
+Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.
+
+ 
+
+You can only use a tag key once for each CMK. If you use the tag key again, AWS KMS replaces the current tag value with the specified value.
+
+ 
+
+For information about the rules that apply to tag keys and tag values, see `User-Defined Tag Restrictions <http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html>`__ in the *AWS Billing and Cost Management User Guide* .
+
+ 
+
+The result of this operation varies with the key state of the CMK. For details, see `How Key State Affects Use of a Customer Master Key <http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html>`__ in the *AWS Key Management Service Developer Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/TagResource>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    tag-resource
+  --key-id <value>
+  --tags <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--key-id`` (string)
+
+
+  A unique identifier for the CMK you are tagging.
+
+   
+
+  Specify the key ID or the Amazon Resource Name (ARN) of the CMK.
+
+   
+
+  For example:
+
+   
+
+   
+  * Key ID: ``1234abcd-12ab-34cd-56ef-1234567890ab``   
+   
+  * Key ARN: ``arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab``   
+   
+
+   
+
+  To get the key ID and key ARN for a CMK, use  ListKeys or  DescribeKey .
+
+  
+
+``--tags`` (list)
+
+
+  One or more tags. Each tag consists of a tag key and a tag value.
+
+  
+
+
+
+Shorthand Syntax::
+
+    TagKey=string,TagValue=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "TagKey": "string",
+      "TagValue": "string"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+None

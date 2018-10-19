@@ -1,0 +1,16 @@
+{
+    "WindowId": "",
+    "ResourceType": "INSTANCE",
+    "Targets": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "OwnerInformation": "",
+    "Name": "",
+    "Description": "",
+    "ClientToken": ""
+}

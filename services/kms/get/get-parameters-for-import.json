@@ -1,0 +1,5 @@
+{
+    "KeyId": "",
+    "WrappingAlgorithm": "RSAES_PKCS1_V1_5",
+    "WrappingKeySpec": "RSA_2048"
+}

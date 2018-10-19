@@ -1,0 +1,12 @@
+{
+    "ProgressUpdateStream": "",
+    "MigrationTaskName": "",
+    "Task": {
+        "Status": "IN_PROGRESS",
+        "StatusDetail": "",
+        "ProgressPercent": 0
+    },
+    "UpdateDateTime": "1970-01-01T00:00:00",
+    "NextUpdateSeconds": 0,
+    "DryRun": true
+}

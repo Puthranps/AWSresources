@@ -1,0 +1,9 @@
+{
+    "Filter": {
+        "Name": "",
+        "IpFilter": {
+            "Policy": "Block",
+            "Cidr": ""
+        }
+    }
+}

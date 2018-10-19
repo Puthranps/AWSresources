@@ -1,0 +1,10 @@
+{
+    "AdDecisionServerUrl": "",
+    "CdnConfiguration": {
+        "AdSegmentUrlPrefix": "",
+        "ContentSegmentUrlPrefix": ""
+    },
+    "Name": "",
+    "SlateAdUrl": "",
+    "VideoContentSourceUrl": ""
+}

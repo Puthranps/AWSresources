@@ -1,0 +1,26 @@
+{
+    "ConfigurationSetName": "",
+    "EventDestination": {
+        "Name": "",
+        "Enabled": true,
+        "MatchingEventTypes": [
+            "complaint"
+        ],
+        "KinesisFirehoseDestination": {
+            "IAMRoleARN": "",
+            "DeliveryStreamARN": ""
+        },
+        "CloudWatchDestination": {
+            "DimensionConfigurations": [
+                {
+                    "DimensionName": "",
+                    "DimensionValueSource": "messageTag",
+                    "DefaultDimensionValue": ""
+                }
+            ]
+        },
+        "SNSDestination": {
+            "TopicARN": ""
+        }
+    }
+}

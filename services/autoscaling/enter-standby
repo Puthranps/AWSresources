@@ -1,0 +1,7 @@
+{
+    "InstanceIds": [
+        ""
+    ],
+    "AutoScalingGroupName": "",
+    "ShouldDecrementDesiredCapacity": true
+}

@@ -1,0 +1,318 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>register-scalable-target &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="application-autoscaling" href="../application-autoscaling/index.html" />
+    <link rel="next" title="appstream" href="../appstream/index.html" />
+    <link rel="prev" title="put-scheduled-action" href="../application-autoscaling/put-scheduled-action.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../appstream/index.html" title="appstream"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../application-autoscaling/put-scheduled-action.html" title="put-scheduled-action"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../application-autoscaling/index.html" accesskey="U">application-autoscaling</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../application-autoscaling/put-scheduled-action.html" title="previous chapter (use the left arrow)">&larr; put-scheduled-action</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appstream/index.html" title="next chapter (use the right arrow)">appstream &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">register-scalable-target</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/application-autoscaling/register-scalable-target">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../application-autoscaling/index.html#cli-aws-application-autoscaling"><em>application-autoscaling</em></a> ]</p>
+<div class="section" id="register-scalable-target">
+<span id="cli-aws-application-autoscaling-register-scalable-target"></span><h1>register-scalable-target<a class="headerlink" href="#register-scalable-target" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Registers or updates a scalable target. A scalable target is a resource that Application Auto Scaling can scale out or scale in. After you have registered a scalable target, you can use this operation to update the minimum and maximum values for its scalable dimension.</p>
+<p>After you register a scalable target, you can create and apply scaling policies using  PutScalingPolicy . You can view the scaling policies for a service namespace using  DescribeScalableTargets . If you no longer need a scalable target, you can deregister it using  DeregisterScalableTarget .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  register-scalable-target
+--service-namespace &lt;value&gt;
+--resource-id &lt;value&gt;
+--scalable-dimension &lt;value&gt;
+[--min-capacity &lt;value&gt;]
+[--max-capacity &lt;value&gt;]
+[--role-arn &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--service-namespace</span></tt> (string)</p>
+<blockquote>
+<div><p>The namespace of the AWS service that provides the resource or <tt class="docutils literal"><span class="pre">custom-resource</span></tt> for a resource provided by your own application or service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS Service Namespaces</a> in the <em>Amazon Web Services General Reference</em> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">appstream</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dynamodb</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sagemaker</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">custom-resource</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--resource-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The identifier of the resource associated with the scalable target. This string consists of the resource type and unique identifier.</p>
+<ul class="simple">
+<li>ECS service - The resource type is <tt class="docutils literal"><span class="pre">service</span></tt> and the unique identifier is the cluster name and service name. Example: <tt class="docutils literal"><span class="pre">service/default/sample-webapp</span></tt> .</li>
+<li>Spot fleet request - The resource type is <tt class="docutils literal"><span class="pre">spot-fleet-request</span></tt> and the unique identifier is the Spot fleet request ID. Example: <tt class="docutils literal"><span class="pre">spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</span></tt> .</li>
+<li>EMR cluster - The resource type is <tt class="docutils literal"><span class="pre">instancegroup</span></tt> and the unique identifier is the cluster ID and instance group ID. Example: <tt class="docutils literal"><span class="pre">instancegroup/j-2EEZNYKUA1NTV/ig-1791Y4E1L8YI0</span></tt> .</li>
+<li>AppStream 2.0 fleet - The resource type is <tt class="docutils literal"><span class="pre">fleet</span></tt> and the unique identifier is the fleet name. Example: <tt class="docutils literal"><span class="pre">fleet/sample-fleet</span></tt> .</li>
+<li>DynamoDB table - The resource type is <tt class="docutils literal"><span class="pre">table</span></tt> and the unique identifier is the resource ID. Example: <tt class="docutils literal"><span class="pre">table/my-table</span></tt> .</li>
+<li>DynamoDB global secondary index - The resource type is <tt class="docutils literal"><span class="pre">index</span></tt> and the unique identifier is the resource ID. Example: <tt class="docutils literal"><span class="pre">table/my-table/index/my-table-index</span></tt> .</li>
+<li>Aurora DB cluster - The resource type is <tt class="docutils literal"><span class="pre">cluster</span></tt> and the unique identifier is the cluster name. Example: <tt class="docutils literal"><span class="pre">cluster:my-db-cluster</span></tt> .</li>
+<li>Amazon SageMaker endpoint variants - The resource type is <tt class="docutils literal"><span class="pre">variant</span></tt> and the unique identifier is the resource ID. Example: <tt class="docutils literal"><span class="pre">endpoint/my-end-point/variant/KMeansClustering</span></tt> .</li>
+<li>Custom resources are not supported with a resource type. This parameter must specify the <tt class="docutils literal"><span class="pre">OutputValue</span></tt> from the CloudFormation template stack used to access the resources. The unique identifier is defined by the service provider.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--scalable-dimension</span></tt> (string)</p>
+<blockquote>
+<div><p>The scalable dimension associated with the scalable target. This string consists of the service namespace, resource type, and scaling property.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt> - The desired task count of an ECS service.</li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt> - The target capacity of a Spot fleet request.</li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt> - The instance count of an EMR Instance Group.</li>
+<li><tt class="docutils literal"><span class="pre">appstream:fleet:DesiredCapacity</span></tt> - The desired capacity of an AppStream 2.0 fleet.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:table:ReadCapacityUnits</span></tt> - The provisioned read capacity for a DynamoDB table.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:table:WriteCapacityUnits</span></tt> - The provisioned write capacity for a DynamoDB table.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:index:ReadCapacityUnits</span></tt> - The provisioned read capacity for a DynamoDB global secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:index:WriteCapacityUnits</span></tt> - The provisioned write capacity for a DynamoDB global secondary index.</li>
+<li><tt class="docutils literal"><span class="pre">rds:cluster:ReadReplicaCount</span></tt> - The count of Aurora Replicas in an Aurora DB cluster. Available for Aurora MySQL-compatible edition.</li>
+<li><tt class="docutils literal"><span class="pre">sagemaker:variant:DesiredInstanceCount</span></tt> - The number of EC2 instances for an Amazon SageMaker model endpoint variant.</li>
+<li><tt class="docutils literal"><span class="pre">custom-resource:ResourceType:Property</span></tt> - The scalable dimension for a custom resource provided by your own application or service.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ecs:service:DesiredCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">ec2:spot-fleet-request:TargetCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">elasticmapreduce:instancegroup:InstanceCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">appstream:fleet:DesiredCapacity</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:table:ReadCapacityUnits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:table:WriteCapacityUnits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:index:ReadCapacityUnits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dynamodb:index:WriteCapacityUnits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rds:cluster:ReadReplicaCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">sagemaker:variant:DesiredInstanceCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">custom-resource:ResourceType:Property</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--min-capacity</span></tt> (integer)</p>
+<blockquote>
+<div>The minimum value to scale to in response to a scale in event. This parameter is required if you are registering a scalable target.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-capacity</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum value to scale to in response to a scale out event. This parameter is required if you are registering a scalable target.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--role-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>Application Auto Scaling creates a service-linked role that grants it permissions to modify the scalable target on your behalf. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/autoscaling/application/userguide/application-autoscaling-service-linked-roles.html">Service-Linked Roles for Application Auto Scaling</a> .</p>
+<p>For resources that are not supported using a service-linked role, this parameter is required and must specify the ARN of an IAM role that allows Application Auto Scaling to modify the scalable target on your behalf.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To register a new scalable target</strong></p>
+<p>This example command registers a scalable target from an Amazon ECS service called <cite>web-app</cite> that is running on the <cite>default</cite> cluster, with a minimum desired count of 1 task and a maximum desired count of 10 tasks.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws application-autoscaling register-scalable-target --resource-id service/default/web-app --service-namespace ecs --scalable-dimension ecs:service:DesiredCount --min-capacity 1 --max-capacity 10 --role-arn arn:aws:iam::012345678910:role/ApplicationAutoscalingECSRole</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;cluster&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ACTIVE&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;clusterName&quot;</span><span class="p">:</span> <span class="s2">&quot;my_cluster&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;registeredContainerInstancesCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;pendingTasksCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;runningTasksCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;activeServicesCount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="s2">&quot;clusterArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:ecs:&lt;region&gt;:&lt;aws_account_id&gt;:cluster/my_cluster&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../application-autoscaling/put-scheduled-action.html" title="previous chapter (use the left arrow)">&larr; put-scheduled-action</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appstream/index.html" title="next chapter (use the right arrow)">appstream &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../appstream/index.html" title="appstream"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../application-autoscaling/put-scheduled-action.html" title="put-scheduled-action"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../application-autoscaling/index.html" >application-autoscaling</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

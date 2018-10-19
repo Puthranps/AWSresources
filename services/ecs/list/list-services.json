@@ -1,0 +1,7 @@
+{
+    "cluster": "",
+    "nextToken": "",
+    "maxResults": 0,
+    "launchType": "EC2",
+    "schedulingStrategy": "DAEMON"
+}

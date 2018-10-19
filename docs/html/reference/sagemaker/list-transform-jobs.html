@@ -1,0 +1,310 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-transform-jobs &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sagemaker" href="../sagemaker/index.html" />
+    <link rel="next" title="start-notebook-instance" href="../sagemaker/start-notebook-instance.html" />
+    <link rel="prev" title="list-training-jobs-for-hyper-parameter-tuning-job" href="../sagemaker/list-training-jobs-for-hyper-parameter-tuning-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/start-notebook-instance.html" title="start-notebook-instance"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/list-training-jobs-for-hyper-parameter-tuning-job.html" title="list-training-jobs-for-hyper-parameter-tuning-job"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" accesskey="U">sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/list-training-jobs-for-hyper-parameter-tuning-job.html" title="previous chapter (use the left arrow)">&larr; list-training-jobs-for-hyper-parameter-tuning-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/start-notebook-instance.html" title="next chapter (use the right arrow)">start-notebook-instance &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-transform-jobs</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sagemaker/list-transform-jobs">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sagemaker/index.html#cli-aws-sagemaker"><em>sagemaker</em></a> ]</p>
+<div class="section" id="list-transform-jobs">
+<span id="cli-aws-sagemaker-list-transform-jobs"></span><h1>list-transform-jobs<a class="headerlink" href="#list-transform-jobs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Lists transform jobs.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTransformJobs">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  list-transform-jobs
+[--creation-time-after &lt;value&gt;]
+[--creation-time-before &lt;value&gt;]
+[--last-modified-time-after &lt;value&gt;]
+[--last-modified-time-before &lt;value&gt;]
+[--name-contains &lt;value&gt;]
+[--status-equals &lt;value&gt;]
+[--sort-by &lt;value&gt;]
+[--sort-order &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--creation-time-after</span></tt> (timestamp)</p>
+<blockquote>
+<div>A filter that returns only transform jobs created after the specified time.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--creation-time-before</span></tt> (timestamp)</p>
+<blockquote>
+<div>A filter that returns only transform jobs created before the specified time.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--last-modified-time-after</span></tt> (timestamp)</p>
+<blockquote>
+<div>A filter that returns only transform jobs modified after the specified time.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--last-modified-time-before</span></tt> (timestamp)</p>
+<blockquote>
+<div>A filter that returns only transform jobs modified before the specified time.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--name-contains</span></tt> (string)</p>
+<blockquote>
+<div>A string in the transform job name. This filter returns only transform jobs whose name contains the specified string.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--status-equals</span></tt> (string)</p>
+<blockquote>
+<div><p>A filter that retrieves only transform jobs with a specific status.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">InProgress</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Completed</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Failed</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Stopping</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Stopped</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sort-by</span></tt> (string)</p>
+<blockquote>
+<div><p>The field to sort results by. The default is <tt class="docutils literal"><span class="pre">CreationTime</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Name</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CreationTime</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Status</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sort-order</span></tt> (string)</p>
+<blockquote>
+<div><p>The sort order for results. The default is <tt class="docutils literal"><span class="pre">Descending</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Ascending</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Descending</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>If the result of the previous <tt class="docutils literal"><span class="pre">ListTransformJobs</span></tt> request was truncated, the response includes a <tt class="docutils literal"><span class="pre">NextToken</span></tt> . To retrieve the next set of transform jobs, use the token in the next request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of transform jobs to return in the response. The default value is <tt class="docutils literal"><span class="pre">10</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>TransformJobSummaries -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">TransformJobSummary</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Provides a summary information for a transform job. Multiple TransformJobSummary objects are returned as a list after calling  ListTransformJobs .</p>
+<p>TransformJobName -&gt; (string)</p>
+<blockquote>
+<div>The name of the transform job.</div></blockquote>
+<p>TransformJobArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the transform job.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>A timestamp that shows when the transform Job was created.</div></blockquote>
+<p>TransformEndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Indicates when the transform job ends on compute instances. For successful jobs and stopped jobs, this is the exact time recorded after the results are uploaded. For failed jobs, this is when Amazon SageMaker detected that the job failed.</div></blockquote>
+<p>LastModifiedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Indicates when the transform job was last modified.</div></blockquote>
+<p>TransformJobStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the transform job.</div></blockquote>
+<p>FailureReason -&gt; (string)</p>
+<blockquote>
+<div>If the transform job failed, the reason it failed.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If the response is truncated, Amazon SageMaker returns this token. To retrieve the next set of transform jobs, use it in the next request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/list-training-jobs-for-hyper-parameter-tuning-job.html" title="previous chapter (use the left arrow)">&larr; list-training-jobs-for-hyper-parameter-tuning-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/start-notebook-instance.html" title="next chapter (use the right arrow)">start-notebook-instance &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/start-notebook-instance.html" title="start-notebook-instance"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/list-training-jobs-for-hyper-parameter-tuning-job.html" title="list-training-jobs-for-hyper-parameter-tuning-job"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" >sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

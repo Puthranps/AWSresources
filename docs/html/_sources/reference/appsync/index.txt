@@ -1,0 +1,57 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws appsync:
+
+
+*******
+appsync
+*******
+
+
+
+===========
+Description
+===========
+
+
+
+AWS AppSync provides API actions for creating and interacting with data sources using GraphQL from your application.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-api-key
+  create-data-source
+  create-graphql-api
+  create-resolver
+  create-type
+  delete-api-key
+  delete-data-source
+  delete-graphql-api
+  delete-resolver
+  delete-type
+  get-data-source
+  get-graphql-api
+  get-introspection-schema
+  get-resolver
+  get-schema-creation-status
+  get-type
+  list-api-keys
+  list-data-sources
+  list-graphql-apis
+  list-resolvers
+  list-types
+  start-schema-creation
+  update-api-key
+  update-data-source
+  update-graphql-api
+  update-resolver
+  update-type

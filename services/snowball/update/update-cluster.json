@@ -1,0 +1,42 @@
+{
+    "ClusterId": "",
+    "RoleARN": "",
+    "Description": "",
+    "Resources": {
+        "S3Resources": [
+            {
+                "BucketArn": "",
+                "KeyRange": {
+                    "BeginMarker": "",
+                    "EndMarker": ""
+                }
+            }
+        ],
+        "LambdaResources": [
+            {
+                "LambdaArn": "",
+                "EventTriggers": [
+                    {
+                        "EventResourceARN": ""
+                    }
+                ]
+            }
+        ],
+        "Ec2AmiResources": [
+            {
+                "AmiId": "",
+                "SnowballAmiId": ""
+            }
+        ]
+    },
+    "AddressId": "",
+    "ShippingOption": "SECOND_DAY",
+    "Notification": {
+        "SnsTopicARN": "",
+        "JobStatesToNotify": [
+            "Pending"
+        ],
+        "NotifyAll": true
+    },
+    "ForwardingAddressId": ""
+}

@@ -1,0 +1,24 @@
+{
+    "ReplicationGroupId": "",
+    "ReplicationGroupDescription": "",
+    "PrimaryClusterId": "",
+    "SnapshottingClusterId": "",
+    "AutomaticFailoverEnabled": true,
+    "CacheSecurityGroupNames": [
+        ""
+    ],
+    "SecurityGroupIds": [
+        ""
+    ],
+    "PreferredMaintenanceWindow": "",
+    "NotificationTopicArn": "",
+    "CacheParameterGroupName": "",
+    "NotificationTopicStatus": "",
+    "ApplyImmediately": true,
+    "EngineVersion": "",
+    "AutoMinorVersionUpgrade": true,
+    "SnapshotRetentionLimit": 0,
+    "SnapshotWindow": "",
+    "CacheNodeType": "",
+    "NodeGroupId": ""
+}

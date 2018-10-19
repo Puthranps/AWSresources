@@ -1,0 +1,8 @@
+{
+    "AllowReassignment": true,
+    "NetworkInterfaceId": "",
+    "PrivateIpAddresses": [
+        ""
+    ],
+    "SecondaryPrivateIpAddressCount": 0
+}

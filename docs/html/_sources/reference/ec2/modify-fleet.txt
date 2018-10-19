@@ -1,0 +1,135 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 modify-fleet:
+
+
+************
+modify-fleet
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Modifies the specified EC2 Fleet.
+
+ 
+
+While the EC2 Fleet is being modified, it is in the ``modifying`` state.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyFleet>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    modify-fleet
+  [--dry-run | --no-dry-run]
+  [--excess-capacity-termination-policy <value>]
+  --fleet-id <value>
+  --target-capacity-specification <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--excess-capacity-termination-policy`` (string)
+
+
+  Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.
+
+  
+
+  Possible values:
+
+  
+  *   ``no-termination``
+
+  
+  *   ``termination``
+
+  
+
+  
+
+``--fleet-id`` (string)
+
+
+  The ID of the EC2 Fleet.
+
+  
+
+``--target-capacity-specification`` (structure)
+
+
+  The size of the EC2 Fleet.
+
+  
+
+
+
+Shorthand Syntax::
+
+    TotalTargetCapacity=integer,OnDemandTargetCapacity=integer,SpotTargetCapacity=integer,DefaultTargetCapacityType=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "TotalTargetCapacity": integer,
+    "OnDemandTargetCapacity": integer,
+    "SpotTargetCapacity": integer,
+    "DefaultTargetCapacityType": "spot"|"on-demand"
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Return -> (boolean)
+
+  
+
+  Is ``true`` if the request succeeds, and an error otherwise.
+
+  
+
+  
+

@@ -1,0 +1,8 @@
+{
+    "HyperParameterTuningJobName": "",
+    "NextToken": "",
+    "MaxResults": 0,
+    "StatusEquals": "Failed",
+    "SortBy": "Name",
+    "SortOrder": "Ascending"
+}

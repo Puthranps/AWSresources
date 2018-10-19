@@ -1,0 +1,217 @@
+[ :ref:`aws <cli:aws>` . :ref:`s3api <cli:aws s3api>` ]
+
+.. _cli:aws s3api select-object-content:
+
+
+*********************
+select-object-content
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+This operation filters the contents of an Amazon S3 object based on a simple Structured Query Language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON or CSV) of the object. Amazon S3 uses this to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/SelectObjectContent>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    select-object-content
+  --bucket <value>
+  --key <value>
+  [--sse-customer-algorithm <value>]
+  [--sse-customer-key <value>]
+  [--sse-customer-key-md5 <value>]
+  --expression <value>
+  --expression-type <value>
+  [--request-progress <value>]
+  --input-serialization <value>
+  --output-serialization <value>
+  [outfile <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--bucket`` (string)
+
+
+  The S3 Bucket.
+
+  
+
+``--key`` (string)
+
+
+  The Object Key.
+
+  
+
+``--sse-customer-algorithm`` (string)
+
+
+  The SSE Algorithm used to encrypt the object. For more information, go to `Server-Side Encryption (Using Customer-Provided Encryption Keys <http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html>`__ . 
+
+  
+
+``--sse-customer-key`` (string)
+
+
+  The SSE Customer Key. For more information, go to `Server-Side Encryption (Using Customer-Provided Encryption Keys <http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html>`__ . 
+
+  
+
+``--sse-customer-key-md5`` (string)
+
+
+  The SSE Customer Key MD5. For more information, go to `Server-Side Encryption (Using Customer-Provided Encryption Keys <http://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html>`__ . 
+
+  
+
+``--expression`` (string)
+
+
+  The expression that is used to query the object.
+
+  
+
+``--expression-type`` (string)
+
+
+  The type of the provided expression (e.g., SQL).
+
+  
+
+  Possible values:
+
+  
+  *   ``SQL``
+
+  
+
+  
+
+``--request-progress`` (structure)
+
+
+  Specifies if periodic request progress information should be enabled.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Enabled=boolean
+
+
+
+
+JSON Syntax::
+
+  {
+    "Enabled": true|false
+  }
+
+
+
+``--input-serialization`` (structure)
+
+
+  Describes the format of the data in the object that is being queried.
+
+  
+
+
+
+Shorthand Syntax::
+
+    CSV={FileHeaderInfo=string,Comments=string,QuoteEscapeCharacter=string,RecordDelimiter=string,FieldDelimiter=string,QuoteCharacter=string,AllowQuotedRecordDelimiter=boolean},CompressionType=string,JSON={Type=string},Parquet={}
+
+
+
+
+JSON Syntax::
+
+  {
+    "CSV": {
+      "FileHeaderInfo": "USE"|"IGNORE"|"NONE",
+      "Comments": "string",
+      "QuoteEscapeCharacter": "string",
+      "RecordDelimiter": "string",
+      "FieldDelimiter": "string",
+      "QuoteCharacter": "string",
+      "AllowQuotedRecordDelimiter": true|false
+    },
+    "CompressionType": "NONE"|"GZIP"|"BZIP2",
+    "JSON": {
+      "Type": "DOCUMENT"|"LINES"
+    },
+    "Parquet": {
+      
+    }
+  }
+
+
+
+``--output-serialization`` (structure)
+
+
+  Describes the format of the data that you want Amazon S3 to return in response.
+
+  
+
+
+
+Shorthand Syntax::
+
+    CSV={QuoteFields=string,QuoteEscapeCharacter=string,RecordDelimiter=string,FieldDelimiter=string,QuoteCharacter=string},JSON={RecordDelimiter=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "CSV": {
+      "QuoteFields": "ALWAYS"|"ASNEEDED",
+      "QuoteEscapeCharacter": "string",
+      "RecordDelimiter": "string",
+      "FieldDelimiter": "string",
+      "QuoteCharacter": "string"
+    },
+    "JSON": {
+      "RecordDelimiter": "string"
+    }
+  }
+
+
+
+``outfile`` (string)
+Filename where the records will be saved
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+This command generates no output.  The selected object content is written to the specified outfile.

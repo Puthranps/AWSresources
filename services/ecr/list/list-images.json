@@ -1,0 +1,9 @@
+{
+    "registryId": "",
+    "repositoryName": "",
+    "nextToken": "",
+    "maxResults": 0,
+    "filter": {
+        "tagStatus": "TAGGED"
+    }
+}

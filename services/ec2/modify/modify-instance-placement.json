@@ -1,0 +1,7 @@
+{
+    "Affinity": "host",
+    "GroupName": "",
+    "HostId": "",
+    "InstanceId": "",
+    "Tenancy": "host"
+}

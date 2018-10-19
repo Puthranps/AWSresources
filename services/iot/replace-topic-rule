@@ -1,0 +1,187 @@
+{
+    "ruleName": "",
+    "topicRulePayload": {
+        "sql": "",
+        "description": "",
+        "actions": [
+            {
+                "dynamoDB": {
+                    "tableName": "",
+                    "roleArn": "",
+                    "operation": "",
+                    "hashKeyField": "",
+                    "hashKeyValue": "",
+                    "hashKeyType": "STRING",
+                    "rangeKeyField": "",
+                    "rangeKeyValue": "",
+                    "rangeKeyType": "STRING",
+                    "payloadField": ""
+                },
+                "dynamoDBv2": {
+                    "roleArn": "",
+                    "putItem": {
+                        "tableName": ""
+                    }
+                },
+                "lambda": {
+                    "functionArn": ""
+                },
+                "sns": {
+                    "targetArn": "",
+                    "roleArn": "",
+                    "messageFormat": "JSON"
+                },
+                "sqs": {
+                    "roleArn": "",
+                    "queueUrl": "",
+                    "useBase64": true
+                },
+                "kinesis": {
+                    "roleArn": "",
+                    "streamName": "",
+                    "partitionKey": ""
+                },
+                "republish": {
+                    "roleArn": "",
+                    "topic": ""
+                },
+                "s3": {
+                    "roleArn": "",
+                    "bucketName": "",
+                    "key": "",
+                    "cannedAcl": "private"
+                },
+                "firehose": {
+                    "roleArn": "",
+                    "deliveryStreamName": "",
+                    "separator": ""
+                },
+                "cloudwatchMetric": {
+                    "roleArn": "",
+                    "metricNamespace": "",
+                    "metricName": "",
+                    "metricValue": "",
+                    "metricUnit": "",
+                    "metricTimestamp": ""
+                },
+                "cloudwatchAlarm": {
+                    "roleArn": "",
+                    "alarmName": "",
+                    "stateReason": "",
+                    "stateValue": ""
+                },
+                "elasticsearch": {
+                    "roleArn": "",
+                    "endpoint": "",
+                    "index": "",
+                    "type": "",
+                    "id": ""
+                },
+                "salesforce": {
+                    "token": "",
+                    "url": ""
+                },
+                "iotAnalytics": {
+                    "channelArn": "",
+                    "channelName": "",
+                    "roleArn": ""
+                },
+                "stepFunctions": {
+                    "executionNamePrefix": "",
+                    "stateMachineName": "",
+                    "roleArn": ""
+                }
+            }
+        ],
+        "ruleDisabled": true,
+        "awsIotSqlVersion": "",
+        "errorAction": {
+            "dynamoDB": {
+                "tableName": "",
+                "roleArn": "",
+                "operation": "",
+                "hashKeyField": "",
+                "hashKeyValue": "",
+                "hashKeyType": "STRING",
+                "rangeKeyField": "",
+                "rangeKeyValue": "",
+                "rangeKeyType": "STRING",
+                "payloadField": ""
+            },
+            "dynamoDBv2": {
+                "roleArn": "",
+                "putItem": {
+                    "tableName": ""
+                }
+            },
+            "lambda": {
+                "functionArn": ""
+            },
+            "sns": {
+                "targetArn": "",
+                "roleArn": "",
+                "messageFormat": "RAW"
+            },
+            "sqs": {
+                "roleArn": "",
+                "queueUrl": "",
+                "useBase64": true
+            },
+            "kinesis": {
+                "roleArn": "",
+                "streamName": "",
+                "partitionKey": ""
+            },
+            "republish": {
+                "roleArn": "",
+                "topic": ""
+            },
+            "s3": {
+                "roleArn": "",
+                "bucketName": "",
+                "key": "",
+                "cannedAcl": "bucket-owner-read"
+            },
+            "firehose": {
+                "roleArn": "",
+                "deliveryStreamName": "",
+                "separator": ""
+            },
+            "cloudwatchMetric": {
+                "roleArn": "",
+                "metricNamespace": "",
+                "metricName": "",
+                "metricValue": "",
+                "metricUnit": "",
+                "metricTimestamp": ""
+            },
+            "cloudwatchAlarm": {
+                "roleArn": "",
+                "alarmName": "",
+                "stateReason": "",
+                "stateValue": ""
+            },
+            "elasticsearch": {
+                "roleArn": "",
+                "endpoint": "",
+                "index": "",
+                "type": "",
+                "id": ""
+            },
+            "salesforce": {
+                "token": "",
+                "url": ""
+            },
+            "iotAnalytics": {
+                "channelArn": "",
+                "channelName": "",
+                "roleArn": ""
+            },
+            "stepFunctions": {
+                "executionNamePrefix": "",
+                "stateMachineName": "",
+                "roleArn": ""
+            }
+        }
+    }
+}

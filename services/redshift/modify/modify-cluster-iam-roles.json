@@ -1,0 +1,9 @@
+{
+    "ClusterIdentifier": "",
+    "AddIamRoles": [
+        ""
+    ],
+    "RemoveIamRoles": [
+        ""
+    ]
+}

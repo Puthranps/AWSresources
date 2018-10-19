@@ -1,0 +1,292 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>invoke &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="lambda" href="../lambda/index.html" />
+    <link rel="next" title="list-aliases" href="../lambda/list-aliases.html" />
+    <link rel="prev" title="get-policy" href="../lambda/get-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../lambda/list-aliases.html" title="list-aliases"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../lambda/get-policy.html" title="get-policy"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lambda/index.html" accesskey="U">lambda</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lambda/get-policy.html" title="previous chapter (use the left arrow)">&larr; get-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lambda/list-aliases.html" title="next chapter (use the right arrow)">list-aliases &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">invoke</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/lambda/invoke">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../lambda/index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="invoke">
+<span id="cli-aws-lambda-invoke"></span><h1>invoke<a class="headerlink" href="#invoke" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Invokes a Lambda function. For an example, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/with-dynamodb-create-function.html#with-dbb-invoke-manually">Create the Lambda Function and Test It Manually</a> .</p>
+<p>Specify just a function name to invoke the latest version of the function. To invoke a published version, use the <tt class="docutils literal"><span class="pre">Qualifier</span></tt> parameter to specify a <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version or alias</a> .</p>
+<p>If you use the <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> (synchronous) invocation option, the function will be invoked only once. If you use the <tt class="docutils literal"><span class="pre">Event</span></tt> (asynchronous) invocation option, the function will be invoked at least once in response to an event and the function must be idempotent to handle this.</p>
+<p>For functions with a long timeout, your client may be disconnected during synchronous invocation while it waits for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long connections with timeout or keep-alive settings.</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:InvokeFunction</span></tt> action.</p>
+<p>The <tt class="docutils literal"><span class="pre">TooManyRequestsException</span></tt> noted below will return the following: <tt class="docutils literal"><span class="pre">ConcurrentInvocationLimitExceeded</span></tt> will be returned if you have no functions with reserved concurrency and have exceeded your account concurrent limit or if a function without reserved concurrency exceeds the account's unreserved concurrency limit. <tt class="docutils literal"><span class="pre">ReservedFunctionConcurrentInvocationLimitExceeded</span></tt> will be returned when a function with reserved concurrency exceeds its configured concurrency limit.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  invoke
+--function-name &lt;value&gt;
+[--invocation-type &lt;value&gt;]
+[--log-type &lt;value&gt;]
+[--client-context &lt;value&gt;]
+[--payload &lt;value&gt;]
+[--qualifier &lt;value&gt;]
+outfile &lt;value&gt;</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--function-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the lambda function.</p>
+<blockquote>
+<div><strong>Name formats</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Function name</strong> - <tt class="docutils literal"><span class="pre">MyFunction</span></tt> .</li>
+<li><strong>Function ARN</strong> - <tt class="docutils literal"><span class="pre">arn:aws:lambda:us-west-2:123456789012:function:MyFunction</span></tt> .</li>
+<li><strong>Partial ARN</strong> - <tt class="docutils literal"><span class="pre">123456789012:function:MyFunction</span></tt> .</li>
+</ul>
+<p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--invocation-type</span></tt> (string)</p>
+<blockquote>
+<div><p>Choose from the following options.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">RequestResponse</span></tt> (default) - Invoke the function synchronously. Keep the connection open until the function returns a response or times out.</li>
+<li><tt class="docutils literal"><span class="pre">Event</span></tt> - Invoke the function asynchronously. Send events that fail multiple times to the function's dead-letter queue (if configured).</li>
+<li><tt class="docutils literal"><span class="pre">DryRun</span></tt> - Validate parameter values and verify that the user or role has permission to invoke the function.</li>
+</ul>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Event</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">RequestResponse</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DryRun</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--log-type</span></tt> (string)</p>
+<blockquote>
+<div><p>You can set this optional parameter to <tt class="docutils literal"><span class="pre">Tail</span></tt> in the request only if you specify the <tt class="docutils literal"><span class="pre">InvocationType</span></tt> parameter with value <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> . In this case, AWS Lambda returns the base64-encoded last 4 KB of log data produced by your Lambda function in the <tt class="docutils literal"><span class="pre">x-amz-log-result</span></tt> header.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">None</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Tail</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--client-context</span></tt> (string)</p>
+<blockquote>
+<div><p>Using the <tt class="docutils literal"><span class="pre">ClientContext</span></tt> you can pass client-specific information to the Lambda function you are invoking. You can then process the client information in your Lambda function as you choose through the context variable. For an example of a <tt class="docutils literal"><span class="pre">ClientContext</span></tt> JSON, see <a class="reference external" href="http://docs.aws.amazon.com/mobileanalytics/latest/ug/PutEvents.html">PutEvents</a> in the <em>Amazon Mobile Analytics API Reference and User Guide</em> .</p>
+<p>The ClientContext JSON must be base64-encoded and has a maximum size of 3583 bytes.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">ClientContext</span></tt> information is returned only if you use the synchronous (<tt class="docutils literal"><span class="pre">RequestResponse</span></tt> ) invocation type.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--payload</span></tt> (blob)</p>
+<blockquote>
+<div>JSON that you want to provide to your Lambda function as input.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--qualifier</span></tt> (string)</p>
+<blockquote>
+<div>Specify a version or alias to invoke a published version of the function.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">outfile</span></tt> (string)
+Filename where the content will be saved</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>StatusCode -&gt; (integer)</p>
+<blockquote>
+<div>The HTTP status code will be in the 200 range for successful request. For the <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> invocation type this status code will be 200. For the <tt class="docutils literal"><span class="pre">Event</span></tt> invocation type this status code will be 202. For the <tt class="docutils literal"><span class="pre">DryRun</span></tt> invocation type the status code will be 204.</div></blockquote>
+<p>FunctionError -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether an error occurred while executing the Lambda function. If an error occurred this field will have one of two values; <tt class="docutils literal"><span class="pre">Handled</span></tt> or <tt class="docutils literal"><span class="pre">Unhandled</span></tt> . <tt class="docutils literal"><span class="pre">Handled</span></tt> errors are errors that are reported by the function while the <tt class="docutils literal"><span class="pre">Unhandled</span></tt> errors are those detected and reported by AWS Lambda. Unhandled errors include out of memory errors and function timeouts. For information about how to report an <tt class="docutils literal"><span class="pre">Handled</span></tt> error, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/programming-model.html">Programming Model</a> .</div></blockquote>
+<p>LogResult -&gt; (string)</p>
+<blockquote>
+<div>It is the base64-encoded logs for the Lambda function invocation. This is present only if the invocation type is <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> and the logs were requested.</div></blockquote>
+<p>Payload -&gt; (blob)</p>
+<blockquote>
+<div><p>It is the JSON representation of the object returned by the Lambda function. This is present only if the invocation type is <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> .</p>
+<p>In the event of a function error this field contains a message describing the error. For the <tt class="docutils literal"><span class="pre">Handled</span></tt> errors the Lambda function will report this message. For <tt class="docutils literal"><span class="pre">Unhandled</span></tt> errors AWS Lambda reports the message.</p>
+</div></blockquote>
+<p>ExecutedVersion -&gt; (string)</p>
+<blockquote>
+<div>The function version that has been executed. This value is returned only if the invocation type is <tt class="docutils literal"><span class="pre">RequestResponse</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/lambda-traffic-shifting-using-aliases.html">Traffic Shifting Using Aliases</a> .</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lambda/get-policy.html" title="previous chapter (use the left arrow)">&larr; get-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lambda/list-aliases.html" title="next chapter (use the right arrow)">list-aliases &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../lambda/list-aliases.html" title="list-aliases"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../lambda/get-policy.html" title="get-policy"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lambda/index.html" >lambda</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

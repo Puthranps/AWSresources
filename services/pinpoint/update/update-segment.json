@@ -1,0 +1,190 @@
+{
+    "ApplicationId": "",
+    "SegmentId": "",
+    "WriteSegmentRequest": {
+        "Dimensions": {
+            "Attributes": {
+                "KeyName": {
+                    "AttributeType": "EXCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                }
+            },
+            "Behavior": {
+                "Recency": {
+                    "Duration": "DAY_7",
+                    "RecencyType": "INACTIVE"
+                }
+            },
+            "Demographic": {
+                "AppVersion": {
+                    "DimensionType": "INCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                },
+                "Channel": {
+                    "DimensionType": "INCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                },
+                "DeviceType": {
+                    "DimensionType": "INCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                },
+                "Make": {
+                    "DimensionType": "INCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                },
+                "Model": {
+                    "DimensionType": "EXCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                },
+                "Platform": {
+                    "DimensionType": "EXCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                }
+            },
+            "Location": {
+                "Country": {
+                    "DimensionType": "INCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                },
+                "GPSPoint": {
+                    "Coordinates": {
+                        "Latitude": null,
+                        "Longitude": null
+                    },
+                    "RangeInKilometers": null
+                }
+            },
+            "Metrics": {
+                "KeyName": {
+                    "ComparisonOperator": "",
+                    "Value": null
+                }
+            },
+            "UserAttributes": {
+                "KeyName": {
+                    "AttributeType": "EXCLUSIVE",
+                    "Values": [
+                        ""
+                    ]
+                }
+            }
+        },
+        "Name": "",
+        "SegmentGroups": {
+            "Groups": [
+                {
+                    "Dimensions": [
+                        {
+                            "Attributes": {
+                                "KeyName": {
+                                    "AttributeType": "EXCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                }
+                            },
+                            "Behavior": {
+                                "Recency": {
+                                    "Duration": "HR_24",
+                                    "RecencyType": "INACTIVE"
+                                }
+                            },
+                            "Demographic": {
+                                "AppVersion": {
+                                    "DimensionType": "INCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                },
+                                "Channel": {
+                                    "DimensionType": "EXCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                },
+                                "DeviceType": {
+                                    "DimensionType": "EXCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                },
+                                "Make": {
+                                    "DimensionType": "INCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                },
+                                "Model": {
+                                    "DimensionType": "EXCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                },
+                                "Platform": {
+                                    "DimensionType": "INCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                }
+                            },
+                            "Location": {
+                                "Country": {
+                                    "DimensionType": "EXCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                },
+                                "GPSPoint": {
+                                    "Coordinates": {
+                                        "Latitude": null,
+                                        "Longitude": null
+                                    },
+                                    "RangeInKilometers": null
+                                }
+                            },
+                            "Metrics": {
+                                "KeyName": {
+                                    "ComparisonOperator": "",
+                                    "Value": null
+                                }
+                            },
+                            "UserAttributes": {
+                                "KeyName": {
+                                    "AttributeType": "EXCLUSIVE",
+                                    "Values": [
+                                        ""
+                                    ]
+                                }
+                            }
+                        }
+                    ],
+                    "SourceSegments": [
+                        {
+                            "Id": "",
+                            "Version": 0
+                        }
+                    ],
+                    "SourceType": "ALL",
+                    "Type": "NONE"
+                }
+            ],
+            "Include": "NONE"
+        }
+    }
+}

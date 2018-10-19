@@ -1,0 +1,113 @@
+{
+    "ApplicationName": "",
+    "CurrentApplicationVersionId": 0,
+    "ApplicationUpdate": {
+        "InputUpdates": [
+            {
+                "InputId": "",
+                "NamePrefixUpdate": "",
+                "InputProcessingConfigurationUpdate": {
+                    "InputLambdaProcessorUpdate": {
+                        "ResourceARNUpdate": "",
+                        "RoleARNUpdate": ""
+                    }
+                },
+                "KinesisStreamsInputUpdate": {
+                    "ResourceARNUpdate": "",
+                    "RoleARNUpdate": ""
+                },
+                "KinesisFirehoseInputUpdate": {
+                    "ResourceARNUpdate": "",
+                    "RoleARNUpdate": ""
+                },
+                "InputSchemaUpdate": {
+                    "RecordFormatUpdate": {
+                        "RecordFormatType": "JSON",
+                        "MappingParameters": {
+                            "JSONMappingParameters": {
+                                "RecordRowPath": ""
+                            },
+                            "CSVMappingParameters": {
+                                "RecordRowDelimiter": "",
+                                "RecordColumnDelimiter": ""
+                            }
+                        }
+                    },
+                    "RecordEncodingUpdate": "",
+                    "RecordColumnUpdates": [
+                        {
+                            "Name": "",
+                            "Mapping": "",
+                            "SqlType": ""
+                        }
+                    ]
+                },
+                "InputParallelismUpdate": {
+                    "CountUpdate": 0
+                }
+            }
+        ],
+        "ApplicationCodeUpdate": "",
+        "OutputUpdates": [
+            {
+                "OutputId": "",
+                "NameUpdate": "",
+                "KinesisStreamsOutputUpdate": {
+                    "ResourceARNUpdate": "",
+                    "RoleARNUpdate": ""
+                },
+                "KinesisFirehoseOutputUpdate": {
+                    "ResourceARNUpdate": "",
+                    "RoleARNUpdate": ""
+                },
+                "LambdaOutputUpdate": {
+                    "ResourceARNUpdate": "",
+                    "RoleARNUpdate": ""
+                },
+                "DestinationSchemaUpdate": {
+                    "RecordFormatType": "JSON"
+                }
+            }
+        ],
+        "ReferenceDataSourceUpdates": [
+            {
+                "ReferenceId": "",
+                "TableNameUpdate": "",
+                "S3ReferenceDataSourceUpdate": {
+                    "BucketARNUpdate": "",
+                    "FileKeyUpdate": "",
+                    "ReferenceRoleARNUpdate": ""
+                },
+                "ReferenceSchemaUpdate": {
+                    "RecordFormat": {
+                        "RecordFormatType": "CSV",
+                        "MappingParameters": {
+                            "JSONMappingParameters": {
+                                "RecordRowPath": ""
+                            },
+                            "CSVMappingParameters": {
+                                "RecordRowDelimiter": "",
+                                "RecordColumnDelimiter": ""
+                            }
+                        }
+                    },
+                    "RecordEncoding": "",
+                    "RecordColumns": [
+                        {
+                            "Name": "",
+                            "Mapping": "",
+                            "SqlType": ""
+                        }
+                    ]
+                }
+            }
+        ],
+        "CloudWatchLoggingOptionUpdates": [
+            {
+                "CloudWatchLoggingOptionId": "",
+                "LogStreamARNUpdate": "",
+                "RoleARNUpdate": ""
+            }
+        ]
+    }
+}

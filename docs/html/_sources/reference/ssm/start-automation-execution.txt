@@ -1,0 +1,238 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm start-automation-execution:
+
+
+**************************
+start-automation-execution
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Initiates execution of an Automation document.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAutomationExecution>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    start-automation-execution
+  --document-name <value>
+  [--document-version <value>]
+  [--parameters <value>]
+  [--client-token <value>]
+  [--mode <value>]
+  [--target-parameter-name <value>]
+  [--targets <value>]
+  [--target-maps <value>]
+  [--max-concurrency <value>]
+  [--max-errors <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--document-name`` (string)
+
+
+  The name of the Automation document to use for this execution.
+
+  
+
+``--document-version`` (string)
+
+
+  The version of the Automation document to use for this execution.
+
+  
+
+``--parameters`` (map)
+
+
+  A key-value map of execution parameters, which match the declared parameters in the Automation document.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,string,KeyName2=string,string
+
+
+
+
+JSON Syntax::
+
+  {"string": ["string", ...]
+    ...}
+
+
+
+``--client-token`` (string)
+
+
+  User-provided idempotency token. The token must be unique, is case insensitive, enforces the UUID format, and can't be reused.
+
+  
+
+``--mode`` (string)
+
+
+  The execution mode of the automation. Valid modes include the following: Auto and Interactive. The default mode is Auto.
+
+  
+
+  Possible values:
+
+  
+  *   ``Auto``
+
+  
+  *   ``Interactive``
+
+  
+
+  
+
+``--target-parameter-name`` (string)
+
+
+  The name of the parameter used as the target resource for the rate-controlled execution. Required if you specify targets.
+
+  
+
+``--targets`` (list)
+
+
+  A key-value mapping to target resources. Required if you specify TargetParameterName.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--target-maps`` (list)
+
+
+  A key-value mapping of document parameters to target resources. Both Targets and TargetMaps cannot be specified together.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,string,KeyName2=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {"string": ["string", ...]
+      ...}
+    ...
+  ]
+
+
+
+``--max-concurrency`` (string)
+
+
+  The maximum number of targets allowed to run this task in parallel. You can specify a number, such as 10, or a percentage, such as 10%. The default value is 10.
+
+  
+
+``--max-errors`` (string)
+
+
+  The number of errors that are allowed before the system stops running the automation on additional targets. You can specify either an absolute number of errors, for example 10, or a percentage of the target set, for example 10%. If you specify 3, for example, the system stops running the automation when the fourth error is received. If you specify 0, then the system stops running the automation on additional targets after the first error result is returned. If you run an automation on 50 resources and set max-errors to 10%, then the system stops running the automation on additional targets when the sixth error is received.
+
+   
+
+  Executions that are already running an automation when max-errors is reached are allowed to complete, but some of these executions may fail as well. If you need to ensure that there won't be more than max-errors failed executions, set max-concurrency to 1 so the executions proceed one at a time.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To initiate the execution of an Automation document**
+
+This example executes a document.
+
+Command::
+
+  aws ssm start-automation-execution --document-name "AWS-UpdateLinuxAmi" --parameters "AutomationAssumeRole=arn:aws:iam::812345678901:role/SSMAutomationRole,SourceAmiId=ami-f173cc91,IamInstanceProfileName=EC2InstanceRole"
+  
+Output::
+
+  {
+	"AutomationExecutionId": "4105a4fc-f944-11e6-9d32-8fb2db27a909"
+  }
+
+
+======
+Output
+======
+
+AutomationExecutionId -> (string)
+
+  
+
+  The unique ID of a newly scheduled automation execution.
+
+  
+
+  
+

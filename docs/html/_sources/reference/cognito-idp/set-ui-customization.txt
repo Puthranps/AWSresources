@@ -1,0 +1,183 @@
+[ :ref:`aws <cli:aws>` . :ref:`cognito-idp <cli:aws cognito-idp>` ]
+
+.. _cli:aws cognito-idp set-ui-customization:
+
+
+********************
+set-ui-customization
+********************
+
+
+
+===========
+Description
+===========
+
+
+
+Sets the UI customization information for a user pool's built-in app UI.
+
+ 
+
+You can specify app UI customization settings for a single client (with a specific ``clientId`` ) or for all clients (by setting the ``clientId`` to ``ALL`` ). If you specify ``ALL`` , the default configuration will be used for every client that has no UI customization set previously. If you specify UI customization settings for a particular client, it will no longer fall back to the ``ALL`` configuration. 
+
+ 
+
+.. note::
+
+   
+
+  To use this API, your user pool must have a domain associated with it. Otherwise, there is no place to host the app's pages, and the service will throw an error.
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUICustomization>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    set-ui-customization
+  --user-pool-id <value>
+  [--client-id <value>]
+  [--css <value>]
+  [--image-file <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--user-pool-id`` (string)
+
+
+  The user pool ID for the user pool.
+
+  
+
+``--client-id`` (string)
+
+
+  The client ID for the client app.
+
+  
+
+``--css`` (string)
+
+
+  The CSS values in the UI customization.
+
+  
+
+``--image-file`` (blob)
+
+
+  The uploaded logo image for the UI customization.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+UICustomization -> (structure)
+
+  
+
+  The UI customization information.
+
+  
+
+  UserPoolId -> (string)
+
+    
+
+    The user pool ID for the user pool.
+
+    
+
+    
+
+  ClientId -> (string)
+
+    
+
+    The client ID for the client app.
+
+    
+
+    
+
+  ImageUrl -> (string)
+
+    
+
+    The logo image for the UI customization.
+
+    
+
+    
+
+  CSS -> (string)
+
+    
+
+    The CSS values in the UI customization.
+
+    
+
+    
+
+  CSSVersion -> (string)
+
+    
+
+    The CSS version number.
+
+    
+
+    
+
+  LastModifiedDate -> (timestamp)
+
+    
+
+    The last-modified date for the UI customization.
+
+    
+
+    
+
+  CreationDate -> (timestamp)
+
+    
+
+    The creation date for the UI customization.
+
+    
+
+    
+
+  
+

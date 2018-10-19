@@ -1,0 +1,9 @@
+{
+    "DirectoryId": "",
+    "ShareNotes": "",
+    "ShareTarget": {
+        "Id": "",
+        "Type": "ACCOUNT"
+    },
+    "ShareMethod": "ORGANIZATIONS"
+}

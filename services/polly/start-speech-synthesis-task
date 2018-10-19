@@ -1,0 +1,17 @@
+{
+    "LexiconNames": [
+        ""
+    ],
+    "OutputFormat": "mp3",
+    "OutputS3BucketName": "",
+    "OutputS3KeyPrefix": "",
+    "SampleRate": "",
+    "SnsTopicArn": "",
+    "SpeechMarkTypes": [
+        "sentence"
+    ],
+    "Text": "",
+    "TextType": "ssml",
+    "VoiceId": "Russell",
+    "LanguageCode": "nb-NO"
+}

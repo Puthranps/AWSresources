@@ -1,0 +1,7 @@
+{
+    "KeyId": "",
+    "ImportToken": null,
+    "EncryptedKeyMaterial": null,
+    "ValidTo": "1970-01-01T00:00:00",
+    "ExpirationModel": "KEY_MATERIAL_EXPIRES"
+}

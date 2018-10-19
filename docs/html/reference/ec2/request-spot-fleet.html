@@ -1,0 +1,530 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>request-spot-fleet &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ec2" href="../ec2/index.html" />
+    <link rel="next" title="request-spot-instances" href="../ec2/request-spot-instances.html" />
+    <link rel="prev" title="report-instance-status" href="../ec2/report-instance-status.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/request-spot-instances.html" title="request-spot-instances"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/report-instance-status.html" title="report-instance-status"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" accesskey="U">ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/report-instance-status.html" title="previous chapter (use the left arrow)">&larr; report-instance-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/request-spot-instances.html" title="next chapter (use the right arrow)">request-spot-instances &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">request-spot-fleet</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/request-spot-fleet">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="request-spot-fleet">
+<span id="cli-aws-ec2-request-spot-fleet"></span><h1>request-spot-fleet<a class="headerlink" href="#request-spot-fleet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a Spot Fleet request.</p>
+<p>The Spot Fleet request specifies the total target capacity and the On-Demand target capacity. Amazon EC2 calculates the difference between the total capacity and On-Demand capacity, and launches the difference as Spot capacity.</p>
+<p>You can submit a single request that includes multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.</p>
+<p>By default, the Spot Fleet requests Spot Instances in the Spot pool where the price per unit is the lowest. Each launch specification can include its own instance weighting that reflects the value of the instance type to your application workload.</p>
+<p>Alternatively, you can specify that the Spot Fleet distribute the target capacity across the Spot pools included in its launch specifications. By ensuring that the Spot Instances in your Spot Fleet are in different Spot pools, you can improve the availability of your fleet.</p>
+<p>You can specify tags for the Spot Instances. You cannot tag other resource types in a Spot Fleet request because only the <tt class="docutils literal"><span class="pre">instance</span></tt> resource type is supported.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in the <em>Amazon EC2 User Guide for Linux Instances</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotFleet">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  request-spot-fleet
+[--dry-run | --no-dry-run]
+--spot-fleet-request-config &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--spot-fleet-request-config</span></tt> (structure)</p>
+<blockquote>
+<div>The configuration for the Spot Fleet request.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;AllocationStrategy&quot;: &quot;lowestPrice&quot;|&quot;diversified&quot;,
+  &quot;OnDemandAllocationStrategy&quot;: &quot;lowestPrice&quot;|&quot;prioritized&quot;,
+  &quot;ClientToken&quot;: &quot;string&quot;,
+  &quot;ExcessCapacityTerminationPolicy&quot;: &quot;noTermination&quot;|&quot;default&quot;,
+  &quot;FulfilledCapacity&quot;: double,
+  &quot;OnDemandFulfilledCapacity&quot;: double,
+  &quot;IamFleetRole&quot;: &quot;string&quot;,
+  &quot;LaunchSpecifications&quot;: [
+    {
+      &quot;SecurityGroups&quot;: [
+        {
+          &quot;GroupName&quot;: &quot;string&quot;,
+          &quot;GroupId&quot;: &quot;string&quot;
+        }
+        ...
+      ],
+      &quot;AddressingType&quot;: &quot;string&quot;,
+      &quot;BlockDeviceMappings&quot;: [
+        {
+          &quot;DeviceName&quot;: &quot;string&quot;,
+          &quot;VirtualName&quot;: &quot;string&quot;,
+          &quot;Ebs&quot;: {
+            &quot;DeleteOnTermination&quot;: true|false,
+            &quot;Iops&quot;: integer,
+            &quot;SnapshotId&quot;: &quot;string&quot;,
+            &quot;VolumeSize&quot;: integer,
+            &quot;VolumeType&quot;: &quot;standard&quot;|&quot;io1&quot;|&quot;gp2&quot;|&quot;sc1&quot;|&quot;st1&quot;,
+            &quot;Encrypted&quot;: true|false,
+            &quot;KmsKeyId&quot;: &quot;string&quot;
+          },
+          &quot;NoDevice&quot;: &quot;string&quot;
+        }
+        ...
+      ],
+      &quot;EbsOptimized&quot;: true|false,
+      &quot;IamInstanceProfile&quot;: {
+        &quot;Arn&quot;: &quot;string&quot;,
+        &quot;Name&quot;: &quot;string&quot;
+      },
+      &quot;ImageId&quot;: &quot;string&quot;,
+      &quot;InstanceType&quot;: &quot;t1.micro&quot;|&quot;t2.nano&quot;|&quot;t2.micro&quot;|&quot;t2.small&quot;|&quot;t2.medium&quot;|&quot;t2.large&quot;|&quot;t2.xlarge&quot;|&quot;t2.2xlarge&quot;|&quot;t3.nano&quot;|&quot;t3.micro&quot;|&quot;t3.small&quot;|&quot;t3.medium&quot;|&quot;t3.large&quot;|&quot;t3.xlarge&quot;|&quot;t3.2xlarge&quot;|&quot;m1.small&quot;|&quot;m1.medium&quot;|&quot;m1.large&quot;|&quot;m1.xlarge&quot;|&quot;m3.medium&quot;|&quot;m3.large&quot;|&quot;m3.xlarge&quot;|&quot;m3.2xlarge&quot;|&quot;m4.large&quot;|&quot;m4.xlarge&quot;|&quot;m4.2xlarge&quot;|&quot;m4.4xlarge&quot;|&quot;m4.10xlarge&quot;|&quot;m4.16xlarge&quot;|&quot;m2.xlarge&quot;|&quot;m2.2xlarge&quot;|&quot;m2.4xlarge&quot;|&quot;cr1.8xlarge&quot;|&quot;r3.large&quot;|&quot;r3.xlarge&quot;|&quot;r3.2xlarge&quot;|&quot;r3.4xlarge&quot;|&quot;r3.8xlarge&quot;|&quot;r4.large&quot;|&quot;r4.xlarge&quot;|&quot;r4.2xlarge&quot;|&quot;r4.4xlarge&quot;|&quot;r4.8xlarge&quot;|&quot;r4.16xlarge&quot;|&quot;r5.large&quot;|&quot;r5.xlarge&quot;|&quot;r5.2xlarge&quot;|&quot;r5.4xlarge&quot;|&quot;r5.8xlarge&quot;|&quot;r5.12xlarge&quot;|&quot;r5.16xlarge&quot;|&quot;r5.24xlarge&quot;|&quot;r5.metal&quot;|&quot;r5d.large&quot;|&quot;r5d.xlarge&quot;|&quot;r5d.2xlarge&quot;|&quot;r5d.4xlarge&quot;|&quot;r5d.8xlarge&quot;|&quot;r5d.12xlarge&quot;|&quot;r5d.16xlarge&quot;|&quot;r5d.24xlarge&quot;|&quot;r5d.metal&quot;|&quot;x1.16xlarge&quot;|&quot;x1.32xlarge&quot;|&quot;x1e.xlarge&quot;|&quot;x1e.2xlarge&quot;|&quot;x1e.4xlarge&quot;|&quot;x1e.8xlarge&quot;|&quot;x1e.16xlarge&quot;|&quot;x1e.32xlarge&quot;|&quot;i2.xlarge&quot;|&quot;i2.2xlarge&quot;|&quot;i2.4xlarge&quot;|&quot;i2.8xlarge&quot;|&quot;i3.large&quot;|&quot;i3.xlarge&quot;|&quot;i3.2xlarge&quot;|&quot;i3.4xlarge&quot;|&quot;i3.8xlarge&quot;|&quot;i3.16xlarge&quot;|&quot;i3.metal&quot;|&quot;hi1.4xlarge&quot;|&quot;hs1.8xlarge&quot;|&quot;c1.medium&quot;|&quot;c1.xlarge&quot;|&quot;c3.large&quot;|&quot;c3.xlarge&quot;|&quot;c3.2xlarge&quot;|&quot;c3.4xlarge&quot;|&quot;c3.8xlarge&quot;|&quot;c4.large&quot;|&quot;c4.xlarge&quot;|&quot;c4.2xlarge&quot;|&quot;c4.4xlarge&quot;|&quot;c4.8xlarge&quot;|&quot;c5.large&quot;|&quot;c5.xlarge&quot;|&quot;c5.2xlarge&quot;|&quot;c5.4xlarge&quot;|&quot;c5.9xlarge&quot;|&quot;c5.18xlarge&quot;|&quot;c5d.large&quot;|&quot;c5d.xlarge&quot;|&quot;c5d.2xlarge&quot;|&quot;c5d.4xlarge&quot;|&quot;c5d.9xlarge&quot;|&quot;c5d.18xlarge&quot;|&quot;cc1.4xlarge&quot;|&quot;cc2.8xlarge&quot;|&quot;g2.2xlarge&quot;|&quot;g2.8xlarge&quot;|&quot;g3.4xlarge&quot;|&quot;g3.8xlarge&quot;|&quot;g3.16xlarge&quot;|&quot;g3s.xlarge&quot;|&quot;cg1.4xlarge&quot;|&quot;p2.xlarge&quot;|&quot;p2.8xlarge&quot;|&quot;p2.16xlarge&quot;|&quot;p3.2xlarge&quot;|&quot;p3.8xlarge&quot;|&quot;p3.16xlarge&quot;|&quot;d2.xlarge&quot;|&quot;d2.2xlarge&quot;|&quot;d2.4xlarge&quot;|&quot;d2.8xlarge&quot;|&quot;f1.2xlarge&quot;|&quot;f1.4xlarge&quot;|&quot;f1.16xlarge&quot;|&quot;m5.large&quot;|&quot;m5.xlarge&quot;|&quot;m5.2xlarge&quot;|&quot;m5.4xlarge&quot;|&quot;m5.12xlarge&quot;|&quot;m5.24xlarge&quot;|&quot;m5d.large&quot;|&quot;m5d.xlarge&quot;|&quot;m5d.2xlarge&quot;|&quot;m5d.4xlarge&quot;|&quot;m5d.12xlarge&quot;|&quot;m5d.24xlarge&quot;|&quot;h1.2xlarge&quot;|&quot;h1.4xlarge&quot;|&quot;h1.8xlarge&quot;|&quot;h1.16xlarge&quot;|&quot;z1d.large&quot;|&quot;z1d.xlarge&quot;|&quot;z1d.2xlarge&quot;|&quot;z1d.3xlarge&quot;|&quot;z1d.6xlarge&quot;|&quot;z1d.12xlarge&quot;|&quot;u-6tb1.metal&quot;|&quot;u-9tb1.metal&quot;|&quot;u-12tb1.metal&quot;,
+      &quot;KernelId&quot;: &quot;string&quot;,
+      &quot;KeyName&quot;: &quot;string&quot;,
+      &quot;Monitoring&quot;: {
+        &quot;Enabled&quot;: true|false
+      },
+      &quot;NetworkInterfaces&quot;: [
+        {
+          &quot;AssociatePublicIpAddress&quot;: true|false,
+          &quot;DeleteOnTermination&quot;: true|false,
+          &quot;Description&quot;: &quot;string&quot;,
+          &quot;DeviceIndex&quot;: integer,
+          &quot;Groups&quot;: [&quot;string&quot;, ...],
+          &quot;Ipv6AddressCount&quot;: integer,
+          &quot;Ipv6Addresses&quot;: [
+            {
+              &quot;Ipv6Address&quot;: &quot;string&quot;
+            }
+            ...
+          ],
+          &quot;NetworkInterfaceId&quot;: &quot;string&quot;,
+          &quot;PrivateIpAddress&quot;: &quot;string&quot;,
+          &quot;PrivateIpAddresses&quot;: [
+            {
+              &quot;Primary&quot;: true|false,
+              &quot;PrivateIpAddress&quot;: &quot;string&quot;
+            }
+            ...
+          ],
+          &quot;SecondaryPrivateIpAddressCount&quot;: integer,
+          &quot;SubnetId&quot;: &quot;string&quot;
+        }
+        ...
+      ],
+      &quot;Placement&quot;: {
+        &quot;AvailabilityZone&quot;: &quot;string&quot;,
+        &quot;GroupName&quot;: &quot;string&quot;,
+        &quot;Tenancy&quot;: &quot;default&quot;|&quot;dedicated&quot;|&quot;host&quot;
+      },
+      &quot;RamdiskId&quot;: &quot;string&quot;,
+      &quot;SpotPrice&quot;: &quot;string&quot;,
+      &quot;SubnetId&quot;: &quot;string&quot;,
+      &quot;UserData&quot;: &quot;string&quot;,
+      &quot;WeightedCapacity&quot;: double,
+      &quot;TagSpecifications&quot;: [
+        {
+          &quot;ResourceType&quot;: &quot;customer-gateway&quot;|&quot;dedicated-host&quot;|&quot;dhcp-options&quot;|&quot;image&quot;|&quot;instance&quot;|&quot;internet-gateway&quot;|&quot;network-acl&quot;|&quot;network-interface&quot;|&quot;reserved-instances&quot;|&quot;route-table&quot;|&quot;snapshot&quot;|&quot;spot-instances-request&quot;|&quot;subnet&quot;|&quot;security-group&quot;|&quot;volume&quot;|&quot;vpc&quot;|&quot;vpn-connection&quot;|&quot;vpn-gateway&quot;,
+          &quot;Tags&quot;: [
+            {
+              &quot;Key&quot;: &quot;string&quot;,
+              &quot;Value&quot;: &quot;string&quot;
+            }
+            ...
+          ]
+        }
+        ...
+      ]
+    }
+    ...
+  ],
+  &quot;LaunchTemplateConfigs&quot;: [
+    {
+      &quot;LaunchTemplateSpecification&quot;: {
+        &quot;LaunchTemplateId&quot;: &quot;string&quot;,
+        &quot;LaunchTemplateName&quot;: &quot;string&quot;,
+        &quot;Version&quot;: &quot;string&quot;
+      },
+      &quot;Overrides&quot;: [
+        {
+          &quot;InstanceType&quot;: &quot;t1.micro&quot;|&quot;t2.nano&quot;|&quot;t2.micro&quot;|&quot;t2.small&quot;|&quot;t2.medium&quot;|&quot;t2.large&quot;|&quot;t2.xlarge&quot;|&quot;t2.2xlarge&quot;|&quot;t3.nano&quot;|&quot;t3.micro&quot;|&quot;t3.small&quot;|&quot;t3.medium&quot;|&quot;t3.large&quot;|&quot;t3.xlarge&quot;|&quot;t3.2xlarge&quot;|&quot;m1.small&quot;|&quot;m1.medium&quot;|&quot;m1.large&quot;|&quot;m1.xlarge&quot;|&quot;m3.medium&quot;|&quot;m3.large&quot;|&quot;m3.xlarge&quot;|&quot;m3.2xlarge&quot;|&quot;m4.large&quot;|&quot;m4.xlarge&quot;|&quot;m4.2xlarge&quot;|&quot;m4.4xlarge&quot;|&quot;m4.10xlarge&quot;|&quot;m4.16xlarge&quot;|&quot;m2.xlarge&quot;|&quot;m2.2xlarge&quot;|&quot;m2.4xlarge&quot;|&quot;cr1.8xlarge&quot;|&quot;r3.large&quot;|&quot;r3.xlarge&quot;|&quot;r3.2xlarge&quot;|&quot;r3.4xlarge&quot;|&quot;r3.8xlarge&quot;|&quot;r4.large&quot;|&quot;r4.xlarge&quot;|&quot;r4.2xlarge&quot;|&quot;r4.4xlarge&quot;|&quot;r4.8xlarge&quot;|&quot;r4.16xlarge&quot;|&quot;r5.large&quot;|&quot;r5.xlarge&quot;|&quot;r5.2xlarge&quot;|&quot;r5.4xlarge&quot;|&quot;r5.8xlarge&quot;|&quot;r5.12xlarge&quot;|&quot;r5.16xlarge&quot;|&quot;r5.24xlarge&quot;|&quot;r5.metal&quot;|&quot;r5d.large&quot;|&quot;r5d.xlarge&quot;|&quot;r5d.2xlarge&quot;|&quot;r5d.4xlarge&quot;|&quot;r5d.8xlarge&quot;|&quot;r5d.12xlarge&quot;|&quot;r5d.16xlarge&quot;|&quot;r5d.24xlarge&quot;|&quot;r5d.metal&quot;|&quot;x1.16xlarge&quot;|&quot;x1.32xlarge&quot;|&quot;x1e.xlarge&quot;|&quot;x1e.2xlarge&quot;|&quot;x1e.4xlarge&quot;|&quot;x1e.8xlarge&quot;|&quot;x1e.16xlarge&quot;|&quot;x1e.32xlarge&quot;|&quot;i2.xlarge&quot;|&quot;i2.2xlarge&quot;|&quot;i2.4xlarge&quot;|&quot;i2.8xlarge&quot;|&quot;i3.large&quot;|&quot;i3.xlarge&quot;|&quot;i3.2xlarge&quot;|&quot;i3.4xlarge&quot;|&quot;i3.8xlarge&quot;|&quot;i3.16xlarge&quot;|&quot;i3.metal&quot;|&quot;hi1.4xlarge&quot;|&quot;hs1.8xlarge&quot;|&quot;c1.medium&quot;|&quot;c1.xlarge&quot;|&quot;c3.large&quot;|&quot;c3.xlarge&quot;|&quot;c3.2xlarge&quot;|&quot;c3.4xlarge&quot;|&quot;c3.8xlarge&quot;|&quot;c4.large&quot;|&quot;c4.xlarge&quot;|&quot;c4.2xlarge&quot;|&quot;c4.4xlarge&quot;|&quot;c4.8xlarge&quot;|&quot;c5.large&quot;|&quot;c5.xlarge&quot;|&quot;c5.2xlarge&quot;|&quot;c5.4xlarge&quot;|&quot;c5.9xlarge&quot;|&quot;c5.18xlarge&quot;|&quot;c5d.large&quot;|&quot;c5d.xlarge&quot;|&quot;c5d.2xlarge&quot;|&quot;c5d.4xlarge&quot;|&quot;c5d.9xlarge&quot;|&quot;c5d.18xlarge&quot;|&quot;cc1.4xlarge&quot;|&quot;cc2.8xlarge&quot;|&quot;g2.2xlarge&quot;|&quot;g2.8xlarge&quot;|&quot;g3.4xlarge&quot;|&quot;g3.8xlarge&quot;|&quot;g3.16xlarge&quot;|&quot;g3s.xlarge&quot;|&quot;cg1.4xlarge&quot;|&quot;p2.xlarge&quot;|&quot;p2.8xlarge&quot;|&quot;p2.16xlarge&quot;|&quot;p3.2xlarge&quot;|&quot;p3.8xlarge&quot;|&quot;p3.16xlarge&quot;|&quot;d2.xlarge&quot;|&quot;d2.2xlarge&quot;|&quot;d2.4xlarge&quot;|&quot;d2.8xlarge&quot;|&quot;f1.2xlarge&quot;|&quot;f1.4xlarge&quot;|&quot;f1.16xlarge&quot;|&quot;m5.large&quot;|&quot;m5.xlarge&quot;|&quot;m5.2xlarge&quot;|&quot;m5.4xlarge&quot;|&quot;m5.12xlarge&quot;|&quot;m5.24xlarge&quot;|&quot;m5d.large&quot;|&quot;m5d.xlarge&quot;|&quot;m5d.2xlarge&quot;|&quot;m5d.4xlarge&quot;|&quot;m5d.12xlarge&quot;|&quot;m5d.24xlarge&quot;|&quot;h1.2xlarge&quot;|&quot;h1.4xlarge&quot;|&quot;h1.8xlarge&quot;|&quot;h1.16xlarge&quot;|&quot;z1d.large&quot;|&quot;z1d.xlarge&quot;|&quot;z1d.2xlarge&quot;|&quot;z1d.3xlarge&quot;|&quot;z1d.6xlarge&quot;|&quot;z1d.12xlarge&quot;|&quot;u-6tb1.metal&quot;|&quot;u-9tb1.metal&quot;|&quot;u-12tb1.metal&quot;,
+          &quot;SpotPrice&quot;: &quot;string&quot;,
+          &quot;SubnetId&quot;: &quot;string&quot;,
+          &quot;AvailabilityZone&quot;: &quot;string&quot;,
+          &quot;WeightedCapacity&quot;: double,
+          &quot;Priority&quot;: double
+        }
+        ...
+      ]
+    }
+    ...
+  ],
+  &quot;SpotPrice&quot;: &quot;string&quot;,
+  &quot;TargetCapacity&quot;: integer,
+  &quot;OnDemandTargetCapacity&quot;: integer,
+  &quot;TerminateInstancesWithExpiration&quot;: true|false,
+  &quot;Type&quot;: &quot;request&quot;|&quot;maintain&quot;,
+  &quot;ValidFrom&quot;: timestamp,
+  &quot;ValidUntil&quot;: timestamp,
+  &quot;ReplaceUnhealthyInstances&quot;: true|false,
+  &quot;InstanceInterruptionBehavior&quot;: &quot;hibernate&quot;|&quot;stop&quot;|&quot;terminate&quot;,
+  &quot;LoadBalancersConfig&quot;: {
+    &quot;ClassicLoadBalancersConfig&quot;: {
+      &quot;ClassicLoadBalancers&quot;: [
+        {
+          &quot;Name&quot;: &quot;string&quot;
+        }
+        ...
+      ]
+    },
+    &quot;TargetGroupsConfig&quot;: {
+      &quot;TargetGroups&quot;: [
+        {
+          &quot;Arn&quot;: &quot;string&quot;
+        }
+        ...
+      ]
+    }
+  },
+  &quot;InstancePoolsToUseCount&quot;: integer
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To request a Spot fleet in the subnet with the lowest price</strong></p>
+<p>This example command creates a Spot fleet request with two launch specifications that differ only by subnet.
+The Spot fleet launches the instances in the specified subnet with the lowest price.
+If the instances are launched in a default VPC, they receive a public IP address by default.
+If the instances are launched in a nondefault VPC, they do not receive a public IP address by default.</p>
+<p>Note that you can't specify different subnets from the same Availability Zone in a Spot fleet request.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SpotPrice&quot;</span><span class="p">:</span> <span class="s2">&quot;0.04&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;TargetCapacity&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">&quot;IamFleetRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/my-spot-fleet-role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;LaunchSpecifications&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-1a2b3c4d&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;KeyName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-key-pair&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;SecurityGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">&quot;GroupId&quot;</span><span class="p">:</span> <span class="s2">&quot;sg-1a2b3c4d&quot;</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;m3.medium&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;SubnetId&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-1a2b3c4d, subnet-3c4d5e6f&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;IamInstanceProfile&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:instance-profile/my-iam-role&quot;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SpotFleetRequestId&quot;</span><span class="p">:</span> <span class="s2">&quot;sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To request a Spot fleet in the Availability Zone with the lowest price</strong></p>
+<p>This example command creates a Spot fleet request with two launch specifications that differ only by Availability Zone.
+The Spot fleet launches the instances in the specified Availability Zone with the lowest price.
+If your account supports EC2-VPC only, Amazon EC2 launches the Spot instances in the default subnet of the Availability Zone.
+If your account supports EC2-Classic, Amazon EC2 launches the instances in EC2-Classic in the Availability Zone.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SpotPrice&quot;</span><span class="p">:</span> <span class="s2">&quot;0.04&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;TargetCapacity&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">&quot;IamFleetRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/my-spot-fleet-role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;LaunchSpecifications&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-1a2b3c4d&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;KeyName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-key-pair&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;SecurityGroups&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">&quot;GroupId&quot;</span><span class="p">:</span> <span class="s2">&quot;sg-1a2b3c4d&quot;</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;m3.medium&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Placement&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;AvailabilityZone&quot;</span><span class="p">:</span> <span class="s2">&quot;us-west-2a, us-west-2b&quot;</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;IamInstanceProfile&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:instance-profile/my-iam-role&quot;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To launch Spot instances in a subnet and assign them public IP addresses</strong></p>
+<p>This example command assigns public addresses to instances launched in a nondefault VPC.
+Note that when you specify a network interface, you must include the subnet ID and security group ID
+using the network interface.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SpotPrice&quot;</span><span class="p">:</span> <span class="s2">&quot;0.04&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;TargetCapacity&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="s2">&quot;IamFleetRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/my-spot-fleet-role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;LaunchSpecifications&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-1a2b3c4d&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;KeyName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-key-pair&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;m3.medium&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;NetworkInterfaces&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">&quot;DeviceIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="s2">&quot;SubnetId&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-1a2b3c4d&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;Groups&quot;</span><span class="p">:</span> <span class="p">[</span> <span class="s2">&quot;sg-1a2b3c4d&quot;</span> <span class="p">],</span>
+                  <span class="s2">&quot;AssociatePublicIpAddress&quot;</span><span class="p">:</span> <span class="n">true</span>
+              <span class="p">}</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;IamInstanceProfile&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::880185128111:instance-profile/my-iam-role&quot;</span>
+          <span class="p">}</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To request a Spot fleet using the diversified allocation strategy</strong></p>
+<p>This example command creates a Spot fleet request that launches 30 instances using the diversified allocation strategy.
+The launch specifications differ by instance type. The Spot fleet distributes the instances
+across the launch specifications such that there are 10 instances of each type.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 request-spot-fleet --spot-fleet-request-config file://config.json</pre>
+</div>
+<p>Config.json:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SpotPrice&quot;</span><span class="p">:</span> <span class="s2">&quot;0.70&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;TargetCapacity&quot;</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span>
+  <span class="s2">&quot;AllocationStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;diversified&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;IamFleetRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:role/my-spot-fleet-role&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;LaunchSpecifications&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-1a2b3c4d&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;c4.2xlarge&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;SubnetId&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-1a2b3c4d&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-1a2b3c4d&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;m3.2xlarge&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;SubnetId&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-1a2b3c4d&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-1a2b3c4d&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;r3.2xlarge&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;SubnetId&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-1a2b3c4d&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html">Spot Fleet Requests</a> in the <em>Amazon Elastic Compute Cloud User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>SpotFleetRequestId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Spot Fleet request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/report-instance-status.html" title="previous chapter (use the left arrow)">&larr; report-instance-status</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/request-spot-instances.html" title="next chapter (use the right arrow)">request-spot-instances &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/request-spot-instances.html" title="request-spot-instances"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/report-instance-status.html" title="report-instance-status"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" >ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{
+    "AlarmNames": [
+        ""
+    ],
+    "AlarmNamePrefix": "",
+    "StateValue": "INSUFFICIENT_DATA",
+    "ActionPrefix": "",
+    "MaxRecords": 0,
+    "NextToken": ""
+}

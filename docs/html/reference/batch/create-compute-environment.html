@@ -1,0 +1,379 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-compute-environment &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="batch" href="../batch/index.html" />
+    <link rel="next" title="create-job-queue" href="../batch/create-job-queue.html" />
+    <link rel="prev" title="cancel-job" href="../batch/cancel-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../batch/create-job-queue.html" title="create-job-queue"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../batch/cancel-job.html" title="cancel-job"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../batch/index.html" accesskey="U">batch</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../batch/cancel-job.html" title="previous chapter (use the left arrow)">&larr; cancel-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../batch/create-job-queue.html" title="next chapter (use the right arrow)">create-job-queue &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-compute-environment</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/batch/create-compute-environment">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../batch/index.html#cli-aws-batch"><em>batch</em></a> ]</p>
+<div class="section" id="create-compute-environment">
+<span id="cli-aws-batch-create-compute-environment"></span><h1>create-compute-environment<a class="headerlink" href="#create-compute-environment" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates an AWS Batch compute environment. You can create <tt class="docutils literal"><span class="pre">MANAGED</span></tt> or <tt class="docutils literal"><span class="pre">UNMANAGED</span></tt> compute environments.</p>
+<p>In a managed compute environment, AWS Batch manages the compute resources within the environment, based on the compute resources that you specify. Instances launched into a managed compute environment use a recent, approved version of the Amazon ECS-optimized AMI. You can choose to use Amazon EC2 On-Demand Instances in your managed compute environment, or you can use Amazon EC2 Spot Instances that only launch when the Spot bid price is below a specified percentage of the On-Demand price.</p>
+<p>In an unmanaged compute environment, you can manage your own compute resources. This provides more compute resource configuration options, such as using a custom AMI, but you must ensure that your AMI meets the Amazon ECS container instance AMI specification. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/container_instance_AMIs.html">Container Instance AMIs</a> in the <em>Amazon Elastic Container Service Developer Guide</em> . After you have created your unmanaged compute environment, you can use the  DescribeComputeEnvironments operation to find the Amazon ECS cluster that is associated with it and then manually launch your container instances into that Amazon ECS cluster. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_container_instance.html">Launching an Amazon ECS Container Instance</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/CreateComputeEnvironment">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-compute-environment
+--compute-environment-name &lt;value&gt;
+--type &lt;value&gt;
+[--state &lt;value&gt;]
+[--compute-resources &lt;value&gt;]
+--service-role &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--compute-environment-name</span></tt> (string)</p>
+<blockquote>
+<div>The name for your compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of the compute environment.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">MANAGED</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">UNMANAGED</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--state</span></tt> (string)</p>
+<blockquote>
+<div><p>The state of the compute environment. If the state is <tt class="docutils literal"><span class="pre">ENABLED</span></tt> , then the compute environment accepts jobs from a queue and can scale out automatically based on queues.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ENABLED</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DISABLED</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--compute-resources</span></tt> (structure)</p>
+<blockquote>
+<div>Details of the compute resources managed by the compute environment. This parameter is required for managed compute environments.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>type=string,minvCpus=integer,maxvCpus=integer,desiredvCpus=integer,instanceTypes=string,string,imageId=string,subnets=string,string,securityGroupIds=string,string,ec2KeyPair=string,instanceRole=string,tags={KeyName1=string,KeyName2=string},bidPercentage=integer,spotIamFleetRole=string</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;type&quot;: &quot;EC2&quot;|&quot;SPOT&quot;,
+  &quot;minvCpus&quot;: integer,
+  &quot;maxvCpus&quot;: integer,
+  &quot;desiredvCpus&quot;: integer,
+  &quot;instanceTypes&quot;: [&quot;string&quot;, ...],
+  &quot;imageId&quot;: &quot;string&quot;,
+  &quot;subnets&quot;: [&quot;string&quot;, ...],
+  &quot;securityGroupIds&quot;: [&quot;string&quot;, ...],
+  &quot;ec2KeyPair&quot;: &quot;string&quot;,
+  &quot;instanceRole&quot;: &quot;string&quot;,
+  &quot;tags&quot;: {&quot;string&quot;: &quot;string&quot;
+    ...},
+  &quot;bidPercentage&quot;: integer,
+  &quot;spotIamFleetRole&quot;: &quot;string&quot;
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--service-role</span></tt> (string)</p>
+<blockquote>
+<div><p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to make calls to other AWS services on your behalf.</p>
+<p>If your specified role has a path other than <tt class="docutils literal"><span class="pre">/</span></tt> , then you must either specify the full role ARN (this is recommended) or prefix the role name with the path.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Depending on how you created your AWS Batch service role, its ARN may contain the <tt class="docutils literal"><span class="pre">service-role</span></tt> path prefix. When you only specify the name of the service role, AWS Batch assumes that your ARN does not use the <tt class="docutils literal"><span class="pre">service-role</span></tt> path prefix. Because of this, we recommend that you specify the full ARN of your service role when you create compute environments.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a managed compute environment with On-Demand instances</strong></p>
+<p>This example creates a managed compute environment with specific C4 instance types that are launched on demand. The compute environment is called <cite>C4OnDemand</cite>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws batch create-compute-environment --cli-input-json file://&lt;path_to_json_file&gt;/C4OnDemand.json</pre>
+</div>
+<p>JSON file format:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;computeEnvironmentName&quot;</span><span class="p">:</span> <span class="s2">&quot;C4OnDemand&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MANAGED&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ENABLED&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;computeResources&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;EC2&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;minvCpus&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;maxvCpus&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="s2">&quot;desiredvCpus&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+    <span class="s2">&quot;instanceTypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;c4.large&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;c4.xlarge&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;c4.2xlarge&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;c4.4xlarge&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;c4.8xlarge&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;subnet-220c0e0a&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;subnet-1a95556d&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;subnet-978f6dce&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;securityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;sg-cf5093b2&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;ec2KeyPair&quot;</span><span class="p">:</span> <span class="s2">&quot;id_rsa&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;instanceRole&quot;</span><span class="p">:</span> <span class="s2">&quot;ecsInstanceRole&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Batch Instance - C4OnDemand&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;serviceRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::012345678910:role/AWSBatchServiceRole&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;computeEnvironmentName&quot;</span><span class="p">:</span> <span class="s2">&quot;C4OnDemand&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;computeEnvironmentArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:batch:us-east-1:012345678910:compute-environment/C4OnDemand&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>To create a managed compute environment with Spot Instances</strong></p>
+<p>This example creates a managed compute environment with the M4 instance type that is launched when the Spot bid price is at or below 20% of the On-Demand price for the instance type. The compute environment is called <cite>M4Spot</cite>.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws batch create-compute-environment --cli-input-json file://&lt;path_to_json_file&gt;/M4Spot.json</pre>
+</div>
+<p>JSON file format:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;computeEnvironmentName&quot;</span><span class="p">:</span> <span class="s2">&quot;M4Spot&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MANAGED&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ENABLED&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;computeResources&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;SPOT&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;spotIamFleetRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::012345678910:role/aws-ec2-spot-fleet-role&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;minvCpus&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="s2">&quot;maxvCpus&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+    <span class="s2">&quot;desiredvCpus&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="s2">&quot;instanceTypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;m4&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;bidPercentage&quot;</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+    <span class="s2">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;subnet-220c0e0a&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;subnet-1a95556d&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;subnet-978f6dce&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;securityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">&quot;sg-cf5093b2&quot;</span>
+    <span class="p">],</span>
+    <span class="s2">&quot;ec2KeyPair&quot;</span><span class="p">:</span> <span class="s2">&quot;id_rsa&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;instanceRole&quot;</span><span class="p">:</span> <span class="s2">&quot;ecsInstanceRole&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Batch Instance - M4Spot&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;serviceRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::012345678910:role/AWSBatchServiceRole&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;computeEnvironmentName&quot;</span><span class="p">:</span> <span class="s2">&quot;M4Spot&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;computeEnvironmentArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:batch:us-east-1:012345678910:compute-environment/M4Spot&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>computeEnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of the compute environment.</div></blockquote>
+<p>computeEnvironmentArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the compute environment.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../batch/cancel-job.html" title="previous chapter (use the left arrow)">&larr; cancel-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../batch/create-job-queue.html" title="next chapter (use the right arrow)">create-job-queue &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../batch/create-job-queue.html" title="create-job-queue"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../batch/cancel-job.html" title="cancel-job"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../batch/index.html" >batch</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

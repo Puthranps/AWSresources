@@ -1,0 +1,49 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws mediaconvert:
+
+
+************
+mediaconvert
+************
+
+
+
+===========
+Description
+===========
+
+AWS Elemental MediaConvert
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  cancel-job
+  create-job
+  create-job-template
+  create-preset
+  create-queue
+  delete-job-template
+  delete-preset
+  delete-queue
+  describe-endpoints
+  get-job
+  get-job-template
+  get-preset
+  get-queue
+  list-job-templates
+  list-jobs
+  list-presets
+  list-queues
+  list-tags-for-resource
+  tag-resource
+  untag-resource
+  update-job-template
+  update-preset
+  update-queue

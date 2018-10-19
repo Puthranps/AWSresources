@@ -1,0 +1,106 @@
+[ :ref:`aws <cli:aws>` . :ref:`guardduty <cli:aws guardduty>` ]
+
+.. _cli:aws guardduty create-members:
+
+
+**************
+create-members
+**************
+
+
+
+===========
+Description
+===========
+
+Creates member accounts of the current AWS account by specifying a list of AWS account IDs. The current AWS account can then invite these members to manage GuardDuty in their accounts.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateMembers>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-members
+  --account-details <value>
+  --detector-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--account-details`` (list)
+A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty account.
+
+
+
+Shorthand Syntax::
+
+    AccountId=string,Email=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "AccountId": "string",
+      "Email": "string"
+    }
+    ...
+  ]
+
+
+
+``--detector-id`` (string)
+The unique ID of the detector of the GuardDuty account with which you want to associate member accounts.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+UnprocessedAccounts -> (list)
+
+  A list of objects containing the unprocessed account and a result string explaining why it was unprocessed.
+
+  (structure)
+
+    An object containing the unprocessed account and a result string explaining why it was unprocessed.
+
+    AccountId -> (string)
+
+      AWS Account ID.
+
+      
+
+    Result -> (string)
+
+      A reason why the account hasn't been processed.
+
+      
+
+    
+
+  
+

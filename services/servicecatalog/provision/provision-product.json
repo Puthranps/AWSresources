@@ -1,0 +1,23 @@
+{
+    "AcceptLanguage": "",
+    "ProductId": "",
+    "ProvisioningArtifactId": "",
+    "PathId": "",
+    "ProvisionedProductName": "",
+    "ProvisioningParameters": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "NotificationArns": [
+        ""
+    ],
+    "ProvisionToken": ""
+}

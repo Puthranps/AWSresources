@@ -1,0 +1,1067 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint create-segment:
+
+
+**************
+create-segment
+**************
+
+
+
+===========
+Description
+===========
+
+Used to create or update a segment.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/CreateSegment>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-segment
+  --application-id <value>
+  --write-segment-request <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-id`` (string)
+The unique ID of your Amazon Pinpoint application.
+
+``--write-segment-request`` (structure)
+Segment definition.
+
+
+
+JSON Syntax::
+
+  {
+    "Dimensions": {
+      "Attributes": {"string": {
+            "AttributeType": "INCLUSIVE"|"EXCLUSIVE",
+            "Values": ["string", ...]
+          }
+        ...},
+      "Behavior": {
+        "Recency": {
+          "Duration": "HR_24"|"DAY_7"|"DAY_14"|"DAY_30",
+          "RecencyType": "ACTIVE"|"INACTIVE"
+        }
+      },
+      "Demographic": {
+        "AppVersion": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        },
+        "Channel": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        },
+        "DeviceType": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        },
+        "Make": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        },
+        "Model": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        },
+        "Platform": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        }
+      },
+      "Location": {
+        "Country": {
+          "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+          "Values": ["string", ...]
+        },
+        "GPSPoint": {
+          "Coordinates": {
+            "Latitude": double,
+            "Longitude": double
+          },
+          "RangeInKilometers": double
+        }
+      },
+      "Metrics": {"string": {
+            "ComparisonOperator": "string",
+            "Value": double
+          }
+        ...},
+      "UserAttributes": {"string": {
+            "AttributeType": "INCLUSIVE"|"EXCLUSIVE",
+            "Values": ["string", ...]
+          }
+        ...}
+    },
+    "Name": "string",
+    "SegmentGroups": {
+      "Groups": [
+        {
+          "Dimensions": [
+            {
+              "Attributes": {"string": {
+                    "AttributeType": "INCLUSIVE"|"EXCLUSIVE",
+                    "Values": ["string", ...]
+                  }
+                ...},
+              "Behavior": {
+                "Recency": {
+                  "Duration": "HR_24"|"DAY_7"|"DAY_14"|"DAY_30",
+                  "RecencyType": "ACTIVE"|"INACTIVE"
+                }
+              },
+              "Demographic": {
+                "AppVersion": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                },
+                "Channel": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                },
+                "DeviceType": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                },
+                "Make": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                },
+                "Model": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                },
+                "Platform": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                }
+              },
+              "Location": {
+                "Country": {
+                  "DimensionType": "INCLUSIVE"|"EXCLUSIVE",
+                  "Values": ["string", ...]
+                },
+                "GPSPoint": {
+                  "Coordinates": {
+                    "Latitude": double,
+                    "Longitude": double
+                  },
+                  "RangeInKilometers": double
+                }
+              },
+              "Metrics": {"string": {
+                    "ComparisonOperator": "string",
+                    "Value": double
+                  }
+                ...},
+              "UserAttributes": {"string": {
+                    "AttributeType": "INCLUSIVE"|"EXCLUSIVE",
+                    "Values": ["string", ...]
+                  }
+                ...}
+            }
+            ...
+          ],
+          "SourceSegments": [
+            {
+              "Id": "string",
+              "Version": integer
+            }
+            ...
+          ],
+          "SourceType": "ALL"|"ANY"|"NONE",
+          "Type": "ALL"|"ANY"|"NONE"
+        }
+        ...
+      ],
+      "Include": "ALL"|"ANY"|"NONE"
+    }
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+SegmentResponse -> (structure)
+
+  Segment definition.
+
+  ApplicationId -> (string)
+
+    The ID of the application that the segment applies to.
+
+    
+
+  CreationDate -> (string)
+
+    The date and time when the segment was created.
+
+    
+
+  Dimensions -> (structure)
+
+    The segment dimensions attributes.
+
+    Attributes -> (map)
+
+      Custom segment attributes.
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (structure)
+
+        Custom attibute dimension
+
+        AttributeType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    Behavior -> (structure)
+
+      The segment behaviors attributes.
+
+      Recency -> (structure)
+
+        The recency of use.
+
+        Duration -> (string)
+
+          The length of time during which users have been active or inactive with your app. Valid values: HR_24, DAY_7, DAY_14, DAY_30
+
+          
+
+        RecencyType -> (string)
+
+          The recency dimension type: ACTIVE - Users who have used your app within the specified duration are included in the segment. INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+
+          
+
+        
+
+      
+
+    Demographic -> (structure)
+
+      The segment demographics attributes.
+
+      AppVersion -> (structure)
+
+        The app version criteria for the segment.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      Channel -> (structure)
+
+        The channel criteria for the segment.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      DeviceType -> (structure)
+
+        The device type criteria for the segment.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      Make -> (structure)
+
+        The device make criteria for the segment.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      Model -> (structure)
+
+        The device model criteria for the segment.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      Platform -> (structure)
+
+        The device platform criteria for the segment.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    Location -> (structure)
+
+      The segment location attributes.
+
+      Country -> (structure)
+
+        The country filter according to ISO 3166-1 Alpha-2 codes.
+
+        DimensionType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      GPSPoint -> (structure)
+
+        The GPS Point dimension.
+
+        Coordinates -> (structure)
+
+          Coordinate to measure distance from.
+
+          Latitude -> (double)
+
+            Latitude
+
+            
+
+          Longitude -> (double)
+
+            Longitude
+
+            
+
+          
+
+        RangeInKilometers -> (double)
+
+          Range in kilometers from the coordinate.
+
+          
+
+        
+
+      
+
+    Metrics -> (map)
+
+      Custom segment metrics.
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (structure)
+
+        Custom metric dimension
+
+        ComparisonOperator -> (string)
+
+          GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+
+          
+
+        Value -> (double)
+
+          Value to be compared.
+
+          
+
+        
+
+      
+
+    UserAttributes -> (map)
+
+      Custom segment user attributes.
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (structure)
+
+        Custom attibute dimension
+
+        AttributeType -> (string)
+
+          The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+          
+
+        Values -> (list)
+
+          The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  Id -> (string)
+
+    The unique segment ID.
+
+    
+
+  ImportDefinition -> (structure)
+
+    The import job settings.
+
+    ChannelCounts -> (map)
+
+      The number of channel types in the imported segment.
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (integer)
+
+        
+
+        
+
+      
+
+    ExternalId -> (string)
+
+      (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This requirement is removed, and external IDs are not recommended for IAM roles assumed by Amazon Pinpoint.
+
+      
+
+    Format -> (string)
+
+      The format of the endpoint files that were imported to create this segment. Valid values: CSV, JSON
+
+      
+
+    RoleArn -> (string)
+
+      The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access to the endpoints in Amazon S3.
+
+      
+
+    S3Url -> (string)
+
+      The URL of the S3 bucket that the segment was imported from.
+
+      
+
+    Size -> (integer)
+
+      The number of endpoints that were successfully imported to create this segment.
+
+      
+
+    
+
+  LastModifiedDate -> (string)
+
+    The date and time when the segment was last modified.
+
+    
+
+  Name -> (string)
+
+    The name of the segment.
+
+    
+
+  SegmentGroups -> (structure)
+
+    A segment group, which consists of zero or more source segments, plus dimensions that are applied to those source segments.
+
+    Groups -> (list)
+
+      A set of segment criteria to evaluate.
+
+      (structure)
+
+        Segment group definition.
+
+        Dimensions -> (list)
+
+          List of dimensions to include or exclude.
+
+          (structure)
+
+            Segment dimensions
+
+            Attributes -> (map)
+
+              Custom segment attributes.
+
+              key -> (string)
+
+                
+
+                
+
+              value -> (structure)
+
+                Custom attibute dimension
+
+                AttributeType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              
+
+            Behavior -> (structure)
+
+              The segment behaviors attributes.
+
+              Recency -> (structure)
+
+                The recency of use.
+
+                Duration -> (string)
+
+                  The length of time during which users have been active or inactive with your app. Valid values: HR_24, DAY_7, DAY_14, DAY_30
+
+                  
+
+                RecencyType -> (string)
+
+                  The recency dimension type: ACTIVE - Users who have used your app within the specified duration are included in the segment. INACTIVE - Users who have not used your app within the specified duration are included in the segment.
+
+                  
+
+                
+
+              
+
+            Demographic -> (structure)
+
+              The segment demographics attributes.
+
+              AppVersion -> (structure)
+
+                The app version criteria for the segment.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              Channel -> (structure)
+
+                The channel criteria for the segment.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              DeviceType -> (structure)
+
+                The device type criteria for the segment.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              Make -> (structure)
+
+                The device make criteria for the segment.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              Model -> (structure)
+
+                The device model criteria for the segment.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              Platform -> (structure)
+
+                The device platform criteria for the segment.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              
+
+            Location -> (structure)
+
+              The segment location attributes.
+
+              Country -> (structure)
+
+                The country filter according to ISO 3166-1 Alpha-2 codes.
+
+                DimensionType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              GPSPoint -> (structure)
+
+                The GPS Point dimension.
+
+                Coordinates -> (structure)
+
+                  Coordinate to measure distance from.
+
+                  Latitude -> (double)
+
+                    Latitude
+
+                    
+
+                  Longitude -> (double)
+
+                    Longitude
+
+                    
+
+                  
+
+                RangeInKilometers -> (double)
+
+                  Range in kilometers from the coordinate.
+
+                  
+
+                
+
+              
+
+            Metrics -> (map)
+
+              Custom segment metrics.
+
+              key -> (string)
+
+                
+
+                
+
+              value -> (structure)
+
+                Custom metric dimension
+
+                ComparisonOperator -> (string)
+
+                  GREATER_THAN | LESS_THAN | GREATER_THAN_OR_EQUAL | LESS_THAN_OR_EQUAL | EQUAL
+
+                  
+
+                Value -> (double)
+
+                  Value to be compared.
+
+                  
+
+                
+
+              
+
+            UserAttributes -> (map)
+
+              Custom segment user attributes.
+
+              key -> (string)
+
+                
+
+                
+
+              value -> (structure)
+
+                Custom attibute dimension
+
+                AttributeType -> (string)
+
+                  The type of dimension: INCLUSIVE - Endpoints that match the criteria are included in the segment. EXCLUSIVE - Endpoints that match the criteria are excluded from the segment.
+
+                  
+
+                Values -> (list)
+
+                  The criteria values for the segment dimension. Endpoints with matching attribute values are included or excluded from the segment, depending on the setting for Type.
+
+                  (string)
+
+                    
+
+                    
+
+                  
+
+                
+
+              
+
+            
+
+          
+
+        SourceSegments -> (list)
+
+          The base segment that you build your segment on. The source segment defines the starting "universe" of endpoints. When you add dimensions to the segment, it filters the source segment based on the dimensions that you specify. You can specify more than one dimensional segment. You can only specify one imported segment.
+
+          (structure)
+
+            Segment reference.
+
+            Id -> (string)
+
+              A unique identifier for the segment.
+
+              
+
+            Version -> (integer)
+
+              If specified contains a specific version of the segment included.
+
+              
+
+            
+
+          
+
+        SourceType -> (string)
+
+          Specify how to handle multiple source segments. For example, if you specify three source segments, should the resulting segment be based on any or all of the segments? Acceptable values: ANY or ALL.
+
+          
+
+        Type -> (string)
+
+          Specify how to handle multiple segment dimensions. For example, if you specify three dimensions, should the resulting segment include endpoints that are matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or NONE.
+
+          
+
+        
+
+      
+
+    Include -> (string)
+
+      Specify how to handle multiple segment groups. For example, if the segment includes three segment groups, should the resulting segment include endpoints that are matched by all, any, or none of the segment groups you created. Acceptable values: ALL, ANY, or NONE.
+
+      
+
+    
+
+  SegmentType -> (string)
+
+    The segment type: DIMENSIONAL - A dynamic segment built from selection criteria based on endpoint data reported by your app. You create this type of segment by using the segment builder in the Amazon Pinpoint console or by making a POST request to the segments resource. IMPORT - A static segment built from an imported set of endpoint definitions. You create this type of segment by importing a segment in the Amazon Pinpoint console or by making a POST request to the jobs/import resource.
+
+    
+
+  Version -> (integer)
+
+    The segment version number.
+
+    
+
+  
+

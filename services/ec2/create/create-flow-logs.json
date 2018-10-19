@@ -1,0 +1,13 @@
+{
+    "DryRun": true,
+    "ClientToken": "",
+    "DeliverLogsPermissionArn": "",
+    "LogGroupName": "",
+    "ResourceIds": [
+        ""
+    ],
+    "ResourceType": "VPC",
+    "TrafficType": "REJECT",
+    "LogDestinationType": "cloud-watch-logs",
+    "LogDestination": ""
+}

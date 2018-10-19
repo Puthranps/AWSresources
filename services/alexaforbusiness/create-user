@@ -1,0 +1,13 @@
+{
+    "UserId": "",
+    "FirstName": "",
+    "LastName": "",
+    "Email": "",
+    "ClientRequestToken": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

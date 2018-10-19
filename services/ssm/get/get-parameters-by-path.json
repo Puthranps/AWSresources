@@ -1,0 +1,16 @@
+{
+    "Path": "",
+    "Recursive": true,
+    "ParameterFilters": [
+        {
+            "Key": "",
+            "Option": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "WithDecryption": true,
+    "MaxResults": 0,
+    "NextToken": ""
+}

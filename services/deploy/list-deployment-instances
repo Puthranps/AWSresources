@@ -1,0 +1,10 @@
+{
+    "deploymentId": "",
+    "nextToken": "",
+    "instanceStatusFilter": [
+        "Skipped"
+    ],
+    "instanceTypeFilter": [
+        "Blue"
+    ]
+}

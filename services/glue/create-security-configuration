@@ -1,0 +1,19 @@
+{
+    "Name": "",
+    "EncryptionConfiguration": {
+        "S3Encryption": [
+            {
+                "S3EncryptionMode": "SSE-KMS",
+                "KmsKeyArn": ""
+            }
+        ],
+        "CloudWatchEncryption": {
+            "CloudWatchEncryptionMode": "DISABLED",
+            "KmsKeyArn": ""
+        },
+        "JobBookmarksEncryption": {
+            "JobBookmarksEncryptionMode": "DISABLED",
+            "KmsKeyArn": ""
+        }
+    }
+}

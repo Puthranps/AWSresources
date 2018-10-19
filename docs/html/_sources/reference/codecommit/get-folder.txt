@@ -1,0 +1,331 @@
+[ :ref:`aws <cli:aws>` . :ref:`codecommit <cli:aws codecommit>` ]
+
+.. _cli:aws codecommit get-folder:
+
+
+**********
+get-folder
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the contents of a specified folder in a repository.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFolder>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-folder
+  --repository-name <value>
+  [--commit-specifier <value>]
+  --folder-path <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--repository-name`` (string)
+
+
+  The name of the repository.
+
+  
+
+``--commit-specifier`` (string)
+
+
+  A fully-qualified reference used to identify a commit that contains the version of the folder's content to return. A fully-qualified reference can be a commit ID, branch name, tag, or reference such as HEAD. If no specifier is provided, the folder content will be returned as it exists in the HEAD commit.
+
+  
+
+``--folder-path`` (string)
+
+
+  The fully-qualified path to the folder whose contents will be returned, including the folder name. For example, /examples is a fully-qualified path to a folder named examples that was created off of the root directory (/) of a repository. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+commitId -> (string)
+
+  
+
+  The full commit ID used as a reference for which version of the folder content is returned.
+
+  
+
+  
+
+folderPath -> (string)
+
+  
+
+  The fully-qualified path of the folder whose contents are returned.
+
+  
+
+  
+
+treeId -> (string)
+
+  
+
+  The full SHA-1 pointer of the tree information for the commit that contains the folder.
+
+  
+
+  
+
+subFolders -> (list)
+
+  
+
+  The list of folders that exist beneath the specified folder, if any.
+
+  
+
+  (structure)
+
+    
+
+    Returns information about a folder in a repository.
+
+    
+
+    treeId -> (string)
+
+      
+
+      The full SHA-1 pointer of the tree information for the commit that contains the folder.
+
+      
+
+      
+
+    absolutePath -> (string)
+
+      
+
+      The fully-qualified path of the folder in the repository.
+
+      
+
+      
+
+    relativePath -> (string)
+
+      
+
+      The relative path of the specified folder from the folder where the query originated.
+
+      
+
+      
+
+    
+
+  
+
+files -> (list)
+
+  
+
+  The list of files that exist in the specified folder, if any.
+
+  
+
+  (structure)
+
+    
+
+    Returns information about a file in a repository.
+
+    
+
+    blobId -> (string)
+
+      
+
+      The blob ID that contains the file information.
+
+      
+
+      
+
+    absolutePath -> (string)
+
+      
+
+      The fully-qualified path to the file in the repository.
+
+      
+
+      
+
+    relativePath -> (string)
+
+      
+
+      The relative path of the file from the folder where the query originated.
+
+      
+
+      
+
+    fileMode -> (string)
+
+      
+
+      The extrapolated file mode permissions for the file. Valid values include EXECUTABLE and NORMAL.
+
+      
+
+      
+
+    
+
+  
+
+symbolicLinks -> (list)
+
+  
+
+  The list of symbolic links to other files and folders that exist in the specified folder, if any.
+
+  
+
+  (structure)
+
+    
+
+    Returns information about a symbolic link in a repository folder.
+
+    
+
+    blobId -> (string)
+
+      
+
+      The blob ID that contains the information about the symbolic link.
+
+      
+
+      
+
+    absolutePath -> (string)
+
+      
+
+      The fully-qualified path to the folder that contains the symbolic link.
+
+      
+
+      
+
+    relativePath -> (string)
+
+      
+
+      The relative path of the symbolic link from the folder where the query originated.
+
+      
+
+      
+
+    fileMode -> (string)
+
+      
+
+      The file mode permissions of the blob that cotains information about the symbolic link.
+
+      
+
+      
+
+    
+
+  
+
+subModules -> (list)
+
+  
+
+  The list of submodules that exist in the specified folder, if any.
+
+  
+
+  (structure)
+
+    
+
+    Returns information about a submodule reference in a repository folder.
+
+    
+
+    commitId -> (string)
+
+      
+
+      The commit ID that contains the reference to the submodule.
+
+      
+
+      
+
+    absolutePath -> (string)
+
+      
+
+      The fully qualified path to the folder that contains the reference to the submodule.
+
+      
+
+      
+
+    relativePath -> (string)
+
+      
+
+      The relative path of the submodule from the folder where the query originated.
+
+      
+
+      
+
+    
+
+  
+

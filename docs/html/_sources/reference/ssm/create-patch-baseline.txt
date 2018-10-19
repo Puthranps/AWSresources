@@ -1,0 +1,351 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm create-patch-baseline:
+
+
+*********************
+create-patch-baseline
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a patch baseline.
+
+ 
+
+.. note::
+
+   
+
+  For information about valid key and value pairs in ``PatchFilters`` for each supported operating system type, see `PatchFilter <http://docs.aws.amazon.com/systems-manager/latest/APIReference/API_PatchFilter.html>`__ .
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreatePatchBaseline>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-patch-baseline
+  [--operating-system <value>]
+  --name <value>
+  [--global-filters <value>]
+  [--approval-rules <value>]
+  [--approved-patches <value>]
+  [--approved-patches-compliance-level <value>]
+  [--approved-patches-enable-non-security | --no-approved-patches-enable-non-security]
+  [--rejected-patches <value>]
+  [--rejected-patches-action <value>]
+  [--description <value>]
+  [--sources <value>]
+  [--client-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--operating-system`` (string)
+
+
+  Defines the operating system the patch baseline applies to. The Default value is WINDOWS.
+
+  
+
+  Possible values:
+
+  
+  *   ``WINDOWS``
+
+  
+  *   ``AMAZON_LINUX``
+
+  
+  *   ``AMAZON_LINUX_2``
+
+  
+  *   ``UBUNTU``
+
+  
+  *   ``REDHAT_ENTERPRISE_LINUX``
+
+  
+  *   ``SUSE``
+
+  
+  *   ``CENTOS``
+
+  
+
+  
+
+``--name`` (string)
+
+
+  The name of the patch baseline.
+
+  
+
+``--global-filters`` (structure)
+
+
+  A set of global filters used to exclude patches from the baseline.
+
+  
+
+
+
+JSON Syntax::
+
+  {
+    "PatchFilters": [
+      {
+        "Key": "PRODUCT"|"CLASSIFICATION"|"MSRC_SEVERITY"|"PATCH_ID"|"SECTION"|"PRIORITY"|"SEVERITY",
+        "Values": ["string", ...]
+      }
+      ...
+    ]
+  }
+
+
+
+``--approval-rules`` (structure)
+
+
+  A set of rules used to include patches in the baseline.
+
+  
+
+
+
+JSON Syntax::
+
+  {
+    "PatchRules": [
+      {
+        "PatchFilterGroup": {
+          "PatchFilters": [
+            {
+              "Key": "PRODUCT"|"CLASSIFICATION"|"MSRC_SEVERITY"|"PATCH_ID"|"SECTION"|"PRIORITY"|"SEVERITY",
+              "Values": ["string", ...]
+            }
+            ...
+          ]
+        },
+        "ComplianceLevel": "CRITICAL"|"HIGH"|"MEDIUM"|"LOW"|"INFORMATIONAL"|"UNSPECIFIED",
+        "ApproveAfterDays": integer,
+        "EnableNonSecurity": true|false
+      }
+      ...
+    ]
+  }
+
+
+
+``--approved-patches`` (list)
+
+
+  A list of explicitly approved patches for the baseline.
+
+   
+
+  For information about accepted formats for lists of approved patches and rejected patches, see `Package Name Formats for Approved and Rejected Patch Lists <http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html>`__ in the *AWS Systems Manager User Guide* .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--approved-patches-compliance-level`` (string)
+
+
+  Defines the compliance level for approved patches. This means that if an approved patch is reported as missing, this is the severity of the compliance violation. The default value is UNSPECIFIED.
+
+  
+
+  Possible values:
+
+  
+  *   ``CRITICAL``
+
+  
+  *   ``HIGH``
+
+  
+  *   ``MEDIUM``
+
+  
+  *   ``LOW``
+
+  
+  *   ``INFORMATIONAL``
+
+  
+  *   ``UNSPECIFIED``
+
+  
+
+  
+
+``--approved-patches-enable-non-security`` | ``--no-approved-patches-enable-non-security`` (boolean)
+
+
+  Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.
+
+  
+
+``--rejected-patches`` (list)
+
+
+  A list of explicitly rejected patches for the baseline.
+
+   
+
+  For information about accepted formats for lists of approved patches and rejected patches, see `Package Name Formats for Approved and Rejected Patch Lists <http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-approved-rejected-package-name-formats.html>`__ in the *AWS Systems Manager User Guide* .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--rejected-patches-action`` (string)
+
+
+  The action for Patch Manager to take on patches included in the RejectedPackages list.
+
+   
+
+   
+  * **ALLOW_AS_DEPENDENCY** : A package in the Rejected patches list is installed only if it is a dependency of another package. It is considered compliant with the patch baseline, and its status is reported as *InstalledOther* . This is the default action if no option is specified. 
+   
+  * **BLOCK** : Packages in the RejectedPatches list, and packages that include them as dependencies, are not installed under any circumstances. If a package was installed before it was added to the Rejected patches list, it is considered non-compliant with the patch baseline, and its status is reported as *InstalledRejected* . 
+   
+
+  
+
+  Possible values:
+
+  
+  *   ``ALLOW_AS_DEPENDENCY``
+
+  
+  *   ``BLOCK``
+
+  
+
+  
+
+``--description`` (string)
+
+
+  A description of the patch baseline.
+
+  
+
+``--sources`` (list)
+
+
+  Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Products=string,string,Configuration=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Products": ["string", ...],
+      "Configuration": "string"
+    }
+    ...
+  ]
+
+
+
+``--client-token`` (string)
+
+
+  User-provided idempotency token.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create a patch baseline**
+
+This example creates a patch baseline that approves patches for a production environment seven days after they are released by Microsoft.
+
+Command::
+
+  aws ssm create-patch-baseline --name "Production-Baseline" --approval-rules "PatchRules=[{PatchFilterGroup={PatchFilters=[{Key=MSRC_SEVERITY,Values=[Critical,Important,Moderate]},{Key=CLASSIFICATION,Values=[SecurityUpdates,Updates,UpdateRollups,CriticalUpdates]}]},ApproveAfterDays=7}]" --description "Baseline containing all updates approved for production systems"
+
+Output::
+
+  {
+    "BaselineId": "pb-045f10b4f382baeda"
+  }
+
+
+======
+Output
+======
+
+BaselineId -> (string)
+
+  
+
+  The ID of the created patch baseline.
+
+  
+
+  
+

@@ -1,0 +1,333 @@
+[ :ref:`aws <cli:aws>` . :ref:`connect <cli:aws connect>` ]
+
+.. _cli:aws connect describe-user-hierarchy-group:
+
+
+*****************************
+describe-user-hierarchy-group
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns a ``HierarchyGroup`` object that includes information about a hierarchy group in your instance.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeUserHierarchyGroup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-user-hierarchy-group
+  --hierarchy-group-id <value>
+  --instance-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--hierarchy-group-id`` (string)
+
+
+  The identifier for the hierarchy group to return.
+
+  
+
+``--instance-id`` (string)
+
+
+  The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in the Overview section of your instance settings. For example, the instance ID is the set of characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+HierarchyGroup -> (structure)
+
+  
+
+  Returns a ``HierarchyGroup`` object.
+
+  
+
+  Id -> (string)
+
+    
+
+    The identifier for the hierarchy group.
+
+    
+
+    
+
+  Arn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) for the hierarchy group.
+
+    
+
+    
+
+  Name -> (string)
+
+    
+
+    The name of the hierarchy group in your instance.
+
+    
+
+    
+
+  LevelId -> (string)
+
+    
+
+    The identifier for the level in the hierarchy group.
+
+    
+
+    
+
+  HierarchyPath -> (structure)
+
+    
+
+    A ``HierarchyPath`` object that contains information about the levels in the hierarchy group.
+
+    
+
+    LevelOne -> (structure)
+
+      
+
+      A ``HierarchyGroupSummary`` object that contains information about the level of the hierarchy group, including ARN, Id, and Name.
+
+      
+
+      Id -> (string)
+
+        
+
+        The identifier of the hierarchy group.
+
+        
+
+        
+
+      Arn -> (string)
+
+        
+
+        The ARN for the hierarchy group.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the hierarchy group.
+
+        
+
+        
+
+      
+
+    LevelTwo -> (structure)
+
+      
+
+      A ``HierarchyGroupSummary`` object that contains information about the level of the hierarchy group, including ARN, Id, and Name.
+
+      
+
+      Id -> (string)
+
+        
+
+        The identifier of the hierarchy group.
+
+        
+
+        
+
+      Arn -> (string)
+
+        
+
+        The ARN for the hierarchy group.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the hierarchy group.
+
+        
+
+        
+
+      
+
+    LevelThree -> (structure)
+
+      
+
+      A ``HierarchyGroupSummary`` object that contains information about the level of the hierarchy group, including ARN, Id, and Name.
+
+      
+
+      Id -> (string)
+
+        
+
+        The identifier of the hierarchy group.
+
+        
+
+        
+
+      Arn -> (string)
+
+        
+
+        The ARN for the hierarchy group.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the hierarchy group.
+
+        
+
+        
+
+      
+
+    LevelFour -> (structure)
+
+      
+
+      A ``HierarchyGroupSummary`` object that contains information about the level of the hierarchy group, including ARN, Id, and Name.
+
+      
+
+      Id -> (string)
+
+        
+
+        The identifier of the hierarchy group.
+
+        
+
+        
+
+      Arn -> (string)
+
+        
+
+        The ARN for the hierarchy group.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the hierarchy group.
+
+        
+
+        
+
+      
+
+    LevelFive -> (structure)
+
+      
+
+      A ``HierarchyGroupSummary`` object that contains information about the level of the hierarchy group, including ARN, Id, and Name.
+
+      
+
+      Id -> (string)
+
+        
+
+        The identifier of the hierarchy group.
+
+        
+
+        
+
+      Arn -> (string)
+
+        
+
+        The ARN for the hierarchy group.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the hierarchy group.
+
+        
+
+        
+
+      
+
+    
+
+  
+

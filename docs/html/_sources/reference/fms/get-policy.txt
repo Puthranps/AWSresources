@@ -1,0 +1,283 @@
+[ :ref:`aws <cli:aws>` . :ref:`fms <cli:aws fms>` ]
+
+.. _cli:aws fms get-policy:
+
+
+**********
+get-policy
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about the specified AWS Firewall Manager policy.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetPolicy>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-policy
+  --policy-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--policy-id`` (string)
+
+
+  The ID of the AWS Firewall Manager policy that you want the details for.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Policy -> (structure)
+
+  
+
+  Information about the specified AWS Firewall Manager policy.
+
+  
+
+  PolicyId -> (string)
+
+    
+
+    The ID of the AWS Firewall Manager policy.
+
+    
+
+    
+
+  PolicyName -> (string)
+
+    
+
+    The friendly name of the AWS Firewall Manager policy.
+
+    
+
+    
+
+  PolicyUpdateToken -> (string)
+
+    
+
+    A unique identifier for each update to the policy. When issuing a ``PutPolicy`` request, the ``PolicyUpdateToken`` in the request must match the ``PolicyUpdateToken`` of the current policy version. To get the ``PolicyUpdateToken`` of the current policy version, use a ``GetPolicy`` request.
+
+    
+
+    
+
+  SecurityServicePolicyData -> (structure)
+
+    
+
+    Details about the security service that is being used to protect the resources.
+
+    
+
+    Type -> (string)
+
+      
+
+      The service that the policy is using to protect the resources. This value is ``WAF`` .
+
+      
+
+      
+
+    ManagedServiceData -> (string)
+
+      
+
+      Details about the service. This contains ``WAF`` data in JSON format, as shown in the following example:
+
+       
+
+       ``ManagedServiceData": "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\": \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\": \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}``  
+
+      
+
+      
+
+    
+
+  ResourceType -> (string)
+
+    
+
+    The type of resource to protect with the policy, either an Application Load Balancer or a CloudFront distribution. This is in the format shown in `AWS Resource Types Reference <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html>`__ . Valid values are ``AWS::ElasticLoadBalancingV2::LoadBalancer`` or ``AWS::CloudFront::Distribution`` .
+
+    
+
+    
+
+  ResourceTags -> (list)
+
+    
+
+    An array of ``ResourceTag`` objects.
+
+    
+
+    (structure)
+
+      
+
+      The resource tags that AWS Firewall Manager uses to determine if a particular resource should be included or excluded from protection by the AWS Firewall Manager policy. Tags enable you to categorize your AWS resources in different ways, for example, by purpose, owner, or environment. Each tag consists of a key and an optional value, both of which you define. Tags are combined with an "OR." That is, if you add more than one tag, if any of the tags matches, the resource is considered a match for the include or exclude. `Working with Tag Editor <https://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/tag-editor.html>`__ .
+
+      
+
+      Key -> (string)
+
+        
+
+        The resource tag key.
+
+        
+
+        
+
+      Value -> (string)
+
+        
+
+        The resource tag value.
+
+        
+
+        
+
+      
+
+    
+
+  ExcludeResourceTags -> (boolean)
+
+    
+
+    If set to ``True`` , resources with the tags that are specified in the ``ResourceTag`` array are not protected by the policy. If set to ``False`` , and the ``ResourceTag`` array is not null, only resources with the specified tags are associated with the policy.
+
+    
+
+    
+
+  RemediationEnabled -> (boolean)
+
+    
+
+    Indicates if the policy should be automatically applied to new resources.
+
+    
+
+    
+
+  IncludeMap -> (map)
+
+    
+
+    Specifies the AWS account IDs to include in the policy. If ``IncludeMap`` is null, all accounts in the AWS Organization are included in the policy. If ``IncludeMap`` is not null, only values listed in ``IncludeMap`` will be included in the policy.
+
+     
+
+    The key to the map is ``ACCOUNT`` . For example, a valid ``IncludeMap`` would be ``{“ACCOUNT” : [“accountID1”, “accountID2”]}`` .
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (list)
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  ExcludeMap -> (map)
+
+    
+
+    Specifies the AWS account IDs to exclude from the policy. The ``IncludeMap`` values are evaluated first, with all of the appropriate account IDs added to the policy. Then the accounts listed in ``ExcludeMap`` are removed, resulting in the final list of accounts to add to the policy.
+
+     
+
+    The key to the map is ``ACCOUNT`` . For example, a valid ``ExcludeMap`` would be ``{“ACCOUNT” : [“accountID1”, “accountID2”]}`` .
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (list)
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  
+
+PolicyArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the specified policy.
+
+  
+
+  
+

@@ -1,0 +1,312 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>upload-part-copy &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="s3api" href="../s3api/index.html" />
+    <link rel="next" title="wait" href="../s3api/wait/index.html" />
+    <link rel="prev" title="upload-part" href="../s3api/upload-part.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../s3api/wait/index.html" title="wait"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../s3api/upload-part.html" title="upload-part"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../s3api/index.html" accesskey="U">s3api</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../s3api/upload-part.html" title="previous chapter (use the left arrow)">&larr; upload-part</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../s3api/wait/index.html" title="next chapter (use the right arrow)">wait &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">upload-part-copy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/s3api/upload-part-copy">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../s3api/index.html#cli-aws-s3api"><em>s3api</em></a> ]</p>
+<div class="section" id="upload-part-copy">
+<span id="cli-aws-s3api-upload-part-copy"></span><h1>upload-part-copy<a class="headerlink" href="#upload-part-copy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Uploads a part by copying data from an existing object as data source.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  upload-part-copy
+--bucket &lt;value&gt;
+--copy-source &lt;value&gt;
+[--copy-source-if-match &lt;value&gt;]
+[--copy-source-if-modified-since &lt;value&gt;]
+[--copy-source-if-none-match &lt;value&gt;]
+[--copy-source-if-unmodified-since &lt;value&gt;]
+[--copy-source-range &lt;value&gt;]
+--key &lt;value&gt;
+--part-number &lt;value&gt;
+--upload-id &lt;value&gt;
+[--sse-customer-algorithm &lt;value&gt;]
+[--sse-customer-key &lt;value&gt;]
+[--sse-customer-key-md5 &lt;value&gt;]
+[--copy-source-sse-customer-algorithm &lt;value&gt;]
+[--copy-source-sse-customer-key &lt;value&gt;]
+[--copy-source-sse-customer-key-md5 &lt;value&gt;]
+[--request-payer &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--bucket</span></tt> (string)</p>
+<p><tt class="docutils literal"><span class="pre">--copy-source</span></tt> (string)</p>
+<blockquote>
+<div>The name of the source bucket and key name of the source object, separated by a slash (/). Must be URL-encoded.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-if-match</span></tt> (string)</p>
+<blockquote>
+<div>Copies the object if its entity tag (ETag) matches the specified tag.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-if-modified-since</span></tt> (timestamp)</p>
+<blockquote>
+<div>Copies the object if it has been modified since the specified time.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-if-none-match</span></tt> (string)</p>
+<blockquote>
+<div>Copies the object if its entity tag (ETag) is different than the specified ETag.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-if-unmodified-since</span></tt> (timestamp)</p>
+<blockquote>
+<div>Copies the object if it hasn't been modified since the specified time.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-range</span></tt> (string)</p>
+<blockquote>
+<div>The range of bytes to copy from the source object. The range value must use the form bytes=first-last, where the first and last are the zero-based byte offsets to copy. For example, bytes=0-9 indicates that you want to copy the first ten bytes of the source. You can copy a range only if the source object is greater than 5 GB.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--key</span></tt> (string)</p>
+<p><tt class="docutils literal"><span class="pre">--part-number</span></tt> (integer)</p>
+<blockquote>
+<div>Part number of part being copied. This is a positive integer between 1 and 10,000.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--upload-id</span></tt> (string)</p>
+<blockquote>
+<div>Upload ID identifying the multipart upload whose part is being copied.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sse-customer-algorithm</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the algorithm to use to when encrypting the object (e.g., AES256).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sse-customer-key</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the customer-provided encryption key for Amazon S3 to use in encrypting data. This value is used to store the object and then it is discarded; Amazon does not store the encryption key. The key must be appropriate for use with the algorithm specified in the x-amz-server-side​-encryption​-customer-algorithm header. This must be the same encryption key specified in the initiate multipart upload request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sse-customer-key-md5</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure the encryption key was transmitted without error.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-sse-customer-algorithm</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the algorithm to use when decrypting the source object (e.g., AES256).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-sse-customer-key</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the customer-provided encryption key for Amazon S3 to use to decrypt the source object. The encryption key provided in this header must be one that was used when the source object was created.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--copy-source-sse-customer-key-md5</span></tt> (string)</p>
+<blockquote>
+<div>Specifies the 128-bit MD5 digest of the encryption key according to RFC 1321. Amazon S3 uses this header for a message integrity check to ensure the encryption key was transmitted without error.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--request-payer</span></tt> (string)</p>
+<blockquote>
+<div><p>Confirms that the requester knows that she or he will be charged for the request. Bucket owners need not specify this parameter in their requests. Documentation on downloading objects from requester pays buckets can be found at <a class="reference external" href="http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html">http://docs.aws.amazon.com/AmazonS3/latest/dev/ObjectsinRequesterPaysBuckets.html</a></p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">requester</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>CopySourceVersionId -&gt; (string)</p>
+<blockquote>
+<div>The version of the source object that was copied, if you have enabled versioning on the source bucket.</div></blockquote>
+<p>CopyPartResult -&gt; (structure)</p>
+<blockquote>
+<div><p>ETag -&gt; (string)</p>
+<blockquote>
+<div>Entity tag of the object.</div></blockquote>
+<p>LastModified -&gt; (timestamp)</p>
+<blockquote>
+<div>Date and time at which the object was uploaded.</div></blockquote>
+</div></blockquote>
+<p>ServerSideEncryption -&gt; (string)</p>
+<blockquote>
+<div>The Server-side encryption algorithm used when storing this object in S3 (e.g., AES256, aws:kms).</div></blockquote>
+<p>SSECustomerAlgorithm -&gt; (string)</p>
+<blockquote>
+<div>If server-side encryption with a customer-provided encryption key was requested, the response will include this header confirming the encryption algorithm used.</div></blockquote>
+<p>SSECustomerKeyMD5 -&gt; (string)</p>
+<blockquote>
+<div>If server-side encryption with a customer-provided encryption key was requested, the response will include this header to provide round trip message integrity verification of the customer-provided encryption key.</div></blockquote>
+<p>SSEKMSKeyId -&gt; (string)</p>
+<blockquote>
+<div>If present, specifies the ID of the AWS Key Management Service (KMS) master encryption key that was used for the object.</div></blockquote>
+<p>RequestCharged -&gt; (string)</p>
+<blockquote>
+<div>If present, indicates that the requester was successfully charged for the request.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../s3api/upload-part.html" title="previous chapter (use the left arrow)">&larr; upload-part</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../s3api/wait/index.html" title="next chapter (use the right arrow)">wait &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../s3api/wait/index.html" title="wait"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../s3api/upload-part.html" title="upload-part"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../s3api/index.html" >s3api</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

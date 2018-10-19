@@ -1,0 +1,14 @@
+{
+    "LoggingConfiguration": {
+        "ResourceArn": "",
+        "LogDestinationConfigs": [
+            ""
+        ],
+        "RedactedFields": [
+            {
+                "Type": "ALL_QUERY_ARGS",
+                "Data": ""
+            }
+        ]
+    }
+}

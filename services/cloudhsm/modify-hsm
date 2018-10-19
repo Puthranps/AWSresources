@@ -1,0 +1,8 @@
+{
+    "HsmArn": "",
+    "SubnetId": "",
+    "EniIp": "",
+    "IamRoleArn": "",
+    "ExternalId": "",
+    "SyslogIp": ""
+}

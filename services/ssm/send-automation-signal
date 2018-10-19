@@ -1,0 +1,9 @@
+{
+    "AutomationExecutionId": "",
+    "SignalType": "Approve",
+    "Payload": {
+        "KeyName": [
+            ""
+        ]
+    }
+}

@@ -1,0 +1,9 @@
+{
+    "DirectoryArn": "",
+    "PolicyReference": {
+        "Selector": ""
+    },
+    "ObjectReference": {
+        "Selector": ""
+    }
+}

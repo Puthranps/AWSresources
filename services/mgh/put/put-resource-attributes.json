@@ -1,0 +1,11 @@
+{
+    "ProgressUpdateStream": "",
+    "MigrationTaskName": "",
+    "ResourceAttributeList": [
+        {
+            "Type": "VM_MANAGED_OBJECT_REFERENCE",
+            "Value": ""
+        }
+    ],
+    "DryRun": true
+}

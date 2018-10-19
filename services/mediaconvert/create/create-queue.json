@@ -1,0 +1,13 @@
+{
+    "Description": "",
+    "Name": "",
+    "PricingPlan": "RESERVED",
+    "ReservationPlanSettings": {
+        "Commitment": "ONE_YEAR",
+        "RenewalType": "EXPIRE",
+        "ReservedSlots": 0
+    },
+    "Tags": {
+        "KeyName": ""
+    }
+}

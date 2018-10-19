@@ -1,0 +1,41 @@
+{
+    "Name": "",
+    "Description": "",
+    "BuildId": "",
+    "ServerLaunchPath": "",
+    "ServerLaunchParameters": "",
+    "LogPaths": [
+        ""
+    ],
+    "EC2InstanceType": "r3.large",
+    "EC2InboundPermissions": [
+        {
+            "FromPort": 0,
+            "ToPort": 0,
+            "IpRange": "",
+            "Protocol": "UDP"
+        }
+    ],
+    "NewGameSessionProtectionPolicy": "FullProtection",
+    "RuntimeConfiguration": {
+        "ServerProcesses": [
+            {
+                "LaunchPath": "",
+                "Parameters": "",
+                "ConcurrentExecutions": 0
+            }
+        ],
+        "MaxConcurrentGameSessionActivations": 0,
+        "GameSessionActivationTimeoutSeconds": 0
+    },
+    "ResourceCreationLimitPolicy": {
+        "NewGameSessionsPerCreator": 0,
+        "PolicyPeriodInMinutes": 0
+    },
+    "MetricGroups": [
+        ""
+    ],
+    "PeerVpcAwsAccountId": "",
+    "PeerVpcId": "",
+    "FleetType": "ON_DEMAND"
+}

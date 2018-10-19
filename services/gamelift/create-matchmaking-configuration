@@ -1,0 +1,21 @@
+{
+    "Name": "",
+    "Description": "",
+    "GameSessionQueueArns": [
+        ""
+    ],
+    "RequestTimeoutSeconds": 0,
+    "AcceptanceTimeoutSeconds": 0,
+    "AcceptanceRequired": true,
+    "RuleSetName": "",
+    "NotificationTarget": "",
+    "AdditionalPlayerCount": 0,
+    "CustomEventData": "",
+    "GameProperties": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "GameSessionData": ""
+}

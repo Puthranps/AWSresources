@@ -1,0 +1,5 @@
+{
+    "DetectorId": "",
+    "Enable": true,
+    "FindingPublishingFrequency": "FIFTEEN_MINUTES"
+}

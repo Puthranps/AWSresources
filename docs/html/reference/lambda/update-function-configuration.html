@@ -1,0 +1,431 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-function-configuration &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="lambda" href="../lambda/index.html" />
+    <link rel="next" title="lex-models" href="../lex-models/index.html" />
+    <link rel="prev" title="update-function-code" href="../lambda/update-function-code.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../lex-models/index.html" title="lex-models"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../lambda/update-function-code.html" title="update-function-code"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lambda/index.html" accesskey="U">lambda</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lambda/update-function-code.html" title="previous chapter (use the left arrow)">&larr; update-function-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lex-models/index.html" title="next chapter (use the right arrow)">lex-models &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-function-configuration</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/lambda/update-function-configuration">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../lambda/index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="update-function-configuration">
+<span id="cli-aws-lambda-update-function-configuration"></span><h1>update-function-configuration<a class="headerlink" href="#update-function-configuration" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates the configuration parameters for the specified Lambda function by using the values provided in the request. You provide only the parameters you want to change. This operation must only be used on an existing Lambda function and cannot be used to update the function's code.</p>
+<p>If you are using the versioning feature, note this API will always update the $LATEST version of your Lambda function. For information about the versioning feature, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:UpdateFunctionConfiguration</span></tt> action.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-function-configuration
+--function-name &lt;value&gt;
+[--role &lt;value&gt;]
+[--handler &lt;value&gt;]
+[--description &lt;value&gt;]
+[--timeout &lt;value&gt;]
+[--memory-size &lt;value&gt;]
+[--vpc-config &lt;value&gt;]
+[--environment &lt;value&gt;]
+[--runtime &lt;value&gt;]
+[--dead-letter-config &lt;value&gt;]
+[--kms-key-arn &lt;value&gt;]
+[--tracing-config &lt;value&gt;]
+[--revision-id &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--function-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the lambda function.</p>
+<blockquote>
+<div><strong>Name formats</strong></div></blockquote>
+<ul class="simple">
+<li><strong>Function name</strong> - <tt class="docutils literal"><span class="pre">MyFunction</span></tt> .</li>
+<li><strong>Function ARN</strong> - <tt class="docutils literal"><span class="pre">arn:aws:lambda:us-west-2:123456789012:function:MyFunction</span></tt> .</li>
+<li><strong>Partial ARN</strong> - <tt class="docutils literal"><span class="pre">123456789012:function:MyFunction</span></tt> .</li>
+</ul>
+<p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--role</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that Lambda will assume when it executes your function.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--handler</span></tt> (string)</p>
+<blockquote>
+<div>The function that Lambda calls to begin executing your function. For Node.js, it is the <tt class="docutils literal"><span class="pre">module-name.export</span></tt> value in your function.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>A short user-defined function description. AWS Lambda does not use this value. Assign a meaningful description as you see fit.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--timeout</span></tt> (integer)</p>
+<blockquote>
+<div>The amount of time that Lambda allows a function to run before terminating it. The default is 3 seconds. The maximum allowed value is 900 seconds.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--memory-size</span></tt> (integer)</p>
+<blockquote>
+<div>The amount of memory, in MB, your Lambda function is given. AWS Lambda uses this memory size to infer the amount of CPU allocated to your function. Your function use-case determines your CPU and memory requirements. For example, a database operation might need less memory compared to an image processing function. The default value is 128 MB. The value must be a multiple of 64 MB.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--vpc-config</span></tt> (structure)</p>
+<blockquote>
+<div>Specify security groups and subnets in a VPC to which your Lambda function needs access.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SubnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SubnetIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;SecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--environment</span></tt> (structure)</p>
+<blockquote>
+<div>The parent object that contains your environment's configuration settings.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Variables={KeyName1=string,KeyName2=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;Variables&quot;: {&quot;string&quot;: &quot;string&quot;
+    ...}
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--runtime</span></tt> (string)</p>
+<blockquote>
+<div><p>The runtime version for the function.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">nodejs</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">nodejs4.3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">nodejs6.10</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">nodejs8.10</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">java8</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">python2.7</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">python3.6</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dotnetcore1.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dotnetcore2.0</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">dotnetcore2.1</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">nodejs4.3-edge</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">go1.x</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--dead-letter-config</span></tt> (structure)</p>
+<blockquote>
+<div>A dead letter queue configuration that specifies the queue or topic where Lambda sends asynchronous events when they fail processing. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/dlq.html">Dead Letter Queues</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">TargetArn</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TargetArn&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--kms-key-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the KMS key used to encrypt your function's environment variables. If you elect to use the AWS Lambda default service key, pass in an empty string (&quot;&quot;) for this parameter.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tracing-config</span></tt> (structure)</p>
+<blockquote>
+<div>Set <tt class="docutils literal"><span class="pre">Mode</span></tt> to <tt class="docutils literal"><span class="pre">Active</span></tt> to sample and trace a subset of incoming requests with AWS X-Ray.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Mode</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Mode&quot;</span><span class="p">:</span> <span class="s2">&quot;Active&quot;</span><span class="o">|</span><span class="s2">&quot;PassThrough&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--revision-id</span></tt> (string)</p>
+<blockquote>
+<div>An optional value you can use to ensure you are updating the latest update of the function version or alias. If the <tt class="docutils literal"><span class="pre">RevisionID</span></tt> you pass doesn't match the latest <tt class="docutils literal"><span class="pre">RevisionId</span></tt> of the function or alias, it will fail with an error message, advising you to retrieve the latest function version or alias <tt class="docutils literal"><span class="pre">RevisionID</span></tt> using either  GetFunction or  GetAlias .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>FunctionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the function.</div></blockquote>
+<p>FunctionArn -&gt; (string)</p>
+<blockquote>
+<div>The function's Amazon Resource Name.</div></blockquote>
+<p>Runtime -&gt; (string)</p>
+<blockquote>
+<div>The runtime environment for the Lambda function.</div></blockquote>
+<p>Role -&gt; (string)</p>
+<blockquote>
+<div>The function's execution role.</div></blockquote>
+<p>Handler -&gt; (string)</p>
+<blockquote>
+<div>The function Lambda calls to begin executing your function.</div></blockquote>
+<p>CodeSize -&gt; (long)</p>
+<blockquote>
+<div>The size of the function's deployment package in bytes.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The function's description.</div></blockquote>
+<p>Timeout -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time that Lambda allows a function to run before terminating it.</div></blockquote>
+<p>MemorySize -&gt; (integer)</p>
+<blockquote>
+<div>The memory allocated to the function</div></blockquote>
+<p>LastModified -&gt; (string)</p>
+<blockquote>
+<div>The date and time that the function was last updated, in <a class="reference external" href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ssTZD).</div></blockquote>
+<p>CodeSha256 -&gt; (string)</p>
+<blockquote>
+<div>The SHA256 hash of the function's deployment package.</div></blockquote>
+<p>Version -&gt; (string)</p>
+<blockquote>
+<div>The version of the Lambda function.</div></blockquote>
+<p>VpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's networking configuration.</p>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of VPC subnet IDs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of VPC security groups IDs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC.</div></blockquote>
+</div></blockquote>
+<p>DeadLetterConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's dead letter queue.</p>
+<p>TargetArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</div></blockquote>
+</div></blockquote>
+<p>Environment -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's environment variables.</p>
+<p>Variables -&gt; (map)</p>
+<blockquote>
+<div><p>Environment variable key-value pairs.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>Error -&gt; (structure)</p>
+<blockquote>
+<div><p>Error messages for environment variables that could not be applied.</p>
+<p>ErrorCode -&gt; (string)</p>
+<blockquote>
+<div>The error code.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The error message.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>KMSKeyArn -&gt; (string)</p>
+<blockquote>
+<div>The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer managed CMK.</div></blockquote>
+<p>TracingConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's AWS X-Ray tracing configuration.</p>
+<p>Mode -&gt; (string)</p>
+<blockquote>
+<div>The tracing mode.</div></blockquote>
+</div></blockquote>
+<p>MasterArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the master function.</div></blockquote>
+<p>RevisionId -&gt; (string)</p>
+<blockquote>
+<div>Represents the latest updated revision of the function or alias.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lambda/update-function-code.html" title="previous chapter (use the left arrow)">&larr; update-function-code</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lex-models/index.html" title="next chapter (use the right arrow)">lex-models &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../lex-models/index.html" title="lex-models"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../lambda/update-function-code.html" title="update-function-code"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lambda/index.html" >lambda</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

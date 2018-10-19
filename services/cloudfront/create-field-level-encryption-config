@@ -1,0 +1,31 @@
+{
+    "FieldLevelEncryptionConfig": {
+        "CallerReference": "",
+        "Comment": "",
+        "QueryArgProfileConfig": {
+            "ForwardWhenQueryArgProfileIsUnknown": true,
+            "QueryArgProfiles": {
+                "Quantity": 0,
+                "Items": [
+                    {
+                        "QueryArg": "",
+                        "ProfileId": ""
+                    }
+                ]
+            }
+        },
+        "ContentTypeProfileConfig": {
+            "ForwardWhenContentTypeIsUnknown": true,
+            "ContentTypeProfiles": {
+                "Quantity": 0,
+                "Items": [
+                    {
+                        "Format": "URLEncoded",
+                        "ProfileId": "",
+                        "ContentType": ""
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,5 @@
+{
+    "InstanceId": "",
+    "DeleteElasticIp": true,
+    "DeleteVolumes": true
+}

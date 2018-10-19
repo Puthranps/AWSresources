@@ -1,0 +1,10 @@
+{
+    "ReplicationTaskArn": "",
+    "TablesToReload": [
+        {
+            "SchemaName": "",
+            "TableName": ""
+        }
+    ],
+    "ReloadOption": "data-reload"
+}

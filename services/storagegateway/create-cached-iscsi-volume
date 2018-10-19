@@ -1,0 +1,11 @@
+{
+    "GatewayARN": "",
+    "VolumeSizeInBytes": 0,
+    "SnapshotId": "",
+    "TargetName": "",
+    "SourceVolumeARN": "",
+    "NetworkInterfaceId": "",
+    "ClientToken": "",
+    "KMSEncrypted": true,
+    "KMSKey": ""
+}

@@ -1,0 +1,10 @@
+{
+    "DirectoryId": "",
+    "IpRoutes": [
+        {
+            "CidrIp": "",
+            "Description": ""
+        }
+    ],
+    "UpdateSecurityGroupForDirectoryControllers": true
+}

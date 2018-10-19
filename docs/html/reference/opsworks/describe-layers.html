@@ -1,0 +1,642 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-layers &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="opsworks" href="../opsworks/index.html" />
+    <link rel="next" title="describe-load-based-auto-scaling" href="../opsworks/describe-load-based-auto-scaling.html" />
+    <link rel="prev" title="describe-instances" href="../opsworks/describe-instances.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../opsworks/describe-load-based-auto-scaling.html" title="describe-load-based-auto-scaling"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../opsworks/describe-instances.html" title="describe-instances"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../opsworks/index.html" accesskey="U">opsworks</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../opsworks/describe-instances.html" title="previous chapter (use the left arrow)">&larr; describe-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../opsworks/describe-load-based-auto-scaling.html" title="next chapter (use the right arrow)">describe-load-based-auto-scaling &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-layers</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/opsworks/describe-layers">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../opsworks/index.html#cli-aws-opsworks"><em>opsworks</em></a> ]</p>
+<div class="section" id="describe-layers">
+<span id="cli-aws-opsworks-describe-layers"></span><h1>describe-layers<a class="headerlink" href="#describe-layers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Requests a description of one or more layers in a specified stack.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<blockquote>
+<div>This call accepts only one resource-identifying parameter.</div></blockquote>
+<p class="last"><strong>Required Permissions</strong> : To use this action, an IAM user must have a Show, Deploy, or Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information about user permissions, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> .</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/DescribeLayers">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-layers
+[--stack-id &lt;value&gt;]
+[--layer-ids &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--stack-id</span></tt> (string)</p>
+<blockquote>
+<div>The stack ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--layer-ids</span></tt> (list)</p>
+<blockquote>
+<div>An array of layer IDs that specify the layers to be described. If you omit this parameter, <tt class="docutils literal"><span class="pre">DescribeLayers</span></tt> returns a description of every layer in the specified stack.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe a stack's layers</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">describe-layers</span></tt> commmand describes the layers in a specified stack:</p>
+<div class="highlight-python"><pre>aws opsworks --region us-east-1 describe-layers --stack-id 38ee91e2-abdc-4208-a107-0b7168b3cc7a</pre>
+</div>
+<p><em>Output</em>:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Layers&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;StackId&quot;</span><span class="p">:</span> <span class="s2">&quot;38ee91e2-abdc-4208-a107-0b7168b3cc7a&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;db-master&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;DefaultSecurityGroupNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;AWS-OpsWorks-DB-Master-Server&quot;</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;MySQL&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Packages&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;DefaultRecipes&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Undeploy&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Setup&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;opsworks_initial_setup&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ssh_host_keys&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ssh_users&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;mysql::client&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;dependencies&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ebs&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;opsworks_ganglia::client&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;mysql::server&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;dependencies&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;deploy::mysql&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Configure&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;opsworks_ganglia::configure-client&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ssh_users&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;agent_version&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;deploy::mysql&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Shutdown&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;opsworks_shutdown::default&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;mysql::stop&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Deploy&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;deploy::default&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;deploy::mysql&quot;</span>
+              <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;CustomRecipes&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Undeploy&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Setup&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Configure&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Shutdown&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Deploy&quot;</span><span class="p">:</span> <span class="p">[]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;EnableAutoHealing&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+          <span class="s2">&quot;LayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;41a20847-d594-4325-8447-171821916b73&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;MysqlRootPasswordUbiquitous&quot;</span><span class="p">:</span> <span class="s2">&quot;true&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;RubygemsVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;RailsStack&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyHealthCheckMethod&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;RubyVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;BundlerVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyStatsPassword&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;PassengerVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;MemcachedMemory&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;EnableHaproxyStats&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;ManageBundler&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;NodejsVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyHealthCheckUrl&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;MysqlRootPassword&quot;</span><span class="p">:</span> <span class="s2">&quot;*****FILTERED*****&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;GangliaPassword&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;GangliaUser&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyStatsUrl&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;GangliaUrl&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyStatsUser&quot;</span><span class="p">:</span> <span class="n">null</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;Shortname&quot;</span><span class="p">:</span> <span class="s2">&quot;db-master&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;AutoAssignElasticIps&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+          <span class="s2">&quot;CustomSecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;CreatedAt&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-07-25T18:11:19+00:00&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;VolumeConfigurations&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">&quot;MountPoint&quot;</span><span class="p">:</span> <span class="s2">&quot;/vol/mysql&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;Size&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                  <span class="s2">&quot;NumberOfDisks&quot;</span><span class="p">:</span> <span class="mi">1</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;StackId&quot;</span><span class="p">:</span> <span class="s2">&quot;38ee91e2-abdc-4208-a107-0b7168b3cc7a&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;custom&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;DefaultSecurityGroupNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="s2">&quot;AWS-OpsWorks-Custom-Server&quot;</span>
+          <span class="p">],</span>
+          <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;TomCustom&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Packages&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;DefaultRecipes&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Undeploy&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Setup&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;opsworks_initial_setup&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ssh_host_keys&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ssh_users&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;mysql::client&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;dependencies&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ebs&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;opsworks_ganglia::client&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Configure&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;opsworks_ganglia::configure-client&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;ssh_users&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;agent_version&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Shutdown&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;opsworks_shutdown::default&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Deploy&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;deploy::default&quot;</span>
+              <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;CustomRecipes&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Undeploy&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Setup&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;tomcat::setup&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Configure&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;tomcat::configure&quot;</span>
+              <span class="p">],</span>
+              <span class="s2">&quot;Shutdown&quot;</span><span class="p">:</span> <span class="p">[],</span>
+              <span class="s2">&quot;Deploy&quot;</span><span class="p">:</span> <span class="p">[</span>
+                  <span class="s2">&quot;tomcat::deploy&quot;</span>
+              <span class="p">]</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;EnableAutoHealing&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+          <span class="s2">&quot;LayerId&quot;</span><span class="p">:</span> <span class="s2">&quot;e6cbcd29-d223-40fc-8243-2eb213377440&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;MysqlRootPasswordUbiquitous&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;RubygemsVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;RailsStack&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyHealthCheckMethod&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;RubyVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;BundlerVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyStatsPassword&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;PassengerVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;MemcachedMemory&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;EnableHaproxyStats&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;ManageBundler&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;NodejsVersion&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyHealthCheckUrl&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;MysqlRootPassword&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;GangliaPassword&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;GangliaUser&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyStatsUrl&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;GangliaUrl&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+              <span class="s2">&quot;HaproxyStatsUser&quot;</span><span class="p">:</span> <span class="n">null</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;Shortname&quot;</span><span class="p">:</span> <span class="s2">&quot;tomcustom&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;AutoAssignElasticIps&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+          <span class="s2">&quot;CustomSecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[],</span>
+          <span class="s2">&quot;CreatedAt&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-07-25T18:12:53+00:00&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;VolumeConfigurations&quot;</span><span class="p">:</span> <span class="p">[]</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><strong>More Information</strong></p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers.html">Layers</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Layers -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">Layer</span></tt> objects that describe the layers.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a layer.</p>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Number (ARN) of a layer.</div></blockquote>
+<p>StackId -&gt; (string)</p>
+<blockquote>
+<div>The layer stack ID.</div></blockquote>
+<p>LayerId -&gt; (string)</p>
+<blockquote>
+<div>The layer ID.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The layer type.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The layer name.</div></blockquote>
+<p>Shortname -&gt; (string)</p>
+<blockquote>
+<div>The layer short name.</div></blockquote>
+<p>Attributes -&gt; (map)</p>
+<blockquote>
+<div><p>The layer attributes.</p>
+<p>For the <tt class="docutils literal"><span class="pre">HaproxyStatsPassword</span></tt> , <tt class="docutils literal"><span class="pre">MysqlRootPassword</span></tt> , and <tt class="docutils literal"><span class="pre">GangliaPassword</span></tt> attributes, AWS OpsWorks Stacks returns <tt class="docutils literal"><span class="pre">*****FILTERED*****</span></tt> instead of the actual value</p>
+<p>For an ECS Cluster layer, AWS OpsWorks Stacks the <tt class="docutils literal"><span class="pre">EcsClusterArn</span></tt> attribute is set to the cluster's ARN.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>CloudWatchLogsConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon CloudWatch Logs configuration settings for the layer.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Whether CloudWatch Logs is enabled for a layer.</div></blockquote>
+<p>LogStreams -&gt; (list)</p>
+<blockquote>
+<div><p>A list of configuration options for CloudWatch Logs.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the Amazon CloudWatch logs configuration for a layer. For detailed information about members of this data type, see the <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a> .</p>
+<p>LogGroupName -&gt; (string)</p>
+<blockquote>
+<div>Specifies the destination log group. A log group is created automatically if it doesn't already exist. Log group names can be between 1 and 512 characters long. Allowed characters include a-z, A-Z, 0-9, '_' (underscore), '-' (hyphen), '/' (forward slash), and '.' (period).</div></blockquote>
+<p>DatetimeFormat -&gt; (string)</p>
+<blockquote>
+<div>Specifies how the time stamp is extracted from logs. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AgentReference.html">CloudWatch Logs Agent Reference</a> .</div></blockquote>
+<p>TimeZone -&gt; (string)</p>
+<blockquote>
+<div>Specifies the time zone of log event time stamps.</div></blockquote>
+<p>File -&gt; (string)</p>
+<blockquote>
+<div><p>Specifies log files that you want to push to CloudWatch Logs.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">File</span></tt> can point to a specific file or multiple files (by using wild card characters such as <tt class="docutils literal"><span class="pre">/var/log/system.log*</span></tt> ). Only the latest file is pushed to CloudWatch Logs, based on file modification time. We recommend that you use wild card characters to specify a series of files of the same type, such as <tt class="docutils literal"><span class="pre">access_log.2014-06-01-01</span></tt> , <tt class="docutils literal"><span class="pre">access_log.2014-06-01-02</span></tt> , and so on by using a pattern like <tt class="docutils literal"><span class="pre">access_log.*</span></tt> . Don't use a wildcard to match multiple file types, such as <tt class="docutils literal"><span class="pre">access_log_80</span></tt> and <tt class="docutils literal"><span class="pre">access_log_443</span></tt> . To specify multiple, different file types, add another log stream entry to the configuration file, so that each log file type is stored in a different log group.</div></blockquote>
+<p>Zipped files are not supported.</p>
+</div></blockquote>
+<p>FileFingerprintLines -&gt; (string)</p>
+<blockquote>
+<div>Specifies the range of lines for identifying a file. The valid values are one number, or two dash-delimited numbers, such as '1', '2-5'. The default value is '1', meaning the first line is used to calculate the fingerprint. Fingerprint lines are not sent to CloudWatch Logs unless all specified lines are available.</div></blockquote>
+<p>MultiLineStartPattern -&gt; (string)</p>
+<blockquote>
+<div>Specifies the pattern for identifying the start of a log message.</div></blockquote>
+<p>InitialPosition -&gt; (string)</p>
+<blockquote>
+<div>Specifies where to start to read data (start_of_file or end_of_file). The default is start_of_file. This setting is only used if there is no state persisted for that log stream.</div></blockquote>
+<p>Encoding -&gt; (string)</p>
+<blockquote>
+<div>Specifies the encoding of the log file so that the file can be read correctly. The default is <tt class="docutils literal"><span class="pre">utf_8</span></tt> . Encodings supported by Python <tt class="docutils literal"><span class="pre">codecs.decode()</span></tt> can be used here.</div></blockquote>
+<p>BufferDuration -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the time duration for the batching of log events. The minimum value is 5000ms and default value is 5000ms.</div></blockquote>
+<p>BatchCount -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the max number of log events in a batch, up to 10000. The default value is 1000.</div></blockquote>
+<p>BatchSize -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the maximum size of log events in a batch, in bytes, up to 1048576 bytes. The default value is 32768 bytes. This size is calculated as the sum of all event messages in UTF-8, plus 26 bytes for each log event.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CustomInstanceProfileArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the default IAM profile to be used for the layer's EC2 instances. For more information about IAM ARNs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a> .</div></blockquote>
+<p>CustomJson -&gt; (string)</p>
+<blockquote>
+<div>A JSON formatted string containing the layer's custom stack configuration and deployment attributes.</div></blockquote>
+<p>CustomSecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>An array containing the layer's custom security group IDs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>DefaultSecurityGroupNames -&gt; (list)</p>
+<blockquote>
+<div><p>An array containing the layer's security group names.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Packages -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">Package</span></tt> objects that describe the layer's packages.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>VolumeConfigurations -&gt; (list)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">VolumeConfigurations</span></tt> object that describes the layer's Amazon EBS volumes.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an Amazon EBS volume configuration.</p>
+<p>MountPoint -&gt; (string)</p>
+<blockquote>
+<div>The volume mount point. For example &quot;/dev/sdh&quot;.</div></blockquote>
+<p>RaidLevel -&gt; (integer)</p>
+<blockquote>
+<div>The volume <a class="reference external" href="http://en.wikipedia.org/wiki/Standard_RAID_levels">RAID level</a> .</div></blockquote>
+<p>NumberOfDisks -&gt; (integer)</p>
+<blockquote>
+<div>The number of disks in the volume.</div></blockquote>
+<p>Size -&gt; (integer)</p>
+<blockquote>
+<div>The volume size.</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div><p>The volume type. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> .</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">standard</span></tt> - Magnetic. Magnetic volumes must have a minimum size of 1 GiB and a maximum size of 1024 GiB.</li>
+<li><tt class="docutils literal"><span class="pre">io1</span></tt> - Provisioned IOPS (SSD). PIOPS volumes must have a minimum size of 4 GiB and a maximum size of 16384 GiB.</li>
+<li><tt class="docutils literal"><span class="pre">gp2</span></tt> - General Purpose (SSD). General purpose volumes must have a minimum size of 1 GiB and a maximum size of 16384 GiB.</li>
+<li><tt class="docutils literal"><span class="pre">st1</span></tt> - Throughput Optimized hard disk drive (HDD). Throughput optimized HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</li>
+<li><tt class="docutils literal"><span class="pre">sc1</span></tt> - Cold HDD. Cold HDD volumes must have a minimum size of 500 GiB and a maximum size of 16384 GiB.</li>
+</ul>
+</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>For PIOPS volumes, the IOPS per disk.</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether an Amazon EBS volume is encrypted. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon EBS Encryption</a> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EnableAutoHealing -&gt; (boolean)</p>
+<blockquote>
+<div>Whether auto healing is disabled for the layer.</div></blockquote>
+<p>AutoAssignElasticIps -&gt; (boolean)</p>
+<blockquote>
+<div>Whether to automatically assign an <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a> .</div></blockquote>
+<p>AutoAssignPublicIps -&gt; (boolean)</p>
+<blockquote>
+<div>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a> .</div></blockquote>
+<p>DefaultRecipes -&gt; (structure)</p>
+<blockquote>
+<div><p>AWS OpsWorks Stacks supports five lifecycle events: <strong>setup</strong> , <strong>configuration</strong> , <strong>deploy</strong> , <strong>undeploy</strong> , and <strong>shutdown</strong> . For each layer, AWS OpsWorks Stacks runs a set of standard recipes for each event. In addition, you can provide custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event recipes after the standard recipes. <tt class="docutils literal"><span class="pre">LayerCustomRecipes</span></tt> specifies the custom recipes for a particular layer to be run in response to each of the five events.</p>
+<p>To specify a recipe, use the cookbook's directory name in the repository followed by two colons and the recipe name, which is the recipe's file name without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.</p>
+<p>Setup -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">setup</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Configure -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">configure</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Deploy -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">deploy</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Undeploy -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">undeploy</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Shutdown -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">shutdown</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>CustomRecipes -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">LayerCustomRecipes</span></tt> object that specifies the layer's custom recipes.</p>
+<p>Setup -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">setup</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Configure -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">configure</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Deploy -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">deploy</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Undeploy -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">undeploy</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Shutdown -&gt; (list)</p>
+<blockquote>
+<div><p>An array of custom recipe names to be run following a <tt class="docutils literal"><span class="pre">shutdown</span></tt> event.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>CreatedAt -&gt; (string)</p>
+<blockquote>
+<div>Date when the layer was created.</div></blockquote>
+<p>InstallUpdatesOnBoot -&gt; (boolean)</p>
+<blockquote>
+<div><p>Whether to install operating system and package updates when the instance boots. The default value is <tt class="docutils literal"><span class="pre">true</span></tt> . If this value is set to <tt class="docutils literal"><span class="pre">false</span></tt> , you must then update your instances manually by using  CreateDeployment to run the <tt class="docutils literal"><span class="pre">update_dependencies</span></tt> stack command or manually running <tt class="docutils literal"><span class="pre">yum</span></tt> (Amazon Linux) or <tt class="docutils literal"><span class="pre">apt-get</span></tt> (Ubuntu) on the instances.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We strongly recommend using the default value of <tt class="docutils literal"><span class="pre">true</span></tt> , to ensure that your instances have the latest security updates.</p>
+</div>
+</div></blockquote>
+<p>UseEbsOptimizedInstances -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the layer uses Amazon EBS-optimized instances.</div></blockquote>
+<p>LifecycleEventConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">LifeCycleEventConfiguration</span></tt> object that specifies the Shutdown event configuration.</p>
+<p>Shutdown -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">ShutdownEventConfiguration</span></tt> object that specifies the Shutdown event configuration.</p>
+<p>ExecutionTimeout -&gt; (integer)</p>
+<blockquote>
+<div>The time, in seconds, that AWS OpsWorks Stacks will wait after triggering a Shutdown event before shutting down an instance.</div></blockquote>
+<p>DelayUntilElbConnectionsDrained -&gt; (boolean)</p>
+<blockquote>
+<div>Whether to enable Elastic Load Balancing connection draining. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/ElasticLoadBalancing/latest/DeveloperGuide/TerminologyandKeyConcepts.html#conn-drain">Connection Draining</a></div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../opsworks/describe-instances.html" title="previous chapter (use the left arrow)">&larr; describe-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../opsworks/describe-load-based-auto-scaling.html" title="next chapter (use the right arrow)">describe-load-based-auto-scaling &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../opsworks/describe-load-based-auto-scaling.html" title="describe-load-based-auto-scaling"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../opsworks/describe-instances.html" title="describe-instances"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../opsworks/index.html" >opsworks</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

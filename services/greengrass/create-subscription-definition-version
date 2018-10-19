@@ -1,0 +1,12 @@
+{
+    "AmznClientToken": "",
+    "SubscriptionDefinitionId": "",
+    "Subscriptions": [
+        {
+            "Id": "",
+            "Source": "",
+            "Subject": "",
+            "Target": ""
+        }
+    ]
+}

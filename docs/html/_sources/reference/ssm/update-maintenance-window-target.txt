@@ -1,0 +1,262 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm update-maintenance-window-target:
+
+
+********************************
+update-maintenance-window-target
+********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Modifies the target of an existing Maintenance Window. You can't change the target type, but you can change the following:
+
+ 
+
+The target from being an ID target to a Tag target, or a Tag target to an ID target.
+
+ 
+
+IDs for an ID target.
+
+ 
+
+Tags for a Tag target.
+
+ 
+
+Owner.
+
+ 
+
+Name.
+
+ 
+
+Description.
+
+ 
+
+If a parameter is null, then the corresponding field is not modified.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateMaintenanceWindowTarget>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-maintenance-window-target
+  --window-id <value>
+  --window-target-id <value>
+  [--targets <value>]
+  [--owner-information <value>]
+  [--name <value>]
+  [--description <value>]
+  [--replace | --no-replace]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--window-id`` (string)
+
+
+  The Maintenance Window ID with which to modify the target.
+
+  
+
+``--window-target-id`` (string)
+
+
+  The target ID to modify.
+
+  
+
+``--targets`` (list)
+
+
+  The targets to add or replace.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--owner-information`` (string)
+
+
+  User-provided value that will be included in any CloudWatch events raised while running tasks for these targets in this Maintenance Window.
+
+  
+
+``--name`` (string)
+
+
+  A name for the update.
+
+  
+
+``--description`` (string)
+
+
+  An optional description for the update.
+
+  
+
+``--replace`` | ``--no-replace`` (boolean)
+
+
+  If True, then all fields that are required by the RegisterTargetWithMaintenanceWindow action are also required for this API request. Optional fields that are not specified are set to null.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+WindowId -> (string)
+
+  
+
+  The Maintenance Window ID specified in the update request.
+
+  
+
+  
+
+WindowTargetId -> (string)
+
+  
+
+  The target ID specified in the update request.
+
+  
+
+  
+
+Targets -> (list)
+
+  
+
+  The updated targets.
+
+  
+
+  (structure)
+
+    
+
+    An array of search criteria that targets instances using a Key,Value combination that you specify. ``Targets`` is required if you don't provide one or more instance IDs in the call.
+
+     
+
+    
+
+    
+
+    Key -> (string)
+
+      
+
+      User-defined criteria for sending commands that target instances that meet the criteria. Key can be tag:<Amazon EC2 tag> or InstanceIds. For more information about how to send commands that target instances using Key,Value parameters, see `Targeting Multiple Instances <http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting>`__ in the *AWS Systems Manager User Guide* .
+
+      
+
+      
+
+    Values -> (list)
+
+      
+
+      User-defined criteria that maps to Key. For example, if you specified tag:ServerRole, you could specify value:WebServer to execute a command on instances that include Amazon EC2 tags of ServerRole,WebServer. For more information about how to send commands that target instances using Key,Value parameters, see `Sending Commands to a Fleet <http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html>`__ in the *AWS Systems Manager User Guide* .
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  
+
+OwnerInformation -> (string)
+
+  
+
+  The updated owner.
+
+  
+
+  
+
+Name -> (string)
+
+  
+
+  The updated name.
+
+  
+
+  
+
+Description -> (string)
+
+  
+
+  The updated description.
+
+  
+
+  
+

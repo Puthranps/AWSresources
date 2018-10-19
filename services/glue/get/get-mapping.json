@@ -1,0 +1,35 @@
+{
+    "Source": {
+        "DatabaseName": "",
+        "TableName": ""
+    },
+    "Sinks": [
+        {
+            "DatabaseName": "",
+            "TableName": ""
+        }
+    ],
+    "Location": {
+        "Jdbc": [
+            {
+                "Name": "",
+                "Value": "",
+                "Param": true
+            }
+        ],
+        "S3": [
+            {
+                "Name": "",
+                "Value": "",
+                "Param": true
+            }
+        ],
+        "DynamoDB": [
+            {
+                "Name": "",
+                "Value": "",
+                "Param": true
+            }
+        ]
+    }
+}

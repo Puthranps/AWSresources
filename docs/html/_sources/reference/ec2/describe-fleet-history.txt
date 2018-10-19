@@ -1,0 +1,310 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 describe-fleet-history:
+
+
+**********************
+describe-fleet-history
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Describes the events for the specified EC2 Fleet during the specified time.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeFleetHistory>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-fleet-history
+  [--dry-run | --no-dry-run]
+  [--event-type <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  --fleet-id <value>
+  --start-time <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--event-type`` (string)
+
+
+  The type of events to describe. By default, all events are described.
+
+  
+
+  Possible values:
+
+  
+  *   ``instance-change``
+
+  
+  *   ``fleet-change``
+
+  
+  *   ``service-error``
+
+  
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to return in a single call. Specify a value between 1 and 1000. The default value is 1000. To retrieve the remaining results, make another call with the returned ``NextToken`` value.
+
+  
+
+``--next-token`` (string)
+
+
+  The token for the next set of results.
+
+  
+
+``--fleet-id`` (string)
+
+
+  The ID of the EC2 Fleet.
+
+  
+
+``--start-time`` (timestamp)
+
+
+  The start date and time for the events, in UTC format (for example, *YYYY* -*MM* -*DD* T*HH* :*MM* :*SS* Z).
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+HistoryRecords -> (list)
+
+  
+
+  Information about the events in the history of the EC2 Fleet.
+
+  
+
+  (structure)
+
+    
+
+    Describes an event in the history of an EC2 Fleet.
+
+    
+
+    EventInformation -> (structure)
+
+      
+
+      Information about the event.
+
+      
+
+      EventDescription -> (string)
+
+        
+
+        The description of the event.
+
+        
+
+        
+
+      EventSubType -> (string)
+
+        
+
+        The event.
+
+         
+
+        The following are the ``error`` events:
+
+         
+
+         
+        * ``iamFleetRoleInvalid`` - The Spot Fleet did not have the required permissions either to launch or terminate an instance. 
+         
+        * ``launchSpecTemporarilyBlacklisted`` - The configuration is not valid and several attempts to launch instances have failed. For more information, see the description of the event. 
+         
+        * ``spotFleetRequestConfigurationInvalid`` - The configuration is not valid. For more information, see the description of the event. 
+         
+        * ``spotInstanceCountLimitExceeded`` - You've reached the limit on the number of Spot Instances that you can launch. 
+         
+
+         
+
+        The following are the ``fleetRequestChange`` events:
+
+         
+
+         
+        * ``active`` - The Spot Fleet has been validated and Amazon EC2 is attempting to maintain the target number of running Spot Instances. 
+         
+        * ``cancelled`` - The Spot Fleet is canceled and has no running Spot Instances. The Spot Fleet will be deleted two days after its instances were terminated. 
+         
+        * ``cancelled_running`` - The Spot Fleet is canceled and does not launch additional Spot Instances. Existing Spot Instances continue to run until they are interrupted or terminated. 
+         
+        * ``cancelled_terminating`` - The Spot Fleet is canceled and its Spot Instances are terminating. 
+         
+        * ``expired`` - The Spot Fleet request has expired. A subsequent event indicates that the instances were terminated, if the request was created with ``TerminateInstancesWithExpiration`` set. 
+         
+        * ``modify_in_progress`` - A request to modify the Spot Fleet request was accepted and is in progress. 
+         
+        * ``modify_successful`` - The Spot Fleet request was modified. 
+         
+        * ``price_update`` - The price for a launch configuration was adjusted because it was too high. This change is permanent. 
+         
+        * ``submitted`` - The Spot Fleet request is being evaluated and Amazon EC2 is preparing to launch the target number of Spot Instances. 
+         
+
+         
+
+        The following are the ``instanceChange`` events:
+
+         
+
+         
+        * ``launched`` - A request was fulfilled and a new instance was launched. 
+         
+        * ``terminated`` - An instance was terminated by the user. 
+         
+
+         
+
+        The following are the ``Information`` events:
+
+         
+
+         
+        * ``launchSpecUnusable`` - The price in a launch specification is not valid because it is below the Spot price or the Spot price is above the On-Demand price. 
+         
+        * ``fleetProgressHalted`` - The price in every launch specification is not valid. A launch specification might become valid if the Spot price changes. 
+         
+
+        
+
+        
+
+      InstanceId -> (string)
+
+        
+
+        The ID of the instance. This information is available only for ``instanceChange`` events.
+
+        
+
+        
+
+      
+
+    EventType -> (string)
+
+      
+
+      The event type.
+
+      
+
+      
+
+    Timestamp -> (timestamp)
+
+      
+
+      The date and time of the event, in UTC format (for example, *YYYY* -*MM* -*DD* T*HH* :*MM* :*SS* Z).
+
+      
+
+      
+
+    
+
+  
+
+LastEvaluatedTime -> (timestamp)
+
+  
+
+  The last date and time for the events, in UTC format (for example, *YYYY* -*MM* -*DD* T*HH* :*MM* :*SS* Z). All records up to this time were retrieved.
+
+   
+
+  If ``nextToken`` indicates that there are more results, this value is not present.
+
+  
+
+  
+
+NextToken -> (string)
+
+  
+
+  The token for the next set of results.
+
+  
+
+  
+
+FleetId -> (string)
+
+  
+
+  The ID of the EC Fleet.
+
+  
+
+  
+
+StartTime -> (timestamp)
+
+  
+
+  The start date and time for the events, in UTC format (for example, *YYYY* -*MM* -*DD* T*HH* :*MM* :*SS* Z).
+
+  
+
+  
+

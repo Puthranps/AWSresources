@@ -1,0 +1,23 @@
+{
+    "ApplicationName": "",
+    "VersionLabel": "",
+    "Description": "",
+    "SourceBuildInformation": {
+        "SourceType": "Zip",
+        "SourceRepository": "CodeCommit",
+        "SourceLocation": ""
+    },
+    "SourceBundle": {
+        "S3Bucket": "",
+        "S3Key": ""
+    },
+    "BuildConfiguration": {
+        "ArtifactName": "",
+        "CodeBuildServiceRole": "",
+        "ComputeType": "BUILD_GENERAL1_SMALL",
+        "Image": "",
+        "TimeoutInMinutes": 0
+    },
+    "AutoCreateApplication": true,
+    "Process": true
+}

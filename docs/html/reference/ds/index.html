@@ -1,0 +1,255 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>ds &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="accept-shared-directory" href="../ds/accept-shared-directory.html" />
+    <link rel="prev" title="test-connection" href="../dms/test-connection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ds/accept-shared-directory.html" title="accept-shared-directory"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dms/test-connection.html" title="test-connection"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/test-connection.html" title="previous chapter (use the left arrow)">&larr; test-connection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ds/accept-shared-directory.html" title="next chapter (use the right arrow)">accept-shared-directory &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ds</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ds/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="ds">
+<span id="cli-aws-ds"></span><h1>ds<a class="headerlink" href="#ds" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS Directory Service is a web service that makes it easy for you to setup and run directories in the AWS cloud, or connect your AWS resources with an existing on-premises Microsoft Active Directory. This guide provides detailed information about AWS Directory Service operations, data types, parameters, and errors. For information about AWS Directory Services features, see <a class="reference external" href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a class="reference external" href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service Administration Guide</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">AWS provides SDKs that consist of libraries and sample code for various programming languages and platforms (Java, Ruby, .Net, iOS, Android, etc.). The SDKs provide a convenient way to create programmatic access to AWS Directory Service and other AWS services. For more information about the AWS SDKs, including how to download and install them, see <a class="reference external" href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a> .</p>
+</div>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ds/accept-shared-directory.html">accept-shared-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/add-ip-routes.html">add-ip-routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/add-tags-to-resource.html">add-tags-to-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/cancel-schema-extension.html">cancel-schema-extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/connect-directory.html">connect-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-alias.html">create-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-computer.html">create-computer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-conditional-forwarder.html">create-conditional-forwarder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-directory.html">create-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-log-subscription.html">create-log-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-microsoft-ad.html">create-microsoft-ad</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-snapshot.html">create-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/create-trust.html">create-trust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/delete-conditional-forwarder.html">delete-conditional-forwarder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/delete-directory.html">delete-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/delete-log-subscription.html">delete-log-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/delete-snapshot.html">delete-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/delete-trust.html">delete-trust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/deregister-event-topic.html">deregister-event-topic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-conditional-forwarders.html">describe-conditional-forwarders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-directories.html">describe-directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-domain-controllers.html">describe-domain-controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-event-topics.html">describe-event-topics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-shared-directories.html">describe-shared-directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-snapshots.html">describe-snapshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/describe-trusts.html">describe-trusts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/disable-radius.html">disable-radius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/disable-sso.html">disable-sso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/enable-radius.html">enable-radius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/enable-sso.html">enable-sso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/get-directory-limits.html">get-directory-limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/get-snapshot-limits.html">get-snapshot-limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/list-ip-routes.html">list-ip-routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/list-log-subscriptions.html">list-log-subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/list-schema-extensions.html">list-schema-extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/list-tags-for-resource.html">list-tags-for-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/register-event-topic.html">register-event-topic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/reject-shared-directory.html">reject-shared-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/remove-ip-routes.html">remove-ip-routes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/remove-tags-from-resource.html">remove-tags-from-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/reset-user-password.html">reset-user-password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/restore-from-snapshot.html">restore-from-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/share-directory.html">share-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/start-schema-extension.html">start-schema-extension</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/unshare-directory.html">unshare-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/update-conditional-forwarder.html">update-conditional-forwarder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/update-number-of-domain-controllers.html">update-number-of-domain-controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/update-radius.html">update-radius</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/update-trust.html">update-trust</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ds/verify-trust.html">verify-trust</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dms/test-connection.html" title="previous chapter (use the left arrow)">&larr; test-connection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ds/accept-shared-directory.html" title="next chapter (use the right arrow)">accept-shared-directory &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ds/accept-shared-directory.html" title="accept-shared-directory"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dms/test-connection.html" title="test-connection"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

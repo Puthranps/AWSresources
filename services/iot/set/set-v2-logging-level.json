@@ -1,0 +1,7 @@
+{
+    "logTarget": {
+        "targetType": "THING_GROUP",
+        "targetName": ""
+    },
+    "logLevel": "WARN"
+}

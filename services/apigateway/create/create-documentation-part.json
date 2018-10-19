@@ -1,0 +1,11 @@
+{
+    "restApiId": "",
+    "location": {
+        "type": "PATH_PARAMETER",
+        "path": "",
+        "method": "",
+        "statusCode": "",
+        "name": ""
+    },
+    "properties": ""
+}

@@ -1,0 +1,231 @@
+[ :ref:`aws <cli:aws>` . :ref:`rds <cli:aws rds>` ]
+
+.. _cli:aws rds modify-db-subnet-group:
+
+
+**********************
+modify-db-subnet-group
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the AWS Region.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBSubnetGroup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    modify-db-subnet-group
+  --db-subnet-group-name <value>
+  [--db-subnet-group-description <value>]
+  --subnet-ids <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--db-subnet-group-name`` (string)
+
+
+  The name for the DB subnet group. This value is stored as a lowercase string. You can't modify the default subnet group. 
+
+   
+
+  Constraints: Must match the name of an existing DBSubnetGroup. Must not be default.
+
+   
+
+  Example: ``mySubnetgroup``  
+
+  
+
+``--db-subnet-group-description`` (string)
+
+
+  The description for the DB subnet group.
+
+  
+
+``--subnet-ids`` (list)
+
+
+  The EC2 subnet IDs for the DB subnet group.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+DBSubnetGroup -> (structure)
+
+  
+
+  Contains the details of an Amazon RDS DB subnet group. 
+
+   
+
+  This data type is used as a response element in the  DescribeDBSubnetGroups action. 
+
+  
+
+  DBSubnetGroupName -> (string)
+
+    
+
+    The name of the DB subnet group.
+
+    
+
+    
+
+  DBSubnetGroupDescription -> (string)
+
+    
+
+    Provides the description of the DB subnet group.
+
+    
+
+    
+
+  VpcId -> (string)
+
+    
+
+    Provides the VpcId of the DB subnet group.
+
+    
+
+    
+
+  SubnetGroupStatus -> (string)
+
+    
+
+    Provides the status of the DB subnet group.
+
+    
+
+    
+
+  Subnets -> (list)
+
+    
+
+    Contains a list of  Subnet elements. 
+
+    
+
+    (structure)
+
+      
+
+      This data type is used as a response element in the  DescribeDBSubnetGroups action. 
+
+      
+
+      SubnetIdentifier -> (string)
+
+        
+
+        Specifies the identifier of the subnet.
+
+        
+
+        
+
+      SubnetAvailabilityZone -> (structure)
+
+        
+
+        Contains Availability Zone information.
+
+         
+
+        This data type is used as an element in the following data type:
+
+         
+
+         
+        *  OrderableDBInstanceOption   
+         
+
+        
+
+        Name -> (string)
+
+          
+
+          The name of the Availability Zone.
+
+          
+
+          
+
+        
+
+      SubnetStatus -> (string)
+
+        
+
+        Specifies the status of the subnet.
+
+        
+
+        
+
+      
+
+    
+
+  DBSubnetGroupArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) for the DB subnet group.
+
+    
+
+    
+
+  
+

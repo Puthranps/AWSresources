@@ -1,0 +1,10 @@
+{
+    "virtualInterfaceId": "",
+    "newBGPPeer": {
+        "asn": 0,
+        "authKey": "",
+        "addressFamily": "ipv6",
+        "amazonAddress": "",
+        "customerAddress": ""
+    }
+}

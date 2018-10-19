@@ -1,0 +1,18 @@
+{
+    "SizeConstraintSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "SizeConstraint": {
+                "FieldToMatch": {
+                    "Type": "HEADER",
+                    "Data": ""
+                },
+                "TextTransformation": "NONE",
+                "ComparisonOperator": "NE",
+                "Size": 0
+            }
+        }
+    ]
+}

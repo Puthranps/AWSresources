@@ -1,0 +1,337 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-key &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="kms" href="../kms/index.html" />
+    <link rel="next" title="decrypt" href="../kms/decrypt.html" />
+    <link rel="prev" title="create-grant" href="../kms/create-grant.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../kms/decrypt.html" title="decrypt"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../kms/create-grant.html" title="create-grant"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../kms/index.html" accesskey="U">kms</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kms/create-grant.html" title="previous chapter (use the left arrow)">&larr; create-grant</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../kms/decrypt.html" title="next chapter (use the right arrow)">decrypt &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-key</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/kms/create-key">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../kms/index.html#cli-aws-kms"><em>kms</em></a> ]</p>
+<div class="section" id="create-key">
+<span id="cli-aws-kms-create-key"></span><h1>create-key<a class="headerlink" href="#create-key" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a customer master key (CMK) in the caller's AWS account.</p>
+<p>You can use a CMK to encrypt small amounts of data (4 KiB or less) directly. But CMKs are more commonly used to encrypt data encryption keys (DEKs), which are used to encrypt raw data. For more information about DEKs and the difference between CMKs and DEKs, see the following:</p>
+<ul class="simple">
+<li>The  GenerateDataKey operation</li>
+<li><a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">AWS Key Management Service Concepts</a> in the <em>AWS Key Management Service Developer Guide</em></li>
+</ul>
+<p>You cannot use this operation to create a CMK in a different AWS account.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/CreateKey">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-key
+[--policy &lt;value&gt;]
+[--description &lt;value&gt;]
+[--key-usage &lt;value&gt;]
+[--origin &lt;value&gt;]
+[--bypass-policy-lockout-safety-check | --no-bypass-policy-lockout-safety-check]
+[--tags &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--policy</span></tt> (string)</p>
+<blockquote>
+<div><p>The key policy to attach to the CMK.</p>
+<p>If you provide a key policy, it must meet the following criteria:</p>
+<ul class="simple">
+<li>If you don't set <tt class="docutils literal"><span class="pre">BypassPolicyLockoutSafetyCheck</span></tt> to true, the key policy must allow the principal that is making the <tt class="docutils literal"><span class="pre">CreateKey</span></tt> request to make a subsequent  PutKeyPolicy request on the CMK. This reduces the risk that the CMK becomes unmanageable. For more information, refer to the scenario in the <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <em>AWS Key Management Service Developer Guide</em> .</li>
+<li>Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to AWS KMS. When you create a new AWS principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy. The reason for this is that the new principal might not be immediately visible to AWS KMS. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <em>AWS Identity and Access Management User Guide</em> .</li>
+</ul>
+<p>If you do not provide a key policy, AWS KMS attaches a default key policy to the CMK. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default Key Policy</a> in the <em>AWS Key Management Service Developer Guide</em> .</p>
+<p>The key policy size limit is 32 kilobytes (32768 bytes).</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div><p>A description of the CMK.</p>
+<p>Use a description that helps you decide whether the CMK is appropriate for a task.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--key-usage</span></tt> (string)</p>
+<blockquote>
+<div><p>The intended use of the CMK.</p>
+<p>You can use CMKs only for symmetric encryption and decryption.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ENCRYPT_DECRYPT</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--origin</span></tt> (string)</p>
+<blockquote>
+<div><p>The source of the CMK's key material.</p>
+<p>The default is <tt class="docutils literal"><span class="pre">AWS_KMS</span></tt> , which means AWS KMS creates the key material. When this parameter is set to <tt class="docutils literal"><span class="pre">EXTERNAL</span></tt> , the request creates a CMK without key material so that you can import key material from your existing key management infrastructure. For more information about importing key material into AWS KMS, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <em>AWS Key Management Service Developer Guide</em> .</p>
+<p>The CMK's <tt class="docutils literal"><span class="pre">Origin</span></tt> is immutable and is set when the CMK is created.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AWS_KMS</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">EXTERNAL</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--bypass-policy-lockout-safety-check</span></tt> | <tt class="docutils literal"><span class="pre">--no-bypass-policy-lockout-safety-check</span></tt> (boolean)</p>
+<blockquote>
+<div><p>A flag to indicate whether to bypass the key policy lockout safety check.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Setting this value to true increases the risk that the CMK becomes unmanageable. Do not set this value to true indiscriminately.</p>
+<p class="last">For more information, refer to the scenario in the <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section in the <em>AWS Key Management Service Developer Guide</em> .</p>
+</div>
+<p>Use this parameter only when you include a policy in the request and you intend to prevent the principal that is making the request from making a subsequent  PutKeyPolicy request on the CMK.</p>
+<p>The default value is false.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more tags. Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty (null) strings.</p>
+<p>Use this parameter to tag the CMK when it is created. Alternately, you can omit this parameter and instead tag the CMK after it is created using  TagResource .</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>TagKey=string,TagValue=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;TagKey&quot;: &quot;string&quot;,
+    &quot;TagValue&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>KeyMetadata -&gt; (structure)</p>
+<blockquote>
+<div><p>Metadata associated with the CMK.</p>
+<p>AWSAccountId -&gt; (string)</p>
+<blockquote>
+<div>The twelve-digit account ID of the AWS account that owns the CMK.</div></blockquote>
+<p>KeyId -&gt; (string)</p>
+<blockquote>
+<div>The globally unique identifier for the CMK.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the CMK. For examples, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-kms">AWS Key Management Service (AWS KMS)</a> in the Example ARNs section of the <em>AWS General Reference</em> .</div></blockquote>
+<p>CreationDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time when the CMK was created.</div></blockquote>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the CMK is enabled. When <tt class="docutils literal"><span class="pre">KeyState</span></tt> is <tt class="docutils literal"><span class="pre">Enabled</span></tt> this value is true, otherwise it is false.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description of the CMK.</div></blockquote>
+<p>KeyUsage -&gt; (string)</p>
+<blockquote>
+<div>The cryptographic operations for which you can use the CMK. Currently the only allowed value is <tt class="docutils literal"><span class="pre">ENCRYPT_DECRYPT</span></tt> , which means you can use the CMK for the  Encrypt and  Decrypt operations.</div></blockquote>
+<p>KeyState -&gt; (string)</p>
+<blockquote>
+<div><p>The state of the CMK.</p>
+<p>For more information about how key state affects the use of a CMK, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">How Key State Affects the Use of a Customer Master Key</a> in the <em>AWS Key Management Service Developer Guide</em> .</p>
+</div></blockquote>
+<p>DeletionDate -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time after which AWS KMS deletes the CMK. This value is present only when <tt class="docutils literal"><span class="pre">KeyState</span></tt> is <tt class="docutils literal"><span class="pre">PendingDeletion</span></tt> , otherwise this value is omitted.</div></blockquote>
+<p>ValidTo -&gt; (timestamp)</p>
+<blockquote>
+<div>The time at which the imported key material expires. When the key material expires, AWS KMS deletes the key material and the CMK becomes unusable. This value is present only for CMKs whose <tt class="docutils literal"><span class="pre">Origin</span></tt> is <tt class="docutils literal"><span class="pre">EXTERNAL</span></tt> and whose <tt class="docutils literal"><span class="pre">ExpirationModel</span></tt> is <tt class="docutils literal"><span class="pre">KEY_MATERIAL_EXPIRES</span></tt> , otherwise this value is omitted.</div></blockquote>
+<p>Origin -&gt; (string)</p>
+<blockquote>
+<div>The source of the CMK's key material. When this value is <tt class="docutils literal"><span class="pre">AWS_KMS</span></tt> , AWS KMS created the key material. When this value is <tt class="docutils literal"><span class="pre">EXTERNAL</span></tt> , the key material was imported from your existing key management infrastructure or the CMK lacks key material.</div></blockquote>
+<p>ExpirationModel -&gt; (string)</p>
+<blockquote>
+<div>Specifies whether the CMK's key material expires. This value is present only when <tt class="docutils literal"><span class="pre">Origin</span></tt> is <tt class="docutils literal"><span class="pre">EXTERNAL</span></tt> , otherwise this value is omitted.</div></blockquote>
+<p>KeyManager -&gt; (string)</p>
+<blockquote>
+<div>The CMK's manager. CMKs are either customer managed or AWS managed. For more information about the difference, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer Master Keys</a> in the <em>AWS Key Management Service Developer Guide</em> .</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kms/create-grant.html" title="previous chapter (use the left arrow)">&larr; create-grant</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../kms/decrypt.html" title="next chapter (use the right arrow)">decrypt &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../kms/decrypt.html" title="decrypt"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../kms/create-grant.html" title="create-grant"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../kms/index.html" >kms</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

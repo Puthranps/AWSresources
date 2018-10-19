@@ -1,0 +1,11 @@
+{
+    "AutoScalingGroupName": "",
+    "PolicyNames": [
+        ""
+    ],
+    "PolicyTypes": [
+        ""
+    ],
+    "NextToken": "",
+    "MaxRecords": 0
+}

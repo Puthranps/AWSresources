@@ -1,0 +1,12 @@
+{
+    "SamplingStatisticsDocuments": [
+        {
+            "RuleName": "",
+            "ClientID": "",
+            "Timestamp": "1970-01-01T00:00:00",
+            "RequestCount": 0,
+            "SampledCount": 0,
+            "BorrowCount": 0
+        }
+    ]
+}

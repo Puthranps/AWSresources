@@ -1,0 +1,7 @@
+{
+    "DisableAutomatedBackup": true,
+    "BackupRetentionCount": 0,
+    "ServerName": "",
+    "PreferredMaintenanceWindow": "",
+    "PreferredBackupWindow": ""
+}

@@ -1,0 +1,16 @@
+{
+    "SqlInjectionMatchSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "SqlInjectionMatchTuple": {
+                "FieldToMatch": {
+                    "Type": "URI",
+                    "Data": ""
+                },
+                "TextTransformation": "COMPRESS_WHITE_SPACE"
+            }
+        }
+    ]
+}

@@ -1,0 +1,8 @@
+{
+    "HostedZoneId": "",
+    "RecordName": "",
+    "RecordType": "SRV",
+    "ResolverIP": "",
+    "EDNS0ClientSubnetIP": "",
+    "EDNS0ClientSubnetMask": ""
+}

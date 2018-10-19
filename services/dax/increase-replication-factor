@@ -1,0 +1,7 @@
+{
+    "ClusterName": "",
+    "NewReplicationFactor": 0,
+    "AvailabilityZones": [
+        ""
+    ]
+}

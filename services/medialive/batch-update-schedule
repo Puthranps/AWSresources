@@ -1,0 +1,75 @@
+{
+    "ChannelId": "",
+    "Creates": {
+        "ScheduleActions": [
+            {
+                "ActionName": "",
+                "ScheduleActionSettings": {
+                    "Scte35ReturnToNetworkSettings": {
+                        "SpliceEventId": 0
+                    },
+                    "Scte35SpliceInsertSettings": {
+                        "Duration": 0,
+                        "SpliceEventId": 0
+                    },
+                    "Scte35TimeSignalSettings": {
+                        "Scte35Descriptors": [
+                            {
+                                "Scte35DescriptorSettings": {
+                                    "SegmentationDescriptorScte35DescriptorSettings": {
+                                        "DeliveryRestrictions": {
+                                            "ArchiveAllowedFlag": "ARCHIVE_ALLOWED",
+                                            "DeviceRestrictions": "RESTRICT_GROUP0",
+                                            "NoRegionalBlackoutFlag": "NO_REGIONAL_BLACKOUT",
+                                            "WebDeliveryAllowedFlag": "WEB_DELIVERY_NOT_ALLOWED"
+                                        },
+                                        "SegmentNum": 0,
+                                        "SegmentationCancelIndicator": "SEGMENTATION_EVENT_CANCELED",
+                                        "SegmentationDuration": 0,
+                                        "SegmentationEventId": 0,
+                                        "SegmentationTypeId": 0,
+                                        "SegmentationUpid": "",
+                                        "SegmentationUpidType": 0,
+                                        "SegmentsExpected": 0,
+                                        "SubSegmentNum": 0,
+                                        "SubSegmentsExpected": 0
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "StaticImageActivateSettings": {
+                        "Duration": 0,
+                        "FadeIn": 0,
+                        "FadeOut": 0,
+                        "Height": 0,
+                        "Image": {
+                            "PasswordParam": "",
+                            "Uri": "",
+                            "Username": ""
+                        },
+                        "ImageX": 0,
+                        "ImageY": 0,
+                        "Layer": 0,
+                        "Opacity": 0,
+                        "Width": 0
+                    },
+                    "StaticImageDeactivateSettings": {
+                        "FadeOut": 0,
+                        "Layer": 0
+                    }
+                },
+                "ScheduleActionStartSettings": {
+                    "FixedModeScheduleActionStartSettings": {
+                        "Time": ""
+                    }
+                }
+            }
+        ]
+    },
+    "Deletes": {
+        "ActionNames": [
+            ""
+        ]
+    }
+}

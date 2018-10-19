@@ -1,0 +1,386 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-inventory &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ssm" href="../ssm/index.html" />
+    <link rel="next" title="get-inventory-schema" href="../ssm/get-inventory-schema.html" />
+    <link rel="prev" title="get-document" href="../ssm/get-document.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/get-inventory-schema.html" title="get-inventory-schema"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/get-document.html" title="get-document"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" accesskey="U">ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/get-document.html" title="previous chapter (use the left arrow)">&larr; get-document</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/get-inventory-schema.html" title="next chapter (use the right arrow)">get-inventory-schema &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-inventory</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/get-inventory">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ssm/index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="get-inventory">
+<span id="cli-aws-ssm-get-inventory"></span><h1>get-inventory<a class="headerlink" href="#get-inventory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Query inventory information.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetInventory">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-inventory
+[--filters &lt;value&gt;]
+[--aggregators &lt;value&gt;]
+[--result-attributes &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div>One or more filters. Use a filter to return a more specific list of results.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Values=string,string,Type=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Values&quot;: [&quot;string&quot;, ...],
+    &quot;Type&quot;: &quot;Equal&quot;|&quot;NotEqual&quot;|&quot;BeginWith&quot;|&quot;LessThan&quot;|&quot;GreaterThan&quot;|&quot;Exists&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--aggregators</span></tt> (list)</p>
+<blockquote>
+<div>Returns counts of inventory types based on one or more expressions. For example, if you aggregate by using an expression that uses the <tt class="docutils literal"><span class="pre">AWS:InstanceInformation.PlatformType</span></tt> type, you can see a count of how many Windows and Linux instances exist in your inventoried fleet.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Expression&quot;: &quot;string&quot;,
+    &quot;Aggregators&quot;: [
+      {
+        &quot;Expression&quot;: &quot;string&quot;,
+        &quot;Aggregators&quot;: ,
+        &quot;Groups&quot;: [
+          {
+            &quot;Name&quot;: &quot;string&quot;,
+            &quot;Filters&quot;: [
+              {
+                &quot;Key&quot;: &quot;string&quot;,
+                &quot;Values&quot;: [&quot;string&quot;, ...],
+                &quot;Type&quot;: &quot;Equal&quot;|&quot;NotEqual&quot;|&quot;BeginWith&quot;|&quot;LessThan&quot;|&quot;GreaterThan&quot;|&quot;Exists&quot;
+              }
+              ...
+            ]
+          }
+          ...
+        ]
+      }
+      ...
+    ],
+    &quot;Groups&quot;: [
+      {
+        &quot;Name&quot;: &quot;string&quot;,
+        &quot;Filters&quot;: [
+          {
+            &quot;Key&quot;: &quot;string&quot;,
+            &quot;Values&quot;: [&quot;string&quot;, ...],
+            &quot;Type&quot;: &quot;Equal&quot;|&quot;NotEqual&quot;|&quot;BeginWith&quot;|&quot;LessThan&quot;|&quot;GreaterThan&quot;|&quot;Exists&quot;
+          }
+          ...
+        ]
+      }
+      ...
+    ]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--result-attributes</span></tt> (list)</p>
+<blockquote>
+<div>The list of inventory item types to return.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>TypeName=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;TypeName&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of items to return. (You received this token from a previous call.)</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To view your inventory</strong></p>
+<p>This example gets the custom metadata for your inventory.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm get-inventory</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Entities&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;Data&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;AWS:InstanceInformation&quot;</span><span class="p">:</span> <span class="p">{</span>
+                  <span class="s2">&quot;Content&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                          <span class="s2">&quot;ComputerName&quot;</span><span class="p">:</span> <span class="s2">&quot;ip-172-31-44-222.us-west-2.compute.internal&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span> <span class="s2">&quot;i-0cb2b964d3e14fd9f&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;IpAddress&quot;</span><span class="p">:</span> <span class="s2">&quot;172.31.44.222&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;AgentType&quot;</span><span class="p">:</span> <span class="s2">&quot;amazon-ssm-agent&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;ResourceType&quot;</span><span class="p">:</span> <span class="s2">&quot;EC2Instance&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;AgentVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2.0.672.0&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;PlatformVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;2016.09&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;PlatformName&quot;</span><span class="p">:</span> <span class="s2">&quot;Amazon Linux AMI&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;PlatformType&quot;</span><span class="p">:</span> <span class="s2">&quot;Linux&quot;</span>
+                      <span class="p">}</span>
+                  <span class="p">],</span>
+                  <span class="s2">&quot;TypeName&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS:InstanceInformation&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;SchemaVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;CaptureTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-20T18:03:58Z&quot;</span>
+              <span class="p">}</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;i-0cb2b964d3e14fd9f&quot;</span>
+      <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Entities -&gt; (list)</p>
+<blockquote>
+<div><p>Collection of inventory entities such as a collection of instance inventory.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Inventory query results.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>ID of the inventory result entity. For example, for managed instance inventory the result will be the managed instance ID. For EC2 instance inventory, the result will be the instance ID.</div></blockquote>
+<p>Data -&gt; (map)</p>
+<blockquote>
+<div><p>The data section in the inventory result entity JSON.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (structure)</p>
+<blockquote>
+<div><p>The inventory result item.</p>
+<p>TypeName -&gt; (string)</p>
+<blockquote>
+<div>The name of the inventory result item type.</div></blockquote>
+<p>SchemaVersion -&gt; (string)</p>
+<blockquote>
+<div>The schema version for the inventory result item/</div></blockquote>
+<p>CaptureTime -&gt; (string)</p>
+<blockquote>
+<div>The time inventory item data was captured.</div></blockquote>
+<p>ContentHash -&gt; (string)</p>
+<blockquote>
+<div>MD5 hash of the inventory item type contents. The content hash is used to determine whether to update inventory information. The PutInventory API does not update the inventory item type contents if the MD5 hash has not changed since last update.</div></blockquote>
+<p>Content -&gt; (list)</p>
+<blockquote>
+<div><p>Contains all the inventory data of the item type. Results include attribute names and values.</p>
+<p>(map)</p>
+<blockquote>
+<div><p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/get-document.html" title="previous chapter (use the left arrow)">&larr; get-document</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/get-inventory-schema.html" title="next chapter (use the right arrow)">get-inventory-schema &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/get-inventory-schema.html" title="get-inventory-schema"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/get-document.html" title="get-document"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" >ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

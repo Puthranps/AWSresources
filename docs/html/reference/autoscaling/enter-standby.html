@@ -1,0 +1,295 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>enter-standby &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="autoscaling" href="../autoscaling/index.html" />
+    <link rel="next" title="execute-policy" href="../autoscaling/execute-policy.html" />
+    <link rel="prev" title="enable-metrics-collection" href="../autoscaling/enable-metrics-collection.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../autoscaling/execute-policy.html" title="execute-policy"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../autoscaling/enable-metrics-collection.html" title="enable-metrics-collection"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../autoscaling/index.html" accesskey="U">autoscaling</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../autoscaling/enable-metrics-collection.html" title="previous chapter (use the left arrow)">&larr; enable-metrics-collection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling/execute-policy.html" title="next chapter (use the right arrow)">execute-policy &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">enter-standby</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/autoscaling/enter-standby">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../autoscaling/index.html#cli-aws-autoscaling"><em>autoscaling</em></a> ]</p>
+<div class="section" id="enter-standby">
+<span id="cli-aws-autoscaling-enter-standby"></span><h1>enter-standby<a class="headerlink" href="#enter-standby" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Moves the specified instances into the standby state.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enter-exit-standby.html">Temporarily Removing Instances from Your Auto Scaling Group</a> in the <em>Amazon EC2 Auto Scaling User Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/EnterStandby">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  enter-standby
+[--instance-ids &lt;value&gt;]
+--auto-scaling-group-name &lt;value&gt;
+--should-decrement-desired-capacity | --no-should-decrement-desired-capacity
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--instance-ids</span></tt> (list)</p>
+<blockquote>
+<div>The IDs of the instances. You can specify up to 20 instances.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Auto Scaling group.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--should-decrement-desired-capacity</span></tt> | <tt class="docutils literal"><span class="pre">--no-should-decrement-desired-capacity</span></tt> (boolean)</p>
+<blockquote>
+<div>Indicates whether to decrement the desired capacity of the Auto Scaling group by the number of instances moved to <tt class="docutils literal"><span class="pre">Standby</span></tt> mode.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To move instances into standby mode</strong></p>
+<p>This example puts the specified instance into standby mode:</p>
+<div class="highlight-python"><pre>aws autoscaling enter-standby --instance-ids i-93633f9b --auto-scaling-group-name my-auto-scaling-group --should-decrement-desired-capacity</pre>
+</div>
+<p>The following is example output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;Activities&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Moving EC2 instance to Standby: i-93633f9b&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AutoScalingGroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-auto-scaling-group&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ActivityId&quot;</span><span class="p">:</span> <span class="s2">&quot;ffa056b4-6ed3-41ba-ae7c-249dfae6eba1&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Details&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;Availability Zone&quot;</span><span class="p">:</span> <span class="s2">&quot;us-west-2a&quot;</span><span class="p">},</span>
+            <span class="s2">&quot;StartTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-04-12T15:10:23.640Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Progress&quot;</span><span class="p">:</span> <span class="mi">50</span><span class="p">,</span>
+            <span class="s2">&quot;Cause&quot;</span><span class="p">:</span> <span class="s2">&quot;At 2015-04-12T15:10:23Z instance i-93633f9b was moved to standby in response to a user request, shrinking the capacity from 2 to 1.&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StatusCode&quot;</span><span class="p">:</span> <span class="s2">&quot;InProgress&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Activities -&gt; (list)</p>
+<blockquote>
+<div><p>The activities related to moving instances into <tt class="docutils literal"><span class="pre">Standby</span></tt> mode.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes scaling activity, which is a long-running process that represents a change to your Auto Scaling group, such as changing its size or replacing an instance.</p>
+<p>ActivityId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the activity.</div></blockquote>
+<p>AutoScalingGroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Auto Scaling group.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A friendly, more verbose description of the activity.</div></blockquote>
+<p>Cause -&gt; (string)</p>
+<blockquote>
+<div>The reason the activity began.</div></blockquote>
+<p>StartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start time of the activity.</div></blockquote>
+<p>EndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The end time of the activity.</div></blockquote>
+<p>StatusCode -&gt; (string)</p>
+<blockquote>
+<div>The current status of the activity.</div></blockquote>
+<p>StatusMessage -&gt; (string)</p>
+<blockquote>
+<div>A friendly, more verbose description of the activity status.</div></blockquote>
+<p>Progress -&gt; (integer)</p>
+<blockquote>
+<div>A value between 0 and 100 that indicates the progress of the activity.</div></blockquote>
+<p>Details -&gt; (string)</p>
+<blockquote>
+<div>The details about the activity.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../autoscaling/enable-metrics-collection.html" title="previous chapter (use the left arrow)">&larr; enable-metrics-collection</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling/execute-policy.html" title="next chapter (use the right arrow)">execute-policy &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../autoscaling/execute-policy.html" title="execute-policy"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../autoscaling/enable-metrics-collection.html" title="enable-metrics-collection"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../autoscaling/index.html" >autoscaling</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

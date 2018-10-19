@@ -1,0 +1,13 @@
+{
+    "NextToken": "",
+    "MaxResults": 0,
+    "Filters": [
+        {
+            "Name": "TYPE",
+            "Values": [
+                ""
+            ],
+            "Condition": "EQ"
+        }
+    ]
+}

@@ -1,0 +1,52 @@
+[ :ref:`aws <cli:aws>` . :ref:`servicecatalog <cli:aws servicecatalog>` ]
+
+.. _cli:aws servicecatalog generate:
+
+
+********
+generate
+********
+
+
+
+===========
+Description
+===========
+
+Generate a Service Catalog product or provisioning artifact using a CloudFormation template specified as a local file path
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    generate
+
+
+
+
+=======
+Options
+=======
+
+*None*
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  product
+  provisioning-artifact

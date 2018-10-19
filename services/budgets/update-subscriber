@@ -1,0 +1,18 @@
+{
+    "AccountId": "",
+    "BudgetName": "",
+    "Notification": {
+        "NotificationType": "ACTUAL",
+        "ComparisonOperator": "EQUAL_TO",
+        "Threshold": null,
+        "ThresholdType": "PERCENTAGE"
+    },
+    "OldSubscriber": {
+        "SubscriptionType": "EMAIL",
+        "Address": ""
+    },
+    "NewSubscriber": {
+        "SubscriptionType": "SNS",
+        "Address": ""
+    }
+}

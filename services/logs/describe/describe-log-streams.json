@@ -1,0 +1,8 @@
+{
+    "logGroupName": "",
+    "logStreamNamePrefix": "",
+    "orderBy": "LastEventTime",
+    "descending": true,
+    "nextToken": "",
+    "limit": 0
+}

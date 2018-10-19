@@ -1,0 +1,490 @@
+[ :ref:`aws <cli:aws>` . :ref:`rds <cli:aws rds>` ]
+
+.. _cli:aws rds describe-db-engine-versions:
+
+
+***************************
+describe-db-engine-versions
+***************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns a list of the available DB engines.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBEngineVersions>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``describe-db-engine-versions`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``DBEngineVersions``
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-db-engine-versions
+  [--engine <value>]
+  [--engine-version <value>]
+  [--db-parameter-group-family <value>]
+  [--filters <value>]
+  [--default-only | --no-default-only]
+  [--list-supported-character-sets | --no-list-supported-character-sets]
+  [--list-supported-timezones | --no-list-supported-timezones]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--engine`` (string)
+
+
+  The database engine to return.
+
+  
+
+``--engine-version`` (string)
+
+
+  The database engine version to return.
+
+   
+
+  Example: ``5.1.49``  
+
+  
+
+``--db-parameter-group-family`` (string)
+
+
+  The name of a specific DB parameter group family to return details for.
+
+   
+
+  Constraints:
+
+   
+
+   
+  * If supplied, must match an existing DBParameterGroupFamily. 
+   
+
+  
+
+``--filters`` (list)
+
+
+  This parameter is not currently supported.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--default-only`` | ``--no-default-only`` (boolean)
+
+
+  Indicates that only the default version of the specified engine or engine and major version combination is returned.
+
+  
+
+``--list-supported-character-sets`` | ``--no-list-supported-character-sets`` (boolean)
+
+
+  If this parameter is specified and the requested engine supports the ``CharacterSetName`` parameter for ``CreateDBInstance`` , the response includes a list of supported character sets for each engine version. 
+
+  
+
+``--list-supported-timezones`` | ``--no-list-supported-timezones`` (boolean)
+
+
+  If this parameter is specified and the requested engine supports the ``TimeZone`` parameter for ``CreateDBInstance`` , the response includes a list of supported time zones for each engine version. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Marker -> (string)
+
+  
+
+  An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by ``MaxRecords`` . 
+
+  
+
+  
+
+DBEngineVersions -> (list)
+
+  
+
+  A list of ``DBEngineVersion`` elements. 
+
+  
+
+  (structure)
+
+    
+
+    This data type is used as a response element in the action  DescribeDBEngineVersions . 
+
+    
+
+    Engine -> (string)
+
+      
+
+      The name of the database engine.
+
+      
+
+      
+
+    EngineVersion -> (string)
+
+      
+
+      The version number of the database engine.
+
+      
+
+      
+
+    DBParameterGroupFamily -> (string)
+
+      
+
+      The name of the DB parameter group family for the database engine.
+
+      
+
+      
+
+    DBEngineDescription -> (string)
+
+      
+
+      The description of the database engine.
+
+      
+
+      
+
+    DBEngineVersionDescription -> (string)
+
+      
+
+      The description of the database engine version.
+
+      
+
+      
+
+    DefaultCharacterSet -> (structure)
+
+      
+
+      The default character set for new instances of this engine version, if the ``CharacterSetName`` parameter of the CreateDBInstance API is not specified. 
+
+      
+
+      CharacterSetName -> (string)
+
+        
+
+        The name of the character set.
+
+        
+
+        
+
+      CharacterSetDescription -> (string)
+
+        
+
+        The description of the character set.
+
+        
+
+        
+
+      
+
+    SupportedCharacterSets -> (list)
+
+      
+
+      A list of the character sets supported by this engine for the ``CharacterSetName`` parameter of the ``CreateDBInstance`` action. 
+
+      
+
+      (structure)
+
+        
+
+        This data type is used as a response element in the action  DescribeDBEngineVersions . 
+
+        
+
+        CharacterSetName -> (string)
+
+          
+
+          The name of the character set.
+
+          
+
+          
+
+        CharacterSetDescription -> (string)
+
+          
+
+          The description of the character set.
+
+          
+
+          
+
+        
+
+      
+
+    ValidUpgradeTarget -> (list)
+
+      
+
+      A list of engine versions that this database engine version can be upgraded to.
+
+      
+
+      (structure)
+
+        
+
+        The version of the database engine that a DB instance can be upgraded to.
+
+        
+
+        Engine -> (string)
+
+          
+
+          The name of the upgrade target database engine.
+
+          
+
+          
+
+        EngineVersion -> (string)
+
+          
+
+          The version number of the upgrade target database engine.
+
+          
+
+          
+
+        Description -> (string)
+
+          
+
+          The version of the database engine that a DB instance can be upgraded to.
+
+          
+
+          
+
+        AutoUpgrade -> (boolean)
+
+          
+
+          A value that indicates whether the target version is applied to any source DB instances that have AutoMinorVersionUpgrade set to true.
+
+          
+
+          
+
+        IsMajorVersionUpgrade -> (boolean)
+
+          
+
+          A value that indicates whether a database engine is upgraded to a major version.
+
+          
+
+          
+
+        
+
+      
+
+    SupportedTimezones -> (list)
+
+      
+
+      A list of the time zones supported by this engine for the ``Timezone`` parameter of the ``CreateDBInstance`` action. 
+
+      
+
+      (structure)
+
+        
+
+        A time zone associated with a  DBInstance or a  DBSnapshot . This data type is an element in the response to the  DescribeDBInstances , the  DescribeDBSnapshots , and the  DescribeDBEngineVersions actions. 
+
+        
+
+        TimezoneName -> (string)
+
+          
+
+          The name of the time zone.
+
+          
+
+          
+
+        
+
+      
+
+    ExportableLogTypes -> (list)
+
+      
+
+      The types of logs that the database engine has available for export to CloudWatch Logs.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    SupportsLogExportsToCloudwatchLogs -> (boolean)
+
+      
+
+      A value that indicates whether the engine version supports exporting the log types specified by ExportableLogTypes to CloudWatch Logs.
+
+      
+
+      
+
+    SupportsReadReplica -> (boolean)
+
+      
+
+      Indicates whether the database engine version supports read replicas.
+
+      
+
+      
+
+    SupportedEngineModes -> (list)
+
+      
+
+      A list of the supported DB engine modes.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  
+

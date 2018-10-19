@@ -1,0 +1,178 @@
+[ :ref:`aws <cli:aws>` . :ref:`acm-pca <cli:aws acm-pca>` ]
+
+.. _cli:aws acm-pca create-certificate-authority:
+
+
+****************************
+create-certificate-authority
+****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a private subordinate certificate authority (CA). You must specify the CA configuration, the revocation configuration, the CA type, and an optional idempotency token. The CA configuration specifies the name of the algorithm and key size to be used to create the CA private key, the type of signing algorithm that the CA uses to sign, and X.500 subject information. The CRL (certificate revocation list) configuration specifies the CRL expiration period in days (the validity period of the CRL), the Amazon S3 bucket that will contain the CRL, and a CNAME alias for the S3 bucket that is included in certificates issued by the CA. If successful, this operation returns the Amazon Resource Name (ARN) of the CA.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CreateCertificateAuthority>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-certificate-authority
+  --certificate-authority-configuration <value>
+  [--revocation-configuration <value>]
+  --certificate-authority-type <value>
+  [--idempotency-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--certificate-authority-configuration`` (structure)
+
+
+  Name and bit size of the private key algorithm, the name of the signing algorithm, and X.500 certificate subject information.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyAlgorithm=string,SigningAlgorithm=string,Subject={Country=string,Organization=string,OrganizationalUnit=string,DistinguishedNameQualifier=string,State=string,CommonName=string,SerialNumber=string,Locality=string,Title=string,Surname=string,GivenName=string,Initials=string,Pseudonym=string,GenerationQualifier=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "KeyAlgorithm": "RSA_2048"|"RSA_4096"|"EC_prime256v1"|"EC_secp384r1",
+    "SigningAlgorithm": "SHA256WITHECDSA"|"SHA384WITHECDSA"|"SHA512WITHECDSA"|"SHA256WITHRSA"|"SHA384WITHRSA"|"SHA512WITHRSA",
+    "Subject": {
+      "Country": "string",
+      "Organization": "string",
+      "OrganizationalUnit": "string",
+      "DistinguishedNameQualifier": "string",
+      "State": "string",
+      "CommonName": "string",
+      "SerialNumber": "string",
+      "Locality": "string",
+      "Title": "string",
+      "Surname": "string",
+      "GivenName": "string",
+      "Initials": "string",
+      "Pseudonym": "string",
+      "GenerationQualifier": "string"
+    }
+  }
+
+
+
+``--revocation-configuration`` (structure)
+
+
+  Contains a Boolean value that you can use to enable a certification revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA will write the CRL, and an optional CNAME alias that you can use to hide the name of your bucket in the **CRL Distribution Points** extension of your CA certificate. For more information, see the  CrlConfiguration structure. 
+
+  
+
+
+
+Shorthand Syntax::
+
+    CrlConfiguration={Enabled=boolean,ExpirationInDays=integer,CustomCname=string,S3BucketName=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "CrlConfiguration": {
+      "Enabled": true|false,
+      "ExpirationInDays": integer,
+      "CustomCname": "string",
+      "S3BucketName": "string"
+    }
+  }
+
+
+
+``--certificate-authority-type`` (string)
+
+
+  The type of the certificate authority. Currently, this must be **SUBORDINATE** .
+
+  
+
+  Possible values:
+
+  
+  *   ``SUBORDINATE``
+
+  
+
+  
+
+``--idempotency-token`` (string)
+
+
+  Alphanumeric string that can be used to distinguish between calls to **CreateCertificateAuthority** . Idempotency tokens time out after five minutes. Therefore, if you call **CreateCertificateAuthority** multiple times with the same idempotency token within a five minute period, ACM PCA recognizes that you are requesting only one certificate. As a result, ACM PCA issues only one. If you change the idempotency token for each call, however, ACM PCA recognizes that you are requesting multiple certificates.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create a private certificate authority**
+
+The ``create-certificate-authority`` command creates a private certificate authority in your AWS account::
+
+  aws acm-pca create-certificate-authority --certificate-authority-configuration file://C:\ca_config.txt --revocation-configuration file://C:\revoke_config.txt --certificate-authority-type "SUBORDINATE" --idempotency-token 98256344
+
+======
+Output
+======
+
+CertificateAuthorityArn -> (string)
+
+  
+
+  If successful, the Amazon Resource Name (ARN) of the certificate authority (CA). This is of the form: 
+
+   
+
+   ``arn:aws:acm-pca:*region* :*account* :certificate-authority/*12345678-1234-1234-1234-123456789012* `` . 
+
+  
+
+  
+

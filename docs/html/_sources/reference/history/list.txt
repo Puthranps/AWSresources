@@ -1,0 +1,39 @@
+[ :ref:`aws <cli:aws>` . :ref:`history <cli:aws history>` ]
+
+.. _cli:aws history list:
+
+
+****
+list
+****
+
+
+
+===========
+Description
+===========
+
+Shows a list of previously run commands and their command_ids. Each row shows only a bare minimum of details including the command_id, date, arguments and return code. You can use the ``history show`` with the command_id to see more details about a particular entry.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list
+
+
+
+
+=======
+Options
+=======
+
+*None*
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

@@ -1,0 +1,21 @@
+{
+    "ScalingPlanNames": [
+        ""
+    ],
+    "ScalingPlanVersion": 0,
+    "ApplicationSources": [
+        {
+            "CloudFormationStackARN": "",
+            "TagFilters": [
+                {
+                    "Key": "",
+                    "Values": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

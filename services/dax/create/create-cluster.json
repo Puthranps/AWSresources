@@ -1,0 +1,26 @@
+{
+    "ClusterName": "",
+    "NodeType": "",
+    "Description": "",
+    "ReplicationFactor": 0,
+    "AvailabilityZones": [
+        ""
+    ],
+    "SubnetGroupName": "",
+    "SecurityGroupIds": [
+        ""
+    ],
+    "PreferredMaintenanceWindow": "",
+    "NotificationTopicArn": "",
+    "IamRoleArn": "",
+    "ParameterGroupName": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "SSESpecification": {
+        "Enabled": true
+    }
+}

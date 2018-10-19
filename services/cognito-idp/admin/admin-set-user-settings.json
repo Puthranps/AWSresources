@@ -1,0 +1,10 @@
+{
+    "UserPoolId": "",
+    "Username": "",
+    "MFAOptions": [
+        {
+            "DeliveryMedium": "EMAIL",
+            "AttributeName": ""
+        }
+    ]
+}

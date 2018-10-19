@@ -1,0 +1,11 @@
+{
+    "cluster": "",
+    "attributes": [
+        {
+            "name": "",
+            "value": "",
+            "targetType": "container-instance",
+            "targetId": ""
+        }
+    ]
+}

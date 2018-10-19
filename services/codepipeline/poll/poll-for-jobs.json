@@ -1,0 +1,12 @@
+{
+    "actionTypeId": {
+        "category": "Build",
+        "owner": "AWS",
+        "provider": "",
+        "version": ""
+    },
+    "maxBatchSize": 0,
+    "queryParam": {
+        "KeyName": ""
+    }
+}

@@ -1,0 +1,55 @@
+{
+    "projectArn": "",
+    "appArn": "",
+    "devicePoolArn": "",
+    "name": "",
+    "test": {
+        "type": "APPIUM_JAVA_TESTNG",
+        "testPackageArn": "",
+        "testSpecArn": "",
+        "filter": "",
+        "parameters": {
+            "KeyName": ""
+        }
+    },
+    "configuration": {
+        "extraDataPackageArn": "",
+        "networkProfileArn": "",
+        "locale": "",
+        "location": {
+            "latitude": null,
+            "longitude": null
+        },
+        "vpceConfigurationArns": [
+            ""
+        ],
+        "customerArtifactPaths": {
+            "iosPaths": [
+                ""
+            ],
+            "androidPaths": [
+                ""
+            ],
+            "deviceHostPaths": [
+                ""
+            ]
+        },
+        "radios": {
+            "wifi": true,
+            "bluetooth": true,
+            "nfc": true,
+            "gps": true
+        },
+        "auxiliaryApps": [
+            ""
+        ],
+        "billingMethod": "METERED"
+    },
+    "executionConfiguration": {
+        "jobTimeoutMinutes": 0,
+        "accountsCleanup": true,
+        "appPackagesCleanup": true,
+        "videoCapture": true,
+        "skipAppResign": true
+    }
+}

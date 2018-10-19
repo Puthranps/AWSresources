@@ -1,0 +1,295 @@
+[ :ref:`aws <cli:aws>` . :ref:`appsync <cli:aws appsync>` ]
+
+.. _cli:aws appsync get-graphql-api:
+
+
+***************
+get-graphql-api
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a ``GraphqlApi`` object.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetGraphqlApi>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-graphql-api
+  --api-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--api-id`` (string)
+
+
+  The API ID for the GraphQL API.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+graphqlApi -> (structure)
+
+  
+
+  The ``GraphqlApi`` object.
+
+  
+
+  name -> (string)
+
+    
+
+    The API name.
+
+    
+
+    
+
+  apiId -> (string)
+
+    
+
+    The API ID.
+
+    
+
+    
+
+  authenticationType -> (string)
+
+    
+
+    The authentication type.
+
+    
+
+    
+
+  logConfig -> (structure)
+
+    
+
+    The Amazon CloudWatch Logs configuration.
+
+    
+
+    fieldLogLevel -> (string)
+
+      
+
+      The field logging level. Values can be NONE, ERROR, ALL. 
+
+       
+
+       
+      * **NONE** : No field-level logs are captured. 
+       
+      * **ERROR** : Logs the following information only for the fields that are in error: 
+
+         
+        * The error section in the server response. 
+         
+        * Field-level errors. 
+         
+        * The generated request/response functions that got resolved for error fields. 
+         
+
+       
+       
+      * **ALL** : The following information is logged for all fields in the query: 
+
+         
+        * Field-level tracing information. 
+         
+        * The generated request/response functions that got resolved for each field. 
+         
+
+       
+       
+
+      
+
+      
+
+    cloudWatchLogsRoleArn -> (string)
+
+      
+
+      The service role that AWS AppSync will assume to publish to Amazon CloudWatch logs in your account. 
+
+      
+
+      
+
+    
+
+  userPoolConfig -> (structure)
+
+    
+
+    The Amazon Cognito User Pool configuration.
+
+    
+
+    userPoolId -> (string)
+
+      
+
+      The user pool ID.
+
+      
+
+      
+
+    awsRegion -> (string)
+
+      
+
+      The AWS region in which the user pool was created.
+
+      
+
+      
+
+    defaultAction -> (string)
+
+      
+
+      The action that you want your GraphQL API to take when a request that uses Amazon Cognito User Pool authentication doesn't match the Amazon Cognito User Pool configuration.
+
+      
+
+      
+
+    appIdClientRegex -> (string)
+
+      
+
+      A regular expression for validating the incoming Amazon Cognito User Pool app client ID.
+
+      
+
+      
+
+    
+
+  openIDConnectConfig -> (structure)
+
+    
+
+    The Open Id Connect configuration.
+
+    
+
+    issuer -> (string)
+
+      
+
+      The issuer for the open id connect configuration. The issuer returned by discovery MUST exactly match the value of iss in the ID Token.
+
+      
+
+      
+
+    clientId -> (string)
+
+      
+
+      The client identifier of the Relying party at the OpenID Provider. This identifier is typically obtained when the Relying party is registered with the OpenID Provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time
+
+      
+
+      
+
+    iatTTL -> (long)
+
+      
+
+      The number of milliseconds a token is valid after being issued to a user.
+
+      
+
+      
+
+    authTTL -> (long)
+
+      
+
+      The number of milliseconds a token is valid after being authenticated.
+
+      
+
+      
+
+    
+
+  arn -> (string)
+
+    
+
+    The ARN.
+
+    
+
+    
+
+  uris -> (map)
+
+    
+
+    The URIs.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (string)
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,16 @@
+{
+    "AcceptLanguage": "",
+    "ProvisionedProductName": "",
+    "ProvisionedProductId": "",
+    "ProductId": "",
+    "ProvisioningArtifactId": "",
+    "PathId": "",
+    "ProvisioningParameters": [
+        {
+            "Key": "",
+            "Value": "",
+            "UsePreviousValue": true
+        }
+    ],
+    "UpdateToken": ""
+}

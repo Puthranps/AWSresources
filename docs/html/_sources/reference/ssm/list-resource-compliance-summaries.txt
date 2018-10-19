@@ -1,0 +1,403 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm list-resource-compliance-summaries:
+
+
+**********************************
+list-resource-compliance-summaries
+**********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListResourceComplianceSummaries>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-resource-compliance-summaries
+  [--filters <value>]
+  [--next-token <value>]
+  [--max-results <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--filters`` (list)
+
+
+  One or more filters. Use a filter to return a more specific list of results.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Values=string,string,Type=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Values": ["string", ...],
+      "Type": "EQUAL"|"NOT_EQUAL"|"BEGIN_WITH"|"LESS_THAN"|"GREATER_THAN"
+    }
+    ...
+  ]
+
+
+
+``--next-token`` (string)
+
+
+  A token to start the list. Use this token to get the next set of results. 
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ResourceComplianceSummaryItems -> (list)
+
+  
+
+  A summary count for specified or targeted managed instances. Summary count includes information about compliant and non-compliant State Manager associations, patch status, or custom items according to the filter criteria that you specify. 
+
+  
+
+  (structure)
+
+    
+
+    Compliance summary information for a specific resource. 
+
+    
+
+    ComplianceType -> (string)
+
+      
+
+      The compliance type.
+
+      
+
+      
+
+    ResourceType -> (string)
+
+      
+
+      The resource type.
+
+      
+
+      
+
+    ResourceId -> (string)
+
+      
+
+      The resource ID.
+
+      
+
+      
+
+    Status -> (string)
+
+      
+
+      The compliance status for the resource.
+
+      
+
+      
+
+    OverallSeverity -> (string)
+
+      
+
+      The highest severity item found for the resource. The resource is compliant for this item.
+
+      
+
+      
+
+    ExecutionSummary -> (structure)
+
+      
+
+      Information about the execution.
+
+      
+
+      ExecutionTime -> (timestamp)
+
+        
+
+        The time the execution ran as a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+
+        
+
+        
+
+      ExecutionId -> (string)
+
+        
+
+        An ID created by the system when ``PutComplianceItems`` was called. For example, ``CommandID`` is a valid execution ID. You can use this ID in subsequent calls.
+
+        
+
+        
+
+      ExecutionType -> (string)
+
+        
+
+        The type of execution. For example, ``Command`` is a valid execution type.
+
+        
+
+        
+
+      
+
+    CompliantSummary -> (structure)
+
+      
+
+      A list of items that are compliant for the resource.
+
+      
+
+      CompliantCount -> (integer)
+
+        
+
+        The total number of resources that are compliant.
+
+        
+
+        
+
+      SeveritySummary -> (structure)
+
+        
+
+        A summary of the compliance severity by compliance type.
+
+        
+
+        CriticalCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of critical. Critical severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        HighCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        MediumCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        LowCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        InformationalCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        UnspecifiedCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        
+
+      
+
+    NonCompliantSummary -> (structure)
+
+      
+
+      A list of items that aren't compliant for the resource.
+
+      
+
+      NonCompliantCount -> (integer)
+
+        
+
+        The total number of compliance items that are not compliant.
+
+        
+
+        
+
+      SeveritySummary -> (structure)
+
+        
+
+        A summary of the non-compliance severity by compliance type
+
+        
+
+        CriticalCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of critical. Critical severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        HighCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of high. High severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        MediumCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of medium. Medium severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        LowCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of low. Low severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        InformationalCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of informational. Informational severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        UnspecifiedCount -> (integer)
+
+          
+
+          The total number of resources or compliance items that have a severity level of unspecified. Unspecified severity is determined by the organization that published the compliance items.
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The token for the next set of items to return. Use this token to get the next set of results.
+
+  
+
+  
+

@@ -1,0 +1,169 @@
+[ :ref:`aws <cli:aws>` . :ref:`mediastore <cli:aws mediastore>` ]
+
+.. _cli:aws mediastore list-containers:
+
+
+***************
+list-containers
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the properties of all containers in AWS Elemental MediaStore. 
+
+ 
+
+You can query to receive all the containers in one response. Or you can include the ``MaxResults`` parameter to receive a limited number of containers in each response. In this case, the response includes a token. To get the next set of containers, send the command again, this time with the ``NextToken`` parameter (with the returned token as its value). The next set of responses appears, with a token if there are still more containers to receive. 
+
+ 
+
+See also  DescribeContainer , which gets the properties of one container. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/ListContainers>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-containers
+  [--next-token <value>]
+  [--max-results <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--next-token`` (string)
+
+
+  Only if you used ``MaxResults`` in the first command, enter the token (which was included in the previous response) to obtain the next set of containers. This token is included in a response only if there actually are more containers to list.
+
+  
+
+``--max-results`` (integer)
+
+
+  Enter the maximum number of containers in the response. Use from 1 to 255 characters. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Containers -> (list)
+
+  
+
+  The names of the containers.
+
+  
+
+  (structure)
+
+    
+
+    This section describes operations that you can perform on an AWS Elemental MediaStore container.
+
+    
+
+    Endpoint -> (string)
+
+      
+
+      The DNS endpoint of the container. Use the endpoint to identify the specific container when sending requests to the data plane. The service assigns this value when the container is created. Once the value has been assigned, it does not change.
+
+      
+
+      
+
+    CreationTime -> (timestamp)
+
+      
+
+      Unix timestamp.
+
+      
+
+      
+
+    ARN -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the container. The ARN has the following format:
+
+       
+
+      arn:aws:<region>:<account that owns this container>:container/<name of container> 
+
+       
+
+      For example: arn:aws:mediastore:us-west-2:111122223333:container/movies 
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The name of the container.
+
+      
+
+      
+
+    Status -> (string)
+
+      
+
+      The status of container creation or deletion. The status is one of the following: ``CREATING`` , ``ACTIVE`` , or ``DELETING`` . While the service is creating the container, the status is ``CREATING`` . When the endpoint is available, the status changes to ``ACTIVE`` .
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+   ``NextToken`` is the token to use in the next call to ``ListContainers`` . This token is returned only if you included the ``MaxResults`` tag in the original command, and only if there are still containers to return. 
+
+  
+
+  
+

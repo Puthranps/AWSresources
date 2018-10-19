@@ -1,0 +1,10 @@
+{
+    "Name": "",
+    "Version": "",
+    "StorageLocation": {
+        "Bucket": "",
+        "Key": "",
+        "RoleArn": ""
+    },
+    "OperatingSystem": "AMAZON_LINUX"
+}

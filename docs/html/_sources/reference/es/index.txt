@@ -1,0 +1,57 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws es:
+
+
+**
+es
+**
+
+
+
+===========
+Description
+===========
+
+ 
+
+Use the Amazon Elasticsearch configuration API to create, configure, and manage Elasticsearch domains.
+
+ 
+
+The endpoint for configuration service requests is region-specific: es.*region* .amazonaws.com. For example, es.us-east-1.amazonaws.com. For a current list of supported regions and endpoints, see `Regions and Endpoints <http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticsearch-service-regions>`__ .
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  add-tags
+  cancel-elasticsearch-service-software-update
+  create-elasticsearch-domain
+  delete-elasticsearch-domain
+  delete-elasticsearch-service-role
+  describe-elasticsearch-domain
+  describe-elasticsearch-domain-config
+  describe-elasticsearch-domains
+  describe-elasticsearch-instance-type-limits
+  describe-reserved-elasticsearch-instance-offerings
+  describe-reserved-elasticsearch-instances
+  get-compatible-elasticsearch-versions
+  get-upgrade-history
+  get-upgrade-status
+  list-domain-names
+  list-elasticsearch-instance-types
+  list-elasticsearch-versions
+  list-tags
+  purchase-reserved-elasticsearch-instance-offering
+  remove-tags
+  start-elasticsearch-service-software-update
+  update-elasticsearch-domain-config
+  upgrade-elasticsearch-domain

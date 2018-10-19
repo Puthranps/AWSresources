@@ -1,0 +1,12 @@
+{
+    "domainName": "",
+    "basePath": "",
+    "patchOperations": [
+        {
+            "op": "test",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

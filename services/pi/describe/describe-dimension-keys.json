@@ -1,0 +1,27 @@
+{
+    "ServiceType": "RDS",
+    "Identifier": "",
+    "StartTime": "1970-01-01T00:00:00",
+    "EndTime": "1970-01-01T00:00:00",
+    "Metric": "",
+    "PeriodInSeconds": 0,
+    "GroupBy": {
+        "Group": "",
+        "Dimensions": [
+            ""
+        ],
+        "Limit": 0
+    },
+    "PartitionBy": {
+        "Group": "",
+        "Dimensions": [
+            ""
+        ],
+        "Limit": 0
+    },
+    "Filter": {
+        "KeyName": ""
+    },
+    "MaxResults": 0,
+    "NextToken": ""
+}

@@ -1,0 +1,16 @@
+{
+    "AuthFlow": "REFRESH_TOKEN",
+    "AuthParameters": {
+        "KeyName": ""
+    },
+    "ClientMetadata": {
+        "KeyName": ""
+    },
+    "ClientId": "",
+    "AnalyticsMetadata": {
+        "AnalyticsEndpointId": ""
+    },
+    "UserContextData": {
+        "EncodedData": ""
+    }
+}

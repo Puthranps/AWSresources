@@ -1,0 +1,38 @@
+{
+    "HostedZoneId": "",
+    "ChangeBatch": {
+        "Comment": "",
+        "Changes": [
+            {
+                "Action": "DELETE",
+                "ResourceRecordSet": {
+                    "Name": "",
+                    "Type": "SRV",
+                    "SetIdentifier": "",
+                    "Weight": 0,
+                    "Region": "ca-central-1",
+                    "GeoLocation": {
+                        "ContinentCode": "",
+                        "CountryCode": "",
+                        "SubdivisionCode": ""
+                    },
+                    "Failover": "SECONDARY",
+                    "MultiValueAnswer": true,
+                    "TTL": 0,
+                    "ResourceRecords": [
+                        {
+                            "Value": ""
+                        }
+                    ],
+                    "AliasTarget": {
+                        "HostedZoneId": "",
+                        "DNSName": "",
+                        "EvaluateTargetHealth": true
+                    },
+                    "HealthCheckId": "",
+                    "TrafficPolicyInstanceId": ""
+                }
+            }
+        ]
+    }
+}

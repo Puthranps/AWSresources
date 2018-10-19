@@ -1,0 +1,314 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-classifiers &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="glue" href="../glue/index.html" />
+    <link rel="next" title="get-connection" href="../glue/get-connection.html" />
+    <link rel="prev" title="get-classifier" href="../glue/get-classifier.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../glue/get-connection.html" title="get-connection"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../glue/get-classifier.html" title="get-classifier"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../glue/index.html" accesskey="U">glue</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glue/get-classifier.html" title="previous chapter (use the left arrow)">&larr; get-classifier</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glue/get-connection.html" title="next chapter (use the right arrow)">get-connection &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-classifiers</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/glue/get-classifiers">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../glue/index.html#cli-aws-glue"><em>glue</em></a> ]</p>
+<div class="section" id="get-classifiers">
+<span id="cli-aws-glue-get-classifiers"></span><h1>get-classifiers<a class="headerlink" href="#get-classifiers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Lists all classifier objects in the Data Catalog.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetClassifiers">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">get-classifiers</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Classifiers</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-classifiers
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div><p>The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Classifiers -&gt; (list)</p>
+<blockquote>
+<div><p>The requested list of classifier objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Classifiers are triggered during a crawl task. A classifier checks whether a given file is in a format it can handle, and if it is, the classifier creates a schema in the form of a <tt class="docutils literal"><span class="pre">StructType</span></tt> object that matches that data format.</p>
+<p>You can use the standard classifiers that AWS Glue supplies, or you can write your own classifiers to best categorize your data sources and specify the appropriate schemas to use for them. A classifier can be a <tt class="docutils literal"><span class="pre">grok</span></tt> classifier, an <tt class="docutils literal"><span class="pre">XML</span></tt> classifier, or a <tt class="docutils literal"><span class="pre">JSON</span></tt> classifier, as specified in one of the fields in the <tt class="docutils literal"><span class="pre">Classifier</span></tt> object.</p>
+<p>GrokClassifier -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">GrokClassifier</span></tt> object.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the classifier.</div></blockquote>
+<p>Classification -&gt; (string)</p>
+<blockquote>
+<div>An identifier of the data format that the classifier matches, such as Twitter, JSON, Omniture logs, and so on.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this classifier was registered.</div></blockquote>
+<p>LastUpdated -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this classifier was last updated.</div></blockquote>
+<p>Version -&gt; (long)</p>
+<blockquote>
+<div>The version of this classifier.</div></blockquote>
+<p>GrokPattern -&gt; (string)</p>
+<blockquote>
+<div>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a class="reference external" href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a> .</div></blockquote>
+<p>CustomPatterns -&gt; (string)</p>
+<blockquote>
+<div>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a class="reference external" href="http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html">Writing Custom Classifers</a> .</div></blockquote>
+</div></blockquote>
+<p>XMLClassifier -&gt; (structure)</p>
+<blockquote>
+<div><p>An <tt class="docutils literal"><span class="pre">XMLClassifier</span></tt> object.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the classifier.</div></blockquote>
+<p>Classification -&gt; (string)</p>
+<blockquote>
+<div>An identifier of the data format that the classifier matches.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this classifier was registered.</div></blockquote>
+<p>LastUpdated -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this classifier was last updated.</div></blockquote>
+<p>Version -&gt; (long)</p>
+<blockquote>
+<div>The version of this classifier.</div></blockquote>
+<p>RowTag -&gt; (string)</p>
+<blockquote>
+<div>The XML tag designating the element that contains each record in an XML document being parsed. Note that this cannot identify a self-closing element (closed by <tt class="docutils literal"><span class="pre">/&gt;</span></tt> ). An empty row element that contains only attributes can be parsed as long as it ends with a closing tag (for example, <tt class="docutils literal"><span class="pre">&lt;row</span> <span class="pre">item_a=&quot;A&quot;</span> <span class="pre">item_b=&quot;B&quot;&gt;&lt;/row&gt;</span></tt> is okay, but <tt class="docutils literal"><span class="pre">&lt;row</span> <span class="pre">item_a=&quot;A&quot;</span> <span class="pre">item_b=&quot;B&quot;</span> <span class="pre">/&gt;</span></tt> is not).</div></blockquote>
+</div></blockquote>
+<p>JsonClassifier -&gt; (structure)</p>
+<blockquote>
+<div><p>A <tt class="docutils literal"><span class="pre">JsonClassifier</span></tt> object.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the classifier.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this classifier was registered.</div></blockquote>
+<p>LastUpdated -&gt; (timestamp)</p>
+<blockquote>
+<div>The time this classifier was last updated.</div></blockquote>
+<p>Version -&gt; (long)</p>
+<blockquote>
+<div>The version of this classifier.</div></blockquote>
+<p>JsonPath -&gt; (string)</p>
+<blockquote>
+<div>A <tt class="docutils literal"><span class="pre">JsonPath</span></tt> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a class="reference external" href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing JsonPath Custom Classifiers</a> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>A continuation token.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glue/get-classifier.html" title="previous chapter (use the left arrow)">&larr; get-classifier</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glue/get-connection.html" title="next chapter (use the right arrow)">get-connection &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../glue/get-connection.html" title="get-connection"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../glue/get-classifier.html" title="get-classifier"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../glue/index.html" >glue</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

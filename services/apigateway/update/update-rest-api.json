@@ -1,0 +1,11 @@
+{
+    "restApiId": "",
+    "patchOperations": [
+        {
+            "op": "copy",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

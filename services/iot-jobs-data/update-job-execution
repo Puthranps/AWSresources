@@ -1,0 +1,13 @@
+{
+    "jobId": "",
+    "thingName": "",
+    "status": "REMOVED",
+    "statusDetails": {
+        "KeyName": ""
+    },
+    "stepTimeoutInMinutes": 0,
+    "expectedVersion": 0,
+    "includeJobExecutionState": true,
+    "includeJobDocument": true,
+    "executionNumber": 0
+}

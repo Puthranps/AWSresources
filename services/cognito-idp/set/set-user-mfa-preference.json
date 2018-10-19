@@ -1,0 +1,11 @@
+{
+    "SMSMfaSettings": {
+        "Enabled": true,
+        "PreferredMfa": true
+    },
+    "SoftwareTokenMfaSettings": {
+        "Enabled": true,
+        "PreferredMfa": true
+    },
+    "AccessToken": ""
+}

@@ -1,0 +1,22 @@
+{
+    "WindowId": "",
+    "Targets": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "ResourceType": "INSTANCE",
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

@@ -1,0 +1,13 @@
+{
+    "CollectionId": "",
+    "Image": {
+        "Bytes": null,
+        "S3Object": {
+            "Bucket": "",
+            "Name": "",
+            "Version": ""
+        }
+    },
+    "MaxFaces": 0,
+    "FaceMatchThreshold": 0.0
+}

@@ -1,0 +1,267 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>clouddirectory &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-facet-to-object" href="../clouddirectory/add-facet-to-object.html" />
+    <link rel="prev" title="update-environment-membership" href="../cloud9/update-environment-membership.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../clouddirectory/add-facet-to-object.html" title="add-facet-to-object"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cloud9/update-environment-membership.html" title="update-environment-membership"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloud9/update-environment-membership.html" title="previous chapter (use the left arrow)">&larr; update-environment-membership</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../clouddirectory/add-facet-to-object.html" title="next chapter (use the right arrow)">add-facet-to-object &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">clouddirectory</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/clouddirectory/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="clouddirectory">
+<span id="cli-aws-clouddirectory"></span><h1>clouddirectory<a class="headerlink" href="#clouddirectory" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon Cloud Directory is a component of the AWS Directory Service that simplifies the development and management of cloud-scale web, mobile, and IoT applications. This guide describes the Cloud Directory operations that you can call programmatically and includes detailed information on data types and errors. For information about AWS Directory Services features, see <a class="reference external" href="https://aws.amazon.com/directoryservice/">AWS Directory Service</a> and the <a class="reference external" href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/what_is.html">AWS Directory Service Administration Guide</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/add-facet-to-object.html">add-facet-to-object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/apply-schema.html">apply-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/attach-object.html">attach-object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/attach-policy.html">attach-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/attach-to-index.html">attach-to-index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/attach-typed-link.html">attach-typed-link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/batch-read.html">batch-read</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/batch-write.html">batch-write</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/create-directory.html">create-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/create-facet.html">create-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/create-index.html">create-index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/create-object.html">create-object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/create-schema.html">create-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/create-typed-link-facet.html">create-typed-link-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/delete-directory.html">delete-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/delete-facet.html">delete-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/delete-object.html">delete-object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/delete-schema.html">delete-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/delete-typed-link-facet.html">delete-typed-link-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/detach-from-index.html">detach-from-index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/detach-object.html">detach-object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/detach-policy.html">detach-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/detach-typed-link.html">detach-typed-link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/disable-directory.html">disable-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/enable-directory.html">enable-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-applied-schema-version.html">get-applied-schema-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-directory.html">get-directory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-facet.html">get-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-link-attributes.html">get-link-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-object-attributes.html">get-object-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-object-information.html">get-object-information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-schema-as-json.html">get-schema-as-json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/get-typed-link-facet-information.html">get-typed-link-facet-information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-applied-schema-arns.html">list-applied-schema-arns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-attached-indices.html">list-attached-indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-development-schema-arns.html">list-development-schema-arns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-directories.html">list-directories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-facet-attributes.html">list-facet-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-facet-names.html">list-facet-names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-incoming-typed-links.html">list-incoming-typed-links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-index.html">list-index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-managed-schema-arns.html">list-managed-schema-arns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-object-attributes.html">list-object-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-object-children.html">list-object-children</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-object-parent-paths.html">list-object-parent-paths</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-object-parents.html">list-object-parents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-object-policies.html">list-object-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-outgoing-typed-links.html">list-outgoing-typed-links</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-policy-attachments.html">list-policy-attachments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-published-schema-arns.html">list-published-schema-arns</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-tags-for-resource.html">list-tags-for-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-typed-link-facet-attributes.html">list-typed-link-facet-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/list-typed-link-facet-names.html">list-typed-link-facet-names</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/lookup-policy.html">lookup-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/publish-schema.html">publish-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/put-schema-from-json.html">put-schema-from-json</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/remove-facet-from-object.html">remove-facet-from-object</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/tag-resource.html">tag-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/untag-resource.html">untag-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/update-facet.html">update-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/update-link-attributes.html">update-link-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/update-object-attributes.html">update-object-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/update-schema.html">update-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/update-typed-link-facet.html">update-typed-link-facet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/upgrade-applied-schema.html">upgrade-applied-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../clouddirectory/upgrade-published-schema.html">upgrade-published-schema</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloud9/update-environment-membership.html" title="previous chapter (use the left arrow)">&larr; update-environment-membership</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../clouddirectory/add-facet-to-object.html" title="next chapter (use the right arrow)">add-facet-to-object &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../clouddirectory/add-facet-to-object.html" title="add-facet-to-object"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cloud9/update-environment-membership.html" title="update-environment-membership"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

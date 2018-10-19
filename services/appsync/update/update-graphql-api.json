@@ -1,0 +1,21 @@
+{
+    "apiId": "",
+    "name": "",
+    "logConfig": {
+        "fieldLogLevel": "ALL",
+        "cloudWatchLogsRoleArn": ""
+    },
+    "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+    "userPoolConfig": {
+        "userPoolId": "",
+        "awsRegion": "",
+        "defaultAction": "ALLOW",
+        "appIdClientRegex": ""
+    },
+    "openIDConnectConfig": {
+        "issuer": "",
+        "clientId": "",
+        "iatTTL": 0,
+        "authTTL": 0
+    }
+}

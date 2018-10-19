@@ -1,0 +1,272 @@
+[ :ref:`aws <cli:aws>` . :ref:`clouddirectory <cli:aws clouddirectory>` ]
+
+.. _cli:aws clouddirectory get-object-attributes:
+
+
+*********************
+get-object-attributes
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves attributes within a facet that are associated with an object.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/clouddirectory-2017-01-11/GetObjectAttributes>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-object-attributes
+  --directory-arn <value>
+  --object-reference <value>
+  [--consistency-level <value>]
+  --schema-facet <value>
+  --attribute-names <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--directory-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) that is associated with the  Directory where the object resides.
+
+  
+
+``--object-reference`` (structure)
+
+
+  Reference that identifies the object whose attributes will be retrieved.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Selector=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Selector": "string"
+  }
+
+
+
+``--consistency-level`` (string)
+
+
+  The consistency level at which to retrieve the attributes on an object.
+
+  
+
+  Possible values:
+
+  
+  *   ``SERIALIZABLE``
+
+  
+  *   ``EVENTUAL``
+
+  
+
+  
+
+``--schema-facet`` (structure)
+
+
+  Identifier for the facet whose attributes will be retrieved. See  SchemaFacet for details.
+
+  
+
+
+
+Shorthand Syntax::
+
+    SchemaArn=string,FacetName=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "SchemaArn": "string",
+    "FacetName": "string"
+  }
+
+
+
+``--attribute-names`` (list)
+
+
+  List of attribute names whose values will be retrieved.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Attributes -> (list)
+
+  
+
+  The attributes that are associated with the object.
+
+  
+
+  (structure)
+
+    
+
+    The combination of an attribute key and an attribute value.
+
+    
+
+    Key -> (structure)
+
+      
+
+      The key of the attribute.
+
+      
+
+      SchemaArn -> (string)
+
+        
+
+        The Amazon Resource Name (ARN) of the schema that contains the facet and attribute.
+
+        
+
+        
+
+      FacetName -> (string)
+
+        
+
+        The name of the facet that the attribute exists within.
+
+        
+
+        
+
+      Name -> (string)
+
+        
+
+        The name of the attribute.
+
+        
+
+        
+
+      
+
+    Value -> (structure)
+
+      
+
+      The value of the attribute.
+
+      
+
+      StringValue -> (string)
+
+        
+
+        A string data value.
+
+        
+
+        
+
+      BinaryValue -> (blob)
+
+        
+
+        A binary data value.
+
+        
+
+        
+
+      BooleanValue -> (boolean)
+
+        
+
+        A Boolean data value.
+
+        
+
+        
+
+      NumberValue -> (string)
+
+        
+
+        A number data value.
+
+        
+
+        
+
+      DatetimeValue -> (timestamp)
+
+        
+
+        A date and time value.
+
+        
+
+        
+
+      
+
+    
+
+  
+

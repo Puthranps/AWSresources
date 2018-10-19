@@ -1,0 +1,279 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker <cli:aws sagemaker>` ]
+
+.. _cli:aws sagemaker create-notebook-instance:
+
+
+************************
+create-notebook-instance
+************************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an Amazon SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook. 
+
+ 
+
+In a ``CreateNotebookInstance`` request, specify the type of ML compute instance that you want to run. Amazon SageMaker launches the instance, installs common libraries that you can use to explore datasets for model training, and attaches an ML storage volume to the notebook instance. 
+
+ 
+
+Amazon SageMaker also provides a set of example notebooks. Each notebook demonstrates how to use Amazon SageMaker with a specific algorithm or with a machine learning framework. 
+
+ 
+
+After receiving the request, Amazon SageMaker does the following:
+
+ 
+
+ 
+* Creates a network interface in the Amazon SageMaker VPC. 
+ 
+* (Option) If you specified ``SubnetId`` , Amazon SageMaker creates a network interface in your own VPC, which is inferred from the subnet ID that you provide in the input. When creating this network interface, Amazon SageMaker attaches the security group that you specified in the request to the network interface that it creates in your VPC. 
+ 
+* Launches an EC2 instance of the type specified in the request in the Amazon SageMaker VPC. If you specified ``SubnetId`` of your VPC, Amazon SageMaker specifies both network interfaces when launching this instance. This enables inbound traffic from your own VPC to the notebook instance, assuming that the security groups allow it. 
+ 
+
+ 
+
+After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN).
+
+ 
+
+After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter notebooks. For example, you can write code to explore a dataset that you can use for model training, train a model, host models by creating Amazon SageMaker endpoints, and validate hosted models. 
+
+ 
+
+For more information, see `How It Works <http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html>`__ . 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateNotebookInstance>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-notebook-instance
+  --notebook-instance-name <value>
+  --instance-type <value>
+  [--subnet-id <value>]
+  [--security-group-ids <value>]
+  --role-arn <value>
+  [--kms-key-id <value>]
+  [--tags <value>]
+  [--lifecycle-config-name <value>]
+  [--direct-internet-access <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--notebook-instance-name`` (string)
+
+
+  The name of the new notebook instance.
+
+  
+
+``--instance-type`` (string)
+
+
+  The type of ML compute instance to launch for the notebook instance.
+
+  
+
+  Possible values:
+
+  
+  *   ``ml.t2.medium``
+
+  
+  *   ``ml.t2.large``
+
+  
+  *   ``ml.t2.xlarge``
+
+  
+  *   ``ml.t2.2xlarge``
+
+  
+  *   ``ml.m4.xlarge``
+
+  
+  *   ``ml.m4.2xlarge``
+
+  
+  *   ``ml.m4.4xlarge``
+
+  
+  *   ``ml.m4.10xlarge``
+
+  
+  *   ``ml.m4.16xlarge``
+
+  
+  *   ``ml.p2.xlarge``
+
+  
+  *   ``ml.p2.8xlarge``
+
+  
+  *   ``ml.p2.16xlarge``
+
+  
+  *   ``ml.p3.2xlarge``
+
+  
+  *   ``ml.p3.8xlarge``
+
+  
+  *   ``ml.p3.16xlarge``
+
+  
+
+  
+
+``--subnet-id`` (string)
+
+
+  The ID of the subnet in a VPC to which you would like to have a connectivity from your ML compute instance. 
+
+  
+
+``--security-group-ids`` (list)
+
+
+  The VPC security group IDs, in the form sg-xxxxxxxx. The security groups must be for the same VPC as specified in the subnet. 
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--role-arn`` (string)
+
+
+  When you send any requests to AWS resources from the notebook instance, Amazon SageMaker assumes this role to perform tasks on your behalf. You must grant this role necessary permissions so Amazon SageMaker can perform these tasks. The policy must allow the Amazon SageMaker service principal (sagemaker.amazonaws.com) permissions to assume this role. For more information, see `Amazon SageMaker Roles <http://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html>`__ . 
+
+   
+
+  .. note::
+
+     
+
+    To be able to pass this role to Amazon SageMaker, the caller of this API must have the ``iam:PassRole`` permission.
+
+     
+
+  
+
+``--kms-key-id`` (string)
+
+
+  If you provide a AWS KMS key ID, Amazon SageMaker uses it to encrypt data at rest on the ML storage volume that is attached to your notebook instance. 
+
+  
+
+``--tags`` (list)
+
+
+  A list of tags to associate with the notebook instance. You can add tags later by using the ``CreateTags`` API.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Value=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Value": "string"
+    }
+    ...
+  ]
+
+
+
+``--lifecycle-config-name`` (string)
+
+
+  The name of a lifecycle configuration to associate with the notebook instance. For information about lifestyle configurations, see  notebook-lifecycle-config .
+
+  
+
+``--direct-internet-access`` (string)
+
+
+  Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to ``Disabled`` this notebook instance will be able to access resources only in your VPC, and will not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your VPC.
+
+   
+
+  For more information, see  appendix-notebook-and-internet-access . You can set the value of this parameter to ``Disabled`` only if you set a value for the ``SubnetId`` parameter.
+
+  
+
+  Possible values:
+
+  
+  *   ``Enabled``
+
+  
+  *   ``Disabled``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+NotebookInstanceArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the notebook instance. 
+
+  
+
+  
+

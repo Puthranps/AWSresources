@@ -1,0 +1,163 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker-runtime <cli:aws sagemaker-runtime>` ]
+
+.. _cli:aws sagemaker-runtime invoke-endpoint:
+
+
+***************
+invoke-endpoint
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint. 
+
+ 
+
+For an overview of Amazon SageMaker, see `How It Works <http://docs.aws.amazon.com/sagemaker/latest/dg/how-it-works.html>`__ . 
+
+ 
+
+Amazon SageMaker strips all POST headers except those supported by the API. Amazon SageMaker might add additional headers. You should not rely on the behavior of headers outside those enumerated in the request syntax. 
+
+ 
+
+Cals to ``InvokeEndpoint`` are authenticated by using AWS Signature Version 4. For information, see `Authenticating Requests (AWS Signature Version 4) <http://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html>`__ in the *Amazon S3 API Reference* .
+
+ 
+
+.. note::
+
+   
+
+  Endpoints are scoped to an individual account, and are not public. The URL does not contain the account ID, but Amazon SageMaker determines the account ID from the authentication token that is supplied by the caller.
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/runtime.sagemaker-2017-05-13/InvokeEndpoint>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    invoke-endpoint
+  --endpoint-name <value>
+  --body <value>
+  [--content-type <value>]
+  [--accept <value>]
+  [--custom-attributes <value>]
+  outfile <value>
+
+
+
+
+=======
+Options
+=======
+
+``--endpoint-name`` (string)
+
+
+  The name of the endpoint that you specified when you created the endpoint using the `CreateEndpoint <http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html>`__ API. 
+
+  
+
+``--body`` (blob)
+
+
+  Provides input data, in the format specified in the ``ContentType`` request header. Amazon SageMaker passes all of the data in the body to the model. 
+
+   
+
+  For information about the format of the request body, see `Common Data Formats—Inference <http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html>`__ .
+
+  
+
+``--content-type`` (string)
+
+
+  The MIME type of the input data in the request body.
+
+  
+
+``--accept`` (string)
+
+
+  The desired MIME type of the inference in the response.
+
+  
+
+``--custom-attributes`` (string)
+
+
+  
+
+  
+
+``outfile`` (string)
+Filename where the content will be saved
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Body -> (blob)
+
+  
+
+  Includes the inference provided by the model.
+
+   
+
+  For information about the format of the response body, see `Common Data Formats—Inference <http://docs.aws.amazon.com/sagemaker/latest/dg/cdf-inference.html>`__ .
+
+  
+
+  
+
+ContentType -> (string)
+
+  
+
+  The MIME type of the inference returned in the response body.
+
+  
+
+  
+
+InvokedProductionVariant -> (string)
+
+  
+
+  Identifies the production variant that was invoked.
+
+  
+
+  
+
+CustomAttributes -> (string)
+
+  
+
+  
+
+  
+
+  
+

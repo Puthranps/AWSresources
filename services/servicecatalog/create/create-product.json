@@ -1,0 +1,26 @@
+{
+    "AcceptLanguage": "",
+    "Name": "",
+    "Owner": "",
+    "Description": "",
+    "Distributor": "",
+    "SupportDescription": "",
+    "SupportEmail": "",
+    "SupportUrl": "",
+    "ProductType": "CLOUD_FORMATION_TEMPLATE",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "ProvisioningArtifactParameters": {
+        "Name": "",
+        "Description": "",
+        "Info": {
+            "KeyName": ""
+        },
+        "Type": "MARKETPLACE_CAR"
+    },
+    "IdempotencyToken": ""
+}

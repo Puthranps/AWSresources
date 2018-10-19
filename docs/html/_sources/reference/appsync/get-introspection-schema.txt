@@ -1,0 +1,95 @@
+[ :ref:`aws <cli:aws>` . :ref:`appsync <cli:aws appsync>` ]
+
+.. _cli:aws appsync get-introspection-schema:
+
+
+************************
+get-introspection-schema
+************************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves the introspection schema for a GraphQL API.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetIntrospectionSchema>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-introspection-schema
+  --api-id <value>
+  --format <value>
+  outfile <value>
+
+
+
+
+=======
+Options
+=======
+
+``--api-id`` (string)
+
+
+  The API ID.
+
+  
+
+``--format`` (string)
+
+
+  The schema format: SDL or JSON.
+
+  
+
+  Possible values:
+
+  
+  *   ``SDL``
+
+  
+  *   ``JSON``
+
+  
+
+  
+
+``outfile`` (string)
+Filename where the content will be saved
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+schema -> (blob)
+
+  
+
+  The schema, in GraphQL Schema Definition Language (SDL) format.
+
+   
+
+  For more information, see the `GraphQL SDL documentation <http://graphql.org/learn/schema/>`__ .
+
+  
+
+  
+

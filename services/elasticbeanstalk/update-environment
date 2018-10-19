@@ -1,0 +1,31 @@
+{
+    "ApplicationName": "",
+    "EnvironmentId": "",
+    "EnvironmentName": "",
+    "GroupName": "",
+    "Description": "",
+    "Tier": {
+        "Name": "",
+        "Type": "",
+        "Version": ""
+    },
+    "VersionLabel": "",
+    "TemplateName": "",
+    "SolutionStackName": "",
+    "PlatformArn": "",
+    "OptionSettings": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": "",
+            "Value": ""
+        }
+    ],
+    "OptionsToRemove": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": ""
+        }
+    ]
+}

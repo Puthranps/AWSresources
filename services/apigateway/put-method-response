@@ -1,0 +1,12 @@
+{
+    "restApiId": "",
+    "resourceId": "",
+    "httpMethod": "",
+    "statusCode": "",
+    "responseParameters": {
+        "KeyName": true
+    },
+    "responseModels": {
+        "KeyName": ""
+    }
+}

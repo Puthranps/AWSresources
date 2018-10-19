@@ -1,0 +1,294 @@
+{
+    "PipelineId": "",
+    "Input": {
+        "Key": "",
+        "FrameRate": "",
+        "Resolution": "",
+        "AspectRatio": "",
+        "Interlaced": "",
+        "Container": "",
+        "Encryption": {
+            "Mode": "",
+            "Key": "",
+            "KeyMd5": "",
+            "InitializationVector": ""
+        },
+        "TimeSpan": {
+            "StartTime": "",
+            "Duration": ""
+        },
+        "InputCaptions": {
+            "MergePolicy": "",
+            "CaptionSources": [
+                {
+                    "Key": "",
+                    "Language": "",
+                    "TimeOffset": "",
+                    "Label": "",
+                    "Encryption": {
+                        "Mode": "",
+                        "Key": "",
+                        "KeyMd5": "",
+                        "InitializationVector": ""
+                    }
+                }
+            ]
+        },
+        "DetectedProperties": {
+            "Width": 0,
+            "Height": 0,
+            "FrameRate": "",
+            "FileSize": 0,
+            "DurationMillis": 0
+        }
+    },
+    "Inputs": [
+        {
+            "Key": "",
+            "FrameRate": "",
+            "Resolution": "",
+            "AspectRatio": "",
+            "Interlaced": "",
+            "Container": "",
+            "Encryption": {
+                "Mode": "",
+                "Key": "",
+                "KeyMd5": "",
+                "InitializationVector": ""
+            },
+            "TimeSpan": {
+                "StartTime": "",
+                "Duration": ""
+            },
+            "InputCaptions": {
+                "MergePolicy": "",
+                "CaptionSources": [
+                    {
+                        "Key": "",
+                        "Language": "",
+                        "TimeOffset": "",
+                        "Label": "",
+                        "Encryption": {
+                            "Mode": "",
+                            "Key": "",
+                            "KeyMd5": "",
+                            "InitializationVector": ""
+                        }
+                    }
+                ]
+            },
+            "DetectedProperties": {
+                "Width": 0,
+                "Height": 0,
+                "FrameRate": "",
+                "FileSize": 0,
+                "DurationMillis": 0
+            }
+        }
+    ],
+    "Output": {
+        "Key": "",
+        "ThumbnailPattern": "",
+        "ThumbnailEncryption": {
+            "Mode": "",
+            "Key": "",
+            "KeyMd5": "",
+            "InitializationVector": ""
+        },
+        "Rotate": "",
+        "PresetId": "",
+        "SegmentDuration": "",
+        "Watermarks": [
+            {
+                "PresetWatermarkId": "",
+                "InputKey": "",
+                "Encryption": {
+                    "Mode": "",
+                    "Key": "",
+                    "KeyMd5": "",
+                    "InitializationVector": ""
+                }
+            }
+        ],
+        "AlbumArt": {
+            "MergePolicy": "",
+            "Artwork": [
+                {
+                    "InputKey": "",
+                    "MaxWidth": "",
+                    "MaxHeight": "",
+                    "SizingPolicy": "",
+                    "PaddingPolicy": "",
+                    "AlbumArtFormat": "",
+                    "Encryption": {
+                        "Mode": "",
+                        "Key": "",
+                        "KeyMd5": "",
+                        "InitializationVector": ""
+                    }
+                }
+            ]
+        },
+        "Composition": [
+            {
+                "TimeSpan": {
+                    "StartTime": "",
+                    "Duration": ""
+                }
+            }
+        ],
+        "Captions": {
+            "MergePolicy": "",
+            "CaptionSources": [
+                {
+                    "Key": "",
+                    "Language": "",
+                    "TimeOffset": "",
+                    "Label": "",
+                    "Encryption": {
+                        "Mode": "",
+                        "Key": "",
+                        "KeyMd5": "",
+                        "InitializationVector": ""
+                    }
+                }
+            ],
+            "CaptionFormats": [
+                {
+                    "Format": "",
+                    "Pattern": "",
+                    "Encryption": {
+                        "Mode": "",
+                        "Key": "",
+                        "KeyMd5": "",
+                        "InitializationVector": ""
+                    }
+                }
+            ]
+        },
+        "Encryption": {
+            "Mode": "",
+            "Key": "",
+            "KeyMd5": "",
+            "InitializationVector": ""
+        }
+    },
+    "Outputs": [
+        {
+            "Key": "",
+            "ThumbnailPattern": "",
+            "ThumbnailEncryption": {
+                "Mode": "",
+                "Key": "",
+                "KeyMd5": "",
+                "InitializationVector": ""
+            },
+            "Rotate": "",
+            "PresetId": "",
+            "SegmentDuration": "",
+            "Watermarks": [
+                {
+                    "PresetWatermarkId": "",
+                    "InputKey": "",
+                    "Encryption": {
+                        "Mode": "",
+                        "Key": "",
+                        "KeyMd5": "",
+                        "InitializationVector": ""
+                    }
+                }
+            ],
+            "AlbumArt": {
+                "MergePolicy": "",
+                "Artwork": [
+                    {
+                        "InputKey": "",
+                        "MaxWidth": "",
+                        "MaxHeight": "",
+                        "SizingPolicy": "",
+                        "PaddingPolicy": "",
+                        "AlbumArtFormat": "",
+                        "Encryption": {
+                            "Mode": "",
+                            "Key": "",
+                            "KeyMd5": "",
+                            "InitializationVector": ""
+                        }
+                    }
+                ]
+            },
+            "Composition": [
+                {
+                    "TimeSpan": {
+                        "StartTime": "",
+                        "Duration": ""
+                    }
+                }
+            ],
+            "Captions": {
+                "MergePolicy": "",
+                "CaptionSources": [
+                    {
+                        "Key": "",
+                        "Language": "",
+                        "TimeOffset": "",
+                        "Label": "",
+                        "Encryption": {
+                            "Mode": "",
+                            "Key": "",
+                            "KeyMd5": "",
+                            "InitializationVector": ""
+                        }
+                    }
+                ],
+                "CaptionFormats": [
+                    {
+                        "Format": "",
+                        "Pattern": "",
+                        "Encryption": {
+                            "Mode": "",
+                            "Key": "",
+                            "KeyMd5": "",
+                            "InitializationVector": ""
+                        }
+                    }
+                ]
+            },
+            "Encryption": {
+                "Mode": "",
+                "Key": "",
+                "KeyMd5": "",
+                "InitializationVector": ""
+            }
+        }
+    ],
+    "OutputKeyPrefix": "",
+    "Playlists": [
+        {
+            "Name": "",
+            "Format": "",
+            "OutputKeys": [
+                ""
+            ],
+            "HlsContentProtection": {
+                "Method": "",
+                "Key": "",
+                "KeyMd5": "",
+                "InitializationVector": "",
+                "LicenseAcquisitionUrl": "",
+                "KeyStoragePolicy": ""
+            },
+            "PlayReadyDrm": {
+                "Format": "",
+                "Key": "",
+                "KeyMd5": "",
+                "KeyId": "",
+                "InitializationVector": "",
+                "LicenseAcquisitionUrl": ""
+            }
+        }
+    ],
+    "UserMetadata": {
+        "KeyName": ""
+    }
+}

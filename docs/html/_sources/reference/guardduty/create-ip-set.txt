@@ -1,0 +1,107 @@
+[ :ref:`aws <cli:aws>` . :ref:`guardduty <cli:aws guardduty>` ]
+
+.. _cli:aws guardduty create-ip-set:
+
+
+*************
+create-ip-set
+*************
+
+
+
+===========
+Description
+===========
+
+Creates a new IPSet - a list of trusted IP addresses that have been whitelisted for secure communication with AWS infrastructure and applications.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateIPSet>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-ip-set
+  --activate | --no-activate
+  [--client-token <value>]
+  --detector-id <value>
+  --format <value>
+  --location <value>
+  --name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--activate`` | ``--no-activate`` (boolean)
+A boolean value that indicates whether GuardDuty is to start using the uploaded IPSet.
+
+``--client-token`` (string)
+The idempotency token for the create request.
+
+``--detector-id`` (string)
+The unique ID of the detector that you want to update.
+
+``--format`` (string)
+The format of the file that contains the IPSet.
+
+  Possible values:
+
+  
+  *   ``TXT``
+
+  
+  *   ``STIX``
+
+  
+  *   ``OTX_CSV``
+
+  
+  *   ``ALIEN_VAULT``
+
+  
+  *   ``PROOF_POINT``
+
+  
+  *   ``FIRE_EYE``
+
+  
+
+  
+
+``--location`` (string)
+The URI of the file that contains the IPSet. For example (https://s3.us-west-2.amazonaws.com/my-bucket/my-object-key)
+
+``--name`` (string)
+The user friendly name to identify the IPSet. This name is displayed in all findings that are triggered by activity that involves IP addresses included in this IPSet.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+IpSetId -> (string)
+
+  The unique identifier for an IP Set
+
+  
+

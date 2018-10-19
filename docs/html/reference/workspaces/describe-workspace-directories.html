@@ -1,0 +1,374 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-workspace-directories &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="workspaces" href="../workspaces/index.html" />
+    <link rel="next" title="describe-workspaces" href="../workspaces/describe-workspaces.html" />
+    <link rel="prev" title="describe-workspace-bundles" href="../workspaces/describe-workspace-bundles.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../workspaces/describe-workspaces.html" title="describe-workspaces"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../workspaces/describe-workspace-bundles.html" title="describe-workspace-bundles"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../workspaces/index.html" accesskey="U">workspaces</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../workspaces/describe-workspace-bundles.html" title="previous chapter (use the left arrow)">&larr; describe-workspace-bundles</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workspaces/describe-workspaces.html" title="next chapter (use the right arrow)">describe-workspaces &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-workspace-directories</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/workspaces/describe-workspace-directories">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../workspaces/index.html#cli-aws-workspaces"><em>workspaces</em></a> ]</p>
+<div class="section" id="describe-workspace-directories">
+<span id="cli-aws-workspaces-describe-workspace-directories"></span><h1>describe-workspace-directories<a class="headerlink" href="#describe-workspace-directories" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes the available AWS Directory Service directories that are registered with Amazon WorkSpaces.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/DescribeWorkspaceDirectories">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">describe-workspace-directories</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Directories</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-workspace-directories
+[--directory-ids &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--directory-ids</span></tt> (list)</p>
+<blockquote>
+<div>The identifiers of the directories. If the value is null, all directories are retrieved.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe your WorkSpace directories</strong></p>
+<p>This example describes all of your WorkSpace directories.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws workspaces describe-workspace-directories</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Directories&quot;</span> <span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;CustomerUserName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Administrator&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DirectoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;d-906735683d&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DirectoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;example.awsapps.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SubnetIds&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;subnet-af0e2a87&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subnet-657e7a23&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;WorkspaceCreationProperties&quot;</span> <span class="p">:</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;EnableInternetAccess&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;EnableWorkDocs&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;UserEnabledAsLocalAdministrator&quot;</span> <span class="p">:</span> <span class="n">true</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;Alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;example&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;State&quot;</span> <span class="p">:</span> <span class="s2">&quot;REGISTERED&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DirectoryType&quot;</span> <span class="p">:</span> <span class="s2">&quot;SIMPLE_AD&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;RegistrationCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;SLiad+S393HD&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;IamRoleId&quot;</span> <span class="p">:</span> <span class="s2">&quot;arn:aws:iam::972506530580:role/workspaces_DefaultRole&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DnsIpAddresses&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;10.0.2.190&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;10.0.1.202&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;WorkspaceSecurityGroupId&quot;</span> <span class="p">:</span> <span class="s2">&quot;sg-6e40640b&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="s2">&quot;CustomerUserName&quot;</span> <span class="p">:</span> <span class="s2">&quot;Administrator&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DirectoryId&quot;</span> <span class="p">:</span> <span class="s2">&quot;d-906732325d&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DirectoryName&quot;</span> <span class="p">:</span> <span class="s2">&quot;exampledomain.com&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;SubnetIds&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;subnet-775a6531&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;subnet-435c036b&quot;</span>
+      <span class="p">],</span>
+      <span class="s2">&quot;WorkspaceCreationProperties&quot;</span> <span class="p">:</span>
+      <span class="p">{</span>
+        <span class="s2">&quot;EnableInternetAccess&quot;</span> <span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+        <span class="s2">&quot;EnableWorkDocs&quot;</span> <span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+        <span class="s2">&quot;UserEnabledAsLocalAdministrator&quot;</span> <span class="p">:</span> <span class="n">true</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;Alias&quot;</span> <span class="p">:</span> <span class="s2">&quot;example-domain&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;State&quot;</span> <span class="p">:</span> <span class="s2">&quot;REGISTERED&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DirectoryType&quot;</span> <span class="p">:</span> <span class="s2">&quot;AD_CONNECTOR&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;RegistrationCode&quot;</span> <span class="p">:</span> <span class="s2">&quot;SLiad+UBZGNH&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;IamRoleId&quot;</span> <span class="p">:</span> <span class="s2">&quot;arn:aws:iam::972506530580:role/workspaces_DefaultRole&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;DnsIpAddresses&quot;</span> <span class="p">:</span> <span class="p">[</span>
+        <span class="s2">&quot;50.0.2.223&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;50.0.2.184&quot;</span>
+      <span class="p">]</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Directories -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the directories.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about an AWS Directory Service directory for use with Amazon WorkSpaces.</p>
+<p>DirectoryId -&gt; (string)</p>
+<blockquote>
+<div>The directory identifier.</div></blockquote>
+<p>Alias -&gt; (string)</p>
+<blockquote>
+<div>The directory alias.</div></blockquote>
+<p>DirectoryName -&gt; (string)</p>
+<blockquote>
+<div>The name of the directory.</div></blockquote>
+<p>RegistrationCode -&gt; (string)</p>
+<blockquote>
+<div>The registration code for the directory. This is the code that users enter in their Amazon WorkSpaces client application to connect to the directory.</div></blockquote>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>The identifiers of the subnets used with the directory.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>DnsIpAddresses -&gt; (list)</p>
+<blockquote>
+<div><p>The IP addresses of the DNS servers for the directory.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>CustomerUserName -&gt; (string)</p>
+<blockquote>
+<div>The user name for the service account.</div></blockquote>
+<p>IamRoleId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the IAM role. This is the role that allows Amazon WorkSpaces to make calls to other services, such as Amazon EC2, on your behalf.</div></blockquote>
+<p>DirectoryType -&gt; (string)</p>
+<blockquote>
+<div>The directory type.</div></blockquote>
+<p>WorkspaceSecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of the security group that is assigned to new WorkSpaces.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The state of the directory's registration with Amazon WorkSpaces</div></blockquote>
+<p>WorkspaceCreationProperties -&gt; (structure)</p>
+<blockquote>
+<div><p>The default creation properties for all WorkSpaces in the directory.</p>
+<p>EnableWorkDocs -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the directory is enabled for Amazon WorkDocs.</div></blockquote>
+<p>EnableInternetAccess -&gt; (boolean)</p>
+<blockquote>
+<div>The public IP address to attach to all WorkSpaces that are created or rebuilt.</div></blockquote>
+<p>DefaultOu -&gt; (string)</p>
+<blockquote>
+<div>The organizational unit (OU) in the directory for the WorkSpace machine accounts.</div></blockquote>
+<p>CustomSecurityGroupId -&gt; (string)</p>
+<blockquote>
+<div>The identifier of any security groups to apply to WorkSpaces when they are created.</div></blockquote>
+<p>UserEnabledAsLocalAdministrator -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the WorkSpace user is an administrator on the WorkSpace.</div></blockquote>
+</div></blockquote>
+<p>ipGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The identifiers of the IP access control groups associated with the directory.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to retrieve the next set of results, or null if there are no more results available. This token is valid for one day and must be used within that time frame.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../workspaces/describe-workspace-bundles.html" title="previous chapter (use the left arrow)">&larr; describe-workspace-bundles</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workspaces/describe-workspaces.html" title="next chapter (use the right arrow)">describe-workspaces &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../workspaces/describe-workspaces.html" title="describe-workspaces"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../workspaces/describe-workspace-bundles.html" title="describe-workspace-bundles"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../workspaces/index.html" >workspaces</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

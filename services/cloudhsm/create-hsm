@@ -1,0 +1,10 @@
+{
+    "SubnetId": "",
+    "SshKey": "",
+    "EniIp": "",
+    "IamRoleArn": "",
+    "ExternalId": "",
+    "SubscriptionType": "PRODUCTION",
+    "ClientToken": "",
+    "SyslogIp": ""
+}

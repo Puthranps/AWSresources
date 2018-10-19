@@ -1,0 +1,9 @@
+{
+    "ResourceType": "",
+    "ResourceId": "",
+    "ComplianceTypes": [
+        "COMPLIANT"
+    ],
+    "Limit": 0,
+    "NextToken": ""
+}

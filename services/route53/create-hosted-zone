@@ -1,0 +1,13 @@
+{
+    "Name": "",
+    "VPC": {
+        "VPCRegion": "ap-northeast-2",
+        "VPCId": ""
+    },
+    "CallerReference": "",
+    "HostedZoneConfig": {
+        "Comment": "",
+        "PrivateZone": true
+    },
+    "DelegationSetId": ""
+}

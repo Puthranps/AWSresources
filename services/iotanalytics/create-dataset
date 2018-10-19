@@ -1,0 +1,60 @@
+{
+    "datasetName": "",
+    "actions": [
+        {
+            "actionName": "",
+            "queryAction": {
+                "sqlQuery": "",
+                "filters": [
+                    {
+                        "deltaTime": {
+                            "offsetSeconds": 0,
+                            "timeExpression": ""
+                        }
+                    }
+                ]
+            },
+            "containerAction": {
+                "image": "",
+                "executionRoleArn": "",
+                "resourceConfiguration": {
+                    "computeType": "ACU_2",
+                    "volumeSizeInGB": 0
+                },
+                "variables": [
+                    {
+                        "name": "",
+                        "stringValue": "",
+                        "doubleValue": null,
+                        "datasetContentVersionValue": {
+                            "datasetName": ""
+                        },
+                        "outputFileUriValue": {
+                            "fileName": ""
+                        }
+                    }
+                ]
+            }
+        }
+    ],
+    "triggers": [
+        {
+            "schedule": {
+                "expression": ""
+            },
+            "dataset": {
+                "name": ""
+            }
+        }
+    ],
+    "retentionPeriod": {
+        "unlimited": true,
+        "numberOfDays": 0
+    },
+    "tags": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ]
+}

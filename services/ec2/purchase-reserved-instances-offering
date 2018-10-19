@@ -1,0 +1,9 @@
+{
+    "InstanceCount": 0,
+    "ReservedInstancesOfferingId": "",
+    "DryRun": true,
+    "LimitPrice": {
+        "Amount": null,
+        "CurrencyCode": "USD"
+    }
+}

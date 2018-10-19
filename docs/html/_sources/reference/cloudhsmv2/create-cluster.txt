@@ -1,0 +1,389 @@
+[ :ref:`aws <cli:aws>` . :ref:`cloudhsmv2 <cli:aws cloudhsmv2>` ]
+
+.. _cli:aws cloudhsmv2 create-cluster:
+
+
+**************
+create-cluster
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a new AWS CloudHSM cluster.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-cluster
+  --subnet-ids <value>
+  --hsm-type <value>
+  [--source-backup-id <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--subnet-ids`` (list)
+
+
+  The identifiers (IDs) of the subnets where you are creating the cluster. You must specify at least one subnet. If you specify multiple subnets, they must meet the following criteria:
+
+   
+
+   
+  * All subnets must be in the same virtual private cloud (VPC). 
+   
+  * You can specify only one subnet per Availability Zone. 
+   
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--hsm-type`` (string)
+
+
+  The type of HSM to use in the cluster. Currently the only allowed value is ``hsm1.medium`` .
+
+  
+
+``--source-backup-id`` (string)
+
+
+  The identifier (ID) of the cluster backup to restore. Use this value to restore the cluster from a backup instead of creating a new cluster. To find the backup ID, use  DescribeBackups .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Cluster -> (structure)
+
+  
+
+  Information about the cluster that was created.
+
+  
+
+  BackupPolicy -> (string)
+
+    
+
+    The cluster's backup policy.
+
+    
+
+    
+
+  ClusterId -> (string)
+
+    
+
+    The cluster's identifier (ID).
+
+    
+
+    
+
+  CreateTimestamp -> (timestamp)
+
+    
+
+    The date and time when the cluster was created.
+
+    
+
+    
+
+  Hsms -> (list)
+
+    
+
+    Contains information about the HSMs in the cluster.
+
+    
+
+    (structure)
+
+      
+
+      Contains information about a hardware security module (HSM) in an AWS CloudHSM cluster.
+
+      
+
+      AvailabilityZone -> (string)
+
+        
+
+        The Availability Zone that contains the HSM.
+
+        
+
+        
+
+      ClusterId -> (string)
+
+        
+
+        The identifier (ID) of the cluster that contains the HSM.
+
+        
+
+        
+
+      SubnetId -> (string)
+
+        
+
+        The subnet that contains the HSM's elastic network interface (ENI).
+
+        
+
+        
+
+      EniId -> (string)
+
+        
+
+        The identifier (ID) of the HSM's elastic network interface (ENI).
+
+        
+
+        
+
+      EniIp -> (string)
+
+        
+
+        The IP address of the HSM's elastic network interface (ENI).
+
+        
+
+        
+
+      HsmId -> (string)
+
+        
+
+        The HSM's identifier (ID).
+
+        
+
+        
+
+      State -> (string)
+
+        
+
+        The HSM's state.
+
+        
+
+        
+
+      StateMessage -> (string)
+
+        
+
+        A description of the HSM's state.
+
+        
+
+        
+
+      
+
+    
+
+  HsmType -> (string)
+
+    
+
+    The type of HSM that the cluster contains.
+
+    
+
+    
+
+  PreCoPassword -> (string)
+
+    
+
+    The default password for the cluster's Pre-Crypto Officer (PRECO) user.
+
+    
+
+    
+
+  SecurityGroup -> (string)
+
+    
+
+    The identifier (ID) of the cluster's security group.
+
+    
+
+    
+
+  SourceBackupId -> (string)
+
+    
+
+    The identifier (ID) of the backup used to create the cluster. This value exists only when the cluster was created from a backup.
+
+    
+
+    
+
+  State -> (string)
+
+    
+
+    The cluster's state.
+
+    
+
+    
+
+  StateMessage -> (string)
+
+    
+
+    A description of the cluster's state.
+
+    
+
+    
+
+  SubnetMapping -> (map)
+
+    
+
+    A map of the cluster's subnets and their corresponding Availability Zones.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (string)
+
+      
+
+      
+
+    
+
+  VpcId -> (string)
+
+    
+
+    The identifier (ID) of the virtual private cloud (VPC) that contains the cluster.
+
+    
+
+    
+
+  Certificates -> (structure)
+
+    
+
+    Contains one or more certificates or a certificate signing request (CSR).
+
+    
+
+    ClusterCsr -> (string)
+
+      
+
+      The cluster's certificate signing request (CSR). The CSR exists only when the cluster's state is ``UNINITIALIZED`` .
+
+      
+
+      
+
+    HsmCertificate -> (string)
+
+      
+
+      The HSM certificate issued (signed) by the HSM hardware.
+
+      
+
+      
+
+    AwsHardwareCertificate -> (string)
+
+      
+
+      The HSM hardware certificate issued (signed) by AWS CloudHSM.
+
+      
+
+      
+
+    ManufacturerHardwareCertificate -> (string)
+
+      
+
+      The HSM hardware certificate issued (signed) by the hardware manufacturer.
+
+      
+
+      
+
+    ClusterCertificate -> (string)
+
+      
+
+      The cluster certificate issued (signed) by the issuing certificate authority (CA) of the cluster's owner.
+
+      
+
+      
+
+    
+
+  
+

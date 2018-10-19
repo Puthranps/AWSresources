@@ -1,0 +1,10 @@
+{
+    "PhoneConfig": {
+        "PhoneType": "DESK_PHONE",
+        "AutoAccept": true,
+        "AfterContactWorkTimeLimit": 0,
+        "DeskPhoneNumber": ""
+    },
+    "UserId": "",
+    "InstanceId": ""
+}

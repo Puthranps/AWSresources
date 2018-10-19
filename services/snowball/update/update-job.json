@@ -1,0 +1,43 @@
+{
+    "JobId": "",
+    "RoleARN": "",
+    "Notification": {
+        "SnsTopicARN": "",
+        "JobStatesToNotify": [
+            "PreparingShipment"
+        ],
+        "NotifyAll": true
+    },
+    "Resources": {
+        "S3Resources": [
+            {
+                "BucketArn": "",
+                "KeyRange": {
+                    "BeginMarker": "",
+                    "EndMarker": ""
+                }
+            }
+        ],
+        "LambdaResources": [
+            {
+                "LambdaArn": "",
+                "EventTriggers": [
+                    {
+                        "EventResourceARN": ""
+                    }
+                ]
+            }
+        ],
+        "Ec2AmiResources": [
+            {
+                "AmiId": "",
+                "SnowballAmiId": ""
+            }
+        ]
+    },
+    "AddressId": "",
+    "ShippingOption": "EXPRESS",
+    "Description": "",
+    "SnowballCapacityPreference": "NoPreference",
+    "ForwardingAddressId": ""
+}

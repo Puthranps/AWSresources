@@ -1,0 +1,21 @@
+{
+    "AvailabilityZone": "",
+    "Encrypted": true,
+    "Iops": 0,
+    "KmsKeyId": "",
+    "Size": 0,
+    "SnapshotId": "",
+    "VolumeType": "sc1",
+    "DryRun": true,
+    "TagSpecifications": [
+        {
+            "ResourceType": "spot-instances-request",
+            "Tags": [
+                {
+                    "Key": "",
+                    "Value": ""
+                }
+            ]
+        }
+    ]
+}

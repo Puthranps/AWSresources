@@ -1,0 +1,12 @@
+{
+    "AmznClientToken": "",
+    "DeviceDefinitionId": "",
+    "Devices": [
+        {
+            "CertificateArn": "",
+            "Id": "",
+            "SyncShadow": true,
+            "ThingArn": ""
+        }
+    ]
+}

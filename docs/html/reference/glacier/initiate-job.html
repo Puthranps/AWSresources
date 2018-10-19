@@ -1,0 +1,343 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>initiate-job &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="glacier" href="../glacier/index.html" />
+    <link rel="next" title="initiate-multipart-upload" href="../glacier/initiate-multipart-upload.html" />
+    <link rel="prev" title="get-vault-notifications" href="../glacier/get-vault-notifications.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../glacier/initiate-multipart-upload.html" title="initiate-multipart-upload"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../glacier/get-vault-notifications.html" title="get-vault-notifications"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../glacier/index.html" accesskey="U">glacier</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glacier/get-vault-notifications.html" title="previous chapter (use the left arrow)">&larr; get-vault-notifications</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glacier/initiate-multipart-upload.html" title="next chapter (use the right arrow)">initiate-multipart-upload &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">initiate-job</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/glacier/initiate-job">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../glacier/index.html#cli-aws-glacier"><em>glacier</em></a> ]</p>
+<div class="section" id="initiate-job">
+<span id="cli-aws-glacier-initiate-job"></span><h1>initiate-job<a class="headerlink" href="#initiate-job" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This operation initiates a job of the specified type, which can be a select, an archival retrieval, or a vault retrieval. For more information about using this operation, see the documentation for the underlying REST API <a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate a Job</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/InitiateJob">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  initiate-job
+--account-id &lt;value&gt;
+--vault-name &lt;value&gt;
+[--job-parameters &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--account-id</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">AccountId</span></tt> value is the AWS account ID of the account that owns the vault. You can either specify an AWS account ID or optionally a single '<tt class="docutils literal"><span class="pre">-</span></tt> ' (hyphen), in which case Amazon Glacier uses the AWS account ID associated with the credentials used to sign the request. If you use an account ID, do not include any hyphens ('-') in the ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--vault-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the vault.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--job-parameters</span></tt> (structure)</p>
+<blockquote>
+<div>Provides options for specifying job information.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;Format&quot;: &quot;string&quot;,
+  &quot;Type&quot;: &quot;string&quot;,
+  &quot;ArchiveId&quot;: &quot;string&quot;,
+  &quot;Description&quot;: &quot;string&quot;,
+  &quot;SNSTopic&quot;: &quot;string&quot;,
+  &quot;RetrievalByteRange&quot;: &quot;string&quot;,
+  &quot;Tier&quot;: &quot;string&quot;,
+  &quot;InventoryRetrievalParameters&quot;: {
+    &quot;StartDate&quot;: &quot;string&quot;,
+    &quot;EndDate&quot;: &quot;string&quot;,
+    &quot;Limit&quot;: &quot;string&quot;,
+    &quot;Marker&quot;: &quot;string&quot;
+  },
+  &quot;SelectParameters&quot;: {
+    &quot;InputSerialization&quot;: {
+      &quot;csv&quot;: {
+        &quot;FileHeaderInfo&quot;: &quot;USE&quot;|&quot;IGNORE&quot;|&quot;NONE&quot;,
+        &quot;Comments&quot;: &quot;string&quot;,
+        &quot;QuoteEscapeCharacter&quot;: &quot;string&quot;,
+        &quot;RecordDelimiter&quot;: &quot;string&quot;,
+        &quot;FieldDelimiter&quot;: &quot;string&quot;,
+        &quot;QuoteCharacter&quot;: &quot;string&quot;
+      }
+    },
+    &quot;ExpressionType&quot;: &quot;SQL&quot;,
+    &quot;Expression&quot;: &quot;string&quot;,
+    &quot;OutputSerialization&quot;: {
+      &quot;csv&quot;: {
+        &quot;QuoteFields&quot;: &quot;ALWAYS&quot;|&quot;ASNEEDED&quot;,
+        &quot;QuoteEscapeCharacter&quot;: &quot;string&quot;,
+        &quot;RecordDelimiter&quot;: &quot;string&quot;,
+        &quot;FieldDelimiter&quot;: &quot;string&quot;,
+        &quot;QuoteCharacter&quot;: &quot;string&quot;
+      }
+    }
+  },
+  &quot;OutputLocation&quot;: {
+    &quot;S3&quot;: {
+      &quot;BucketName&quot;: &quot;string&quot;,
+      &quot;Prefix&quot;: &quot;string&quot;,
+      &quot;Encryption&quot;: {
+        &quot;EncryptionType&quot;: &quot;aws:kms&quot;|&quot;AES256&quot;,
+        &quot;KMSKeyId&quot;: &quot;string&quot;,
+        &quot;KMSContext&quot;: &quot;string&quot;
+      },
+      &quot;CannedACL&quot;: &quot;private&quot;|&quot;public-read&quot;|&quot;public-read-write&quot;|&quot;aws-exec-read&quot;|&quot;authenticated-read&quot;|&quot;bucket-owner-read&quot;|&quot;bucket-owner-full-control&quot;,
+      &quot;AccessControlList&quot;: [
+        {
+          &quot;Grantee&quot;: {
+            &quot;Type&quot;: &quot;AmazonCustomerByEmail&quot;|&quot;CanonicalUser&quot;|&quot;Group&quot;,
+            &quot;DisplayName&quot;: &quot;string&quot;,
+            &quot;URI&quot;: &quot;string&quot;,
+            &quot;ID&quot;: &quot;string&quot;,
+            &quot;EmailAddress&quot;: &quot;string&quot;
+          },
+          &quot;Permission&quot;: &quot;FULL_CONTROL&quot;|&quot;WRITE&quot;|&quot;WRITE_ACP&quot;|&quot;READ&quot;|&quot;READ_ACP&quot;
+        }
+        ...
+      ],
+      &quot;Tagging&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;UserMetadata&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;StorageClass&quot;: &quot;STANDARD&quot;|&quot;REDUCED_REDUNDANCY&quot;|&quot;STANDARD_IA&quot;
+    }
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following command initiates a job to get an inventory of the vault <tt class="docutils literal"><span class="pre">my-vault</span></tt>:</p>
+<div class="highlight-python"><pre>aws glacier initiate-job --account-id - --vault-name my-vault --job-parameters &#x27;{&quot;Type&quot;: &quot;inventory-retrieval&quot;}&#x27;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;/0123456789012/vaults/my-vault/jobs/zbxcm3Z_3z5UkoroF7SuZKrxgGoDc3RloGduS7Eg-RO47Yc6FxsdGBgf_Q2DK5Ejh18CnTS5XW4_XqlNHS61dsO4CnMW&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;jobId&quot;</span><span class="p">:</span> <span class="s2">&quot;zbxcm3Z_3z5UkoroF7SuZKrxgGoDc3RloGduS7Eg-RO47Yc6FxsdGBgf_Q2DK5Ejh18CnTS5XW4_XqlNHS61dsO4CnMW&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Amazon Glacier requires an account ID argument when performing operations, but you can use a hyphen to specify the in-use account.</p>
+<p>The following command initiates a job to retrieve an archive from the vault <tt class="docutils literal"><span class="pre">my-vault</span></tt>:</p>
+<div class="highlight-python"><pre>aws glacier initiate-job --account-id - --vault-name my-vault --job-parameters file://job-archive-retrieval.json</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">job-archive-retrieval.json</span></tt> is a JSON file in the local folder that specifies the type of job, archive ID, and some optional parameters:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;archive-retrieval&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;ArchiveId&quot;</span><span class="p">:</span> <span class="s2">&quot;kKB7ymWJVpPSwhGP6ycSOAekp9ZYe_--zM_mw6k76ZFGEIWQX-ybtRDvc2VkPSDtfKmQrj0IRQLSGsNuDp-AJVlu2ccmDSyDUmZwKbwbpAdGATGDiB3hHO0bjbGehXTcApVud_wyDw&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Description&quot;</span><span class="p">:</span> <span class="s2">&quot;Retrieve archive on 2015-07-17&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;SNSTopic&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:sns:us-west-2:0123456789012:my-topic&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Archive IDs are available in the output of <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">glacier</span> <span class="pre">upload-archive</span></tt> and <tt class="docutils literal"><span class="pre">aws</span> <span class="pre">glacier</span> <span class="pre">get-job-output</span></tt>.</p>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;/011685312445/vaults/mwunderl/jobs/l7IL5-EkXyEY9Ws95fClzIbk2O5uLYaFdAYOi-azsX_Z8V6NH4yERHzars8wTKYQMX6nBDI9cMNHzyZJO59-8N9aHWav&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;jobId&quot;</span><span class="p">:</span> <span class="s2">&quot;l7IL5-EkXy2O5uLYaFdAYOiEY9Ws95fClzIbk-azsX_Z8V6NH4yERHzars8wTKYQMX6nBDI9cMNHzyZJO59-8N9aHWav&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>See <a class="reference external" href="http://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate Job</a> in the <em>Amazon Glacier API Reference</em> for details on the job parameters format.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div>The relative URI path of the job.</div></blockquote>
+<p>jobId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the job.</div></blockquote>
+<p>jobOutputPath -&gt; (string)</p>
+<blockquote>
+<div>The path to the location of where the select results are stored.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glacier/get-vault-notifications.html" title="previous chapter (use the left arrow)">&larr; get-vault-notifications</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glacier/initiate-multipart-upload.html" title="next chapter (use the right arrow)">initiate-multipart-upload &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../glacier/initiate-multipart-upload.html" title="initiate-multipart-upload"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../glacier/get-vault-notifications.html" title="get-vault-notifications"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../glacier/index.html" >glacier</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

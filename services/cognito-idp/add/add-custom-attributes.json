@@ -1,0 +1,20 @@
+{
+    "UserPoolId": "",
+    "CustomAttributes": [
+        {
+            "Name": "",
+            "AttributeDataType": "Boolean",
+            "DeveloperOnlyAttribute": true,
+            "Mutable": true,
+            "Required": true,
+            "NumberAttributeConstraints": {
+                "MinValue": "",
+                "MaxValue": ""
+            },
+            "StringAttributeConstraints": {
+                "MinLength": "",
+                "MaxLength": ""
+            }
+        }
+    ]
+}

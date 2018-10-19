@@ -1,0 +1,7 @@
+{
+    "ServiceNamespace": "ecs",
+    "ResourceId": "",
+    "ScalableDimension": "ecs:service:DesiredCount",
+    "MaxResults": 0,
+    "NextToken": ""
+}

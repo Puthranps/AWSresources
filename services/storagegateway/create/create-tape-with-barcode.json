@@ -1,0 +1,7 @@
+{
+    "GatewayARN": "",
+    "TapeSizeInBytes": 0,
+    "TapeBarcode": "",
+    "KMSEncrypted": true,
+    "KMSKey": ""
+}

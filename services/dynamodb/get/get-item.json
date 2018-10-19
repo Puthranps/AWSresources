@@ -1,0 +1,36 @@
+{
+    "TableName": "",
+    "Key": {
+        "KeyName": {
+            "S": "",
+            "N": "",
+            "B": null,
+            "SS": [
+                ""
+            ],
+            "NS": [
+                ""
+            ],
+            "BS": [
+                null
+            ],
+            "M": {
+                "KeyName": {}
+            },
+            "L": [
+                {}
+            ],
+            "NULL": true,
+            "BOOL": true
+        }
+    },
+    "AttributesToGet": [
+        ""
+    ],
+    "ConsistentRead": true,
+    "ReturnConsumedCapacity": "TOTAL",
+    "ProjectionExpression": "",
+    "ExpressionAttributeNames": {
+        "KeyName": ""
+    }
+}

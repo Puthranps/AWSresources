@@ -1,0 +1,41 @@
+{
+    "RequestItems": {
+        "KeyName": {
+            "Keys": [
+                {
+                    "KeyName": {
+                        "S": "",
+                        "N": "",
+                        "B": null,
+                        "SS": [
+                            ""
+                        ],
+                        "NS": [
+                            ""
+                        ],
+                        "BS": [
+                            null
+                        ],
+                        "M": {
+                            "KeyName": {}
+                        },
+                        "L": [
+                            {}
+                        ],
+                        "NULL": true,
+                        "BOOL": true
+                    }
+                }
+            ],
+            "AttributesToGet": [
+                ""
+            ],
+            "ConsistentRead": true,
+            "ProjectionExpression": "",
+            "ExpressionAttributeNames": {
+                "KeyName": ""
+            }
+        }
+    },
+    "ReturnConsumedCapacity": "NONE"
+}

@@ -1,0 +1,19 @@
+{
+    "EndpointConfigName": "",
+    "ProductionVariants": [
+        {
+            "VariantName": "",
+            "ModelName": "",
+            "InitialInstanceCount": 0,
+            "InstanceType": "ml.m4.10xlarge",
+            "InitialVariantWeight": 0.0
+        }
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "KmsKeyId": ""
+}

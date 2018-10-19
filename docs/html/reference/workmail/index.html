@@ -1,0 +1,240 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>workmail &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="associate-delegate-to-resource" href="../workmail/associate-delegate-to-resource.html" />
+    <link rel="prev" title="update-user" href="../workdocs/update-user.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../workmail/associate-delegate-to-resource.html" title="associate-delegate-to-resource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../workdocs/update-user.html" title="update-user"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../workdocs/update-user.html" title="previous chapter (use the left arrow)">&larr; update-user</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workmail/associate-delegate-to-resource.html" title="next chapter (use the right arrow)">associate-delegate-to-resource &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">workmail</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/workmail/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="workmail">
+<span id="cli-aws-workmail"></span><h1>workmail<a class="headerlink" href="#workmail" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon WorkMail is a secure, managed business email and calendaring service with support for existing desktop and mobile email clients. You can access your email, contacts, and calendars using Microsoft Outlook, your browser, or their native iOS and Android email applications. You can integrate Amazon WorkMail with your existing corporate directory and control both the keys that encrypt your data and the location in which your data is stored.</p>
+<p>The Amazon WorkMail API is designed for the following scenarios:</p>
+<ul class="simple">
+<li>Listing and describing organizations</li>
+<li>Managing users</li>
+<li>Managing groups</li>
+<li>Managing resources</li>
+</ul>
+<p>All Amazon WorkMail API actions are Amazon-authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkMail site, the IAM user gains full administrative visibility into the entire Amazon WorkMail organization (or as set in the IAM policy). This includes, but is not limited to, the ability to create, update, and delete users, groups, and resources. This allows developers to perform the scenarios listed above, as well as give users the ability to grant access on a selective basis using the IAM model.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/associate-delegate-to-resource.html">associate-delegate-to-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/associate-member-to-group.html">associate-member-to-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/create-alias.html">create-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/create-group.html">create-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/create-resource.html">create-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/create-user.html">create-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/delete-alias.html">delete-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/delete-group.html">delete-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/delete-mailbox-permissions.html">delete-mailbox-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/delete-resource.html">delete-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/delete-user.html">delete-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/deregister-from-work-mail.html">deregister-from-work-mail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/describe-group.html">describe-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/describe-organization.html">describe-organization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/describe-resource.html">describe-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/describe-user.html">describe-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/disassociate-delegate-from-resource.html">disassociate-delegate-from-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/disassociate-member-from-group.html">disassociate-member-from-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-aliases.html">list-aliases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-group-members.html">list-group-members</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-groups.html">list-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-mailbox-permissions.html">list-mailbox-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-organizations.html">list-organizations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-resource-delegates.html">list-resource-delegates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-resources.html">list-resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/list-users.html">list-users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/put-mailbox-permissions.html">put-mailbox-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/register-to-work-mail.html">register-to-work-mail</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/reset-password.html">reset-password</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/update-primary-email-address.html">update-primary-email-address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workmail/update-resource.html">update-resource</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../workdocs/update-user.html" title="previous chapter (use the left arrow)">&larr; update-user</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workmail/associate-delegate-to-resource.html" title="next chapter (use the right arrow)">associate-delegate-to-resource &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../workmail/associate-delegate-to-resource.html" title="associate-delegate-to-resource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../workdocs/update-user.html" title="update-user"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

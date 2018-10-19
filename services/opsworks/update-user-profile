@@ -1,0 +1,6 @@
+{
+    "IamUserArn": "",
+    "SshUsername": "",
+    "SshPublicKey": "",
+    "AllowSelfManagement": true
+}

@@ -1,0 +1,230 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>comprehend &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="batch-detect-dominant-language" href="../comprehend/batch-detect-dominant-language.html" />
+    <link rel="prev" title="update-records" href="../cognito-sync/update-records.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../comprehend/batch-detect-dominant-language.html" title="batch-detect-dominant-language"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cognito-sync/update-records.html" title="update-records"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-sync/update-records.html" title="previous chapter (use the left arrow)">&larr; update-records</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../comprehend/batch-detect-dominant-language.html" title="next chapter (use the right arrow)">batch-detect-dominant-language &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">comprehend</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/comprehend/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="comprehend">
+<span id="cli-aws-comprehend"></span><h1>comprehend<a class="headerlink" href="#comprehend" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon Comprehend is an AWS service for gaining insight into the content of documents. Use these actions to determine the topics contained in your documents, the topics they discuss, the predominant sentiment expressed in them, the predominant language used, and more.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/batch-detect-dominant-language.html">batch-detect-dominant-language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/batch-detect-entities.html">batch-detect-entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/batch-detect-key-phrases.html">batch-detect-key-phrases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/batch-detect-sentiment.html">batch-detect-sentiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/batch-detect-syntax.html">batch-detect-syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/describe-dominant-language-detection-job.html">describe-dominant-language-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/describe-entities-detection-job.html">describe-entities-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/describe-key-phrases-detection-job.html">describe-key-phrases-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/describe-sentiment-detection-job.html">describe-sentiment-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/describe-topics-detection-job.html">describe-topics-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/detect-dominant-language.html">detect-dominant-language</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/detect-entities.html">detect-entities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/detect-key-phrases.html">detect-key-phrases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/detect-sentiment.html">detect-sentiment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/detect-syntax.html">detect-syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/list-dominant-language-detection-jobs.html">list-dominant-language-detection-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/list-entities-detection-jobs.html">list-entities-detection-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/list-key-phrases-detection-jobs.html">list-key-phrases-detection-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/list-sentiment-detection-jobs.html">list-sentiment-detection-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/list-topics-detection-jobs.html">list-topics-detection-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/start-dominant-language-detection-job.html">start-dominant-language-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/start-entities-detection-job.html">start-entities-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/start-key-phrases-detection-job.html">start-key-phrases-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/start-sentiment-detection-job.html">start-sentiment-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/start-topics-detection-job.html">start-topics-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/stop-dominant-language-detection-job.html">stop-dominant-language-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/stop-entities-detection-job.html">stop-entities-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/stop-key-phrases-detection-job.html">stop-key-phrases-detection-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../comprehend/stop-sentiment-detection-job.html">stop-sentiment-detection-job</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cognito-sync/update-records.html" title="previous chapter (use the left arrow)">&larr; update-records</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../comprehend/batch-detect-dominant-language.html" title="next chapter (use the right arrow)">batch-detect-dominant-language &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../comprehend/batch-detect-dominant-language.html" title="batch-detect-dominant-language"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cognito-sync/update-records.html" title="update-records"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

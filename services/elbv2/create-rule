@@ -1,0 +1,59 @@
+{
+    "ListenerArn": "",
+    "Conditions": [
+        {
+            "Field": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "Priority": 0,
+    "Actions": [
+        {
+            "Type": "authenticate-oidc",
+            "TargetGroupArn": "",
+            "AuthenticateOidcConfig": {
+                "Issuer": "",
+                "AuthorizationEndpoint": "",
+                "TokenEndpoint": "",
+                "UserInfoEndpoint": "",
+                "ClientId": "",
+                "ClientSecret": "",
+                "SessionCookieName": "",
+                "Scope": "",
+                "SessionTimeout": 0,
+                "AuthenticationRequestExtraParams": {
+                    "KeyName": ""
+                },
+                "OnUnauthenticatedRequest": "deny"
+            },
+            "AuthenticateCognitoConfig": {
+                "UserPoolArn": "",
+                "UserPoolClientId": "",
+                "UserPoolDomain": "",
+                "SessionCookieName": "",
+                "Scope": "",
+                "SessionTimeout": 0,
+                "AuthenticationRequestExtraParams": {
+                    "KeyName": ""
+                },
+                "OnUnauthenticatedRequest": "allow"
+            },
+            "Order": 0,
+            "RedirectConfig": {
+                "Protocol": "",
+                "Port": "",
+                "Host": "",
+                "Path": "",
+                "Query": "",
+                "StatusCode": "HTTP_302"
+            },
+            "FixedResponseConfig": {
+                "MessageBody": "",
+                "StatusCode": "",
+                "ContentType": ""
+            }
+        }
+    ]
+}

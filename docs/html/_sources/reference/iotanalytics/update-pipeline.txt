@@ -1,0 +1,153 @@
+[ :ref:`aws <cli:aws>` . :ref:`iotanalytics <cli:aws iotanalytics>` ]
+
+.. _cli:aws iotanalytics update-pipeline:
+
+
+***************
+update-pipeline
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Updates the settings of a pipeline.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/UpdatePipeline>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-pipeline
+  --pipeline-name <value>
+  --pipeline-activities <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--pipeline-name`` (string)
+
+
+  The name of the pipeline to update.
+
+  
+
+``--pipeline-activities`` (list)
+
+
+  A list of "PipelineActivity" objects.
+
+   
+
+  The list can be 1-25 **PipelineActivity** objects. Activities perform transformations on your messages, such as removing, renaming or adding message attributes; filtering messages based on attribute values; invoking your Lambda functions on messages for advanced processing; or performing mathematical transformations to normalize device data.
+
+  
+
+
+
+Shorthand Syntax::
+
+    channel={name=string,channelName=string,next=string},lambda={name=string,lambdaName=string,batchSize=integer,next=string},datastore={name=string,datastoreName=string},addAttributes={name=string,attributes={KeyName1=string,KeyName2=string},next=string},removeAttributes={name=string,attributes=[string,string],next=string},selectAttributes={name=string,attributes=[string,string],next=string},filter={name=string,filter=string,next=string},math={name=string,attribute=string,math=string,next=string},deviceRegistryEnrich={name=string,attribute=string,thingName=string,roleArn=string,next=string},deviceShadowEnrich={name=string,attribute=string,thingName=string,roleArn=string,next=string} ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "channel": {
+        "name": "string",
+        "channelName": "string",
+        "next": "string"
+      },
+      "lambda": {
+        "name": "string",
+        "lambdaName": "string",
+        "batchSize": integer,
+        "next": "string"
+      },
+      "datastore": {
+        "name": "string",
+        "datastoreName": "string"
+      },
+      "addAttributes": {
+        "name": "string",
+        "attributes": {"string": "string"
+          ...},
+        "next": "string"
+      },
+      "removeAttributes": {
+        "name": "string",
+        "attributes": ["string", ...],
+        "next": "string"
+      },
+      "selectAttributes": {
+        "name": "string",
+        "attributes": ["string", ...],
+        "next": "string"
+      },
+      "filter": {
+        "name": "string",
+        "filter": "string",
+        "next": "string"
+      },
+      "math": {
+        "name": "string",
+        "attribute": "string",
+        "math": "string",
+        "next": "string"
+      },
+      "deviceRegistryEnrich": {
+        "name": "string",
+        "attribute": "string",
+        "thingName": "string",
+        "roleArn": "string",
+        "next": "string"
+      },
+      "deviceShadowEnrich": {
+        "name": "string",
+        "attribute": "string",
+        "thingName": "string",
+        "roleArn": "string",
+        "next": "string"
+      }
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+None

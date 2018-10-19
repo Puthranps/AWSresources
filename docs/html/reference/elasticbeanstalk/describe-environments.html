@@ -1,0 +1,440 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-environments &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="elasticbeanstalk" href="../elasticbeanstalk/index.html" />
+    <link rel="next" title="describe-events" href="../elasticbeanstalk/describe-events.html" />
+    <link rel="prev" title="describe-environment-resources" href="../elasticbeanstalk/describe-environment-resources.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../elasticbeanstalk/describe-events.html" title="describe-events"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../elasticbeanstalk/describe-environment-resources.html" title="describe-environment-resources"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../elasticbeanstalk/index.html" accesskey="U">elasticbeanstalk</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elasticbeanstalk/describe-environment-resources.html" title="previous chapter (use the left arrow)">&larr; describe-environment-resources</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elasticbeanstalk/describe-events.html" title="next chapter (use the right arrow)">describe-events &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-environments</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/elasticbeanstalk/describe-environments">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../elasticbeanstalk/index.html#cli-aws-elasticbeanstalk"><em>elasticbeanstalk</em></a> ]</p>
+<div class="section" id="describe-environments">
+<span id="cli-aws-elasticbeanstalk-describe-environments"></span><h1>describe-environments<a class="headerlink" href="#describe-environments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns descriptions for existing environments.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/DescribeEnvironments">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-environments
+[--application-name &lt;value&gt;]
+[--version-label &lt;value&gt;]
+[--environment-ids &lt;value&gt;]
+[--environment-names &lt;value&gt;]
+[--include-deleted | --no-include-deleted]
+[--included-deleted-back-to &lt;value&gt;]
+[--max-records &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--application-name</span></tt> (string)</p>
+<blockquote>
+<div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--version-label</span></tt> (string)</p>
+<blockquote>
+<div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--environment-ids</span></tt> (list)</p>
+<blockquote>
+<div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--environment-names</span></tt> (list)</p>
+<blockquote>
+<div>If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--include-deleted</span></tt> | <tt class="docutils literal"><span class="pre">--no-include-deleted</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Indicates whether to include deleted environments:</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">true</span></tt> : Environments that have been deleted after <tt class="docutils literal"><span class="pre">IncludedDeletedBackTo</span></tt> are displayed.</p>
+<p><tt class="docutils literal"><span class="pre">false</span></tt> : Do not include deleted environments.</p>
+</div></blockquote>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--included-deleted-back-to</span></tt> (timestamp)</p>
+<blockquote>
+<div>If specified when <tt class="docutils literal"><span class="pre">IncludeDeleted</span></tt> is set to <tt class="docutils literal"><span class="pre">true</span></tt> , then environments deleted after this date are displayed.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-records</span></tt> (integer)</p>
+<blockquote>
+<div><p>For a paginated request. Specify a maximum number of environments to include in each response.</p>
+<p>If no <tt class="docutils literal"><span class="pre">MaxRecords</span></tt> is specified, all available environments are retrieved in a single response.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div><p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p>
+<p>If no <tt class="docutils literal"><span class="pre">NextToken</span></tt> is specified, the first page is retrieved.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To view information about an environment</strong></p>
+<p>The following command retrieves information about an environment named <tt class="docutils literal"><span class="pre">my-env</span></tt>:</p>
+<div class="highlight-python"><pre>aws elasticbeanstalk describe-environments --environment-names my-env</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;Environments&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;ApplicationName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-app&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EnvironmentName&quot;</span><span class="p">:</span> <span class="s2">&quot;my-env&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;VersionLabel&quot;</span><span class="p">:</span> <span class="s2">&quot;7f58-stage-150812_025409&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Status&quot;</span><span class="p">:</span> <span class="s2">&quot;Ready&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EnvironmentId&quot;</span><span class="p">:</span> <span class="s2">&quot;e-rpqsewtp2j&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;EndpointURL&quot;</span><span class="p">:</span> <span class="s2">&quot;awseb-e-w-AWSEBLoa-1483140XB0Q4L-109QXY8121.us-west-2.elb.amazonaws.com&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;SolutionStackName&quot;</span><span class="p">:</span> <span class="s2">&quot;64bit Amazon Linux 2015.03 v2.0.0 running Tomcat 8 Java 8&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;CNAME&quot;</span><span class="p">:</span> <span class="s2">&quot;my-env.elasticbeanstalk.com&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Health&quot;</span><span class="p">:</span> <span class="s2">&quot;Green&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AbortableOperationInProgress&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;Tier&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;Version&quot;</span><span class="p">:</span> <span class="s2">&quot; &quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Type&quot;</span><span class="p">:</span> <span class="s2">&quot;Standard&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;WebServer&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;DateUpdated&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-08-12T18:16:55.019Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;DateCreated&quot;</span><span class="p">:</span> <span class="s2">&quot;2015-08-07T20:48:49.599Z&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Environments -&gt; (list)</p>
+<blockquote>
+<div><p>Returns an  EnvironmentDescription list.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the properties of an environment.</p>
+<p>EnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of this environment.</div></blockquote>
+<p>EnvironmentId -&gt; (string)</p>
+<blockquote>
+<div>The ID of this environment.</div></blockquote>
+<p>ApplicationName -&gt; (string)</p>
+<blockquote>
+<div>The name of the application associated with this environment.</div></blockquote>
+<p>VersionLabel -&gt; (string)</p>
+<blockquote>
+<div>The application version deployed in this environment.</div></blockquote>
+<p>SolutionStackName -&gt; (string)</p>
+<blockquote>
+<div>The name of the <tt class="docutils literal"><span class="pre">SolutionStack</span></tt> deployed with this environment.</div></blockquote>
+<p>PlatformArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the platform.</div></blockquote>
+<p>TemplateName -&gt; (string)</p>
+<blockquote>
+<div>The name of the configuration template used to originally launch this environment.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>Describes this environment.</div></blockquote>
+<p>EndpointURL -&gt; (string)</p>
+<blockquote>
+<div>For load-balanced, autoscaling environments, the URL to the LoadBalancer. For single-instance environments, the IP address of the instance.</div></blockquote>
+<p>CNAME -&gt; (string)</p>
+<blockquote>
+<div>The URL to the CNAME for this environment.</div></blockquote>
+<p>DateCreated -&gt; (timestamp)</p>
+<blockquote>
+<div>The creation date for this environment.</div></blockquote>
+<p>DateUpdated -&gt; (timestamp)</p>
+<blockquote>
+<div>The last modified date for this environment.</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div><p>The current operational status of the environment:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Launching</span></tt> : Environment is in the process of initial deployment.</li>
+<li><tt class="docutils literal"><span class="pre">Updating</span></tt> : Environment is in the process of updating its configuration settings or application version.</li>
+<li><tt class="docutils literal"><span class="pre">Ready</span></tt> : Environment is available to have an action performed on it, such as update or terminate.</li>
+<li><tt class="docutils literal"><span class="pre">Terminating</span></tt> : Environment is in the shut-down process.</li>
+<li><tt class="docutils literal"><span class="pre">Terminated</span></tt> : Environment is not running.</li>
+</ul>
+</div></blockquote>
+<p>AbortableOperationInProgress -&gt; (boolean)</p>
+<blockquote>
+<div><p>Indicates if there is an in-progress environment configuration update or application version deployment that you can cancel.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">true:</span></tt> There is an update in progress.</p>
+<p><tt class="docutils literal"><span class="pre">false:</span></tt> There are no updates currently in progress.</p>
+</div></blockquote>
+</div></blockquote>
+<p>Health -&gt; (string)</p>
+<blockquote>
+<div><p>Describes the health status of the environment. AWS Elastic Beanstalk indicates the failure levels for a running environment:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Red</span></tt> : Indicates the environment is not responsive. Occurs when three or more consecutive failures occur for an environment.</li>
+<li><tt class="docutils literal"><span class="pre">Yellow</span></tt> : Indicates that something is wrong. Occurs when two consecutive failures occur for an environment.</li>
+<li><tt class="docutils literal"><span class="pre">Green</span></tt> : Indicates the environment is healthy and fully functional.</li>
+<li><tt class="docutils literal"><span class="pre">Grey</span></tt> : Default health for a new environment. The environment is not fully launched and health checks have not started or health checks are suspended during an <tt class="docutils literal"><span class="pre">UpdateEnvironment</span></tt> or <tt class="docutils literal"><span class="pre">RestartEnvironement</span></tt> request.</li>
+</ul>
+<p>Default: <tt class="docutils literal"><span class="pre">Grey</span></tt></p>
+</div></blockquote>
+<p>HealthStatus -&gt; (string)</p>
+<blockquote>
+<div>Returns the health status of the application running in your environment. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health Colors and Statuses</a> .</div></blockquote>
+<p>Resources -&gt; (structure)</p>
+<blockquote>
+<div><p>The description of the AWS resources used by this environment.</p>
+<p>LoadBalancer -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the LoadBalancer.</p>
+<p>LoadBalancerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the LoadBalancer.</div></blockquote>
+<p>Domain -&gt; (string)</p>
+<blockquote>
+<div>The domain name of the LoadBalancer.</div></blockquote>
+<p>Listeners -&gt; (list)</p>
+<blockquote>
+<div><p>A list of Listeners used by the LoadBalancer.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the properties of a Listener for the LoadBalancer.</p>
+<p>Protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol that is used by the Listener.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>The port that is used by the Listener.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Tier -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the current tier of this environment.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of this environment tier.</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The type of this environment tier.</div></blockquote>
+<p>Version -&gt; (string)</p>
+<blockquote>
+<div><p>The version of this environment tier. When you don't set a value to it, Elastic Beanstalk uses the latest compatible worker tier version.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This member is deprecated. Any specific version that you set may become out of date. We recommend leaving it unspecified.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>EnvironmentLinks -&gt; (list)</p>
+<blockquote>
+<div><p>A list of links to other environments in the same group.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A link to another environment, defined in the environment's manifest. Links provide connection information in system properties that can be used to connect to another environment in the same group. See <a class="reference external" href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.</p>
+<p>LinkName -&gt; (string)</p>
+<blockquote>
+<div>The name of the link.</div></blockquote>
+<p>EnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of the linked environment (the dependency).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EnvironmentArn -&gt; (string)</p>
+<blockquote>
+<div>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>In a paginated request, the token that you can pass in a subsequent request to get the next response page.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elasticbeanstalk/describe-environment-resources.html" title="previous chapter (use the left arrow)">&larr; describe-environment-resources</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elasticbeanstalk/describe-events.html" title="next chapter (use the right arrow)">describe-events &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../elasticbeanstalk/describe-events.html" title="describe-events"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../elasticbeanstalk/describe-environment-resources.html" title="describe-environment-resources"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../elasticbeanstalk/index.html" >elasticbeanstalk</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,72 @@
+{
+    "DomainName": "",
+    "IdnLangCode": "",
+    "DurationInYears": 0,
+    "AutoRenew": true,
+    "AdminContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "ASSOCIATION",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "NA",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "RU_PASSPORT_DATA",
+                "Value": ""
+            }
+        ]
+    },
+    "RegistrantContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "ASSOCIATION",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "YT",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "UK_CONTACT_TYPE",
+                "Value": ""
+            }
+        ]
+    },
+    "TechContact": {
+        "FirstName": "",
+        "LastName": "",
+        "ContactType": "PERSON",
+        "OrganizationName": "",
+        "AddressLine1": "",
+        "AddressLine2": "",
+        "City": "",
+        "State": "",
+        "CountryCode": "AQ",
+        "ZipCode": "",
+        "PhoneNumber": "",
+        "Email": "",
+        "Fax": "",
+        "ExtraParams": [
+            {
+                "Name": "BIRTH_DEPARTMENT",
+                "Value": ""
+            }
+        ]
+    },
+    "PrivacyProtectAdminContact": true,
+    "PrivacyProtectRegistrantContact": true,
+    "PrivacyProtectTechContact": true
+}

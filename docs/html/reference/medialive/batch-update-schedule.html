@@ -1,0 +1,640 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>batch-update-schedule &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="medialive" href="../medialive/index.html" />
+    <link rel="next" title="create-channel" href="../medialive/create-channel.html" />
+    <link rel="prev" title="medialive" href="../medialive/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../medialive/create-channel.html" title="create-channel"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../medialive/index.html" title="medialive"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../medialive/index.html" accesskey="U">medialive</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../medialive/index.html" title="previous chapter (use the left arrow)">&larr; medialive</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../medialive/create-channel.html" title="next chapter (use the right arrow)">create-channel &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">batch-update-schedule</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/medialive/batch-update-schedule">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../medialive/index.html#cli-aws-medialive"><em>medialive</em></a> ]</p>
+<div class="section" id="batch-update-schedule">
+<span id="cli-aws-medialive-batch-update-schedule"></span><h1>batch-update-schedule<a class="headerlink" href="#batch-update-schedule" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Update a channel schedule</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchUpdateSchedule">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  batch-update-schedule
+--channel-id &lt;value&gt;
+[--creates &lt;value&gt;]
+[--deletes &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--channel-id</span></tt> (string)
+Id of the channel whose schedule is being updated.</p>
+<p><tt class="docutils literal"><span class="pre">--creates</span></tt> (structure)
+Schedule actions to create in the schedule.</p>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;ScheduleActions&quot;: [
+    {
+      &quot;ActionName&quot;: &quot;string&quot;,
+      &quot;ScheduleActionSettings&quot;: {
+        &quot;Scte35ReturnToNetworkSettings&quot;: {
+          &quot;SpliceEventId&quot;: long
+        },
+        &quot;Scte35SpliceInsertSettings&quot;: {
+          &quot;Duration&quot;: long,
+          &quot;SpliceEventId&quot;: long
+        },
+        &quot;Scte35TimeSignalSettings&quot;: {
+          &quot;Scte35Descriptors&quot;: [
+            {
+              &quot;Scte35DescriptorSettings&quot;: {
+                &quot;SegmentationDescriptorScte35DescriptorSettings&quot;: {
+                  &quot;DeliveryRestrictions&quot;: {
+                    &quot;ArchiveAllowedFlag&quot;: &quot;ARCHIVE_NOT_ALLOWED&quot;|&quot;ARCHIVE_ALLOWED&quot;,
+                    &quot;DeviceRestrictions&quot;: &quot;NONE&quot;|&quot;RESTRICT_GROUP0&quot;|&quot;RESTRICT_GROUP1&quot;|&quot;RESTRICT_GROUP2&quot;,
+                    &quot;NoRegionalBlackoutFlag&quot;: &quot;REGIONAL_BLACKOUT&quot;|&quot;NO_REGIONAL_BLACKOUT&quot;,
+                    &quot;WebDeliveryAllowedFlag&quot;: &quot;WEB_DELIVERY_NOT_ALLOWED&quot;|&quot;WEB_DELIVERY_ALLOWED&quot;
+                  },
+                  &quot;SegmentNum&quot;: integer,
+                  &quot;SegmentationCancelIndicator&quot;: &quot;SEGMENTATION_EVENT_NOT_CANCELED&quot;|&quot;SEGMENTATION_EVENT_CANCELED&quot;,
+                  &quot;SegmentationDuration&quot;: long,
+                  &quot;SegmentationEventId&quot;: long,
+                  &quot;SegmentationTypeId&quot;: integer,
+                  &quot;SegmentationUpid&quot;: &quot;string&quot;,
+                  &quot;SegmentationUpidType&quot;: integer,
+                  &quot;SegmentsExpected&quot;: integer,
+                  &quot;SubSegmentNum&quot;: integer,
+                  &quot;SubSegmentsExpected&quot;: integer
+                }
+              }
+            }
+            ...
+          ]
+        },
+        &quot;StaticImageActivateSettings&quot;: {
+          &quot;Duration&quot;: integer,
+          &quot;FadeIn&quot;: integer,
+          &quot;FadeOut&quot;: integer,
+          &quot;Height&quot;: integer,
+          &quot;Image&quot;: {
+            &quot;PasswordParam&quot;: &quot;string&quot;,
+            &quot;Uri&quot;: &quot;string&quot;,
+            &quot;Username&quot;: &quot;string&quot;
+          },
+          &quot;ImageX&quot;: integer,
+          &quot;ImageY&quot;: integer,
+          &quot;Layer&quot;: integer,
+          &quot;Opacity&quot;: integer,
+          &quot;Width&quot;: integer
+        },
+        &quot;StaticImageDeactivateSettings&quot;: {
+          &quot;FadeOut&quot;: integer,
+          &quot;Layer&quot;: integer
+        }
+      },
+      &quot;ScheduleActionStartSettings&quot;: {
+        &quot;FixedModeScheduleActionStartSettings&quot;: {
+          &quot;Time&quot;: &quot;string&quot;
+        }
+      }
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--deletes</span></tt> (structure)
+Schedule actions to delete from the schedule.</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">ActionNames</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;ActionNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Creates -&gt; (structure)</p>
+<blockquote>
+<div><p>Schedule actions created in the schedule.</p>
+<p>ScheduleActions -&gt; (list)</p>
+<blockquote>
+<div><p>Returned list of created schedule actions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A single schedule action.</p>
+<p>ActionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the action, must be unique within the schedule.</div></blockquote>
+<p>ScheduleActionSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings for this schedule action.</p>
+<p>Scte35ReturnToNetworkSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Return to Network Settings</p>
+<p>SpliceEventId -&gt; (long)</p>
+<blockquote>
+<div>The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.</div></blockquote>
+</div></blockquote>
+<p>Scte35SpliceInsertSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Splice Insert Settings</p>
+<p>Duration -&gt; (long)</p>
+<blockquote>
+<div>The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified the expectation is that a Scte35ReturnToNetwork action will be scheduled.</div></blockquote>
+<p>SpliceEventId -&gt; (long)</p>
+<blockquote>
+<div>The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.</div></blockquote>
+</div></blockquote>
+<p>Scte35TimeSignalSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Time Signal Settings</p>
+<p>Scte35Descriptors -&gt; (list)</p>
+<blockquote>
+<div><p>The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>SCTE-35 Descriptor.</p>
+<p>Scte35DescriptorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Descriptor Settings.</p>
+<p>SegmentationDescriptorScte35DescriptorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Segmentation Descriptor.</p>
+<p>DeliveryRestrictions -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 delivery restrictions.</p>
+<p>ArchiveAllowedFlag -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor archive_allowed_flag.</div></blockquote>
+<p>DeviceRestrictions -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor web_delivery_allowed_flag.</div></blockquote>
+<p>NoRegionalBlackoutFlag -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor no_regional_blackout_flag.</div></blockquote>
+<p>WebDeliveryAllowedFlag -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor web_delivery_allowed_flag.</div></blockquote>
+</div></blockquote>
+<p>SegmentNum -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segment_num.</div></blockquote>
+<p>SegmentationCancelIndicator -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.</div></blockquote>
+<p>SegmentationDuration -&gt; (long)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.</div></blockquote>
+<p>SegmentationEventId -&gt; (long)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_event_id.</div></blockquote>
+<p>SegmentationTypeId -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_type_id.</div></blockquote>
+<p>SegmentationUpid -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_upid as a hex string.</div></blockquote>
+<p>SegmentationUpidType -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_upid_type.</div></blockquote>
+<p>SegmentsExpected -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segments_expected.</div></blockquote>
+<p>SubSegmentNum -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor sub_segment_num.</div></blockquote>
+<p>SubSegmentsExpected -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor sub_segments_expected.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>StaticImageActivateSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Static Image Activate</p>
+<p>Duration -&gt; (integer)</p>
+<blockquote>
+<div>The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is infinite and image will remain until explicitly deactivated.</div></blockquote>
+<p>FadeIn -&gt; (integer)</p>
+<blockquote>
+<div>The time in milliseconds for the image to fade in. Defaults to 0.</div></blockquote>
+<p>FadeOut -&gt; (integer)</p>
+<blockquote>
+<div>The time in milliseconds for the image to fade out. Defaults to 0.</div></blockquote>
+<p>Height -&gt; (integer)</p>
+<blockquote>
+<div>The height of the image when inserted into the video. Defaults to the native height of the image.</div></blockquote>
+<p>Image -&gt; (structure)</p>
+<blockquote>
+<div><p>The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the input video.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>ImageX -&gt; (integer)</p>
+<blockquote>
+<div>Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame. Defaults to 0.</div></blockquote>
+<p>ImageY -&gt; (integer)</p>
+<blockquote>
+<div>Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame. Defaults to 0.</div></blockquote>
+<p>Layer -&gt; (integer)</p>
+<blockquote>
+<div>The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.</div></blockquote>
+<p>Opacity -&gt; (integer)</p>
+<blockquote>
+<div>Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.</div></blockquote>
+<p>Width -&gt; (integer)</p>
+<blockquote>
+<div>The width of the image when inserted into the video. Defaults to the native width of the image.</div></blockquote>
+</div></blockquote>
+<p>StaticImageDeactivateSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Static Image Deactivate</p>
+<p>FadeOut -&gt; (integer)</p>
+<blockquote>
+<div>The time in milliseconds for the image to fade out. Defaults to 0.</div></blockquote>
+<p>Layer -&gt; (integer)</p>
+<blockquote>
+<div>The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ScheduleActionStartSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>When the action takes effect.</p>
+<p>FixedModeScheduleActionStartSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Fixed timestamp action start. Conforms to ISO-8601.</p>
+<p>Time -&gt; (string)</p>
+<blockquote>
+<div>Fixed timestamp action start. Conforms to ISO-8601.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Deletes -&gt; (structure)</p>
+<blockquote>
+<div><p>Schedule actions deleted from the schedule.</p>
+<p>ScheduleActions -&gt; (list)</p>
+<blockquote>
+<div><p>Returned list of deleted schedule actions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A single schedule action.</p>
+<p>ActionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the action, must be unique within the schedule.</div></blockquote>
+<p>ScheduleActionSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings for this schedule action.</p>
+<p>Scte35ReturnToNetworkSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Return to Network Settings</p>
+<p>SpliceEventId -&gt; (long)</p>
+<blockquote>
+<div>The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.</div></blockquote>
+</div></blockquote>
+<p>Scte35SpliceInsertSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Splice Insert Settings</p>
+<p>Duration -&gt; (long)</p>
+<blockquote>
+<div>The duration for the SCTE-35 splice_insert specified in 90KHz clock ticks. When duration is not specified the expectation is that a Scte35ReturnToNetwork action will be scheduled.</div></blockquote>
+<p>SpliceEventId -&gt; (long)</p>
+<blockquote>
+<div>The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.</div></blockquote>
+</div></blockquote>
+<p>Scte35TimeSignalSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Time Signal Settings</p>
+<p>Scte35Descriptors -&gt; (list)</p>
+<blockquote>
+<div><p>The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>SCTE-35 Descriptor.</p>
+<p>Scte35DescriptorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Descriptor Settings.</p>
+<p>SegmentationDescriptorScte35DescriptorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 Segmentation Descriptor.</p>
+<p>DeliveryRestrictions -&gt; (structure)</p>
+<blockquote>
+<div><p>SCTE-35 delivery restrictions.</p>
+<p>ArchiveAllowedFlag -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor archive_allowed_flag.</div></blockquote>
+<p>DeviceRestrictions -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor web_delivery_allowed_flag.</div></blockquote>
+<p>NoRegionalBlackoutFlag -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor no_regional_blackout_flag.</div></blockquote>
+<p>WebDeliveryAllowedFlag -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor web_delivery_allowed_flag.</div></blockquote>
+</div></blockquote>
+<p>SegmentNum -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segment_num.</div></blockquote>
+<p>SegmentationCancelIndicator -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_event_cancel_indicator.</div></blockquote>
+<p>SegmentationDuration -&gt; (long)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_duration specified in 90 KHz clock ticks.</div></blockquote>
+<p>SegmentationEventId -&gt; (long)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_event_id.</div></blockquote>
+<p>SegmentationTypeId -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_type_id.</div></blockquote>
+<p>SegmentationUpid -&gt; (string)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_upid as a hex string.</div></blockquote>
+<p>SegmentationUpidType -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segmentation_upid_type.</div></blockquote>
+<p>SegmentsExpected -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor segments_expected.</div></blockquote>
+<p>SubSegmentNum -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor sub_segment_num.</div></blockquote>
+<p>SubSegmentsExpected -&gt; (integer)</p>
+<blockquote>
+<div>SCTE-35 segmentation_descriptor sub_segments_expected.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>StaticImageActivateSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Static Image Activate</p>
+<p>Duration -&gt; (integer)</p>
+<blockquote>
+<div>The duration in milliseconds for the image to remain in the video. If omitted or set to 0, duration is infinite and image will remain until explicitly deactivated.</div></blockquote>
+<p>FadeIn -&gt; (integer)</p>
+<blockquote>
+<div>The time in milliseconds for the image to fade in. Defaults to 0.</div></blockquote>
+<p>FadeOut -&gt; (integer)</p>
+<blockquote>
+<div>The time in milliseconds for the image to fade out. Defaults to 0.</div></blockquote>
+<p>Height -&gt; (integer)</p>
+<blockquote>
+<div>The height of the image when inserted into the video. Defaults to the native height of the image.</div></blockquote>
+<p>Image -&gt; (structure)</p>
+<blockquote>
+<div><p>The image to overlay on the video. Must be a 32 bit BMP, PNG, or TGA file. Must not be larger than the input video.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>ImageX -&gt; (integer)</p>
+<blockquote>
+<div>Placement of the left edge of the image on the horizontal axis in pixels. 0 is the left edge of the frame. Defaults to 0.</div></blockquote>
+<p>ImageY -&gt; (integer)</p>
+<blockquote>
+<div>Placement of the top edge of the image on the vertical axis in pixels. 0 is the top edge of the frame. Defaults to 0.</div></blockquote>
+<p>Layer -&gt; (integer)</p>
+<blockquote>
+<div>The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.</div></blockquote>
+<p>Opacity -&gt; (integer)</p>
+<blockquote>
+<div>Opacity of image where 0 is transparent and 100 is fully opaque. Defaults to 100.</div></blockquote>
+<p>Width -&gt; (integer)</p>
+<blockquote>
+<div>The width of the image when inserted into the video. Defaults to the native width of the image.</div></blockquote>
+</div></blockquote>
+<p>StaticImageDeactivateSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Static Image Deactivate</p>
+<p>FadeOut -&gt; (integer)</p>
+<blockquote>
+<div>The time in milliseconds for the image to fade out. Defaults to 0.</div></blockquote>
+<p>Layer -&gt; (integer)</p>
+<blockquote>
+<div>The Z order of the inserted image. Images with higher layer values will be inserted on top of images with lower layer values. Permitted values are 0-7 inclusive. Defaults to 0.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ScheduleActionStartSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>When the action takes effect.</p>
+<p>FixedModeScheduleActionStartSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Fixed timestamp action start. Conforms to ISO-8601.</p>
+<p>Time -&gt; (string)</p>
+<blockquote>
+<div>Fixed timestamp action start. Conforms to ISO-8601.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../medialive/index.html" title="previous chapter (use the left arrow)">&larr; medialive</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../medialive/create-channel.html" title="next chapter (use the right arrow)">create-channel &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../medialive/create-channel.html" title="create-channel"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../medialive/index.html" title="medialive"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../medialive/index.html" >medialive</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

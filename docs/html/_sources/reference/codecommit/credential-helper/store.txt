@@ -1,0 +1,39 @@
+[ :ref:`aws <cli:aws>` . :ref:`codecommit <cli:aws codecommit>` . :ref:`credential-helper <cli:aws codecommit credential-helper>` ]
+
+.. _cli:aws codecommit credential-helper store:
+
+
+*****
+store
+*****
+
+
+
+===========
+Description
+===========
+
+This operation does nothing, credentials are calculated each time
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    aws codecommit credential-helper store
+
+
+
+
+=======
+Options
+=======
+
+*None*
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

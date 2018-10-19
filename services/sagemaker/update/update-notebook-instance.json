@@ -1,0 +1,7 @@
+{
+    "NotebookInstanceName": "",
+    "InstanceType": "ml.p3.8xlarge",
+    "RoleArn": "",
+    "LifecycleConfigName": "",
+    "DisassociateLifecycleConfig": true
+}

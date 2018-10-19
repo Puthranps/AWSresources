@@ -1,0 +1,222 @@
+[ :ref:`aws <cli:aws>` . :ref:`cognito-idp <cli:aws cognito-idp>` ]
+
+.. _cli:aws cognito-idp set-user-pool-mfa-config:
+
+
+************************
+set-user-pool-mfa-config
+************************
+
+
+
+===========
+Description
+===========
+
+
+
+Set the user pool MFA configuration.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SetUserPoolMfaConfig>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    set-user-pool-mfa-config
+  --user-pool-id <value>
+  [--sms-mfa-configuration <value>]
+  [--software-token-mfa-configuration <value>]
+  [--mfa-configuration <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--user-pool-id`` (string)
+
+
+  The user pool ID.
+
+  
+
+``--sms-mfa-configuration`` (structure)
+
+
+  The SMS text message MFA configuration.
+
+  
+
+
+
+Shorthand Syntax::
+
+    SmsAuthenticationMessage=string,SmsConfiguration={SnsCallerArn=string,ExternalId=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "SmsAuthenticationMessage": "string",
+    "SmsConfiguration": {
+      "SnsCallerArn": "string",
+      "ExternalId": "string"
+    }
+  }
+
+
+
+``--software-token-mfa-configuration`` (structure)
+
+
+  The software token MFA configuration.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Enabled=boolean
+
+
+
+
+JSON Syntax::
+
+  {
+    "Enabled": true|false
+  }
+
+
+
+``--mfa-configuration`` (string)
+
+
+  The MFA configuration.
+
+  
+
+  Possible values:
+
+  
+  *   ``OFF``
+
+  
+  *   ``ON``
+
+  
+  *   ``OPTIONAL``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+SmsMfaConfiguration -> (structure)
+
+  
+
+  The SMS text message MFA configuration.
+
+  
+
+  SmsAuthenticationMessage -> (string)
+
+    
+
+    The SMS authentication message.
+
+    
+
+    
+
+  SmsConfiguration -> (structure)
+
+    
+
+    The SMS configuration.
+
+    
+
+    SnsCallerArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the Amazon Simple Notification Service (SNS) caller.
+
+      
+
+      
+
+    ExternalId -> (string)
+
+      
+
+      The external ID.
+
+      
+
+      
+
+    
+
+  
+
+SoftwareTokenMfaConfiguration -> (structure)
+
+  
+
+  The software token MFA configuration.
+
+  
+
+  Enabled -> (boolean)
+
+    
+
+    Specifies whether software token MFA is enabled.
+
+    
+
+    
+
+  
+
+MfaConfiguration -> (string)
+
+  
+
+  The MFA configuration.
+
+  
+
+  
+

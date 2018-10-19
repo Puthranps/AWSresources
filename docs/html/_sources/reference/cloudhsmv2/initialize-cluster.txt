@@ -1,0 +1,101 @@
+[ :ref:`aws <cli:aws>` . :ref:`cloudhsmv2 <cli:aws cloudhsmv2>` ]
+
+.. _cli:aws cloudhsmv2 initialize-cluster:
+
+
+******************
+initialize-cluster
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA's root certificate. Before you can claim a cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA. To get the cluster's CSR, use  DescribeClusters .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/InitializeCluster>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    initialize-cluster
+  --cluster-id <value>
+  --signed-cert <value>
+  --trust-anchor <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster-id`` (string)
+
+
+  The identifier (ID) of the cluster that you are claiming. To find the cluster ID, use  DescribeClusters .
+
+  
+
+``--signed-cert`` (string)
+
+
+  The cluster certificate issued (signed) by your issuing certificate authority (CA). The certificate must be in PEM format and can contain a maximum of 5000 characters.
+
+  
+
+``--trust-anchor`` (string)
+
+
+  The issuing certificate of the issuing certificate authority (CA) that issued (signed) the cluster certificate. This can be a root (self-signed) certificate or a certificate chain that begins with the certificate that issued the cluster certificate and ends with a root certificate. The certificate or certificate chain must be in PEM format and can contain a maximum of 5000 characters.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+State -> (string)
+
+  
+
+  The cluster's state.
+
+  
+
+  
+
+StateMessage -> (string)
+
+  
+
+  A description of the cluster's state.
+
+  
+
+  
+

@@ -1,0 +1,12 @@
+{
+    "projectArn": "",
+    "name": "",
+    "description": "",
+    "rules": [
+        {
+            "attribute": "REMOTE_DEBUG_ENABLED",
+            "operator": "GREATER_THAN",
+            "value": ""
+        }
+    ]
+}

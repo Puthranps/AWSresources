@@ -1,0 +1,14 @@
+{
+    "ClientId": "",
+    "ChallengeName": "NEW_PASSWORD_REQUIRED",
+    "Session": "",
+    "ChallengeResponses": {
+        "KeyName": ""
+    },
+    "AnalyticsMetadata": {
+        "AnalyticsEndpointId": ""
+    },
+    "UserContextData": {
+        "EncodedData": ""
+    }
+}

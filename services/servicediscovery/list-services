@@ -1,0 +1,13 @@
+{
+    "NextToken": "",
+    "MaxResults": 0,
+    "Filters": [
+        {
+            "Name": "NAMESPACE_ID",
+            "Values": [
+                ""
+            ],
+            "Condition": "IN"
+        }
+    ]
+}

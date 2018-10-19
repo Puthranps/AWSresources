@@ -1,0 +1,9 @@
+{
+    "UserPoolId": "",
+    "AttributesToGet": [
+        ""
+    ],
+    "Limit": 0,
+    "PaginationToken": "",
+    "Filter": ""
+}

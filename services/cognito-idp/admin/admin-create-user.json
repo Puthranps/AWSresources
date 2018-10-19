@@ -1,0 +1,22 @@
+{
+    "UserPoolId": "",
+    "Username": "",
+    "UserAttributes": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "ValidationData": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "TemporaryPassword": "",
+    "ForceAliasCreation": true,
+    "MessageAction": "SUPPRESS",
+    "DesiredDeliveryMediums": [
+        "EMAIL"
+    ]
+}

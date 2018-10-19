@@ -1,0 +1,43 @@
+{
+    "StackName": "",
+    "TemplateBody": "",
+    "TemplateURL": "",
+    "UsePreviousTemplate": true,
+    "Parameters": [
+        {
+            "ParameterKey": "",
+            "ParameterValue": "",
+            "UsePreviousValue": true,
+            "ResolvedValue": ""
+        }
+    ],
+    "Capabilities": [
+        "CAPABILITY_NAMED_IAM"
+    ],
+    "ResourceTypes": [
+        ""
+    ],
+    "RoleARN": "",
+    "RollbackConfiguration": {
+        "RollbackTriggers": [
+            {
+                "Arn": "",
+                "Type": ""
+            }
+        ],
+        "MonitoringTimeInMinutes": 0
+    },
+    "NotificationARNs": [
+        ""
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "ChangeSetName": "",
+    "ClientToken": "",
+    "Description": "",
+    "ChangeSetType": "CREATE"
+}

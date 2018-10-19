@@ -1,0 +1,17 @@
+{
+    "ReplicationGroupId": "",
+    "NewReplicaCount": 0,
+    "ReplicaConfiguration": [
+        {
+            "NodeGroupId": "",
+            "NewReplicaCount": 0,
+            "PreferredAvailabilityZones": [
+                ""
+            ]
+        }
+    ],
+    "ReplicasToRemove": [
+        ""
+    ],
+    "ApplyImmediately": true
+}

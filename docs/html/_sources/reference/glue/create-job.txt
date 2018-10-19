@@ -1,0 +1,268 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue create-job:
+
+
+**********
+create-job
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a new job definition.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/CreateJob>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-job
+  --name <value>
+  [--description <value>]
+  [--log-uri <value>]
+  --role <value>
+  [--execution-property <value>]
+  --command <value>
+  [--default-arguments <value>]
+  [--connections <value>]
+  [--max-retries <value>]
+  [--allocated-capacity <value>]
+  [--timeout <value>]
+  [--notification-property <value>]
+  [--security-configuration <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--name`` (string)
+
+
+  The name you assign to this job definition. It must be unique in your account.
+
+  
+
+``--description`` (string)
+
+
+  Description of the job being defined.
+
+  
+
+``--log-uri`` (string)
+
+
+  This field is reserved for future use.
+
+  
+
+``--role`` (string)
+
+
+  The name or ARN of the IAM role associated with this job.
+
+  
+
+``--execution-property`` (structure)
+
+
+  An ExecutionProperty specifying the maximum number of concurrent runs allowed for this job.
+
+  
+
+
+
+Shorthand Syntax::
+
+    MaxConcurrentRuns=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "MaxConcurrentRuns": integer
+  }
+
+
+
+``--command`` (structure)
+
+
+  The JobCommand that executes this job.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,ScriptLocation=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Name": "string",
+    "ScriptLocation": "string"
+  }
+
+
+
+``--default-arguments`` (map)
+
+
+  The default arguments for this job.
+
+   
+
+  You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.
+
+   
+
+  For information about how to specify and consume your own Job arguments, see the `Calling AWS Glue APIs in Python <http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html>`__ topic in the developer guide.
+
+   
+
+  For information about the key-value pairs that AWS Glue consumes to set up your job, see the `Special Parameters Used by AWS Glue <http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html>`__ topic in the developer guide.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,KeyName2=string
+
+
+
+
+JSON Syntax::
+
+  {"string": "string"
+    ...}
+
+
+
+``--connections`` (structure)
+
+
+  The connections used for this job.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Connections=string,string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Connections": ["string", ...]
+  }
+
+
+
+``--max-retries`` (integer)
+
+
+  The maximum number of times to retry this job if it fails.
+
+  
+
+``--allocated-capacity`` (integer)
+
+
+  The number of AWS Glue data processing units (DPUs) to allocate to this Job. From 2 to 100 DPUs can be allocated; the default is 10. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the `AWS Glue pricing page <https://aws.amazon.com/glue/pricing/>`__ .
+
+  
+
+``--timeout`` (integer)
+
+
+  The job timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters ``TIMEOUT`` status. The default is 2,880 minutes (48 hours).
+
+  
+
+``--notification-property`` (structure)
+
+
+  Specifies configuration properties of a job notification.
+
+  
+
+
+
+Shorthand Syntax::
+
+    NotifyDelayAfter=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "NotifyDelayAfter": integer
+  }
+
+
+
+``--security-configuration`` (string)
+
+
+  The name of the SecurityConfiguration structure to be used with this job.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Name -> (string)
+
+  
+
+  The unique name that was provided for this job definition.
+
+  
+
+  
+

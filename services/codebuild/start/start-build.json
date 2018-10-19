@@ -1,0 +1,89 @@
+{
+    "projectName": "",
+    "secondarySourcesOverride": [
+        {
+            "type": "GITHUB_ENTERPRISE",
+            "location": "",
+            "gitCloneDepth": 0,
+            "buildspec": "",
+            "auth": {
+                "type": "OAUTH",
+                "resource": ""
+            },
+            "reportBuildStatus": true,
+            "insecureSsl": true,
+            "sourceIdentifier": ""
+        }
+    ],
+    "secondarySourcesVersionOverride": [
+        {
+            "sourceIdentifier": "",
+            "sourceVersion": ""
+        }
+    ],
+    "sourceVersion": "",
+    "artifactsOverride": {
+        "type": "NO_ARTIFACTS",
+        "location": "",
+        "path": "",
+        "namespaceType": "BUILD_ID",
+        "name": "",
+        "packaging": "ZIP",
+        "overrideArtifactName": true,
+        "encryptionDisabled": true,
+        "artifactIdentifier": ""
+    },
+    "secondaryArtifactsOverride": [
+        {
+            "type": "NO_ARTIFACTS",
+            "location": "",
+            "path": "",
+            "namespaceType": "NONE",
+            "name": "",
+            "packaging": "ZIP",
+            "overrideArtifactName": true,
+            "encryptionDisabled": true,
+            "artifactIdentifier": ""
+        }
+    ],
+    "environmentVariablesOverride": [
+        {
+            "name": "",
+            "value": "",
+            "type": "PLAINTEXT"
+        }
+    ],
+    "sourceTypeOverride": "GITHUB_ENTERPRISE",
+    "sourceLocationOverride": "",
+    "sourceAuthOverride": {
+        "type": "OAUTH",
+        "resource": ""
+    },
+    "gitCloneDepthOverride": 0,
+    "buildspecOverride": "",
+    "insecureSslOverride": true,
+    "reportBuildStatusOverride": true,
+    "environmentTypeOverride": "LINUX_CONTAINER",
+    "imageOverride": "",
+    "computeTypeOverride": "BUILD_GENERAL1_LARGE",
+    "certificateOverride": "",
+    "cacheOverride": {
+        "type": "NO_CACHE",
+        "location": ""
+    },
+    "serviceRoleOverride": "",
+    "privilegedModeOverride": true,
+    "timeoutInMinutesOverride": 0,
+    "idempotencyToken": "",
+    "logsConfigOverride": {
+        "cloudWatchLogs": {
+            "status": "ENABLED",
+            "groupName": "",
+            "streamName": ""
+        },
+        "s3Logs": {
+            "status": "ENABLED",
+            "location": ""
+        }
+    }
+}

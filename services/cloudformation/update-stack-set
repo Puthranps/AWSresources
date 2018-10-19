@@ -1,0 +1,42 @@
+{
+    "StackSetName": "",
+    "Description": "",
+    "TemplateBody": "",
+    "TemplateURL": "",
+    "UsePreviousTemplate": true,
+    "Parameters": [
+        {
+            "ParameterKey": "",
+            "ParameterValue": "",
+            "UsePreviousValue": true,
+            "ResolvedValue": ""
+        }
+    ],
+    "Capabilities": [
+        "CAPABILITY_NAMED_IAM"
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "OperationPreferences": {
+        "RegionOrder": [
+            ""
+        ],
+        "FailureToleranceCount": 0,
+        "FailureTolerancePercentage": 0,
+        "MaxConcurrentCount": 0,
+        "MaxConcurrentPercentage": 0
+    },
+    "AdministrationRoleARN": "",
+    "ExecutionRoleName": "",
+    "OperationId": "",
+    "Accounts": [
+        ""
+    ],
+    "Regions": [
+        ""
+    ]
+}

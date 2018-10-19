@@ -1,0 +1,44 @@
+[ :ref:`aws <cli:aws>` . :ref:`emr <cli:aws emr>` ]
+
+.. _cli:aws emr wait:
+
+
+****
+wait
+****
+
+
+
+===========
+Description
+===========
+
+Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  cluster-running
+  cluster-terminated
+  step-complete
+
+
+========
+Examples
+========
+
+The following command waits until a cluster with the cluster ID ``j-3SD91U2E1L2QX`` is up and running::
+
+  aws emr wait cluster-running --cluster-id j-3SD91U2E1L2QX

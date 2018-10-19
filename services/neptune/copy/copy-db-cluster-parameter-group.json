@@ -1,0 +1,11 @@
+{
+    "SourceDBClusterParameterGroupIdentifier": "",
+    "TargetDBClusterParameterGroupIdentifier": "",
+    "TargetDBClusterParameterGroupDescription": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

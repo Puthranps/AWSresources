@@ -1,0 +1,54 @@
+[ :ref:`aws <cli:aws>` . :ref:`emr <cli:aws emr>` ]
+
+.. _cli:aws emr disable-hbase-backups:
+
+
+*********************
+disable-hbase-backups
+*********************
+
+
+
+===========
+Description
+===========
+
+Add a step to disable automated HBase backups. This command is only available when using Amazon EMR versionsearlier than 4.0.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    disable-hbase-backups
+  --cluster-id <value>
+  [--full]
+  [--incremental]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster-id`` (string)
+
+
+  A unique string that identifies a cluster. The ``create-cluster`` command returns this identifier. You can use the ``list-clusters`` command to get cluster IDs.
+
+  
+
+``--full`` (boolean)
+Disables full backup.
+
+``--incremental`` (boolean)
+Disables incremental backup.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

@@ -1,0 +1,28 @@
+{
+    "AssociationId": "",
+    "Parameters": {
+        "KeyName": [
+            ""
+        ]
+    },
+    "DocumentVersion": "",
+    "ScheduleExpression": "",
+    "OutputLocation": {
+        "S3Location": {
+            "OutputS3Region": "",
+            "OutputS3BucketName": "",
+            "OutputS3KeyPrefix": ""
+        }
+    },
+    "Name": "",
+    "Targets": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "AssociationName": "",
+    "AssociationVersion": ""
+}

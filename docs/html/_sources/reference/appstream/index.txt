@@ -1,0 +1,67 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws appstream:
+
+
+*********
+appstream
+*********
+
+
+
+===========
+Description
+===========
+
+ 
+
+You can use Amazon AppStream 2.0 to stream desktop applications to any device running a web browser, without rewriting them.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  associate-fleet
+  copy-image
+  create-directory-config
+  create-fleet
+  create-image-builder
+  create-image-builder-streaming-url
+  create-stack
+  create-streaming-url
+  delete-directory-config
+  delete-fleet
+  delete-image
+  delete-image-builder
+  delete-image-permissions
+  delete-stack
+  describe-directory-configs
+  describe-fleets
+  describe-image-builders
+  describe-image-permissions
+  describe-images
+  describe-sessions
+  describe-stacks
+  disassociate-fleet
+  expire-session
+  list-associated-fleets
+  list-associated-stacks
+  list-tags-for-resource
+  start-fleet
+  start-image-builder
+  stop-fleet
+  stop-image-builder
+  tag-resource
+  untag-resource
+  update-directory-config
+  update-fleet
+  update-image-permissions
+  update-stack
+  wait/index

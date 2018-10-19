@@ -1,0 +1,18 @@
+{
+    "CertificateStatuses": [
+        "REVOKED"
+    ],
+    "Includes": {
+        "extendedKeyUsage": [
+            "NONE"
+        ],
+        "keyUsage": [
+            "DECIPHER_ONLY"
+        ],
+        "keyTypes": [
+            "RSA_1024"
+        ]
+    },
+    "NextToken": "",
+    "MaxItems": 0
+}

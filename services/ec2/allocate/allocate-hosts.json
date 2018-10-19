@@ -1,0 +1,18 @@
+{
+    "AutoPlacement": "off",
+    "AvailabilityZone": "",
+    "ClientToken": "",
+    "InstanceType": "",
+    "Quantity": 0,
+    "TagSpecifications": [
+        {
+            "ResourceType": "image",
+            "Tags": [
+                {
+                    "Key": "",
+                    "Value": ""
+                }
+            ]
+        }
+    ]
+}

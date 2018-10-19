@@ -1,0 +1,13 @@
+{
+    "logGroupName": "",
+    "logStreamNames": [
+        ""
+    ],
+    "logStreamNamePrefix": "",
+    "startTime": 0,
+    "endTime": 0,
+    "filterPattern": "",
+    "nextToken": "",
+    "limit": 0,
+    "interleaved": true
+}

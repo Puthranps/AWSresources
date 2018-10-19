@@ -1,0 +1,385 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-trace-summaries &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="xray" href="../xray/index.html" />
+    <link rel="next" title="put-encryption-config" href="../xray/put-encryption-config.html" />
+    <link rel="prev" title="get-trace-graph" href="../xray/get-trace-graph.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../xray/put-encryption-config.html" title="put-encryption-config"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../xray/get-trace-graph.html" title="get-trace-graph"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../xray/index.html" accesskey="U">xray</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../xray/get-trace-graph.html" title="previous chapter (use the left arrow)">&larr; get-trace-graph</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../xray/put-encryption-config.html" title="next chapter (use the right arrow)">put-encryption-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-trace-summaries</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/xray/get-trace-summaries">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../xray/index.html#cli-aws-xray"><em>xray</em></a> ]</p>
+<div class="section" id="get-trace-summaries">
+<span id="cli-aws-xray-get-trace-summaries"></span><h1>get-trace-summaries<a class="headerlink" href="#get-trace-summaries" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves IDs and metadata for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to <tt class="docutils literal"><span class="pre">BatchGetTraces</span></tt> .</p>
+<p>A filter expression can target traced requests that hit specific service nodes or edges, have errors, or come from a known user. For example, the following filter expression targets traces that pass through <tt class="docutils literal"><span class="pre">api.example.com</span></tt> :</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">service(&quot;api.example.com&quot;)</span></tt></div></blockquote>
+<p>This filter expression finds traces that have an annotation named <tt class="docutils literal"><span class="pre">account</span></tt> with the value <tt class="docutils literal"><span class="pre">12345</span></tt> :</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">annotation.account</span> <span class="pre">=</span> <span class="pre">&quot;12345&quot;</span></tt></div></blockquote>
+<p>For a full list of indexed fields and keywords that you can use in filter expressions, see <a class="reference external" href="http://docs.aws.amazon.com/xray/latest/devguide/xray-console-filters.html">Using Filter Expressions</a> in the <em>AWS X-Ray Developer Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetTraceSummaries">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">get-trace-summaries</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">TraceSummaries</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-trace-summaries
+--start-time &lt;value&gt;
+--end-time &lt;value&gt;
+[--sampling | --no-sampling]
+[--filter-expression &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--start-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>The start of the time frame for which to retrieve traces.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--end-time</span></tt> (timestamp)</p>
+<blockquote>
+<div>The end of the time frame for which to retrieve traces.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--sampling</span></tt> | <tt class="docutils literal"><span class="pre">--no-sampling</span></tt> (boolean)</p>
+<blockquote>
+<div>Set to <tt class="docutils literal"><span class="pre">true</span></tt> to get summaries for only a subset of available traces.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--filter-expression</span></tt> (string)</p>
+<blockquote>
+<div>Specify a filter expression to retrieve trace summaries for services or requests that meet certain requirements.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>TraceSummaries -&gt; (list)</p>
+<blockquote>
+<div><p>Trace IDs and metadata for traces that were found in the specified time frame.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Metadata generated from the segment documents in a trace.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The unique identifier for the request that generated the trace's segments and subsegments.</div></blockquote>
+<p>Duration -&gt; (double)</p>
+<blockquote>
+<div>The length of time in seconds between the start time of the root segment and the end time of the last segment that completed.</div></blockquote>
+<p>ResponseTime -&gt; (double)</p>
+<blockquote>
+<div>The length of time in seconds between the start and end times of the root segment. If the service performs work asynchronously, the response time measures the time before the response is sent to the user, while the duration measures the amount of time before the last traced activity completes.</div></blockquote>
+<p>HasFault -&gt; (boolean)</p>
+<blockquote>
+<div>One or more of the segment documents has a 500 series error.</div></blockquote>
+<p>HasError -&gt; (boolean)</p>
+<blockquote>
+<div>One or more of the segment documents has a 400 series error.</div></blockquote>
+<p>HasThrottle -&gt; (boolean)</p>
+<blockquote>
+<div>One or more of the segment documents has a 429 throttling error.</div></blockquote>
+<p>IsPartial -&gt; (boolean)</p>
+<blockquote>
+<div>One or more of the segment documents is in progress.</div></blockquote>
+<p>Http -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the HTTP request served by the trace.</p>
+<p>HttpURL -&gt; (string)</p>
+<blockquote>
+<div>The request URL.</div></blockquote>
+<p>HttpStatus -&gt; (integer)</p>
+<blockquote>
+<div>The response status.</div></blockquote>
+<p>HttpMethod -&gt; (string)</p>
+<blockquote>
+<div>The request method.</div></blockquote>
+<p>UserAgent -&gt; (string)</p>
+<blockquote>
+<div>The request's user agent string.</div></blockquote>
+<p>ClientIp -&gt; (string)</p>
+<blockquote>
+<div>The IP address of the requestor.</div></blockquote>
+</div></blockquote>
+<p>Annotations -&gt; (map)</p>
+<blockquote>
+<div><p>Annotations from the trace's segment documents.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Information about a segment annotation.</p>
+<p>AnnotationValue -&gt; (structure)</p>
+<blockquote>
+<div><p>Values of the annotation.</p>
+<p>NumberValue -&gt; (double)</p>
+<blockquote>
+<div>Value for a Number annotation.</div></blockquote>
+<p>BooleanValue -&gt; (boolean)</p>
+<blockquote>
+<div>Value for a Boolean annotation.</div></blockquote>
+<p>StringValue -&gt; (string)</p>
+<blockquote>
+<div>Value for a String annotation.</div></blockquote>
+</div></blockquote>
+<p>ServiceIds -&gt; (list)</p>
+<blockquote>
+<div><p>Services to which the annotation applies.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Name -&gt; (string)</p>
+<p>Names -&gt; (list)</p>
+<blockquote>
+<div>(string)</div></blockquote>
+<p>AccountId -&gt; (string)</p>
+<p>Type -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Users -&gt; (list)</p>
+<blockquote>
+<div><p>Users from the trace's segment documents.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a user recorded in segment documents.</p>
+<p>UserName -&gt; (string)</p>
+<blockquote>
+<div>The user's name.</div></blockquote>
+<p>ServiceIds -&gt; (list)</p>
+<blockquote>
+<div><p>Services that the user's request hit.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Name -&gt; (string)</p>
+<p>Names -&gt; (list)</p>
+<blockquote>
+<div>(string)</div></blockquote>
+<p>AccountId -&gt; (string)</p>
+<p>Type -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ServiceIds -&gt; (list)</p>
+<blockquote>
+<div><p>Service IDs from the trace's segment documents.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Name -&gt; (string)</p>
+<p>Names -&gt; (list)</p>
+<blockquote>
+<div>(string)</div></blockquote>
+<p>AccountId -&gt; (string)</p>
+<p>Type -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ApproximateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The start time of this page of results.</div></blockquote>
+<p>TracesProcessedCount -&gt; (long)</p>
+<blockquote>
+<div>The total number of traces processed, including traces that did not match the specified filter expression.</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>If the requested time frame contained more than one page of results, you can use this token to retrieve the next page. The first page contains the most most recent results, closest to the end of the time frame.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../xray/get-trace-graph.html" title="previous chapter (use the left arrow)">&larr; get-trace-graph</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../xray/put-encryption-config.html" title="next chapter (use the right arrow)">put-encryption-config &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../xray/put-encryption-config.html" title="put-encryption-config"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../xray/get-trace-graph.html" title="get-trace-graph"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../xray/index.html" >xray</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

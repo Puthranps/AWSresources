@@ -1,0 +1,62 @@
+{
+    "Rule": "",
+    "Targets": [
+        {
+            "Id": "",
+            "Arn": "",
+            "RoleArn": "",
+            "Input": "",
+            "InputPath": "",
+            "InputTransformer": {
+                "InputPathsMap": {
+                    "KeyName": ""
+                },
+                "InputTemplate": ""
+            },
+            "KinesisParameters": {
+                "PartitionKeyPath": ""
+            },
+            "RunCommandParameters": {
+                "RunCommandTargets": [
+                    {
+                        "Key": "",
+                        "Values": [
+                            ""
+                        ]
+                    }
+                ]
+            },
+            "EcsParameters": {
+                "TaskDefinitionArn": "",
+                "TaskCount": 0,
+                "LaunchType": "FARGATE",
+                "NetworkConfiguration": {
+                    "awsvpcConfiguration": {
+                        "Subnets": [
+                            ""
+                        ],
+                        "SecurityGroups": [
+                            ""
+                        ],
+                        "AssignPublicIp": "ENABLED"
+                    }
+                },
+                "PlatformVersion": "",
+                "Group": ""
+            },
+            "BatchParameters": {
+                "JobDefinition": "",
+                "JobName": "",
+                "ArrayProperties": {
+                    "Size": 0
+                },
+                "RetryStrategy": {
+                    "Attempts": 0
+                }
+            },
+            "SqsParameters": {
+                "MessageGroupId": ""
+            }
+        }
+    ]
+}

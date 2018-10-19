@@ -1,0 +1,288 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>glue &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="batch-create-partition" href="../glue/batch-create-partition.html" />
+    <link rel="prev" title="vault-not-exists" href="../glacier/wait/vault-not-exists.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../glue/batch-create-partition.html" title="batch-create-partition"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../glacier/wait/vault-not-exists.html" title="vault-not-exists"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glacier/wait/vault-not-exists.html" title="previous chapter (use the left arrow)">&larr; vault-not-exists</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glue/batch-create-partition.html" title="next chapter (use the right arrow)">batch-create-partition &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">glue</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/glue/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="glue">
+<span id="cli-aws-glue"></span><h1>glue<a class="headerlink" href="#glue" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Defines the public endpoint for the AWS Glue service.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-create-partition.html">batch-create-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-delete-connection.html">batch-delete-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-delete-partition.html">batch-delete-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-delete-table.html">batch-delete-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-delete-table-version.html">batch-delete-table-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-get-partition.html">batch-get-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/batch-stop-job-run.html">batch-stop-job-run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-classifier.html">create-classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-connection.html">create-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-crawler.html">create-crawler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-database.html">create-database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-dev-endpoint.html">create-dev-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-job.html">create-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-partition.html">create-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-script.html">create-script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-security-configuration.html">create-security-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-table.html">create-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-trigger.html">create-trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/create-user-defined-function.html">create-user-defined-function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-classifier.html">delete-classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-connection.html">delete-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-crawler.html">delete-crawler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-database.html">delete-database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-dev-endpoint.html">delete-dev-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-job.html">delete-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-partition.html">delete-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-resource-policy.html">delete-resource-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-security-configuration.html">delete-security-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-table.html">delete-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-table-version.html">delete-table-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-trigger.html">delete-trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/delete-user-defined-function.html">delete-user-defined-function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-catalog-import-status.html">get-catalog-import-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-classifier.html">get-classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-classifiers.html">get-classifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-connection.html">get-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-connections.html">get-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-crawler.html">get-crawler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-crawler-metrics.html">get-crawler-metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-crawlers.html">get-crawlers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-data-catalog-encryption-settings.html">get-data-catalog-encryption-settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-database.html">get-database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-databases.html">get-databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-dataflow-graph.html">get-dataflow-graph</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-dev-endpoint.html">get-dev-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-dev-endpoints.html">get-dev-endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-job.html">get-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-job-run.html">get-job-run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-job-runs.html">get-job-runs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-jobs.html">get-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-mapping.html">get-mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-partition.html">get-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-partitions.html">get-partitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-plan.html">get-plan</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-resource-policy.html">get-resource-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-security-configuration.html">get-security-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-security-configurations.html">get-security-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-table.html">get-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-table-version.html">get-table-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-table-versions.html">get-table-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-tables.html">get-tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-trigger.html">get-trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-triggers.html">get-triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-user-defined-function.html">get-user-defined-function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/get-user-defined-functions.html">get-user-defined-functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/import-catalog-to-glue.html">import-catalog-to-glue</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/put-data-catalog-encryption-settings.html">put-data-catalog-encryption-settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/put-resource-policy.html">put-resource-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/reset-job-bookmark.html">reset-job-bookmark</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/start-crawler.html">start-crawler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/start-crawler-schedule.html">start-crawler-schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/start-job-run.html">start-job-run</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/start-trigger.html">start-trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/stop-crawler.html">stop-crawler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/stop-crawler-schedule.html">stop-crawler-schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/stop-trigger.html">stop-trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-classifier.html">update-classifier</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-connection.html">update-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-crawler.html">update-crawler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-crawler-schedule.html">update-crawler-schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-database.html">update-database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-dev-endpoint.html">update-dev-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-job.html">update-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-partition.html">update-partition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-table.html">update-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-trigger.html">update-trigger</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../glue/update-user-defined-function.html">update-user-defined-function</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glacier/wait/vault-not-exists.html" title="previous chapter (use the left arrow)">&larr; vault-not-exists</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glue/batch-create-partition.html" title="next chapter (use the right arrow)">batch-create-partition &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../glue/batch-create-partition.html" title="batch-create-partition"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../glacier/wait/vault-not-exists.html" title="vault-not-exists"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

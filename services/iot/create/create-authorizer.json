@@ -1,0 +1,9 @@
+{
+    "authorizerName": "",
+    "authorizerFunctionArn": "",
+    "tokenKeyName": "",
+    "tokenSigningPublicKeys": {
+        "KeyName": ""
+    },
+    "status": "ACTIVE"
+}

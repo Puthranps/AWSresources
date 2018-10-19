@@ -1,0 +1,291 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-federation-token &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sts" href="../sts/index.html" />
+    <link rel="next" title="get-session-token" href="../sts/get-session-token.html" />
+    <link rel="prev" title="get-caller-identity" href="../sts/get-caller-identity.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sts/get-session-token.html" title="get-session-token"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sts/get-caller-identity.html" title="get-caller-identity"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sts/index.html" accesskey="U">sts</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sts/get-caller-identity.html" title="previous chapter (use the left arrow)">&larr; get-caller-identity</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sts/get-session-token.html" title="next chapter (use the right arrow)">get-session-token &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-federation-token</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sts/get-federation-token">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sts/index.html#cli-aws-sts"><em>sts</em></a> ]</p>
+<div class="section" id="get-federation-token">
+<span id="cli-aws-sts-get-federation-token"></span><h1>get-federation-token<a class="headerlink" href="#get-federation-token" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a federated user. A typical use is in a proxy application that gets temporary security credentials on behalf of distributed applications inside a corporate network. Because you must call the <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> action using the long-term security credentials of an IAM user, this call is appropriate in contexts where those credentials can be safely stored, usually in a server-based application. For a comparison of <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> with the other APIs that produce temporary credentials, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security Credentials</a> and <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the AWS STS APIs</a> in the <em>IAM User Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you are creating a mobile-based or browser-based app that can authenticate users using a web identity provider like Login with Amazon, Facebook, Google, or an OpenID Connect-compatible identity provider, we recommend that you use <a class="reference external" href="http://aws.amazon.com/cognito/">Amazon Cognito</a> or <tt class="docutils literal"><span class="pre">AssumeRoleWithWebIdentity</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation Through a Web-based Identity Provider</a> .</p>
+</div>
+<p>The <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> action must be called by using the long-term AWS security credentials of an IAM user. You can also call <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> using the security credentials of an AWS root account, but we do not recommended it. Instead, we recommend that you create an IAM user for the purpose of the proxy application and then attach a policy to the IAM user that limits federated users to only the actions and resources that they need access to. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM Best Practices</a> in the <em>IAM User Guide</em> .</p>
+<p>The temporary security credentials that are obtained by using the long-term credentials of an IAM user are valid for the specified duration, from 900 seconds (15 minutes) up to a maximium of 129600 seconds (36 hours). The default is 43200 seconds (12 hours). Temporary credentials that are obtained by using AWS root account credentials have a maximum duration of 3600 seconds (1 hour).</p>
+<p>The temporary security credentials created by <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> can be used to make API calls to any AWS service with the following exceptions:</p>
+<ul class="simple">
+<li>You cannot use these credentials to call any IAM APIs.</li>
+<li>You cannot call any STS APIs except <tt class="docutils literal"><span class="pre">GetCallerIdentity</span></tt> .</li>
+</ul>
+<blockquote>
+<div><strong>Permissions</strong></div></blockquote>
+<p>The permissions for the temporary security credentials returned by <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> are determined by a combination of the following:</p>
+<ul class="simple">
+<li>The policy or policies that are attached to the IAM user whose credentials are used to call <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> .</li>
+<li>The policy that is passed as a parameter in the call.</li>
+</ul>
+<p>The passed policy is attached to the temporary security credentials that result from the <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> API call--that is, to the <em>federated user</em> . When the federated user makes an AWS request, AWS evaluates the policy attached to the federated user in combination with the policy or policies attached to the IAM user whose credentials were used to call <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> . AWS allows the federated user's request only when both the federated user * <strong>and</strong> * the IAM user are explicitly allowed to perform the requested action. The passed policy cannot grant more permissions than those that are defined in the IAM user policy.</p>
+<p>A typical use case is that the permissions of the IAM user whose credentials are used to call <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> are designed to allow access to all the actions and resources that any federated user will need. Then, for individual users, you pass a policy to the operation that scopes down the permissions to a level that's appropriate to that individual user, using a policy that allows only a subset of permissions that are granted to the IAM user.</p>
+<p>If you do not pass a policy, the resulting temporary security credentials have no effective permissions. The only exception is when the temporary security credentials are used to access a resource that has a resource-based policy that specifically allows the federated user to access the resource.</p>
+<p>For more information about how permissions work, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions for GetFederationToken</a> . For information about using <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> to create temporary security credentials, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation Through a Custom Identity Broker</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/GetFederationToken">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-federation-token
+--name &lt;value&gt;
+[--policy &lt;value&gt;]
+[--duration-seconds &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the federated user. The name is used as an identifier for the temporary security credentials (such as <tt class="docutils literal"><span class="pre">Bob</span></tt> ). For example, you can reference the federated user name in a resource-based policy, such as in an Amazon S3 bucket policy.</p>
+<p>The regex used to validate this parameter is a string of characters consisting of upper- and lower-case alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.&#64;-</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--policy</span></tt> (string)</p>
+<blockquote>
+<div><p>An IAM policy in JSON format that is passed with the <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> call and evaluated along with the policy or policies that are attached to the IAM user whose credentials are used to call <tt class="docutils literal"><span class="pre">GetFederationToken</span></tt> . The passed policy is used to scope down the permissions that are available to the IAM user, by allowing only a subset of the permissions that are granted to the IAM user. The passed policy cannot grant more permissions than those granted to the IAM user. The final permissions for the federated user are the most restrictive set based on the intersection of the passed policy and the IAM user policy.</p>
+<p>If you do not pass a policy, the resulting temporary security credentials have no effective permissions. The only exception is when the temporary security credentials are used to access a resource that has a resource-based policy that specifically allows the federated user to access the resource.</p>
+<p>The format for this parameter, as described by its regex pattern, is a string of characters up to 2048 characters in length. The characters can be any ASCII character from the space character to the end of the valid character list (u0020-u00FF). It can also include the tab (u0009), linefeed (u000A), and carriage return (u000D) characters.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The policy plain text must be 2048 bytes or shorter. However, an internal conversion compresses it into a packed binary format with a separate limit. The PackedPolicySize response element indicates by percentage how close to the upper size limit the policy is, with 100% equaling the maximum allowed size.</p>
+</div>
+<p>For more information about how permissions work, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_getfederationtoken.html">Permissions for GetFederationToken</a> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--duration-seconds</span></tt> (integer)</p>
+<blockquote>
+<div>The duration, in seconds, that the session should last. Acceptable durations for federation sessions range from 900 seconds (15 minutes) to 129600 seconds (36 hours), with 43200 seconds (12 hours) as the default. Sessions obtained using AWS account (root) credentials are restricted to a maximum of 3600 seconds (one hour). If the specified duration is longer than one hour, the session obtained by using AWS account (root) credentials defaults to one hour.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Credentials -&gt; (structure)</p>
+<blockquote>
+<div><p>The temporary security credentials, which include an access key ID, a secret access key, and a security (or session) token.</p>
+<blockquote>
+<div><strong>Note:</strong> The size of the security token that STS APIs return is not fixed. We strongly recommend that you make no assumptions about the maximum size. As of this writing, the typical size is less than 4096 bytes, but that can vary. Also, future updates to AWS might require larger sizes.</div></blockquote>
+<p>AccessKeyId -&gt; (string)</p>
+<blockquote>
+<div>The access key ID that identifies the temporary security credentials.</div></blockquote>
+<p>SecretAccessKey -&gt; (string)</p>
+<blockquote>
+<div>The secret access key that can be used to sign requests.</div></blockquote>
+<p>SessionToken -&gt; (string)</p>
+<blockquote>
+<div>The token that users must pass to the service API to use the temporary credentials.</div></blockquote>
+<p>Expiration -&gt; (timestamp)</p>
+<blockquote>
+<div>The date on which the current credentials expire.</div></blockquote>
+</div></blockquote>
+<p>FederatedUser -&gt; (structure)</p>
+<blockquote>
+<div><p>Identifiers for the federated user associated with the credentials (such as <tt class="docutils literal"><span class="pre">arn:aws:sts::123456789012:federated-user/Bob</span></tt> or <tt class="docutils literal"><span class="pre">123456789012:Bob</span></tt> ). You can use the federated user's ARN in your resource-based policies, such as an Amazon S3 bucket policy.</p>
+<p>FederatedUserId -&gt; (string)</p>
+<blockquote>
+<div>The string that identifies the federated user associated with the credentials, similar to the unique ID of an IAM user.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The ARN that specifies the federated user that is associated with the credentials. For more information about ARNs and how to use them in policies, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM Identifiers</a> in <em>Using IAM</em> .</div></blockquote>
+</div></blockquote>
+<p>PackedPolicySize -&gt; (integer)</p>
+<blockquote>
+<div>A percentage value indicating the size of the policy in packed form. The service rejects policies for which the packed size is greater than 100 percent of the allowed value.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sts/get-caller-identity.html" title="previous chapter (use the left arrow)">&larr; get-caller-identity</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sts/get-session-token.html" title="next chapter (use the right arrow)">get-session-token &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sts/get-session-token.html" title="get-session-token"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sts/get-caller-identity.html" title="get-caller-identity"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sts/index.html" >sts</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

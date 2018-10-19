@@ -1,0 +1,394 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-table &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="glue" href="../glue/index.html" />
+    <link rel="next" title="get-table-version" href="../glue/get-table-version.html" />
+    <link rel="prev" title="get-security-configurations" href="../glue/get-security-configurations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../glue/get-table-version.html" title="get-table-version"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../glue/get-security-configurations.html" title="get-security-configurations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../glue/index.html" accesskey="U">glue</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glue/get-security-configurations.html" title="previous chapter (use the left arrow)">&larr; get-security-configurations</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glue/get-table-version.html" title="next chapter (use the right arrow)">get-table-version &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-table</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/glue/get-table">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../glue/index.html#cli-aws-glue"><em>glue</em></a> ]</p>
+<div class="section" id="get-table">
+<span id="cli-aws-glue-get-table"></span><h1>get-table<a class="headerlink" href="#get-table" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves the <tt class="docutils literal"><span class="pre">Table</span></tt> definition in a Data Catalog for a specified table.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTable">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-table
+[--catalog-id &lt;value&gt;]
+--database-name &lt;value&gt;
+--name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--catalog-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the Data Catalog where the table resides. If none is supplied, the AWS account ID is used by default.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--database-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the database in the catalog in which the table resides. For Hive compatibility, this name is entirely lowercase.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the table for which to retrieve the definition. For Hive compatibility, this name is entirely lowercase.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Table -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">Table</span></tt> object that defines the specified table.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name of the table. For Hive compatibility, this must be entirely lowercase.</div></blockquote>
+<p>DatabaseName -&gt; (string)</p>
+<blockquote>
+<div>Name of the metadata database where the table metadata resides. For Hive compatibility, this must be all lowercase.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>Description of the table.</div></blockquote>
+<p>Owner -&gt; (string)</p>
+<blockquote>
+<div>Owner of the table.</div></blockquote>
+<p>CreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Time when the table definition was created in the Data Catalog.</div></blockquote>
+<p>UpdateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Last time the table was updated.</div></blockquote>
+<p>LastAccessTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Last time the table was accessed. This is usually taken from HDFS, and may not be reliable.</div></blockquote>
+<p>LastAnalyzedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Last time column statistics were computed for this table.</div></blockquote>
+<p>Retention -&gt; (integer)</p>
+<blockquote>
+<div>Retention time for this table.</div></blockquote>
+<p>StorageDescriptor -&gt; (structure)</p>
+<blockquote>
+<div><p>A storage descriptor containing information about the physical storage of this table.</p>
+<p>Columns -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the <tt class="docutils literal"><span class="pre">Columns</span></tt> in the table.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A column in a <tt class="docutils literal"><span class="pre">Table</span></tt> .</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the <tt class="docutils literal"><span class="pre">Column</span></tt> .</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The datatype of data in the <tt class="docutils literal"><span class="pre">Column</span></tt> .</div></blockquote>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>Free-form text comment.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Location -&gt; (string)</p>
+<blockquote>
+<div>The physical location of the table. By default this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.</div></blockquote>
+<p>InputFormat -&gt; (string)</p>
+<blockquote>
+<div>The input format: <tt class="docutils literal"><span class="pre">SequenceFileInputFormat</span></tt> (binary), or <tt class="docutils literal"><span class="pre">TextInputFormat</span></tt> , or a custom format.</div></blockquote>
+<p>OutputFormat -&gt; (string)</p>
+<blockquote>
+<div>The output format: <tt class="docutils literal"><span class="pre">SequenceFileOutputFormat</span></tt> (binary), or <tt class="docutils literal"><span class="pre">IgnoreKeyTextOutputFormat</span></tt> , or a custom format.</div></blockquote>
+<p>Compressed -&gt; (boolean)</p>
+<blockquote>
+<div>True if the data in the table is compressed, or False if not.</div></blockquote>
+<p>NumberOfBuckets -&gt; (integer)</p>
+<blockquote>
+<div>Must be specified if the table contains any dimension columns.</div></blockquote>
+<p>SerdeInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>Serialization/deserialization (SerDe) information.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name of the SerDe.</div></blockquote>
+<p>SerializationLibrary -&gt; (string)</p>
+<blockquote>
+<div>Usually the class that implements the SerDe. An example is: <tt class="docutils literal"><span class="pre">org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</span></tt> .</div></blockquote>
+<p>Parameters -&gt; (map)</p>
+<blockquote>
+<div><p>These key-value pairs define initialization parameters for the SerDe.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>BucketColumns -&gt; (list)</p>
+<blockquote>
+<div><p>A list of reducer grouping columns, clustering columns, and bucketing columns in the table.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SortColumns -&gt; (list)</p>
+<blockquote>
+<div><p>A list specifying the sort order of each bucket in the table.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Specifies the sort order of a sorted column.</p>
+<p>Column -&gt; (string)</p>
+<blockquote>
+<div>The name of the column.</div></blockquote>
+<p>SortOrder -&gt; (integer)</p>
+<blockquote>
+<div>Indicates that the column is sorted in ascending order (<tt class="docutils literal"><span class="pre">==</span> <span class="pre">1</span></tt> ), or in descending order (<tt class="docutils literal"><span class="pre">==0</span></tt> ).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Parameters -&gt; (map)</p>
+<blockquote>
+<div><p>User-supplied properties in key-value form.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>SkewedInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about values that appear very frequently in a column (skewed values).</p>
+<p>SkewedColumnNames -&gt; (list)</p>
+<blockquote>
+<div><p>A list of names of columns that contain skewed values.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SkewedColumnValues -&gt; (list)</p>
+<blockquote>
+<div><p>A list of values that appear so frequently as to be considered skewed.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SkewedColumnValueLocationMaps -&gt; (map)</p>
+<blockquote>
+<div><p>A mapping of skewed values to the columns that contain them.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>StoredAsSubDirectories -&gt; (boolean)</p>
+<blockquote>
+<div>True if the table data is stored in subdirectories, or False if not.</div></blockquote>
+</div></blockquote>
+<p>PartitionKeys -&gt; (list)</p>
+<blockquote>
+<div><p>A list of columns by which the table is partitioned. Only primitive types are supported as partition keys.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A column in a <tt class="docutils literal"><span class="pre">Table</span></tt> .</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the <tt class="docutils literal"><span class="pre">Column</span></tt> .</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The datatype of data in the <tt class="docutils literal"><span class="pre">Column</span></tt> .</div></blockquote>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>Free-form text comment.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ViewOriginalText -&gt; (string)</p>
+<blockquote>
+<div>If the table is a view, the original text of the view; otherwise <tt class="docutils literal"><span class="pre">null</span></tt> .</div></blockquote>
+<p>ViewExpandedText -&gt; (string)</p>
+<blockquote>
+<div>If the table is a view, the expanded text of the view; otherwise <tt class="docutils literal"><span class="pre">null</span></tt> .</div></blockquote>
+<p>TableType -&gt; (string)</p>
+<blockquote>
+<div>The type of this table (<tt class="docutils literal"><span class="pre">EXTERNAL_TABLE</span></tt> , <tt class="docutils literal"><span class="pre">VIRTUAL_VIEW</span></tt> , etc.).</div></blockquote>
+<p>Parameters -&gt; (map)</p>
+<blockquote>
+<div><p>These key-value pairs define properties associated with the table.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>CreatedBy -&gt; (string)</p>
+<blockquote>
+<div>Person or entity who created the table.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glue/get-security-configurations.html" title="previous chapter (use the left arrow)">&larr; get-security-configurations</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../glue/get-table-version.html" title="next chapter (use the right arrow)">get-table-version &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../glue/get-table-version.html" title="get-table-version"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../glue/get-security-configurations.html" title="get-security-configurations"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../glue/index.html" >glue</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

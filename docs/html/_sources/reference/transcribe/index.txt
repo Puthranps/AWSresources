@@ -1,0 +1,39 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws transcribe:
+
+
+**********
+transcribe
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+Operations and objects for transcribing speech to text.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-vocabulary
+  delete-transcription-job
+  delete-vocabulary
+  get-transcription-job
+  get-vocabulary
+  list-transcription-jobs
+  list-vocabularies
+  start-transcription-job
+  update-vocabulary

@@ -1,0 +1,13 @@
+{
+    "thingGroupName": "",
+    "thingGroupProperties": {
+        "thingGroupDescription": "",
+        "attributePayload": {
+            "attributes": {
+                "KeyName": ""
+            },
+            "merge": true
+        }
+    },
+    "expectedVersion": 0
+}

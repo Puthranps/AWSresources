@@ -1,0 +1,155 @@
+[ :ref:`aws <cli:aws>` . :ref:`emr <cli:aws emr>` ]
+
+.. _cli:aws emr add-instance-groups:
+
+
+*******************
+add-instance-groups
+*******************
+
+
+
+===========
+Description
+===========
+
+Adds an instance group to a running cluster.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    add-instance-groups
+  --cluster-id <value>
+  --instance-groups <value> [<value>...]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster-id`` (string)
+
+
+  A unique string that identifies a cluster. The ``create-cluster`` command returns this identifier. You can use the ``list-clusters`` command to get cluster IDs.
+
+  
+
+``--instance-groups`` (list)
+
+
+  Specifies the number and type of Amazon EC2 instances to create for each node type in a cluster, using uniform instance groups. You can specify either ``--instance-groups`` or ``--instance-fleets`` but not both. For more information, see the following topic in the EMR Management Guide:
+
+  
+
+  https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-group-configuration.html
+
+  
+
+  You can specify arguments individually using multiple ``InstanceGroupType`` argument blocks, one for the ``MASTER`` instance group, one for a ``CORE`` instance group, and optional, multiple ``TASK`` instance groups.
+
+  
+
+  If you specify inline JSON structures, enclose the entire ``InstanceGroupType`` argument block in single quotation marks.
+
+  Each ``InstanceGroupType`` block takes the following inline arguments. Optional arguments are shown in [square brackets].
+
+  
+  * ``[Name]`` - An optional friendly name for the instance group.
+  
+  * ``InstanceGroupType`` - ``MASTER`` , ``CORE`` , or ``TASK`` .
+  
+  * ``InstanceType`` - The type of EC2 instance, for example ``m4.large`` , to use for all nodes in the instance group.
+  
+  * ``InstanceCount`` - The number of EC2 instances to provision in the instance group.
+  
+  * ``[BidPrice]`` - If specified, indicates that the instance group uses Spot Instances. This is the maximum price you are willing to pay for Spot Instances. Specify OnDemandPrice to set the amount equal to the On-Demand price, or specify an amount in USD.
+  
+  * ``[EbsConfiguration]`` - Specifies additional Amazon EBS storage volumes attached to EC2 instances using an inline JSON structure.
+  
+  * ``[AutoScalingPolicy]`` - Specifies an automatic scaling policy for the instance group using an inline JSON structure.
+  
+
+  
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "InstanceGroupType": "MASTER"|"CORE"|"TASK",
+      "BidPrice": "string",
+      "InstanceType": "string",
+      "InstanceCount": integer,
+      "EbsConfiguration": {
+        "EbsOptimized": true|false,
+        "EbsBlockDeviceConfigs": [
+          {
+            "VolumeSpecification": {
+              "VolumeType": "string",
+              "SizeInGB": integer,
+              "Iops": integer
+            },
+            "VolumesPerInstance": integer
+          }
+          ...
+        ]
+      },
+      "AutoScalingPolicy": {
+        "Constraints": {
+          "MinCapacity": integer,
+          "MaxCapacity": integer
+        },
+        "Rules": [
+          {
+            "Name": "string",
+            "Description": "string",
+            "Action": {
+              "Market": "ON_DEMAND"|"SPOT",
+              "SimpleScalingPolicyConfiguration": {
+                "AdjustmentType": "CHANGE_IN_CAPACITY"|"PERCENT_CHANGE_IN_CAPACITY"|"EXACT_CAPACITY",
+                "ScalingAdjustment": integer,
+                "CoolDown": integer
+              }
+            },
+            "Trigger": {
+              "CloudWatchAlarmDefinition": {
+                "ComparisonOperator": "string",
+                "EvaluationPeriods": integer,
+                "MetricName": "string",
+                "Namespace": "string",
+                "Period": integer,
+                "Statistic": "string",
+                "Threshold": double,
+                "Unit": "string",
+                "Dimensions": [
+                  {
+                    "Key": "string",
+                    "Value": "string"
+                  }
+                  ...
+                ]
+              }
+            }
+          }
+          ...
+        ]
+      }
+    }
+    ...
+  ]
+
+
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

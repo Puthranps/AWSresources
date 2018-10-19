@@ -1,0 +1,30 @@
+{
+    "securityProfileName": "",
+    "securityProfileDescription": "",
+    "behaviors": [
+        {
+            "name": "",
+            "metric": "",
+            "criteria": {
+                "comparisonOperator": "not-in-port-set",
+                "value": {
+                    "count": 0,
+                    "cidrs": [
+                        ""
+                    ],
+                    "ports": [
+                        0
+                    ]
+                },
+                "durationSeconds": 0
+            }
+        }
+    ],
+    "alertTargets": {
+        "KeyName": {
+            "alertTargetArn": "",
+            "roleArn": ""
+        }
+    },
+    "expectedVersion": 0
+}

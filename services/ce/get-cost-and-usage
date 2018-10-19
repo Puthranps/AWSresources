@@ -1,0 +1,38 @@
+{
+    "TimePeriod": {
+        "Start": "",
+        "End": ""
+    },
+    "Granularity": "MONTHLY",
+    "Filter": {
+        "Or": [
+            {}
+        ],
+        "And": [
+            {}
+        ],
+        "Not": {},
+        "Dimensions": {
+            "Key": "DEPLOYMENT_OPTION",
+            "Values": [
+                ""
+            ]
+        },
+        "Tags": {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    },
+    "Metrics": [
+        ""
+    ],
+    "GroupBy": [
+        {
+            "Type": "TAG",
+            "Key": ""
+        }
+    ],
+    "NextPageToken": ""
+}

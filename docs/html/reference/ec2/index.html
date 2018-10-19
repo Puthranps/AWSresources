@@ -1,0 +1,482 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>ec2 &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="accept-reserved-instances-exchange-quote" href="../ec2/accept-reserved-instances-exchange-quote.html" />
+    <link rel="prev" title="list-streams" href="../dynamodbstreams/list-streams.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/accept-reserved-instances-exchange-quote.html" title="accept-reserved-instances-exchange-quote"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dynamodbstreams/list-streams.html" title="list-streams"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dynamodbstreams/list-streams.html" title="previous chapter (use the left arrow)">&larr; list-streams</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/accept-reserved-instances-exchange-quote.html" title="next chapter (use the right arrow)">accept-reserved-instances-exchange-quote &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ec2</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="ec2">
+<span id="cli-aws-ec2"></span><h1>ec2<a class="headerlink" href="#ec2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS cloud. Using Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.</p>
+<p>To learn more about Amazon EC2, Amazon EBS, and Amazon VPC, see the following resources:</p>
+<ul class="simple">
+<li><a class="reference external" href="http://aws.amazon.com/ec2">Amazon EC2 product page</a></li>
+<li><a class="reference external" href="http://aws.amazon.com/documentation/ec2">Amazon EC2 documentation</a></li>
+<li><a class="reference external" href="http://aws.amazon.com/ebs">Amazon EBS product page</a></li>
+<li><a class="reference external" href="http://aws.amazon.com/vpc">Amazon VPC product page</a></li>
+<li><a class="reference external" href="http://aws.amazon.com/documentation/vpc">Amazon VPC documentation</a></li>
+</ul>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/accept-reserved-instances-exchange-quote.html">accept-reserved-instances-exchange-quote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/accept-vpc-endpoint-connections.html">accept-vpc-endpoint-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/accept-vpc-peering-connection.html">accept-vpc-peering-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/allocate-address.html">allocate-address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/allocate-hosts.html">allocate-hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/assign-ipv6-addresses.html">assign-ipv6-addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/assign-private-ip-addresses.html">assign-private-ip-addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/associate-address.html">associate-address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/associate-dhcp-options.html">associate-dhcp-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/associate-iam-instance-profile.html">associate-iam-instance-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/associate-route-table.html">associate-route-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/associate-subnet-cidr-block.html">associate-subnet-cidr-block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/associate-vpc-cidr-block.html">associate-vpc-cidr-block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/attach-classic-link-vpc.html">attach-classic-link-vpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/attach-internet-gateway.html">attach-internet-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/attach-network-interface.html">attach-network-interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/attach-volume.html">attach-volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/attach-vpn-gateway.html">attach-vpn-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/authorize-security-group-egress.html">authorize-security-group-egress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/authorize-security-group-ingress.html">authorize-security-group-ingress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/bundle-instance.html">bundle-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-bundle-task.html">cancel-bundle-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-conversion-task.html">cancel-conversion-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-export-task.html">cancel-export-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-import-task.html">cancel-import-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-reserved-instances-listing.html">cancel-reserved-instances-listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-spot-fleet-requests.html">cancel-spot-fleet-requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/cancel-spot-instance-requests.html">cancel-spot-instance-requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/confirm-product-instance.html">confirm-product-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/copy-fpga-image.html">copy-fpga-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/copy-image.html">copy-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/copy-snapshot.html">copy-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-customer-gateway.html">create-customer-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-default-subnet.html">create-default-subnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-default-vpc.html">create-default-vpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-dhcp-options.html">create-dhcp-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-egress-only-internet-gateway.html">create-egress-only-internet-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-fleet.html">create-fleet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-flow-logs.html">create-flow-logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-fpga-image.html">create-fpga-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-image.html">create-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-instance-export-task.html">create-instance-export-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-internet-gateway.html">create-internet-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-key-pair.html">create-key-pair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-launch-template.html">create-launch-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-launch-template-version.html">create-launch-template-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-nat-gateway.html">create-nat-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-network-acl.html">create-network-acl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-network-acl-entry.html">create-network-acl-entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-network-interface.html">create-network-interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-network-interface-permission.html">create-network-interface-permission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-placement-group.html">create-placement-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-reserved-instances-listing.html">create-reserved-instances-listing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-route.html">create-route</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-route-table.html">create-route-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-security-group.html">create-security-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-snapshot.html">create-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-spot-datafeed-subscription.html">create-spot-datafeed-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-subnet.html">create-subnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-tags.html">create-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-volume.html">create-volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpc.html">create-vpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpc-endpoint.html">create-vpc-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpc-endpoint-connection-notification.html">create-vpc-endpoint-connection-notification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpc-endpoint-service-configuration.html">create-vpc-endpoint-service-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpc-peering-connection.html">create-vpc-peering-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpn-connection.html">create-vpn-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpn-connection-route.html">create-vpn-connection-route</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/create-vpn-gateway.html">create-vpn-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-customer-gateway.html">delete-customer-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-dhcp-options.html">delete-dhcp-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-egress-only-internet-gateway.html">delete-egress-only-internet-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-fleets.html">delete-fleets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-flow-logs.html">delete-flow-logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-fpga-image.html">delete-fpga-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-internet-gateway.html">delete-internet-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-key-pair.html">delete-key-pair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-launch-template.html">delete-launch-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-launch-template-versions.html">delete-launch-template-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-nat-gateway.html">delete-nat-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-network-acl.html">delete-network-acl</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-network-acl-entry.html">delete-network-acl-entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-network-interface.html">delete-network-interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-network-interface-permission.html">delete-network-interface-permission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-placement-group.html">delete-placement-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-route.html">delete-route</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-route-table.html">delete-route-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-security-group.html">delete-security-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-snapshot.html">delete-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-spot-datafeed-subscription.html">delete-spot-datafeed-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-subnet.html">delete-subnet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-tags.html">delete-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-volume.html">delete-volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpc.html">delete-vpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpc-endpoint-connection-notifications.html">delete-vpc-endpoint-connection-notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpc-endpoint-service-configurations.html">delete-vpc-endpoint-service-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpc-endpoints.html">delete-vpc-endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpc-peering-connection.html">delete-vpc-peering-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpn-connection.html">delete-vpn-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpn-connection-route.html">delete-vpn-connection-route</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/delete-vpn-gateway.html">delete-vpn-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/deregister-image.html">deregister-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-account-attributes.html">describe-account-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-addresses.html">describe-addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-aggregate-id-format.html">describe-aggregate-id-format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-availability-zones.html">describe-availability-zones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-bundle-tasks.html">describe-bundle-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-classic-link-instances.html">describe-classic-link-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-conversion-tasks.html">describe-conversion-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-customer-gateways.html">describe-customer-gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-dhcp-options.html">describe-dhcp-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-egress-only-internet-gateways.html">describe-egress-only-internet-gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-elastic-gpus.html">describe-elastic-gpus</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-export-tasks.html">describe-export-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-fleet-history.html">describe-fleet-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-fleet-instances.html">describe-fleet-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-fleets.html">describe-fleets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-flow-logs.html">describe-flow-logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-fpga-image-attribute.html">describe-fpga-image-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-fpga-images.html">describe-fpga-images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-host-reservation-offerings.html">describe-host-reservation-offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-host-reservations.html">describe-host-reservations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-hosts.html">describe-hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-iam-instance-profile-associations.html">describe-iam-instance-profile-associations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-id-format.html">describe-id-format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-identity-id-format.html">describe-identity-id-format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-image-attribute.html">describe-image-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-images.html">describe-images</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-import-image-tasks.html">describe-import-image-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-import-snapshot-tasks.html">describe-import-snapshot-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-instance-attribute.html">describe-instance-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-instance-credit-specifications.html">describe-instance-credit-specifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-instance-status.html">describe-instance-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-instances.html">describe-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-internet-gateways.html">describe-internet-gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-key-pairs.html">describe-key-pairs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-launch-template-versions.html">describe-launch-template-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-launch-templates.html">describe-launch-templates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-moving-addresses.html">describe-moving-addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-nat-gateways.html">describe-nat-gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-network-acls.html">describe-network-acls</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-network-interface-attribute.html">describe-network-interface-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-network-interface-permissions.html">describe-network-interface-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-network-interfaces.html">describe-network-interfaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-placement-groups.html">describe-placement-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-prefix-lists.html">describe-prefix-lists</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-principal-id-format.html">describe-principal-id-format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-regions.html">describe-regions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-reserved-instances.html">describe-reserved-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-reserved-instances-listings.html">describe-reserved-instances-listings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-reserved-instances-modifications.html">describe-reserved-instances-modifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-reserved-instances-offerings.html">describe-reserved-instances-offerings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-route-tables.html">describe-route-tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-scheduled-instance-availability.html">describe-scheduled-instance-availability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-scheduled-instances.html">describe-scheduled-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-security-group-references.html">describe-security-group-references</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-security-groups.html">describe-security-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-snapshot-attribute.html">describe-snapshot-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-snapshots.html">describe-snapshots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-spot-datafeed-subscription.html">describe-spot-datafeed-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-spot-fleet-instances.html">describe-spot-fleet-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-spot-fleet-request-history.html">describe-spot-fleet-request-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-spot-fleet-requests.html">describe-spot-fleet-requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-spot-instance-requests.html">describe-spot-instance-requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-spot-price-history.html">describe-spot-price-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-stale-security-groups.html">describe-stale-security-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-subnets.html">describe-subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-tags.html">describe-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-volume-attribute.html">describe-volume-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-volume-status.html">describe-volume-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-volumes.html">describe-volumes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-volumes-modifications.html">describe-volumes-modifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-attribute.html">describe-vpc-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-classic-link.html">describe-vpc-classic-link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-classic-link-dns-support.html">describe-vpc-classic-link-dns-support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-endpoint-connection-notifications.html">describe-vpc-endpoint-connection-notifications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-endpoint-connections.html">describe-vpc-endpoint-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-endpoint-service-configurations.html">describe-vpc-endpoint-service-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-endpoint-service-permissions.html">describe-vpc-endpoint-service-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-endpoint-services.html">describe-vpc-endpoint-services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpc-peering-connections.html">describe-vpc-peering-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpcs.html">describe-vpcs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpn-connections.html">describe-vpn-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/describe-vpn-gateways.html">describe-vpn-gateways</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/detach-classic-link-vpc.html">detach-classic-link-vpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/detach-internet-gateway.html">detach-internet-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/detach-network-interface.html">detach-network-interface</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/detach-volume.html">detach-volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/detach-vpn-gateway.html">detach-vpn-gateway</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disable-vgw-route-propagation.html">disable-vgw-route-propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disable-vpc-classic-link.html">disable-vpc-classic-link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disable-vpc-classic-link-dns-support.html">disable-vpc-classic-link-dns-support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disassociate-address.html">disassociate-address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disassociate-iam-instance-profile.html">disassociate-iam-instance-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disassociate-route-table.html">disassociate-route-table</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disassociate-subnet-cidr-block.html">disassociate-subnet-cidr-block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/disassociate-vpc-cidr-block.html">disassociate-vpc-cidr-block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/enable-vgw-route-propagation.html">enable-vgw-route-propagation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/enable-volume-io.html">enable-volume-io</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/enable-vpc-classic-link.html">enable-vpc-classic-link</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/enable-vpc-classic-link-dns-support.html">enable-vpc-classic-link-dns-support</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/get-console-output.html">get-console-output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/get-console-screenshot.html">get-console-screenshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/get-host-reservation-purchase-preview.html">get-host-reservation-purchase-preview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/get-launch-template-data.html">get-launch-template-data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/get-password-data.html">get-password-data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/get-reserved-instances-exchange-quote.html">get-reserved-instances-exchange-quote</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/import-image.html">import-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/import-key-pair.html">import-key-pair</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/import-snapshot.html">import-snapshot</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-fleet.html">modify-fleet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-fpga-image-attribute.html">modify-fpga-image-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-hosts.html">modify-hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-id-format.html">modify-id-format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-identity-id-format.html">modify-identity-id-format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-image-attribute.html">modify-image-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-instance-attribute.html">modify-instance-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-instance-credit-specification.html">modify-instance-credit-specification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-instance-placement.html">modify-instance-placement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-launch-template.html">modify-launch-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-network-interface-attribute.html">modify-network-interface-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-reserved-instances.html">modify-reserved-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-snapshot-attribute.html">modify-snapshot-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-spot-fleet-request.html">modify-spot-fleet-request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-subnet-attribute.html">modify-subnet-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-volume.html">modify-volume</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-volume-attribute.html">modify-volume-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-attribute.html">modify-vpc-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-endpoint.html">modify-vpc-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-endpoint-connection-notification.html">modify-vpc-endpoint-connection-notification</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-endpoint-service-configuration.html">modify-vpc-endpoint-service-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-endpoint-service-permissions.html">modify-vpc-endpoint-service-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-peering-connection-options.html">modify-vpc-peering-connection-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/modify-vpc-tenancy.html">modify-vpc-tenancy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/monitor-instances.html">monitor-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/move-address-to-vpc.html">move-address-to-vpc</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/purchase-host-reservation.html">purchase-host-reservation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/purchase-reserved-instances-offering.html">purchase-reserved-instances-offering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/purchase-scheduled-instances.html">purchase-scheduled-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reboot-instances.html">reboot-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/register-image.html">register-image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reject-vpc-endpoint-connections.html">reject-vpc-endpoint-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reject-vpc-peering-connection.html">reject-vpc-peering-connection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/release-address.html">release-address</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/release-hosts.html">release-hosts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/replace-iam-instance-profile-association.html">replace-iam-instance-profile-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/replace-network-acl-association.html">replace-network-acl-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/replace-network-acl-entry.html">replace-network-acl-entry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/replace-route.html">replace-route</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/replace-route-table-association.html">replace-route-table-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/report-instance-status.html">report-instance-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/request-spot-fleet.html">request-spot-fleet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/request-spot-instances.html">request-spot-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reset-fpga-image-attribute.html">reset-fpga-image-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reset-image-attribute.html">reset-image-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reset-instance-attribute.html">reset-instance-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reset-network-interface-attribute.html">reset-network-interface-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/reset-snapshot-attribute.html">reset-snapshot-attribute</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/restore-address-to-classic.html">restore-address-to-classic</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/revoke-security-group-egress.html">revoke-security-group-egress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/revoke-security-group-ingress.html">revoke-security-group-ingress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/run-instances.html">run-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/run-scheduled-instances.html">run-scheduled-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/start-instances.html">start-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/stop-instances.html">stop-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/terminate-instances.html">terminate-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/unassign-ipv6-addresses.html">unassign-ipv6-addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/unassign-private-ip-addresses.html">unassign-private-ip-addresses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/unmonitor-instances.html">unmonitor-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/update-security-group-rule-descriptions-egress.html">update-security-group-rule-descriptions-egress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/update-security-group-rule-descriptions-ingress.html">update-security-group-rule-descriptions-ingress</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ec2/wait/index.html">wait</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dynamodbstreams/list-streams.html" title="previous chapter (use the left arrow)">&larr; list-streams</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/accept-reserved-instances-exchange-quote.html" title="next chapter (use the right arrow)">accept-reserved-instances-exchange-quote &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/accept-reserved-instances-exchange-quote.html" title="accept-reserved-instances-exchange-quote"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dynamodbstreams/list-streams.html" title="list-streams"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

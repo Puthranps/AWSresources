@@ -1,0 +1,8 @@
+{
+    "TableName": "",
+    "Limit": 0,
+    "TimeRangeLowerBound": "1970-01-01T00:00:00",
+    "TimeRangeUpperBound": "1970-01-01T00:00:00",
+    "ExclusiveStartBackupArn": "",
+    "BackupType": "SYSTEM"
+}

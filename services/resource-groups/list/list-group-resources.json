@@ -1,0 +1,13 @@
+{
+    "GroupName": "",
+    "Filters": [
+        {
+            "Name": "resource-type",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

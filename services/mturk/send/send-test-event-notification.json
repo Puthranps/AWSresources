@@ -1,0 +1,11 @@
+{
+    "Notification": {
+        "Destination": "",
+        "Transport": "SQS",
+        "Version": "",
+        "EventTypes": [
+            "HITReviewable"
+        ]
+    },
+    "TestEventType": "HITCreated"
+}

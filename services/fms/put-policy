@@ -1,0 +1,30 @@
+{
+    "Policy": {
+        "PolicyId": "",
+        "PolicyName": "",
+        "PolicyUpdateToken": "",
+        "SecurityServicePolicyData": {
+            "Type": "WAF",
+            "ManagedServiceData": ""
+        },
+        "ResourceType": "",
+        "ResourceTags": [
+            {
+                "Key": "",
+                "Value": ""
+            }
+        ],
+        "ExcludeResourceTags": true,
+        "RemediationEnabled": true,
+        "IncludeMap": {
+            "KeyName": [
+                ""
+            ]
+        },
+        "ExcludeMap": {
+            "KeyName": [
+                ""
+            ]
+        }
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "eventConfigurations": {
+        "KeyName": {
+            "Enabled": true
+        }
+    }
+}

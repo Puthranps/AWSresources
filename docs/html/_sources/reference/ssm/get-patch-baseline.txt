@@ -1,0 +1,1674 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm get-patch-baseline:
+
+
+******************
+get-patch-baseline
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves information about a patch baseline.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetPatchBaseline>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-patch-baseline
+  --baseline-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--baseline-id`` (string)
+
+
+  The ID of the patch baseline to retrieve.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To display a patch baseline**
+
+This example displays the details for a patch baseline.
+
+Command::
+
+  aws ssm get-patch-baseline --baseline-id "pb-00dbb759999aa2bc3"
+
+Output::
+
+  {
+	"BaselineId":"pb-00dbb759999aa2bc3",
+	"Name":"Windows-Server-2012R2",
+	"PatchGroups":[
+		"Web Servers"
+	],
+	"RejectedPatches":[
+	
+	],
+	"GlobalFilters":{
+		"PatchFilters":[
+	
+		]
+	},
+	"ApprovalRules":{
+		"PatchRules":[
+			{
+				"PatchFilterGroup":{
+				"PatchFilters":[
+					{
+						"Values":[
+							"Important",
+							"Critical"
+						],
+						"Key":"MSRC_SEVERITY"
+					},
+					{
+						"Values":[
+							"SecurityUpdates"
+						],
+						"Key":"CLASSIFICATION"
+					},
+					{
+						"Values":[
+							"WindowsServer2012R2"
+						],
+						"Key":"PRODUCT"
+					}
+				]
+				},
+				"ApproveAfterDays":5
+			}
+		]
+	},
+	"ModifiedDate":1480997823.81,
+	"CreatedDate":1480997823.81,
+	"ApprovedPatches":[
+	
+	],
+	"Description":"Windows Server 2012 R2, Important and Critical security updates"
+  }
+
+
+======
+Output
+======
+
+BaselineId -> (string)
+
+  
+
+  The ID of the retrieved patch baseline.
+
+  
+
+  
+
+Name -> (string)
+
+  
+
+  The name of the patch baseline.
+
+  
+
+  
+
+OperatingSystem -> (string)
+
+  
+
+  Returns the operating system specified for the patch baseline.
+
+  
+
+  
+
+GlobalFilters -> (structure)
+
+  
+
+  A set of global filters used to exclude patches from the baseline.
+
+  
+
+  PatchFilters -> (list)
+
+    
+
+    The set of patch filters that make up the group.
+
+    
+
+    (structure)
+
+      
+
+      Defines a patch filter.
+
+       
+
+      A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key ``PRODUCT`` is valid for all supported operating system types. The key ``MSRC_SEVERITY`` , however, is valid only for Windows operating systems, and the key ``SECTION`` is valid only for Ubuntu operating systems.
+
+       
+
+      Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.
+
+       
+
+       **Windows Operating Systems**  
+
+       
+
+      The supported keys for Windows operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``MSRC_SEVERITY`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Windows7``   
+       
+      * ``Windows8``   
+       
+      * ``Windows8.1``   
+       
+      * ``Windows8Embedded``   
+       
+      * ``Windows10``   
+       
+      * ``Windows10LTSB``   
+       
+      * ``WindowsServer2008``   
+       
+      * ``WindowsServer2008R2``   
+       
+      * ``WindowsServer2012``   
+       
+      * ``WindowsServer2012R2``   
+       
+      * ``WindowsServer2016``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``CLASSIFICATION``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``CriticalUpdates``   
+       
+      * ``DefinitionUpdates``   
+       
+      * ``Drivers``   
+       
+      * ``FeaturePacks``   
+       
+      * ``SecurityUpdates``   
+       
+      * ``ServicePacks``   
+       
+      * ``Tools``   
+       
+      * ``UpdateRollups``   
+       
+      * ``Updates``   
+       
+      * ``Upgrades``   
+       
+
+       
+
+       *Supported key:*  ``MSRC_SEVERITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Critical``   
+       
+      * ``Important``   
+       
+      * ``Moderate``   
+       
+      * ``Low``   
+       
+      * ``Unspecified``   
+       
+
+       
+
+       **Ubuntu Operating Systems**  
+
+       
+
+      The supported keys for Ubuntu operating systems are ``PRODUCT`` , ``PRIORITY`` , and ``SECTION`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Ubuntu14.04``   
+       
+      * ``Ubuntu16.04``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``PRIORITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Required``   
+       
+      * ``Important``   
+       
+      * ``Standard``   
+       
+      * ``Optional``   
+       
+      * ``Extra``   
+       
+
+       
+
+       *Supported key:*  ``SECTION``  
+
+       
+
+      Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
+
+       
+
+       **Amazon Linux Operating Systems**  
+
+       
+
+      The supported keys for Amazon Linux operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``AmazonLinux2012.03``   
+       
+      * ``AmazonLinux2012.09``   
+       
+      * ``AmazonLinux2013.03``   
+       
+      * ``AmazonLinux2013.09``   
+       
+      * ``AmazonLinux2014.03``   
+       
+      * ``AmazonLinux2014.09``   
+       
+      * ``AmazonLinux2015.03``   
+       
+      * ``AmazonLinux2015.09``   
+       
+      * ``AmazonLinux2016.03``   
+       
+      * ``AmazonLinux2016.09``   
+       
+      * ``AmazonLinux2017.03``   
+       
+      * ``AmazonLinux2017.09``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``CLASSIFICATION``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Security``   
+       
+      * ``Bugfix``   
+       
+      * ``Enhancement``   
+       
+      * ``Recommended``   
+       
+      * ``Newpackage``   
+       
+
+       
+
+       *Supported key:*  ``SEVERITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Critical``   
+       
+      * ``Important``   
+       
+      * ``Medium``   
+       
+      * ``Low``   
+       
+
+       
+
+       **Amazon Linux 2 Operating Systems**  
+
+       
+
+      The supported keys for Amazon Linux 2 operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``AmazonLinux2``   
+       
+      * ``AmazonLinux2.0``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``CLASSIFICATION``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Security``   
+       
+      * ``Bugfix``   
+       
+      * ``Enhancement``   
+       
+      * ``Recommended``   
+       
+      * ``Newpackage``   
+       
+
+       
+
+       *Supported key:*  ``SEVERITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Critical``   
+       
+      * ``Important``   
+       
+      * ``Medium``   
+       
+      * ``Low``   
+       
+
+       
+
+       **RedHat Enterprise Linux (RHEL) Operating Systems**  
+
+       
+
+      The supported keys for RedHat Enterprise Linux operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``RedhatEnterpriseLinux6.5``   
+       
+      * ``RedhatEnterpriseLinux6.6``   
+       
+      * ``RedhatEnterpriseLinux6.7``   
+       
+      * ``RedhatEnterpriseLinux6.8``   
+       
+      * ``RedhatEnterpriseLinux6.9``   
+       
+      * ``RedhatEnterpriseLinux7.0``   
+       
+      * ``RedhatEnterpriseLinux7.1``   
+       
+      * ``RedhatEnterpriseLinux7.2``   
+       
+      * ``RedhatEnterpriseLinux7.3``   
+       
+      * ``RedhatEnterpriseLinux7.4``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``CLASSIFICATION``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Security``   
+       
+      * ``Bugfix``   
+       
+      * ``Enhancement``   
+       
+      * ``Recommended``   
+       
+      * ``Newpackage``   
+       
+
+       
+
+       *Supported key:*  ``SEVERITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Critical``   
+       
+      * ``Important``   
+       
+      * ``Medium``   
+       
+      * ``Low``   
+       
+
+       
+
+       **SUSE Linux Enterprise Server (SLES) Operating Systems**  
+
+       
+
+      The supported keys for SLES operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Suse12.0``   
+       
+      * ``Suse12.1``   
+       
+      * ``Suse12.2``   
+       
+      * ``Suse12.3``   
+       
+      * ``Suse12.4``   
+       
+      * ``Suse12.5``   
+       
+      * ``Suse12.6``   
+       
+      * ``Suse12.7``   
+       
+      * ``Suse12.8``   
+       
+      * ``Suse12.9``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``CLASSIFICATION``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Security``   
+       
+      * ``Recommended``   
+       
+      * ``Optional``   
+       
+      * ``Feature``   
+       
+      * ``Document``   
+       
+      * ``Yast``   
+       
+
+       
+
+       *Supported key:*  ``SEVERITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Critical``   
+       
+      * ``Important``   
+       
+      * ``Moderate``   
+       
+      * ``Low``   
+       
+
+       
+
+       **CentOS Operating Systems**  
+
+       
+
+      The supported keys for CentOS operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+       
+
+       *Supported key:*  ``PRODUCT``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``CentOS6.5``   
+       
+      * ``CentOS6.6``   
+       
+      * ``CentOS6.7``   
+       
+      * ``CentOS6.8``   
+       
+      * ``CentOS6.9``   
+       
+      * ``CentOS7.0``   
+       
+      * ``CentOS7.1``   
+       
+      * ``CentOS7.2``   
+       
+      * ``CentOS7.3``   
+       
+      * ``CentOS7.4``   
+       
+      * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+       
+
+       
+
+       *Supported key:*  ``CLASSIFICATION``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Security``   
+       
+      * ``Bugfix``   
+       
+      * ``Enhancement``   
+       
+      * ``Recommended``   
+       
+      * ``Newpackage``   
+       
+
+       
+
+       *Supported key:*  ``SEVERITY``  
+
+       
+
+       *Supported values:*  
+
+       
+
+       
+      * ``Critical``   
+       
+      * ``Important``   
+       
+      * ``Medium``   
+       
+      * ``Low``   
+       
+
+      
+
+      Key -> (string)
+
+        
+
+        The key for the filter.
+
+         
+
+        See  PatchFilter for lists of valid keys for each operating system type.
+
+        
+
+        
+
+      Values -> (list)
+
+        
+
+        The value for the filter key.
+
+         
+
+        See  PatchFilter for lists of valid values for each key based on operating system type.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+
+ApprovalRules -> (structure)
+
+  
+
+  A set of rules used to include patches in the baseline.
+
+  
+
+  PatchRules -> (list)
+
+    
+
+    The rules that make up the rule group.
+
+    
+
+    (structure)
+
+      
+
+      Defines an approval rule for a patch baseline.
+
+      
+
+      PatchFilterGroup -> (structure)
+
+        
+
+        The patch filter group that defines the criteria for the rule.
+
+        
+
+        PatchFilters -> (list)
+
+          
+
+          The set of patch filters that make up the group.
+
+          
+
+          (structure)
+
+            
+
+            Defines a patch filter.
+
+             
+
+            A patch filter consists of key/value pairs, but not all keys are valid for all operating system types. For example, the key ``PRODUCT`` is valid for all supported operating system types. The key ``MSRC_SEVERITY`` , however, is valid only for Windows operating systems, and the key ``SECTION`` is valid only for Ubuntu operating systems.
+
+             
+
+            Refer to the following sections for information about which keys may be used with each major operating system, and which values are valid for each key.
+
+             
+
+             **Windows Operating Systems**  
+
+             
+
+            The supported keys for Windows operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``MSRC_SEVERITY`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Windows7``   
+             
+            * ``Windows8``   
+             
+            * ``Windows8.1``   
+             
+            * ``Windows8Embedded``   
+             
+            * ``Windows10``   
+             
+            * ``Windows10LTSB``   
+             
+            * ``WindowsServer2008``   
+             
+            * ``WindowsServer2008R2``   
+             
+            * ``WindowsServer2012``   
+             
+            * ``WindowsServer2012R2``   
+             
+            * ``WindowsServer2016``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``CLASSIFICATION``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``CriticalUpdates``   
+             
+            * ``DefinitionUpdates``   
+             
+            * ``Drivers``   
+             
+            * ``FeaturePacks``   
+             
+            * ``SecurityUpdates``   
+             
+            * ``ServicePacks``   
+             
+            * ``Tools``   
+             
+            * ``UpdateRollups``   
+             
+            * ``Updates``   
+             
+            * ``Upgrades``   
+             
+
+             
+
+             *Supported key:*  ``MSRC_SEVERITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Critical``   
+             
+            * ``Important``   
+             
+            * ``Moderate``   
+             
+            * ``Low``   
+             
+            * ``Unspecified``   
+             
+
+             
+
+             **Ubuntu Operating Systems**  
+
+             
+
+            The supported keys for Ubuntu operating systems are ``PRODUCT`` , ``PRIORITY`` , and ``SECTION`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Ubuntu14.04``   
+             
+            * ``Ubuntu16.04``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``PRIORITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Required``   
+             
+            * ``Important``   
+             
+            * ``Standard``   
+             
+            * ``Optional``   
+             
+            * ``Extra``   
+             
+
+             
+
+             *Supported key:*  ``SECTION``  
+
+             
+
+            Only the length of the key value is validated. Minimum length is 1. Maximum length is 64.
+
+             
+
+             **Amazon Linux Operating Systems**  
+
+             
+
+            The supported keys for Amazon Linux operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``AmazonLinux2012.03``   
+             
+            * ``AmazonLinux2012.09``   
+             
+            * ``AmazonLinux2013.03``   
+             
+            * ``AmazonLinux2013.09``   
+             
+            * ``AmazonLinux2014.03``   
+             
+            * ``AmazonLinux2014.09``   
+             
+            * ``AmazonLinux2015.03``   
+             
+            * ``AmazonLinux2015.09``   
+             
+            * ``AmazonLinux2016.03``   
+             
+            * ``AmazonLinux2016.09``   
+             
+            * ``AmazonLinux2017.03``   
+             
+            * ``AmazonLinux2017.09``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``CLASSIFICATION``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Security``   
+             
+            * ``Bugfix``   
+             
+            * ``Enhancement``   
+             
+            * ``Recommended``   
+             
+            * ``Newpackage``   
+             
+
+             
+
+             *Supported key:*  ``SEVERITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Critical``   
+             
+            * ``Important``   
+             
+            * ``Medium``   
+             
+            * ``Low``   
+             
+
+             
+
+             **Amazon Linux 2 Operating Systems**  
+
+             
+
+            The supported keys for Amazon Linux 2 operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``AmazonLinux2``   
+             
+            * ``AmazonLinux2.0``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``CLASSIFICATION``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Security``   
+             
+            * ``Bugfix``   
+             
+            * ``Enhancement``   
+             
+            * ``Recommended``   
+             
+            * ``Newpackage``   
+             
+
+             
+
+             *Supported key:*  ``SEVERITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Critical``   
+             
+            * ``Important``   
+             
+            * ``Medium``   
+             
+            * ``Low``   
+             
+
+             
+
+             **RedHat Enterprise Linux (RHEL) Operating Systems**  
+
+             
+
+            The supported keys for RedHat Enterprise Linux operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``RedhatEnterpriseLinux6.5``   
+             
+            * ``RedhatEnterpriseLinux6.6``   
+             
+            * ``RedhatEnterpriseLinux6.7``   
+             
+            * ``RedhatEnterpriseLinux6.8``   
+             
+            * ``RedhatEnterpriseLinux6.9``   
+             
+            * ``RedhatEnterpriseLinux7.0``   
+             
+            * ``RedhatEnterpriseLinux7.1``   
+             
+            * ``RedhatEnterpriseLinux7.2``   
+             
+            * ``RedhatEnterpriseLinux7.3``   
+             
+            * ``RedhatEnterpriseLinux7.4``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``CLASSIFICATION``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Security``   
+             
+            * ``Bugfix``   
+             
+            * ``Enhancement``   
+             
+            * ``Recommended``   
+             
+            * ``Newpackage``   
+             
+
+             
+
+             *Supported key:*  ``SEVERITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Critical``   
+             
+            * ``Important``   
+             
+            * ``Medium``   
+             
+            * ``Low``   
+             
+
+             
+
+             **SUSE Linux Enterprise Server (SLES) Operating Systems**  
+
+             
+
+            The supported keys for SLES operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Suse12.0``   
+             
+            * ``Suse12.1``   
+             
+            * ``Suse12.2``   
+             
+            * ``Suse12.3``   
+             
+            * ``Suse12.4``   
+             
+            * ``Suse12.5``   
+             
+            * ``Suse12.6``   
+             
+            * ``Suse12.7``   
+             
+            * ``Suse12.8``   
+             
+            * ``Suse12.9``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``CLASSIFICATION``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Security``   
+             
+            * ``Recommended``   
+             
+            * ``Optional``   
+             
+            * ``Feature``   
+             
+            * ``Document``   
+             
+            * ``Yast``   
+             
+
+             
+
+             *Supported key:*  ``SEVERITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Critical``   
+             
+            * ``Important``   
+             
+            * ``Moderate``   
+             
+            * ``Low``   
+             
+
+             
+
+             **CentOS Operating Systems**  
+
+             
+
+            The supported keys for CentOS operating systems are ``PRODUCT`` , ``CLASSIFICATION`` , and ``SEVERITY`` . See the following lists for valid values for each of these keys.
+
+             
+
+             *Supported key:*  ``PRODUCT``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``CentOS6.5``   
+             
+            * ``CentOS6.6``   
+             
+            * ``CentOS6.7``   
+             
+            * ``CentOS6.8``   
+             
+            * ``CentOS6.9``   
+             
+            * ``CentOS7.0``   
+             
+            * ``CentOS7.1``   
+             
+            * ``CentOS7.2``   
+             
+            * ``CentOS7.3``   
+             
+            * ``CentOS7.4``   
+             
+            * ``*``    *Use a wildcard character (*) to target all supported operating system versions.*   
+             
+
+             
+
+             *Supported key:*  ``CLASSIFICATION``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Security``   
+             
+            * ``Bugfix``   
+             
+            * ``Enhancement``   
+             
+            * ``Recommended``   
+             
+            * ``Newpackage``   
+             
+
+             
+
+             *Supported key:*  ``SEVERITY``  
+
+             
+
+             *Supported values:*  
+
+             
+
+             
+            * ``Critical``   
+             
+            * ``Important``   
+             
+            * ``Medium``   
+             
+            * ``Low``   
+             
+
+            
+
+            Key -> (string)
+
+              
+
+              The key for the filter.
+
+               
+
+              See  PatchFilter for lists of valid keys for each operating system type.
+
+              
+
+              
+
+            Values -> (list)
+
+              
+
+              The value for the filter key.
+
+               
+
+              See  PatchFilter for lists of valid values for each key based on operating system type.
+
+              
+
+              (string)
+
+                
+
+                
+
+              
+
+            
+
+          
+
+        
+
+      ComplianceLevel -> (string)
+
+        
+
+        A compliance severity level for all approved patches in a patch baseline. Valid compliance severity levels include the following: Unspecified, Critical, High, Medium, Low, and Informational.
+
+        
+
+        
+
+      ApproveAfterDays -> (integer)
+
+        
+
+        The number of days after the release date of each patch matched by the rule that the patch is marked as approved in the patch baseline. For example, a value of ``7`` means that patches are approved seven days after they are released. 
+
+        
+
+        
+
+      EnableNonSecurity -> (boolean)
+
+        
+
+        For instances identified by the approval rule filters, enables a patch baseline to apply non-security updates available in the specified repository. The default value is 'false'. Applies to Linux instances only.
+
+        
+
+        
+
+      
+
+    
+
+  
+
+ApprovedPatches -> (list)
+
+  
+
+  A list of explicitly approved patches for the baseline.
+
+  
+
+  (string)
+
+    
+
+    
+
+  
+
+ApprovedPatchesComplianceLevel -> (string)
+
+  
+
+  Returns the specified compliance severity level for approved patches in the patch baseline.
+
+  
+
+  
+
+ApprovedPatchesEnableNonSecurity -> (boolean)
+
+  
+
+  Indicates whether the list of approved patches includes non-security updates that should be applied to the instances. The default value is 'false'. Applies to Linux instances only.
+
+  
+
+  
+
+RejectedPatches -> (list)
+
+  
+
+  A list of explicitly rejected patches for the baseline.
+
+  
+
+  (string)
+
+    
+
+    
+
+  
+
+RejectedPatchesAction -> (string)
+
+  
+
+  The action specified to take on patches included in the RejectedPatches list. A patch can be allowed only if it is a dependency of another package, or blocked entirely along with packages that include it as a dependency.
+
+  
+
+  
+
+PatchGroups -> (list)
+
+  
+
+  Patch groups included in the patch baseline.
+
+  
+
+  (string)
+
+    
+
+    
+
+  
+
+CreatedDate -> (timestamp)
+
+  
+
+  The date the patch baseline was created.
+
+  
+
+  
+
+ModifiedDate -> (timestamp)
+
+  
+
+  The date the patch baseline was last modified.
+
+  
+
+  
+
+Description -> (string)
+
+  
+
+  A description of the patch baseline.
+
+  
+
+  
+
+Sources -> (list)
+
+  
+
+  Information about the patches to use to update the instances, including target operating systems and source repositories. Applies to Linux instances only.
+
+  
+
+  (structure)
+
+    
+
+    Information about the patches to use to update the instances, including target operating systems and source repository. Applies to Linux instances only.
+
+    
+
+    Name -> (string)
+
+      
+
+      The name specified to identify the patch source.
+
+      
+
+      
+
+    Products -> (list)
+
+      
+
+      The specific operating system versions a patch repository applies to, such as "Ubuntu16.04", "AmazonLinux2016.09", "RedhatEnterpriseLinux7.2" or "Suse12.7". For lists of supported product values, see  PatchFilter .
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    Configuration -> (string)
+
+      
+
+      The value of the yum repo configuration. For example:
+
+       
+
+       ``cachedir=/var/cache/yum/$basesearch``  
+
+       
+
+       ``$releasever``  
+
+       
+
+       ``keepcache=0``  
+
+       
+
+       ``debuglevel=2``  
+
+      
+
+      
+
+    
+
+  
+

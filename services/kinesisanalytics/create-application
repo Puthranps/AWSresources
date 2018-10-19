@@ -1,0 +1,75 @@
+{
+    "ApplicationName": "",
+    "ApplicationDescription": "",
+    "Inputs": [
+        {
+            "NamePrefix": "",
+            "InputProcessingConfiguration": {
+                "InputLambdaProcessor": {
+                    "ResourceARN": "",
+                    "RoleARN": ""
+                }
+            },
+            "KinesisStreamsInput": {
+                "ResourceARN": "",
+                "RoleARN": ""
+            },
+            "KinesisFirehoseInput": {
+                "ResourceARN": "",
+                "RoleARN": ""
+            },
+            "InputParallelism": {
+                "Count": 0
+            },
+            "InputSchema": {
+                "RecordFormat": {
+                    "RecordFormatType": "CSV",
+                    "MappingParameters": {
+                        "JSONMappingParameters": {
+                            "RecordRowPath": ""
+                        },
+                        "CSVMappingParameters": {
+                            "RecordRowDelimiter": "",
+                            "RecordColumnDelimiter": ""
+                        }
+                    }
+                },
+                "RecordEncoding": "",
+                "RecordColumns": [
+                    {
+                        "Name": "",
+                        "Mapping": "",
+                        "SqlType": ""
+                    }
+                ]
+            }
+        }
+    ],
+    "Outputs": [
+        {
+            "Name": "",
+            "KinesisStreamsOutput": {
+                "ResourceARN": "",
+                "RoleARN": ""
+            },
+            "KinesisFirehoseOutput": {
+                "ResourceARN": "",
+                "RoleARN": ""
+            },
+            "LambdaOutput": {
+                "ResourceARN": "",
+                "RoleARN": ""
+            },
+            "DestinationSchema": {
+                "RecordFormatType": "CSV"
+            }
+        }
+    ],
+    "CloudWatchLoggingOptions": [
+        {
+            "LogStreamARN": "",
+            "RoleARN": ""
+        }
+    ],
+    "ApplicationCode": ""
+}

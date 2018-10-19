@@ -1,0 +1,164 @@
+[ :ref:`aws <cli:aws>` . :ref:`mediastore-data <cli:aws mediastore-data>` ]
+
+.. _cli:aws mediastore-data put-object:
+
+
+**********
+put-object
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+Uploads an object to the specified path. Object sizes are limited to 10 MB.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mediastore-data-2017-09-01/PutObject>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-object
+  --body <value>
+  --path <value>
+  [--content-type <value>]
+  [--cache-control <value>]
+  [--storage-class <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--body`` (blob)
+
+
+  The bytes to be stored. 
+
+  
+
+``--path`` (string)
+
+
+  The path (including the file name) where the object is stored in the container. Format: <folder name>/<folder name>/<file name>
+
+   
+
+  For example, to upload the file ``mlaw.avi`` to the folder path ``premium\canada`` in the container ``movies`` , enter the path ``premium/canada/mlaw.avi`` .
+
+   
+
+  Do not include the container name in this path.
+
+   
+
+  If the path includes any folders that don't exist yet, the service creates them. For example, suppose you have an existing ``premium/usa`` subfolder. If you specify ``premium/canada`` , the service creates a ``canada`` subfolder in the ``premium`` folder. You then have two subfolders, ``usa`` and ``canada`` , in the ``premium`` folder. 
+
+   
+
+  There is no correlation between the path to the source and the path (folders) in the container in AWS Elemental MediaStore.
+
+   
+
+  For more information about folders and how they exist in a container, see the `AWS Elemental MediaStore User Guide <http://docs.aws.amazon.com/mediastore/latest/ug/>`__ .
+
+   
+
+  The file name is the name that is assigned to the file that you upload. The file can have the same name inside and outside of AWS Elemental MediaStore, or it can have the same name. The file name can include or omit an extension. 
+
+  
+
+``--content-type`` (string)
+
+
+  The content type of the object.
+
+  
+
+``--cache-control`` (string)
+
+
+  An optional ``CacheControl`` header that allows the caller to control the object's cache behavior. Headers can be passed in as specified in the HTTP at `https\://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9 <https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9>`__ .
+
+   
+
+  Headers with a custom user-defined value are also accepted.
+
+  
+
+``--storage-class`` (string)
+
+
+  Indicates the storage class of a ``Put`` request. Defaults to high-performance temporal storage class, and objects are persisted into durable storage shortly after being received.
+
+  
+
+  Possible values:
+
+  
+  *   ``TEMPORAL``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ContentSHA256 -> (string)
+
+  
+
+  The SHA256 digest of the object that is persisted.
+
+  
+
+  
+
+ETag -> (string)
+
+  
+
+  Unique identifier of the object in the container.
+
+  
+
+  
+
+StorageClass -> (string)
+
+  
+
+  The storage class where the object was persisted. Should be “Temporal”.
+
+  
+
+  
+

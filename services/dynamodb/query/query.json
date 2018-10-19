@@ -1,0 +1,125 @@
+{
+    "TableName": "",
+    "IndexName": "",
+    "Select": "SPECIFIC_ATTRIBUTES",
+    "AttributesToGet": [
+        ""
+    ],
+    "Limit": 0,
+    "ConsistentRead": true,
+    "KeyConditions": {
+        "KeyName": {
+            "AttributeValueList": [
+                {
+                    "S": "",
+                    "N": "",
+                    "B": null,
+                    "SS": [
+                        ""
+                    ],
+                    "NS": [
+                        ""
+                    ],
+                    "BS": [
+                        null
+                    ],
+                    "M": {
+                        "KeyName": {}
+                    },
+                    "L": [
+                        {}
+                    ],
+                    "NULL": true,
+                    "BOOL": true
+                }
+            ],
+            "ComparisonOperator": "NULL"
+        }
+    },
+    "QueryFilter": {
+        "KeyName": {
+            "AttributeValueList": [
+                {
+                    "S": "",
+                    "N": "",
+                    "B": null,
+                    "SS": [
+                        ""
+                    ],
+                    "NS": [
+                        ""
+                    ],
+                    "BS": [
+                        null
+                    ],
+                    "M": {
+                        "KeyName": {}
+                    },
+                    "L": [
+                        {}
+                    ],
+                    "NULL": true,
+                    "BOOL": true
+                }
+            ],
+            "ComparisonOperator": "NULL"
+        }
+    },
+    "ConditionalOperator": "AND",
+    "ScanIndexForward": true,
+    "ExclusiveStartKey": {
+        "KeyName": {
+            "S": "",
+            "N": "",
+            "B": null,
+            "SS": [
+                ""
+            ],
+            "NS": [
+                ""
+            ],
+            "BS": [
+                null
+            ],
+            "M": {
+                "KeyName": {}
+            },
+            "L": [
+                {}
+            ],
+            "NULL": true,
+            "BOOL": true
+        }
+    },
+    "ReturnConsumedCapacity": "TOTAL",
+    "ProjectionExpression": "",
+    "FilterExpression": "",
+    "KeyConditionExpression": "",
+    "ExpressionAttributeNames": {
+        "KeyName": ""
+    },
+    "ExpressionAttributeValues": {
+        "KeyName": {
+            "S": "",
+            "N": "",
+            "B": null,
+            "SS": [
+                ""
+            ],
+            "NS": [
+                ""
+            ],
+            "BS": [
+                null
+            ],
+            "M": {
+                "KeyName": {}
+            },
+            "L": [
+                {}
+            ],
+            "NULL": true,
+            "BOOL": true
+        }
+    }
+}

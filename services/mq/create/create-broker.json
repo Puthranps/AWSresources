@@ -1,0 +1,39 @@
+{
+    "AutoMinorVersionUpgrade": true,
+    "BrokerName": "",
+    "Configuration": {
+        "Id": "",
+        "Revision": 0
+    },
+    "CreatorRequestId": "",
+    "DeploymentMode": "ACTIVE_STANDBY_MULTI_AZ",
+    "EngineType": "ACTIVEMQ",
+    "EngineVersion": "",
+    "HostInstanceType": "",
+    "Logs": {
+        "Audit": true,
+        "General": true
+    },
+    "MaintenanceWindowStartTime": {
+        "DayOfWeek": "FRIDAY",
+        "TimeOfDay": "",
+        "TimeZone": ""
+    },
+    "PubliclyAccessible": true,
+    "SecurityGroups": [
+        ""
+    ],
+    "SubnetIds": [
+        ""
+    ],
+    "Users": [
+        {
+            "ConsoleAccess": true,
+            "Groups": [
+                ""
+            ],
+            "Password": "",
+            "Username": ""
+        }
+    ]
+}

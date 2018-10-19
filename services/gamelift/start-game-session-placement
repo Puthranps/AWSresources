@@ -1,0 +1,26 @@
+{
+    "PlacementId": "",
+    "GameSessionQueueName": "",
+    "GameProperties": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "MaximumPlayerSessionCount": 0,
+    "GameSessionName": "",
+    "PlayerLatencies": [
+        {
+            "PlayerId": "",
+            "RegionIdentifier": "",
+            "LatencyInMilliseconds": 0.0
+        }
+    ],
+    "DesiredPlayerSessions": [
+        {
+            "PlayerId": "",
+            "PlayerData": ""
+        }
+    ],
+    "GameSessionData": ""
+}

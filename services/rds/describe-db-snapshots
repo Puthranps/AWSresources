@@ -1,0 +1,17 @@
+{
+    "DBInstanceIdentifier": "",
+    "DBSnapshotIdentifier": "",
+    "SnapshotType": "",
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxRecords": 0,
+    "Marker": "",
+    "IncludeShared": true,
+    "IncludePublic": true
+}

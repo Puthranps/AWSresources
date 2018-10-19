@@ -1,0 +1,196 @@
+[ :ref:`aws <cli:aws>` . :ref:`pinpoint <cli:aws pinpoint>` ]
+
+.. _cli:aws pinpoint put-events:
+
+
+**********
+put-events
+**********
+
+
+
+===========
+Description
+===========
+
+Use to record events for endpoints. This method creates events and creates or updates the endpoints that those events are associated with.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/PutEvents>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-events
+  --application-id <value>
+  --events-request <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-id`` (string)
+The unique ID of your Amazon Pinpoint application.
+
+``--events-request`` (structure)
+Put Events request
+
+
+
+JSON Syntax::
+
+  {
+    "BatchItem": {"string": {
+          "Endpoint": {
+            "Address": "string",
+            "Attributes": {"string": ["string", ...]
+              ...},
+            "ChannelType": "GCM"|"APNS"|"APNS_SANDBOX"|"APNS_VOIP"|"APNS_VOIP_SANDBOX"|"ADM"|"SMS"|"EMAIL"|"BAIDU"|"CUSTOM",
+            "Demographic": {
+              "AppVersion": "string",
+              "Locale": "string",
+              "Make": "string",
+              "Model": "string",
+              "ModelVersion": "string",
+              "Platform": "string",
+              "PlatformVersion": "string",
+              "Timezone": "string"
+            },
+            "EffectiveDate": "string",
+            "EndpointStatus": "string",
+            "Location": {
+              "City": "string",
+              "Country": "string",
+              "Latitude": double,
+              "Longitude": double,
+              "PostalCode": "string",
+              "Region": "string"
+            },
+            "Metrics": {"string": double
+              ...},
+            "OptOut": "string",
+            "RequestId": "string",
+            "User": {
+              "UserAttributes": {"string": ["string", ...]
+                ...},
+              "UserId": "string"
+            }
+          },
+          "Events": {"string": {
+                "Attributes": {"string": "string"
+                  ...},
+                "ClientSdkVersion": "string",
+                "EventType": "string",
+                "Metrics": {"string": double
+                  ...},
+                "Session": {
+                  "Duration": integer,
+                  "Id": "string",
+                  "StartTimestamp": "string",
+                  "StopTimestamp": "string"
+                },
+                "Timestamp": "string"
+              }
+            ...}
+        }
+      ...}
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+EventsResponse -> (structure)
+
+  The results from processing a put events request
+
+  Results -> (map)
+
+    A map containing a multi part response for each endpoint, with the endpoint id as the key and item response as the value
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      The endpoint and events combined response definition
+
+      EndpointItemResponse -> (structure)
+
+        Endpoint item response after endpoint registration
+
+        Message -> (string)
+
+          A custom message associated with the registration of an endpoint when issuing a response.
+
+          
+
+        StatusCode -> (integer)
+
+          The status code to respond with for a particular endpoint id after endpoint registration
+
+          
+
+        
+
+      EventsItemResponse -> (map)
+
+        Events item response is a multipart response object per event Id, with eventId as the key and EventItemResponse object as the value
+
+        key -> (string)
+
+          
+
+          
+
+        value -> (structure)
+
+          The responses that are returned after you record an event.
+
+          Message -> (string)
+
+            A custom message that is associated with the processing of an event.
+
+            
+
+          StatusCode -> (integer)
+
+            The status code to respond with for a particular event id
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  
+

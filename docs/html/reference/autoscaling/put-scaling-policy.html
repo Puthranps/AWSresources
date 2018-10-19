@@ -1,0 +1,355 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>put-scaling-policy &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="autoscaling" href="../autoscaling/index.html" />
+    <link rel="next" title="put-scheduled-update-group-action" href="../autoscaling/put-scheduled-update-group-action.html" />
+    <link rel="prev" title="put-notification-configuration" href="../autoscaling/put-notification-configuration.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../autoscaling/put-scheduled-update-group-action.html" title="put-scheduled-update-group-action"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../autoscaling/put-notification-configuration.html" title="put-notification-configuration"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../autoscaling/index.html" accesskey="U">autoscaling</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../autoscaling/put-notification-configuration.html" title="previous chapter (use the left arrow)">&larr; put-notification-configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling/put-scheduled-update-group-action.html" title="next chapter (use the right arrow)">put-scheduled-update-group-action &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">put-scaling-policy</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/autoscaling/put-scaling-policy">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../autoscaling/index.html#cli-aws-autoscaling"><em>autoscaling</em></a> ]</p>
+<div class="section" id="put-scaling-policy">
+<span id="cli-aws-autoscaling-put-scaling-policy"></span><h1>put-scaling-policy<a class="headerlink" href="#put-scaling-policy" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameters you want to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.</p>
+<p>If you exceed your maximum limit of step adjustments, which by default is 20 per region, the call fails. For information about updating this limit, see <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">AWS Service Limits</a> in the <em>Amazon Web Services General Reference</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/PutScalingPolicy">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  put-scaling-policy
+--auto-scaling-group-name &lt;value&gt;
+--policy-name &lt;value&gt;
+[--policy-type &lt;value&gt;]
+[--adjustment-type &lt;value&gt;]
+[--min-adjustment-step &lt;value&gt;]
+[--min-adjustment-magnitude &lt;value&gt;]
+[--scaling-adjustment &lt;value&gt;]
+[--cooldown &lt;value&gt;]
+[--metric-aggregation-type &lt;value&gt;]
+[--step-adjustments &lt;value&gt;]
+[--estimated-instance-warmup &lt;value&gt;]
+[--target-tracking-configuration &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--auto-scaling-group-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the Auto Scaling group.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--policy-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the policy.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--policy-type</span></tt> (string)</p>
+<blockquote>
+<div>The policy type. The valid values are <tt class="docutils literal"><span class="pre">SimpleScaling</span></tt> , <tt class="docutils literal"><span class="pre">StepScaling</span></tt> , and <tt class="docutils literal"><span class="pre">TargetTrackingScaling</span></tt> . If the policy type is null, the value is treated as <tt class="docutils literal"><span class="pre">SimpleScaling</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--adjustment-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The adjustment type. The valid values are <tt class="docutils literal"><span class="pre">ChangeInCapacity</span></tt> , <tt class="docutils literal"><span class="pre">ExactCapacity</span></tt> , and <tt class="docutils literal"><span class="pre">PercentChangeInCapacity</span></tt> .</p>
+<p>This parameter is supported if the policy type is <tt class="docutils literal"><span class="pre">SimpleScaling</span></tt> or <tt class="docutils literal"><span class="pre">StepScaling</span></tt> .</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <em>Amazon EC2 Auto Scaling User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--min-adjustment-step</span></tt> (integer)</p>
+<blockquote>
+<div>Available for backward compatibility. Use <tt class="docutils literal"><span class="pre">MinAdjustmentMagnitude</span></tt> instead.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--min-adjustment-magnitude</span></tt> (integer)</p>
+<blockquote>
+<div><p>The minimum number of instances to scale. If the value of <tt class="docutils literal"><span class="pre">AdjustmentType</span></tt> is <tt class="docutils literal"><span class="pre">PercentChangeInCapacity</span></tt> , the scaling policy changes the <tt class="docutils literal"><span class="pre">DesiredCapacity</span></tt> of the Auto Scaling group by at least this many instances. Otherwise, the error is <tt class="docutils literal"><span class="pre">ValidationError</span></tt> .</p>
+<p>This parameter is supported if the policy type is <tt class="docutils literal"><span class="pre">SimpleScaling</span></tt> or <tt class="docutils literal"><span class="pre">StepScaling</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--scaling-adjustment</span></tt> (integer)</p>
+<blockquote>
+<div><p>The amount by which to scale, based on the specified adjustment type. A positive value adds to the current capacity while a negative number removes from the current capacity.</p>
+<p>This parameter is required if the policy type is <tt class="docutils literal"><span class="pre">SimpleScaling</span></tt> and not supported otherwise.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cooldown</span></tt> (integer)</p>
+<blockquote>
+<div><p>The amount of time, in seconds, after a scaling activity completes and before the next scaling activity can start. If this parameter is not specified, the default cooldown period for the group applies.</p>
+<p>This parameter is supported if the policy type is <tt class="docutils literal"><span class="pre">SimpleScaling</span></tt> .</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <em>Amazon EC2 Auto Scaling User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--metric-aggregation-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The aggregation type for the CloudWatch metrics. The valid values are <tt class="docutils literal"><span class="pre">Minimum</span></tt> , <tt class="docutils literal"><span class="pre">Maximum</span></tt> , and <tt class="docutils literal"><span class="pre">Average</span></tt> . If the aggregation type is null, the value is treated as <tt class="docutils literal"><span class="pre">Average</span></tt> .</p>
+<p>This parameter is supported if the policy type is <tt class="docutils literal"><span class="pre">StepScaling</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--step-adjustments</span></tt> (list)</p>
+<blockquote>
+<div><p>A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
+<p>This parameter is required if the policy type is <tt class="docutils literal"><span class="pre">StepScaling</span></tt> and not supported otherwise.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>MetricIntervalLowerBound=double,MetricIntervalUpperBound=double,ScalingAdjustment=integer ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;MetricIntervalLowerBound&quot;: double,
+    &quot;MetricIntervalUpperBound&quot;: double,
+    &quot;ScalingAdjustment&quot;: integer
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--estimated-instance-warmup</span></tt> (integer)</p>
+<blockquote>
+<div><p>The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The default is to use the value specified for the default cooldown period for the group.</p>
+<p>This parameter is supported if the policy type is <tt class="docutils literal"><span class="pre">StepScaling</span></tt> or <tt class="docutils literal"><span class="pre">TargetTrackingScaling</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--target-tracking-configuration</span></tt> (structure)</p>
+<blockquote>
+<div><p>A target tracking policy.</p>
+<p>This parameter is required if the policy type is <tt class="docutils literal"><span class="pre">TargetTrackingScaling</span></tt> and not supported otherwise.</p>
+</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;PredefinedMetricSpecification&quot;: {
+    &quot;PredefinedMetricType&quot;: &quot;ASGAverageCPUUtilization&quot;|&quot;ASGAverageNetworkIn&quot;|&quot;ASGAverageNetworkOut&quot;|&quot;ALBRequestCountPerTarget&quot;,
+    &quot;ResourceLabel&quot;: &quot;string&quot;
+  },
+  &quot;CustomizedMetricSpecification&quot;: {
+    &quot;MetricName&quot;: &quot;string&quot;,
+    &quot;Namespace&quot;: &quot;string&quot;,
+    &quot;Dimensions&quot;: [
+      {
+        &quot;Name&quot;: &quot;string&quot;,
+        &quot;Value&quot;: &quot;string&quot;
+      }
+      ...
+    ],
+    &quot;Statistic&quot;: &quot;Average&quot;|&quot;Minimum&quot;|&quot;Maximum&quot;|&quot;SampleCount&quot;|&quot;Sum&quot;,
+    &quot;Unit&quot;: &quot;string&quot;
+  },
+  &quot;TargetValue&quot;: double,
+  &quot;DisableScaleIn&quot;: true|false
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To add a scaling policy to an Auto Scaling group</strong></p>
+<p>This example adds the specified policy to the specified Auto Scaling group:</p>
+<div class="highlight-python"><pre>aws autoscaling put-scaling-policy --auto-scaling-group-name my-auto-scaling-group --policy-name ScaleIn --scaling-adjustment -1 --adjustment-type ChangeInCapacity</pre>
+</div>
+<p>To change the size of the Auto Scaling group by a specific number of instances, set the <tt class="docutils literal"><span class="pre">adjustment-type</span></tt> parameter to <tt class="docutils literal"><span class="pre">PercentChangeInCapacity</span></tt>. Then, assign a value to
+the <tt class="docutils literal"><span class="pre">min-adjustment-step</span></tt> parameter, where the value represents the number of instances the policy adds or removes from the Auto Scaling group:</p>
+<div class="highlight-python"><pre>aws autoscaling put-scaling-policy --auto-scaling-group-name my-auto-scaling-group --policy-name ScalePercentChange --scaling-adjustment 25 --adjustment-type PercentChangeInCapacity --cooldown 60 --min-adjustment-step 2</pre>
+</div>
+<p>The output includes the ARN of the policy. The following is example output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;PolicyARN&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:autoscaling:us-west-2:123456789012:scalingPolicy:2233f3d7-6290-403b-b632-93c553560106:autoScalingGroupName/my-auto-scaling-group:policyName/ScaleIn&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AutoScaling/latest/DeveloperGuide/as-scale-based-on-demand.html">Dynamic Scaling</a> in the <em>Auto Scaling Developer Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>PolicyARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the policy.</div></blockquote>
+<p>Alarms -&gt; (list)</p>
+<blockquote>
+<div><p>The CloudWatch alarms created for the target tracking policy.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an alarm.</p>
+<p>AlarmName -&gt; (string)</p>
+<blockquote>
+<div>The name of the alarm.</div></blockquote>
+<p>AlarmARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the alarm.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../autoscaling/put-notification-configuration.html" title="previous chapter (use the left arrow)">&larr; put-notification-configuration</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../autoscaling/put-scheduled-update-group-action.html" title="next chapter (use the right arrow)">put-scheduled-update-group-action &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../autoscaling/put-scheduled-update-group-action.html" title="put-scheduled-update-group-action"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../autoscaling/put-notification-configuration.html" title="put-notification-configuration"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../autoscaling/index.html" >autoscaling</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

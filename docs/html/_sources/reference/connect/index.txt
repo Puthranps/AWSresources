@@ -1,0 +1,54 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws connect:
+
+
+*******
+connect
+*******
+
+
+
+===========
+Description
+===========
+
+
+
+The Amazon Connect API Reference provides descriptions, syntax, and usage examples for each of the Amazon Connect actions, data types, parameters, and errors. Amazon Connect is a cloud-based contact center solution that makes it easy to set up and manage a customer contact center and provide reliable customer engagement at any scale.
+
+ 
+
+There is a throttling limit placed on usage of the Amazon Connect operations that includes a RateLimit of 2 per second, and a BurstLimit of 5 per second.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-user
+  delete-user
+  describe-user
+  describe-user-hierarchy-group
+  describe-user-hierarchy-structure
+  get-current-metric-data
+  get-federation-token
+  get-metric-data
+  list-routing-profiles
+  list-security-profiles
+  list-user-hierarchy-groups
+  list-users
+  start-outbound-voice-contact
+  stop-contact
+  update-contact-attributes
+  update-user-hierarchy
+  update-user-identity-info
+  update-user-phone-config
+  update-user-routing-profile
+  update-user-security-profiles

@@ -1,0 +1,77 @@
+[ :ref:`aws <cli:aws>` . :ref:`greengrass <cli:aws greengrass>` ]
+
+.. _cli:aws greengrass reset-deployments:
+
+
+*****************
+reset-deployments
+*****************
+
+
+
+===========
+Description
+===========
+
+Resets a group's deployments.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/ResetDeployments>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    reset-deployments
+  [--amzn-client-token <value>]
+  [--force | --no-force]
+  --group-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--amzn-client-token`` (string)
+A client token used to correlate requests and responses.
+
+``--force`` | ``--no-force`` (boolean)
+If true, performs a best-effort only core reset.
+
+``--group-id`` (string)
+The ID of the AWS Greengrass group.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+DeploymentArn -> (string)
+
+  The ARN of the deployment.
+
+  
+
+DeploymentId -> (string)
+
+  The ID of the deployment.
+
+  
+

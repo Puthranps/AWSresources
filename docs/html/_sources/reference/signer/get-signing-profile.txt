@@ -1,0 +1,177 @@
+[ :ref:`aws <cli:aws>` . :ref:`signer <cli:aws signer>` ]
+
+.. _cli:aws signer get-signing-profile:
+
+
+*******************
+get-signing-profile
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information on a specific signing profile.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/GetSigningProfile>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-signing-profile
+  --profile-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--profile-name`` (string)
+
+
+  The name of the target signing profile.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+profileName -> (string)
+
+  
+
+  The name of the target signing profile.
+
+  
+
+  
+
+signingMaterial -> (structure)
+
+  
+
+  The ARN of the certificate that the target profile uses for signing operations.
+
+  
+
+  certificateArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the certificates that is used to sign your code.
+
+    
+
+    
+
+  
+
+platformId -> (string)
+
+  
+
+  The ID of the platform that is used by the target signing profile.
+
+  
+
+  
+
+overrides -> (structure)
+
+  
+
+  A list of overrides applied by the target signing profile for signing operations.
+
+  
+
+  signingConfiguration -> (structure)
+
+    
+
+    A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+
+    
+
+    encryptionAlgorithm -> (string)
+
+      
+
+      A specified override of the default encryption algorithm that is used in an AWS Signer job.
+
+      
+
+      
+
+    hashAlgorithm -> (string)
+
+      
+
+      A specified override of the default hash algorithm that is used in an AWS Signer job.
+
+      
+
+      
+
+    
+
+  
+
+signingParameters -> (map)
+
+  
+
+  A map of key-value pairs for signing operations that is attached to the target signing profile.
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (string)
+
+    
+
+    
+
+  
+
+status -> (string)
+
+  
+
+  The status of the target signing profile.
+
+  
+
+  
+

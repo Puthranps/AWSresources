@@ -1,0 +1,312 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-nfs-file-share &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="storagegateway" href="../storagegateway/index.html" />
+    <link rel="next" title="update-smb-file-share" href="../storagegateway/update-smb-file-share.html" />
+    <link rel="prev" title="update-maintenance-start-time" href="../storagegateway/update-maintenance-start-time.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../storagegateway/update-smb-file-share.html" title="update-smb-file-share"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../storagegateway/update-maintenance-start-time.html" title="update-maintenance-start-time"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../storagegateway/index.html" accesskey="U">storagegateway</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../storagegateway/update-maintenance-start-time.html" title="previous chapter (use the left arrow)">&larr; update-maintenance-start-time</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../storagegateway/update-smb-file-share.html" title="next chapter (use the right arrow)">update-smb-file-share &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-nfs-file-share</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/storagegateway/update-nfs-file-share">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../storagegateway/index.html#cli-aws-storagegateway"><em>storagegateway</em></a> ]</p>
+<div class="section" id="update-nfs-file-share">
+<span id="cli-aws-storagegateway-update-nfs-file-share"></span><h1>update-nfs-file-share<a class="headerlink" href="#update-nfs-file-share" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates a Network File System (NFS) file share. This operation is only supported in the file gateway type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To leave a file share field unchanged, set the corresponding input field to null.</p>
+</div>
+<p>Updates the following file share setting:</p>
+<ul class="simple">
+<li>Default storage class for your S3 bucket</li>
+<li>Metadata defaults for your S3 bucket</li>
+<li>Allowed NFS clients for your file share</li>
+<li>Squash settings</li>
+<li>Write status of your file share</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">To leave a file share field unchanged, set the corresponding input field to null. This operation is only supported in file gateways.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateNFSFileShare">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-nfs-file-share
+--file-share-arn &lt;value&gt;
+[--kms-encrypted | --no-kms-encrypted]
+[--kms-key &lt;value&gt;]
+[--nfs-file-share-defaults &lt;value&gt;]
+[--default-storage-class &lt;value&gt;]
+[--object-acl &lt;value&gt;]
+[--client-list &lt;value&gt;]
+[--squash &lt;value&gt;]
+[--read-only | --no-read-only]
+[--guess-mime-type-enabled | --no-guess-mime-type-enabled]
+[--requester-pays | --no-requester-pays]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--file-share-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the file share to be updated.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--kms-encrypted</span></tt> | <tt class="docutils literal"><span class="pre">--no-kms-encrypted</span></tt> (boolean)</p>
+<blockquote>
+<div>True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon S3. Optional.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--kms-key</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only be set when KMSEncrypted is true. Optional.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--nfs-file-share-defaults</span></tt> (structure)</p>
+<blockquote>
+<div>The default values for the file share. Optional.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">FileMode</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">DirectoryMode</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">GroupId</span><span class="o">=</span><span class="nb">long</span><span class="p">,</span><span class="n">OwnerId</span><span class="o">=</span><span class="nb">long</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;FileMode&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;DirectoryMode&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;GroupId&quot;</span><span class="p">:</span> <span class="nb">long</span><span class="p">,</span>
+  <span class="s2">&quot;OwnerId&quot;</span><span class="p">:</span> <span class="nb">long</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--default-storage-class</span></tt> (string)</p>
+<blockquote>
+<div>The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are <tt class="docutils literal"><span class="pre">S3_STANDARD</span></tt> , <tt class="docutils literal"><span class="pre">S3_STANDARD_IA</span></tt> , or <tt class="docutils literal"><span class="pre">S3_ONEZONE_IA</span></tt> . If this field is not populated, the default value <tt class="docutils literal"><span class="pre">S3_STANDARD</span></tt> is used. Optional.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--object-acl</span></tt> (string)</p>
+<blockquote>
+<div><p>A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is &quot;private&quot;.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">private</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">public-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">public-read-write</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">authenticated-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">bucket-owner-read</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">bucket-owner-full-control</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">aws-exec-read</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--client-list</span></tt> (list)</p>
+<blockquote>
+<div>The list of clients that are allowed to access the file gateway. The list must contain either valid IP addresses or valid CIDR blocks.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--squash</span></tt> (string)</p>
+<blockquote>
+<div><p>The user mapped to anonymous user. Valid options are the following:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">RootSquash</span></tt> - Only root is mapped to anonymous user.</li>
+<li><tt class="docutils literal"><span class="pre">NoSquash</span></tt> - No one is mapped to anonymous user</li>
+<li><tt class="docutils literal"><span class="pre">AllSquash</span></tt> - Everyone is mapped to anonymous user.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--read-only</span></tt> | <tt class="docutils literal"><span class="pre">--no-read-only</span></tt> (boolean)</p>
+<blockquote>
+<div>A value that sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--guess-mime-type-enabled</span></tt> | <tt class="docutils literal"><span class="pre">--no-guess-mime-type-enabled</span></tt> (boolean)</p>
+<blockquote>
+<div>A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable MIME type guessing, and otherwise to false. The default value is true.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--requester-pays</span></tt> | <tt class="docutils literal"><span class="pre">--no-requester-pays</span></tt> (boolean)</p>
+<blockquote>
+<div>A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects into. The default value is <tt class="docutils literal"><span class="pre">private</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>FileShareARN -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the updated file share.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../storagegateway/update-maintenance-start-time.html" title="previous chapter (use the left arrow)">&larr; update-maintenance-start-time</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../storagegateway/update-smb-file-share.html" title="next chapter (use the right arrow)">update-smb-file-share &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../storagegateway/update-smb-file-share.html" title="update-smb-file-share"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../storagegateway/update-maintenance-start-time.html" title="update-maintenance-start-time"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../storagegateway/index.html" >storagegateway</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

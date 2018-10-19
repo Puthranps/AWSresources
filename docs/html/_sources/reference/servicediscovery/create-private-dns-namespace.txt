@@ -1,0 +1,99 @@
+[ :ref:`aws <cli:aws>` . :ref:`servicediscovery <cli:aws servicediscovery>` ]
+
+.. _cli:aws servicediscovery create-private-dns-namespace:
+
+
+****************************
+create-private-dns-namespace
+****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a private namespace based on DNS, which will be visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace ``example.com`` and name your service ``backend`` , the resulting DNS name for the service will be ``backend.example.com`` . For the current limit on the number of namespaces that you can create using the same AWS account, see `Limits on Auto Naming <http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html#limits-api-entities-autonaming>`__ in the *Route 53 Developer Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/CreatePrivateDnsNamespace>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-private-dns-namespace
+  --name <value>
+  [--creator-request-id <value>]
+  [--description <value>]
+  --vpc <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--name`` (string)
+
+
+  The name that you want to assign to this namespace. When you create a namespace, Amazon Route 53 automatically creates a hosted zone that has the same name as the namespace.
+
+  
+
+``--creator-request-id`` (string)
+
+
+  A unique string that identifies the request and that allows failed ``CreatePrivateDnsNamespace`` requests to be retried without the risk of executing the operation twice. ``CreatorRequestId`` can be any unique string, for example, a date/time stamp.
+
+  
+
+``--description`` (string)
+
+
+  A description for the namespace.
+
+  
+
+``--vpc`` (string)
+
+
+  The ID of the Amazon VPC that you want to associate the namespace with.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+OperationId -> (string)
+
+  
+
+  A value that you can use to determine whether the request completed successfully. To get the status of the operation, see  GetOperation .
+
+  
+
+  
+

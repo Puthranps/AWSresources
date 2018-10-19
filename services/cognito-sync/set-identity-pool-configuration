@@ -1,0 +1,14 @@
+{
+    "IdentityPoolId": "",
+    "PushSync": {
+        "ApplicationArns": [
+            ""
+        ],
+        "RoleArn": ""
+    },
+    "CognitoStreams": {
+        "StreamName": "",
+        "RoleArn": "",
+        "StreamingStatus": "ENABLED"
+    }
+}

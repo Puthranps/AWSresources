@@ -1,0 +1,470 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-alarms-for-metric &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="cloudwatch" href="../cloudwatch/index.html" />
+    <link rel="next" title="disable-alarm-actions" href="../cloudwatch/disable-alarm-actions.html" />
+    <link rel="prev" title="describe-alarms" href="../cloudwatch/describe-alarms.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../cloudwatch/disable-alarm-actions.html" title="disable-alarm-actions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cloudwatch/describe-alarms.html" title="describe-alarms"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cloudwatch/index.html" accesskey="U">cloudwatch</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/describe-alarms.html" title="previous chapter (use the left arrow)">&larr; describe-alarms</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cloudwatch/disable-alarm-actions.html" title="next chapter (use the right arrow)">disable-alarm-actions &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-alarms-for-metric</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/cloudwatch/describe-alarms-for-metric">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../cloudwatch/index.html#cli-aws-cloudwatch"><em>cloudwatch</em></a> ]</p>
+<div class="section" id="describe-alarms-for-metric">
+<span id="cli-aws-cloudwatch-describe-alarms-for-metric"></span><h1>describe-alarms-for-metric<a class="headerlink" href="#describe-alarms-for-metric" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DescribeAlarmsForMetric">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-alarms-for-metric
+--metric-name &lt;value&gt;
+--namespace &lt;value&gt;
+[--statistic &lt;value&gt;]
+[--extended-statistic &lt;value&gt;]
+[--dimensions &lt;value&gt;]
+[--period &lt;value&gt;]
+[--unit &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--metric-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the metric.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--namespace</span></tt> (string)</p>
+<blockquote>
+<div>The namespace of the metric.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--statistic</span></tt> (string)</p>
+<blockquote>
+<div><p>The statistic for the metric, other than percentiles. For percentile statistics, use <tt class="docutils literal"><span class="pre">ExtendedStatistics</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">SampleCount</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Average</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Sum</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Minimum</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Maximum</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--extended-statistic</span></tt> (string)</p>
+<blockquote>
+<div>The percentile statistic for the metric. Specify a value between p0.0 and p100.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--dimensions</span></tt> (list)</p>
+<blockquote>
+<div>The dimensions associated with the metric. If the metric has any associated dimensions, you must specify them in order for the call to succeed.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--period</span></tt> (integer)</p>
+<blockquote>
+<div>The period, in seconds, over which the statistic is applied.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--unit</span></tt> (string)</p>
+<blockquote>
+<div><p>The unit for the metric.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">Seconds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Microseconds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Milliseconds</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabytes</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabits</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Percent</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Count</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabytes/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Bits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Kilobits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Megabits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Gigabits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Terabits/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">Count/Second</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">None</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To display information about alarms associated with a metric</strong></p>
+<p>The following example uses the <tt class="docutils literal"><span class="pre">describe-alarms-for-metric</span></tt> command to display information about
+any alarms associated with the Amazon EC2 CPUUtilization metric and the instance with the ID i-0c986c72.:</p>
+<div class="highlight-python"><pre>aws cloudwatch describe-alarms-for-metric --metric-name CPUUtilization --namespace AWS/EC2 --dimensions Name=InstanceId,Value=i-0c986c72</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;MetricAlarms&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;EvaluationPeriods&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:cloudwatch:us-east-1:111122223333:alarm:myHighCpuAlarm2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StateUpdatedTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-30T03:03:51.479Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmConfigurationUpdatedTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2013-10-30T03:03:50.865Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ComparisonOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;GreaterThanOrEqualToThreshold&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmActions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:sns:us-east-1:111122223333:NotifyMe&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS/EC2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;CPU usage exceeds 70 percent&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StateReasonData&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">version</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.0</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">queryDate</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">2013-10-30T03:03:51.479+0000</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">startDate</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">2013-10-30T02:08:00.000+0000</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">statistic</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">Average</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">period</span><span class="se">\&quot;</span><span class="s2">:300,</span><span class="se">\&quot;</span><span class="s2">recentDatapoints</span><span class="se">\&quot;</span><span class="s2">:[40.698,39.612,42.432,39.796,38.816,42.28,42.854,40.088,40.760000000000005,41.316],</span><span class="se">\&quot;</span><span class="s2">threshold</span><span class="se">\&quot;</span><span class="s2">:70.0}&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Period&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+            <span class="s2">&quot;StateValue&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Threshold&quot;</span><span class="p">:</span> <span class="mf">70.0</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmName&quot;</span><span class="p">:</span> <span class="s2">&quot;myHighCpuAlarm2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Dimensions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;InstanceId&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="s2">&quot;i-0c986c72&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Statistic&quot;</span><span class="p">:</span> <span class="s2">&quot;Average&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StateReason&quot;</span><span class="p">:</span> <span class="s2">&quot;Threshold Crossed: 10 datapoints were not greater than or equal to the threshold (70.0). The most recent datapoints: [40.760000000000005, 41.316].&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;InsufficientDataActions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;OKActions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;ActionsEnabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="p">,</span>
+            <span class="s2">&quot;MetricName&quot;</span><span class="p">:</span> <span class="s2">&quot;CPUUtilization&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;EvaluationPeriods&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:cloudwatch:us-east-1:111122223333:alarm:myHighCpuAlarm&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StateUpdatedTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-04-09T18:59:06.442Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmConfigurationUpdatedTimestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-04-09T22:26:05.958Z&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ComparisonOperator&quot;</span><span class="p">:</span> <span class="s2">&quot;GreaterThanThreshold&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmActions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;arn:aws:sns:us-east-1:111122223333:HighCPUAlarm&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Namespace&quot;</span><span class="p">:</span> <span class="s2">&quot;AWS/EC2&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;CPU usage exceeds 70 percent&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StateReasonData&quot;</span><span class="p">:</span> <span class="s2">&quot;{</span><span class="se">\&quot;</span><span class="s2">version</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">1.0</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">queryDate</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">2014-04-09T18:59:06.419+0000</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">startDate</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">2014-04-09T18:44:00.000+0000</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">statistic</span><span class="se">\&quot;</span><span class="s2">:</span><span class="se">\&quot;</span><span class="s2">Average</span><span class="se">\&quot;</span><span class="s2">,</span><span class="se">\&quot;</span><span class="s2">period</span><span class="se">\&quot;</span><span class="s2">:300,</span><span class="se">\&quot;</span><span class="s2">recentDatapoints</span><span class="se">\&quot;</span><span class="s2">:[38.958,40.292],</span><span class="se">\&quot;</span><span class="s2">threshold</span><span class="se">\&quot;</span><span class="s2">:70.0}&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Period&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">,</span>
+            <span class="s2">&quot;StateValue&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Threshold&quot;</span><span class="p">:</span> <span class="mf">70.0</span><span class="p">,</span>
+            <span class="s2">&quot;AlarmName&quot;</span><span class="p">:</span> <span class="s2">&quot;myHighCpuAlarm&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;Dimensions&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;InstanceId&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;Value&quot;</span><span class="p">:</span> <span class="s2">&quot;i-0c986c72&quot;</span>
+                <span class="p">}</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;Statistic&quot;</span><span class="p">:</span> <span class="s2">&quot;Average&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;StateReason&quot;</span><span class="p">:</span> <span class="s2">&quot;Threshold Crossed: 2 datapoints were not greater than the threshold (70.0). The most recent datapoints: [38.958, 40.292].&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;InsufficientDataActions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;OKActions&quot;</span><span class="p">:</span> <span class="p">[],</span>
+            <span class="s2">&quot;ActionsEnabled&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+            <span class="s2">&quot;MetricName&quot;</span><span class="p">:</span> <span class="s2">&quot;CPUUtilization&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>MetricAlarms -&gt; (list)</p>
+<blockquote>
+<div><p>The information for each alarm with the specified metric.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents an alarm.</p>
+<p>AlarmName -&gt; (string)</p>
+<blockquote>
+<div>The name of the alarm.</div></blockquote>
+<p>AlarmArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the alarm.</div></blockquote>
+<p>AlarmDescription -&gt; (string)</p>
+<blockquote>
+<div>The description of the alarm.</div></blockquote>
+<p>AlarmConfigurationUpdatedTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp of the last update to the alarm configuration.</div></blockquote>
+<p>ActionsEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether actions should be executed during any changes to the alarm state.</div></blockquote>
+<p>OKActions -&gt; (list)</p>
+<blockquote>
+<div><p>The actions to execute when this alarm transitions to the <tt class="docutils literal"><span class="pre">OK</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+<p>(string)</p>
+</div></blockquote>
+<p>AlarmActions -&gt; (list)</p>
+<blockquote>
+<div><p>The actions to execute when this alarm transitions to the <tt class="docutils literal"><span class="pre">ALARM</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+<p>(string)</p>
+</div></blockquote>
+<p>InsufficientDataActions -&gt; (list)</p>
+<blockquote>
+<div><p>The actions to execute when this alarm transitions to the <tt class="docutils literal"><span class="pre">INSUFFICIENT_DATA</span></tt> state from any other state. Each action is specified as an Amazon Resource Name (ARN).</p>
+<p>(string)</p>
+</div></blockquote>
+<p>StateValue -&gt; (string)</p>
+<blockquote>
+<div>The state value for the alarm.</div></blockquote>
+<p>StateReason -&gt; (string)</p>
+<blockquote>
+<div>An explanation for the alarm state, in text format.</div></blockquote>
+<p>StateReasonData -&gt; (string)</p>
+<blockquote>
+<div>An explanation for the alarm state, in JSON format.</div></blockquote>
+<p>StateUpdatedTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp of the last update to the alarm state.</div></blockquote>
+<p>MetricName -&gt; (string)</p>
+<blockquote>
+<div>The name of the metric associated with the alarm.</div></blockquote>
+<p>Namespace -&gt; (string)</p>
+<blockquote>
+<div>The namespace of the metric associated with the alarm.</div></blockquote>
+<p>Statistic -&gt; (string)</p>
+<blockquote>
+<div>The statistic for the metric associated with the alarm, other than percentile. For percentile statistics, use <tt class="docutils literal"><span class="pre">ExtendedStatistic</span></tt> .</div></blockquote>
+<p>ExtendedStatistic -&gt; (string)</p>
+<blockquote>
+<div>The percentile statistic for the metric associated with the alarm. Specify a value between p0.0 and p100.</div></blockquote>
+<p>Dimensions -&gt; (list)</p>
+<blockquote>
+<div><p>The dimensions for the metric associated with the alarm.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Expands the identity of a metric.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the dimension.</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value representing the dimension measurement.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Period -&gt; (integer)</p>
+<blockquote>
+<div>The period, in seconds, over which the statistic is applied.</div></blockquote>
+<p>Unit -&gt; (string)</p>
+<blockquote>
+<div>The unit of the metric associated with the alarm.</div></blockquote>
+<p>EvaluationPeriods -&gt; (integer)</p>
+<blockquote>
+<div>The number of periods over which data is compared to the specified threshold.</div></blockquote>
+<p>DatapointsToAlarm -&gt; (integer)</p>
+<blockquote>
+<div>The number of datapoints that must be breaching to trigger the alarm.</div></blockquote>
+<p>Threshold -&gt; (double)</p>
+<blockquote>
+<div>The value to compare with the specified statistic.</div></blockquote>
+<p>ComparisonOperator -&gt; (string)</p>
+<blockquote>
+<div>The arithmetic operation to use when comparing the specified statistic and threshold. The specified statistic value is used as the first operand.</div></blockquote>
+<p>TreatMissingData -&gt; (string)</p>
+<blockquote>
+<div>Sets how this alarm is to handle missing data points. If this parameter is omitted, the default behavior of <tt class="docutils literal"><span class="pre">missing</span></tt> is used.</div></blockquote>
+<p>EvaluateLowSampleCountPercentile -&gt; (string)</p>
+<blockquote>
+<div>Used only for alarms based on percentiles. If <tt class="docutils literal"><span class="pre">ignore</span></tt> , the alarm state does not change during periods with too few data points to be statistically significant. If <tt class="docutils literal"><span class="pre">evaluate</span></tt> or this parameter is not used, the alarm is always evaluated and possibly changes state no matter how many data points are available.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudwatch/describe-alarms.html" title="previous chapter (use the left arrow)">&larr; describe-alarms</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cloudwatch/disable-alarm-actions.html" title="next chapter (use the right arrow)">disable-alarm-actions &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../cloudwatch/disable-alarm-actions.html" title="disable-alarm-actions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cloudwatch/describe-alarms.html" title="describe-alarms"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cloudwatch/index.html" >cloudwatch</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

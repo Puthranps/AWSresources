@@ -1,0 +1,303 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>codecommit &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="batch-get-repositories" href="../codecommit/batch-get-repositories.html" />
+    <link rel="prev" title="update-webhook" href="../codebuild/update-webhook.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../codecommit/batch-get-repositories.html" title="batch-get-repositories"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../codebuild/update-webhook.html" title="update-webhook"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../codebuild/update-webhook.html" title="previous chapter (use the left arrow)">&larr; update-webhook</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codecommit/batch-get-repositories.html" title="next chapter (use the right arrow)">batch-get-repositories &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">codecommit</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/codecommit/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="codecommit">
+<span id="cli-aws-codecommit"></span><h1>codecommit<a class="headerlink" href="#codecommit" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>This is the <em>AWS CodeCommit API Reference</em> . This reference provides descriptions of the operations and data types for AWS CodeCommit API along with usage examples.</p>
+<p>You can use the AWS CodeCommit API to work with the following objects:</p>
+<p>Repositories, by calling the following:</p>
+<ul class="simple">
+<li>BatchGetRepositories , which returns information about one or more repositories associated with your AWS account.</li>
+<li>CreateRepository , which creates an AWS CodeCommit repository.</li>
+<li>DeleteRepository , which deletes an AWS CodeCommit repository.</li>
+<li>GetRepository , which returns information about a specified repository.</li>
+<li>ListRepositories , which lists all AWS CodeCommit repositories associated with your AWS account.</li>
+<li>UpdateRepositoryDescription , which sets or updates the description of the repository.</li>
+<li>UpdateRepositoryName , which changes the name of the repository. If you change the name of a repository, no other users of that repository will be able to access it until you send them the new HTTPS or SSH URL to use.</li>
+</ul>
+<p>Branches, by calling the following:</p>
+<ul class="simple">
+<li>CreateBranch , which creates a new branch in a specified repository.</li>
+<li>DeleteBranch , which deletes the specified branch in a repository unless it is the default branch.</li>
+<li>GetBranch , which returns information about a specified branch.</li>
+<li>ListBranches , which lists all branches for a specified repository.</li>
+<li>UpdateDefaultBranch , which changes the default branch for a repository.</li>
+</ul>
+<p>Files, by calling the following:</p>
+<ul class="simple">
+<li>DeleteFile , which deletes the content of a specified file from a specified branch.</li>
+<li>GetFile , which returns the base-64 encoded content of a specified file.</li>
+<li>GetFolder , which returns the contents of a specified folder or directory.</li>
+<li>PutFile , which adds or modifies a file in a specified repository and branch.</li>
+</ul>
+<p>Information about committed code in a repository, by calling the following:</p>
+<ul class="simple">
+<li>GetBlob , which returns the base-64 encoded content of an individual Git blob object within a repository.</li>
+<li>GetCommit , which returns information about a commit, including commit messages and author and committer information.</li>
+<li>GetDifferences , which returns information about the differences in a valid commit specifier (such as a branch, tag, HEAD, commit ID or other fully qualified reference).</li>
+</ul>
+<p>Pull requests, by calling the following:</p>
+<ul class="simple">
+<li>CreatePullRequest , which creates a pull request in a specified repository.</li>
+<li>DescribePullRequestEvents , which returns information about one or more pull request events.</li>
+<li>GetCommentsForPullRequest , which returns information about comments on a specified pull request.</li>
+<li>GetMergeConflicts , which returns information about merge conflicts between the source and destination branch in a pull request.</li>
+<li>GetPullRequest , which returns information about a specified pull request.</li>
+<li>ListPullRequests , which lists all pull requests for a repository.</li>
+<li>MergePullRequestByFastForward , which merges the source destination branch of a pull request into the specified destination branch for that pull request using the fast-forward merge option.</li>
+<li>PostCommentForPullRequest , which posts a comment to a pull request at the specified line, file, or request.</li>
+<li>UpdatePullRequestDescription , which updates the description of a pull request.</li>
+<li>UpdatePullRequestStatus , which updates the status of a pull request.</li>
+<li>UpdatePullRequestTitle , which updates the title of a pull request.</li>
+</ul>
+<p>Information about comments in a repository, by calling the following:</p>
+<ul class="simple">
+<li>DeleteCommentContent , which deletes the content of a comment on a commit in a repository.</li>
+<li>GetComment , which returns information about a comment on a commit.</li>
+<li>GetCommentsForComparedCommit , which returns information about comments on the comparison between two commit specifiers in a repository.</li>
+<li>PostCommentForComparedCommit , which creates a comment on the comparison between two commit specifiers in a repository.</li>
+<li>PostCommentReply , which creates a reply to a comment.</li>
+<li>UpdateComment , which updates the content of a comment on a commit in a repository.</li>
+</ul>
+<p>Triggers, by calling the following:</p>
+<ul class="simple">
+<li>GetRepositoryTriggers , which returns information about triggers configured for a repository.</li>
+<li>PutRepositoryTriggers , which replaces all triggers for a repository and can be used to create or delete triggers.</li>
+<li>TestRepositoryTriggers , which tests the functionality of a repository trigger by sending data to the trigger target.</li>
+</ul>
+<p>For information about how to use AWS CodeCommit, see the <a class="reference external" href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit User Guide</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/batch-get-repositories.html">batch-get-repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/create-branch.html">create-branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/create-pull-request.html">create-pull-request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/create-repository.html">create-repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/credential-helper/index.html">credential-helper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/delete-branch.html">delete-branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/delete-comment-content.html">delete-comment-content</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/delete-file.html">delete-file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/delete-repository.html">delete-repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/describe-pull-request-events.html">describe-pull-request-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-blob.html">get-blob</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-branch.html">get-branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-comment.html">get-comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-comments-for-compared-commit.html">get-comments-for-compared-commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-comments-for-pull-request.html">get-comments-for-pull-request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-commit.html">get-commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-differences.html">get-differences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-file.html">get-file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-folder.html">get-folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-merge-conflicts.html">get-merge-conflicts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-pull-request.html">get-pull-request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-repository.html">get-repository</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/get-repository-triggers.html">get-repository-triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/list-branches.html">list-branches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/list-pull-requests.html">list-pull-requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/list-repositories.html">list-repositories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/merge-pull-request-by-fast-forward.html">merge-pull-request-by-fast-forward</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/post-comment-for-compared-commit.html">post-comment-for-compared-commit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/post-comment-for-pull-request.html">post-comment-for-pull-request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/post-comment-reply.html">post-comment-reply</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/put-file.html">put-file</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/put-repository-triggers.html">put-repository-triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/test-repository-triggers.html">test-repository-triggers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-comment.html">update-comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-default-branch.html">update-default-branch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-pull-request-description.html">update-pull-request-description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-pull-request-status.html">update-pull-request-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-pull-request-title.html">update-pull-request-title</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-repository-description.html">update-repository-description</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../codecommit/update-repository-name.html">update-repository-name</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../codebuild/update-webhook.html" title="previous chapter (use the left arrow)">&larr; update-webhook</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codecommit/batch-get-repositories.html" title="next chapter (use the right arrow)">batch-get-repositories &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../codecommit/batch-get-repositories.html" title="batch-get-repositories"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../codebuild/update-webhook.html" title="update-webhook"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

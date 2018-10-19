@@ -1,0 +1,190 @@
+[ :ref:`aws <cli:aws>` . :ref:`kinesis-video-archived-media <cli:aws kinesis-video-archived-media>` ]
+
+.. _cli:aws kinesis-video-archived-media list-fragments:
+
+
+**************
+list-fragments
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns a list of  Fragment objects from the specified stream and start location within the archived data.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/ListFragments>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-fragments
+  --stream-name <value>
+  [--max-results <value>]
+  [--next-token <value>]
+  [--fragment-selector <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--stream-name`` (string)
+
+
+  The name of the stream from which to retrieve a fragment list.
+
+  
+
+``--max-results`` (long)
+
+
+  The total number of fragments to return. If the total number of fragments available is more than the value specified in ``max-results`` , then a  ListFragmentsOutput$NextToken is provided in the output that you can use to resume pagination.
+
+  
+
+``--next-token`` (string)
+
+
+  A token to specify where to start paginating. This is the  ListFragmentsOutput$NextToken from a previously truncated response.
+
+  
+
+``--fragment-selector`` (structure)
+
+
+  Describes the time stamp range and time stamp origin for the range of fragments to return.
+
+  
+
+
+
+Shorthand Syntax::
+
+    FragmentSelectorType=string,TimestampRange={StartTimestamp=timestamp,EndTimestamp=timestamp}
+
+
+
+
+JSON Syntax::
+
+  {
+    "FragmentSelectorType": "PRODUCER_TIMESTAMP"|"SERVER_TIMESTAMP",
+    "TimestampRange": {
+      "StartTimestamp": timestamp,
+      "EndTimestamp": timestamp
+    }
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Fragments -> (list)
+
+  
+
+  A list of fragment numbers that correspond to the time stamp range provided.
+
+  
+
+  (structure)
+
+    
+
+    Represents a segment of video or other time-delimited data.
+
+    
+
+    FragmentNumber -> (string)
+
+      
+
+      The index value of the fragment.
+
+      
+
+      
+
+    FragmentSizeInBytes -> (long)
+
+      
+
+      The total fragment size, including information about the fragment and contained media data.
+
+      
+
+      
+
+    ProducerTimestamp -> (timestamp)
+
+      
+
+      The time stamp from the producer corresponding to the fragment.
+
+      
+
+      
+
+    ServerTimestamp -> (timestamp)
+
+      
+
+      The time stamp from the AWS server corresponding to the fragment.
+
+      
+
+      
+
+    FragmentLengthInMilliseconds -> (long)
+
+      
+
+      The playback duration or other time value associated with the fragment.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  If the returned list is truncated, the operation returns this token to use to retrieve the next page of results. This value is ``null`` when there are no more results to return.
+
+  
+
+  
+

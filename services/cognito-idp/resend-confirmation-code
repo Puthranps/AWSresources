@@ -1,0 +1,11 @@
+{
+    "ClientId": "",
+    "SecretHash": "",
+    "UserContextData": {
+        "EncodedData": ""
+    },
+    "Username": "",
+    "AnalyticsMetadata": {
+        "AnalyticsEndpointId": ""
+    }
+}

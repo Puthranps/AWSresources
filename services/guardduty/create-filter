@@ -1,0 +1,24 @@
+{
+    "Action": "ARCHIVE",
+    "ClientToken": "",
+    "Description": "",
+    "DetectorId": "",
+    "FindingCriteria": {
+        "Criterion": {
+            "KeyName": {
+                "Eq": [
+                    ""
+                ],
+                "Gt": 0,
+                "Gte": 0,
+                "Lt": 0,
+                "Lte": 0,
+                "Neq": [
+                    ""
+                ]
+            }
+        }
+    },
+    "Name": "",
+    "Rank": 0
+}

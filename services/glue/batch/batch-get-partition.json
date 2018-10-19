@@ -1,0 +1,12 @@
+{
+    "CatalogId": "",
+    "DatabaseName": "",
+    "TableName": "",
+    "PartitionsToGet": [
+        {
+            "Values": [
+                ""
+            ]
+        }
+    ]
+}

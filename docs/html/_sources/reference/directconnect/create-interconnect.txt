@@ -1,0 +1,258 @@
+[ :ref:`aws <cli:aws>` . :ref:`directconnect <cli:aws directconnect>` ]
+
+.. _cli:aws directconnect create-interconnect:
+
+
+*******************
+create-interconnect
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an interconnect between an AWS Direct Connect partner's network and a specific AWS Direct Connect location.
+
+ 
+
+An interconnect is a connection which is capable of hosting other connections. The partner can use an interconnect to provide sub-1Gbps AWS Direct Connect service to tier 2 customers who do not have their own connections. Like a standard connection, an interconnect links the partner's network to an AWS Direct Connect location over a standard Ethernet fiber-optic cable. One end is connected to the partner's router, the other to an AWS Direct Connect router.
+
+ 
+
+You can automatically add the new interconnect to a link aggregation group (LAG) by specifying a LAG ID in the request. This ensures that the new interconnect is allocated on the same AWS Direct Connect endpoint that hosts the specified LAG. If there are no available ports on the endpoint, the request fails and no interconnect is created.
+
+ 
+
+For each end customer, the AWS Direct Connect partner provisions a connection on their interconnect by calling  AllocateConnectionOnInterconnect . The end customer can then connect to AWS resources by creating a virtual interface on their connection, using the VLAN assigned to them by the partner.
+
+ 
+
+.. note::
+
+   
+
+  Intended for use by AWS Direct Connect partners only.
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/CreateInterconnect>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-interconnect
+  --interconnect-name <value>
+  --bandwidth <value>
+  --location <value>
+  [--lag-id <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--interconnect-name`` (string)
+
+
+  The name of the interconnect.
+
+  
+
+``--bandwidth`` (string)
+
+
+  The port bandwidth, in Gbps. The possible values are 1 and 10.
+
+  
+
+``--location`` (string)
+
+
+  The location of the interconnect.
+
+  
+
+``--lag-id`` (string)
+
+
+  The ID of the LAG.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create an interconnect between a partner's network and AWS**
+
+The following ``create-interconnect`` command creates an interconnect between an AWS Direct Connect partner's network and a specific AWS Direct Connect location::
+
+  aws directconnect create-interconnect --interconnect-name "1G Interconnect to AWS" --bandwidth 1Gbps --location TIVIT
+
+Output::
+
+  {
+      "region": "sa-east-1", 
+      "bandwidth": "1Gbps", 
+      "location": "TIVIT", 
+      "interconnectName": "1G Interconnect to AWS", 
+      "interconnectId": "dxcon-fgktov66", 
+      "interconnectState": "requested"
+  }
+
+======
+Output
+======
+
+interconnectId -> (string)
+
+  
+
+  The ID of the interconnect.
+
+  
+
+  
+
+interconnectName -> (string)
+
+  
+
+  The name of the interconnect.
+
+  
+
+  
+
+interconnectState -> (string)
+
+  
+
+  The state of the interconnect. The following are the possible values:
+
+   
+
+   
+  * ``requested`` : The initial state of an interconnect. The interconnect stays in the requested state until the Letter of Authorization (LOA) is sent to the customer. 
+   
+  * ``pending`` : The interconnect is approved, and is being initialized. 
+   
+  * ``available`` : The network link is up, and the interconnect is ready for use. 
+   
+  * ``down`` : The network link is down. 
+   
+  * ``deleting`` : The interconnect is being deleted. 
+   
+  * ``deleted`` : The interconnect is deleted. 
+   
+
+  
+
+  
+
+region -> (string)
+
+  
+
+  The AWS Region where the connection is located.
+
+  
+
+  
+
+location -> (string)
+
+  
+
+  The location of the connection.
+
+  
+
+  
+
+bandwidth -> (string)
+
+  
+
+  The bandwidth of the connection.
+
+  
+
+  
+
+loaIssueTime -> (timestamp)
+
+  
+
+  The time of the most recent call to  DescribeLoa for this connection.
+
+  
+
+  
+
+lagId -> (string)
+
+  
+
+  The ID of the LAG.
+
+  
+
+  
+
+awsDevice -> (string)
+
+  
+
+  The Direct Connect endpoint on which the physical connection terminates.
+
+  
+
+  
+
+jumboFrameCapable -> (boolean)
+
+  
+
+  Indicates whether jumbo frames (9001 MTU) are supported.
+
+  
+
+  
+
+awsDeviceV2 -> (string)
+
+  
+
+  The Direct Connect endpoint on which the physical connection terminates.
+
+  
+
+  
+

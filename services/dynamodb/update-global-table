@@ -1,0 +1,13 @@
+{
+    "GlobalTableName": "",
+    "ReplicaUpdates": [
+        {
+            "Create": {
+                "RegionName": ""
+            },
+            "Delete": {
+                "RegionName": ""
+            }
+        }
+    ]
+}

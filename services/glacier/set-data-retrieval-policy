@@ -1,0 +1,11 @@
+{
+    "accountId": "",
+    "Policy": {
+        "Rules": [
+            {
+                "Strategy": "",
+                "BytesPerHour": 0
+            }
+        ]
+    }
+}

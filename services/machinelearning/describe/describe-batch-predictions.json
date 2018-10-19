@@ -1,0 +1,13 @@
+{
+    "FilterVariable": "DataSourceId",
+    "EQ": "",
+    "GT": "",
+    "LT": "",
+    "GE": "",
+    "LE": "",
+    "NE": "",
+    "Prefix": "",
+    "SortOrder": "dsc",
+    "NextToken": "",
+    "Limit": 0
+}

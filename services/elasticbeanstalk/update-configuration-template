@@ -1,0 +1,20 @@
+{
+    "ApplicationName": "",
+    "TemplateName": "",
+    "Description": "",
+    "OptionSettings": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": "",
+            "Value": ""
+        }
+    ],
+    "OptionsToRemove": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": ""
+        }
+    ]
+}

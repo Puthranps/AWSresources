@@ -1,0 +1,13 @@
+{
+    "ResourceType": "healthcheck",
+    "ResourceId": "",
+    "AddTags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "RemoveTagKeys": [
+        ""
+    ]
+}

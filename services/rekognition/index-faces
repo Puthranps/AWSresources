@@ -1,0 +1,17 @@
+{
+    "CollectionId": "",
+    "Image": {
+        "Bytes": null,
+        "S3Object": {
+            "Bucket": "",
+            "Name": "",
+            "Version": ""
+        }
+    },
+    "ExternalImageId": "",
+    "DetectionAttributes": [
+        "ALL"
+    ],
+    "MaxFaces": 0,
+    "QualityFilter": "NONE"
+}

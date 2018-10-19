@@ -1,0 +1,46 @@
+{
+    "ApplicationName": "",
+    "CurrentApplicationVersionId": 0,
+    "Input": {
+        "NamePrefix": "",
+        "InputProcessingConfiguration": {
+            "InputLambdaProcessor": {
+                "ResourceARN": "",
+                "RoleARN": ""
+            }
+        },
+        "KinesisStreamsInput": {
+            "ResourceARN": "",
+            "RoleARN": ""
+        },
+        "KinesisFirehoseInput": {
+            "ResourceARN": "",
+            "RoleARN": ""
+        },
+        "InputParallelism": {
+            "Count": 0
+        },
+        "InputSchema": {
+            "RecordFormat": {
+                "RecordFormatType": "JSON",
+                "MappingParameters": {
+                    "JSONMappingParameters": {
+                        "RecordRowPath": ""
+                    },
+                    "CSVMappingParameters": {
+                        "RecordRowDelimiter": "",
+                        "RecordColumnDelimiter": ""
+                    }
+                }
+            },
+            "RecordEncoding": "",
+            "RecordColumns": [
+                {
+                    "Name": "",
+                    "Mapping": "",
+                    "SqlType": ""
+                }
+            ]
+        }
+    }
+}

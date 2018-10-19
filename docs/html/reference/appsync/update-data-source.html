@@ -1,0 +1,368 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-data-source &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="appsync" href="../appsync/index.html" />
+    <link rel="next" title="update-graphql-api" href="../appsync/update-graphql-api.html" />
+    <link rel="prev" title="update-api-key" href="../appsync/update-api-key.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../appsync/update-graphql-api.html" title="update-graphql-api"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../appsync/update-api-key.html" title="update-api-key"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../appsync/index.html" accesskey="U">appsync</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../appsync/update-api-key.html" title="previous chapter (use the left arrow)">&larr; update-api-key</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appsync/update-graphql-api.html" title="next chapter (use the right arrow)">update-graphql-api &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-data-source</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/appsync/update-data-source">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../appsync/index.html#cli-aws-appsync"><em>appsync</em></a> ]</p>
+<div class="section" id="update-data-source">
+<span id="cli-aws-appsync-update-data-source"></span><h1>update-data-source<a class="headerlink" href="#update-data-source" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates a <tt class="docutils literal"><span class="pre">DataSource</span></tt> object.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateDataSource">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-data-source
+--api-id &lt;value&gt;
+--name &lt;value&gt;
+[--description &lt;value&gt;]
+--type &lt;value&gt;
+[--service-role-arn &lt;value&gt;]
+[--dynamodb-config &lt;value&gt;]
+[--lambda-config &lt;value&gt;]
+[--elasticsearch-config &lt;value&gt;]
+[--http-config &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--api-id</span></tt> (string)</p>
+<blockquote>
+<div>The API ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The new name for the data source.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>The new description for the data source.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div><p>The new data source type.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">AWS_LAMBDA</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AMAZON_DYNAMODB</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">AMAZON_ELASTICSEARCH</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NONE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">HTTP</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--service-role-arn</span></tt> (string)</p>
+<blockquote>
+<div>The new service role ARN for the data source.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--dynamodb-config</span></tt> (structure)</p>
+<blockquote>
+<div>The new DynamoDB configuration.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">tableName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">awsRegion</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">useCallerCredentials</span><span class="o">=</span><span class="n">boolean</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;tableName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;awsRegion&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;useCallerCredentials&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--lambda-config</span></tt> (structure)</p>
+<blockquote>
+<div>The new Lambda configuration.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">lambdaFunctionArn</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;lambdaFunctionArn&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--elasticsearch-config</span></tt> (structure)</p>
+<blockquote>
+<div>The new Elasticsearch configuration.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">endpoint</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">awsRegion</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;endpoint&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;awsRegion&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--http-config</span></tt> (structure)</p>
+<blockquote>
+<div>The new http endpoint configuration</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">endpoint</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;endpoint&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>dataSource -&gt; (structure)</p>
+<blockquote>
+<div><p>The updated <tt class="docutils literal"><span class="pre">DataSource</span></tt> object.</p>
+<p>dataSourceArn -&gt; (string)</p>
+<blockquote>
+<div>The data source ARN.</div></blockquote>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the data source.</div></blockquote>
+<p>description -&gt; (string)</p>
+<blockquote>
+<div>The description of the data source.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of the data source.</p>
+<ul class="simple">
+<li><strong>AMAZON_DYNAMODB</strong> : The data source is an Amazon DynamoDB table.</li>
+<li><strong>AMAZON_ELASTICSEARCH</strong> : The data source is an Amazon Elasticsearch Service domain.</li>
+<li><strong>AWS_LAMBDA</strong> : The data source is an AWS Lambda function.</li>
+<li><strong>NONE</strong> : There is no data source. This type is used when when you wish to invoke a GraphQL operation without connecting to a data source, such as performing data transformation with resolvers or triggering a subscription to be invoked from a mutation.</li>
+<li><strong>HTTP</strong> : The data source is an HTTP endpoint.</li>
+</ul>
+</div></blockquote>
+<p>serviceRoleArn -&gt; (string)</p>
+<blockquote>
+<div>The IAM service role ARN for the data source. The system assumes this role when accessing the data source.</div></blockquote>
+<p>dynamodbConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>DynamoDB settings.</p>
+<p>tableName -&gt; (string)</p>
+<blockquote>
+<div>The table name.</div></blockquote>
+<p>awsRegion -&gt; (string)</p>
+<blockquote>
+<div>The AWS region.</div></blockquote>
+<p>useCallerCredentials -&gt; (boolean)</p>
+<blockquote>
+<div>Set to TRUE to use Amazon Cognito credentials with this data source.</div></blockquote>
+</div></blockquote>
+<p>lambdaConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>Lambda settings.</p>
+<p>lambdaFunctionArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN for the Lambda function.</div></blockquote>
+</div></blockquote>
+<p>elasticsearchConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>Amazon Elasticsearch settings.</p>
+<p>endpoint -&gt; (string)</p>
+<blockquote>
+<div>The endpoint.</div></blockquote>
+<p>awsRegion -&gt; (string)</p>
+<blockquote>
+<div>The AWS region.</div></blockquote>
+</div></blockquote>
+<p>httpConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>Http endpoint settings.</p>
+<p>endpoint -&gt; (string)</p>
+<blockquote>
+<div>The Http url endpoint. You can either specify the domain name or ip and port combination and the url scheme must be http(s). If the port is not specified, AWS AppSync will use the default port 80 for http endpoint and port 443 for https endpoints.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../appsync/update-api-key.html" title="previous chapter (use the left arrow)">&larr; update-api-key</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appsync/update-graphql-api.html" title="next chapter (use the right arrow)">update-graphql-api &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../appsync/update-graphql-api.html" title="update-graphql-api"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../appsync/update-api-key.html" title="update-api-key"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../appsync/index.html" >appsync</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

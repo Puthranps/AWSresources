@@ -1,0 +1,30 @@
+{
+    "Name": "",
+    "Type": "CONDITIONAL",
+    "Schedule": "",
+    "Predicate": {
+        "Logical": "AND",
+        "Conditions": [
+            {
+                "LogicalOperator": "EQUALS",
+                "JobName": "",
+                "State": "TIMEOUT"
+            }
+        ]
+    },
+    "Actions": [
+        {
+            "JobName": "",
+            "Arguments": {
+                "KeyName": ""
+            },
+            "Timeout": 0,
+            "NotificationProperty": {
+                "NotifyDelayAfter": 0
+            },
+            "SecurityConfiguration": ""
+        }
+    ],
+    "Description": "",
+    "StartOnCreation": true
+}

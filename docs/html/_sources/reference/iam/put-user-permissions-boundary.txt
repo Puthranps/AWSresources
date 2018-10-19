@@ -1,0 +1,84 @@
+[ :ref:`aws <cli:aws>` . :ref:`iam <cli:aws iam>` ]
+
+.. _cli:aws iam put-user-permissions-boundary:
+
+
+*****************************
+put-user-permissions-boundary
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Adds or updates the policy that is specified as the IAM user's permissions boundary. You can use an AWS managed policy or a customer managed policy to set the boundary for a user. Use the boundary to control the maximum permissions that the user can have. Setting a permissions boundary is an advanced feature that can affect the permissions for the user.
+
+ 
+
+.. warning::
+
+   
+
+  Policies that are used as permissions boundaries do not provide permissions. You must also attach a permissions policy to the user. To learn how the effective permissions for a user are evaluated, see `IAM JSON Policy Evaluation Logic <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html>`__ in the IAM User Guide. 
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PutUserPermissionsBoundary>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-user-permissions-boundary
+  --user-name <value>
+  --permissions-boundary <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--user-name`` (string)
+
+
+  The name (friendly name, not ARN) of the IAM user for which you want to set the permissions boundary.
+
+  
+
+``--permissions-boundary`` (string)
+
+
+  The ARN of the policy that is used to set the permissions boundary for the user.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+None

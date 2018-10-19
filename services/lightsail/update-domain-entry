@@ -1,0 +1,13 @@
+{
+    "domainName": "",
+    "domainEntry": {
+        "id": "",
+        "name": "",
+        "target": "",
+        "isAlias": true,
+        "type": "",
+        "options": {
+            "KeyName": ""
+        }
+    }
+}

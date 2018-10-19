@@ -1,0 +1,411 @@
+[ :ref:`aws <cli:aws>` . :ref:`appstream <cli:aws appstream>` ]
+
+.. _cli:aws appstream describe-fleets:
+
+
+***************
+describe-fleets
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-fleets
+  [--names <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--names`` (list)
+
+
+  The names of the fleets to describe.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--next-token`` (string)
+
+
+  The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Fleets -> (list)
+
+  
+
+  Information about the fleets.
+
+  
+
+  (structure)
+
+    
+
+    Contains the parameters for a fleet.
+
+    
+
+    Arn -> (string)
+
+      
+
+      The ARN for the fleet.
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The name of the fleet.
+
+      
+
+      
+
+    DisplayName -> (string)
+
+      
+
+      The fleet name for display.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      The description for display.
+
+      
+
+      
+
+    ImageName -> (string)
+
+      
+
+      The name of the image used to create the fleet.
+
+      
+
+      
+
+    ImageArn -> (string)
+
+      
+
+      The ARN for the public, private, or shared image.
+
+      
+
+      
+
+    InstanceType -> (string)
+
+      
+
+      The instance type to use when launching fleet instances.
+
+      
+
+      
+
+    FleetType -> (string)
+
+      
+
+      The fleet type.
+
+        ALWAYS_ON  
+
+      Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.
+
+        ON_DEMAND  
+
+      Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.
+
+        
+
+      
+
+    ComputeCapacityStatus -> (structure)
+
+      
+
+      The capacity status for the fleet.
+
+      
+
+      Desired -> (integer)
+
+        
+
+        The desired number of streaming instances.
+
+        
+
+        
+
+      Running -> (integer)
+
+        
+
+        The total number of simultaneous streaming instances that are running.
+
+        
+
+        
+
+      InUse -> (integer)
+
+        
+
+        The number of instances in use for streaming.
+
+        
+
+        
+
+      Available -> (integer)
+
+        
+
+        The number of currently available instances that can be used to stream sessions.
+
+        
+
+        
+
+      
+
+    MaxUserDurationInSeconds -> (integer)
+
+      
+
+      The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.
+
+      
+
+      
+
+    DisconnectTimeoutInSeconds -> (integer)
+
+      
+
+      The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 57600.
+
+      
+
+      
+
+    State -> (string)
+
+      
+
+      The current state for the fleet.
+
+      
+
+      
+
+    VpcConfig -> (structure)
+
+      
+
+      The VPC configuration for the fleet.
+
+      
+
+      SubnetIds -> (list)
+
+        
+
+        The subnets to which a network interface is established from the fleet instance.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      SecurityGroupIds -> (list)
+
+        
+
+        The security groups for the fleet.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      
+
+    CreatedTime -> (timestamp)
+
+      
+
+      The time the fleet was created.
+
+      
+
+      
+
+    FleetErrors -> (list)
+
+      
+
+      The fleet errors.
+
+      
+
+      (structure)
+
+        
+
+        Describes a fleet error.
+
+        
+
+        ErrorCode -> (string)
+
+          
+
+          The error code.
+
+          
+
+          
+
+        ErrorMessage -> (string)
+
+          
+
+          The error message.
+
+          
+
+          
+
+        
+
+      
+
+    EnableDefaultInternetAccess -> (boolean)
+
+      
+
+      Indicates whether default internet access is enabled for the fleet.
+
+      
+
+      
+
+    DomainJoinInfo -> (structure)
+
+      
+
+      The information needed to join a Microsoft Active Directory domain.
+
+      
+
+      DirectoryName -> (string)
+
+        
+
+        The fully qualified name of the directory (for example, corp.example.com).
+
+        
+
+        
+
+      OrganizationalUnitDistinguishedName -> (string)
+
+        
+
+        The distinguished name of the organizational unit for computer accounts.
+
+        
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.
+
+  
+
+  
+

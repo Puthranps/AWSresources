@@ -1,0 +1,30 @@
+{
+    "Namespace": "",
+    "MetricData": [
+        {
+            "MetricName": "",
+            "Dimensions": [
+                {
+                    "Name": "",
+                    "Value": ""
+                }
+            ],
+            "Timestamp": "1970-01-01T00:00:00",
+            "Value": null,
+            "StatisticValues": {
+                "SampleCount": null,
+                "Sum": null,
+                "Minimum": null,
+                "Maximum": null
+            },
+            "Values": [
+                null
+            ],
+            "Counts": [
+                null
+            ],
+            "Unit": "Gigabits/Second",
+            "StorageResolution": 0
+        }
+    ]
+}

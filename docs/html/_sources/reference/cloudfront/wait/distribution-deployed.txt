@@ -1,0 +1,62 @@
+[ :ref:`aws <cli:aws>` . :ref:`cloudfront <cli:aws cloudfront>` . :ref:`wait <cli:aws cloudfront wait>` ]
+
+.. _cli:aws cloudfront wait distribution-deployed:
+
+
+*********************
+distribution-deployed
+*********************
+
+
+
+===========
+Description
+===========
+
+Wait until a distribution is deployed. It will poll every 60 seconds until a successful state has been reached. This will exit with a return code of 255 after 25 failed checks.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/GetDistribution>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    distribution-deployed
+  --id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--id`` (string)
+
+
+  The distribution's ID.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+None

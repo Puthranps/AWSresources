@@ -1,0 +1,10 @@
+{
+    "ConfigurationAggregatorName": "",
+    "Filters": {
+        "AccountId": "",
+        "AwsRegion": ""
+    },
+    "GroupByKey": "AWS_REGION",
+    "Limit": 0,
+    "NextToken": ""
+}

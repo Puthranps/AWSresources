@@ -1,0 +1,24 @@
+{
+    "DagNodes": [
+        {
+            "Id": "",
+            "NodeType": "",
+            "Args": [
+                {
+                    "Name": "",
+                    "Value": "",
+                    "Param": true
+                }
+            ],
+            "LineNumber": 0
+        }
+    ],
+    "DagEdges": [
+        {
+            "Source": "",
+            "Target": "",
+            "TargetParameter": ""
+        }
+    ],
+    "Language": "SCALA"
+}

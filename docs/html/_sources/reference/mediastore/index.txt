@@ -1,0 +1,40 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws mediastore:
+
+
+**********
+mediastore
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+An AWS Elemental MediaStore container is a namespace that holds folders and objects. You use a container endpoint to create, read, and delete objects. 
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-container
+  delete-container
+  delete-container-policy
+  delete-cors-policy
+  describe-container
+  get-container-policy
+  get-cors-policy
+  list-containers
+  put-container-policy
+  put-cors-policy

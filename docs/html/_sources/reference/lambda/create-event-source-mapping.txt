@@ -1,0 +1,244 @@
+[ :ref:`aws <cli:aws>` . :ref:`lambda <cli:aws lambda>` ]
+
+.. _cli:aws lambda create-event-source-mapping:
+
+
+***************************
+create-event-source-mapping
+***************************
+
+
+
+===========
+Description
+===========
+
+
+
+Identifies a poll-based event source for a Lambda function. It can be either an Amazon Kinesis or DynamoDB stream. AWS Lambda invokes the specified function when records are posted to the event source.
+
+ 
+
+This association between a poll-based source and a Lambda function is called the event source mapping.
+
+ 
+
+You provide mapping information (for example, which stream or SQS queue to read from and which Lambda function to invoke) in the request body.
+
+ 
+
+Amazon Kinesis or DynamoDB stream event sources can be associated with multiple AWS Lambda functions and a given Lambda function can be associated with multiple AWS event sources. For Amazon SQS, you can configure multiple queues as event sources for a single Lambda function, but an SQS queue can be mapped only to a single Lambda function.
+
+ 
+
+You can configure an SQS queue in an account separate from your Lambda function's account. Also the queue needs to reside in the same AWS region as your function. 
+
+ 
+
+If you are using versioning, you can specify a specific function version or an alias via the function name parameter. For more information about versioning, see `AWS Lambda Function Versioning and Aliases <http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html>`__ . 
+
+ 
+
+This operation requires permission for the ``lambda:CreateEventSourceMapping`` action.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-event-source-mapping
+  --event-source-arn <value>
+  --function-name <value>
+  [--enabled | --no-enabled]
+  [--batch-size <value>]
+  [--starting-position <value>]
+  [--starting-position-timestamp <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--event-source-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the event source.
+
+  
+
+``--function-name`` (string)
+
+
+  The name of the lambda function.
+
+   
+
+   **Name formats**  
+
+   
+
+   
+  * **Function name** - ``MyFunction`` . 
+   
+  * **Function ARN** - ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction`` . 
+   
+  * **Version or Alias ARN** - ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD`` . 
+   
+  * **Partial ARN** - ``123456789012:function:MyFunction`` . 
+   
+
+   
+
+  The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
+
+  
+
+``--enabled`` | ``--no-enabled`` (boolean)
+
+
+  Set to false to disable the event source upon creation. 
+
+  
+
+``--batch-size`` (integer)
+
+
+  The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your function. Your function receives an event with all the retrieved records. The default for Amazon Kinesis and Amazon DynamoDB is 100 records. Both the default and maximum for Amazon SQS are 10 messages.
+
+  
+
+``--starting-position`` (string)
+
+
+  The position in the DynamoDB or Kinesis stream where AWS Lambda should start reading. For more information, see `GetShardIterator <http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType>`__ in the *Amazon Kinesis API Reference Guide* or `GetShardIterator <http://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_streams_GetShardIterator.html>`__ in the *Amazon DynamoDB API Reference Guide* . The ``AT_TIMESTAMP`` value is supported only for `Kinesis streams <http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html>`__ . 
+
+  
+
+  Possible values:
+
+  
+  *   ``TRIM_HORIZON``
+
+  
+  *   ``LATEST``
+
+  
+  *   ``AT_TIMESTAMP``
+
+  
+
+  
+
+``--starting-position-timestamp`` (timestamp)
+
+
+  The timestamp of the data record from which to start reading. Used with `shard iterator type <http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetShardIterator.html#Kinesis-GetShardIterator-request-ShardIteratorType>`__ AT_TIMESTAMP. If a record with this exact timestamp does not exist, the iterator returned is for the next (later) record. If the timestamp is older than the current trim horizon, the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON). Valid only for `Kinesis streams <http://docs.aws.amazon.com/streams/latest/dev/amazon-kinesis-streams.html>`__ . 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+UUID -> (string)
+
+  
+
+  The AWS Lambda assigned opaque identifier for the mapping.
+
+  
+
+  
+
+BatchSize -> (integer)
+
+  
+
+  The largest number of records that AWS Lambda will retrieve from your event source at the time of invoking your function. Your function receives an event with all the retrieved records.
+
+  
+
+  
+
+EventSourceArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the Amazon Kinesis or DynamoDB stream that is the source of events.
+
+  
+
+  
+
+FunctionArn -> (string)
+
+  
+
+  The Lambda function to invoke when AWS Lambda detects an event on the poll-based source.
+
+  
+
+  
+
+LastModified -> (timestamp)
+
+  
+
+  The UTC time string indicating the last time the event mapping was updated.
+
+  
+
+  
+
+LastProcessingResult -> (string)
+
+  
+
+  The result of the last AWS Lambda invocation of your Lambda function. This value will be null if an SQS queue is the event source.
+
+  
+
+  
+
+State -> (string)
+
+  
+
+  The state of the event source mapping. It can be ``Creating`` , ``Enabled`` , ``Disabled`` , ``Enabling`` , ``Disabling`` , ``Updating`` , or ``Deleting`` .
+
+  
+
+  
+
+StateTransitionReason -> (string)
+
+  
+
+  The reason the event source mapping is in its current state. It is either user-requested or an AWS Lambda-initiated state transition.
+
+  
+
+  
+

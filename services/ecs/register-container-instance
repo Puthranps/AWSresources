@@ -1,0 +1,31 @@
+{
+    "cluster": "",
+    "instanceIdentityDocument": "",
+    "instanceIdentityDocumentSignature": "",
+    "totalResources": [
+        {
+            "name": "",
+            "type": "",
+            "doubleValue": null,
+            "longValue": 0,
+            "integerValue": 0,
+            "stringSetValue": [
+                ""
+            ]
+        }
+    ],
+    "versionInfo": {
+        "agentVersion": "",
+        "agentHash": "",
+        "dockerVersion": ""
+    },
+    "containerInstanceArn": "",
+    "attributes": [
+        {
+            "name": "",
+            "value": "",
+            "targetType": "container-instance",
+            "targetId": ""
+        }
+    ]
+}

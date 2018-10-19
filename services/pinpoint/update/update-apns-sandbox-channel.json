@@ -1,0 +1,13 @@
+{
+    "APNSSandboxChannelRequest": {
+        "BundleId": "",
+        "Certificate": "",
+        "DefaultAuthenticationMethod": "",
+        "Enabled": true,
+        "PrivateKey": "",
+        "TeamId": "",
+        "TokenKey": "",
+        "TokenKeyId": ""
+    },
+    "ApplicationId": ""
+}

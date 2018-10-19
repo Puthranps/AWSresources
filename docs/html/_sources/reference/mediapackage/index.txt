@@ -1,0 +1,37 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws mediapackage:
+
+
+************
+mediapackage
+************
+
+
+
+===========
+Description
+===========
+
+AWS Elemental MediaPackage
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-channel
+  create-origin-endpoint
+  delete-channel
+  delete-origin-endpoint
+  describe-channel
+  describe-origin-endpoint
+  list-channels
+  list-origin-endpoints
+  rotate-ingest-endpoint-credentials
+  update-channel
+  update-origin-endpoint

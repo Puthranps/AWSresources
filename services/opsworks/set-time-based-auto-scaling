@@ -1,0 +1,26 @@
+{
+    "InstanceId": "",
+    "AutoScalingSchedule": {
+        "Monday": {
+            "KeyName": ""
+        },
+        "Tuesday": {
+            "KeyName": ""
+        },
+        "Wednesday": {
+            "KeyName": ""
+        },
+        "Thursday": {
+            "KeyName": ""
+        },
+        "Friday": {
+            "KeyName": ""
+        },
+        "Saturday": {
+            "KeyName": ""
+        },
+        "Sunday": {
+            "KeyName": ""
+        }
+    }
+}

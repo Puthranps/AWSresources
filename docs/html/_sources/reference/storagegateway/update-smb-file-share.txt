@@ -1,0 +1,214 @@
+[ :ref:`aws <cli:aws>` . :ref:`storagegateway <cli:aws storagegateway>` ]
+
+.. _cli:aws storagegateway update-smb-file-share:
+
+
+*********************
+update-smb-file-share
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Updates a Server Message Block (SMB) file share.
+
+ 
+
+.. note::
+
+   
+
+  To leave a file share field unchanged, set the corresponding input field to null. This operation is only supported for file gateways.
+
+   
+
+ 
+
+.. warning::
+
+   
+
+  File gateways require AWS Security Token Service (AWS STS) to be activated to enable you to create a file share. Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not activated in this AWS Region, activate it. For information about how to activate AWS STS, see `Activating and Deactivating AWS STS in an AWS Region <http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html>`__ in the *AWS Identity and Access Management User Guide.*  
+
+   
+
+  File gateways don't support creating hard or symbolic links on a file share.
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShare>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-smb-file-share
+  --file-share-arn <value>
+  [--kms-encrypted | --no-kms-encrypted]
+  [--kms-key <value>]
+  [--default-storage-class <value>]
+  [--object-acl <value>]
+  [--read-only | --no-read-only]
+  [--guess-mime-type-enabled | --no-guess-mime-type-enabled]
+  [--requester-pays | --no-requester-pays]
+  [--valid-user-list <value>]
+  [--invalid-user-list <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--file-share-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the SMB file share that you want to update.
+
+  
+
+``--kms-encrypted`` | ``--no-kms-encrypted`` (boolean)
+
+
+  True to use Amazon S3 server side encryption with your own AWS KMS key, or false to use a key managed by Amazon S3. Optional.
+
+  
+
+``--kms-key`` (string)
+
+
+  The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server side encryption. This value can only be set when KMSEncrypted is true. Optional.
+
+  
+
+``--default-storage-class`` (string)
+
+
+  The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are ``S3_STANDARD`` , ``S3_STANDARD_IA`` , or ``S3_ONEZONE_IA`` . If this field is not populated, the default value ``S3_STANDARD`` is used. Optional.
+
+  
+
+``--object-acl`` (string)
+
+
+  A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts objects into. The default value is "private".
+
+  
+
+  Possible values:
+
+  
+  *   ``private``
+
+  
+  *   ``public-read``
+
+  
+  *   ``public-read-write``
+
+  
+  *   ``authenticated-read``
+
+  
+  *   ``bucket-owner-read``
+
+  
+  *   ``bucket-owner-full-control``
+
+  
+  *   ``aws-exec-read``
+
+  
+
+  
+
+``--read-only`` | ``--no-read-only`` (boolean)
+
+
+  A value that sets the write status of a file share. This value is true if the write status is read-only, and otherwise false.
+
+  
+
+``--guess-mime-type-enabled`` | ``--no-guess-mime-type-enabled`` (boolean)
+
+
+  A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to true to enable MIME type guessing, and otherwise to false. The default value is true.
+
+  
+
+``--requester-pays`` | ``--no-requester-pays`` (boolean)
+
+
+  A value that sets the access control list permission for objects in the Amazon S3 bucket that a file gateway puts objects into. The default value is ``private`` .
+
+  
+
+``--valid-user-list`` (list)
+
+
+  A list of users or groups in the Active Directory that are allowed to access the file share. A group must be prefixed with the @ character. For example ``@group1`` . Can only be set if Authentication is set to ``ActiveDirectory`` .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--invalid-user-list`` (list)
+
+
+  A list of users or groups in the Active Directory that are not allowed to access the file share. A group must be prefixed with the @ character. For example ``@group1`` . Can only be set if Authentication is set to ``ActiveDirectory`` .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+FileShareARN -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the updated SMB file share. 
+
+  
+
+  
+

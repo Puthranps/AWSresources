@@ -1,0 +1,14 @@
+{
+    "QueryString": "",
+    "ClientRequestToken": "",
+    "QueryExecutionContext": {
+        "Database": ""
+    },
+    "ResultConfiguration": {
+        "OutputLocation": "",
+        "EncryptionConfiguration": {
+            "EncryptionOption": "SSE_KMS",
+            "KmsKey": ""
+        }
+    }
+}

@@ -1,0 +1,11 @@
+{
+    "Name": "",
+    "Description": "",
+    "ResourceQuery": {
+        "Type": "TAG_FILTERS_1_0",
+        "Query": ""
+    },
+    "Tags": {
+        "KeyName": ""
+    }
+}

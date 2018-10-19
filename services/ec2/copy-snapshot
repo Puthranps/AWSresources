@@ -1,0 +1,10 @@
+{
+    "Description": "",
+    "DestinationRegion": "",
+    "Encrypted": true,
+    "KmsKeyId": "",
+    "PresignedUrl": "",
+    "SourceRegion": "",
+    "SourceSnapshotId": "",
+    "DryRun": true
+}

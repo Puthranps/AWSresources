@@ -1,0 +1,10 @@
+{
+    "OrganizationId": "",
+    "ResourceId": "",
+    "Name": "",
+    "BookingOptions": {
+        "AutoAcceptRequests": true,
+        "AutoDeclineRecurringRequests": true,
+        "AutoDeclineConflictingRequests": true
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "Scope": "All",
+    "OnlyAttached": true,
+    "PathPrefix": "",
+    "PolicyUsageFilter": "PermissionsPolicy",
+    "Marker": "",
+    "MaxItems": 0
+}

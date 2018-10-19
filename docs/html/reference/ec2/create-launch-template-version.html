@@ -1,0 +1,690 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-launch-template-version &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ec2" href="../ec2/index.html" />
+    <link rel="next" title="create-nat-gateway" href="../ec2/create-nat-gateway.html" />
+    <link rel="prev" title="create-launch-template" href="../ec2/create-launch-template.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/create-nat-gateway.html" title="create-nat-gateway"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/create-launch-template.html" title="create-launch-template"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" accesskey="U">ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/create-launch-template.html" title="previous chapter (use the left arrow)">&larr; create-launch-template</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/create-nat-gateway.html" title="next chapter (use the right arrow)">create-nat-gateway &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-launch-template-version</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/create-launch-template-version">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="create-launch-template-version">
+<span id="cli-aws-ec2-create-launch-template-version"></span><h1>create-launch-template-version<a class="headerlink" href="#create-launch-template-version" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a new version for a launch template. You can specify an existing version of launch template from which to base the new version.</p>
+<p>Launch template versions are numbered in the order in which they are created. You cannot specify, change, or replace the numbering of launch template versions.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateLaunchTemplateVersion">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-launch-template-version
+[--dry-run | --no-dry-run]
+[--client-token &lt;value&gt;]
+[--launch-template-id &lt;value&gt;]
+[--launch-template-name &lt;value&gt;]
+[--source-version &lt;value&gt;]
+[--version-description &lt;value&gt;]
+--launch-template-data &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--client-token</span></tt> (string)</p>
+<blockquote>
+<div>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--launch-template-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the launch template. You must specify either the launch template ID or launch template name in the request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--launch-template-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the launch template. You must specify either the launch template ID or launch template name in the request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--source-version</span></tt> (string)</p>
+<blockquote>
+<div>The version number of the launch template version on which to base the new version. The new version inherits the same launch parameters as the source version, except for parameters that you specify in LaunchTemplateData.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--version-description</span></tt> (string)</p>
+<blockquote>
+<div>A description for the version of the launch template.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--launch-template-data</span></tt> (structure)</p>
+<blockquote>
+<div>The information for the launch template.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;KernelId&quot;: &quot;string&quot;,
+  &quot;EbsOptimized&quot;: true|false,
+  &quot;IamInstanceProfile&quot;: {
+    &quot;Arn&quot;: &quot;string&quot;,
+    &quot;Name&quot;: &quot;string&quot;
+  },
+  &quot;BlockDeviceMappings&quot;: [
+    {
+      &quot;DeviceName&quot;: &quot;string&quot;,
+      &quot;VirtualName&quot;: &quot;string&quot;,
+      &quot;Ebs&quot;: {
+        &quot;Encrypted&quot;: true|false,
+        &quot;DeleteOnTermination&quot;: true|false,
+        &quot;Iops&quot;: integer,
+        &quot;KmsKeyId&quot;: &quot;string&quot;,
+        &quot;SnapshotId&quot;: &quot;string&quot;,
+        &quot;VolumeSize&quot;: integer,
+        &quot;VolumeType&quot;: &quot;standard&quot;|&quot;io1&quot;|&quot;gp2&quot;|&quot;sc1&quot;|&quot;st1&quot;
+      },
+      &quot;NoDevice&quot;: &quot;string&quot;
+    }
+    ...
+  ],
+  &quot;NetworkInterfaces&quot;: [
+    {
+      &quot;AssociatePublicIpAddress&quot;: true|false,
+      &quot;DeleteOnTermination&quot;: true|false,
+      &quot;Description&quot;: &quot;string&quot;,
+      &quot;DeviceIndex&quot;: integer,
+      &quot;Groups&quot;: [&quot;string&quot;, ...],
+      &quot;Ipv6AddressCount&quot;: integer,
+      &quot;Ipv6Addresses&quot;: [
+        {
+          &quot;Ipv6Address&quot;: &quot;string&quot;
+        }
+        ...
+      ],
+      &quot;NetworkInterfaceId&quot;: &quot;string&quot;,
+      &quot;PrivateIpAddress&quot;: &quot;string&quot;,
+      &quot;PrivateIpAddresses&quot;: [
+        {
+          &quot;Primary&quot;: true|false,
+          &quot;PrivateIpAddress&quot;: &quot;string&quot;
+        }
+        ...
+      ],
+      &quot;SecondaryPrivateIpAddressCount&quot;: integer,
+      &quot;SubnetId&quot;: &quot;string&quot;
+    }
+    ...
+  ],
+  &quot;ImageId&quot;: &quot;string&quot;,
+  &quot;InstanceType&quot;: &quot;t1.micro&quot;|&quot;t2.nano&quot;|&quot;t2.micro&quot;|&quot;t2.small&quot;|&quot;t2.medium&quot;|&quot;t2.large&quot;|&quot;t2.xlarge&quot;|&quot;t2.2xlarge&quot;|&quot;t3.nano&quot;|&quot;t3.micro&quot;|&quot;t3.small&quot;|&quot;t3.medium&quot;|&quot;t3.large&quot;|&quot;t3.xlarge&quot;|&quot;t3.2xlarge&quot;|&quot;m1.small&quot;|&quot;m1.medium&quot;|&quot;m1.large&quot;|&quot;m1.xlarge&quot;|&quot;m3.medium&quot;|&quot;m3.large&quot;|&quot;m3.xlarge&quot;|&quot;m3.2xlarge&quot;|&quot;m4.large&quot;|&quot;m4.xlarge&quot;|&quot;m4.2xlarge&quot;|&quot;m4.4xlarge&quot;|&quot;m4.10xlarge&quot;|&quot;m4.16xlarge&quot;|&quot;m2.xlarge&quot;|&quot;m2.2xlarge&quot;|&quot;m2.4xlarge&quot;|&quot;cr1.8xlarge&quot;|&quot;r3.large&quot;|&quot;r3.xlarge&quot;|&quot;r3.2xlarge&quot;|&quot;r3.4xlarge&quot;|&quot;r3.8xlarge&quot;|&quot;r4.large&quot;|&quot;r4.xlarge&quot;|&quot;r4.2xlarge&quot;|&quot;r4.4xlarge&quot;|&quot;r4.8xlarge&quot;|&quot;r4.16xlarge&quot;|&quot;r5.large&quot;|&quot;r5.xlarge&quot;|&quot;r5.2xlarge&quot;|&quot;r5.4xlarge&quot;|&quot;r5.8xlarge&quot;|&quot;r5.12xlarge&quot;|&quot;r5.16xlarge&quot;|&quot;r5.24xlarge&quot;|&quot;r5.metal&quot;|&quot;r5d.large&quot;|&quot;r5d.xlarge&quot;|&quot;r5d.2xlarge&quot;|&quot;r5d.4xlarge&quot;|&quot;r5d.8xlarge&quot;|&quot;r5d.12xlarge&quot;|&quot;r5d.16xlarge&quot;|&quot;r5d.24xlarge&quot;|&quot;r5d.metal&quot;|&quot;x1.16xlarge&quot;|&quot;x1.32xlarge&quot;|&quot;x1e.xlarge&quot;|&quot;x1e.2xlarge&quot;|&quot;x1e.4xlarge&quot;|&quot;x1e.8xlarge&quot;|&quot;x1e.16xlarge&quot;|&quot;x1e.32xlarge&quot;|&quot;i2.xlarge&quot;|&quot;i2.2xlarge&quot;|&quot;i2.4xlarge&quot;|&quot;i2.8xlarge&quot;|&quot;i3.large&quot;|&quot;i3.xlarge&quot;|&quot;i3.2xlarge&quot;|&quot;i3.4xlarge&quot;|&quot;i3.8xlarge&quot;|&quot;i3.16xlarge&quot;|&quot;i3.metal&quot;|&quot;hi1.4xlarge&quot;|&quot;hs1.8xlarge&quot;|&quot;c1.medium&quot;|&quot;c1.xlarge&quot;|&quot;c3.large&quot;|&quot;c3.xlarge&quot;|&quot;c3.2xlarge&quot;|&quot;c3.4xlarge&quot;|&quot;c3.8xlarge&quot;|&quot;c4.large&quot;|&quot;c4.xlarge&quot;|&quot;c4.2xlarge&quot;|&quot;c4.4xlarge&quot;|&quot;c4.8xlarge&quot;|&quot;c5.large&quot;|&quot;c5.xlarge&quot;|&quot;c5.2xlarge&quot;|&quot;c5.4xlarge&quot;|&quot;c5.9xlarge&quot;|&quot;c5.18xlarge&quot;|&quot;c5d.large&quot;|&quot;c5d.xlarge&quot;|&quot;c5d.2xlarge&quot;|&quot;c5d.4xlarge&quot;|&quot;c5d.9xlarge&quot;|&quot;c5d.18xlarge&quot;|&quot;cc1.4xlarge&quot;|&quot;cc2.8xlarge&quot;|&quot;g2.2xlarge&quot;|&quot;g2.8xlarge&quot;|&quot;g3.4xlarge&quot;|&quot;g3.8xlarge&quot;|&quot;g3.16xlarge&quot;|&quot;g3s.xlarge&quot;|&quot;cg1.4xlarge&quot;|&quot;p2.xlarge&quot;|&quot;p2.8xlarge&quot;|&quot;p2.16xlarge&quot;|&quot;p3.2xlarge&quot;|&quot;p3.8xlarge&quot;|&quot;p3.16xlarge&quot;|&quot;d2.xlarge&quot;|&quot;d2.2xlarge&quot;|&quot;d2.4xlarge&quot;|&quot;d2.8xlarge&quot;|&quot;f1.2xlarge&quot;|&quot;f1.4xlarge&quot;|&quot;f1.16xlarge&quot;|&quot;m5.large&quot;|&quot;m5.xlarge&quot;|&quot;m5.2xlarge&quot;|&quot;m5.4xlarge&quot;|&quot;m5.12xlarge&quot;|&quot;m5.24xlarge&quot;|&quot;m5d.large&quot;|&quot;m5d.xlarge&quot;|&quot;m5d.2xlarge&quot;|&quot;m5d.4xlarge&quot;|&quot;m5d.12xlarge&quot;|&quot;m5d.24xlarge&quot;|&quot;h1.2xlarge&quot;|&quot;h1.4xlarge&quot;|&quot;h1.8xlarge&quot;|&quot;h1.16xlarge&quot;|&quot;z1d.large&quot;|&quot;z1d.xlarge&quot;|&quot;z1d.2xlarge&quot;|&quot;z1d.3xlarge&quot;|&quot;z1d.6xlarge&quot;|&quot;z1d.12xlarge&quot;|&quot;u-6tb1.metal&quot;|&quot;u-9tb1.metal&quot;|&quot;u-12tb1.metal&quot;,
+  &quot;KeyName&quot;: &quot;string&quot;,
+  &quot;Monitoring&quot;: {
+    &quot;Enabled&quot;: true|false
+  },
+  &quot;Placement&quot;: {
+    &quot;AvailabilityZone&quot;: &quot;string&quot;,
+    &quot;Affinity&quot;: &quot;string&quot;,
+    &quot;GroupName&quot;: &quot;string&quot;,
+    &quot;HostId&quot;: &quot;string&quot;,
+    &quot;Tenancy&quot;: &quot;default&quot;|&quot;dedicated&quot;|&quot;host&quot;,
+    &quot;SpreadDomain&quot;: &quot;string&quot;
+  },
+  &quot;RamDiskId&quot;: &quot;string&quot;,
+  &quot;DisableApiTermination&quot;: true|false,
+  &quot;InstanceInitiatedShutdownBehavior&quot;: &quot;stop&quot;|&quot;terminate&quot;,
+  &quot;UserData&quot;: &quot;string&quot;,
+  &quot;TagSpecifications&quot;: [
+    {
+      &quot;ResourceType&quot;: &quot;customer-gateway&quot;|&quot;dedicated-host&quot;|&quot;dhcp-options&quot;|&quot;image&quot;|&quot;instance&quot;|&quot;internet-gateway&quot;|&quot;network-acl&quot;|&quot;network-interface&quot;|&quot;reserved-instances&quot;|&quot;route-table&quot;|&quot;snapshot&quot;|&quot;spot-instances-request&quot;|&quot;subnet&quot;|&quot;security-group&quot;|&quot;volume&quot;|&quot;vpc&quot;|&quot;vpn-connection&quot;|&quot;vpn-gateway&quot;,
+      &quot;Tags&quot;: [
+        {
+          &quot;Key&quot;: &quot;string&quot;,
+          &quot;Value&quot;: &quot;string&quot;
+        }
+        ...
+      ]
+    }
+    ...
+  ],
+  &quot;ElasticGpuSpecifications&quot;: [
+    {
+      &quot;Type&quot;: &quot;string&quot;
+    }
+    ...
+  ],
+  &quot;SecurityGroupIds&quot;: [&quot;string&quot;, ...],
+  &quot;SecurityGroups&quot;: [&quot;string&quot;, ...],
+  &quot;InstanceMarketOptions&quot;: {
+    &quot;MarketType&quot;: &quot;spot&quot;,
+    &quot;SpotOptions&quot;: {
+      &quot;MaxPrice&quot;: &quot;string&quot;,
+      &quot;SpotInstanceType&quot;: &quot;one-time&quot;|&quot;persistent&quot;,
+      &quot;BlockDurationMinutes&quot;: integer,
+      &quot;ValidUntil&quot;: timestamp,
+      &quot;InstanceInterruptionBehavior&quot;: &quot;hibernate&quot;|&quot;stop&quot;|&quot;terminate&quot;
+    }
+  },
+  &quot;CreditSpecification&quot;: {
+    &quot;CpuCredits&quot;: &quot;string&quot;
+  },
+  &quot;CpuOptions&quot;: {
+    &quot;CoreCount&quot;: integer,
+    &quot;ThreadsPerCore&quot;: integer
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a launch template version</strong></p>
+<p>This example creates a new launch template version based on version 1 of the launch template and specifies a different AMI ID.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 create-launch-template-version --launch-template-id lt-0abcd290751193123 --version-description WebVersion2 --source-version 1 --launch-template-data &#x27;{&quot;ImageId&quot;:&quot;ami-c998b6b2&quot;}&#x27;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;LaunchTemplateVersion&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;VersionDescription&quot;</span><span class="p">:</span> <span class="s2">&quot;WebVersion2&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LaunchTemplateId&quot;</span><span class="p">:</span> <span class="s2">&quot;lt-0abcd290751193123&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LaunchTemplateName&quot;</span><span class="p">:</span> <span class="s2">&quot;WebServers&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;VersionNumber&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="s2">&quot;CreatedBy&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::123456789012:root&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;LaunchTemplateData&quot;</span><span class="p">:</span> <span class="p">{</span>
+          <span class="s2">&quot;ImageId&quot;</span><span class="p">:</span> <span class="s2">&quot;ami-c998b6b2&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;InstanceType&quot;</span><span class="p">:</span> <span class="s2">&quot;t2.micro&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;NetworkInterfaces&quot;</span><span class="p">:</span> <span class="p">[</span>
+              <span class="p">{</span>
+                  <span class="s2">&quot;Ipv6Addresses&quot;</span><span class="p">:</span> <span class="p">[</span>
+                      <span class="p">{</span>
+                          <span class="s2">&quot;Ipv6Address&quot;</span><span class="p">:</span> <span class="s2">&quot;2001:db8:1234:1a00::123&quot;</span>
+                      <span class="p">}</span>
+                  <span class="p">],</span>
+                  <span class="s2">&quot;DeviceIndex&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                  <span class="s2">&quot;SubnetId&quot;</span><span class="p">:</span> <span class="s2">&quot;subnet-7b16de0c&quot;</span><span class="p">,</span>
+                  <span class="s2">&quot;AssociatePublicIpAddress&quot;</span><span class="p">:</span> <span class="n">true</span>
+              <span class="p">}</span>
+          <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;DefaultVersion&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+      <span class="s2">&quot;CreateTime&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-12-01T13:35:46.000Z&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>LaunchTemplateVersion -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the launch template version.</p>
+<p>LaunchTemplateId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the launch template.</div></blockquote>
+<p>LaunchTemplateName -&gt; (string)</p>
+<blockquote>
+<div>The name of the launch template.</div></blockquote>
+<p>VersionNumber -&gt; (long)</p>
+<blockquote>
+<div>The version number.</div></blockquote>
+<p>VersionDescription -&gt; (string)</p>
+<blockquote>
+<div>The description for the version.</div></blockquote>
+<p>CreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the version was created.</div></blockquote>
+<p>CreatedBy -&gt; (string)</p>
+<blockquote>
+<div>The principal that created the version.</div></blockquote>
+<p>DefaultVersion -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the version is the default version.</div></blockquote>
+<p>LaunchTemplateData -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the launch template.</p>
+<p>KernelId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the kernel, if applicable.</div></blockquote>
+<p>EbsOptimized -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the instance is optimized for Amazon EBS I/O.</div></blockquote>
+<p>IamInstanceProfile -&gt; (structure)</p>
+<blockquote>
+<div><p>The IAM instance profile.</p>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the instance profile.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the instance profile.</div></blockquote>
+</div></blockquote>
+<p>BlockDeviceMappings -&gt; (list)</p>
+<blockquote>
+<div><p>The block device mappings.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a block device mapping.</p>
+<p>DeviceName -&gt; (string)</p>
+<blockquote>
+<div>The device name.</div></blockquote>
+<p>VirtualName -&gt; (string)</p>
+<blockquote>
+<div>The virtual device name (ephemeralN).</div></blockquote>
+<p>Ebs -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the block device for an EBS volume.</p>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the EBS volume is encrypted.</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the EBS volume is deleted on instance termination.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>The number of I/O operations per second (IOPS) that the volume supports.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.</div></blockquote>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the snapshot.</div></blockquote>
+<p>VolumeSize -&gt; (integer)</p>
+<blockquote>
+<div>The size of the volume, in GiB.</div></blockquote>
+<p>VolumeType -&gt; (string)</p>
+<blockquote>
+<div>The volume type.</div></blockquote>
+</div></blockquote>
+<p>NoDevice -&gt; (string)</p>
+<blockquote>
+<div>Suppresses the specified device included in the block device mapping of the AMI.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NetworkInterfaces -&gt; (list)</p>
+<blockquote>
+<div><p>The network interfaces.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a network interface.</p>
+<p>AssociatePublicIpAddress -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether to associate a public IPv4 address with eth0 for a new network interface.</div></blockquote>
+<p>DeleteOnTermination -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the network interface is deleted when the instance is terminated.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A description for the network interface.</div></blockquote>
+<p>DeviceIndex -&gt; (integer)</p>
+<blockquote>
+<div>The device index for the network interface attachment.</div></blockquote>
+<p>Groups -&gt; (list)</p>
+<blockquote>
+<div><p>The IDs of one or more security groups.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Ipv6AddressCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of IPv6 addresses for the network interface.</div></blockquote>
+<p>Ipv6Addresses -&gt; (list)</p>
+<blockquote>
+<div><p>The IPv6 addresses for the network interface.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an IPv6 address.</p>
+<p>Ipv6Address -&gt; (string)</p>
+<blockquote>
+<div>The IPv6 address.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NetworkInterfaceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface.</div></blockquote>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The primary private IPv4 address of the network interface.</div></blockquote>
+<p>PrivateIpAddresses -&gt; (list)</p>
+<blockquote>
+<div><p>One or more private IPv4 addresses.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a secondary private IPv4 address for a network interface.</p>
+<p>Primary -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary.</div></blockquote>
+<p>PrivateIpAddress -&gt; (string)</p>
+<blockquote>
+<div>The private IPv4 addresses.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SecondaryPrivateIpAddressCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of secondary private IPv4 addresses for the network interface.</div></blockquote>
+<p>SubnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet for the network interface.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ImageId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the AMI that was used to launch the instance.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type.</div></blockquote>
+<p>KeyName -&gt; (string)</p>
+<blockquote>
+<div>The name of the key pair.</div></blockquote>
+<p>Monitoring -&gt; (structure)</p>
+<blockquote>
+<div><p>The monitoring for the instance.</p>
+<p>Enabled -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.</div></blockquote>
+</div></blockquote>
+<p>Placement -&gt; (structure)</p>
+<blockquote>
+<div><p>The placement of the instance.</p>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone of the instance.</div></blockquote>
+<p>Affinity -&gt; (string)</p>
+<blockquote>
+<div>The affinity setting for the instance on the Dedicated Host.</div></blockquote>
+<p>GroupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the placement group for the instance.</div></blockquote>
+<p>HostId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Dedicated Host for the instance.</div></blockquote>
+<p>Tenancy -&gt; (string)</p>
+<blockquote>
+<div>The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of <tt class="docutils literal"><span class="pre">dedicated</span></tt> runs on single-tenant hardware.</div></blockquote>
+<p>SpreadDomain -&gt; (string)</p>
+<blockquote>
+<div>Reserved for future use.</div></blockquote>
+</div></blockquote>
+<p>RamDiskId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the RAM disk, if applicable.</div></blockquote>
+<p>DisableApiTermination -&gt; (boolean)</p>
+<blockquote>
+<div>If set to <tt class="docutils literal"><span class="pre">true</span></tt> , indicates that the instance cannot be terminated using the Amazon EC2 console, command line tool, or API.</div></blockquote>
+<p>InstanceInitiatedShutdownBehavior -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).</div></blockquote>
+<p>UserData -&gt; (string)</p>
+<blockquote>
+<div>The user data for the instance.</div></blockquote>
+<p>TagSpecifications -&gt; (list)</p>
+<blockquote>
+<div><p>The tags.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The tag specification for the launch template.</p>
+<p>ResourceType -&gt; (string)</p>
+<blockquote>
+<div>The type of resource.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>The tags for the resource.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt> .</p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ElasticGpuSpecifications -&gt; (list)</p>
+<blockquote>
+<div><p>The elastic GPU specification.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an elastic GPU.</p>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>The elastic GPU type.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The security group IDs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>The security group names.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>InstanceMarketOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The market (purchasing) option for the instances.</p>
+<p>MarketType -&gt; (string)</p>
+<blockquote>
+<div>The market type.</div></blockquote>
+<p>SpotOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The options for Spot Instances.</p>
+<p>MaxPrice -&gt; (string)</p>
+<blockquote>
+<div>The maximum hourly price you're willing to pay for the Spot Instances.</div></blockquote>
+<p>SpotInstanceType -&gt; (string)</p>
+<blockquote>
+<div>The Spot Instance request type.</div></blockquote>
+<p>BlockDurationMinutes -&gt; (integer)</p>
+<blockquote>
+<div>The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).</div></blockquote>
+<p>ValidUntil -&gt; (timestamp)</p>
+<blockquote>
+<div>The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.</div></blockquote>
+<p>InstanceInterruptionBehavior -&gt; (string)</p>
+<blockquote>
+<div>The behavior when a Spot Instance is interrupted.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CreditSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>The credit option for CPU usage of the instance.</p>
+<p>CpuCredits -&gt; (string)</p>
+<blockquote>
+<div>The credit option for CPU usage of a T2 or T3 instance. Valid values are <tt class="docutils literal"><span class="pre">standard</span></tt> and <tt class="docutils literal"><span class="pre">unlimited</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>CpuOptions -&gt; (structure)</p>
+<blockquote>
+<div><p>The CPU options for the instance. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimizing CPU Options</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>CoreCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of CPU cores for the instance.</div></blockquote>
+<p>ThreadsPerCore -&gt; (integer)</p>
+<blockquote>
+<div>The number of threads per CPU core.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/create-launch-template.html" title="previous chapter (use the left arrow)">&larr; create-launch-template</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/create-nat-gateway.html" title="next chapter (use the right arrow)">create-nat-gateway &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/create-nat-gateway.html" title="create-nat-gateway"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/create-launch-template.html" title="create-launch-template"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" >ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

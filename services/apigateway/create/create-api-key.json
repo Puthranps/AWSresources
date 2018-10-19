@@ -1,0 +1,14 @@
+{
+    "name": "",
+    "description": "",
+    "enabled": true,
+    "generateDistinctId": true,
+    "value": "",
+    "stageKeys": [
+        {
+            "restApiId": "",
+            "stageName": ""
+        }
+    ],
+    "customerId": ""
+}

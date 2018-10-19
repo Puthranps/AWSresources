@@ -1,0 +1,8 @@
+{
+    "Name": "",
+    "SharedAccountId": "",
+    "ImagePermissions": {
+        "allowFleet": true,
+        "allowImageBuilder": true
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "WhitelistRules": [
+        {
+            "Cidr": ""
+        }
+    ]
+}

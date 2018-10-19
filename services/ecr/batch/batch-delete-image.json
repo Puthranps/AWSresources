@@ -1,0 +1,10 @@
+{
+    "registryId": "",
+    "repositoryName": "",
+    "imageIds": [
+        {
+            "imageDigest": "",
+            "imageTag": ""
+        }
+    ]
+}

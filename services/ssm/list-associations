@@ -1,0 +1,10 @@
+{
+    "AssociationFilterList": [
+        {
+            "key": "LastExecutedAfter",
+            "value": ""
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

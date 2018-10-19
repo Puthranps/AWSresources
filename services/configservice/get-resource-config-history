@@ -1,0 +1,9 @@
+{
+    "resourceType": "AWS::IAM::Role",
+    "resourceId": "",
+    "laterTime": "1970-01-01T00:00:00",
+    "earlierTime": "1970-01-01T00:00:00",
+    "chronologicalOrder": "Forward",
+    "limit": 0,
+    "nextToken": ""
+}

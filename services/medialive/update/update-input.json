@@ -1,0 +1,19 @@
+{
+    "Destinations": [
+        {
+            "StreamName": ""
+        }
+    ],
+    "InputId": "",
+    "InputSecurityGroups": [
+        ""
+    ],
+    "Name": "",
+    "Sources": [
+        {
+            "PasswordParam": "",
+            "Url": "",
+            "Username": ""
+        }
+    ]
+}

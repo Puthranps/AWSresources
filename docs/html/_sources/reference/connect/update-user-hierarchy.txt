@@ -1,0 +1,82 @@
+[ :ref:`aws <cli:aws>` . :ref:`connect <cli:aws connect>` ]
+
+.. _cli:aws connect update-user-hierarchy:
+
+
+*********************
+update-user-hierarchy
+*********************
+
+
+
+===========
+Description
+===========
+
+
+
+Assigns the specified hierarchy group to the user.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateUserHierarchy>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-user-hierarchy
+  [--hierarchy-group-id <value>]
+  --user-id <value>
+  --instance-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--hierarchy-group-id`` (string)
+
+
+  The identifier for the hierarchy group to assign to the user.
+
+  
+
+``--user-id`` (string)
+
+
+  The identifier of the user account to assign the hierarchy group to.
+
+  
+
+``--instance-id`` (string)
+
+
+  The identifier for your Amazon Connect instance. To find the ID of your instance, open the AWS console and select Amazon Connect. Select the alias of the instance in the Instance alias column. The instance ID is displayed in the Overview section of your instance settings. For example, the instance ID is the set of characters at the end of the instance ARN, after instance/, such as 10a4c4eb-f57e-4d4c-b602-bf39176ced07.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+None

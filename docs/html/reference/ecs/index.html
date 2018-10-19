@@ -1,0 +1,235 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>ecs &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="create-cluster" href="../ecs/create-cluster.html" />
+    <link rel="prev" title="upload-layer-part" href="../ecr/upload-layer-part.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ecs/create-cluster.html" title="create-cluster"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ecr/upload-layer-part.html" title="upload-layer-part"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ecr/upload-layer-part.html" title="previous chapter (use the left arrow)">&larr; upload-layer-part</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ecs/create-cluster.html" title="next chapter (use the right arrow)">create-cluster &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ecs</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ecs/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="ecs">
+<span id="cli-aws-ecs"></span><h1>ecs<a class="headerlink" href="#ecs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast, container management service that makes it easy to run, stop, and manage Docker containers on a cluster. You can host your cluster on a serverless infrastructure that is managed by Amazon ECS by launching your services or tasks using the Fargate launch type. For more control, you can host your tasks on a cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage by using the EC2 launch type. For more information about launch types, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a> .</p>
+<p>Amazon ECS lets you launch and stop container-based applications with simple API calls, allows you to get the state of your cluster from a centralized service, and gives you access to many familiar Amazon EC2 features.</p>
+<p>You can use Amazon ECS to schedule the placement of containers across your cluster based on your resource needs, isolation policies, and availability requirements. Amazon ECS eliminates the need for you to operate your own cluster management and configuration management systems or worry about scaling your management infrastructure.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/create-cluster.html">create-cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/create-service.html">create-service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/delete-attributes.html">delete-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/delete-cluster.html">delete-cluster</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/delete-service.html">delete-service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/deregister-container-instance.html">deregister-container-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/deregister-task-definition.html">deregister-task-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/describe-clusters.html">describe-clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/describe-container-instances.html">describe-container-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/describe-services.html">describe-services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/describe-task-definition.html">describe-task-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/describe-tasks.html">describe-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/discover-poll-endpoint.html">discover-poll-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-attributes.html">list-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-clusters.html">list-clusters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-container-instances.html">list-container-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-services.html">list-services</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-task-definition-families.html">list-task-definition-families</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-task-definitions.html">list-task-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/list-tasks.html">list-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/put-attributes.html">put-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/register-container-instance.html">register-container-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/register-task-definition.html">register-task-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/run-task.html">run-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/start-task.html">start-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/stop-task.html">stop-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/submit-container-state-change.html">submit-container-state-change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/submit-task-state-change.html">submit-task-state-change</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/update-container-agent.html">update-container-agent</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/update-container-instances-state.html">update-container-instances-state</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/update-service.html">update-service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ecs/wait/index.html">wait</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ecr/upload-layer-part.html" title="previous chapter (use the left arrow)">&larr; upload-layer-part</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ecs/create-cluster.html" title="next chapter (use the right arrow)">create-cluster &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ecs/create-cluster.html" title="create-cluster"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ecr/upload-layer-part.html" title="upload-layer-part"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

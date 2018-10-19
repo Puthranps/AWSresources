@@ -1,0 +1,157 @@
+[ :ref:`aws <cli:aws>` . :ref:`guardduty <cli:aws guardduty>` ]
+
+.. _cli:aws guardduty get-filter:
+
+
+**********
+get-filter
+**********
+
+
+
+===========
+Description
+===========
+
+Returns the details of the filter specified by the filter name.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFilter>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-filter
+  --detector-id <value>
+  --filter-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--detector-id`` (string)
+The detector ID that specifies the GuardDuty service where you want to list the details of the specified filter.
+
+``--filter-name`` (string)
+The name of the filter whose details you want to get.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Action -> (string)
+
+  Specifies the action that is to be applied to the findings that match the filter.
+
+  
+
+Description -> (string)
+
+  The description of the filter.
+
+  
+
+FindingCriteria -> (structure)
+
+  Represents the criteria to be used in the filter for querying findings.
+
+  Criterion -> (map)
+
+    Represents a map of finding properties that match specified conditions and values when querying findings.
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (structure)
+
+      Finding attribute (for example, accountId) for which conditions and values must be specified when querying findings.
+
+      Eq -> (list)
+
+        Represents the equal condition to be applied to a single field when querying for findings.
+
+        (string)
+
+          
+
+          
+
+        
+
+      Gt -> (integer)
+
+        Represents the greater than condition to be applied to a single field when querying for findings.
+
+        
+
+      Gte -> (integer)
+
+        Represents the greater than equal condition to be applied to a single field when querying for findings.
+
+        
+
+      Lt -> (integer)
+
+        Represents the less than condition to be applied to a single field when querying for findings.
+
+        
+
+      Lte -> (integer)
+
+        Represents the less than equal condition to be applied to a single field when querying for findings.
+
+        
+
+      Neq -> (list)
+
+        Represents the not equal condition to be applied to a single field when querying for findings.
+
+        (string)
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+
+Name -> (string)
+
+  The name of the filter.
+
+  
+
+Rank -> (integer)
+
+  Specifies the position of the filter in the list of current filters. Also specifies the order in which this filter is applied to the findings.
+
+  
+

@@ -1,0 +1,5 @@
+{
+    "ClusterIdentifier": "",
+    "SkipFinalClusterSnapshot": true,
+    "FinalClusterSnapshotIdentifier": ""
+}

@@ -1,0 +1,15 @@
+{
+    "AcceptLanguage": "",
+    "SourceProductArn": "",
+    "TargetProductId": "",
+    "TargetProductName": "",
+    "SourceProvisioningArtifactIdentifiers": [
+        {
+            "KeyName": ""
+        }
+    ],
+    "CopyOptions": [
+        "CopyTags"
+    ],
+    "IdempotencyToken": ""
+}

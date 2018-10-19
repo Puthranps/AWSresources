@@ -1,0 +1,43 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws cloudhsmv2:
+
+
+**********
+cloudhsmv2
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+For more information about AWS CloudHSM, see `AWS CloudHSM <http://aws.amazon.com/cloudhsm/>`__ and the `AWS CloudHSM User Guide <http://docs.aws.amazon.com/cloudhsm/latest/userguide/>`__ .
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  copy-backup-to-region
+  create-cluster
+  create-hsm
+  delete-backup
+  delete-cluster
+  delete-hsm
+  describe-backups
+  describe-clusters
+  initialize-cluster
+  list-tags
+  restore-backup
+  tag-resource
+  untag-resource

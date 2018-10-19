@@ -1,0 +1,10 @@
+{
+    "Name": "",
+    "DefinitionType": "SSM_AUTOMATION",
+    "Definition": {
+        "KeyName": ""
+    },
+    "Description": "",
+    "AcceptLanguage": "",
+    "IdempotencyToken": ""
+}

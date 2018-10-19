@@ -1,0 +1,91 @@
+[ :ref:`aws <cli:aws>` . :ref:`alexaforbusiness <cli:aws alexaforbusiness>` ]
+
+.. _cli:aws alexaforbusiness create-skill-group:
+
+
+******************
+create-skill-group
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a skill group with a specified name and description.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-skill-group
+  --skill-group-name <value>
+  [--description <value>]
+  [--client-request-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--skill-group-name`` (string)
+
+
+  The name for the skill group.
+
+  
+
+``--description`` (string)
+
+
+  The description for the skill group.
+
+  
+
+``--client-request-token`` (string)
+
+
+  A unique, user-specified identifier for this request that ensures idempotency. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+SkillGroupArn -> (string)
+
+  
+
+  The ARN of the newly created skill group in the response.
+
+  
+
+  
+

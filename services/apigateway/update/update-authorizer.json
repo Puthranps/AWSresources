@@ -1,0 +1,12 @@
+{
+    "restApiId": "",
+    "authorizerId": "",
+    "patchOperations": [
+        {
+            "op": "remove",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

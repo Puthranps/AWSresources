@@ -1,0 +1,9 @@
+{
+    "GatewayARN": "",
+    "TapeSizeInBytes": 0,
+    "ClientToken": "",
+    "NumTapesToCreate": 0,
+    "TapeBarcodePrefix": "",
+    "KMSEncrypted": true,
+    "KMSKey": ""
+}

@@ -1,0 +1,288 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>search-faces &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="rekognition" href="../rekognition/index.html" />
+    <link rel="next" title="search-faces-by-image" href="../rekognition/search-faces-by-image.html" />
+    <link rel="prev" title="recognize-celebrities" href="../rekognition/recognize-celebrities.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../rekognition/search-faces-by-image.html" title="search-faces-by-image"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../rekognition/recognize-celebrities.html" title="recognize-celebrities"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../rekognition/index.html" accesskey="U">rekognition</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../rekognition/recognize-celebrities.html" title="previous chapter (use the left arrow)">&larr; recognize-celebrities</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../rekognition/search-faces-by-image.html" title="next chapter (use the right arrow)">search-faces-by-image &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">search-faces</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/rekognition/search-faces">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../rekognition/index.html#cli-aws-rekognition"><em>rekognition</em></a> ]</p>
+<div class="section" id="search-faces">
+<span id="cli-aws-rekognition-search-faces"></span><h1>search-faces<a class="headerlink" href="#search-faces" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the  IndexFaces operation. The operation compares the features of the input face with faces in the specified collection.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You can also search faces without indexing faces by using the <tt class="docutils literal"><span class="pre">SearchFacesByImage</span></tt> operation.</p>
+</div>
+<p>The operation response returns an array of faces that match, ordered by similarity score with the highest similarity first. More specifically, it is an array of metadata for each face match that is found. Along with the metadata, the response also includes a <tt class="docutils literal"><span class="pre">confidence</span></tt> value for each face match, indicating the confidence that the specific face matches the input face.</p>
+<p>For an example, see Searching for a Face Using Its Face ID in the Amazon Rekognition Developer Guide.</p>
+<p>This operation requires permissions to perform the <tt class="docutils literal"><span class="pre">rekognition:SearchFaces</span></tt> action.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/SearchFaces">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  search-faces
+--collection-id &lt;value&gt;
+--face-id &lt;value&gt;
+[--max-faces &lt;value&gt;]
+[--face-match-threshold &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--collection-id</span></tt> (string)</p>
+<blockquote>
+<div>ID of the collection the face belongs to.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--face-id</span></tt> (string)</p>
+<blockquote>
+<div>ID of a face to find matches for in the collection.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-faces</span></tt> (integer)</p>
+<blockquote>
+<div>Maximum number of faces to return. The operation returns the maximum number of faces with the highest confidence in the match.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--face-match-threshold</span></tt> (float)</p>
+<blockquote>
+<div>Optional value specifying the minimum confidence in the face match to return. For example, don't return any matches where confidence in matches is less than 70%.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>SearchedFaceId -&gt; (string)</p>
+<blockquote>
+<div>ID of the face that was searched for matches in a collection.</div></blockquote>
+<p>FaceMatches -&gt; (list)</p>
+<blockquote>
+<div><p>An array of faces that matched the input face, along with the confidence in the match.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Provides face metadata. In addition, it also provides the confidence in the match of this face with the input face.</p>
+<p>Similarity -&gt; (float)</p>
+<blockquote>
+<div>Confidence in the match of this face with the input face.</div></blockquote>
+<p>Face -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the face properties such as the bounding box, face ID, image ID of the source image, and external image ID that you assigned.</p>
+<p>FaceId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier that Amazon Rekognition assigns to the face.</div></blockquote>
+<p>BoundingBox -&gt; (structure)</p>
+<blockquote>
+<div><p>Bounding box of the face.</p>
+<p>Width -&gt; (float)</p>
+<blockquote>
+<div>Width of the bounding box as a ratio of the overall image width.</div></blockquote>
+<p>Height -&gt; (float)</p>
+<blockquote>
+<div>Height of the bounding box as a ratio of the overall image height.</div></blockquote>
+<p>Left -&gt; (float)</p>
+<blockquote>
+<div>Left coordinate of the bounding box as a ratio of overall image width.</div></blockquote>
+<p>Top -&gt; (float)</p>
+<blockquote>
+<div>Top coordinate of the bounding box as a ratio of overall image height.</div></blockquote>
+</div></blockquote>
+<p>ImageId -&gt; (string)</p>
+<blockquote>
+<div>Unique identifier that Amazon Rekognition assigns to the input image.</div></blockquote>
+<p>ExternalImageId -&gt; (string)</p>
+<blockquote>
+<div>Identifier that you assign to all the faces in the input image.</div></blockquote>
+<p>Confidence -&gt; (float)</p>
+<blockquote>
+<div>Confidence level that the bounding box contains a face (and not a different object such as a tree).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>FaceModelVersion -&gt; (string)</p>
+<blockquote>
+<div>Version number of the face detection model associated with the input collection (<tt class="docutils literal"><span class="pre">CollectionId</span></tt> ).</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../rekognition/recognize-celebrities.html" title="previous chapter (use the left arrow)">&larr; recognize-celebrities</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../rekognition/search-faces-by-image.html" title="next chapter (use the right arrow)">search-faces-by-image &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../rekognition/search-faces-by-image.html" title="search-faces-by-image"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../rekognition/recognize-celebrities.html" title="recognize-celebrities"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../rekognition/index.html" >rekognition</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

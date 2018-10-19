@@ -1,0 +1,35 @@
+{
+    "StackId": "",
+    "LayerIds": [
+        ""
+    ],
+    "InstanceType": "",
+    "AutoScalingType": "timer",
+    "Hostname": "",
+    "Os": "",
+    "AmiId": "",
+    "SshKeyName": "",
+    "AvailabilityZone": "",
+    "VirtualizationType": "",
+    "SubnetId": "",
+    "Architecture": "x86_64",
+    "RootDeviceType": "ebs",
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "",
+            "NoDevice": "",
+            "VirtualName": "",
+            "Ebs": {
+                "SnapshotId": "",
+                "Iops": 0,
+                "VolumeSize": 0,
+                "VolumeType": "io1",
+                "DeleteOnTermination": true
+            }
+        }
+    ],
+    "InstallUpdatesOnBoot": true,
+    "EbsOptimized": true,
+    "AgentVersion": "",
+    "Tenancy": ""
+}

@@ -1,0 +1,117 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws glue:
+
+
+****
+glue
+****
+
+
+
+===========
+Description
+===========
+
+ 
+
+Defines the public endpoint for the AWS Glue service.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  batch-create-partition
+  batch-delete-connection
+  batch-delete-partition
+  batch-delete-table
+  batch-delete-table-version
+  batch-get-partition
+  batch-stop-job-run
+  create-classifier
+  create-connection
+  create-crawler
+  create-database
+  create-dev-endpoint
+  create-job
+  create-partition
+  create-script
+  create-security-configuration
+  create-table
+  create-trigger
+  create-user-defined-function
+  delete-classifier
+  delete-connection
+  delete-crawler
+  delete-database
+  delete-dev-endpoint
+  delete-job
+  delete-partition
+  delete-resource-policy
+  delete-security-configuration
+  delete-table
+  delete-table-version
+  delete-trigger
+  delete-user-defined-function
+  get-catalog-import-status
+  get-classifier
+  get-classifiers
+  get-connection
+  get-connections
+  get-crawler
+  get-crawler-metrics
+  get-crawlers
+  get-data-catalog-encryption-settings
+  get-database
+  get-databases
+  get-dataflow-graph
+  get-dev-endpoint
+  get-dev-endpoints
+  get-job
+  get-job-run
+  get-job-runs
+  get-jobs
+  get-mapping
+  get-partition
+  get-partitions
+  get-plan
+  get-resource-policy
+  get-security-configuration
+  get-security-configurations
+  get-table
+  get-table-version
+  get-table-versions
+  get-tables
+  get-trigger
+  get-triggers
+  get-user-defined-function
+  get-user-defined-functions
+  import-catalog-to-glue
+  put-data-catalog-encryption-settings
+  put-resource-policy
+  reset-job-bookmark
+  start-crawler
+  start-crawler-schedule
+  start-job-run
+  start-trigger
+  stop-crawler
+  stop-crawler-schedule
+  stop-trigger
+  update-classifier
+  update-connection
+  update-crawler
+  update-crawler-schedule
+  update-database
+  update-dev-endpoint
+  update-job
+  update-partition
+  update-table
+  update-trigger
+  update-user-defined-function

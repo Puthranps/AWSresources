@@ -1,0 +1,122 @@
+[ :ref:`aws <cli:aws>` . :ref:`sqs <cli:aws sqs>` ]
+
+.. _cli:aws sqs tag-queue:
+
+
+*********
+tag-queue
+*********
+
+
+
+===========
+Description
+===========
+
+
+
+Add cost allocation tags to the specified Amazon SQS queue. For an overview, see `Tagging Your Amazon SQS Queues <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+ 
+
+When you use queue tags, keep the following guidelines in mind:
+
+ 
+
+ 
+* Adding more than 50 tags to a queue isn't recommended. 
+ 
+* Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings. 
+ 
+* Tags are case-sensitive. 
+ 
+* A new tag with a key identical to that of an existing tag overwrites the existing tag. 
+ 
+* Tagging actions are limited to 5 TPS per AWS account. If your application requires a higher throughput, file a `technical support request <https://console.aws.amazon.com/support/home#/case/create?issueType=technical>`__ . 
+ 
+
+ 
+
+For a full list of tag restrictions, see `Limits Related to Queues <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+ 
+
+.. note::
+
+   
+
+  Cross-account permissions don't apply to this action. For more information, see see `Grant Cross-Account Permissions to a Role and a User Name <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    tag-queue
+  --queue-url <value>
+  --tags <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--queue-url`` (string)
+
+
+  The URL of the queue.
+
+  
+
+``--tags`` (map)
+
+
+  The list of tags to be added to the specified queue.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,KeyName2=string
+
+
+
+
+JSON Syntax::
+
+  {"string": "string"
+    ...}
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+None

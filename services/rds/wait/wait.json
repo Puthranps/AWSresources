@@ -1,0 +1,11 @@
+usage: aws [options] <command> <subcommand> [<subcommand> ...] [parameters]
+To see help text, you can run:
+
+  aws help
+  aws <command> help
+  aws <command> <subcommand> help
+aws: error: argument subcommand: Invalid choice, valid choices are:
+
+db-instance-available                    | db-instance-deleted                     
+db-snapshot-available                    | db-snapshot-completed                   
+db-snapshot-deleted                     

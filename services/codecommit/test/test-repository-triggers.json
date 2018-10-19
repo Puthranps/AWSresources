@@ -1,0 +1,16 @@
+{
+    "repositoryName": "",
+    "triggers": [
+        {
+            "name": "",
+            "destinationArn": "",
+            "customData": "",
+            "branches": [
+                ""
+            ],
+            "events": [
+                "deleteReference"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,33 @@
+{
+    "pipelineId": "",
+    "pipelineObjects": [
+        {
+            "id": "",
+            "name": "",
+            "fields": [
+                {
+                    "key": "",
+                    "stringValue": "",
+                    "refValue": ""
+                }
+            ]
+        }
+    ],
+    "parameterObjects": [
+        {
+            "id": "",
+            "attributes": [
+                {
+                    "key": "",
+                    "stringValue": ""
+                }
+            ]
+        }
+    ],
+    "parameterValues": [
+        {
+            "id": "",
+            "stringValue": ""
+        }
+    ]
+}

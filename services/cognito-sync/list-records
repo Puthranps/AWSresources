@@ -1,0 +1,9 @@
+{
+    "IdentityPoolId": "",
+    "IdentityId": "",
+    "DatasetName": "",
+    "LastSyncCount": 0,
+    "NextToken": "",
+    "MaxResults": 0,
+    "SyncSessionToken": ""
+}

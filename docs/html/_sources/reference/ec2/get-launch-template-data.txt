@@ -1,0 +1,945 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 get-launch-template-data:
+
+
+************************
+get-launch-template-data
+************************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves the configuration data of the specified instance. You can use this data to create a launch template.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetLaunchTemplateData>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-launch-template-data
+  [--dry-run | --no-dry-run]
+  --instance-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--instance-id`` (string)
+
+
+  The ID of the instance.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To get instance data for a launch template**
+
+This example gets data about the specified instance and uses the ``--query`` option to return the contents in ``LaunchTemplateData``. You can use the output as a base to create a new launch template or launch template version.
+
+Command::
+
+  aws ec2 get-launch-template-data --instance-id i-0123d646e8048babc --query 'LaunchTemplateData'
+
+Output::
+
+  {
+        "Monitoring": {}, 
+        "ImageId": "ami-8c1be5f6", 
+        "BlockDeviceMappings": [
+            {
+                "DeviceName": "/dev/xvda", 
+                "Ebs": {
+                    "DeleteOnTermination": true
+                }
+            }
+        ], 
+        "EbsOptimized": false, 
+        "Placement": {
+            "Tenancy": "default", 
+            "GroupName": "", 
+            "AvailabilityZone": "us-east-1a"
+        }, 
+        "InstanceType": "t2.micro", 
+        "NetworkInterfaces": [
+            {
+                "Description": "", 
+                "NetworkInterfaceId": "eni-35306abc", 
+                "PrivateIpAddresses": [
+                    {
+                        "Primary": true, 
+                        "PrivateIpAddress": "10.0.0.72"
+                    }
+                ], 
+                "SubnetId": "subnet-7b16de0c", 
+                "Groups": [
+                    "sg-7c227019"
+                ], 
+                "Ipv6Addresses": [
+                    {
+                        "Ipv6Address": "2001:db8:1234:1a00::123"
+                    }
+                ], 
+                "PrivateIpAddress": "10.0.0.72"
+            }
+        ]
+  }
+
+======
+Output
+======
+
+LaunchTemplateData -> (structure)
+
+  
+
+  The instance data.
+
+  
+
+  KernelId -> (string)
+
+    
+
+    The ID of the kernel, if applicable.
+
+    
+
+    
+
+  EbsOptimized -> (boolean)
+
+    
+
+    Indicates whether the instance is optimized for Amazon EBS I/O. 
+
+    
+
+    
+
+  IamInstanceProfile -> (structure)
+
+    
+
+    The IAM instance profile.
+
+    
+
+    Arn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the instance profile.
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The name of the instance profile.
+
+      
+
+      
+
+    
+
+  BlockDeviceMappings -> (list)
+
+    
+
+    The block device mappings.
+
+    
+
+    (structure)
+
+      
+
+      Describes a block device mapping.
+
+      
+
+      DeviceName -> (string)
+
+        
+
+        The device name.
+
+        
+
+        
+
+      VirtualName -> (string)
+
+        
+
+        The virtual device name (ephemeralN).
+
+        
+
+        
+
+      Ebs -> (structure)
+
+        
+
+        Information about the block device for an EBS volume.
+
+        
+
+        Encrypted -> (boolean)
+
+          
+
+          Indicates whether the EBS volume is encrypted.
+
+          
+
+          
+
+        DeleteOnTermination -> (boolean)
+
+          
+
+          Indicates whether the EBS volume is deleted on instance termination.
+
+          
+
+          
+
+        Iops -> (integer)
+
+          
+
+          The number of I/O operations per second (IOPS) that the volume supports. 
+
+          
+
+          
+
+        KmsKeyId -> (string)
+
+          
+
+          The ARN of the AWS Key Management Service (AWS KMS) CMK used for encryption.
+
+          
+
+          
+
+        SnapshotId -> (string)
+
+          
+
+          The ID of the snapshot.
+
+          
+
+          
+
+        VolumeSize -> (integer)
+
+          
+
+          The size of the volume, in GiB.
+
+          
+
+          
+
+        VolumeType -> (string)
+
+          
+
+          The volume type.
+
+          
+
+          
+
+        
+
+      NoDevice -> (string)
+
+        
+
+        Suppresses the specified device included in the block device mapping of the AMI.
+
+        
+
+        
+
+      
+
+    
+
+  NetworkInterfaces -> (list)
+
+    
+
+    The network interfaces.
+
+    
+
+    (structure)
+
+      
+
+      Describes a network interface.
+
+      
+
+      AssociatePublicIpAddress -> (boolean)
+
+        
+
+        Indicates whether to associate a public IPv4 address with eth0 for a new network interface.
+
+        
+
+        
+
+      DeleteOnTermination -> (boolean)
+
+        
+
+        Indicates whether the network interface is deleted when the instance is terminated.
+
+        
+
+        
+
+      Description -> (string)
+
+        
+
+        A description for the network interface.
+
+        
+
+        
+
+      DeviceIndex -> (integer)
+
+        
+
+        The device index for the network interface attachment.
+
+        
+
+        
+
+      Groups -> (list)
+
+        
+
+        The IDs of one or more security groups.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      Ipv6AddressCount -> (integer)
+
+        
+
+        The number of IPv6 addresses for the network interface.
+
+        
+
+        
+
+      Ipv6Addresses -> (list)
+
+        
+
+        The IPv6 addresses for the network interface.
+
+        
+
+        (structure)
+
+          
+
+          Describes an IPv6 address.
+
+          
+
+          Ipv6Address -> (string)
+
+            
+
+            The IPv6 address.
+
+            
+
+            
+
+          
+
+        
+
+      NetworkInterfaceId -> (string)
+
+        
+
+        The ID of the network interface.
+
+        
+
+        
+
+      PrivateIpAddress -> (string)
+
+        
+
+        The primary private IPv4 address of the network interface.
+
+        
+
+        
+
+      PrivateIpAddresses -> (list)
+
+        
+
+        One or more private IPv4 addresses.
+
+        
+
+        (structure)
+
+          
+
+          Describes a secondary private IPv4 address for a network interface.
+
+          
+
+          Primary -> (boolean)
+
+            
+
+            Indicates whether the private IPv4 address is the primary private IPv4 address. Only one IPv4 address can be designated as primary.
+
+            
+
+            
+
+          PrivateIpAddress -> (string)
+
+            
+
+            The private IPv4 addresses.
+
+            
+
+            
+
+          
+
+        
+
+      SecondaryPrivateIpAddressCount -> (integer)
+
+        
+
+        The number of secondary private IPv4 addresses for the network interface.
+
+        
+
+        
+
+      SubnetId -> (string)
+
+        
+
+        The ID of the subnet for the network interface.
+
+        
+
+        
+
+      
+
+    
+
+  ImageId -> (string)
+
+    
+
+    The ID of the AMI that was used to launch the instance.
+
+    
+
+    
+
+  InstanceType -> (string)
+
+    
+
+    The instance type.
+
+    
+
+    
+
+  KeyName -> (string)
+
+    
+
+    The name of the key pair.
+
+    
+
+    
+
+  Monitoring -> (structure)
+
+    
+
+    The monitoring for the instance.
+
+    
+
+    Enabled -> (boolean)
+
+      
+
+      Indicates whether detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
+
+      
+
+      
+
+    
+
+  Placement -> (structure)
+
+    
+
+    The placement of the instance.
+
+    
+
+    AvailabilityZone -> (string)
+
+      
+
+      The Availability Zone of the instance.
+
+      
+
+      
+
+    Affinity -> (string)
+
+      
+
+      The affinity setting for the instance on the Dedicated Host.
+
+      
+
+      
+
+    GroupName -> (string)
+
+      
+
+      The name of the placement group for the instance.
+
+      
+
+      
+
+    HostId -> (string)
+
+      
+
+      The ID of the Dedicated Host for the instance.
+
+      
+
+      
+
+    Tenancy -> (string)
+
+      
+
+      The tenancy of the instance (if the instance is running in a VPC). An instance with a tenancy of ``dedicated`` runs on single-tenant hardware. 
+
+      
+
+      
+
+    SpreadDomain -> (string)
+
+      
+
+      Reserved for future use.
+
+      
+
+      
+
+    
+
+  RamDiskId -> (string)
+
+    
+
+    The ID of the RAM disk, if applicable.
+
+    
+
+    
+
+  DisableApiTermination -> (boolean)
+
+    
+
+    If set to ``true`` , indicates that the instance cannot be terminated using the Amazon EC2 console, command line tool, or API.
+
+    
+
+    
+
+  InstanceInitiatedShutdownBehavior -> (string)
+
+    
+
+    Indicates whether an instance stops or terminates when you initiate shutdown from the instance (using the operating system command for system shutdown).
+
+    
+
+    
+
+  UserData -> (string)
+
+    
+
+    The user data for the instance. 
+
+    
+
+    
+
+  TagSpecifications -> (list)
+
+    
+
+    The tags.
+
+    
+
+    (structure)
+
+      
+
+      The tag specification for the launch template.
+
+      
+
+      ResourceType -> (string)
+
+        
+
+        The type of resource.
+
+        
+
+        
+
+      Tags -> (list)
+
+        
+
+        The tags for the resource.
+
+        
+
+        (structure)
+
+          
+
+          Describes a tag.
+
+          
+
+          Key -> (string)
+
+            
+
+            The key of the tag.
+
+             
+
+            Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with ``aws:`` .
+
+            
+
+            
+
+          Value -> (string)
+
+            
+
+            The value of the tag.
+
+             
+
+            Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  ElasticGpuSpecifications -> (list)
+
+    
+
+    The elastic GPU specification.
+
+    
+
+    (structure)
+
+      
+
+      Describes an elastic GPU.
+
+      
+
+      Type -> (string)
+
+        
+
+        The elastic GPU type.
+
+        
+
+        
+
+      
+
+    
+
+  SecurityGroupIds -> (list)
+
+    
+
+    The security group IDs.
+
+    
+
+    (string)
+
+      
+
+      
+
+    
+
+  SecurityGroups -> (list)
+
+    
+
+    The security group names.
+
+    
+
+    (string)
+
+      
+
+      
+
+    
+
+  InstanceMarketOptions -> (structure)
+
+    
+
+    The market (purchasing) option for the instances.
+
+    
+
+    MarketType -> (string)
+
+      
+
+      The market type.
+
+      
+
+      
+
+    SpotOptions -> (structure)
+
+      
+
+      The options for Spot Instances.
+
+      
+
+      MaxPrice -> (string)
+
+        
+
+        The maximum hourly price you're willing to pay for the Spot Instances.
+
+        
+
+        
+
+      SpotInstanceType -> (string)
+
+        
+
+        The Spot Instance request type.
+
+        
+
+        
+
+      BlockDurationMinutes -> (integer)
+
+        
+
+        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or 360).
+
+        
+
+        
+
+      ValidUntil -> (timestamp)
+
+        
+
+        The end date of the request. For a one-time request, the request remains active until all instances launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until it is canceled or this date and time is reached.
+
+        
+
+        
+
+      InstanceInterruptionBehavior -> (string)
+
+        
+
+        The behavior when a Spot Instance is interrupted.
+
+        
+
+        
+
+      
+
+    
+
+  CreditSpecification -> (structure)
+
+    
+
+    The credit option for CPU usage of the instance.
+
+    
+
+    CpuCredits -> (string)
+
+      
+
+      The credit option for CPU usage of a T2 or T3 instance. Valid values are ``standard`` and ``unlimited`` .
+
+      
+
+      
+
+    
+
+  CpuOptions -> (structure)
+
+    
+
+    The CPU options for the instance. For more information, see `Optimizing CPU Options <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html>`__ in the *Amazon Elastic Compute Cloud User Guide* .
+
+    
+
+    CoreCount -> (integer)
+
+      
+
+      The number of CPU cores for the instance.
+
+      
+
+      
+
+    ThreadsPerCore -> (integer)
+
+      
+
+      The number of threads per CPU core.
+
+      
+
+      
+
+    
+
+  
+

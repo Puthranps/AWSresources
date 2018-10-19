@@ -1,0 +1,1103 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker <cli:aws sagemaker>` ]
+
+.. _cli:aws sagemaker describe-hyper-parameter-tuning-job:
+
+
+***********************************
+describe-hyper-parameter-tuning-job
+***********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Gets a description of a hyperparameter tuning job.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-hyper-parameter-tuning-job
+  --hyper-parameter-tuning-job-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--hyper-parameter-tuning-job-name`` (string)
+
+
+  The name of the tuning job to describe.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+HyperParameterTuningJobName -> (string)
+
+  
+
+  The name of the tuning job.
+
+  
+
+  
+
+HyperParameterTuningJobArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the tuning job.
+
+  
+
+  
+
+HyperParameterTuningJobConfig -> (structure)
+
+  
+
+  The  HyperParameterTuningJobConfig object that specifies the configuration of the tuning job.
+
+  
+
+  Strategy -> (string)
+
+    
+
+    Specifies the search strategy for hyperparameters. Currently, the only valid value is ``Bayesian`` .
+
+    
+
+    
+
+  HyperParameterTuningJobObjective -> (structure)
+
+    
+
+    The  HyperParameterTuningJobObjective object that specifies the objective metric for this tuning job.
+
+    
+
+    Type -> (string)
+
+      
+
+      Whether to minimize or maximize the objective metric.
+
+      
+
+      
+
+    MetricName -> (string)
+
+      
+
+      The name of the metric to use for the objective metric.
+
+      
+
+      
+
+    
+
+  ResourceLimits -> (structure)
+
+    
+
+    The  ResourceLimits object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.
+
+    
+
+    MaxNumberOfTrainingJobs -> (integer)
+
+      
+
+      The maximum number of training jobs that a hyperparameter tuning job can launch.
+
+      
+
+      
+
+    MaxParallelTrainingJobs -> (integer)
+
+      
+
+      The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.
+
+      
+
+      
+
+    
+
+  ParameterRanges -> (structure)
+
+    
+
+    The  ParameterRanges object that specifies the ranges of hyperparameters that this tuning job searches.
+
+    
+
+    IntegerParameterRanges -> (list)
+
+      
+
+      The array of  IntegerParameterRange objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.
+
+      
+
+      (structure)
+
+        
+
+        For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.
+
+        
+
+        Name -> (string)
+
+          
+
+          The name of the hyperparameter to search.
+
+          
+
+          
+
+        MinValue -> (string)
+
+          
+
+          The minimum value of the hyperparameter to search.
+
+          
+
+          
+
+        MaxValue -> (string)
+
+          
+
+          The maximum value of the hyperparameter to search.
+
+          
+
+          
+
+        
+
+      
+
+    ContinuousParameterRanges -> (list)
+
+      
+
+      The array of  ContinuousParameterRange objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.
+
+      
+
+      (structure)
+
+        
+
+        A list of continuous hyperparameters to tune.
+
+        
+
+        Name -> (string)
+
+          
+
+          The name of the continuous hyperparameter to tune.
+
+          
+
+          
+
+        MinValue -> (string)
+
+          
+
+          The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and ``MaxValue`` for tuning.
+
+          
+
+          
+
+        MaxValue -> (string)
+
+          
+
+          The maximum value for the hyperparameter. The tuning job uses floating-point values between ``MinValue`` value and this value for tuning.
+
+          
+
+          
+
+        
+
+      
+
+    CategoricalParameterRanges -> (list)
+
+      
+
+      The array of  CategoricalParameterRange objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.
+
+      
+
+      (structure)
+
+        
+
+        A list of categorical hyperparameters to tune.
+
+        
+
+        Name -> (string)
+
+          
+
+          The name of the categorical hyperparameter to tune.
+
+          
+
+          
+
+        Values -> (list)
+
+          
+
+          A list of the categories for the hyperparameter.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  
+
+TrainingJobDefinition -> (structure)
+
+  
+
+  The  HyperParameterTrainingJobDefinition object that specifies the definition of the training jobs that this tuning job launches.
+
+  
+
+  StaticHyperParameters -> (map)
+
+    
+
+    Specifies the values of hyperparameters that do not change for the tuning job.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (string)
+
+      
+
+      
+
+    
+
+  AlgorithmSpecification -> (structure)
+
+    
+
+    The  HyperParameterAlgorithmSpecification object that specifies the algorithm to use for the training jobs that the tuning job launches.
+
+    
+
+    TrainingImage -> (string)
+
+      
+
+      The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see  sagemaker-algo-docker-registry-paths .
+
+      
+
+      
+
+    TrainingInputMode -> (string)
+
+      
+
+      The input mode that the algorithm supports: File or Pipe. In File input mode, Amazon SageMaker downloads the training data from Amazon S3 to the storage volume that is attached to the training instance and mounts the directory to the Docker volume for the training container. In Pipe input mode, Amazon SageMaker streams data directly from Amazon S3 to the container. 
+
+       
+
+      If you specify File mode, make sure that you provision the storage volume that is attached to the training instance with enough capacity to accommodate the training data downloaded from Amazon S3, the model artifacts, and intermediate information.
+
+       
+
+      
+
+       
+
+      For more information about input modes, see `Algorithms <http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html>`__ . 
+
+      
+
+      
+
+    MetricDefinitions -> (list)
+
+      
+
+      An array of  MetricDefinition objects that specify the metrics that the algorithm emits.
+
+      
+
+      (structure)
+
+        
+
+        Specifies a metric that the training algorithm writes to ``stderr`` or ``stdout`` . Amazon SageMakerHyperparamter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.
+
+        
+
+        Name -> (string)
+
+          
+
+          The name of the metric.
+
+          
+
+          
+
+        Regex -> (string)
+
+          
+
+          A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see  automatic-model-tuning-define-metrics .
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  RoleArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.
+
+    
+
+    
+
+  InputDataConfig -> (list)
+
+    
+
+    An array of  Channel objects that specify the input for the training jobs that the tuning job launches.
+
+    
+
+    (structure)
+
+      
+
+      A channel is a named input source that training algorithms can consume. 
+
+      
+
+      ChannelName -> (string)
+
+        
+
+        The name of the channel. 
+
+        
+
+        
+
+      DataSource -> (structure)
+
+        
+
+        The location of the channel data.
+
+        
+
+        S3DataSource -> (structure)
+
+          
+
+          The S3 location of the data source that is associated with a channel.
+
+          
+
+          S3DataType -> (string)
+
+            
+
+            If you choose ``S3Prefix`` , ``S3Uri`` identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for model training. 
+
+             
+
+            If you choose ``ManifestFile`` , ``S3Uri`` identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training. 
+
+            
+
+            
+
+          S3Uri -> (string)
+
+            
+
+            Depending on the value specified for the ``S3DataType`` , identifies either a key name prefix or a manifest. For example: 
+
+             
+
+             
+            * A key name prefix might look like this: ``s3://bucketname/exampleprefix`` .  
+             
+            * A manifest might look like this: ``s3://bucketname/example.manifest``   The manifest is an S3 object which is a JSON file with the following format:   ``[``    ``{"prefix": "s3://customer_bucket/some/prefix/"},``    ``"relative/path/to/custdata-1",``    ``"relative/path/custdata-2",``    ``...``    ``]``   The preceding JSON matches the following ``s3Uris`` :   ``s3://customer_bucket/some/prefix/relative/path/to/custdata-1``    ``s3://customer_bucket/some/prefix/relative/path/custdata-1``    ``...``   The complete set of ``s3uris`` in this manifest constitutes the input data for the channel for this datasource. The object that each ``s3uris`` points to must readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.  
+             
+
+            
+
+            
+
+          S3DataDistributionType -> (string)
+
+            
+
+            If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify ``FullyReplicated`` . 
+
+             
+
+            If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify ``ShardedByS3Key`` . If there are *n* ML compute instances launched for a training job, each instance gets approximately 1/*n* of the number of S3 objects. In this case, model training on each machine uses only the subset of training data. 
+
+             
+
+            Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both FILE and PIPE modes. Keep this in mind when developing algorithms. 
+
+             
+
+            In distributed training, where you use multiple ML compute EC2 instances, you might choose ``ShardedByS3Key`` . If the algorithm requires copying training data to the ML storage volume (when ``TrainingInputMode`` is set to ``File`` ), this copies 1/*n* of the number of objects. 
+
+            
+
+            
+
+          
+
+        
+
+      ContentType -> (string)
+
+        
+
+        The MIME type of the data.
+
+        
+
+        
+
+      CompressionType -> (string)
+
+        
+
+        If training data is compressed, the compression type. The default value is ``None`` . ``CompressionType`` is used only in Pipe input mode. In File mode, leave this field unset or set it to None.
+
+        
+
+        
+
+      RecordWrapperType -> (string)
+
+        
+
+        
+
+         
+
+        Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see `Create a Dataset Using RecordIO <https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format>`__ . 
+
+         
+
+        In FILE mode, leave this field unset or set it to None.
+
+         
+
+        
+
+        
+
+        
+
+      
+
+    
+
+  VpcConfig -> (structure)
+
+    
+
+    The  VpcConfig object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see  train-vpc .
+
+    
+
+    SecurityGroupIds -> (list)
+
+      
+
+      The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the ``Subnets`` field.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    Subnets -> (list)
+
+      
+
+      The ID of the subnets in the VPC to which you want to connect your training job or model.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    
+
+  OutputDataConfig -> (structure)
+
+    
+
+    Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.
+
+    
+
+    KmsKeyId -> (string)
+
+      
+
+      The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption. 
+
+       
+
+      .. note::
+
+         
+
+        If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see `KMS-Managed Encryption Keys <https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html>`__ in Amazon Simple Storage Service developer guide.
+
+         
+
+       
+
+      .. note::
+
+         
+
+        The KMS key policy must grant permission to the IAM role you specify in your ``CreateTrainingJob`` request. `Using Key Policies in AWS KMS <http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html>`__ in the AWS Key Management Service Developer Guide. 
+
+         
+
+      
+
+      
+
+    S3OutputPath -> (string)
+
+      
+
+      Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, ``s3://bucket-name/key-name-prefix`` . 
+
+      
+
+      
+
+    
+
+  ResourceConfig -> (structure)
+
+    
+
+    The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.
+
+     
+
+    Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose ``File`` as the ``TrainingInputMode`` in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.
+
+    
+
+    InstanceType -> (string)
+
+      
+
+      The ML compute instance type. 
+
+      
+
+      
+
+    InstanceCount -> (integer)
+
+      
+
+      The number of ML compute instances to use. For distributed training, provide a value greater than 1. 
+
+      
+
+      
+
+    VolumeSizeInGB -> (integer)
+
+      
+
+      The size of the ML storage volume that you want to provision. 
+
+       
+
+      ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose ``File`` as the ``TrainingInputMode`` in the algorithm specification. 
+
+       
+
+      You must specify sufficient ML storage for your scenario. 
+
+       
+
+      .. note::
+
+         
+
+        Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type. 
+
+         
+
+      
+
+      
+
+    VolumeKmsKeyId -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.
+
+      
+
+      
+
+    
+
+  StoppingCondition -> (structure)
+
+    
+
+    Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit model training costs. 
+
+     
+
+    To stop a job, Amazon SageMaker sends the algorithm the ``SIGTERM`` signal. This delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.
+
+     
+
+    When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided by Amazon SageMaker save the intermediate results of the job.
+
+    
+
+    MaxRuntimeInSeconds -> (integer)
+
+      
+
+      The maximum length of time, in seconds, that the training job can run. If model training does not complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5 days.
+
+      
+
+      
+
+    
+
+  
+
+HyperParameterTuningJobStatus -> (string)
+
+  
+
+  The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.
+
+  
+
+  
+
+CreationTime -> (timestamp)
+
+  
+
+  The date and time that the tuning job started.
+
+  
+
+  
+
+HyperParameterTuningEndTime -> (timestamp)
+
+  
+
+  The date and time that the tuning job ended.
+
+  
+
+  
+
+LastModifiedTime -> (timestamp)
+
+  
+
+  The date and time that the status of the tuning job was modified. 
+
+  
+
+  
+
+TrainingJobStatusCounters -> (structure)
+
+  
+
+  The  TrainingJobStatusCounters object that specifies the number of training jobs, categorized by status, that this tuning job launched.
+
+  
+
+  Completed -> (integer)
+
+    
+
+    The number of completed training jobs launched by a hyperparameter tuning job.
+
+    
+
+    
+
+  InProgress -> (integer)
+
+    
+
+    The number of in-progress training jobs launched by a hyperparameter tuning job.
+
+    
+
+    
+
+  RetryableError -> (integer)
+
+    
+
+    The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.
+
+    
+
+    
+
+  NonRetryableError -> (integer)
+
+    
+
+    The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.
+
+    
+
+    
+
+  Stopped -> (integer)
+
+    
+
+    The number of training jobs launched by a hyperparameter tuning job that were manually stopped.
+
+    
+
+    
+
+  
+
+ObjectiveStatusCounters -> (structure)
+
+  
+
+  The  ObjectiveStatusCounters object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.
+
+  
+
+  Succeeded -> (integer)
+
+    
+
+    The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.
+
+    
+
+    
+
+  Pending -> (integer)
+
+    
+
+    The number of training jobs that are in progress and pending evaluation of their final objective metric.
+
+    
+
+    
+
+  Failed -> (integer)
+
+    
+
+    The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.
+
+    
+
+    
+
+  
+
+BestTrainingJob -> (structure)
+
+  
+
+  A  TrainingJobSummary object that describes the training job that completed with the best current  HyperParameterTuningJobObjective .
+
+  
+
+  TrainingJobName -> (string)
+
+    
+
+    The name of the training job.
+
+    
+
+    
+
+  TrainingJobArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the training job.
+
+    
+
+    
+
+  CreationTime -> (timestamp)
+
+    
+
+    The date and time that the training job was created.
+
+    
+
+    
+
+  TrainingStartTime -> (timestamp)
+
+    
+
+    The date and time that the training job started.
+
+    
+
+    
+
+  TrainingEndTime -> (timestamp)
+
+    
+
+    The date and time that the training job ended.
+
+    
+
+    
+
+  TrainingJobStatus -> (string)
+
+    
+
+    The status of the training job.
+
+    
+
+    
+
+  TunedHyperParameters -> (map)
+
+    
+
+    A list of the hyperparameters for which you specified ranges to search.
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (string)
+
+      
+
+      
+
+    
+
+  FailureReason -> (string)
+
+    
+
+    The reason that the training job failed. 
+
+    
+
+    
+
+  FinalHyperParameterTuningJobObjectiveMetric -> (structure)
+
+    
+
+    The  FinalHyperParameterTuningJobObjectiveMetric object that specifies the value of the objective metric of the tuning job that launched this training job.
+
+    
+
+    Type -> (string)
+
+      
+
+      Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.
+
+      
+
+      
+
+    MetricName -> (string)
+
+      
+
+      The name of the objective metric.
+
+      
+
+      
+
+    Value -> (float)
+
+      
+
+      The value of the objective metric.
+
+      
+
+      
+
+    
+
+  ObjectiveStatus -> (string)
+
+    
+
+    The status of the objective metric for the training job:
+
+     
+
+     
+    * Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process. 
+     
+
+     
+
+     
+    * Pending: The training job is in progress and evaluation of its final objective metric is pending. 
+     
+
+     
+
+     
+    * Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric. 
+     
+
+    
+
+    
+
+  
+
+FailureReason -> (string)
+
+  
+
+  If the tuning job failed, the reason it failed.
+
+  
+
+  
+

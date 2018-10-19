@@ -1,0 +1,27 @@
+{
+    "StackSetName": "",
+    "Accounts": [
+        ""
+    ],
+    "Regions": [
+        ""
+    ],
+    "ParameterOverrides": [
+        {
+            "ParameterKey": "",
+            "ParameterValue": "",
+            "UsePreviousValue": true,
+            "ResolvedValue": ""
+        }
+    ],
+    "OperationPreferences": {
+        "RegionOrder": [
+            ""
+        ],
+        "FailureToleranceCount": 0,
+        "FailureTolerancePercentage": 0,
+        "MaxConcurrentCount": 0,
+        "MaxConcurrentPercentage": 0
+    },
+    "OperationId": ""
+}

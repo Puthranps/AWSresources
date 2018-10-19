@@ -1,0 +1,101 @@
+[ :ref:`aws <cli:aws>` . :ref:`mediastore <cli:aws mediastore>` ]
+
+.. _cli:aws mediastore put-cors-policy:
+
+
+***************
+put-cors-policy
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest capability.
+
+ 
+
+To enable CORS on a container, you attach a CORS policy to the container. In the CORS policy, you configure rules that identify origins and the HTTP methods that can be executed on your container. The policy can contain up to 398,000 characters. You can add up to 100 rules to a CORS policy. If more than one rule applies, the service uses the first applicable rule listed.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mediastore-2017-09-01/PutCorsPolicy>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-cors-policy
+  --container-name <value>
+  --cors-policy <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--container-name`` (string)
+
+
+  The name of the container that you want to assign the CORS policy to.
+
+  
+
+``--cors-policy`` (list)
+
+
+  The CORS policy to apply to the container. 
+
+  
+
+
+
+Shorthand Syntax::
+
+    AllowedOrigins=string,string,AllowedMethods=string,string,AllowedHeaders=string,string,MaxAgeSeconds=integer,ExposeHeaders=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "AllowedOrigins": ["string", ...],
+      "AllowedMethods": ["PUT"|"GET"|"DELETE"|"HEAD", ...],
+      "AllowedHeaders": ["string", ...],
+      "MaxAgeSeconds": integer,
+      "ExposeHeaders": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+

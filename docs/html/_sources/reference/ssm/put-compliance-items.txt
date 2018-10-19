@@ -1,0 +1,187 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm put-compliance-items:
+
+
+********************
+put-compliance-items
+********************
+
+
+
+===========
+Description
+===========
+
+
+
+Registers a compliance type and other compliance details on a designated resource. This action lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.
+
+ 
+
+ComplianceType can be one of the following:
+
+ 
+
+ 
+* ExecutionId: The execution ID when the patch, association, or custom compliance item was applied. 
+ 
+* ExecutionType: Specify patch, association, or Custom:``string`` . 
+ 
+* ExecutionTime. The time the patch, association, or custom compliance item was applied to the instance. 
+ 
+* Id: The patch, association, or custom compliance ID. 
+ 
+* Title: A title. 
+ 
+* Status: The status of the compliance item. For example, ``approved`` for patches, or ``Failed`` for associations. 
+ 
+* Severity: A patch severity. For example, ``critical`` . 
+ 
+* DocumentName: A SSM document name. For example, AWS-RunPatchBaseline. 
+ 
+* DocumentVersion: An SSM document version number. For example, 4. 
+ 
+* Classification: A patch classification. For example, ``security updates`` . 
+ 
+* PatchBaselineId: A patch baseline ID. 
+ 
+* PatchSeverity: A patch severity. For example, ``Critical`` . 
+ 
+* PatchState: A patch state. For example, ``InstancesWithFailedPatches`` . 
+ 
+* PatchGroup: The name of a patch group. 
+ 
+* InstalledTime: The time the association, patch, or custom compliance item was applied to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z' 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutComplianceItems>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    put-compliance-items
+  --resource-id <value>
+  --resource-type <value>
+  --compliance-type <value>
+  --execution-summary <value>
+  --items <value>
+  [--item-content-hash <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--resource-id`` (string)
+
+
+  Specify an ID for this resource. For a managed instance, this is the instance ID.
+
+  
+
+``--resource-type`` (string)
+
+
+  Specify the type of resource. ``ManagedInstance`` is currently the only supported resource type.
+
+  
+
+``--compliance-type`` (string)
+
+
+  Specify the compliance type. For example, specify Association (for a State Manager association), Patch, or Custom:``string`` .
+
+  
+
+``--execution-summary`` (structure)
+
+
+  A summary of the call execution that includes an execution ID, the type of execution (for example, ``Command`` ), and the date/time of the execution using a datetime object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+
+  
+
+
+
+Shorthand Syntax::
+
+    ExecutionTime=timestamp,ExecutionId=string,ExecutionType=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "ExecutionTime": timestamp,
+    "ExecutionId": "string",
+    "ExecutionType": "string"
+  }
+
+
+
+``--items`` (list)
+
+
+  Information about the compliance as defined by the resource type. For example, for a patch compliance type, ``Items`` includes information about the PatchSeverity, Classification, etc.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Id=string,Title=string,Severity=string,Status=string,Details={KeyName1=string,KeyName2=string} ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Id": "string",
+      "Title": "string",
+      "Severity": "CRITICAL"|"HIGH"|"MEDIUM"|"LOW"|"INFORMATIONAL"|"UNSPECIFIED",
+      "Status": "COMPLIANT"|"NON_COMPLIANT",
+      "Details": {"string": "string"
+        ...}
+    }
+    ...
+  ]
+
+
+
+``--item-content-hash`` (string)
+
+
+  MD5 or SHA-256 content hash. The content hash is used to determine if existing information should be overwritten or ignored. If the content hashes match, the request to put compliance information is ignored.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+

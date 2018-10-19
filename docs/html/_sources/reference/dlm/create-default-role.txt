@@ -1,0 +1,59 @@
+[ :ref:`aws <cli:aws>` . :ref:`dlm <cli:aws dlm>` ]
+
+.. _cli:aws dlm create-default-role:
+
+
+*******************
+create-default-role
+*******************
+
+
+
+===========
+Description
+===========
+
+Creates the default IAM role AWSDataLifecycleManagerDefaultRole which will be used by Lifecycle service.
+If the role does not exist, create-default-role will automatically create it and set its policy. If the role has been already created, create-default-role will not update its policy.
+
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-default-role
+  [--iam-endpoint <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--iam-endpoint`` (string)
+
+
+  The IAM endpoint to call for creating the roles. This is optional and should only be specified when a custom endpoint should be called for IAM operations.
+
+  
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To create the required IAM role for Amazon DLM
+
+Amazon DLM creates the **AWSDataLifecycleManagerDefaultRole** role the first time that you create a lifecycle policy using the AWS Management Console. If you are not using the console, you can use the following command to create this role.::
+
+  aws dlm create-default-role

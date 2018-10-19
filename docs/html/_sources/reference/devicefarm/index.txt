@@ -1,0 +1,94 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws devicefarm:
+
+
+**********
+devicefarm
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+AWS Device Farm is a service that enables mobile app developers to test Android, iOS, and Fire OS apps on physical phones, tablets, and other devices in the cloud.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-device-pool
+  create-instance-profile
+  create-network-profile
+  create-project
+  create-remote-access-session
+  create-upload
+  create-vpce-configuration
+  delete-device-pool
+  delete-instance-profile
+  delete-network-profile
+  delete-project
+  delete-remote-access-session
+  delete-run
+  delete-upload
+  delete-vpce-configuration
+  get-account-settings
+  get-device
+  get-device-instance
+  get-device-pool
+  get-device-pool-compatibility
+  get-instance-profile
+  get-job
+  get-network-profile
+  get-offering-status
+  get-project
+  get-remote-access-session
+  get-run
+  get-suite
+  get-test
+  get-upload
+  get-vpce-configuration
+  install-to-remote-access-session
+  list-artifacts
+  list-device-instances
+  list-device-pools
+  list-devices
+  list-instance-profiles
+  list-jobs
+  list-network-profiles
+  list-offering-promotions
+  list-offering-transactions
+  list-offerings
+  list-projects
+  list-remote-access-sessions
+  list-runs
+  list-samples
+  list-suites
+  list-tests
+  list-unique-problems
+  list-uploads
+  list-vpce-configurations
+  purchase-offering
+  renew-offering
+  schedule-run
+  stop-job
+  stop-remote-access-session
+  stop-run
+  update-device-instance
+  update-device-pool
+  update-instance-profile
+  update-network-profile
+  update-project
+  update-upload
+  update-vpce-configuration

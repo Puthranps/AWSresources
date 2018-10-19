@@ -1,0 +1,53 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws workspaces:
+
+
+**********
+workspaces
+**********
+
+
+
+===========
+Description
+===========
+
+ 
+
+Amazon WorkSpaces enables you to provision virtual, cloud-based Microsoft Windows desktops for your users.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  associate-ip-groups
+  authorize-ip-rules
+  create-ip-group
+  create-tags
+  create-workspaces
+  delete-ip-group
+  delete-tags
+  describe-ip-groups
+  describe-tags
+  describe-workspace-bundles
+  describe-workspace-directories
+  describe-workspaces
+  describe-workspaces-connection-status
+  disassociate-ip-groups
+  modify-workspace-properties
+  modify-workspace-state
+  reboot-workspaces
+  rebuild-workspaces
+  revoke-ip-rules
+  start-workspaces
+  stop-workspaces
+  terminate-workspaces
+  update-rules-of-ip-group

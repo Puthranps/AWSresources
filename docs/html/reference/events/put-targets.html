@@ -1,0 +1,349 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>put-targets &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="events" href="../events/index.html" />
+    <link rel="next" title="remove-permission" href="../events/remove-permission.html" />
+    <link rel="prev" title="put-rule" href="../events/put-rule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../events/remove-permission.html" title="remove-permission"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../events/put-rule.html" title="put-rule"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../events/index.html" accesskey="U">events</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../events/put-rule.html" title="previous chapter (use the left arrow)">&larr; put-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../events/remove-permission.html" title="next chapter (use the right arrow)">remove-permission &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">put-targets</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/events/put-targets">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../events/index.html#cli-aws-events"><em>events</em></a> ]</p>
+<div class="section" id="put-targets">
+<span id="cli-aws-events-put-targets"></span><h1>put-targets<a class="headerlink" href="#put-targets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p>
+<p>Targets are the resources that are invoked when a rule is triggered.</p>
+<p>You can configure the following as targets for CloudWatch Events:</p>
+<ul class="simple">
+<li>EC2 instances</li>
+<li>SSM Run Command</li>
+<li>SSM Automation</li>
+<li>AWS Lambda functions</li>
+<li>Data streams in Amazon Kinesis Data Streams</li>
+<li>Data delivery streams in Amazon Kinesis Data Firehose</li>
+<li>Amazon ECS tasks</li>
+<li>AWS Step Functions state machines</li>
+<li>AWS Batch jobs</li>
+<li>AWS CodeBuild projects</li>
+<li>Pipelines in AWS CodePipeline</li>
+<li>Amazon Inspector assessment templates</li>
+<li>Amazon SNS topics</li>
+<li>Amazon SQS queues, including FIFO queues</li>
+<li>The default event bus of another AWS account</li>
+</ul>
+<p>Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are <tt class="docutils literal"><span class="pre">EC2</span> <span class="pre">CreateSnapshot</span> <span class="pre">API</span> <span class="pre">call</span></tt> , <tt class="docutils literal"><span class="pre">EC2</span> <span class="pre">RebootInstances</span> <span class="pre">API</span> <span class="pre">call</span></tt> , <tt class="docutils literal"><span class="pre">EC2</span> <span class="pre">StopInstances</span> <span class="pre">API</span> <span class="pre">call</span></tt> , and <tt class="docutils literal"><span class="pre">EC2</span> <span class="pre">TerminateInstances</span> <span class="pre">API</span> <span class="pre">call</span></tt> .</p>
+<p>For some target types, <tt class="docutils literal"><span class="pre">PutTargets</span></tt> provides target-specific parameters. If the target is a Kinesis data stream, you can optionally specify which shard the event goes to by using the <tt class="docutils literal"><span class="pre">KinesisParameters</span></tt> argument. To invoke a command on multiple EC2 instances with one rule, you can use the <tt class="docutils literal"><span class="pre">RunCommandParameters</span></tt> field.</p>
+<p>To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate permissions. For AWS Lambda and Amazon SNS resources, CloudWatch Events relies on resource-based policies. For EC2 instances, Kinesis data streams, and AWS Step Functions state machines, CloudWatch Events relies on IAM roles that you specify in the <tt class="docutils literal"><span class="pre">RoleARN</span></tt> argument in <tt class="docutils literal"><span class="pre">PutTargets</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/auth-and-access-control-cwe.html">Authentication and Access Control</a> in the <em>Amazon CloudWatch Events User Guide</em> .</p>
+<p>If another AWS account is in the same region and has granted you permission (using <tt class="docutils literal"><span class="pre">PutPermission</span></tt> ), you can send events to that account. Set that account's event bus as a target of the rules in your account. To send the matched events to the other account, specify that account's event bus as the <tt class="docutils literal"><span class="pre">Arn</span></tt> value when you run <tt class="docutils literal"><span class="pre">PutTargets</span></tt> . If your account sends events to another account, your account is charged for each sent event. Each event sent to another account is charged as a custom event. The account receiving the event is not charged. For more information, see <a class="reference external" href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a> .</p>
+<p>For more information about enabling cross-account events, see  PutPermission .</p>
+<blockquote>
+<div><strong>Input</strong> , <strong>InputPath</strong> , and <strong>InputTransformer</strong> are mutually exclusive and optional parameters of a target. When a rule is triggered due to a matched event:</div></blockquote>
+<ul class="simple">
+<li>If none of the following arguments are specified for a target, then the entire event is passed to the target in JSON format (unless the target is Amazon EC2 Run Command or Amazon ECS task, in which case nothing from the event is passed to the target).</li>
+<li>If <strong>Input</strong> is specified in the form of valid JSON, then the matched event is overridden with this constant.</li>
+<li>If <strong>InputPath</strong> is specified in the form of JSONPath (for example, <tt class="docutils literal"><span class="pre">$.detail</span></tt> ), then only the part of the event specified in the path is passed to the target (for example, only the detail part of the event is passed).</li>
+<li>If <strong>InputTransformer</strong> is specified, then one or more specified JSONPaths are extracted from the event and used as values in a template that you specify as the input to the target.</li>
+</ul>
+<p>When you specify <tt class="docutils literal"><span class="pre">InputPath</span></tt> or <tt class="docutils literal"><span class="pre">InputTransformer</span></tt> , you must use JSON dot notation, not bracket notation.</p>
+<p>When you add targets to a rule and the associated rule triggers soon after, new or updated targets might not be immediately invoked. Allow a short period of time for changes to take effect.</p>
+<p>This action can partially fail if too many requests are made at the same time. If that happens, <tt class="docutils literal"><span class="pre">FailedEntryCount</span></tt> is non-zero in the response and each entry in <tt class="docutils literal"><span class="pre">FailedEntries</span></tt> provides the ID of the failed target and the error code.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutTargets">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  put-targets
+--rule &lt;value&gt;
+--targets &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--rule</span></tt> (string)</p>
+<blockquote>
+<div>The name of the rule.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--targets</span></tt> (list)</p>
+<blockquote>
+<div>The targets to update or add to the rule.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Id&quot;: &quot;string&quot;,
+    &quot;Arn&quot;: &quot;string&quot;,
+    &quot;RoleArn&quot;: &quot;string&quot;,
+    &quot;Input&quot;: &quot;string&quot;,
+    &quot;InputPath&quot;: &quot;string&quot;,
+    &quot;InputTransformer&quot;: {
+      &quot;InputPathsMap&quot;: {&quot;string&quot;: &quot;string&quot;
+        ...},
+      &quot;InputTemplate&quot;: &quot;string&quot;
+    },
+    &quot;KinesisParameters&quot;: {
+      &quot;PartitionKeyPath&quot;: &quot;string&quot;
+    },
+    &quot;RunCommandParameters&quot;: {
+      &quot;RunCommandTargets&quot;: [
+        {
+          &quot;Key&quot;: &quot;string&quot;,
+          &quot;Values&quot;: [&quot;string&quot;, ...]
+        }
+        ...
+      ]
+    },
+    &quot;EcsParameters&quot;: {
+      &quot;TaskDefinitionArn&quot;: &quot;string&quot;,
+      &quot;TaskCount&quot;: integer,
+      &quot;LaunchType&quot;: &quot;EC2&quot;|&quot;FARGATE&quot;,
+      &quot;NetworkConfiguration&quot;: {
+        &quot;awsvpcConfiguration&quot;: {
+          &quot;Subnets&quot;: [&quot;string&quot;, ...],
+          &quot;SecurityGroups&quot;: [&quot;string&quot;, ...],
+          &quot;AssignPublicIp&quot;: &quot;ENABLED&quot;|&quot;DISABLED&quot;
+        }
+      },
+      &quot;PlatformVersion&quot;: &quot;string&quot;,
+      &quot;Group&quot;: &quot;string&quot;
+    },
+    &quot;BatchParameters&quot;: {
+      &quot;JobDefinition&quot;: &quot;string&quot;,
+      &quot;JobName&quot;: &quot;string&quot;,
+      &quot;ArrayProperties&quot;: {
+        &quot;Size&quot;: integer
+      },
+      &quot;RetryStrategy&quot;: {
+        &quot;Attempts&quot;: integer
+      }
+    },
+    &quot;SqsParameters&quot;: {
+      &quot;MessageGroupId&quot;: &quot;string&quot;
+    }
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To add targets for CloudWatch Events rules</strong></p>
+<p>This example adds a Lambda function as the target of a rule:</p>
+<div class="highlight-python"><pre>aws events put-targets --rule DailyLambdaFunction --targets &quot;Id&quot;=&quot;1&quot;,&quot;Arn&quot;=&quot;arn:aws:lambda:us-east-1:123456789012:function:MyFunctionName&quot;</pre>
+</div>
+<p>This example sets an Amazon Kinesis stream as the target, so that events caught by this rule are relayed to the stream:</p>
+<div class="highlight-python"><pre>aws events put-targets --rule EC2InstanceStateChanges --targets &quot;Id&quot;=&quot;1&quot;,&quot;Arn&quot;=&quot;arn:aws:kinesis:us-east-1:123456789012:stream/MyStream&quot;,&quot;RoleArn&quot;=&quot;arn:aws:iam::123456789012:role/MyRoleForThisRule&quot;</pre>
+</div>
+<p>This example sets two Amazon Kinesis streams as targets for one rule:</p>
+<div class="highlight-python"><pre>aws events put-targets --rule DailyLambdaFunction --targets &quot;Id&quot;=&quot;Target1&quot;,&quot;Arn&quot;=&quot;arn:aws:kinesis:us-east-1:379642911888:stream/MyStream1&quot;,&quot;RoleArn&quot;=&quot;arn:aws:iam::379642911888:role/ MyRoleToAccessLambda&quot;  &quot;Id&quot;=&quot;Target2&quot;,&quot; Arn&quot;=&quot;arn:aws:kinesis:us-east-1:379642911888:stream/MyStream2&quot;,&quot;RoleArn&quot;=&quot;arn:aws:iam::379642911888:role/MyRoleToAccessLambda&quot;</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>FailedEntryCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of failed entries.</div></blockquote>
+<p>FailedEntries -&gt; (list)</p>
+<blockquote>
+<div><p>The failed target entries.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents a target that failed to be added to a rule.</p>
+<p>TargetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the target.</div></blockquote>
+<p>ErrorCode -&gt; (string)</p>
+<blockquote>
+<div>The error code that indicates why the target addition failed. If the value is <tt class="docutils literal"><span class="pre">ConcurrentModificationException</span></tt> , too many requests were made at the same time.</div></blockquote>
+<p>ErrorMessage -&gt; (string)</p>
+<blockquote>
+<div>The error message that explains why the target addition failed.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../events/put-rule.html" title="previous chapter (use the left arrow)">&larr; put-rule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../events/remove-permission.html" title="next chapter (use the right arrow)">remove-permission &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../events/remove-permission.html" title="remove-permission"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../events/put-rule.html" title="put-rule"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../events/index.html" >events</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

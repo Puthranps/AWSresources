@@ -1,0 +1,15 @@
+{
+    "TopicArn": "",
+    "TargetArn": "",
+    "PhoneNumber": "",
+    "Message": "",
+    "Subject": "",
+    "MessageStructure": "",
+    "MessageAttributes": {
+        "KeyName": {
+            "DataType": "",
+            "StringValue": "",
+            "BinaryValue": null
+        }
+    }
+}

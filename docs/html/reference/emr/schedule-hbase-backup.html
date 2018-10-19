@@ -1,0 +1,269 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>schedule-hbase-backup &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="emr" href="../emr/index.html" />
+    <link rel="next" title="socks" href="../emr/socks.html" />
+    <link rel="prev" title="restore-from-hbase-backup" href="../emr/restore-from-hbase-backup.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../emr/socks.html" title="socks"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../emr/restore-from-hbase-backup.html" title="restore-from-hbase-backup"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../emr/index.html" accesskey="U">emr</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../emr/restore-from-hbase-backup.html" title="previous chapter (use the left arrow)">&larr; restore-from-hbase-backup</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../emr/socks.html" title="next chapter (use the right arrow)">socks &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">schedule-hbase-backup</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/emr/schedule-hbase-backup">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../emr/index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="schedule-hbase-backup">
+<span id="cli-aws-emr-schedule-hbase-backup"></span><h1>schedule-hbase-backup<a class="headerlink" href="#schedule-hbase-backup" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Adds a step to schedule automated HBase backup. This command is only available when using Amazon EMR versionsearlier than 4.0.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  schedule-hbase-backup
+--cluster-id &lt;value&gt;
+--type &lt;value&gt;
+--dir &lt;value&gt;
+--interval &lt;value&gt;
+--unit &lt;value&gt;
+[--start-time &lt;value&gt;]
+[--consistent]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--cluster-id</span></tt> (string)</p>
+<blockquote>
+<div>A unique string that identifies a cluster. The <tt class="docutils literal"><span class="pre">create-cluster</span></tt> command returns this identifier. You can use the <tt class="docutils literal"><span class="pre">list-clusters</span></tt> command to get cluster IDs.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div>Backup type. You can specify 'incremental' or 'full'.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--dir</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon S3 location of the Hbase backup. Example: <tt class="docutils literal"><span class="pre">s3://mybucket/mybackup</span></tt> , where <tt class="docutils literal"><span class="pre">mybucket</span></tt> is the specified Amazon S3 bucket and mybackup is the specified backup location. The path argument must begin with s3://, which refers to an Amazon S3 bucket.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--interval</span></tt> (string)</p>
+<blockquote>
+<div>The time between backups.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--unit</span></tt> (string)</p>
+<blockquote>
+<div>The time unit for backup's time-interval. You can specify one of the following values: 'minutes', 'hours', or 'days'.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--start-time</span></tt> (string)</p>
+<blockquote>
+<div><p>The time of the first backup in ISO format.</p>
+<p>e.g. 2014-04-21T05:26:10Z. Default is now.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--consistent</span></tt> (boolean)</p>
+<blockquote>
+<div>Performs a consistent backup. Pauses all write operations to the HBase cluster during the backup process.</div></blockquote>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>Note: This command can only be used with HBase on AMI version 2.x and 3.x</strong></p>
+<p><strong>1. To schedule a full HBase backup</strong>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 06ab6d6e13564b5733d75abaf3b599f93cf39a23</p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr schedule-hbase-backup --cluster-id j-XXXXXXYY --type full --dir
+s3://myBucket/backup --interval 10 --unit hours --start-time
+2014-04-21T05:26:10Z --consistent</pre>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="bp">None</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p><strong>2. To schedule an incremental HBase backup</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr schedule-hbase-backup --cluster-id j-XXXXXXYY --type incremental
+ --dir s3://myBucket/backup --interval 30 --unit minutes --start-time
+2014-04-21T05:26:10Z --consistent</pre>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="bp">None</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../emr/restore-from-hbase-backup.html" title="previous chapter (use the left arrow)">&larr; restore-from-hbase-backup</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../emr/socks.html" title="next chapter (use the right arrow)">socks &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../emr/socks.html" title="socks"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../emr/restore-from-hbase-backup.html" title="restore-from-hbase-backup"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../emr/index.html" >emr</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

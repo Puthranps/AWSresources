@@ -1,0 +1,76 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws elb:
+
+
+***
+elb
+***
+
+
+
+===========
+Description
+===========
+
+ 
+
+A load balancer can distribute incoming traffic across your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered instances and ensures that it routes traffic only to healthy instances. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer and a protocol and port number for connections from the load balancer to the instances.
+
+ 
+
+Elastic Load Balancing supports three types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. You can select a load balancer based on your application needs. For more information, see the `Elastic Load Balancing User Guide <http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/>`__ .
+
+ 
+
+This reference covers the 2012-06-01 API, which supports Classic Load Balancers. The 2015-12-01 API supports Application Load Balancers and Network Load Balancers.
+
+ 
+
+To get started, create a load balancer with one or more listeners using  CreateLoadBalancer . Register your instances with the load balancer using  RegisterInstancesWithLoadBalancer .
+
+ 
+
+All Elastic Load Balancing operations are *idempotent* , which means that they complete at most one time. If you repeat an operation, it succeeds with a 200 OK response code.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  add-tags
+  apply-security-groups-to-load-balancer
+  attach-load-balancer-to-subnets
+  configure-health-check
+  create-app-cookie-stickiness-policy
+  create-lb-cookie-stickiness-policy
+  create-load-balancer
+  create-load-balancer-listeners
+  create-load-balancer-policy
+  delete-load-balancer
+  delete-load-balancer-listeners
+  delete-load-balancer-policy
+  deregister-instances-from-load-balancer
+  describe-account-limits
+  describe-instance-health
+  describe-load-balancer-attributes
+  describe-load-balancer-policies
+  describe-load-balancer-policy-types
+  describe-load-balancers
+  describe-tags
+  detach-load-balancer-from-subnets
+  disable-availability-zones-for-load-balancer
+  enable-availability-zones-for-load-balancer
+  modify-load-balancer-attributes
+  register-instances-with-load-balancer
+  remove-tags
+  set-load-balancer-listener-ssl-certificate
+  set-load-balancer-policies-for-backend-server
+  set-load-balancer-policies-of-listener
+  wait/index

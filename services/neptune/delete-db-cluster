@@ -1,0 +1,5 @@
+{
+    "DBClusterIdentifier": "",
+    "SkipFinalSnapshot": true,
+    "FinalDBSnapshotIdentifier": ""
+}

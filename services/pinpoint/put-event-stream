@@ -1,0 +1,7 @@
+{
+    "ApplicationId": "",
+    "WriteEventStream": {
+        "DestinationStreamArn": "",
+        "RoleArn": ""
+    }
+}

@@ -1,0 +1,174 @@
+[ :ref:`aws <cli:aws>` . :ref:`serverlessrepo <cli:aws serverlessrepo>` ]
+
+.. _cli:aws serverlessrepo create-cloud-formation-change-set:
+
+
+*********************************
+create-cloud-formation-change-set
+*********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an AWS CloudFormation change set for the given application.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/CreateCloudFormationChangeSet>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-cloud-formation-change-set
+  --application-id <value>
+  [--parameter-overrides <value>]
+  [--semantic-version <value>]
+  --stack-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-id`` (string)
+
+
+  The Amazon Resource Name (ARN) of the application.
+
+  
+
+``--parameter-overrides`` (list)
+
+
+  A list of parameter values for the parameters of the application.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Value=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Value": "string"
+    }
+    ...
+  ]
+
+
+
+``--semantic-version`` (string)
+
+
+  The semantic version of the application:
+
+  
+
+   `https\://semver.org/ <https://semver.org/>`__  
+
+  
+
+``--stack-name`` (string)
+
+
+  The name or the unique ID of the stack for which you are creating a change set. AWS CloudFormation generates the change set by comparing this stack's information with the information that you submit, such as a modified template or different parameter input values. 
+
+  
+
+  Constraints: Minimum length of 1.
+
+  
+
+  Pattern: ([a-zA-Z][-a-zA-Z0-9]*)|(arn:\b(aws|aws-us-gov|aws-cn)\b:[-a-zA-Z0-9:/._+]*)
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ApplicationId -> (string)
+
+  
+
+  The application Amazon Resource Name (ARN).
+
+  
+
+  
+
+ChangeSetId -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the change set.
+
+  
+
+  Length constraints: Minimum length of 1.
+
+  
+
+  Pattern: ARN:[-a-zA-Z0-9:/]*
+
+  
+
+  
+
+SemanticVersion -> (string)
+
+  
+
+  The semantic version of the application:
+
+  
+
+   `https\://semver.org/ <https://semver.org/>`__  
+
+  
+
+  
+
+StackId -> (string)
+
+  
+
+  The unique ID of the stack.
+
+  
+
+  
+

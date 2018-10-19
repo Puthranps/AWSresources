@@ -1,0 +1,111 @@
+[ :ref:`aws <cli:aws>` . :ref:`acm-pca <cli:aws acm-pca>` ]
+
+.. _cli:aws acm-pca get-certificate:
+
+
+***************
+get-certificate
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a certificate from your private CA. The ARN of the certificate is returned when you call the  IssueCertificate operation. You must specify both the ARN of your private CA and the ARN of the issued certificate when calling the **GetCertificate** operation. You can retrieve the certificate if it is in the **ISSUED** state. You can call the  CreateCertificateAuthorityAuditReport operation to create a report that contains information about all of the certificates issued and revoked by your private CA. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/GetCertificate>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-certificate
+  --certificate-authority-arn <value>
+  --certificate-arn <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--certificate-authority-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) that was returned when you called  CreateCertificateAuthority . This must be of the form: 
+
+   
+
+   ``arn:aws:acm-pca:*region* :*account* :certificate-authority/*12345678-1234-1234-1234-123456789012* `` . 
+
+  
+
+``--certificate-arn`` (string)
+
+
+  The ARN of the issued certificate. The ARN contains the certificate serial number and must be in the following form: 
+
+   
+
+   ``arn:aws:acm-pca:*region* :*account* :certificate-authority/*12345678-1234-1234-1234-123456789012* /certificate/*286535153982981100925020015808220737245* ``  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To retrieve an issued certificate**
+
+The ``get-certificate`` command retrieves a base64 encoded PEM format certificate::
+
+  aws acm-pca get-certificate --certificate-authority-arn arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012 --certificate-arn arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012/certificate/6707447683a9b7f4055627ffd55cebcc --output text
+
+======
+Output
+======
+
+Certificate -> (string)
+
+  
+
+  The base64 PEM-encoded certificate specified by the ``CertificateArn`` parameter.
+
+  
+
+  
+
+CertificateChain -> (string)
+
+  
+
+  The base64 PEM-encoded certificate chain that chains up to the on-premises root CA certificate that you used to sign your private CA certificate. 
+
+  
+
+  
+

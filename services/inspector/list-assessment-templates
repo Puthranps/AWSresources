@@ -1,0 +1,17 @@
+{
+    "assessmentTargetArns": [
+        ""
+    ],
+    "filter": {
+        "namePattern": "",
+        "durationRange": {
+            "minSeconds": 0,
+            "maxSeconds": 0
+        },
+        "rulesPackageArns": [
+            ""
+        ]
+    },
+    "nextToken": "",
+    "maxResults": 0
+}

@@ -1,0 +1,10 @@
+{
+    "ClientToken": "",
+    "Description": "",
+    "Encrypted": true,
+    "KmsKeyId": "",
+    "Name": "",
+    "SourceImageId": "",
+    "SourceRegion": "",
+    "DryRun": true
+}

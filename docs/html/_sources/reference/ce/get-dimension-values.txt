@@ -1,0 +1,399 @@
+[ :ref:`aws <cli:aws>` . :ref:`ce <cli:aws ce>` ]
+
+.. _cli:aws ce get-dimension-values:
+
+
+********************
+get-dimension-values
+********************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves all available filter values for a specified filter over a period of time. You can search the dimension values for an arbitrary string. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetDimensionValues>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-dimension-values
+  [--search-string <value>]
+  --time-period <value>
+  --dimension <value>
+  [--context <value>]
+  [--next-page-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--search-string`` (string)
+
+
+  The value that you want to search the filter values for.
+
+  
+
+``--time-period`` (structure)
+
+
+  The start and end dates for retrieving the dimension values. The start date is inclusive, but the end date is exclusive. For example, if ``start`` is ``2017-01-01`` and ``end`` is ``2017-05-01`` , then the cost and usage data is retrieved from ``2017-01-01`` up to and including ``2017-04-30`` but not including ``2017-05-01`` .
+
+  
+
+
+
+Shorthand Syntax::
+
+    Start=string,End=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Start": "string",
+    "End": "string"
+  }
+
+
+
+``--dimension`` (string)
+
+
+  The name of the dimension. Each ``Dimension`` is available for different a ``Context`` . For more information, see ``Context`` .
+
+  
+
+  Possible values:
+
+  
+  *   ``AZ``
+
+  
+  *   ``INSTANCE_TYPE``
+
+  
+  *   ``LINKED_ACCOUNT``
+
+  
+  *   ``OPERATION``
+
+  
+  *   ``PURCHASE_TYPE``
+
+  
+  *   ``REGION``
+
+  
+  *   ``SERVICE``
+
+  
+  *   ``USAGE_TYPE``
+
+  
+  *   ``USAGE_TYPE_GROUP``
+
+  
+  *   ``RECORD_TYPE``
+
+  
+  *   ``OPERATING_SYSTEM``
+
+  
+  *   ``TENANCY``
+
+  
+  *   ``SCOPE``
+
+  
+  *   ``PLATFORM``
+
+  
+  *   ``SUBSCRIPTION_ID``
+
+  
+  *   ``LEGAL_ENTITY_NAME``
+
+  
+  *   ``DEPLOYMENT_OPTION``
+
+  
+  *   ``DATABASE_ENGINE``
+
+  
+  *   ``CACHE_ENGINE``
+
+  
+  *   ``INSTANCE_TYPE_FAMILY``
+
+  
+
+  
+
+``--context`` (string)
+
+
+  The context for the call to ``GetDimensionValues`` . This can be ``RESERVATIONS`` or ``COST_AND_USAGE`` . The default value is ``COST_AND_USAGE`` . If the context is set to ``RESERVATIONS`` , the resulting dimension values can be used in the ``GetReservationUtilization`` operation. If the context is set to ``COST_AND_USAGE`` the resulting dimension values can be used in the ``GetCostAndUsage`` operation.
+
+   
+
+  If you set the context to ``COST_AND_USAGE`` , you can use the following dimensions for searching:
+
+   
+
+   
+  * AZ - The Availability Zone. An example is ``us-east-1a`` . 
+   
+  * DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL. 
+   
+  * INSTANCE_TYPE - The type of EC2 instance. An example is ``m4.xlarge`` . 
+   
+  * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services. 
+   
+  * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account. 
+   
+  * OPERATING_SYSTEM - The operating system. Examples are Windows or Linux. 
+   
+  * OPERATION - The action performed. Examples include ``RunInstance`` and ``CreateBucket`` . 
+   
+  * PLATFORM - The EC2 operating system. Examples are Windows or Linux. 
+   
+  * PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances. 
+   
+  * SERVICE - The AWS service such as Amazon DynamoDB. 
+   
+  * USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the ``GetDimensionValues`` operation includes a unit attribute. Examples include GB and Hrs. 
+   
+  * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute. 
+   
+  * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits. 
+   
+
+   
+
+  If you set the context to ``RESERVATIONS`` , you can use the following dimensions for searching:
+
+   
+
+   
+  * AZ - The Availability Zone. An example is ``us-east-1a`` . 
+   
+  * CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux. 
+   
+  * DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are ``SingleAZ`` and ``MultiAZ`` . 
+   
+  * INSTANCE_TYPE - The type of EC2 instance. An example is ``m4.xlarge`` . 
+   
+  * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account. 
+   
+  * PLATFORM - The EC2 operating system. Examples are Windows or Linux. 
+   
+  * REGION - The AWS Region. 
+   
+  * SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone. 
+   
+  * TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI). 
+   
+  * TENANCY - The tenancy of a resource. Examples are shared or dedicated. 
+   
+
+  
+
+  Possible values:
+
+  
+  *   ``COST_AND_USAGE``
+
+  
+  *   ``RESERVATIONS``
+
+  
+
+  
+
+``--next-page-token`` (string)
+
+
+  The token to retrieve the next set of results. AWS provides the token when the response from a previous call has more results than the maximum page size.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+DimensionValues -> (list)
+
+  
+
+  The filters that you used to filter your request. Some dimensions are available only for a specific context:
+
+   
+
+  If you set the context to ``COST_AND_USAGE`` , you can use the following dimensions for searching:
+
+   
+
+   
+  * AZ - The Availability Zone. An example is ``us-east-1a`` . 
+   
+  * DATABASE_ENGINE - The Amazon Relational Database Service database. Examples are Aurora or MySQL. 
+   
+  * INSTANCE_TYPE - The type of EC2 instance. An example is ``m4.xlarge`` . 
+   
+  * LEGAL_ENTITY_NAME - The name of the organization that sells you AWS services, such as Amazon Web Services. 
+   
+  * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account. 
+   
+  * OPERATING_SYSTEM - The operating system. Examples are Windows or Linux. 
+   
+  * OPERATION - The action performed. Examples include ``RunInstance`` and ``CreateBucket`` . 
+   
+  * PLATFORM - The EC2 operating system. Examples are Windows or Linux. 
+   
+  * PURCHASE_TYPE - The reservation type of the purchase to which this usage is related. Examples include On-Demand Instances and Standard Reserved Instances. 
+   
+  * SERVICE - The AWS service such as Amazon DynamoDB. 
+   
+  * USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response for the ``GetDimensionValues`` operation includes a unit attribute. Examples include GB and Hrs. 
+   
+  * USAGE_TYPE_GROUP - The grouping of common usage types. An example is EC2: CloudWatch – Alarms. The response for this operation includes a unit attribute. 
+   
+  * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits. 
+   
+
+   
+
+  If you set the context to ``RESERVATIONS`` , you can use the following dimensions for searching:
+
+   
+
+   
+  * AZ - The Availability Zone. An example is ``us-east-1a`` . 
+   
+  * CACHE_ENGINE - The Amazon ElastiCache operating system. Examples are Windows or Linux. 
+   
+  * DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid values are ``SingleAZ`` and ``MultiAZ`` . 
+   
+  * INSTANCE_TYPE - The type of EC2 instance. An example is ``m4.xlarge`` . 
+   
+  * LINKED_ACCOUNT - The description in the attribute map that includes the full name of the member account. The value field contains the AWS ID of the member account. 
+   
+  * PLATFORM - The EC2 operating system. Examples are Windows or Linux. 
+   
+  * REGION - The AWS Region. 
+   
+  * SCOPE (Utilization only) - The scope of a Reserved Instance (RI). Values are regional or a single Availability Zone. 
+   
+  * TAG (Coverage only) - The tags that are associated with a Reserved Instance (RI). 
+   
+  * TENANCY - The tenancy of a resource. Examples are shared or dedicated. 
+   
+
+  
+
+  (structure)
+
+    
+
+    The metadata of a specific type that you can use to filter and group your results. You can use ``GetDimensionValues`` to find specific values.
+
+    
+
+    Value -> (string)
+
+      
+
+      The value of a dimension with a specific attribute.
+
+      
+
+      
+
+    Attributes -> (map)
+
+      
+
+      The attribute that applies to a specific ``Dimension`` .
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (string)
+
+        
+
+        
+
+      
+
+    
+
+  
+
+ReturnSize -> (integer)
+
+  
+
+  The number of results that AWS returned at one time.
+
+  
+
+  
+
+TotalSize -> (integer)
+
+  
+
+  The total number of search results.
+
+  
+
+  
+
+NextPageToken -> (string)
+
+  
+
+  The token for the next set of retrievable results. AWS provides the token when the response from a previous call has more results than the maximum page size.
+
+  
+
+  
+

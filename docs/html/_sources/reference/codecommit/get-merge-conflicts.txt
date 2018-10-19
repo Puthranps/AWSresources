@@ -1,0 +1,148 @@
+[ :ref:`aws <cli:aws>` . :ref:`codecommit <cli:aws codecommit>` ]
+
+.. _cli:aws codecommit get-merge-conflicts:
+
+
+*******************
+get-merge-conflicts
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-merge-conflicts
+  --repository-name <value>
+  --destination-commit-specifier <value>
+  --source-commit-specifier <value>
+  --merge-option <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--repository-name`` (string)
+
+
+  The name of the repository where the pull request was created.
+
+  
+
+``--destination-commit-specifier`` (string)
+
+
+  The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name or a full commit ID.
+
+  
+
+``--source-commit-specifier`` (string)
+
+
+  The branch, tag, HEAD, or other fully qualified reference used to identify a commit. For example, a branch name or a full commit ID.
+
+  
+
+``--merge-option`` (string)
+
+
+  The merge option or strategy you want to use to merge the code. The only valid value is FAST_FORWARD_MERGE.
+
+  
+
+  Possible values:
+
+  
+  *   ``FAST_FORWARD_MERGE``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To view whether there are any merge conflicts for a pull request**
+
+This example demonstrates how to view whether there are any merge conflicts between the tip of a source branch named 'my-feature-branch' and a destination branch named 'master' in a repository named 'MyDemoRepo'::
+
+Command::
+
+  aws codecommit get-merge-conflicts --repository-name MyDemoRepo --source-commit-specifier my-feature-branch --destination-commit-specifier master --merge-option FAST_FORWARD_MERGE
+
+Output::
+
+  {
+    "destinationCommitId": "fac04518EXAMPLE",
+    "mergeable": false,
+    "sourceCommitId": "16d097f03EXAMPLE"
+  }
+
+======
+Output
+======
+
+mergeable -> (boolean)
+
+  
+
+  A Boolean value that indicates whether the code is mergable by the specified merge option.
+
+  
+
+  
+
+destinationCommitId -> (string)
+
+  
+
+  The commit ID of the destination commit specifier that was used in the merge evaluation.
+
+  
+
+  
+
+sourceCommitId -> (string)
+
+  
+
+  The commit ID of the source commit specifier that was used in the merge evaluation.
+
+  
+
+  
+

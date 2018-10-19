@@ -1,0 +1,9 @@
+{
+    "frequency": "BIWEEKLY",
+    "dayOfMonth": "",
+    "dayOfWeek": "MON",
+    "targetCheckNames": [
+        ""
+    ],
+    "scheduledAuditName": ""
+}

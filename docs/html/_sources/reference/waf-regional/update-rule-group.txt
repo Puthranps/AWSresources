@@ -1,0 +1,162 @@
+[ :ref:`aws <cli:aws>` . :ref:`waf-regional <cli:aws waf-regional>` ]
+
+.. _cli:aws waf-regional update-rule-group:
+
+
+*****************
+update-rule-group
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+Inserts or deletes  ActivatedRule objects in a ``RuleGroup`` .
+
+ 
+
+You can only insert ``REGULAR`` rules into a rule group.
+
+ 
+
+You can have a maximum of ten rules per rule group.
+
+ 
+
+To create and configure a ``RuleGroup`` , perform the following steps:
+
+ 
+
+ 
+* Create and update the ``Rules`` that you want to include in the ``RuleGroup`` . See  CreateRule . 
+ 
+* Use ``GetChangeToken`` to get the change token that you provide in the ``ChangeToken`` parameter of an  UpdateRuleGroup request. 
+ 
+* Submit an ``UpdateRuleGroup`` request to add ``Rules`` to the ``RuleGroup`` . 
+ 
+* Create and update a ``WebACL`` that contains the ``RuleGroup`` . See  CreateWebACL . 
+ 
+
+ 
+
+If you want to replace one ``Rule`` with another, you delete the existing one and add the new one.
+
+ 
+
+For more information about how to use the AWS WAF API to allow or block HTTP requests, see the `AWS WAF Developer Guide <http://docs.aws.amazon.com/waf/latest/developerguide/>`__ .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/waf-regional-2016-11-28/UpdateRuleGroup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-rule-group
+  --rule-group-id <value>
+  --updates <value>
+  --change-token <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--rule-group-id`` (string)
+
+
+  The ``RuleGroupId`` of the  RuleGroup that you want to update. ``RuleGroupId`` is returned by  CreateRuleGroup and by  ListRuleGroups .
+
+  
+
+``--updates`` (list)
+
+
+  An array of ``RuleGroupUpdate`` objects that you want to insert into or delete from a  RuleGroup .
+
+   
+
+  You can only insert ``REGULAR`` rules into a rule group.
+
+   
+
+   ``ActivatedRule|OverrideAction`` applies only when updating or adding a ``RuleGroup`` to a ``WebACL`` . In this case you do not use ``ActivatedRule|Action`` . For all other update requests, ``ActivatedRule|Action`` is used instead of ``ActivatedRule|OverrideAction`` .
+
+  
+
+
+
+Shorthand Syntax::
+
+    Action=string,ActivatedRule={Priority=integer,RuleId=string,Action={Type=string},OverrideAction={Type=string},Type=string} ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Action": "INSERT"|"DELETE",
+      "ActivatedRule": {
+        "Priority": integer,
+        "RuleId": "string",
+        "Action": {
+          "Type": "BLOCK"|"ALLOW"|"COUNT"
+        },
+        "OverrideAction": {
+          "Type": "NONE"|"COUNT"
+        },
+        "Type": "REGULAR"|"RATE_BASED"|"GROUP"
+      }
+    }
+    ...
+  ]
+
+
+
+``--change-token`` (string)
+
+
+  The value returned by the most recent call to  GetChangeToken .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ChangeToken -> (string)
+
+  
+
+  The ``ChangeToken`` that you used to submit the ``UpdateRuleGroup`` request. You can also use this value to query the status of the request. For more information, see  GetChangeTokenStatus .
+
+  
+
+  
+

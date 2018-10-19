@@ -1,0 +1,89 @@
+[ :ref:`aws <cli:aws>` . :ref:`shield <cli:aws shield>` ]
+
+.. _cli:aws shield associate-drt-role:
+
+
+******************
+associate-drt-role
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create or update AWS WAF rules and web ACLs.
+
+ 
+
+You can associate only one ``RoleArn`` with your subscription. If you submit an ``AssociateDRTRole`` request for an account that already has an associated role, the new ``RoleArn`` will replace the existing ``RoleArn`` . 
+
+ 
+
+Prior to making the ``AssociateDRTRole`` request, you must attach the `AWSShieldDRTAccessPolicy <https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy>`__ managed policy to the role you will specify in the request. For more information see `Attaching and Detaching IAM Policies < https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html>`__ . The role must also trust the service principal ``drt.shield.amazonaws.com`` . For more information, see `IAM JSON Policy Elements\: Principal <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html>`__ .
+
+ 
+
+The DRT will have access only to your AWS WAF and Shield resources. By submitting this request, you authorize the DRT to inspect your AWS WAF and Shield configuration and create and update AWS WAF rules and web ACLs on your behalf. The DRT takes these actions only if explicitly authorized by you.
+
+ 
+
+You must have the ``iam:PassRole`` permission to make an ``AssociateDRTRole`` request. For more information, see `Granting a User Permissions to Pass a Role to an AWS Service <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html>`__ . 
+
+ 
+
+To use the services of the DRT and make an ``AssociateDRTRole`` request, you must be subscribed to the `Business Support plan <https://aws.amazon.com/premiumsupport/business-support/>`__ or the `Enterprise Support plan <https://aws.amazon.com/premiumsupport/enterprise-support/>`__ .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateDRTRole>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    associate-drt-role
+  --role-arn <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--role-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the role the DRT will use to access your AWS account.
+
+   
+
+  Prior to making the ``AssociateDRTRole`` request, you must attach the `AWSShieldDRTAccessPolicy <https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy>`__ managed policy to this role. For more information see `Attaching and Detaching IAM Policies < https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html>`__ .
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+

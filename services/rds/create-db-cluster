@@ -1,0 +1,46 @@
+{
+    "AvailabilityZones": [
+        ""
+    ],
+    "BackupRetentionPeriod": 0,
+    "CharacterSetName": "",
+    "DatabaseName": "",
+    "DBClusterIdentifier": "",
+    "DBClusterParameterGroupName": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "DBSubnetGroupName": "",
+    "Engine": "",
+    "EngineVersion": "",
+    "Port": 0,
+    "MasterUsername": "",
+    "MasterUserPassword": "",
+    "OptionGroupName": "",
+    "PreferredBackupWindow": "",
+    "PreferredMaintenanceWindow": "",
+    "ReplicationSourceIdentifier": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "StorageEncrypted": true,
+    "KmsKeyId": "",
+    "PreSignedUrl": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "BacktrackWindow": 0,
+    "EnableCloudwatchLogsExports": [
+        ""
+    ],
+    "EngineMode": "",
+    "ScalingConfiguration": {
+        "MinCapacity": 0,
+        "MaxCapacity": 0,
+        "AutoPause": true,
+        "SecondsUntilAutoPause": 0
+    },
+    "DeletionProtection": true,
+    "SourceRegion": ""
+}

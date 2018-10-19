@@ -1,0 +1,10 @@
+{
+    "FunctionName": "",
+    "ZipFile": null,
+    "S3Bucket": "",
+    "S3Key": "",
+    "S3ObjectVersion": "",
+    "Publish": true,
+    "DryRun": true,
+    "RevisionId": ""
+}

@@ -1,0 +1,6 @@
+{
+    "TableName": "",
+    "PointInTimeRecoverySpecification": {
+        "PointInTimeRecoveryEnabled": true
+    }
+}

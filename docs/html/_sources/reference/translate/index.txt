@@ -1,0 +1,31 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws translate:
+
+
+*********
+translate
+*********
+
+
+
+===========
+Description
+===========
+
+
+
+Provides translation between English and one of six languages, or between one of the six languages and English.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  translate-text

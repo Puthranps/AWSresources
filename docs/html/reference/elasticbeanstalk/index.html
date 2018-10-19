@@ -1,0 +1,249 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>elasticbeanstalk &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="abort-environment-update" href="../elasticbeanstalk/abort-environment-update.html" />
+    <link rel="prev" title="replication-group-deleted" href="../elasticache/wait/replication-group-deleted.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../elasticbeanstalk/abort-environment-update.html" title="abort-environment-update"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../elasticache/wait/replication-group-deleted.html" title="replication-group-deleted"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elasticache/wait/replication-group-deleted.html" title="previous chapter (use the left arrow)">&larr; replication-group-deleted</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elasticbeanstalk/abort-environment-update.html" title="next chapter (use the right arrow)">abort-environment-update &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">elasticbeanstalk</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/elasticbeanstalk/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="elasticbeanstalk">
+<span id="cli-aws-elasticbeanstalk"></span><h1>elasticbeanstalk<a class="headerlink" href="#elasticbeanstalk" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.</p>
+<p>For more information about this product, go to the <a class="reference external" href="http://aws.amazon.com/elasticbeanstalk/">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a class="reference external" href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a> . To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a class="reference external" href="http://aws.amazon.com/tools/">Tools for Amazon Web Services</a> .</p>
+<blockquote>
+<div><strong>Endpoints</strong></div></blockquote>
+<p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a class="reference external" href="http://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region">Regions and Endpoints</a> in the <em>Amazon Web Services Glossary</em> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/abort-environment-update.html">abort-environment-update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/apply-environment-managed-action.html">apply-environment-managed-action</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/check-dns-availability.html">check-dns-availability</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/compose-environments.html">compose-environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/create-application.html">create-application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/create-application-version.html">create-application-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/create-configuration-template.html">create-configuration-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/create-environment.html">create-environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/create-platform-version.html">create-platform-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/create-storage-location.html">create-storage-location</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/delete-application.html">delete-application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/delete-application-version.html">delete-application-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/delete-configuration-template.html">delete-configuration-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/delete-environment-configuration.html">delete-environment-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/delete-platform-version.html">delete-platform-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-account-attributes.html">describe-account-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-application-versions.html">describe-application-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-applications.html">describe-applications</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-configuration-options.html">describe-configuration-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-configuration-settings.html">describe-configuration-settings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-environment-health.html">describe-environment-health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-environment-managed-action-history.html">describe-environment-managed-action-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-environment-managed-actions.html">describe-environment-managed-actions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-environment-resources.html">describe-environment-resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-environments.html">describe-environments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-events.html">describe-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-instances-health.html">describe-instances-health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/describe-platform-version.html">describe-platform-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/list-available-solution-stacks.html">list-available-solution-stacks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/list-platform-versions.html">list-platform-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/list-tags-for-resource.html">list-tags-for-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/rebuild-environment.html">rebuild-environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/request-environment-info.html">request-environment-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/restart-app-server.html">restart-app-server</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/retrieve-environment-info.html">retrieve-environment-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/swap-environment-cnames.html">swap-environment-cnames</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/terminate-environment.html">terminate-environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/update-application.html">update-application</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/update-application-resource-lifecycle.html">update-application-resource-lifecycle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/update-application-version.html">update-application-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/update-configuration-template.html">update-configuration-template</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/update-environment.html">update-environment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/update-tags-for-resource.html">update-tags-for-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elasticbeanstalk/validate-configuration-settings.html">validate-configuration-settings</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elasticache/wait/replication-group-deleted.html" title="previous chapter (use the left arrow)">&larr; replication-group-deleted</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elasticbeanstalk/abort-environment-update.html" title="next chapter (use the right arrow)">abort-environment-update &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../elasticbeanstalk/abort-environment-update.html" title="abort-environment-update"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../elasticache/wait/replication-group-deleted.html" title="replication-group-deleted"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

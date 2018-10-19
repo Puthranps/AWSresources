@@ -1,0 +1,23 @@
+{
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "",
+            "VirtualName": "",
+            "Ebs": {
+                "DeleteOnTermination": true,
+                "Iops": 0,
+                "SnapshotId": "",
+                "VolumeSize": 0,
+                "VolumeType": "sc1",
+                "Encrypted": true,
+                "KmsKeyId": ""
+            },
+            "NoDevice": ""
+        }
+    ],
+    "Description": "",
+    "DryRun": true,
+    "InstanceId": "",
+    "Name": "",
+    "NoReboot": true
+}

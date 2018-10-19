@@ -1,0 +1,582 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-service &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ecs" href="../ecs/index.html" />
+    <link rel="next" title="wait" href="../ecs/wait/index.html" />
+    <link rel="prev" title="update-container-instances-state" href="../ecs/update-container-instances-state.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ecs/wait/index.html" title="wait"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ecs/update-container-instances-state.html" title="update-container-instances-state"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ecs/index.html" accesskey="U">ecs</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ecs/update-container-instances-state.html" title="previous chapter (use the left arrow)">&larr; update-container-instances-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ecs/wait/index.html" title="next chapter (use the right arrow)">wait &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-service</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ecs/update-service">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ecs/index.html#cli-aws-ecs"><em>ecs</em></a> ]</p>
+<div class="section" id="update-service">
+<span id="cli-aws-ecs-update-service"></span><h1>update-service<a class="headerlink" href="#update-service" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Modifies the desired count, deployment configuration, network configuration, or task definition used in a service.</p>
+<p>You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new <tt class="docutils literal"><span class="pre">desiredCount</span></tt> parameter.</p>
+<p>If you have updated the Docker image of your application, you can create a new task definition with that image and deploy it to your service. The service scheduler uses the minimum healthy percent and maximum percent parameters (in the service's deployment configuration) to determine the deployment strategy.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If your updated Docker image uses the same tag as what is in the existing task definition for your service (for example, <tt class="docutils literal"><span class="pre">my_image:latest</span></tt> ), you do not need to create a new revision of your task definition. You can update the service using the <tt class="docutils literal"><span class="pre">forceNewDeployment</span></tt> option. The new tasks launched by the deployment pull the current image/tag combination from your repository when they start.</p>
+</div>
+<p>You can also update the deployment configuration of a service. When a deployment is triggered by updating the task definition of a service, the service scheduler uses the deployment configuration parameters, <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> and <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> , to determine the deployment strategy.</p>
+<ul class="simple">
+<li>If <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> is below 100%, the scheduler can ignore <tt class="docutils literal"><span class="pre">desiredCount</span></tt> temporarily during a deployment. For example, if <tt class="docutils literal"><span class="pre">desiredCount</span></tt> is four tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting two new tasks. Tasks for services that do not use a load balancer are considered healthy if they are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state. Tasks for services that use a load balancer are considered healthy if they are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state and the container instance they are hosted on is reported as healthy by the load balancer.</li>
+<li>The <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> parameter represents an upper limit on the number of running tasks during a deployment, which enables you to define the deployment batch size. For example, if <tt class="docutils literal"><span class="pre">desiredCount</span></tt> is four tasks, a maximum of 200% starts four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available).</li>
+</ul>
+<p>When  UpdateService stops a task during a deployment, the equivalent of <tt class="docutils literal"><span class="pre">docker</span> <span class="pre">stop</span></tt> is issued to the containers running in the task. This results in a <tt class="docutils literal"><span class="pre">SIGTERM</span></tt> and a 30-second timeout, after which <tt class="docutils literal"><span class="pre">SIGKILL</span></tt> is sent and the containers are forcibly stopped. If the container handles the <tt class="docutils literal"><span class="pre">SIGTERM</span></tt> gracefully and exits within 30 seconds from receiving it, no <tt class="docutils literal"><span class="pre">SIGKILL</span></tt> is sent.</p>
+<p>When the service scheduler launches new tasks, it determines task placement in your cluster with the following logic:</p>
+<ul class="simple">
+<li>Determine which of the container instances in your cluster can support your service's task definition (for example, they have the required CPU, memory, ports, and container instance attributes).</li>
+<li>By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although you can choose a different placement strategy):<ul>
+<li>Sort the valid container instances by the fewest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement.</li>
+<li>Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service.</li>
+</ul>
+</li>
+</ul>
+<p>When the service scheduler stops running tasks, it attempts to maintain balance across the Availability Zones in your cluster using the following logic:</p>
+<ul class="simple">
+<li>Sort the container instances by the largest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have two, container instances in either zone B or C are considered optimal for termination.</li>
+<li>Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the largest number of running tasks for this service.</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-service
+[--cluster &lt;value&gt;]
+--service &lt;value&gt;
+[--desired-count &lt;value&gt;]
+[--task-definition &lt;value&gt;]
+[--deployment-configuration &lt;value&gt;]
+[--network-configuration &lt;value&gt;]
+[--platform-version &lt;value&gt;]
+[--force-new-deployment | --no-force-new-deployment]
+[--health-check-grace-period-seconds &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--cluster</span></tt> (string)</p>
+<blockquote>
+<div>The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--service</span></tt> (string)</p>
+<blockquote>
+<div>The name of the service to update.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--desired-count</span></tt> (integer)</p>
+<blockquote>
+<div>The number of instantiations of the task to place and keep running in your service.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--task-definition</span></tt> (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">family</span></tt> and <tt class="docutils literal"><span class="pre">revision</span></tt> (<tt class="docutils literal"><span class="pre">family:revision</span></tt> ) or full ARN of the task definition to run in your service. If a <tt class="docutils literal"><span class="pre">revision</span></tt> is not specified, the latest <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> revision is used. If you modify the task definition with <tt class="docutils literal"><span class="pre">UpdateService</span></tt> , Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--deployment-configuration</span></tt> (structure)</p>
+<blockquote>
+<div>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">maximumPercent</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">minimumHealthyPercent</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;maximumPercent&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;minimumHealthyPercent&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--network-configuration</span></tt> (structure)</p>
+<blockquote>
+<div><p>The network configuration for the service. This parameter is required for task definitions that use the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode to receive their own elastic network interface, and it is not supported for other network modes. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task Networking</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For example, if your network configuration change is to keep the existing subnets and simply add another subnet to the network configuration, this does not trigger a new service deployment.</p>
+</div>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>awsvpcConfiguration={subnets=[string,string],securityGroups=[string,string],assignPublicIp=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;awsvpcConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;securityGroups&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+    <span class="s2">&quot;assignPublicIp&quot;</span><span class="p">:</span> <span class="s2">&quot;ENABLED&quot;</span><span class="o">|</span><span class="s2">&quot;DISABLED&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--platform-version</span></tt> (string)</p>
+<blockquote>
+<div>The platform version that your service should run.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--force-new-deployment</span></tt> | <tt class="docutils literal"><span class="pre">--no-force-new-deployment</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (<tt class="docutils literal"><span class="pre">my_image:latest</span></tt> ) or to roll Fargate tasks onto a newer platform version.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--health-check-grace-period-seconds</span></tt> (integer)</p>
+<blockquote>
+<div>The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To change the task definition used in a service</strong></p>
+<p>This example command updates the <tt class="docutils literal"><span class="pre">my-http-service</span></tt> service to use the <tt class="docutils literal"><span class="pre">amazon-ecs-sample</span></tt> task definition.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ecs update-service --service my-http-service --task-definition amazon-ecs-sample</pre>
+</div>
+<p><strong>To change the number of tasks in a service</strong></p>
+<p>This example command updates the desired count of the <tt class="docutils literal"><span class="pre">my-http-service</span></tt> service to 10.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ecs update-service --service my-http-service --desired-count 10</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>service -&gt; (structure)</p>
+<blockquote>
+<div><p>The full description of your service following the update call.</p>
+<p>serviceArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN that identifies the service. The ARN contains the <tt class="docutils literal"><span class="pre">arn:aws:ecs</span></tt> namespace, followed by the Region of the service, the AWS account ID of the service owner, the <tt class="docutils literal"><span class="pre">service</span></tt> namespace, and then the service name. For example, <a href="#id1"><span class="problematic" id="id2">``</span></a>arn:aws:ecs:<em>region</em> :<em>012345678910</em> :service/<em>my-service</em> `` .</div></blockquote>
+<p>serviceName -&gt; (string)</p>
+<blockquote>
+<div>The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.</div></blockquote>
+<p>clusterArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the cluster that hosts the service.</div></blockquote>
+<p>loadBalancers -&gt; (list)</p>
+<blockquote>
+<div><p>A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.</p>
+<p>Services with tasks that use the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <tt class="docutils literal"><span class="pre">ip</span></tt> as the target type, not <tt class="docutils literal"><span class="pre">instance</span></tt> , because tasks that use the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Details on a load balancer that is used with a service.</p>
+<p>Services with tasks that use the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose <tt class="docutils literal"><span class="pre">ip</span></tt> as the target type, not <tt class="docutils literal"><span class="pre">instance</span></tt> , because tasks that use the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
+<p>targetGroupArn -&gt; (string)</p>
+<blockquote>
+<div><p>The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">If your service's task definition uses the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode (which is required for the Fargate launch type), you must choose <tt class="docutils literal"><span class="pre">ip</span></tt> as the target type, not <tt class="docutils literal"><span class="pre">instance</span></tt> , because tasks that use the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode are associated with an elastic network interface, not an Amazon EC2 instance.</p>
+</div>
+</div></blockquote>
+<p>loadBalancerName -&gt; (string)</p>
+<blockquote>
+<div>The name of a load balancer.</div></blockquote>
+<p>containerName -&gt; (string)</p>
+<blockquote>
+<div>The name of the container (as it appears in a container definition) to associate with the load balancer.</div></blockquote>
+<p>containerPort -&gt; (integer)</p>
+<blockquote>
+<div>The port on the container to associate with the load balancer. This port must correspond to a <tt class="docutils literal"><span class="pre">containerPort</span></tt> in the service's task definition. Your container instances must allow ingress traffic on the <tt class="docutils literal"><span class="pre">hostPort</span></tt> of the port mapping.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>serviceRegistries -&gt; (list)</p>
+<blockquote>
+<div><p>(structure)</p>
+<blockquote>
+<div><p>Details of the service registry.</p>
+<p>registryArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route 53 Auto Naming. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html">Service</a> .</div></blockquote>
+<p>port -&gt; (integer)</p>
+<blockquote>
+<div>The port value used if your service discovery service specified an SRV record. This field may be used if both the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode and SRV records are used.</div></blockquote>
+<p>containerName -&gt; (string)</p>
+<blockquote>
+<div>The container name value, already specified in the task definition, to be used for your service discovery service. If the task definition that your service task specifies uses the <tt class="docutils literal"><span class="pre">bridge</span></tt> or <tt class="docutils literal"><span class="pre">host</span></tt> network mode, you must specify a <tt class="docutils literal"><span class="pre">containerName</span></tt> and <tt class="docutils literal"><span class="pre">containerPort</span></tt> combination from the task definition. If the task definition that your service task specifies uses the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode and a type SRV DNS record is used, you must specify either a <tt class="docutils literal"><span class="pre">containerName</span></tt> and <tt class="docutils literal"><span class="pre">containerPort</span></tt> combination or a <tt class="docutils literal"><span class="pre">port</span></tt> value, but not both.</div></blockquote>
+<p>containerPort -&gt; (integer)</p>
+<blockquote>
+<div>The port value, already specified in the task definition, to be used for your service discovery service. If the task definition your service task specifies uses the <tt class="docutils literal"><span class="pre">bridge</span></tt> or <tt class="docutils literal"><span class="pre">host</span></tt> network mode, you must specify a <tt class="docutils literal"><span class="pre">containerName</span></tt> and <tt class="docutils literal"><span class="pre">containerPort</span></tt> combination from the task definition. If the task definition your service task specifies uses the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> network mode and a type SRV DNS record is used, you must specify either a <tt class="docutils literal"><span class="pre">containerName</span></tt> and <tt class="docutils literal"><span class="pre">containerPort</span></tt> combination or a <tt class="docutils literal"><span class="pre">port</span></tt> value, but not both.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div>The status of the service. The valid values are <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> , <tt class="docutils literal"><span class="pre">DRAINING</span></tt> , or <tt class="docutils literal"><span class="pre">INACTIVE</span></tt> .</div></blockquote>
+<p>desiredCount -&gt; (integer)</p>
+<blockquote>
+<div>The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with  CreateService , and it can be modified with  UpdateService .</div></blockquote>
+<p>runningCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of tasks in the cluster that are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state.</div></blockquote>
+<p>pendingCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of tasks in the cluster that are in the <tt class="docutils literal"><span class="pre">PENDING</span></tt> state.</div></blockquote>
+<p>launchType -&gt; (string)</p>
+<blockquote>
+<div>The launch type on which your service is running.</div></blockquote>
+<p>platformVersion -&gt; (string)</p>
+<blockquote>
+<div>The platform version on which your task is running. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS Fargate Platform Versions</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</div></blockquote>
+<p>taskDefinition -&gt; (string)</p>
+<blockquote>
+<div>The task definition to use for tasks in the service. This value is specified when the service is created with  CreateService , and it can be modified with  UpdateService .</div></blockquote>
+<p>deploymentConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.</p>
+<p>maximumPercent -&gt; (integer)</p>
+<blockquote>
+<div>The upper limit (as a percentage of the service's <tt class="docutils literal"><span class="pre">desiredCount</span></tt> ) of the number of tasks that are allowed in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> or <tt class="docutils literal"><span class="pre">PENDING</span></tt> state in a service during a deployment. The maximum number of tasks during a deployment is the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> multiplied by <tt class="docutils literal"><span class="pre">maximumPercent</span></tt> /100, rounded down to the nearest integer value.</div></blockquote>
+<p>minimumHealthyPercent -&gt; (integer)</p>
+<blockquote>
+<div>The lower limit (as a percentage of the service's <tt class="docutils literal"><span class="pre">desiredCount</span></tt> ) of the number of running tasks that must remain in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> state in a service during a deployment. The minimum number of healthy tasks during a deployment is the <tt class="docutils literal"><span class="pre">desiredCount</span></tt> multiplied by <tt class="docutils literal"><span class="pre">minimumHealthyPercent</span></tt> /100, rounded up to the nearest integer value.</div></blockquote>
+</div></blockquote>
+<p>deployments -&gt; (list)</p>
+<blockquote>
+<div><p>The current state of deployments for the service.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The details of an Amazon ECS service deployment.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The ID of the deployment.</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div>The status of the deployment. Valid values are <tt class="docutils literal"><span class="pre">PRIMARY</span></tt> (for the most recent deployment), <tt class="docutils literal"><span class="pre">ACTIVE</span></tt> (for previous deployments that still have tasks running, but are being replaced with the <tt class="docutils literal"><span class="pre">PRIMARY</span></tt> deployment), and <tt class="docutils literal"><span class="pre">INACTIVE</span></tt> (for deployments that have been completely replaced).</div></blockquote>
+<p>taskDefinition -&gt; (string)</p>
+<blockquote>
+<div>The most recent task definition that was specified for the service to use.</div></blockquote>
+<p>desiredCount -&gt; (integer)</p>
+<blockquote>
+<div>The most recent desired count of tasks that was specified for the service to deploy or maintain.</div></blockquote>
+<p>pendingCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of tasks in the deployment that are in the <tt class="docutils literal"><span class="pre">PENDING</span></tt> status.</div></blockquote>
+<p>runningCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of tasks in the deployment that are in the <tt class="docutils literal"><span class="pre">RUNNING</span></tt> status.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time stamp for when the service was created.</div></blockquote>
+<p>updatedAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time stamp for when the service was last updated.</div></blockquote>
+<p>launchType -&gt; (string)</p>
+<blockquote>
+<div>The launch type on which your service is running.</div></blockquote>
+<p>platformVersion -&gt; (string)</p>
+<blockquote>
+<div>The platform version on which your service is running.</div></blockquote>
+<p>networkConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> networking mode.</p>
+<p>awsvpcConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC subnets and security groups associated with a task.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All specified subnets and security groups must be from the same VPC.</p>
+</div>
+<p>subnets -&gt; (list)</p>
+<blockquote>
+<div><p>The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per <tt class="docutils literal"><span class="pre">AwsVpcConfiguration</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All specified subnets must be from the same VPC.</p>
+</div>
+<p>(string)</p>
+</div></blockquote>
+<p>securityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups able to be specified per <tt class="docutils literal"><span class="pre">AwsVpcConfiguration</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All specified security groups must be from the same VPC.</p>
+</div>
+<p>(string)</p>
+</div></blockquote>
+<p>assignPublicIp -&gt; (string)</p>
+<blockquote>
+<div>Whether the task's elastic network interface receives a public IP address. The default value is <tt class="docutils literal"><span class="pre">DISABLED</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.</div></blockquote>
+<p>events -&gt; (list)</p>
+<blockquote>
+<div><p>The event stream for your service. A maximum of 100 of the latest events are displayed.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Details on an event associated with a service.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The ID string of the event.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time stamp for when the event was triggered.</div></blockquote>
+<p>message -&gt; (string)</p>
+<blockquote>
+<div>The event message.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix time stamp for when the service was created.</div></blockquote>
+<p>placementConstraints -&gt; (list)</p>
+<blockquote>
+<div><p>The placement constraints for the tasks in the service.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing a constraint on task placement. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement Constraints</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of constraint. Use <tt class="docutils literal"><span class="pre">distinctInstance</span></tt> to ensure that each task in a particular group is running on a different container instance. Use <tt class="docutils literal"><span class="pre">memberOf</span></tt> to restrict the selection to a group of valid candidates. The value <tt class="docutils literal"><span class="pre">distinctInstance</span></tt> is not supported in task definitions.</div></blockquote>
+<p>expression -&gt; (string)</p>
+<blockquote>
+<div>A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is <tt class="docutils literal"><span class="pre">distinctInstance</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>placementStrategy -&gt; (list)</p>
+<blockquote>
+<div><p>The placement strategy that determines how tasks for the service are placed.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The task placement strategy for a task or service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html">Task Placement Strategies</a> in the <em>Amazon Elastic Container Service Developer Guide</em> .</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of placement strategy. The <tt class="docutils literal"><span class="pre">random</span></tt> placement strategy randomly places tasks on available candidates. The <tt class="docutils literal"><span class="pre">spread</span></tt> placement strategy spreads placement across available candidates evenly based on the <tt class="docutils literal"><span class="pre">field</span></tt> parameter. The <tt class="docutils literal"><span class="pre">binpack</span></tt> strategy places tasks on available candidates that have the least available amount of the resource that is specified with the <tt class="docutils literal"><span class="pre">field</span></tt> parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).</div></blockquote>
+<p>field -&gt; (string)</p>
+<blockquote>
+<div>The field to apply the placement strategy against. For the <tt class="docutils literal"><span class="pre">spread</span></tt> placement strategy, valid values are <tt class="docutils literal"><span class="pre">instanceId</span></tt> (or <tt class="docutils literal"><span class="pre">host</span></tt> , which has the same effect), or any platform or custom attribute that is applied to a container instance, such as <tt class="docutils literal"><span class="pre">attribute:ecs.availability-zone</span></tt> . For the <tt class="docutils literal"><span class="pre">binpack</span></tt> placement strategy, valid values are <tt class="docutils literal"><span class="pre">cpu</span></tt> and <tt class="docutils literal"><span class="pre">memory</span></tt> . For the <tt class="docutils literal"><span class="pre">random</span></tt> placement strategy, this field is not used.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>networkConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the <tt class="docutils literal"><span class="pre">awsvpc</span></tt> networking mode.</p>
+<p>awsvpcConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC subnets and security groups associated with a task.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All specified subnets and security groups must be from the same VPC.</p>
+</div>
+<p>subnets -&gt; (list)</p>
+<blockquote>
+<div><p>The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per <tt class="docutils literal"><span class="pre">AwsVpcConfiguration</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All specified subnets must be from the same VPC.</p>
+</div>
+<p>(string)</p>
+</div></blockquote>
+<p>securityGroups -&gt; (list)</p>
+<blockquote>
+<div><p>The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups able to be specified per <tt class="docutils literal"><span class="pre">AwsVpcConfiguration</span></tt> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">All specified security groups must be from the same VPC.</p>
+</div>
+<p>(string)</p>
+</div></blockquote>
+<p>assignPublicIp -&gt; (string)</p>
+<blockquote>
+<div>Whether the task's elastic network interface receives a public IP address. The default value is <tt class="docutils literal"><span class="pre">DISABLED</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>healthCheckGracePeriodSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.</div></blockquote>
+<p>schedulingStrategy -&gt; (string)</p>
+<blockquote>
+<div><p>The scheduling strategy to use for the service. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a> .</p>
+<p>There are two service scheduler strategies available:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">REPLICA</span></tt> -The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions.</li>
+<li><tt class="docutils literal"><span class="pre">DAEMON</span></tt> -The daemon scheduling strategy deploys exactly one task on each container instance in your cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Fargate tasks do not support the <tt class="docutils literal"><span class="pre">DAEMON</span></tt> scheduling strategy.</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ecs/update-container-instances-state.html" title="previous chapter (use the left arrow)">&larr; update-container-instances-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ecs/wait/index.html" title="next chapter (use the right arrow)">wait &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ecs/wait/index.html" title="wait"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ecs/update-container-instances-state.html" title="update-container-instances-state"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ecs/index.html" >ecs</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

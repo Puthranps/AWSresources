@@ -1,0 +1,15 @@
+{
+    "PolicyIds": [
+        ""
+    ],
+    "State": "ENABLED",
+    "ResourceTypes": [
+        "VOLUME"
+    ],
+    "TargetTags": [
+        ""
+    ],
+    "TagsToAdd": [
+        ""
+    ]
+}

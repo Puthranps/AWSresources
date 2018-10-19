@@ -1,0 +1,99 @@
+[ :ref:`aws <cli:aws>` . :ref:`storagegateway <cli:aws storagegateway>` ]
+
+.. _cli:aws storagegateway join-domain:
+
+
+***********
+join-domain
+***********
+
+
+
+===========
+Description
+===========
+
+
+
+Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that support the SMB file protocol.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/JoinDomain>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    join-domain
+  --gateway-arn <value>
+  --domain-name <value>
+  --user-name <value>
+  --password <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--gateway-arn`` (string)
+
+
+  The unique Amazon Resource Name (ARN) of the file gateway you want to add to the Active Directory domain. 
+
+  
+
+``--domain-name`` (string)
+
+
+  The name of the domain that you want the gateway to join.
+
+  
+
+``--user-name`` (string)
+
+
+  Sets the user name of user who has permission to add the gateway to the Active Directory domain.
+
+  
+
+``--password`` (string)
+
+
+  Sets the password of the user who has permission to add the gateway to the Active Directory domain.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+GatewayARN -> (string)
+
+  
+
+  The unique Amazon Resource Name (ARN) of the gateway that joined the domain.
+
+  
+
+  
+

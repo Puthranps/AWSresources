@@ -1,0 +1,25 @@
+{
+    "name": "",
+    "description": "",
+    "apiStages": [
+        {
+            "apiId": "",
+            "stage": "",
+            "throttle": {
+                "KeyName": {
+                    "burstLimit": 0,
+                    "rateLimit": null
+                }
+            }
+        }
+    ],
+    "throttle": {
+        "burstLimit": 0,
+        "rateLimit": null
+    },
+    "quota": {
+        "limit": 0,
+        "offset": 0,
+        "period": "MONTH"
+    }
+}

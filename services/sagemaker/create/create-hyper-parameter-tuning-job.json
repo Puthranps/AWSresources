@@ -1,0 +1,96 @@
+{
+    "HyperParameterTuningJobName": "",
+    "HyperParameterTuningJobConfig": {
+        "Strategy": "Bayesian",
+        "HyperParameterTuningJobObjective": {
+            "Type": "Minimize",
+            "MetricName": ""
+        },
+        "ResourceLimits": {
+            "MaxNumberOfTrainingJobs": 0,
+            "MaxParallelTrainingJobs": 0
+        },
+        "ParameterRanges": {
+            "IntegerParameterRanges": [
+                {
+                    "Name": "",
+                    "MinValue": "",
+                    "MaxValue": ""
+                }
+            ],
+            "ContinuousParameterRanges": [
+                {
+                    "Name": "",
+                    "MinValue": "",
+                    "MaxValue": ""
+                }
+            ],
+            "CategoricalParameterRanges": [
+                {
+                    "Name": "",
+                    "Values": [
+                        ""
+                    ]
+                }
+            ]
+        }
+    },
+    "TrainingJobDefinition": {
+        "StaticHyperParameters": {
+            "KeyName": ""
+        },
+        "AlgorithmSpecification": {
+            "TrainingImage": "",
+            "TrainingInputMode": "Pipe",
+            "MetricDefinitions": [
+                {
+                    "Name": "",
+                    "Regex": ""
+                }
+            ]
+        },
+        "RoleArn": "",
+        "InputDataConfig": [
+            {
+                "ChannelName": "",
+                "DataSource": {
+                    "S3DataSource": {
+                        "S3DataType": "S3Prefix",
+                        "S3Uri": "",
+                        "S3DataDistributionType": "ShardedByS3Key"
+                    }
+                },
+                "ContentType": "",
+                "CompressionType": "Gzip",
+                "RecordWrapperType": "None"
+            }
+        ],
+        "VpcConfig": {
+            "SecurityGroupIds": [
+                ""
+            ],
+            "Subnets": [
+                ""
+            ]
+        },
+        "OutputDataConfig": {
+            "KmsKeyId": "",
+            "S3OutputPath": ""
+        },
+        "ResourceConfig": {
+            "InstanceType": "ml.m4.16xlarge",
+            "InstanceCount": 0,
+            "VolumeSizeInGB": 0,
+            "VolumeKmsKeyId": ""
+        },
+        "StoppingCondition": {
+            "MaxRuntimeInSeconds": 0
+        }
+    },
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

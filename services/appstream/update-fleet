@@ -1,0 +1,30 @@
+{
+    "ImageName": "",
+    "ImageArn": "",
+    "Name": "",
+    "InstanceType": "",
+    "ComputeCapacity": {
+        "DesiredInstances": 0
+    },
+    "VpcConfig": {
+        "SubnetIds": [
+            ""
+        ],
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "MaxUserDurationInSeconds": 0,
+    "DisconnectTimeoutInSeconds": 0,
+    "DeleteVpcConfig": true,
+    "Description": "",
+    "DisplayName": "",
+    "EnableDefaultInternetAccess": true,
+    "DomainJoinInfo": {
+        "DirectoryName": "",
+        "OrganizationalUnitDistinguishedName": ""
+    },
+    "AttributesToDelete": [
+        "VPC_CONFIGURATION"
+    ]
+}

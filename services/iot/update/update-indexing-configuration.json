@@ -1,0 +1,8 @@
+{
+    "thingIndexingConfiguration": {
+        "thingIndexingMode": "REGISTRY"
+    },
+    "thingGroupIndexingConfiguration": {
+        "thingGroupIndexingMode": "ON"
+    }
+}

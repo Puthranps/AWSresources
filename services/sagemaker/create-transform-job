@@ -1,0 +1,38 @@
+{
+    "TransformJobName": "",
+    "ModelName": "",
+    "MaxConcurrentTransforms": 0,
+    "MaxPayloadInMB": 0,
+    "BatchStrategy": "MultiRecord",
+    "Environment": {
+        "KeyName": ""
+    },
+    "TransformInput": {
+        "DataSource": {
+            "S3DataSource": {
+                "S3DataType": "ManifestFile",
+                "S3Uri": ""
+            }
+        },
+        "ContentType": "",
+        "CompressionType": "None",
+        "SplitType": "RecordIO"
+    },
+    "TransformOutput": {
+        "S3OutputPath": "",
+        "Accept": "",
+        "AssembleWith": "None",
+        "KmsKeyId": ""
+    },
+    "TransformResources": {
+        "InstanceType": "ml.m5.large",
+        "InstanceCount": 0,
+        "VolumeKmsKeyId": ""
+    },
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

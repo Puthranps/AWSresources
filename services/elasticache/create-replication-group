@@ -1,0 +1,53 @@
+{
+    "ReplicationGroupId": "",
+    "ReplicationGroupDescription": "",
+    "PrimaryClusterId": "",
+    "AutomaticFailoverEnabled": true,
+    "NumCacheClusters": 0,
+    "PreferredCacheClusterAZs": [
+        ""
+    ],
+    "NumNodeGroups": 0,
+    "ReplicasPerNodeGroup": 0,
+    "NodeGroupConfiguration": [
+        {
+            "NodeGroupId": "",
+            "Slots": "",
+            "ReplicaCount": 0,
+            "PrimaryAvailabilityZone": "",
+            "ReplicaAvailabilityZones": [
+                ""
+            ]
+        }
+    ],
+    "CacheNodeType": "",
+    "Engine": "",
+    "EngineVersion": "",
+    "CacheParameterGroupName": "",
+    "CacheSubnetGroupName": "",
+    "CacheSecurityGroupNames": [
+        ""
+    ],
+    "SecurityGroupIds": [
+        ""
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "SnapshotArns": [
+        ""
+    ],
+    "SnapshotName": "",
+    "PreferredMaintenanceWindow": "",
+    "Port": 0,
+    "NotificationTopicArn": "",
+    "AutoMinorVersionUpgrade": true,
+    "SnapshotRetentionLimit": 0,
+    "SnapshotWindow": "",
+    "AuthToken": "",
+    "TransitEncryptionEnabled": true,
+    "AtRestEncryptionEnabled": true
+}

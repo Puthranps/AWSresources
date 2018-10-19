@@ -1,0 +1,13 @@
+{
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ],
+            "Type": "EQUAL"
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

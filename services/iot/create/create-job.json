@@ -1,0 +1,20 @@
+{
+    "jobId": "",
+    "targets": [
+        ""
+    ],
+    "documentSource": "",
+    "document": "",
+    "description": "",
+    "presignedUrlConfig": {
+        "roleArn": "",
+        "expiresInSec": 0
+    },
+    "targetSelection": "SNAPSHOT",
+    "jobExecutionsRolloutConfig": {
+        "maximumPerMinute": 0
+    },
+    "timeoutConfig": {
+        "inProgressTimeoutInMinutes": 0
+    }
+}

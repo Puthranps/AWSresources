@@ -1,0 +1,357 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-default-roles &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="emr" href="../emr/index.html" />
+    <link rel="next" title="create-hbase-backup" href="../emr/create-hbase-backup.html" />
+    <link rel="prev" title="create-cluster" href="../emr/create-cluster.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../emr/create-hbase-backup.html" title="create-hbase-backup"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../emr/create-cluster.html" title="create-cluster"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../emr/index.html" accesskey="U">emr</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../emr/create-cluster.html" title="previous chapter (use the left arrow)">&larr; create-cluster</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../emr/create-hbase-backup.html" title="next chapter (use the right arrow)">create-hbase-backup &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-default-roles</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/emr/create-default-roles">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../emr/index.html#cli-aws-emr"><em>emr</em></a> ]</p>
+<div class="section" id="create-default-roles">
+<span id="cli-aws-emr-create-default-roles"></span><h1>create-default-roles<a class="headerlink" href="#create-default-roles" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates the default IAM role EMR_EC2_DefaultRole and EMR_DefaultRole which can be used when creating the cluster using the create-cluster command. The default roles for EMR use managed policies, which are updated automatically to support future EMR functionality.</p>
+<p>If you do not have a Service Role and Instance Profile variable set for your create-cluster command in the AWS CLI config file, create-default-roles will automatically set the values for these variables with these default roles. If you have already set a value for Service Role or Instance Profile, create-default-roles will not automatically set the defaults for these variables in the AWS CLI config file. You can view settings for variables in the config file using the &quot;aws configure get&quot; command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-default-roles
+[--iam-endpoint &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--iam-endpoint</span></tt> (string)</p>
+<blockquote>
+<div>The IAM endpoint to call for creating the roles. This is optional and should only be specified when a custom endpoint should be called for IAM operations.</div></blockquote>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>1. To create the default IAM role for EC2</strong></p>
+<ul>
+<li><p class="first">Command:</p>
+<div class="highlight-python"><pre>aws emr create-default-roles</pre>
+</div>
+</li>
+<li><p class="first">Output:</p>
+<div class="highlight-python"><pre>If the role already exists then the command returns nothing.
+
+If the role does not exist then the output will be:
+
+[
+    {
+        &quot;RolePolicy&quot;: {
+            &quot;Version&quot;: &quot;2012-10-17&quot;,
+            &quot;Statement&quot;: [
+                {
+                    &quot;Action&quot;: [
+                        &quot;cloudwatch:*&quot;,
+                        &quot;dynamodb:*&quot;,
+                        &quot;ec2:Describe*&quot;,
+                        &quot;elasticmapreduce:Describe*&quot;,
+                        &quot;elasticmapreduce:ListBootstrapActions&quot;,
+                        &quot;elasticmapreduce:ListClusters&quot;,
+                        &quot;elasticmapreduce:ListInstanceGroups&quot;,
+                        &quot;elasticmapreduce:ListInstances&quot;,
+                        &quot;elasticmapreduce:ListSteps&quot;,
+                        &quot;kinesis:CreateStream&quot;,
+                        &quot;kinesis:DeleteStream&quot;,
+                        &quot;kinesis:DescribeStream&quot;,
+                        &quot;kinesis:GetRecords&quot;,
+                        &quot;kinesis:GetShardIterator&quot;,
+                        &quot;kinesis:MergeShards&quot;,
+                        &quot;kinesis:PutRecord&quot;,
+                        &quot;kinesis:SplitShard&quot;,
+                        &quot;rds:Describe*&quot;,
+                        &quot;s3:*&quot;,
+                        &quot;sdb:*&quot;,
+                        &quot;sns:*&quot;,
+                        &quot;sqs:*&quot;
+                    ],
+                    &quot;Resource&quot;: &quot;*&quot;,
+                    &quot;Effect&quot;: &quot;Allow&quot;
+                }
+            ]
+        },
+        &quot;Role&quot;: {
+            &quot;AssumeRolePolicyDocument&quot;: {
+                &quot;Version&quot;: &quot;2008-10-17&quot;,
+                &quot;Statement&quot;: [
+                    {
+                        &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+                        &quot;Sid&quot;: &quot;&quot;,
+                        &quot;Effect&quot;: &quot;Allow&quot;,
+                        &quot;Principal&quot;: {
+                            &quot;Service&quot;: &quot;ec2.amazonaws.com&quot;
+                        }
+                    }
+                ]
+            },
+            &quot;RoleId&quot;: &quot;AROAIQ5SIQUGL5KMYBJX6&quot;,
+            &quot;CreateDate&quot;: &quot;2015-06-09T17:09:04.602Z&quot;,
+            &quot;RoleName&quot;: &quot;EMR_EC2_DefaultRole&quot;,
+            &quot;Path&quot;: &quot;/&quot;,
+            &quot;Arn&quot;: &quot;arn:aws:iam::176430881729:role/EMR_EC2_DefaultRole&quot;
+        }
+    },
+    {
+        &quot;RolePolicy&quot;: {
+            &quot;Version&quot;: &quot;2012-10-17&quot;,
+            &quot;Statement&quot;: [
+                {
+                    &quot;Action&quot;: [
+                        &quot;ec2:AuthorizeSecurityGroupIngress&quot;,
+                        &quot;ec2:CancelSpotInstanceRequests&quot;,
+                        &quot;ec2:CreateSecurityGroup&quot;,
+                        &quot;ec2:CreateTags&quot;,
+                        &quot;ec2:DeleteTags&quot;,
+                        &quot;ec2:DescribeAvailabilityZones&quot;,
+                        &quot;ec2:DescribeAccountAttributes&quot;,
+                        &quot;ec2:DescribeInstances&quot;,
+                        &quot;ec2:DescribeInstanceStatus&quot;,
+                        &quot;ec2:DescribeKeyPairs&quot;,
+                        &quot;ec2:DescribePrefixLists&quot;,
+                        &quot;ec2:DescribeRouteTables&quot;,
+                        &quot;ec2:DescribeSecurityGroups&quot;,
+                        &quot;ec2:DescribeSpotInstanceRequests&quot;,
+                        &quot;ec2:DescribeSpotPriceHistory&quot;,
+                        &quot;ec2:DescribeSubnets&quot;,
+                        &quot;ec2:DescribeVpcAttribute&quot;,
+                        &quot;ec2:DescribeVpcEndpoints&quot;,
+                        &quot;ec2:DescribeVpcEndpointServices&quot;,
+                        &quot;ec2:DescribeVpcs&quot;,
+                        &quot;ec2:ModifyImageAttribute&quot;,
+                        &quot;ec2:ModifyInstanceAttribute&quot;,
+                        &quot;ec2:RequestSpotInstances&quot;,
+                        &quot;ec2:RunInstances&quot;,
+                        &quot;ec2:TerminateInstances&quot;,
+                        &quot;iam:GetRole&quot;,
+                        &quot;iam:GetRolePolicy&quot;,
+                        &quot;iam:ListInstanceProfiles&quot;,
+                        &quot;iam:ListRolePolicies&quot;,
+                        &quot;iam:PassRole&quot;,
+                        &quot;s3:CreateBucket&quot;,
+                        &quot;s3:Get*&quot;,
+                        &quot;s3:List*&quot;,
+                        &quot;sdb:BatchPutAttributes&quot;,
+                        &quot;sdb:Select&quot;,
+                        &quot;sqs:CreateQueue&quot;,
+                        &quot;sqs:Delete*&quot;,
+                        &quot;sqs:GetQueue*&quot;,
+                        &quot;sqs:ReceiveMessage&quot;
+                    ],
+                    &quot;Resource&quot;: &quot;*&quot;,
+                    &quot;Effect&quot;: &quot;Allow&quot;
+                }
+            ]
+        },
+        &quot;Role&quot;: {
+            &quot;AssumeRolePolicyDocument&quot;: {
+                &quot;Version&quot;: &quot;2008-10-17&quot;,
+                &quot;Statement&quot;: [
+                    {
+                        &quot;Action&quot;: &quot;sts:AssumeRole&quot;,
+                        &quot;Sid&quot;: &quot;&quot;,
+                        &quot;Effect&quot;: &quot;Allow&quot;,
+                        &quot;Principal&quot;: {
+                            &quot;Service&quot;: &quot;elasticmapreduce.amazonaws.com&quot;
+                        }
+                    }
+                ]
+            },
+            &quot;RoleId&quot;: &quot;AROAI3SRVPPVSRDLARBPY&quot;,
+            &quot;CreateDate&quot;: &quot;2015-06-09T17:09:10.401Z&quot;,
+            &quot;RoleName&quot;: &quot;EMR_DefaultRole&quot;,
+            &quot;Path&quot;: &quot;/&quot;,
+            &quot;Arn&quot;: &quot;arn:aws:iam::176430881729:role/EMR_DefaultRole&quot;
+        }
+    }
+]</pre>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../emr/create-cluster.html" title="previous chapter (use the left arrow)">&larr; create-cluster</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../emr/create-hbase-backup.html" title="next chapter (use the right arrow)">create-hbase-backup &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../emr/create-hbase-backup.html" title="create-hbase-backup"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../emr/create-cluster.html" title="create-cluster"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../emr/index.html" >emr</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "DocumentFilterList": [
+        {
+            "key": "PlatformTypes",
+            "value": ""
+        }
+    ],
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

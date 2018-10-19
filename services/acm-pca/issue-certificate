@@ -1,0 +1,10 @@
+{
+    "CertificateAuthorityArn": "",
+    "Csr": null,
+    "SigningAlgorithm": "SHA256WITHRSA",
+    "Validity": {
+        "Value": 0,
+        "Type": "END_DATE"
+    },
+    "IdempotencyToken": ""
+}

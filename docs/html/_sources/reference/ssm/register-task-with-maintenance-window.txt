@@ -1,0 +1,408 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm register-task-with-maintenance-window:
+
+
+*************************************
+register-task-with-maintenance-window
+*************************************
+
+
+
+===========
+Description
+===========
+
+
+
+Adds a new task to a Maintenance Window.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/RegisterTaskWithMaintenanceWindow>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    register-task-with-maintenance-window
+  --window-id <value>
+  --targets <value>
+  --task-arn <value>
+  [--service-role-arn <value>]
+  --task-type <value>
+  [--task-parameters <value>]
+  [--task-invocation-parameters <value>]
+  [--priority <value>]
+  --max-concurrency <value>
+  --max-errors <value>
+  [--logging-info <value>]
+  [--name <value>]
+  [--description <value>]
+  [--client-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--window-id`` (string)
+
+
+  The ID of the Maintenance Window the task should be added to.
+
+  
+
+``--targets`` (list)
+
+
+  The targets (either instances or Maintenance Window targets).
+
+   
+
+  Specify instances using the following format: 
+
+   
+
+   ``Key=InstanceIds,Values=<instance-id-1>,<instance-id-2>``  
+
+   
+
+  Specify Maintenance Window targets using the following format:
+
+   
+
+   ``Key=<WindowTargetIds>,Values=<window-target-id-1>,<window-target-id-2>``  
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--task-arn`` (string)
+
+
+  The ARN of the task to execute 
+
+  
+
+``--service-role-arn`` (string)
+
+
+  The role to assume when running the Maintenance Window task.
+
+   
+
+  If you do not specify a service role ARN, Systems Manager will use your account's service-linked role for Systems Manager by default. If no service-linked role for Systems Manager exists in your account, it will be created when you run ``RegisterTaskWithMaintenanceWindow`` without specifying a service role ARN.
+
+   
+
+  For more information, see `Service-Linked Role Permissions for Systems Manager <http://docs.aws.amazon.com/systems-manager/latest/userguide/using-service-linked-roles.html#slr-permissions>`__ and `Should I Use a Service-Linked Role or a Custom Service Role to Run Maintenance Window Tasks? <http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-maintenance-permissions.html#maintenance-window-tasks-service-role>`__ in the *AWS Systems Manager User Guide* .
+
+  
+
+``--task-type`` (string)
+
+
+  The type of task being registered.
+
+  
+
+  Possible values:
+
+  
+  *   ``RUN_COMMAND``
+
+  
+  *   ``AUTOMATION``
+
+  
+  *   ``STEP_FUNCTIONS``
+
+  
+  *   ``LAMBDA``
+
+  
+
+  
+
+``--task-parameters`` (map)
+
+
+  The parameters that should be passed to the task when it is executed.
+
+   
+
+  .. note::
+
+     
+
+     ``TaskParameters`` has been deprecated. To specify parameters to pass to a task when it runs, instead use the ``Parameters`` option in the ``TaskInvocationParameters`` structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see  MaintenanceWindowTaskInvocationParameters .
+
+     
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=Values=string,string,KeyName2=Values=string,string
+
+
+
+
+JSON Syntax::
+
+  {"string": {
+        "Values": ["string", ...]
+      }
+    ...}
+
+
+
+``--task-invocation-parameters`` (structure)
+
+
+  The parameters that the task should use during execution. Populate only the fields that match the task type. All other fields should be empty. 
+
+  
+
+
+
+JSON Syntax::
+
+  {
+    "RunCommand": {
+      "Comment": "string",
+      "DocumentHash": "string",
+      "DocumentHashType": "Sha256"|"Sha1",
+      "NotificationConfig": {
+        "NotificationArn": "string",
+        "NotificationEvents": ["All"|"InProgress"|"Success"|"TimedOut"|"Cancelled"|"Failed", ...],
+        "NotificationType": "Command"|"Invocation"
+      },
+      "OutputS3BucketName": "string",
+      "OutputS3KeyPrefix": "string",
+      "Parameters": {"string": ["string", ...]
+        ...},
+      "ServiceRoleArn": "string",
+      "TimeoutSeconds": integer
+    },
+    "Automation": {
+      "DocumentVersion": "string",
+      "Parameters": {"string": ["string", ...]
+        ...}
+    },
+    "StepFunctions": {
+      "Input": "string",
+      "Name": "string"
+    },
+    "Lambda": {
+      "ClientContext": "string",
+      "Qualifier": "string",
+      "Payload": blob
+    }
+  }
+
+
+
+``--priority`` (integer)
+
+
+  The priority of the task in the Maintenance Window, the lower the number the higher the priority. Tasks in a Maintenance Window are scheduled in priority order with tasks that have the same priority scheduled in parallel.
+
+  
+
+``--max-concurrency`` (string)
+
+
+  The maximum number of targets this task can be run for in parallel.
+
+  
+
+``--max-errors`` (string)
+
+
+  The maximum number of errors allowed before this task stops being scheduled.
+
+  
+
+``--logging-info`` (structure)
+
+
+  A structure containing information about an Amazon S3 bucket to write instance-level logs to. 
+
+   
+
+  .. note::
+
+     
+
+     ``LoggingInfo`` has been deprecated. To specify an S3 bucket to contain logs, instead use the ``OutputS3BucketName`` and ``OutputS3KeyPrefix`` options in the ``TaskInvocationParameters`` structure. For information about how Systems Manager handles these options for the supported Maintenance Window task types, see  MaintenanceWindowTaskInvocationParameters .
+
+     
+
+  
+
+
+
+Shorthand Syntax::
+
+    S3BucketName=string,S3KeyPrefix=string,S3Region=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "S3BucketName": "string",
+    "S3KeyPrefix": "string",
+    "S3Region": "string"
+  }
+
+
+
+``--name`` (string)
+
+
+  An optional name for the task.
+
+  
+
+``--description`` (string)
+
+
+  An optional description for the task.
+
+  
+
+``--client-token`` (string)
+
+
+  User-provided idempotency token.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To register an Automation task with a Maintenance Window**
+
+This example registers an Automation task with a Maintenance Window that is targeted at an instance.
+
+Command::
+
+   aws ssm register-task-with-maintenance-window --window-id "mw-082dcd7649dee04e4" --targets Key=InstanceIds,Values=i-12345201220f8cd0d --task-arn AWS-RestartEC2Instance --service-role-arn arn:aws:iam::111222333444:role/SSM --task-type AUTOMATION --task-invocation-parameters "{\"Automation\":{\"DocumentVersion\":\"\$LATEST\",\"Parameters\":{\"InstanceId\":[\"{{TARGET_ID}}\"]}}}" --priority 0 --max-concurrency 1 --max-errors 1 --name "AutomationExample" --description "Restarting EC2 Instance for maintenance"
+  
+Output::
+
+  {
+	"WindowTaskId":"11144444-5555-6666-7777-88888888"
+  }
+  
+**To register a Lambda task with a Maintenance Window**
+
+This example registers a Lambda task with a Maintenance Window that is targeted at an instance.
+
+Command::
+
+   aws ssm register-task-with-maintenance-window --window-id "mw-082dcd7649dee04e4" --targets Key=InstanceIds,Values=i-12344d305eea74171 --task-arn arn:aws:lambda:us-east-1:111222333444:function:SSMTestLAMBDA --service-role-arn arn:aws:iam::111222333444:role/SSM --task-type LAMBDA --task-invocation-parameters '{"Lambda":{"Payload":"{\"targetId\":\"{{TARGET_ID}}\",\"targetType\":\"{{TARGET_TYPE}}\"}","Qualifier":"$LATEST"}}' --priority 0 --max-concurrency 10 --max-errors 5 --name "Lambda_Example" --description "My Lambda Example"
+  
+Output::
+
+  {
+	"WindowTaskId":"22244444-5555-6666-7777-88888888"
+  }
+
+**To register a Run Command task with a Maintenance Window**
+
+This example registers a Run Command task with a Maintenance Window that is targeted at an instance.
+
+Command::
+
+  aws ssm register-task-with-maintenance-window --window-id "mw-082dcd7649dee04e4" --targets "Key=InstanceIds,Values=i-12344d305eea74171" --service-role-arn "arn:aws:iam::111222333444:role/SSM" --task-type "RUN_COMMAND" --name "SSMInstallPowerShellModule" --task-arn "AWS-InstallPowerShellModule" --task-invocation-parameters "{\"RunCommand\":{\"Comment\":\"\",\"OutputS3BucketName\":\"runcommandlogs\",\"Parameters\":{\"commands\":[\"Get-Module -ListAvailable\"],\"executionTimeout\":[\"3600\"],\"source\":[\"https:\/\/gallery.technet.microsoft.com\/EZOut-33ae0fb7\/file\/110351\/1\/EZOut.zip\"],\"workingDirectory\":[\"\\\\\"]},\"TimeoutSeconds\":600}}" --max-concurrency 1 --max-errors 1 --priority 10
+  
+Output::
+
+  {
+	"WindowTaskId":"33344444-5555-6666-7777-88888888"
+  }
+
+**To register a Step Functions task with a Maintenance Window**
+
+This example registers a Step Functions task with a Maintenance Window that is targeted at an instance.
+
+Command::
+
+   aws ssm register-task-with-maintenance-window --window-id "mw-1234d787d641f11f3" --targets Key=WindowTargetIds,Values=12347414-69c3-49f8-95b8-ed2dcf045faa --task-arn arn:aws:states:us-east-1:111222333444:stateMachine:SSMTestStateMachine --service-role-arn arn:aws:iam::111222333444:role/MaintenanceWindows --task-type STEP_FUNCTIONS --task-invocation-parameters '{"StepFunctions":{"Input":"{\"instanceId\":\"{{TARGET_ID}}\"}"}}' --priority 0 --max-concurrency 10 --max-errors 5 --name "Step_Functions_Example" --description "My Step Functions Example"
+  
+Output::
+
+  {
+	"WindowTaskId":"44444444-5555-6666-7777-88888888"
+  }
+	
+**To register a task using a Maintenance Windows target ID**
+	
+This example registers a task using a Maintenance Window target ID. The maintenance window target ID was in the output of the ``aws ssm register-target-with-maintenance-window`` command, otherwise you can retrieve it from the output of the ``aws ssm describe-maintenance-window-targets`` command.
+
+Command::
+
+  aws ssm register-task-with-maintenance-window --targets "Key=WindowTargetIds,Values=350d44e6-28cc-44e2-951f-4b2c985838f6" --task-arn "AWS-RunShellScript" --service-role-arn "arn:aws:iam::812345678901:role/MaintenanceWindowsRole" --window-id "mw-ab12cd34ef56gh78" --task-type "RUN_COMMAND" --task-parameters  "{\"commands\":{\"Values\":[\"df\"]}}" --max-concurrency 1 --max-errors 1 --priority 10
+  
+
+
+======
+Output
+======
+
+WindowTaskId -> (string)
+
+  
+
+  The id of the task in the Maintenance Window.
+
+  
+
+  
+

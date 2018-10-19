@@ -1,0 +1,175 @@
+[ :ref:`aws <cli:aws>` . :ref:`mediatailor <cli:aws mediatailor>` ]
+
+.. _cli:aws mediatailor get-playback-configuration:
+
+
+**************************
+get-playback-configuration
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the configuration for the specified name. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/GetPlaybackConfiguration>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-playback-configuration
+  --name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--name`` (string)
+
+
+  The identifier for the configuration.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+AdDecisionServerUrl -> (string)
+
+  
+
+  The URL for the ad decision server (ADS). This includes the specification of static parameters and placeholders for dynamic parameters. AWS Elemental MediaTailor substitutes player-specific and session-specific parameters as needed when calling the ADS. Alternately, for testing, you can provide a static VAST URL. The maximum length is 25000 characters.
+
+  
+
+  
+
+CdnConfiguration -> (structure)
+
+  
+
+  The configuration for using a content delivery network (CDN), like Amazon CloudFront, for content and ad segment management. 
+
+  
+
+  AdSegmentUrlPrefix -> (string)
+
+    
+
+    A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a rule in your CDN for the following origin: ads.mediatailor.<region>.amazonaws.com. Then specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for ad segments.
+
+    
+
+    
+
+  ContentSegmentUrlPrefix -> (string)
+
+    
+
+    A content delivery network (CDN) to cache content segments, so that content requests don’t always have to go to the origin server. First, create a rule in your CDN for the content segment origin server. Then specify the rule's name in this ContentSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for content segments.
+
+    
+
+    
+
+  
+
+HlsConfiguration -> (structure)
+
+  
+
+  The configuration for HLS content. 
+
+  
+
+  ManifestEndpointPrefix -> (string)
+
+    
+
+    The URL that is used to initiate a playback session for devices that support Apple HLS. The session uses server-side reporting.
+
+    
+
+    
+
+  
+
+Name -> (string)
+
+  
+
+  The identifier for the configuration.
+
+  
+
+  
+
+PlaybackEndpointPrefix -> (string)
+
+  
+
+  The URL that the player accesses to get a manifest from AWS Elemental MediaTailor. This session will use server-side reporting. 
+
+  
+
+  
+
+SessionInitializationEndpointPrefix -> (string)
+
+  
+
+  The URL that the player uses to initialize a session that uses client-side reporting. 
+
+  
+
+  
+
+SlateAdUrl -> (string)
+
+  
+
+  URL for a high-quality video asset to transcode and use to fill in time that's not used by ads. AWS Elemental MediaTailor shows the slate to fill in gaps in media content. Configuring the slate is optional for non-VPAID configurations. For VPAID, the slate is required because AWS Elemental MediaTailor provides it in the slots designated for dynamic ad content. The slate must be a high-quality asset that contains both audio and video. 
+
+  
+
+  
+
+VideoContentSourceUrl -> (string)
+
+  
+
+  The URL prefix for the master playlist for the stream, minus the asset ID. The maximum length is 512 characters.
+
+  
+
+  
+

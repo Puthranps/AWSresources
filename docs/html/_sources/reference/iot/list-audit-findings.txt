@@ -1,0 +1,512 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot <cli:aws iot>` ]
+
+.. _cli:aws iot list-audit-findings:
+
+
+*******************
+list-audit-findings
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 180 days.)
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListAuditFindings>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-audit-findings
+  [--task-id <value>]
+  [--check-name <value>]
+  [--resource-identifier <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--start-time <value>]
+  [--end-time <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--task-id`` (string)
+
+
+  A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.
+
+  
+
+``--check-name`` (string)
+
+
+  A filter to limit results to the findings for the specified audit check.
+
+  
+
+``--resource-identifier`` (structure)
+
+
+  Information identifying the non-compliant resource.
+
+  
+
+
+
+Shorthand Syntax::
+
+    deviceCertificateId=string,caCertificateId=string,cognitoIdentityPoolId=string,clientId=string,policyVersionIdentifier={policyName=string,policyVersionId=string},account=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "deviceCertificateId": "string",
+    "caCertificateId": "string",
+    "cognitoIdentityPoolId": "string",
+    "clientId": "string",
+    "policyVersionIdentifier": {
+      "policyName": "string",
+      "policyVersionId": "string"
+    },
+    "account": "string"
+  }
+
+
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to return at one time. The default is 25.
+
+  
+
+``--next-token`` (string)
+
+
+  The token for the next set of results.
+
+  
+
+``--start-time`` (timestamp)
+
+
+  A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both.
+
+  
+
+``--end-time`` (timestamp)
+
+
+  A filter to limit results to those found before the specified time. You must specify either the startTime and endTime or the taskId, but not both.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+findings -> (list)
+
+  
+
+  The findings (results) of the audit.
+
+  
+
+  (structure)
+
+    
+
+    The findings (results) of the audit.
+
+    
+
+    taskId -> (string)
+
+      
+
+      The ID of the audit that generated this result (finding)
+
+      
+
+      
+
+    checkName -> (string)
+
+      
+
+      The audit check that generated this result.
+
+      
+
+      
+
+    taskStartTime -> (timestamp)
+
+      
+
+      The time the audit started.
+
+      
+
+      
+
+    findingTime -> (timestamp)
+
+      
+
+      The time the result (finding) was discovered.
+
+      
+
+      
+
+    severity -> (string)
+
+      
+
+      The severity of the result (finding).
+
+      
+
+      
+
+    nonCompliantResource -> (structure)
+
+      
+
+      The resource that was found to be non-compliant with the audit check.
+
+      
+
+      resourceType -> (string)
+
+        
+
+        The type of the non-compliant resource.
+
+        
+
+        
+
+      resourceIdentifier -> (structure)
+
+        
+
+        Information identifying the non-compliant resource.
+
+        
+
+        deviceCertificateId -> (string)
+
+          
+
+          The ID of the certificate attached to the resource.
+
+          
+
+          
+
+        caCertificateId -> (string)
+
+          
+
+          The ID of the CA certificate used to authorize the certificate.
+
+          
+
+          
+
+        cognitoIdentityPoolId -> (string)
+
+          
+
+          The ID of the Cognito Identity Pool.
+
+          
+
+          
+
+        clientId -> (string)
+
+          
+
+          The client ID.
+
+          
+
+          
+
+        policyVersionIdentifier -> (structure)
+
+          
+
+          The version of the policy associated with the resource.
+
+          
+
+          policyName -> (string)
+
+            
+
+            The name of the policy.
+
+            
+
+            
+
+          policyVersionId -> (string)
+
+            
+
+            The ID of the version of the policy associated with the resource.
+
+            
+
+            
+
+          
+
+        account -> (string)
+
+          
+
+          The account with which the resource is associated.
+
+          
+
+          
+
+        
+
+      additionalInfo -> (map)
+
+        
+
+        Additional information about the non-compliant resource.
+
+        
+
+        key -> (string)
+
+          
+
+          
+
+        value -> (string)
+
+          
+
+          
+
+        
+
+      
+
+    relatedResources -> (list)
+
+      
+
+      The list of related resources.
+
+      
+
+      (structure)
+
+        
+
+        Information about a related resource.
+
+        
+
+        resourceType -> (string)
+
+          
+
+          The type of resource.
+
+          
+
+          
+
+        resourceIdentifier -> (structure)
+
+          
+
+          Information identifying the resource.
+
+          
+
+          deviceCertificateId -> (string)
+
+            
+
+            The ID of the certificate attached to the resource.
+
+            
+
+            
+
+          caCertificateId -> (string)
+
+            
+
+            The ID of the CA certificate used to authorize the certificate.
+
+            
+
+            
+
+          cognitoIdentityPoolId -> (string)
+
+            
+
+            The ID of the Cognito Identity Pool.
+
+            
+
+            
+
+          clientId -> (string)
+
+            
+
+            The client ID.
+
+            
+
+            
+
+          policyVersionIdentifier -> (structure)
+
+            
+
+            The version of the policy associated with the resource.
+
+            
+
+            policyName -> (string)
+
+              
+
+              The name of the policy.
+
+              
+
+              
+
+            policyVersionId -> (string)
+
+              
+
+              The ID of the version of the policy associated with the resource.
+
+              
+
+              
+
+            
+
+          account -> (string)
+
+            
+
+            The account with which the resource is associated.
+
+            
+
+            
+
+          
+
+        additionalInfo -> (map)
+
+          
+
+          Additional information about the resource.
+
+          
+
+          key -> (string)
+
+            
+
+            
+
+          value -> (string)
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    reasonForNonCompliance -> (string)
+
+      
+
+      The reason the resource was non-compliant.
+
+      
+
+      
+
+    reasonForNonComplianceCode -> (string)
+
+      
+
+      A code which indicates the reason that the resource was non-compliant.
+
+      
+
+      
+
+    
+
+  
+
+nextToken -> (string)
+
+  
+
+  A token that can be used to retrieve the next set of results, or ``null`` if there are no additional results.
+
+  
+
+  
+

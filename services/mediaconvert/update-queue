@@ -1,0 +1,10 @@
+{
+    "Description": "",
+    "Name": "",
+    "ReservationPlanSettings": {
+        "Commitment": "ONE_YEAR",
+        "RenewalType": "AUTO_RENEW",
+        "ReservedSlots": 0
+    },
+    "Status": "PAUSED"
+}

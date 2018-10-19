@@ -1,0 +1,17 @@
+{
+    "name": "",
+    "description": "",
+    "version": "",
+    "cloneFrom": "",
+    "binaryMediaTypes": [
+        ""
+    ],
+    "minimumCompressionSize": 0,
+    "apiKeySource": "AUTHORIZER",
+    "endpointConfiguration": {
+        "types": [
+            "PRIVATE"
+        ]
+    },
+    "policy": ""
+}

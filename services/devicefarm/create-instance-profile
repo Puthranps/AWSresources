@@ -1,0 +1,9 @@
+{
+    "name": "",
+    "description": "",
+    "packageCleanup": true,
+    "excludeAppPackagesFromCleanup": [
+        ""
+    ],
+    "rebootAfterUse": true
+}

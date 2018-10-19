@@ -1,0 +1,12 @@
+{
+    "CatalogId": "",
+    "DatabaseName": "",
+    "TableName": "",
+    "Expression": "",
+    "NextToken": "",
+    "Segment": {
+        "SegmentNumber": 0,
+        "TotalSegments": 0
+    },
+    "MaxResults": 0
+}

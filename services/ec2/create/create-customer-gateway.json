@@ -1,0 +1,6 @@
+{
+    "BgpAsn": 0,
+    "PublicIp": "",
+    "Type": "ipsec.1",
+    "DryRun": true
+}

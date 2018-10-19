@@ -1,0 +1,6 @@
+{
+    "stateMachineArn": "",
+    "statusFilter": "SUCCEEDED",
+    "maxResults": 0,
+    "nextToken": ""
+}

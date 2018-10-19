@@ -1,0 +1,937 @@
+[ :ref:`aws <cli:aws>` . :ref:`guardduty <cli:aws guardduty>` ]
+
+.. _cli:aws guardduty get-findings:
+
+
+************
+get-findings
+************
+
+
+
+===========
+Description
+===========
+
+Describes Amazon GuardDuty findings specified by finding IDs.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetFindings>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-findings
+  --detector-id <value>
+  --finding-ids <value>
+  [--sort-criteria <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--detector-id`` (string)
+The ID of the detector that specifies the GuardDuty service whose findings you want to retrieve.
+
+``--finding-ids`` (list)
+IDs of the findings that you want to retrieve.
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--sort-criteria`` (structure)
+Represents the criteria used for sorting findings.
+
+
+
+Shorthand Syntax::
+
+    AttributeName=string,OrderBy=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "AttributeName": "string",
+    "OrderBy": "ASC"|"DESC"
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Findings -> (list)
+
+  A list of findings.
+
+  (structure)
+
+    Representation of a abnormal or suspicious activity.
+
+    AccountId -> (string)
+
+      AWS account ID where the activity occurred that prompted GuardDuty to generate a finding.
+
+      
+
+    Arn -> (string)
+
+      The ARN of a finding described by the action.
+
+      
+
+    Confidence -> (double)
+
+      The confidence level of a finding.
+
+      
+
+    CreatedAt -> (string)
+
+      The time stamp at which a finding was generated.
+
+      
+
+    Description -> (string)
+
+      The description of a finding.
+
+      
+
+    Id -> (string)
+
+      The identifier that corresponds to a finding described by the action.
+
+      
+
+    Partition -> (string)
+
+      The AWS resource partition.
+
+      
+
+    Region -> (string)
+
+      The AWS region where the activity occurred that prompted GuardDuty to generate a finding.
+
+      
+
+    Resource -> (structure)
+
+      The AWS resource associated with the activity that prompted GuardDuty to generate a finding.
+
+      AccessKeyDetails -> (structure)
+
+        The IAM access key details (IAM user information) of a user that engaged in the activity that prompted GuardDuty to generate a finding.
+
+        AccessKeyId -> (string)
+
+          Access key ID of the user.
+
+          
+
+        PrincipalId -> (string)
+
+          The principal ID of the user.
+
+          
+
+        UserName -> (string)
+
+          The name of the user.
+
+          
+
+        UserType -> (string)
+
+          The type of the user.
+
+          
+
+        
+
+      InstanceDetails -> (structure)
+
+        The information about the EC2 instance associated with the activity that prompted GuardDuty to generate a finding.
+
+        AvailabilityZone -> (string)
+
+          The availability zone of the EC2 instance.
+
+          
+
+        IamInstanceProfile -> (structure)
+
+          The profile information of the EC2 instance.
+
+          Arn -> (string)
+
+            AWS EC2 instance profile ARN.
+
+            
+
+          Id -> (string)
+
+            AWS EC2 instance profile ID.
+
+            
+
+          
+
+        ImageDescription -> (string)
+
+          The image description of the EC2 instance.
+
+          
+
+        ImageId -> (string)
+
+          The image ID of the EC2 instance.
+
+          
+
+        InstanceId -> (string)
+
+          The ID of the EC2 instance.
+
+          
+
+        InstanceState -> (string)
+
+          The state of the EC2 instance.
+
+          
+
+        InstanceType -> (string)
+
+          The type of the EC2 instance.
+
+          
+
+        LaunchTime -> (string)
+
+          The launch time of the EC2 instance.
+
+          
+
+        NetworkInterfaces -> (list)
+
+          The network interface information of the EC2 instance.
+
+          (structure)
+
+            The network interface information of the EC2 instance.
+
+            Ipv6Addresses -> (list)
+
+              A list of EC2 instance IPv6 address information.
+
+              (string)
+
+                IpV6 address of the EC2 instance.
+
+                
+
+              
+
+            NetworkInterfaceId -> (string)
+
+              The ID of the network interface
+
+              
+
+            PrivateDnsName -> (string)
+
+              Private DNS name of the EC2 instance.
+
+              
+
+            PrivateIpAddress -> (string)
+
+              Private IP address of the EC2 instance.
+
+              
+
+            PrivateIpAddresses -> (list)
+
+              Other private IP address information of the EC2 instance.
+
+              (structure)
+
+                Other private IP address information of the EC2 instance.
+
+                PrivateDnsName -> (string)
+
+                  Private DNS name of the EC2 instance.
+
+                  
+
+                PrivateIpAddress -> (string)
+
+                  Private IP address of the EC2 instance.
+
+                  
+
+                
+
+              
+
+            PublicDnsName -> (string)
+
+              Public DNS name of the EC2 instance.
+
+              
+
+            PublicIp -> (string)
+
+              Public IP address of the EC2 instance.
+
+              
+
+            SecurityGroups -> (list)
+
+              Security groups associated with the EC2 instance.
+
+              (structure)
+
+                Security groups associated with the EC2 instance.
+
+                GroupId -> (string)
+
+                  EC2 instance's security group ID.
+
+                  
+
+                GroupName -> (string)
+
+                  EC2 instance's security group name.
+
+                  
+
+                
+
+              
+
+            SubnetId -> (string)
+
+              The subnet ID of the EC2 instance.
+
+              
+
+            VpcId -> (string)
+
+              The VPC ID of the EC2 instance.
+
+              
+
+            
+
+          
+
+        Platform -> (string)
+
+          The platform of the EC2 instance.
+
+          
+
+        ProductCodes -> (list)
+
+          The product code of the EC2 instance.
+
+          (structure)
+
+            The product code of the EC2 instance.
+
+            Code -> (string)
+
+              Product code information.
+
+              
+
+            ProductType -> (string)
+
+              Product code type.
+
+              
+
+            
+
+          
+
+        Tags -> (list)
+
+          The tags of the EC2 instance.
+
+          (structure)
+
+            A tag of the EC2 instance.
+
+            Key -> (string)
+
+              EC2 instance tag key.
+
+              
+
+            Value -> (string)
+
+              EC2 instance tag value.
+
+              
+
+            
+
+          
+
+        
+
+      ResourceType -> (string)
+
+        The type of the AWS resource.
+
+        
+
+      
+
+    SchemaVersion -> (string)
+
+      Findings' schema version.
+
+      
+
+    Service -> (structure)
+
+      Additional information assigned to the generated finding by GuardDuty.
+
+      Action -> (structure)
+
+        Information about the activity described in a finding.
+
+        ActionType -> (string)
+
+          GuardDuty Finding activity type.
+
+          
+
+        AwsApiCallAction -> (structure)
+
+          Information about the AWS_API_CALL action described in this finding.
+
+          Api -> (string)
+
+            AWS API name.
+
+            
+
+          CallerType -> (string)
+
+            AWS API caller type.
+
+            
+
+          DomainDetails -> (structure)
+
+            Domain information for the AWS API call.
+
+            
+
+          RemoteIpDetails -> (structure)
+
+            Remote IP information of the connection.
+
+            City -> (structure)
+
+              City information of the remote IP address.
+
+              CityName -> (string)
+
+                City name of the remote IP address.
+
+                
+
+              
+
+            Country -> (structure)
+
+              Country code of the remote IP address.
+
+              CountryCode -> (string)
+
+                Country code of the remote IP address.
+
+                
+
+              CountryName -> (string)
+
+                Country name of the remote IP address.
+
+                
+
+              
+
+            GeoLocation -> (structure)
+
+              Location information of the remote IP address.
+
+              Lat -> (double)
+
+                Latitude information of remote IP address.
+
+                
+
+              Lon -> (double)
+
+                Longitude information of remote IP address.
+
+                
+
+              
+
+            IpAddressV4 -> (string)
+
+              IPV4 remote address of the connection.
+
+              
+
+            Organization -> (structure)
+
+              ISP Organization information of the remote IP address.
+
+              Asn -> (string)
+
+                Autonomous system number of the internet provider of the remote IP address.
+
+                
+
+              AsnOrg -> (string)
+
+                Organization that registered this ASN.
+
+                
+
+              Isp -> (string)
+
+                ISP information for the internet provider.
+
+                
+
+              Org -> (string)
+
+                Name of the internet provider.
+
+                
+
+              
+
+            
+
+          ServiceName -> (string)
+
+            AWS service name whose API was invoked.
+
+            
+
+          
+
+        DnsRequestAction -> (structure)
+
+          Information about the DNS_REQUEST action described in this finding.
+
+          Domain -> (string)
+
+            Domain information for the DNS request.
+
+            
+
+          
+
+        NetworkConnectionAction -> (structure)
+
+          Information about the NETWORK_CONNECTION action described in this finding.
+
+          Blocked -> (boolean)
+
+            Network connection blocked information.
+
+            
+
+          ConnectionDirection -> (string)
+
+            Network connection direction.
+
+            
+
+          LocalPortDetails -> (structure)
+
+            Local port information of the connection.
+
+            Port -> (integer)
+
+              Port number of the local connection.
+
+              
+
+            PortName -> (string)
+
+              Port name of the local connection.
+
+              
+
+            
+
+          Protocol -> (string)
+
+            Network connection protocol.
+
+            
+
+          RemoteIpDetails -> (structure)
+
+            Remote IP information of the connection.
+
+            City -> (structure)
+
+              City information of the remote IP address.
+
+              CityName -> (string)
+
+                City name of the remote IP address.
+
+                
+
+              
+
+            Country -> (structure)
+
+              Country code of the remote IP address.
+
+              CountryCode -> (string)
+
+                Country code of the remote IP address.
+
+                
+
+              CountryName -> (string)
+
+                Country name of the remote IP address.
+
+                
+
+              
+
+            GeoLocation -> (structure)
+
+              Location information of the remote IP address.
+
+              Lat -> (double)
+
+                Latitude information of remote IP address.
+
+                
+
+              Lon -> (double)
+
+                Longitude information of remote IP address.
+
+                
+
+              
+
+            IpAddressV4 -> (string)
+
+              IPV4 remote address of the connection.
+
+              
+
+            Organization -> (structure)
+
+              ISP Organization information of the remote IP address.
+
+              Asn -> (string)
+
+                Autonomous system number of the internet provider of the remote IP address.
+
+                
+
+              AsnOrg -> (string)
+
+                Organization that registered this ASN.
+
+                
+
+              Isp -> (string)
+
+                ISP information for the internet provider.
+
+                
+
+              Org -> (string)
+
+                Name of the internet provider.
+
+                
+
+              
+
+            
+
+          RemotePortDetails -> (structure)
+
+            Remote port information of the connection.
+
+            Port -> (integer)
+
+              Port number of the remote connection.
+
+              
+
+            PortName -> (string)
+
+              Port name of the remote connection.
+
+              
+
+            
+
+          
+
+        PortProbeAction -> (structure)
+
+          Information about the PORT_PROBE action described in this finding.
+
+          Blocked -> (boolean)
+
+            Port probe blocked information.
+
+            
+
+          PortProbeDetails -> (list)
+
+            A list of port probe details objects.
+
+            (structure)
+
+              Details about the port probe finding.
+
+              LocalPortDetails -> (structure)
+
+                Local port information of the connection.
+
+                Port -> (integer)
+
+                  Port number of the local connection.
+
+                  
+
+                PortName -> (string)
+
+                  Port name of the local connection.
+
+                  
+
+                
+
+              RemoteIpDetails -> (structure)
+
+                Remote IP information of the connection.
+
+                City -> (structure)
+
+                  City information of the remote IP address.
+
+                  CityName -> (string)
+
+                    City name of the remote IP address.
+
+                    
+
+                  
+
+                Country -> (structure)
+
+                  Country code of the remote IP address.
+
+                  CountryCode -> (string)
+
+                    Country code of the remote IP address.
+
+                    
+
+                  CountryName -> (string)
+
+                    Country name of the remote IP address.
+
+                    
+
+                  
+
+                GeoLocation -> (structure)
+
+                  Location information of the remote IP address.
+
+                  Lat -> (double)
+
+                    Latitude information of remote IP address.
+
+                    
+
+                  Lon -> (double)
+
+                    Longitude information of remote IP address.
+
+                    
+
+                  
+
+                IpAddressV4 -> (string)
+
+                  IPV4 remote address of the connection.
+
+                  
+
+                Organization -> (structure)
+
+                  ISP Organization information of the remote IP address.
+
+                  Asn -> (string)
+
+                    Autonomous system number of the internet provider of the remote IP address.
+
+                    
+
+                  AsnOrg -> (string)
+
+                    Organization that registered this ASN.
+
+                    
+
+                  Isp -> (string)
+
+                    ISP information for the internet provider.
+
+                    
+
+                  Org -> (string)
+
+                    Name of the internet provider.
+
+                    
+
+                  
+
+                
+
+              
+
+            
+
+          
+
+        
+
+      Archived -> (boolean)
+
+        Indicates whether this finding is archived.
+
+        
+
+      Count -> (integer)
+
+        Total count of the occurrences of this finding type.
+
+        
+
+      DetectorId -> (string)
+
+        Detector ID for the GuardDuty service.
+
+        
+
+      EventFirstSeen -> (string)
+
+        First seen timestamp of the activity that prompted GuardDuty to generate this finding.
+
+        
+
+      EventLastSeen -> (string)
+
+        Last seen timestamp of the activity that prompted GuardDuty to generate this finding.
+
+        
+
+      ResourceRole -> (string)
+
+        Resource role information for this finding.
+
+        
+
+      ServiceName -> (string)
+
+        The name of the AWS service (GuardDuty) that generated a finding.
+
+        
+
+      UserFeedback -> (string)
+
+        Feedback left about the finding.
+
+        
+
+      
+
+    Severity -> (double)
+
+      The severity of a finding.
+
+      
+
+    Title -> (string)
+
+      The title of a finding.
+
+      
+
+    Type -> (string)
+
+      The type of a finding described by the action.
+
+      
+
+    UpdatedAt -> (string)
+
+      The time stamp at which a finding was last updated.
+
+      
+
+    
+
+  
+

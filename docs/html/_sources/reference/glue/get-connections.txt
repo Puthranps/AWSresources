@@ -1,0 +1,333 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue get-connections:
+
+
+***************
+get-connections
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a list of connection definitions from the Data Catalog.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnections>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``get-connections`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``ConnectionList``
+
+
+========
+Synopsis
+========
+
+::
+
+    get-connections
+  [--catalog-id <value>]
+  [--filter <value>]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--catalog-id`` (string)
+
+
+  The ID of the Data Catalog in which the connections reside. If none is supplied, the AWS account ID is used by default.
+
+  
+
+``--filter`` (structure)
+
+
+  A filter that controls which connections will be returned.
+
+  
+
+
+
+Shorthand Syntax::
+
+    MatchCriteria=string,string,ConnectionType=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "MatchCriteria": ["string", ...],
+    "ConnectionType": "JDBC"|"SFTP"
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ConnectionList -> (list)
+
+  
+
+  A list of requested connection definitions.
+
+  
+
+  (structure)
+
+    
+
+    Defines a connection to a data source.
+
+    
+
+    Name -> (string)
+
+      
+
+      The name of the connection definition.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      Description of the connection.
+
+      
+
+      
+
+    ConnectionType -> (string)
+
+      
+
+      The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+
+      
+
+      
+
+    MatchCriteria -> (list)
+
+      
+
+      A list of criteria that can be used in selecting this connection.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    ConnectionProperties -> (map)
+
+      
+
+      These key-value pairs define parameters for the connection:
+
+       
+
+       
+      * ``HOST`` - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host. 
+       
+      * ``PORT`` - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections. 
+       
+      * ``USER_NAME`` - The name under which to log in to the database. The value string for ``USER_NAME`` is "``USERNAME`` ". 
+       
+      * ``PASSWORD`` - A password, if one is used, for the user name. 
+       
+      * ``JDBC_DRIVER_JAR_URI`` - The S3 path of the a jar file that contains the JDBC driver to use. 
+       
+      * ``JDBC_DRIVER_CLASS_NAME`` - The class name of the JDBC driver to use. 
+       
+      * ``JDBC_ENGINE`` - The name of the JDBC engine to use. 
+       
+      * ``JDBC_ENGINE_VERSION`` - The version of the JDBC engine to use. 
+       
+      * ``CONFIG_FILES`` - (Reserved for future use). 
+       
+      * ``INSTANCE_ID`` - The instance ID to use. 
+       
+      * ``JDBC_CONNECTION_URL`` - The URL for the JDBC connection. 
+       
+      * ``JDBC_ENFORCE_SSL`` - A Boolean string (true, false) specifying whether SSL with hostname matching will be enforced for the JDBC connection on the client. The default is false. 
+       
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (string)
+
+        
+
+        
+
+      
+
+    PhysicalConnectionRequirements -> (structure)
+
+      
+
+      A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this connection successfully.
+
+      
+
+      SubnetId -> (string)
+
+        
+
+        The subnet ID used by the connection.
+
+        
+
+        
+
+      SecurityGroupIdList -> (list)
+
+        
+
+        The security group ID list used by the connection.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      AvailabilityZone -> (string)
+
+        
+
+        The connection's availability zone. This field is redundant, since the specified subnet implies the availability zone to be used. The field must be populated now, but will be deprecated in the future.
+
+        
+
+        
+
+      
+
+    CreationTime -> (timestamp)
+
+      
+
+      The time this connection definition was created.
+
+      
+
+      
+
+    LastUpdatedTime -> (timestamp)
+
+      
+
+      The last time this connection definition was updated.
+
+      
+
+      
+
+    LastUpdatedBy -> (string)
+
+      
+
+      The user, group or role that last updated this connection definition.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  A continuation token, if the list of connections returned does not include the last of the filtered connections.
+
+  
+
+  
+

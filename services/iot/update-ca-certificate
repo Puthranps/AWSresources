@@ -1,0 +1,10 @@
+{
+    "certificateId": "",
+    "newStatus": "ACTIVE",
+    "newAutoRegistrationStatus": "ENABLE",
+    "registrationConfig": {
+        "templateBody": "",
+        "roleArn": ""
+    },
+    "removeAutoRegistration": true
+}

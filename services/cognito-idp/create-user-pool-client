@@ -1,0 +1,38 @@
+{
+    "UserPoolId": "",
+    "ClientName": "",
+    "GenerateSecret": true,
+    "RefreshTokenValidity": 0,
+    "ReadAttributes": [
+        ""
+    ],
+    "WriteAttributes": [
+        ""
+    ],
+    "ExplicitAuthFlows": [
+        "ADMIN_NO_SRP_AUTH"
+    ],
+    "SupportedIdentityProviders": [
+        ""
+    ],
+    "CallbackURLs": [
+        ""
+    ],
+    "LogoutURLs": [
+        ""
+    ],
+    "DefaultRedirectURI": "",
+    "AllowedOAuthFlows": [
+        "client_credentials"
+    ],
+    "AllowedOAuthScopes": [
+        ""
+    ],
+    "AllowedOAuthFlowsUserPoolClient": true,
+    "AnalyticsConfiguration": {
+        "ApplicationId": "",
+        "RoleArn": "",
+        "ExternalId": "",
+        "UserDataShared": true
+    }
+}

@@ -1,0 +1,317 @@
+[ :ref:`aws <cli:aws>` . :ref:`signer <cli:aws signer>` ]
+
+.. _cli:aws signer describe-signing-job:
+
+
+********************
+describe-signing-job
+********************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about a specific code signing job. You specify the job by using the ``jobId`` value that is returned by the  StartSigningJob operation. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/DescribeSigningJob>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-signing-job
+  --job-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--job-id`` (string)
+
+
+  The ID of the signing job on input.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+jobId -> (string)
+
+  
+
+  The ID of the signing job on output.
+
+  
+
+  
+
+source -> (structure)
+
+  
+
+  The object that contains the name of your S3 bucket or your raw code.
+
+  
+
+  s3 -> (structure)
+
+    
+
+    The ``S3Source`` object.
+
+    
+
+    bucketName -> (string)
+
+      
+
+      Name of the S3 bucket.
+
+      
+
+      
+
+    key -> (string)
+
+      
+
+      Key name of the bucket object that contains your unsigned code.
+
+      
+
+      
+
+    version -> (string)
+
+      
+
+      Version of your source image in your version enabled S3 bucket.
+
+      
+
+      
+
+    
+
+  
+
+signingMaterial -> (structure)
+
+  
+
+  Amazon Resource Name (ARN) of your code signing certificate.
+
+  
+
+  certificateArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the certificates that is used to sign your code.
+
+    
+
+    
+
+  
+
+platformId -> (string)
+
+  
+
+  The microcontroller platform to which your signed code image will be distributed.
+
+  
+
+  
+
+profileName -> (string)
+
+  
+
+  The name of the profile that initiated the signing operation.
+
+  
+
+  
+
+overrides -> (structure)
+
+  
+
+  A list of any overrides that were applied to the signing operation.
+
+  
+
+  signingConfiguration -> (structure)
+
+    
+
+    A signing configuration that overrides the default encryption or hash algorithm of a signing job.
+
+    
+
+    encryptionAlgorithm -> (string)
+
+      
+
+      A specified override of the default encryption algorithm that is used in an AWS Signer job.
+
+      
+
+      
+
+    hashAlgorithm -> (string)
+
+      
+
+      A specified override of the default hash algorithm that is used in an AWS Signer job.
+
+      
+
+      
+
+    
+
+  
+
+signingParameters -> (map)
+
+  
+
+  Map of user-assigned key-value pairs used during signing. These values contain any information that you specified for use in your signing job. 
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (string)
+
+    
+
+    
+
+  
+
+createdAt -> (timestamp)
+
+  
+
+  Date and time that the signing job was created.
+
+  
+
+  
+
+completedAt -> (timestamp)
+
+  
+
+  Date and time that the signing job was completed.
+
+  
+
+  
+
+requestedBy -> (string)
+
+  
+
+  The IAM principal that requested the signing job.
+
+  
+
+  
+
+status -> (string)
+
+  
+
+  Status of the signing job.
+
+  
+
+  
+
+statusReason -> (string)
+
+  
+
+  String value that contains the status reason.
+
+  
+
+  
+
+signedObject -> (structure)
+
+  
+
+  Name of the S3 bucket where the signed code image is saved by AWS Signer.
+
+  
+
+  s3 -> (structure)
+
+    
+
+    The ``S3SignedObject`` .
+
+    
+
+    bucketName -> (string)
+
+      
+
+      Name of the S3 bucket.
+
+      
+
+      
+
+    key -> (string)
+
+      
+
+      Key name that uniquely identifies a signed code image in your bucket.
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,24 @@
+{
+    "restApiId": "",
+    "stageName": "",
+    "deploymentId": "",
+    "description": "",
+    "cacheClusterEnabled": true,
+    "cacheClusterSize": "13.5",
+    "variables": {
+        "KeyName": ""
+    },
+    "documentationVersion": "",
+    "canarySettings": {
+        "percentTraffic": null,
+        "deploymentId": "",
+        "stageVariableOverrides": {
+            "KeyName": ""
+        },
+        "useStageCache": true
+    },
+    "tracingEnabled": true,
+    "tags": {
+        "KeyName": ""
+    }
+}

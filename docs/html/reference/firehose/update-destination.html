@@ -1,0 +1,581 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-destination &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="firehose" href="../firehose/index.html" />
+    <link rel="next" title="fms" href="../fms/index.html" />
+    <link rel="prev" title="untag-delivery-stream" href="../firehose/untag-delivery-stream.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../fms/index.html" title="fms"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../firehose/untag-delivery-stream.html" title="untag-delivery-stream"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../firehose/index.html" accesskey="U">firehose</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../firehose/untag-delivery-stream.html" title="previous chapter (use the left arrow)">&larr; untag-delivery-stream</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../fms/index.html" title="next chapter (use the right arrow)">fms &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-destination</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/firehose/update-destination">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../firehose/index.html#cli-aws-firehose"><em>firehose</em></a> ]</p>
+<div class="section" id="update-destination">
+<span id="cli-aws-firehose-update-destination"></span><h1>update-destination<a class="headerlink" href="#update-destination" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates the specified destination of the specified delivery stream.</p>
+<p>Use this operation to change the destination type (for example, to replace the Amazon S3 destination with Amazon Redshift) or change the parameters associated with a destination (for example, to change the bucket name of the Amazon S3 destination). The update might not occur immediately. The target delivery stream remains active while the configurations are updated, so data writes to the delivery stream can continue during this process. The updated configurations are usually effective within a few minutes.</p>
+<p>Switching between Amazon ES and other services is not supported. For an Amazon ES destination, you can only update to another Amazon ES destination.</p>
+<p>If the destination type is the same, Kinesis Data Firehose merges the configuration parameters specified with the destination configuration that already exists on the delivery stream. If any of the parameters are not specified in the call, the existing values are retained. For example, in the Amazon S3 destination, if  EncryptionConfiguration is not specified, then the existing <tt class="docutils literal"><span class="pre">EncryptionConfiguration</span></tt> is maintained on the destination.</p>
+<p>If the destination type is not the same, for example, changing the destination from Amazon S3 to Amazon Redshift, Kinesis Data Firehose does not merge any parameters. In this case, all parameters must be specified.</p>
+<p>Kinesis Data Firehose uses <strong>CurrentDeliveryStreamVersionId</strong> to avoid race conditions and conflicting merges. This is a required field, and the service updates the configuration only if the existing configuration has a version ID that matches. After the update is applied successfully, the version ID is updated, and can be retrieved using  DescribeDeliveryStream . Use the new version ID to set <strong>CurrentDeliveryStreamVersionId</strong> in the next call.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/firehose-2015-08-04/UpdateDestination">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-destination
+--delivery-stream-name &lt;value&gt;
+--current-delivery-stream-version-id &lt;value&gt;
+--destination-id &lt;value&gt;
+[--s3-destination-update &lt;value&gt;]
+[--extended-s3-destination-update &lt;value&gt;]
+[--redshift-destination-update &lt;value&gt;]
+[--elasticsearch-destination-update &lt;value&gt;]
+[--splunk-destination-update &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--delivery-stream-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the delivery stream.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--current-delivery-stream-version-id</span></tt> (string)</p>
+<blockquote>
+<div>Obtain this value from the <strong>VersionId</strong> result of  DeliveryStreamDescription . This value is required, and helps the service perform conditional operations. For example, if there is an interleaving update and this value is null, then the update destination fails. After the update is successful, the <tt class="docutils literal"><span class="pre">VersionId</span></tt> value is updated. The service then performs a merge of the old configuration with the new configuration.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--destination-id</span></tt> (string)</p>
+<blockquote>
+<div>The ID of the destination.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--s3-destination-update</span></tt> (structure)</p>
+<blockquote>
+<div>[Deprecated] Describes an update for a destination in Amazon S3.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>RoleARN=string,BucketARN=string,Prefix=string,BufferingHints={SizeInMBs=integer,IntervalInSeconds=integer},CompressionFormat=string,EncryptionConfiguration={NoEncryptionConfig=string,KMSEncryptionConfig={AWSKMSKeyARN=string}},CloudWatchLoggingOptions={Enabled=boolean,LogGroupName=string,LogStreamName=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;RoleARN&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;BucketARN&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Prefix&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;BufferingHints&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;SizeInMBs&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">&quot;IntervalInSeconds&quot;</span><span class="p">:</span> <span class="n">integer</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;CompressionFormat&quot;</span><span class="p">:</span> <span class="s2">&quot;UNCOMPRESSED&quot;</span><span class="o">|</span><span class="s2">&quot;GZIP&quot;</span><span class="o">|</span><span class="s2">&quot;ZIP&quot;</span><span class="o">|</span><span class="s2">&quot;Snappy&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;EncryptionConfiguration&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;NoEncryptionConfig&quot;</span><span class="p">:</span> <span class="s2">&quot;NoEncryption&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;KMSEncryptionConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s2">&quot;AWSKMSKeyARN&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;CloudWatchLoggingOptions&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Enabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+    <span class="s2">&quot;LogGroupName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;LogStreamName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--extended-s3-destination-update</span></tt> (structure)</p>
+<blockquote>
+<div>Describes an update for a destination in Amazon S3.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;RoleARN&quot;: &quot;string&quot;,
+  &quot;BucketARN&quot;: &quot;string&quot;,
+  &quot;Prefix&quot;: &quot;string&quot;,
+  &quot;BufferingHints&quot;: {
+    &quot;SizeInMBs&quot;: integer,
+    &quot;IntervalInSeconds&quot;: integer
+  },
+  &quot;CompressionFormat&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;ZIP&quot;|&quot;Snappy&quot;,
+  &quot;EncryptionConfiguration&quot;: {
+    &quot;NoEncryptionConfig&quot;: &quot;NoEncryption&quot;,
+    &quot;KMSEncryptionConfig&quot;: {
+      &quot;AWSKMSKeyARN&quot;: &quot;string&quot;
+    }
+  },
+  &quot;CloudWatchLoggingOptions&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;LogGroupName&quot;: &quot;string&quot;,
+    &quot;LogStreamName&quot;: &quot;string&quot;
+  },
+  &quot;ProcessingConfiguration&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;Processors&quot;: [
+      {
+        &quot;Type&quot;: &quot;Lambda&quot;,
+        &quot;Parameters&quot;: [
+          {
+            &quot;ParameterName&quot;: &quot;LambdaArn&quot;|&quot;NumberOfRetries&quot;|&quot;RoleArn&quot;|&quot;BufferSizeInMBs&quot;|&quot;BufferIntervalInSeconds&quot;,
+            &quot;ParameterValue&quot;: &quot;string&quot;
+          }
+          ...
+        ]
+      }
+      ...
+    ]
+  },
+  &quot;S3BackupMode&quot;: &quot;Disabled&quot;|&quot;Enabled&quot;,
+  &quot;S3BackupUpdate&quot;: {
+    &quot;RoleARN&quot;: &quot;string&quot;,
+    &quot;BucketARN&quot;: &quot;string&quot;,
+    &quot;Prefix&quot;: &quot;string&quot;,
+    &quot;BufferingHints&quot;: {
+      &quot;SizeInMBs&quot;: integer,
+      &quot;IntervalInSeconds&quot;: integer
+    },
+    &quot;CompressionFormat&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;ZIP&quot;|&quot;Snappy&quot;,
+    &quot;EncryptionConfiguration&quot;: {
+      &quot;NoEncryptionConfig&quot;: &quot;NoEncryption&quot;,
+      &quot;KMSEncryptionConfig&quot;: {
+        &quot;AWSKMSKeyARN&quot;: &quot;string&quot;
+      }
+    },
+    &quot;CloudWatchLoggingOptions&quot;: {
+      &quot;Enabled&quot;: true|false,
+      &quot;LogGroupName&quot;: &quot;string&quot;,
+      &quot;LogStreamName&quot;: &quot;string&quot;
+    }
+  },
+  &quot;DataFormatConversionConfiguration&quot;: {
+    &quot;SchemaConfiguration&quot;: {
+      &quot;RoleARN&quot;: &quot;string&quot;,
+      &quot;CatalogId&quot;: &quot;string&quot;,
+      &quot;DatabaseName&quot;: &quot;string&quot;,
+      &quot;TableName&quot;: &quot;string&quot;,
+      &quot;Region&quot;: &quot;string&quot;,
+      &quot;VersionId&quot;: &quot;string&quot;
+    },
+    &quot;InputFormatConfiguration&quot;: {
+      &quot;Deserializer&quot;: {
+        &quot;OpenXJsonSerDe&quot;: {
+          &quot;ConvertDotsInJsonKeysToUnderscores&quot;: true|false,
+          &quot;CaseInsensitive&quot;: true|false,
+          &quot;ColumnToJsonKeyMappings&quot;: {&quot;string&quot;: &quot;string&quot;
+            ...}
+        },
+        &quot;HiveJsonSerDe&quot;: {
+          &quot;TimestampFormats&quot;: [&quot;string&quot;, ...]
+        }
+      }
+    },
+    &quot;OutputFormatConfiguration&quot;: {
+      &quot;Serializer&quot;: {
+        &quot;ParquetSerDe&quot;: {
+          &quot;BlockSizeBytes&quot;: integer,
+          &quot;PageSizeBytes&quot;: integer,
+          &quot;Compression&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;SNAPPY&quot;,
+          &quot;EnableDictionaryCompression&quot;: true|false,
+          &quot;MaxPaddingBytes&quot;: integer,
+          &quot;WriterVersion&quot;: &quot;V1&quot;|&quot;V2&quot;
+        },
+        &quot;OrcSerDe&quot;: {
+          &quot;StripeSizeBytes&quot;: integer,
+          &quot;BlockSizeBytes&quot;: integer,
+          &quot;RowIndexStride&quot;: integer,
+          &quot;EnablePadding&quot;: true|false,
+          &quot;PaddingTolerance&quot;: double,
+          &quot;Compression&quot;: &quot;NONE&quot;|&quot;ZLIB&quot;|&quot;SNAPPY&quot;,
+          &quot;BloomFilterColumns&quot;: [&quot;string&quot;, ...],
+          &quot;BloomFilterFalsePositiveProbability&quot;: double,
+          &quot;DictionaryKeyThreshold&quot;: double,
+          &quot;FormatVersion&quot;: &quot;V0_11&quot;|&quot;V0_12&quot;
+        }
+      }
+    },
+    &quot;Enabled&quot;: true|false
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--redshift-destination-update</span></tt> (structure)</p>
+<blockquote>
+<div>Describes an update for a destination in Amazon Redshift.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;RoleARN&quot;: &quot;string&quot;,
+  &quot;ClusterJDBCURL&quot;: &quot;string&quot;,
+  &quot;CopyCommand&quot;: {
+    &quot;DataTableName&quot;: &quot;string&quot;,
+    &quot;DataTableColumns&quot;: &quot;string&quot;,
+    &quot;CopyOptions&quot;: &quot;string&quot;
+  },
+  &quot;Username&quot;: &quot;string&quot;,
+  &quot;Password&quot;: &quot;string&quot;,
+  &quot;RetryOptions&quot;: {
+    &quot;DurationInSeconds&quot;: integer
+  },
+  &quot;S3Update&quot;: {
+    &quot;RoleARN&quot;: &quot;string&quot;,
+    &quot;BucketARN&quot;: &quot;string&quot;,
+    &quot;Prefix&quot;: &quot;string&quot;,
+    &quot;BufferingHints&quot;: {
+      &quot;SizeInMBs&quot;: integer,
+      &quot;IntervalInSeconds&quot;: integer
+    },
+    &quot;CompressionFormat&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;ZIP&quot;|&quot;Snappy&quot;,
+    &quot;EncryptionConfiguration&quot;: {
+      &quot;NoEncryptionConfig&quot;: &quot;NoEncryption&quot;,
+      &quot;KMSEncryptionConfig&quot;: {
+        &quot;AWSKMSKeyARN&quot;: &quot;string&quot;
+      }
+    },
+    &quot;CloudWatchLoggingOptions&quot;: {
+      &quot;Enabled&quot;: true|false,
+      &quot;LogGroupName&quot;: &quot;string&quot;,
+      &quot;LogStreamName&quot;: &quot;string&quot;
+    }
+  },
+  &quot;ProcessingConfiguration&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;Processors&quot;: [
+      {
+        &quot;Type&quot;: &quot;Lambda&quot;,
+        &quot;Parameters&quot;: [
+          {
+            &quot;ParameterName&quot;: &quot;LambdaArn&quot;|&quot;NumberOfRetries&quot;|&quot;RoleArn&quot;|&quot;BufferSizeInMBs&quot;|&quot;BufferIntervalInSeconds&quot;,
+            &quot;ParameterValue&quot;: &quot;string&quot;
+          }
+          ...
+        ]
+      }
+      ...
+    ]
+  },
+  &quot;S3BackupMode&quot;: &quot;Disabled&quot;|&quot;Enabled&quot;,
+  &quot;S3BackupUpdate&quot;: {
+    &quot;RoleARN&quot;: &quot;string&quot;,
+    &quot;BucketARN&quot;: &quot;string&quot;,
+    &quot;Prefix&quot;: &quot;string&quot;,
+    &quot;BufferingHints&quot;: {
+      &quot;SizeInMBs&quot;: integer,
+      &quot;IntervalInSeconds&quot;: integer
+    },
+    &quot;CompressionFormat&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;ZIP&quot;|&quot;Snappy&quot;,
+    &quot;EncryptionConfiguration&quot;: {
+      &quot;NoEncryptionConfig&quot;: &quot;NoEncryption&quot;,
+      &quot;KMSEncryptionConfig&quot;: {
+        &quot;AWSKMSKeyARN&quot;: &quot;string&quot;
+      }
+    },
+    &quot;CloudWatchLoggingOptions&quot;: {
+      &quot;Enabled&quot;: true|false,
+      &quot;LogGroupName&quot;: &quot;string&quot;,
+      &quot;LogStreamName&quot;: &quot;string&quot;
+    }
+  },
+  &quot;CloudWatchLoggingOptions&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;LogGroupName&quot;: &quot;string&quot;,
+    &quot;LogStreamName&quot;: &quot;string&quot;
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--elasticsearch-destination-update</span></tt> (structure)</p>
+<blockquote>
+<div>Describes an update for a destination in Amazon ES.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;RoleARN&quot;: &quot;string&quot;,
+  &quot;DomainARN&quot;: &quot;string&quot;,
+  &quot;IndexName&quot;: &quot;string&quot;,
+  &quot;TypeName&quot;: &quot;string&quot;,
+  &quot;IndexRotationPeriod&quot;: &quot;NoRotation&quot;|&quot;OneHour&quot;|&quot;OneDay&quot;|&quot;OneWeek&quot;|&quot;OneMonth&quot;,
+  &quot;BufferingHints&quot;: {
+    &quot;IntervalInSeconds&quot;: integer,
+    &quot;SizeInMBs&quot;: integer
+  },
+  &quot;RetryOptions&quot;: {
+    &quot;DurationInSeconds&quot;: integer
+  },
+  &quot;S3Update&quot;: {
+    &quot;RoleARN&quot;: &quot;string&quot;,
+    &quot;BucketARN&quot;: &quot;string&quot;,
+    &quot;Prefix&quot;: &quot;string&quot;,
+    &quot;BufferingHints&quot;: {
+      &quot;SizeInMBs&quot;: integer,
+      &quot;IntervalInSeconds&quot;: integer
+    },
+    &quot;CompressionFormat&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;ZIP&quot;|&quot;Snappy&quot;,
+    &quot;EncryptionConfiguration&quot;: {
+      &quot;NoEncryptionConfig&quot;: &quot;NoEncryption&quot;,
+      &quot;KMSEncryptionConfig&quot;: {
+        &quot;AWSKMSKeyARN&quot;: &quot;string&quot;
+      }
+    },
+    &quot;CloudWatchLoggingOptions&quot;: {
+      &quot;Enabled&quot;: true|false,
+      &quot;LogGroupName&quot;: &quot;string&quot;,
+      &quot;LogStreamName&quot;: &quot;string&quot;
+    }
+  },
+  &quot;ProcessingConfiguration&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;Processors&quot;: [
+      {
+        &quot;Type&quot;: &quot;Lambda&quot;,
+        &quot;Parameters&quot;: [
+          {
+            &quot;ParameterName&quot;: &quot;LambdaArn&quot;|&quot;NumberOfRetries&quot;|&quot;RoleArn&quot;|&quot;BufferSizeInMBs&quot;|&quot;BufferIntervalInSeconds&quot;,
+            &quot;ParameterValue&quot;: &quot;string&quot;
+          }
+          ...
+        ]
+      }
+      ...
+    ]
+  },
+  &quot;CloudWatchLoggingOptions&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;LogGroupName&quot;: &quot;string&quot;,
+    &quot;LogStreamName&quot;: &quot;string&quot;
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--splunk-destination-update</span></tt> (structure)</p>
+<blockquote>
+<div>Describes an update for a destination in Splunk.</div></blockquote>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;HECEndpoint&quot;: &quot;string&quot;,
+  &quot;HECEndpointType&quot;: &quot;Raw&quot;|&quot;Event&quot;,
+  &quot;HECToken&quot;: &quot;string&quot;,
+  &quot;HECAcknowledgmentTimeoutInSeconds&quot;: integer,
+  &quot;RetryOptions&quot;: {
+    &quot;DurationInSeconds&quot;: integer
+  },
+  &quot;S3BackupMode&quot;: &quot;FailedEventsOnly&quot;|&quot;AllEvents&quot;,
+  &quot;S3Update&quot;: {
+    &quot;RoleARN&quot;: &quot;string&quot;,
+    &quot;BucketARN&quot;: &quot;string&quot;,
+    &quot;Prefix&quot;: &quot;string&quot;,
+    &quot;BufferingHints&quot;: {
+      &quot;SizeInMBs&quot;: integer,
+      &quot;IntervalInSeconds&quot;: integer
+    },
+    &quot;CompressionFormat&quot;: &quot;UNCOMPRESSED&quot;|&quot;GZIP&quot;|&quot;ZIP&quot;|&quot;Snappy&quot;,
+    &quot;EncryptionConfiguration&quot;: {
+      &quot;NoEncryptionConfig&quot;: &quot;NoEncryption&quot;,
+      &quot;KMSEncryptionConfig&quot;: {
+        &quot;AWSKMSKeyARN&quot;: &quot;string&quot;
+      }
+    },
+    &quot;CloudWatchLoggingOptions&quot;: {
+      &quot;Enabled&quot;: true|false,
+      &quot;LogGroupName&quot;: &quot;string&quot;,
+      &quot;LogStreamName&quot;: &quot;string&quot;
+    }
+  },
+  &quot;ProcessingConfiguration&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;Processors&quot;: [
+      {
+        &quot;Type&quot;: &quot;Lambda&quot;,
+        &quot;Parameters&quot;: [
+          {
+            &quot;ParameterName&quot;: &quot;LambdaArn&quot;|&quot;NumberOfRetries&quot;|&quot;RoleArn&quot;|&quot;BufferSizeInMBs&quot;|&quot;BufferIntervalInSeconds&quot;,
+            &quot;ParameterValue&quot;: &quot;string&quot;
+          }
+          ...
+        ]
+      }
+      ...
+    ]
+  },
+  &quot;CloudWatchLoggingOptions&quot;: {
+    &quot;Enabled&quot;: true|false,
+    &quot;LogGroupName&quot;: &quot;string&quot;,
+    &quot;LogStreamName&quot;: &quot;string&quot;
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../firehose/untag-delivery-stream.html" title="previous chapter (use the left arrow)">&larr; untag-delivery-stream</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../fms/index.html" title="next chapter (use the right arrow)">fms &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../fms/index.html" title="fms"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../firehose/untag-delivery-stream.html" title="untag-delivery-stream"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../firehose/index.html" >firehose</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

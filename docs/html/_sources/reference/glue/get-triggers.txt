@@ -1,0 +1,369 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue get-triggers:
+
+
+************
+get-triggers
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Gets all the triggers associated with a job.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetTriggers>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``get-triggers`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``Triggers``
+
+
+========
+Synopsis
+========
+
+::
+
+    get-triggers
+  [--dependent-job-name <value>]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dependent-job-name`` (string)
+
+
+  The name of the job for which to retrieve triggers. The trigger that can start this job will be returned, and if there is no such trigger, all triggers will be returned.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Triggers -> (list)
+
+  
+
+  A list of triggers for the specified job.
+
+  
+
+  (structure)
+
+    
+
+    Information about a specific trigger.
+
+    
+
+    Name -> (string)
+
+      
+
+      Name of the trigger.
+
+      
+
+      
+
+    Id -> (string)
+
+      
+
+      Reserved for future use.
+
+      
+
+      
+
+    Type -> (string)
+
+      
+
+      The type of trigger that this is.
+
+      
+
+      
+
+    State -> (string)
+
+      
+
+      The current state of the trigger.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      A description of this trigger.
+
+      
+
+      
+
+    Schedule -> (string)
+
+      
+
+      A ``cron`` expression used to specify the schedule (see `Time-Based Schedules for Jobs and Crawlers <http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html>`__ . For example, to run something every day at 12:15 UTC, you would specify: ``cron(15 12 * * ? *)`` .
+
+      
+
+      
+
+    Actions -> (list)
+
+      
+
+      The actions initiated by this trigger.
+
+      
+
+      (structure)
+
+        
+
+        Defines an action to be initiated by a trigger.
+
+        
+
+        JobName -> (string)
+
+          
+
+          The name of a job to be executed.
+
+          
+
+          
+
+        Arguments -> (map)
+
+          
+
+          Arguments to be passed to the job run.
+
+           
+
+          You can specify arguments here that your own job-execution script consumes, as well as arguments that AWS Glue itself consumes.
+
+           
+
+          For information about how to specify and consume your own Job arguments, see the `Calling AWS Glue APIs in Python <http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html>`__ topic in the developer guide.
+
+           
+
+          For information about the key-value pairs that AWS Glue consumes to set up your job, see the `Special Parameters Used by AWS Glue <http://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html>`__ topic in the developer guide.
+
+          
+
+          key -> (string)
+
+            
+
+            
+
+          value -> (string)
+
+            
+
+            
+
+          
+
+        Timeout -> (integer)
+
+          
+
+          The JobRun timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters ``TIMEOUT`` status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
+
+          
+
+          
+
+        NotificationProperty -> (structure)
+
+          
+
+          Specifies configuration properties of a job run notification.
+
+          
+
+          NotifyDelayAfter -> (integer)
+
+            
+
+            After a job run starts, the number of minutes to wait before sending a job run delay notification.
+
+            
+
+            
+
+          
+
+        SecurityConfiguration -> (string)
+
+          
+
+          The name of the SecurityConfiguration structure to be used with this action.
+
+          
+
+          
+
+        
+
+      
+
+    Predicate -> (structure)
+
+      
+
+      The predicate of this trigger, which defines when it will fire.
+
+      
+
+      Logical -> (string)
+
+        
+
+        Optional field if only one condition is listed. If multiple conditions are listed, then this field is required.
+
+        
+
+        
+
+      Conditions -> (list)
+
+        
+
+        A list of the conditions that determine when the trigger will fire.
+
+        
+
+        (structure)
+
+          
+
+          Defines a condition under which a trigger fires.
+
+          
+
+          LogicalOperator -> (string)
+
+            
+
+            A logical operator.
+
+            
+
+            
+
+          JobName -> (string)
+
+            
+
+            The name of the Job to whose JobRuns this condition applies and on which this trigger waits.
+
+            
+
+            
+
+          State -> (string)
+
+            
+
+            The condition state. Currently, the values supported are SUCCEEDED, STOPPED, TIMEOUT and FAILED.
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  A continuation token, if not all the requested triggers have yet been returned.
+
+  
+
+  
+

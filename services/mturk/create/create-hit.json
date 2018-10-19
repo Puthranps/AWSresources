@@ -1,0 +1,75 @@
+{
+    "MaxAssignments": 0,
+    "AutoApprovalDelayInSeconds": 0,
+    "LifetimeInSeconds": 0,
+    "AssignmentDurationInSeconds": 0,
+    "Reward": "",
+    "Title": "",
+    "Keywords": "",
+    "Description": "",
+    "Question": "",
+    "RequesterAnnotation": "",
+    "QualificationRequirements": [
+        {
+            "QualificationTypeId": "",
+            "Comparator": "LessThanOrEqualTo",
+            "IntegerValues": [
+                0
+            ],
+            "LocaleValues": [
+                {
+                    "Country": "",
+                    "Subdivision": ""
+                }
+            ],
+            "RequiredToPreview": true,
+            "ActionsGuarded": "Accept"
+        }
+    ],
+    "UniqueRequestToken": "",
+    "AssignmentReviewPolicy": {
+        "PolicyName": "",
+        "Parameters": [
+            {
+                "Key": "",
+                "Values": [
+                    ""
+                ],
+                "MapEntries": [
+                    {
+                        "Key": "",
+                        "Values": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "HITReviewPolicy": {
+        "PolicyName": "",
+        "Parameters": [
+            {
+                "Key": "",
+                "Values": [
+                    ""
+                ],
+                "MapEntries": [
+                    {
+                        "Key": "",
+                        "Values": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "HITLayoutId": "",
+    "HITLayoutParameters": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ]
+}

@@ -1,0 +1,364 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-fleet &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ec2" href="../ec2/index.html" />
+    <link rel="next" title="create-flow-logs" href="../ec2/create-flow-logs.html" />
+    <link rel="prev" title="create-egress-only-internet-gateway" href="../ec2/create-egress-only-internet-gateway.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/create-flow-logs.html" title="create-flow-logs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/create-egress-only-internet-gateway.html" title="create-egress-only-internet-gateway"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" accesskey="U">ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/create-egress-only-internet-gateway.html" title="previous chapter (use the left arrow)">&larr; create-egress-only-internet-gateway</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/create-flow-logs.html" title="next chapter (use the right arrow)">create-flow-logs &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-fleet</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/create-fleet">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="create-fleet">
+<span id="cli-aws-ec2-create-fleet"></span><h1>create-fleet<a class="headerlink" href="#create-fleet" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Launches an EC2 Fleet.</p>
+<p>You can create a single EC2 Fleet that includes multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html">Launching an EC2 Fleet</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-fleet
+[--dry-run | --no-dry-run]
+[--client-token &lt;value&gt;]
+[--spot-options &lt;value&gt;]
+[--on-demand-options &lt;value&gt;]
+[--excess-capacity-termination-policy &lt;value&gt;]
+--launch-template-configs &lt;value&gt;
+--target-capacity-specification &lt;value&gt;
+[--terminate-instances-with-expiration | --no-terminate-instances-with-expiration]
+[--type &lt;value&gt;]
+[--valid-from &lt;value&gt;]
+[--valid-until &lt;value&gt;]
+[--replace-unhealthy-instances | --no-replace-unhealthy-instances]
+[--tag-specifications &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--client-token</span></tt> (string)</p>
+<blockquote>
+<div>Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring Idempotency</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--spot-options</span></tt> (structure)</p>
+<blockquote>
+<div>Describes the configuration of Spot Instances in an EC2 Fleet.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">AllocationStrategy</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">InstanceInterruptionBehavior</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">InstancePoolsToUseCount</span><span class="o">=</span><span class="n">integer</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;AllocationStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;lowest-price&quot;</span><span class="o">|</span><span class="s2">&quot;diversified&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;InstanceInterruptionBehavior&quot;</span><span class="p">:</span> <span class="s2">&quot;hibernate&quot;</span><span class="o">|</span><span class="s2">&quot;stop&quot;</span><span class="o">|</span><span class="s2">&quot;terminate&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;InstancePoolsToUseCount&quot;</span><span class="p">:</span> <span class="n">integer</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--on-demand-options</span></tt> (structure)</p>
+<blockquote>
+<div>The allocation strategy of On-Demand Instances in an EC2 Fleet.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">AllocationStrategy</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;AllocationStrategy&quot;</span><span class="p">:</span> <span class="s2">&quot;lowest-price&quot;</span><span class="o">|</span><span class="s2">&quot;prioritized&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--excess-capacity-termination-policy</span></tt> (string)</p>
+<blockquote>
+<div><p>Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">no-termination</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">termination</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--launch-template-configs</span></tt> (list)</p>
+<blockquote>
+<div>The configuration for the EC2 Fleet.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>LaunchTemplateSpecification={LaunchTemplateId=string,LaunchTemplateName=string,Version=string},Overrides=[{InstanceType=string,MaxPrice=string,SubnetId=string,AvailabilityZone=string,WeightedCapacity=double,Priority=double},{InstanceType=string,MaxPrice=string,SubnetId=string,AvailabilityZone=string,WeightedCapacity=double,Priority=double}] ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;LaunchTemplateSpecification&quot;: {
+      &quot;LaunchTemplateId&quot;: &quot;string&quot;,
+      &quot;LaunchTemplateName&quot;: &quot;string&quot;,
+      &quot;Version&quot;: &quot;string&quot;
+    },
+    &quot;Overrides&quot;: [
+      {
+        &quot;InstanceType&quot;: &quot;t1.micro&quot;|&quot;t2.nano&quot;|&quot;t2.micro&quot;|&quot;t2.small&quot;|&quot;t2.medium&quot;|&quot;t2.large&quot;|&quot;t2.xlarge&quot;|&quot;t2.2xlarge&quot;|&quot;t3.nano&quot;|&quot;t3.micro&quot;|&quot;t3.small&quot;|&quot;t3.medium&quot;|&quot;t3.large&quot;|&quot;t3.xlarge&quot;|&quot;t3.2xlarge&quot;|&quot;m1.small&quot;|&quot;m1.medium&quot;|&quot;m1.large&quot;|&quot;m1.xlarge&quot;|&quot;m3.medium&quot;|&quot;m3.large&quot;|&quot;m3.xlarge&quot;|&quot;m3.2xlarge&quot;|&quot;m4.large&quot;|&quot;m4.xlarge&quot;|&quot;m4.2xlarge&quot;|&quot;m4.4xlarge&quot;|&quot;m4.10xlarge&quot;|&quot;m4.16xlarge&quot;|&quot;m2.xlarge&quot;|&quot;m2.2xlarge&quot;|&quot;m2.4xlarge&quot;|&quot;cr1.8xlarge&quot;|&quot;r3.large&quot;|&quot;r3.xlarge&quot;|&quot;r3.2xlarge&quot;|&quot;r3.4xlarge&quot;|&quot;r3.8xlarge&quot;|&quot;r4.large&quot;|&quot;r4.xlarge&quot;|&quot;r4.2xlarge&quot;|&quot;r4.4xlarge&quot;|&quot;r4.8xlarge&quot;|&quot;r4.16xlarge&quot;|&quot;r5.large&quot;|&quot;r5.xlarge&quot;|&quot;r5.2xlarge&quot;|&quot;r5.4xlarge&quot;|&quot;r5.8xlarge&quot;|&quot;r5.12xlarge&quot;|&quot;r5.16xlarge&quot;|&quot;r5.24xlarge&quot;|&quot;r5.metal&quot;|&quot;r5d.large&quot;|&quot;r5d.xlarge&quot;|&quot;r5d.2xlarge&quot;|&quot;r5d.4xlarge&quot;|&quot;r5d.8xlarge&quot;|&quot;r5d.12xlarge&quot;|&quot;r5d.16xlarge&quot;|&quot;r5d.24xlarge&quot;|&quot;r5d.metal&quot;|&quot;x1.16xlarge&quot;|&quot;x1.32xlarge&quot;|&quot;x1e.xlarge&quot;|&quot;x1e.2xlarge&quot;|&quot;x1e.4xlarge&quot;|&quot;x1e.8xlarge&quot;|&quot;x1e.16xlarge&quot;|&quot;x1e.32xlarge&quot;|&quot;i2.xlarge&quot;|&quot;i2.2xlarge&quot;|&quot;i2.4xlarge&quot;|&quot;i2.8xlarge&quot;|&quot;i3.large&quot;|&quot;i3.xlarge&quot;|&quot;i3.2xlarge&quot;|&quot;i3.4xlarge&quot;|&quot;i3.8xlarge&quot;|&quot;i3.16xlarge&quot;|&quot;i3.metal&quot;|&quot;hi1.4xlarge&quot;|&quot;hs1.8xlarge&quot;|&quot;c1.medium&quot;|&quot;c1.xlarge&quot;|&quot;c3.large&quot;|&quot;c3.xlarge&quot;|&quot;c3.2xlarge&quot;|&quot;c3.4xlarge&quot;|&quot;c3.8xlarge&quot;|&quot;c4.large&quot;|&quot;c4.xlarge&quot;|&quot;c4.2xlarge&quot;|&quot;c4.4xlarge&quot;|&quot;c4.8xlarge&quot;|&quot;c5.large&quot;|&quot;c5.xlarge&quot;|&quot;c5.2xlarge&quot;|&quot;c5.4xlarge&quot;|&quot;c5.9xlarge&quot;|&quot;c5.18xlarge&quot;|&quot;c5d.large&quot;|&quot;c5d.xlarge&quot;|&quot;c5d.2xlarge&quot;|&quot;c5d.4xlarge&quot;|&quot;c5d.9xlarge&quot;|&quot;c5d.18xlarge&quot;|&quot;cc1.4xlarge&quot;|&quot;cc2.8xlarge&quot;|&quot;g2.2xlarge&quot;|&quot;g2.8xlarge&quot;|&quot;g3.4xlarge&quot;|&quot;g3.8xlarge&quot;|&quot;g3.16xlarge&quot;|&quot;g3s.xlarge&quot;|&quot;cg1.4xlarge&quot;|&quot;p2.xlarge&quot;|&quot;p2.8xlarge&quot;|&quot;p2.16xlarge&quot;|&quot;p3.2xlarge&quot;|&quot;p3.8xlarge&quot;|&quot;p3.16xlarge&quot;|&quot;d2.xlarge&quot;|&quot;d2.2xlarge&quot;|&quot;d2.4xlarge&quot;|&quot;d2.8xlarge&quot;|&quot;f1.2xlarge&quot;|&quot;f1.4xlarge&quot;|&quot;f1.16xlarge&quot;|&quot;m5.large&quot;|&quot;m5.xlarge&quot;|&quot;m5.2xlarge&quot;|&quot;m5.4xlarge&quot;|&quot;m5.12xlarge&quot;|&quot;m5.24xlarge&quot;|&quot;m5d.large&quot;|&quot;m5d.xlarge&quot;|&quot;m5d.2xlarge&quot;|&quot;m5d.4xlarge&quot;|&quot;m5d.12xlarge&quot;|&quot;m5d.24xlarge&quot;|&quot;h1.2xlarge&quot;|&quot;h1.4xlarge&quot;|&quot;h1.8xlarge&quot;|&quot;h1.16xlarge&quot;|&quot;z1d.large&quot;|&quot;z1d.xlarge&quot;|&quot;z1d.2xlarge&quot;|&quot;z1d.3xlarge&quot;|&quot;z1d.6xlarge&quot;|&quot;z1d.12xlarge&quot;|&quot;u-6tb1.metal&quot;|&quot;u-9tb1.metal&quot;|&quot;u-12tb1.metal&quot;,
+        &quot;MaxPrice&quot;: &quot;string&quot;,
+        &quot;SubnetId&quot;: &quot;string&quot;,
+        &quot;AvailabilityZone&quot;: &quot;string&quot;,
+        &quot;WeightedCapacity&quot;: double,
+        &quot;Priority&quot;: double
+      }
+      ...
+    ]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--target-capacity-specification</span></tt> (structure)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">TotalTargetCapacity</span></tt> , <tt class="docutils literal"><span class="pre">OnDemandTargetCapacity</span></tt> , <tt class="docutils literal"><span class="pre">SpotTargetCapacity</span></tt> , and <tt class="docutils literal"><span class="pre">DefaultCapacityType</span></tt> structure.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">TotalTargetCapacity</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">OnDemandTargetCapacity</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">SpotTargetCapacity</span><span class="o">=</span><span class="n">integer</span><span class="p">,</span><span class="n">DefaultTargetCapacityType</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;TotalTargetCapacity&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;OnDemandTargetCapacity&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;SpotTargetCapacity&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+  <span class="s2">&quot;DefaultTargetCapacityType&quot;</span><span class="p">:</span> <span class="s2">&quot;spot&quot;</span><span class="o">|</span><span class="s2">&quot;on-demand&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--terminate-instances-with-expiration</span></tt> | <tt class="docutils literal"><span class="pre">--no-terminate-instances-with-expiration</span></tt> (boolean)</p>
+<blockquote>
+<div>Indicates whether running instances should be terminated when the EC2 Fleet expires.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of request. Indicates whether the EC2 Fleet only <tt class="docutils literal"><span class="pre">requests</span></tt> the target capacity, or also attempts to <tt class="docutils literal"><span class="pre">maintain</span></tt> it. If you request a certain target capacity, EC2 Fleet only places the required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically replenishes any interrupted Spot Instances. Default: <tt class="docutils literal"><span class="pre">maintain</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">request</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">maintain</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--valid-from</span></tt> (timestamp)</p>
+<blockquote>
+<div>The start date and time of the request, in UTC format (for example, <em>YYYY</em> -<em>MM</em> -<em>DD</em> T*HH* :<em>MM</em> :<em>SS</em> Z). The default is to start fulfilling the request immediately.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--valid-until</span></tt> (timestamp)</p>
+<blockquote>
+<div>The end date and time of the request, in UTC format (for example, <em>YYYY</em> -<em>MM</em> -<em>DD</em> T*HH* :<em>MM</em> :<em>SS</em> Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. The default end date is 7 days from the current date.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--replace-unhealthy-instances</span></tt> | <tt class="docutils literal"><span class="pre">--no-replace-unhealthy-instances</span></tt> (boolean)</p>
+<blockquote>
+<div>Indicates whether EC2 Fleet should replace unhealthy instances.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--tag-specifications</span></tt> (list)</p>
+<blockquote>
+<div>The key-value pair for tagging the EC2 Fleet request on creation. The value for <tt class="docutils literal"><span class="pre">ResourceType</span></tt> must be <tt class="docutils literal"><span class="pre">fleet</span></tt> , otherwise the fleet request fails. To tag instances at launch, specify the tags in the <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template">launch template</a> . For information about tagging after launch, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources">Tagging Your Resources</a> .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>ResourceType=string,Tags=[{Key=string,Value=string},{Key=string,Value=string}] ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;ResourceType&quot;: &quot;customer-gateway&quot;|&quot;dedicated-host&quot;|&quot;dhcp-options&quot;|&quot;image&quot;|&quot;instance&quot;|&quot;internet-gateway&quot;|&quot;network-acl&quot;|&quot;network-interface&quot;|&quot;reserved-instances&quot;|&quot;route-table&quot;|&quot;snapshot&quot;|&quot;spot-instances-request&quot;|&quot;subnet&quot;|&quot;security-group&quot;|&quot;volume&quot;|&quot;vpc&quot;|&quot;vpn-connection&quot;|&quot;vpn-gateway&quot;,
+    &quot;Tags&quot;: [
+      {
+        &quot;Key&quot;: &quot;string&quot;,
+        &quot;Value&quot;: &quot;string&quot;
+      }
+      ...
+    ]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>FleetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the EC2 Fleet.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/create-egress-only-internet-gateway.html" title="previous chapter (use the left arrow)">&larr; create-egress-only-internet-gateway</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/create-flow-logs.html" title="next chapter (use the right arrow)">create-flow-logs &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/create-flow-logs.html" title="create-flow-logs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/create-egress-only-internet-gateway.html" title="create-egress-only-internet-gateway"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" >ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

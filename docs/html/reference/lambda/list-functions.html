@@ -1,0 +1,358 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-functions &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="lambda" href="../lambda/index.html" />
+    <link rel="next" title="list-tags" href="../lambda/list-tags.html" />
+    <link rel="prev" title="list-event-source-mappings" href="../lambda/list-event-source-mappings.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../lambda/list-tags.html" title="list-tags"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../lambda/list-event-source-mappings.html" title="list-event-source-mappings"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lambda/index.html" accesskey="U">lambda</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lambda/list-event-source-mappings.html" title="previous chapter (use the left arrow)">&larr; list-event-source-mappings</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lambda/list-tags.html" title="next chapter (use the right arrow)">list-tags &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-functions</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/lambda/list-functions">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../lambda/index.html#cli-aws-lambda"><em>lambda</em></a> ]</p>
+<div class="section" id="list-functions">
+<span id="cli-aws-lambda-list-functions"></span><h1>list-functions<a class="headerlink" href="#list-functions" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns a list of your Lambda functions. For each function, the response includes the function configuration information. You must use  GetFunction to retrieve the code for your function.</p>
+<p>This operation requires permission for the <tt class="docutils literal"><span class="pre">lambda:ListFunctions</span></tt> action.</p>
+<p>If you are using the versioning feature, you can list all of your functions or only <tt class="docutils literal"><span class="pre">$LATEST</span></tt> versions. For information about the versioning feature, see <a class="reference external" href="http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">AWS Lambda Function Versioning and Aliases</a> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctions">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">list-functions</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">Functions</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  list-functions
+[--master-region &lt;value&gt;]
+[--function-version &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--master-region</span></tt> (string)</p>
+<blockquote>
+<div>Specify a region (e.g. <tt class="docutils literal"><span class="pre">us-east-2</span></tt> ) to only list functions that were created in that region, or <tt class="docutils literal"><span class="pre">ALL</span></tt> to include functions replicated from any region. If specified, you also must specify the <tt class="docutils literal"><span class="pre">FunctionVersion</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--function-version</span></tt> (string)</p>
+<blockquote>
+<div><p>Set to <tt class="docutils literal"><span class="pre">ALL</span></tt> to list all published versions. If not specified, only the latest unpublished version ARN is returned.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ALL</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div><p>The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>NextMarker -&gt; (string)</p>
+<blockquote>
+<div>A string, present if there are more functions.</div></blockquote>
+<p>Functions -&gt; (list)</p>
+<blockquote>
+<div><p>A list of Lambda functions.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A Lambda function's configuration settings.</p>
+<p>FunctionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the function.</div></blockquote>
+<p>FunctionArn -&gt; (string)</p>
+<blockquote>
+<div>The function's Amazon Resource Name.</div></blockquote>
+<p>Runtime -&gt; (string)</p>
+<blockquote>
+<div>The runtime environment for the Lambda function.</div></blockquote>
+<p>Role -&gt; (string)</p>
+<blockquote>
+<div>The function's execution role.</div></blockquote>
+<p>Handler -&gt; (string)</p>
+<blockquote>
+<div>The function Lambda calls to begin executing your function.</div></blockquote>
+<p>CodeSize -&gt; (long)</p>
+<blockquote>
+<div>The size of the function's deployment package in bytes.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The function's description.</div></blockquote>
+<p>Timeout -&gt; (integer)</p>
+<blockquote>
+<div>The amount of time that Lambda allows a function to run before terminating it.</div></blockquote>
+<p>MemorySize -&gt; (integer)</p>
+<blockquote>
+<div>The memory allocated to the function</div></blockquote>
+<p>LastModified -&gt; (string)</p>
+<blockquote>
+<div>The date and time that the function was last updated, in <a class="reference external" href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a> (YYYY-MM-DDThh:mm:ssTZD).</div></blockquote>
+<p>CodeSha256 -&gt; (string)</p>
+<blockquote>
+<div>The SHA256 hash of the function's deployment package.</div></blockquote>
+<p>Version -&gt; (string)</p>
+<blockquote>
+<div>The version of the Lambda function.</div></blockquote>
+<p>VpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's networking configuration.</p>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of VPC subnet IDs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of VPC security groups IDs.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the VPC.</div></blockquote>
+</div></blockquote>
+<p>DeadLetterConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's dead letter queue.</p>
+<p>TargetArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.</div></blockquote>
+</div></blockquote>
+<p>Environment -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's environment variables.</p>
+<p>Variables -&gt; (map)</p>
+<blockquote>
+<div><p>Environment variable key-value pairs.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>Error -&gt; (structure)</p>
+<blockquote>
+<div><p>Error messages for environment variables that could not be applied.</p>
+<p>ErrorCode -&gt; (string)</p>
+<blockquote>
+<div>The error code.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The error message.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>KMSKeyArn -&gt; (string)</p>
+<blockquote>
+<div>The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer managed CMK.</div></blockquote>
+<p>TracingConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The function's AWS X-Ray tracing configuration.</p>
+<p>Mode -&gt; (string)</p>
+<blockquote>
+<div>The tracing mode.</div></blockquote>
+</div></blockquote>
+<p>MasterArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the master function.</div></blockquote>
+<p>RevisionId -&gt; (string)</p>
+<blockquote>
+<div>Represents the latest updated revision of the function or alias.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lambda/list-event-source-mappings.html" title="previous chapter (use the left arrow)">&larr; list-event-source-mappings</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lambda/list-tags.html" title="next chapter (use the right arrow)">list-tags &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../lambda/list-tags.html" title="list-tags"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../lambda/list-event-source-mappings.html" title="list-event-source-mappings"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lambda/index.html" >lambda</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

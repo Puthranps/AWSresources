@@ -1,0 +1,44 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws xray:
+
+
+****
+xray
+****
+
+
+
+===========
+Description
+===========
+
+
+
+AWS X-Ray provides APIs for managing debug traces and retrieving service maps and other data created by processing those traces.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  batch-get-traces
+  create-sampling-rule
+  delete-sampling-rule
+  get-encryption-config
+  get-sampling-rules
+  get-sampling-statistic-summaries
+  get-sampling-targets
+  get-service-graph
+  get-trace-graph
+  get-trace-summaries
+  put-encryption-config
+  put-telemetry-records
+  put-trace-segments
+  update-sampling-rule

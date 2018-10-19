@@ -1,0 +1,229 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker <cli:aws sagemaker>` ]
+
+.. _cli:aws sagemaker describe-notebook-instance:
+
+
+**************************
+describe-notebook-instance
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about a notebook instance.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeNotebookInstance>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-notebook-instance
+  --notebook-instance-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--notebook-instance-name`` (string)
+
+
+  The name of the notebook instance that you want information about.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+NotebookInstanceArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the notebook instance.
+
+  
+
+  
+
+NotebookInstanceName -> (string)
+
+  
+
+  Name of the Amazon SageMaker notebook instance. 
+
+  
+
+  
+
+NotebookInstanceStatus -> (string)
+
+  
+
+  The status of the notebook instance.
+
+  
+
+  
+
+FailureReason -> (string)
+
+  
+
+  If status is failed, the reason it failed.
+
+  
+
+  
+
+Url -> (string)
+
+  
+
+  The URL that you use to connect to the Jupyter notebook that is running in your notebook instance. 
+
+  
+
+  
+
+InstanceType -> (string)
+
+  
+
+  The type of ML compute instance running on the notebook instance.
+
+  
+
+  
+
+SubnetId -> (string)
+
+  
+
+  The ID of the VPC subnet.
+
+  
+
+  
+
+SecurityGroups -> (list)
+
+  
+
+  The IDs of the VPC security groups.
+
+  
+
+  (string)
+
+    
+
+    
+
+  
+
+RoleArn -> (string)
+
+  
+
+  Amazon Resource Name (ARN) of the IAM role associated with the instance. 
+
+  
+
+  
+
+KmsKeyId -> (string)
+
+  
+
+  AWS KMS key ID Amazon SageMaker uses to encrypt data when storing it on the ML storage volume attached to the instance. 
+
+  
+
+  
+
+NetworkInterfaceId -> (string)
+
+  
+
+  Network interface IDs that Amazon SageMaker created at the time of creating the instance. 
+
+  
+
+  
+
+LastModifiedTime -> (timestamp)
+
+  
+
+  A timestamp. Use this parameter to retrieve the time when the notebook instance was last modified. 
+
+  
+
+  
+
+CreationTime -> (timestamp)
+
+  
+
+  A timestamp. Use this parameter to return the time when the notebook instance was created
+
+  
+
+  
+
+NotebookInstanceLifecycleConfigName -> (string)
+
+  
+
+  Returns the name of a notebook instance lifecycle configuration.
+
+   
+
+  For information about notebook instance lifestyle configurations, see  notebook-lifecycle-config .
+
+  
+
+  
+
+DirectInternetAccess -> (string)
+
+  
+
+  Describes whether Amazon SageMaker provides internet access to the notebook instance. If this value is set to *Disabled, he notebook instance does not have internet access, and cannot connect to Amazon SageMaker training and endpoint services* .
+
+   
+
+  For more information, see  appendix-notebook-and-internet-access .
+
+  
+
+  
+

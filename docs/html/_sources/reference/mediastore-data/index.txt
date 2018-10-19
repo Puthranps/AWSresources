@@ -1,0 +1,35 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws mediastore-data:
+
+
+***************
+mediastore-data
+***************
+
+
+
+===========
+Description
+===========
+
+
+
+An AWS Elemental MediaStore asset is an object, similar to an object in the Amazon S3 service. Objects are the fundamental entities that are stored in AWS Elemental MediaStore.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  delete-object
+  describe-object
+  get-object
+  list-items
+  put-object

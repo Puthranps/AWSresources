@@ -1,0 +1,13 @@
+{
+    "GeoMatchSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "DELETE",
+            "GeoMatchConstraint": {
+                "Type": "Country",
+                "Value": "CY"
+            }
+        }
+    ]
+}

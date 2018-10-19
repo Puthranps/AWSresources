@@ -1,0 +1,187 @@
+[ :ref:`aws <cli:aws>` . :ref:`gamelift <cli:aws gamelift>` ]
+
+.. _cli:aws gamelift describe-matchmaking-rule-sets:
+
+
+******************************
+describe-matchmaking-rule-sets
+******************************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing rule sets for the region, or provide a list of one or more rule set names. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages. If successful, a rule set is returned for each requested name. 
+
+ 
+
+Operations related to match configurations and rule sets include:
+
+ 
+
+ 
+*  CreateMatchmakingConfiguration   
+ 
+*  DescribeMatchmakingConfigurations   
+ 
+*  UpdateMatchmakingConfiguration   
+ 
+*  DeleteMatchmakingConfiguration   
+ 
+*  CreateMatchmakingRuleSet   
+ 
+*  DescribeMatchmakingRuleSets   
+ 
+*  ValidateMatchmakingRuleSet   
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeMatchmakingRuleSets>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-matchmaking-rule-sets
+  [--names <value>]
+  [--limit <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--names`` (list)
+
+
+  Unique identifier for a matchmaking rule set. This name is used to identify the rule set associated with a matchmaking configuration.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--limit`` (integer)
+
+
+  Maximum number of results to return. Use this parameter with ``NextToken`` to get results as a set of sequential pages.
+
+  
+
+``--next-token`` (string)
+
+
+  Token that indicates the start of the next sequential page of results. Use the token that is returned with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+RuleSets -> (list)
+
+  
+
+  Collection of requested matchmaking rule set objects. 
+
+  
+
+  (structure)
+
+    
+
+    Set of rule statements, used with FlexMatch, that determine how to build a certain kind of player match. Each rule set describes a type of group to be created and defines the parameters for acceptable player matches. Rule sets are used in  MatchmakingConfiguration objects.
+
+     
+
+    A rule set may define the following elements for a match. For detailed information and examples showing how to construct a rule set, see `Build a FlexMatch Rule Set <http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html>`__ . 
+
+     
+
+     
+    * Teams -- Required. A rule set must define one or multiple teams for the match and set minimum and maximum team sizes. For example, a rule set might describe a 4x4 match that requires all eight slots to be filled.  
+     
+    * Player attributes -- Optional. These attributes specify a set of player characteristics to evaluate when looking for a match. Matchmaking requests that use a rule set with player attributes must provide the corresponding attribute values. For example, an attribute might specify a player's skill or level. 
+     
+    * Rules -- Optional. Rules define how to evaluate potential players for a match based on player attributes. A rule might specify minimum requirements for individual players, teams, or entire matches. For example, a rule might require each player to meet a certain skill level, each team to have at least one player in a certain role, or the match to have a minimum average skill level. or may describe an entire group--such as all teams must be evenly matched or have at least one player in a certain role.  
+     
+    * Expansions -- Optional. Expansions allow you to relax the rules after a period of time when no acceptable matches are found. This feature lets you balance getting players into games in a reasonable amount of time instead of making them wait indefinitely for the best possible match. For example, you might use an expansion to increase the maximum skill variance between players after 30 seconds. 
+     
+
+    
+
+    RuleSetName -> (string)
+
+      
+
+      Unique identifier for a matchmaking rule set
+
+      
+
+      
+
+    RuleSetBody -> (string)
+
+      
+
+      Collection of matchmaking rules, formatted as a JSON string. (Note that comments14 are not allowed in JSON, but most elements support a description field.)
+
+      
+
+      
+
+    CreationTime -> (timestamp)
+
+      
+
+      Time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  Token that indicates where to resume retrieving results on the next call to this action. If no token is returned, these results represent the end of the list.
+
+  
+
+  
+

@@ -1,0 +1,31 @@
+{
+    "Bucket": "",
+    "ContentMD5": "",
+    "NotificationConfiguration": {
+        "TopicConfiguration": {
+            "Id": "",
+            "Events": [
+                "s3:ObjectRemoved:DeleteMarkerCreated"
+            ],
+            "Event": "s3:ObjectRemoved:DeleteMarkerCreated",
+            "Topic": ""
+        },
+        "QueueConfiguration": {
+            "Id": "",
+            "Event": "s3:ReducedRedundancyLostObject",
+            "Events": [
+                "s3:ObjectRemoved:Delete"
+            ],
+            "Queue": ""
+        },
+        "CloudFunctionConfiguration": {
+            "Id": "",
+            "Event": "s3:ObjectCreated:CompleteMultipartUpload",
+            "Events": [
+                "s3:ObjectCreated:Put"
+            ],
+            "CloudFunction": "",
+            "InvocationRole": ""
+        }
+    }
+}

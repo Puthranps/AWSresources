@@ -1,0 +1,246 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>dms &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-tags-to-resource" href="../dms/add-tags-to-resource.html" />
+    <link rel="prev" title="update-lifecycle-policy" href="../dlm/update-lifecycle-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../dms/add-tags-to-resource.html" title="add-tags-to-resource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../dlm/update-lifecycle-policy.html" title="update-lifecycle-policy"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dlm/update-lifecycle-policy.html" title="previous chapter (use the left arrow)">&larr; update-lifecycle-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../dms/add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">dms</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/dms/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="dms">
+<span id="cli-aws-dms"></span><h1>dms<a class="headerlink" href="#dms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS Database Migration Service (AWS DMS) can migrate your data to and from the most widely used commercial and open-source databases such as Oracle, PostgreSQL, Microsoft SQL Server, Amazon Redshift, MariaDB, Amazon Aurora, MySQL, and SAP Adaptive Server Enterprise (ASE). The service supports homogeneous migrations such as Oracle to Oracle, as well as heterogeneous migrations between different database platforms, such as Oracle to MySQL or SQL Server to PostgreSQL.</p>
+<p>For more information about AWS DMS, see the AWS DMS user guide at <a class="reference external" href="http://docs.aws.amazon.com/dms/latest/userguide/Welcome.html">What Is AWS Database Migration Service?</a></p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../dms/add-tags-to-resource.html">add-tags-to-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/create-endpoint.html">create-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/create-event-subscription.html">create-event-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/create-replication-instance.html">create-replication-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/create-replication-subnet-group.html">create-replication-subnet-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/create-replication-task.html">create-replication-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/delete-certificate.html">delete-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/delete-endpoint.html">delete-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/delete-event-subscription.html">delete-event-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/delete-replication-instance.html">delete-replication-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/delete-replication-subnet-group.html">delete-replication-subnet-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/delete-replication-task.html">delete-replication-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-account-attributes.html">describe-account-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-certificates.html">describe-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-connections.html">describe-connections</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-endpoint-types.html">describe-endpoint-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-endpoints.html">describe-endpoints</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-event-categories.html">describe-event-categories</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-event-subscriptions.html">describe-event-subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-events.html">describe-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-orderable-replication-instances.html">describe-orderable-replication-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-refresh-schemas-status.html">describe-refresh-schemas-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-replication-instance-task-logs.html">describe-replication-instance-task-logs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-replication-instances.html">describe-replication-instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-replication-subnet-groups.html">describe-replication-subnet-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-replication-task-assessment-results.html">describe-replication-task-assessment-results</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-replication-tasks.html">describe-replication-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-schemas.html">describe-schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/describe-table-statistics.html">describe-table-statistics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/import-certificate.html">import-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/list-tags-for-resource.html">list-tags-for-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/modify-endpoint.html">modify-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/modify-event-subscription.html">modify-event-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/modify-replication-instance.html">modify-replication-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/modify-replication-subnet-group.html">modify-replication-subnet-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/modify-replication-task.html">modify-replication-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/reboot-replication-instance.html">reboot-replication-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/refresh-schemas.html">refresh-schemas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/reload-tables.html">reload-tables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/remove-tags-from-resource.html">remove-tags-from-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/start-replication-task.html">start-replication-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/start-replication-task-assessment.html">start-replication-task-assessment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/stop-replication-task.html">stop-replication-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../dms/test-connection.html">test-connection</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../dlm/update-lifecycle-policy.html" title="previous chapter (use the left arrow)">&larr; update-lifecycle-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../dms/add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../dms/add-tags-to-resource.html" title="add-tags-to-resource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../dlm/update-lifecycle-policy.html" title="update-lifecycle-policy"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+    "RuleId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "DELETE",
+            "Predicate": {
+                "Negated": true,
+                "Type": "SizeConstraint",
+                "DataId": ""
+            }
+        }
+    ]
+}

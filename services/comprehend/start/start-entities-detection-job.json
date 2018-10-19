@@ -1,0 +1,13 @@
+{
+    "InputDataConfig": {
+        "S3Uri": "",
+        "InputFormat": "ONE_DOC_PER_LINE"
+    },
+    "OutputDataConfig": {
+        "S3Uri": ""
+    },
+    "DataAccessRoleArn": "",
+    "JobName": "",
+    "LanguageCode": "de",
+    "ClientRequestToken": ""
+}

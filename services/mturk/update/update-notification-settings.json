@@ -1,0 +1,12 @@
+{
+    "HITTypeId": "",
+    "Notification": {
+        "Destination": "",
+        "Transport": "Email",
+        "Version": "",
+        "EventTypes": [
+            "HITExpired"
+        ]
+    },
+    "Active": true
+}

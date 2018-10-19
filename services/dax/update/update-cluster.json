@@ -1,0 +1,11 @@
+{
+    "ClusterName": "",
+    "Description": "",
+    "PreferredMaintenanceWindow": "",
+    "NotificationTopicArn": "",
+    "NotificationTopicStatus": "",
+    "ParameterGroupName": "",
+    "SecurityGroupIds": [
+        ""
+    ]
+}

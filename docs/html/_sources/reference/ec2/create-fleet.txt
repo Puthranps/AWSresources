@@ -1,0 +1,321 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 create-fleet:
+
+
+************
+create-fleet
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Launches an EC2 Fleet.
+
+ 
+
+You can create a single EC2 Fleet that includes multiple launch specifications that vary by instance type, AMI, Availability Zone, or subnet.
+
+ 
+
+For more information, see `Launching an EC2 Fleet <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet.html>`__ in the *Amazon Elastic Compute Cloud User Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateFleet>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-fleet
+  [--dry-run | --no-dry-run]
+  [--client-token <value>]
+  [--spot-options <value>]
+  [--on-demand-options <value>]
+  [--excess-capacity-termination-policy <value>]
+  --launch-template-configs <value>
+  --target-capacity-specification <value>
+  [--terminate-instances-with-expiration | --no-terminate-instances-with-expiration]
+  [--type <value>]
+  [--valid-from <value>]
+  [--valid-until <value>]
+  [--replace-unhealthy-instances | --no-replace-unhealthy-instances]
+  [--tag-specifications <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--client-token`` (string)
+
+
+  Unique, case-sensitive identifier you provide to ensure the idempotency of the request. For more information, see `Ensuring Idempotency <http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html>`__ .
+
+  
+
+``--spot-options`` (structure)
+
+
+  Describes the configuration of Spot Instances in an EC2 Fleet.
+
+  
+
+
+
+Shorthand Syntax::
+
+    AllocationStrategy=string,InstanceInterruptionBehavior=string,InstancePoolsToUseCount=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "AllocationStrategy": "lowest-price"|"diversified",
+    "InstanceInterruptionBehavior": "hibernate"|"stop"|"terminate",
+    "InstancePoolsToUseCount": integer
+  }
+
+
+
+``--on-demand-options`` (structure)
+
+
+  The allocation strategy of On-Demand Instances in an EC2 Fleet.
+
+  
+
+
+
+Shorthand Syntax::
+
+    AllocationStrategy=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "AllocationStrategy": "lowest-price"|"prioritized"
+  }
+
+
+
+``--excess-capacity-termination-policy`` (string)
+
+
+  Indicates whether running instances should be terminated if the total target capacity of the EC2 Fleet is decreased below the current size of the EC2 Fleet.
+
+  
+
+  Possible values:
+
+  
+  *   ``no-termination``
+
+  
+  *   ``termination``
+
+  
+
+  
+
+``--launch-template-configs`` (list)
+
+
+  The configuration for the EC2 Fleet.
+
+  
+
+
+
+Shorthand Syntax::
+
+    LaunchTemplateSpecification={LaunchTemplateId=string,LaunchTemplateName=string,Version=string},Overrides=[{InstanceType=string,MaxPrice=string,SubnetId=string,AvailabilityZone=string,WeightedCapacity=double,Priority=double},{InstanceType=string,MaxPrice=string,SubnetId=string,AvailabilityZone=string,WeightedCapacity=double,Priority=double}] ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "LaunchTemplateSpecification": {
+        "LaunchTemplateId": "string",
+        "LaunchTemplateName": "string",
+        "Version": "string"
+      },
+      "Overrides": [
+        {
+          "InstanceType": "t1.micro"|"t2.nano"|"t2.micro"|"t2.small"|"t2.medium"|"t2.large"|"t2.xlarge"|"t2.2xlarge"|"t3.nano"|"t3.micro"|"t3.small"|"t3.medium"|"t3.large"|"t3.xlarge"|"t3.2xlarge"|"m1.small"|"m1.medium"|"m1.large"|"m1.xlarge"|"m3.medium"|"m3.large"|"m3.xlarge"|"m3.2xlarge"|"m4.large"|"m4.xlarge"|"m4.2xlarge"|"m4.4xlarge"|"m4.10xlarge"|"m4.16xlarge"|"m2.xlarge"|"m2.2xlarge"|"m2.4xlarge"|"cr1.8xlarge"|"r3.large"|"r3.xlarge"|"r3.2xlarge"|"r3.4xlarge"|"r3.8xlarge"|"r4.large"|"r4.xlarge"|"r4.2xlarge"|"r4.4xlarge"|"r4.8xlarge"|"r4.16xlarge"|"r5.large"|"r5.xlarge"|"r5.2xlarge"|"r5.4xlarge"|"r5.8xlarge"|"r5.12xlarge"|"r5.16xlarge"|"r5.24xlarge"|"r5.metal"|"r5d.large"|"r5d.xlarge"|"r5d.2xlarge"|"r5d.4xlarge"|"r5d.8xlarge"|"r5d.12xlarge"|"r5d.16xlarge"|"r5d.24xlarge"|"r5d.metal"|"x1.16xlarge"|"x1.32xlarge"|"x1e.xlarge"|"x1e.2xlarge"|"x1e.4xlarge"|"x1e.8xlarge"|"x1e.16xlarge"|"x1e.32xlarge"|"i2.xlarge"|"i2.2xlarge"|"i2.4xlarge"|"i2.8xlarge"|"i3.large"|"i3.xlarge"|"i3.2xlarge"|"i3.4xlarge"|"i3.8xlarge"|"i3.16xlarge"|"i3.metal"|"hi1.4xlarge"|"hs1.8xlarge"|"c1.medium"|"c1.xlarge"|"c3.large"|"c3.xlarge"|"c3.2xlarge"|"c3.4xlarge"|"c3.8xlarge"|"c4.large"|"c4.xlarge"|"c4.2xlarge"|"c4.4xlarge"|"c4.8xlarge"|"c5.large"|"c5.xlarge"|"c5.2xlarge"|"c5.4xlarge"|"c5.9xlarge"|"c5.18xlarge"|"c5d.large"|"c5d.xlarge"|"c5d.2xlarge"|"c5d.4xlarge"|"c5d.9xlarge"|"c5d.18xlarge"|"cc1.4xlarge"|"cc2.8xlarge"|"g2.2xlarge"|"g2.8xlarge"|"g3.4xlarge"|"g3.8xlarge"|"g3.16xlarge"|"g3s.xlarge"|"cg1.4xlarge"|"p2.xlarge"|"p2.8xlarge"|"p2.16xlarge"|"p3.2xlarge"|"p3.8xlarge"|"p3.16xlarge"|"d2.xlarge"|"d2.2xlarge"|"d2.4xlarge"|"d2.8xlarge"|"f1.2xlarge"|"f1.4xlarge"|"f1.16xlarge"|"m5.large"|"m5.xlarge"|"m5.2xlarge"|"m5.4xlarge"|"m5.12xlarge"|"m5.24xlarge"|"m5d.large"|"m5d.xlarge"|"m5d.2xlarge"|"m5d.4xlarge"|"m5d.12xlarge"|"m5d.24xlarge"|"h1.2xlarge"|"h1.4xlarge"|"h1.8xlarge"|"h1.16xlarge"|"z1d.large"|"z1d.xlarge"|"z1d.2xlarge"|"z1d.3xlarge"|"z1d.6xlarge"|"z1d.12xlarge"|"u-6tb1.metal"|"u-9tb1.metal"|"u-12tb1.metal",
+          "MaxPrice": "string",
+          "SubnetId": "string",
+          "AvailabilityZone": "string",
+          "WeightedCapacity": double,
+          "Priority": double
+        }
+        ...
+      ]
+    }
+    ...
+  ]
+
+
+
+``--target-capacity-specification`` (structure)
+
+
+  The ``TotalTargetCapacity`` , ``OnDemandTargetCapacity`` , ``SpotTargetCapacity`` , and ``DefaultCapacityType`` structure.
+
+  
+
+
+
+Shorthand Syntax::
+
+    TotalTargetCapacity=integer,OnDemandTargetCapacity=integer,SpotTargetCapacity=integer,DefaultTargetCapacityType=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "TotalTargetCapacity": integer,
+    "OnDemandTargetCapacity": integer,
+    "SpotTargetCapacity": integer,
+    "DefaultTargetCapacityType": "spot"|"on-demand"
+  }
+
+
+
+``--terminate-instances-with-expiration`` | ``--no-terminate-instances-with-expiration`` (boolean)
+
+
+  Indicates whether running instances should be terminated when the EC2 Fleet expires.
+
+  
+
+``--type`` (string)
+
+
+  The type of request. Indicates whether the EC2 Fleet only ``requests`` the target capacity, or also attempts to ``maintain`` it. If you request a certain target capacity, EC2 Fleet only places the required requests. It does not attempt to replenish instances if capacity is diminished, and does not submit requests in alternative capacity pools if capacity is unavailable. To maintain a certain target capacity, EC2 Fleet places the required requests to meet this target capacity. It also automatically replenishes any interrupted Spot Instances. Default: ``maintain`` .
+
+  
+
+  Possible values:
+
+  
+  *   ``request``
+
+  
+  *   ``maintain``
+
+  
+
+  
+
+``--valid-from`` (timestamp)
+
+
+  The start date and time of the request, in UTC format (for example, *YYYY* -*MM* -*DD* T*HH* :*MM* :*SS* Z). The default is to start fulfilling the request immediately.
+
+  
+
+``--valid-until`` (timestamp)
+
+
+  The end date and time of the request, in UTC format (for example, *YYYY* -*MM* -*DD* T*HH* :*MM* :*SS* Z). At this point, no new EC2 Fleet requests are placed or able to fulfill the request. The default end date is 7 days from the current date.
+
+  
+
+``--replace-unhealthy-instances`` | ``--no-replace-unhealthy-instances`` (boolean)
+
+
+  Indicates whether EC2 Fleet should replace unhealthy instances.
+
+  
+
+``--tag-specifications`` (list)
+
+
+  The key-value pair for tagging the EC2 Fleet request on creation. The value for ``ResourceType`` must be ``fleet`` , otherwise the fleet request fails. To tag instances at launch, specify the tags in the `launch template <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html#create-launch-template>`__ . For information about tagging after launch, see `Tagging Your Resources <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html#tag-resources>`__ . 
+
+  
+
+
+
+Shorthand Syntax::
+
+    ResourceType=string,Tags=[{Key=string,Value=string},{Key=string,Value=string}] ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "ResourceType": "customer-gateway"|"dedicated-host"|"dhcp-options"|"image"|"instance"|"internet-gateway"|"network-acl"|"network-interface"|"reserved-instances"|"route-table"|"snapshot"|"spot-instances-request"|"subnet"|"security-group"|"volume"|"vpc"|"vpn-connection"|"vpn-gateway",
+      "Tags": [
+        {
+          "Key": "string",
+          "Value": "string"
+        }
+        ...
+      ]
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+FleetId -> (string)
+
+  
+
+  The ID of the EC2 Fleet.
+
+  
+
+  
+

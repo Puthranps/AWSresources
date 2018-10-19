@@ -1,0 +1,257 @@
+[ :ref:`aws <cli:aws>` . :ref:`redshift <cli:aws redshift>` ]
+
+.. _cli:aws redshift accept-reserved-node-exchange:
+
+
+*****************************
+accept-reserved-node-exchange
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs. 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/AcceptReservedNodeExchange>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    accept-reserved-node-exchange
+  --reserved-node-id <value>
+  --target-reserved-node-offering-id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--reserved-node-id`` (string)
+
+
+  A string representing the node identifier of the DC1 Reserved Node to be exchanged.
+
+  
+
+``--target-reserved-node-offering-id`` (string)
+
+
+  The unique identifier of the DC2 Reserved Node offering to be used for the exchange. You can obtain the value for the parameter by calling  GetReservedNodeExchangeOfferings  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ExchangedReservedNode -> (structure)
+
+  
+
+  Describes a reserved node. You can call the  DescribeReservedNodeOfferings API to obtain the available reserved node offerings. 
+
+  
+
+  ReservedNodeId -> (string)
+
+    
+
+    The unique identifier for the reservation.
+
+    
+
+    
+
+  ReservedNodeOfferingId -> (string)
+
+    
+
+    The identifier for the reserved node offering.
+
+    
+
+    
+
+  NodeType -> (string)
+
+    
+
+    The node type of the reserved node.
+
+    
+
+    
+
+  StartTime -> (timestamp)
+
+    
+
+    The time the reservation started. You purchase a reserved node offering for a duration. This is the start time of that duration.
+
+    
+
+    
+
+  Duration -> (integer)
+
+    
+
+    The duration of the node reservation in seconds.
+
+    
+
+    
+
+  FixedPrice -> (double)
+
+    
+
+    The fixed cost Amazon Redshift charges you for this reserved node.
+
+    
+
+    
+
+  UsagePrice -> (double)
+
+    
+
+    The hourly rate Amazon Redshift charges you for this reserved node.
+
+    
+
+    
+
+  CurrencyCode -> (string)
+
+    
+
+    The currency code for the reserved cluster.
+
+    
+
+    
+
+  NodeCount -> (integer)
+
+    
+
+    The number of reserved compute nodes.
+
+    
+
+    
+
+  State -> (string)
+
+    
+
+    The state of the reserved compute node.
+
+     
+
+    Possible Values:
+
+     
+
+     
+    * pending-payment-This reserved node has recently been purchased, and the sale has been approved, but payment has not yet been confirmed. 
+     
+    * active-This reserved node is owned by the caller and is available for use. 
+     
+    * payment-failed-Payment failed for the purchase attempt. 
+     
+    * retired-The reserved node is no longer available.  
+     
+    * exchanging-The owner is exchanging the reserved node for another reserved node. 
+     
+
+    
+
+    
+
+  OfferingType -> (string)
+
+    
+
+    The anticipated utilization of the reserved node, as defined in the reserved node offering.
+
+    
+
+    
+
+  RecurringCharges -> (list)
+
+    
+
+    The recurring charges for the reserved node.
+
+    
+
+    (structure)
+
+      
+
+      Describes a recurring charge.
+
+      
+
+      RecurringChargeAmount -> (double)
+
+        
+
+        The amount charged per the period of time specified by the recurring charge frequency.
+
+        
+
+        
+
+      RecurringChargeFrequency -> (string)
+
+        
+
+        The frequency at which the recurring charge amount is applied.
+
+        
+
+        
+
+      
+
+    
+
+  ReservedNodeOfferingType -> (string)
+
+    
+
+    
+
+  
+

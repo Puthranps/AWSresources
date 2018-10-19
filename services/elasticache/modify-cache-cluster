@@ -1,0 +1,27 @@
+{
+    "CacheClusterId": "",
+    "NumCacheNodes": 0,
+    "CacheNodeIdsToRemove": [
+        ""
+    ],
+    "AZMode": "single-az",
+    "NewAvailabilityZones": [
+        ""
+    ],
+    "CacheSecurityGroupNames": [
+        ""
+    ],
+    "SecurityGroupIds": [
+        ""
+    ],
+    "PreferredMaintenanceWindow": "",
+    "NotificationTopicArn": "",
+    "CacheParameterGroupName": "",
+    "NotificationTopicStatus": "",
+    "ApplyImmediately": true,
+    "EngineVersion": "",
+    "AutoMinorVersionUpgrade": true,
+    "SnapshotRetentionLimit": 0,
+    "SnapshotWindow": "",
+    "CacheNodeType": ""
+}

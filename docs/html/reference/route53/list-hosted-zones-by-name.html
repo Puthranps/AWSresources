@@ -1,0 +1,369 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>list-hosted-zones-by-name &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="route53" href="../route53/index.html" />
+    <link rel="next" title="list-query-logging-configs" href="../route53/list-query-logging-configs.html" />
+    <link rel="prev" title="list-hosted-zones" href="../route53/list-hosted-zones.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../route53/list-query-logging-configs.html" title="list-query-logging-configs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../route53/list-hosted-zones.html" title="list-hosted-zones"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../route53/index.html" accesskey="U">route53</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../route53/list-hosted-zones.html" title="previous chapter (use the left arrow)">&larr; list-hosted-zones</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../route53/list-query-logging-configs.html" title="next chapter (use the right arrow)">list-query-logging-configs &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">list-hosted-zones-by-name</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/route53/list-hosted-zones-by-name">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../route53/index.html#cli-aws-route53"><em>route53</em></a> ]</p>
+<div class="section" id="list-hosted-zones-by-name">
+<span id="cli-aws-route53-list-hosted-zones-by-name"></span><h1>list-hosted-zones-by-name<a class="headerlink" href="#list-hosted-zones-by-name" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves a list of your hosted zones in lexicographic order. The response includes a <tt class="docutils literal"><span class="pre">HostedZones</span></tt> child element for each hosted zone created by the current AWS account.</p>
+<blockquote>
+<div><p><tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> sorts hosted zones by name with the labels reversed. For example:</p>
+<p><tt class="docutils literal"><span class="pre">com.example.www.</span></tt></p>
+</div></blockquote>
+<p>Note the trailing dot, which can change the sort order in some circumstances.</p>
+<p>If the domain name includes escape characters or Punycode, <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> alphabetizes the domain name using the escaped or Punycoded value, which is the format that Amazon Route 53 saves in its database. For example, to create a hosted zone for exämple.com, you specify ex344mple.com for the domain name. <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> alphabetizes it as:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">com.ex\344mple.</span></tt></div></blockquote>
+<p>The labels are reversed and alphabetized using the escaped value. For more information about valid domain name formats, including internationalized domain names, see <a class="reference external" href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DomainNameFormat.html">DNS Domain Name Format</a> in the <em>Amazon Route 53 Developer Guide</em> .</p>
+<p>Amazon Route 53 returns up to 100 items in each response. If you have a lot of hosted zones, use the <tt class="docutils literal"><span class="pre">MaxItems</span></tt> parameter to list them in groups of up to 100. The response includes values that help navigate from one group of <tt class="docutils literal"><span class="pre">MaxItems</span></tt> hosted zones to the next:</p>
+<ul class="simple">
+<li>The <tt class="docutils literal"><span class="pre">DNSName</span></tt> and <tt class="docutils literal"><span class="pre">HostedZoneId</span></tt> elements in the response contain the values, if any, specified for the <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters in the request that produced the current response.</li>
+<li>The <tt class="docutils literal"><span class="pre">MaxItems</span></tt> element in the response contains the value, if any, that you specified for the <tt class="docutils literal"><span class="pre">maxitems</span></tt> parameter in the request that produced the current response.</li>
+<li>If the value of <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> in the response is true, there are more hosted zones associated with the current AWS account.  If <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is false, this response includes the last hosted zone that is associated with the current account. The <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> element and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> elements are omitted from the response.</li>
+<li>The <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> elements in the response contain the domain name and the hosted zone ID of the next hosted zone that is associated with the current AWS account. If you want to list more hosted zones, make another call to <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> , and specify the value of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> in the <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters, respectively.</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByName">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  list-hosted-zones-by-name
+[--dns-name &lt;value&gt;]
+[--hosted-zone-id &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--dns-name</span></tt> (string)</p>
+<blockquote>
+<div>(Optional) For your first request to <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> , include the <tt class="docutils literal"><span class="pre">dnsname</span></tt> parameter only if you want to specify the name of the first hosted zone in the response. If you don't include the <tt class="docutils literal"><span class="pre">dnsname</span></tt> parameter, Amazon Route 53 returns all of the hosted zones that were created by the current AWS account, in ASCII order. For subsequent requests, include both <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters. For <tt class="docutils literal"><span class="pre">dnsname</span></tt> , specify the value of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> from the previous response.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--hosted-zone-id</span></tt> (string)</p>
+<blockquote>
+<div><p>(Optional) For your first request to <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> , do not include the <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameter.</p>
+<p>If you have more hosted zones than the value of <tt class="docutils literal"><span class="pre">maxitems</span></tt> , <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> returns only the first <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones. To get the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones, submit another request to <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> and include both <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters. For the value of <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> , specify the value of the <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> element from the previous response.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (string)</p>
+<blockquote>
+<div>The maximum number of hosted zones to be included in the response body for this request. If you have more than <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones, then the value of the <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> element in the response is true, and the values of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> specify the first hosted zone in the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p>The following command lists up to 100 hosted zones ordered by domain name:</p>
+<div class="highlight-python"><pre>aws route53 list-hosted-zones-by-name</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;HostedZones&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ResourceRecordSetCount&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">&quot;CallerReference&quot;</span><span class="p">:</span> <span class="s2">&quot;test20150527-2&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Config&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Comment&quot;</span><span class="p">:</span> <span class="s2">&quot;test2&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;PrivateZone&quot;</span><span class="p">:</span> <span class="n">false</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;/hostedzone/Z119WBBTVP5WFX&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;2.example.com.&quot;</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ResourceRecordSetCount&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">&quot;CallerReference&quot;</span><span class="p">:</span> <span class="s2">&quot;test20150527-1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Config&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Comment&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;PrivateZone&quot;</span><span class="p">:</span> <span class="n">false</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;/hostedzone/Z3P5QSUBK4POTI&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;www.example.com.&quot;</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;IsTruncated&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;MaxItems&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The following command lists hosted zones ordered by name, beginning with <tt class="docutils literal"><span class="pre">www.example.com</span></tt>:</p>
+<div class="highlight-python"><pre>aws route53 list-hosted-zones-by-name --dns-name www.example.com</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;HostedZones&quot;</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+          <span class="s2">&quot;ResourceRecordSetCount&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s2">&quot;CallerReference&quot;</span><span class="p">:</span> <span class="s2">&quot;mwunderl20150527-1&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Config&quot;</span><span class="p">:</span> <span class="p">{</span>
+              <span class="s2">&quot;Comment&quot;</span><span class="p">:</span> <span class="s2">&quot;test&quot;</span><span class="p">,</span>
+              <span class="s2">&quot;PrivateZone&quot;</span><span class="p">:</span> <span class="n">false</span>
+          <span class="p">},</span>
+          <span class="s2">&quot;Id&quot;</span><span class="p">:</span> <span class="s2">&quot;/hostedzone/Z3P5QSUBK4POTI&quot;</span><span class="p">,</span>
+          <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;www.example.com.&quot;</span>
+      <span class="p">}</span>
+  <span class="p">],</span>
+  <span class="s2">&quot;DNSName&quot;</span><span class="p">:</span> <span class="s2">&quot;www.example.com&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;IsTruncated&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;MaxItems&quot;</span><span class="p">:</span> <span class="s2">&quot;100&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>HostedZones -&gt; (list)</p>
+<blockquote>
+<div><p>A complex type that contains general information about the hosted zone.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A complex type that contains general information about the hosted zone.</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the domain. For public hosted zones, this is the name that you have registered with your DNS registrar.</p>
+<p>For information about how to specify characters other than <tt class="docutils literal"><span class="pre">a-z</span></tt> , <tt class="docutils literal"><span class="pre">0-9</span></tt> , and <tt class="docutils literal"><span class="pre">-</span></tt> (hyphen) and how to specify internationalized domain names, see  CreateHostedZone .</p>
+</div></blockquote>
+<p>CallerReference -&gt; (string)</p>
+<blockquote>
+<div>The value that you specified for <tt class="docutils literal"><span class="pre">CallerReference</span></tt> when you created the hosted zone.</div></blockquote>
+<p>Config -&gt; (structure)</p>
+<blockquote>
+<div><p>A complex type that includes the <tt class="docutils literal"><span class="pre">Comment</span></tt> and <tt class="docutils literal"><span class="pre">PrivateZone</span></tt> elements. If you omitted the <tt class="docutils literal"><span class="pre">HostedZoneConfig</span></tt> and <tt class="docutils literal"><span class="pre">Comment</span></tt> elements from the request, the <tt class="docutils literal"><span class="pre">Config</span></tt> and <tt class="docutils literal"><span class="pre">Comment</span></tt> elements don't appear in the response.</p>
+<p>Comment -&gt; (string)</p>
+<blockquote>
+<div>Any comments that you want to include about the hosted zone.</div></blockquote>
+<p>PrivateZone -&gt; (boolean)</p>
+<blockquote>
+<div>A value that indicates whether this is a private hosted zone.</div></blockquote>
+</div></blockquote>
+<p>ResourceRecordSetCount -&gt; (long)</p>
+<blockquote>
+<div>The number of resource record sets in the hosted zone.</div></blockquote>
+<p>LinkedService -&gt; (structure)</p>
+<blockquote>
+<div><p>If the hosted zone was created by another service, the service that created the hosted zone. When a hosted zone is created by another service, you can't edit or delete it using Amazon Route 53.</p>
+<p>ServicePrincipal -&gt; (string)</p>
+<blockquote>
+<div>If the health check or hosted zone was created by another service, the service that created the resource. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>If the health check or hosted zone was created by another service, an optional description that can be provided by the other service. When a resource is created by another service, you can't edit or delete it using Amazon Route 53.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>DNSName -&gt; (string)</p>
+<blockquote>
+<div>For the second and subsequent calls to <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> , <tt class="docutils literal"><span class="pre">DNSName</span></tt> is the value that you specified for the <tt class="docutils literal"><span class="pre">dnsname</span></tt> parameter in the request that produced the current response.</div></blockquote>
+<p>HostedZoneId -&gt; (string)</p>
+<blockquote>
+<div>The ID that Amazon Route 53 assigned to the hosted zone when you created it.</div></blockquote>
+<p>IsTruncated -&gt; (boolean)</p>
+<blockquote>
+<div>A flag that indicates whether there are more hosted zones to be listed. If the response was truncated, you can get the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones by calling <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> again and specifying the values of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> elements in the <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters.</div></blockquote>
+<p>NextDNSName -&gt; (string)</p>
+<blockquote>
+<div><p>If <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is true, the value of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> is the name of the first hosted zone in the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones. Call <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> again and specify the value of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> in the <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters, respectively.</p>
+<p>This element is present only if <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
+</div></blockquote>
+<p>NextHostedZoneId -&gt; (string)</p>
+<blockquote>
+<div><p>If <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> , the value of <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> identifies the first hosted zone in the next group of <tt class="docutils literal"><span class="pre">maxitems</span></tt> hosted zones. Call <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> again and specify the value of <tt class="docutils literal"><span class="pre">NextDNSName</span></tt> and <tt class="docutils literal"><span class="pre">NextHostedZoneId</span></tt> in the <tt class="docutils literal"><span class="pre">dnsname</span></tt> and <tt class="docutils literal"><span class="pre">hostedzoneid</span></tt> parameters, respectively.</p>
+<p>This element is present only if <tt class="docutils literal"><span class="pre">IsTruncated</span></tt> is <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
+</div></blockquote>
+<p>MaxItems -&gt; (string)</p>
+<blockquote>
+<div>The value that you specified for the <tt class="docutils literal"><span class="pre">maxitems</span></tt> parameter in the call to <tt class="docutils literal"><span class="pre">ListHostedZonesByName</span></tt> that produced the current response.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../route53/list-hosted-zones.html" title="previous chapter (use the left arrow)">&larr; list-hosted-zones</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../route53/list-query-logging-configs.html" title="next chapter (use the right arrow)">list-query-logging-configs &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../route53/list-query-logging-configs.html" title="list-query-logging-configs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../route53/list-hosted-zones.html" title="list-hosted-zones"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../route53/index.html" >route53</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

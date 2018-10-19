@@ -1,0 +1,71 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws directconnect:
+
+
+*************
+directconnect
+*************
+
+
+
+===========
+Description
+===========
+
+
+
+AWS Direct Connect links your internal network to an AWS Direct Connect location over a standard Ethernet fiber-optic cable. One end of the cable is connected to your router, the other to an AWS Direct Connect router. With this connection in place, you can create virtual interfaces directly to the AWS cloud (for example, to Amazon EC2 and Amazon S3) and to Amazon VPC, bypassing Internet service providers in your network path. A connection provides access to all AWS Regions except the China (Beijing) and (China) Ningxia Regions. AWS resources in the China Regions can only be accessed through locations associated with those Regions.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  allocate-hosted-connection
+  allocate-private-virtual-interface
+  allocate-public-virtual-interface
+  associate-connection-with-lag
+  associate-hosted-connection
+  associate-virtual-interface
+  confirm-connection
+  confirm-private-virtual-interface
+  confirm-public-virtual-interface
+  create-bgp-peer
+  create-connection
+  create-direct-connect-gateway
+  create-direct-connect-gateway-association
+  create-interconnect
+  create-lag
+  create-private-virtual-interface
+  create-public-virtual-interface
+  delete-bgp-peer
+  delete-connection
+  delete-direct-connect-gateway
+  delete-direct-connect-gateway-association
+  delete-interconnect
+  delete-lag
+  delete-virtual-interface
+  describe-connections
+  describe-direct-connect-gateway-associations
+  describe-direct-connect-gateway-attachments
+  describe-direct-connect-gateways
+  describe-hosted-connections
+  describe-interconnects
+  describe-lags
+  describe-loa
+  describe-locations
+  describe-tags
+  describe-virtual-gateways
+  describe-virtual-interfaces
+  disassociate-connection-from-lag
+  tag-resource
+  untag-resource
+  update-lag
+  update-virtual-interface-attributes

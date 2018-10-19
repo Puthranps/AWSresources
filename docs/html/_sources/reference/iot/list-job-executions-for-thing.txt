@@ -1,0 +1,219 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot <cli:aws iot>` ]
+
+.. _cli:aws iot list-job-executions-for-thing:
+
+
+*****************************
+list-job-executions-for-thing
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the job executions for the specified thing.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListJobExecutionsForThing>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-job-executions-for-thing
+  --thing-name <value>
+  [--status <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--thing-name`` (string)
+
+
+  The thing name.
+
+  
+
+``--status`` (string)
+
+
+  An optional filter that lets you search for jobs that have the specified status.
+
+  
+
+  Possible values:
+
+  
+  *   ``QUEUED``
+
+  
+  *   ``IN_PROGRESS``
+
+  
+  *   ``SUCCEEDED``
+
+  
+  *   ``FAILED``
+
+  
+  *   ``TIMED_OUT``
+
+  
+  *   ``REJECTED``
+
+  
+  *   ``REMOVED``
+
+  
+  *   ``CANCELED``
+
+  
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to be returned per request.
+
+  
+
+``--next-token`` (string)
+
+
+  The token to retrieve the next set of results.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+executionSummaries -> (list)
+
+  
+
+  A list of job execution summaries.
+
+  
+
+  (structure)
+
+    
+
+    The job execution summary for a thing.
+
+    
+
+    jobId -> (string)
+
+      
+
+      The unique identifier you assigned to this job when it was created.
+
+      
+
+      
+
+    jobExecutionSummary -> (structure)
+
+      
+
+      Contains a subset of information about a job execution.
+
+      
+
+      status -> (string)
+
+        
+
+        The status of the job execution.
+
+        
+
+        
+
+      queuedAt -> (timestamp)
+
+        
+
+        The time, in milliseconds since the epoch, when the job execution was queued.
+
+        
+
+        
+
+      startedAt -> (timestamp)
+
+        
+
+        The time, in milliseconds since the epoch, when the job execution started.
+
+        
+
+        
+
+      lastUpdatedAt -> (timestamp)
+
+        
+
+        The time, in milliseconds since the epoch, when the job execution was last updated.
+
+        
+
+        
+
+      executionNumber -> (long)
+
+        
+
+        A string (consisting of the digits "0" through "9") which identifies this particular job execution on this particular device. It can be used later in commands which return or update job execution information.
+
+        
+
+        
+
+      
+
+    
+
+  
+
+nextToken -> (string)
+
+  
+
+  The token for the next set of results, or **null** if there are no additional results.
+
+  
+
+  
+

@@ -1,0 +1,24 @@
+{
+    "UserPoolId": "",
+    "ClientId": "",
+    "ChallengeName": "PASSWORD_VERIFIER",
+    "ChallengeResponses": {
+        "KeyName": ""
+    },
+    "Session": "",
+    "AnalyticsMetadata": {
+        "AnalyticsEndpointId": ""
+    },
+    "ContextData": {
+        "IpAddress": "",
+        "ServerName": "",
+        "ServerPath": "",
+        "HttpHeaders": [
+            {
+                "headerName": "",
+                "headerValue": ""
+            }
+        ],
+        "EncodedData": ""
+    }
+}

@@ -1,0 +1,446 @@
+[ :ref:`aws <cli:aws>` . :ref:`s3api <cli:aws s3api>` ]
+
+.. _cli:aws s3api get-bucket-replication:
+
+
+**********************
+get-bucket-replication
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the replication configuration of a bucket.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketReplication>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-bucket-replication
+  --bucket <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--bucket`` (string)
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+The following command retrieves the replication configuration for a bucket named ``my-bucket``::
+
+  aws s3api get-bucket-replication --bucket my-bucket
+
+Output::
+
+  {
+      "ReplicationConfiguration": {
+          "Rules": [
+              {
+                  "Status": "Enabled",
+                  "Prefix": "",
+                  "Destination": {
+                      "Bucket": "arn:aws:s3:::my-bucket-backup",
+                      "StorageClass": "STANDARD"
+                  },
+                  "ID": "ZmUwNzE4ZmQ4tMjVhOS00MTlkLOGI4NDkzZTIWJjNTUtYTA1"
+              }
+          ],
+          "Role": "arn:aws:iam::123456789012:role/s3-replication-role"
+      }
+  }
+
+======
+Output
+======
+
+ReplicationConfiguration -> (structure)
+
+  
+
+  Container for replication rules. You can add as many as 1,000 rules. Total replication configuration size can be up to 2 MB.
+
+  
+
+  Role -> (string)
+
+    
+
+    Amazon Resource Name (ARN) of an IAM role for Amazon S3 to assume when replicating the objects.
+
+    
+
+    
+
+  Rules -> (list)
+
+    
+
+    Container for one or more replication rules. Replication configuration must have at least one rule and can contain up to 1,000 rules. 
+
+    
+
+    (structure)
+
+      
+
+      Container for information about a particular replication rule.
+
+      
+
+      ID -> (string)
+
+        
+
+        Unique identifier for the rule. The value cannot be longer than 255 characters.
+
+        
+
+        
+
+      Priority -> (integer)
+
+        
+
+        The priority associated with the rule. If you specify multiple rules in a replication configuration, then Amazon S3 applies rule priority in the event there are conflicts (two or more rules identify the same object based on filter specified). The rule with higher priority takes precedence. For example,
+
+         
+
+         
+        * Same object quality prefix based filter criteria If prefixes you specified in multiple rules overlap.  
+         
+        * Same object qualify tag based filter criteria specified in multiple rules 
+         
+
+         
+
+        For more information, see `Cross-Region Replication (CRR) < https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html>`__ in the Amazon S3 Developer Guide.
+
+        
+
+        
+
+      Prefix -> (string)
+
+        
+
+        Object keyname prefix identifying one or more objects to which the rule applies. Maximum prefix length can be up to 1,024 characters. 
+
+        
+
+        
+
+      Filter -> (structure)
+
+        
+
+        Filter that identifies subset of objects to which the replication rule applies. A ``Filter`` must specify exactly one ``Prefix`` , ``Tag`` , or an ``And`` child element.
+
+        
+
+        Prefix -> (string)
+
+          
+
+          Object keyname prefix that identifies subset of objects to which the rule applies.
+
+          
+
+          
+
+        Tag -> (structure)
+
+          
+
+          Container for specifying a tag key and value. 
+
+           
+
+          The rule applies only to objects having the tag in its tagset.
+
+          
+
+          Key -> (string)
+
+            
+
+            Name of the tag.
+
+            
+
+            
+
+          Value -> (string)
+
+            
+
+            Value of the tag.
+
+            
+
+            
+
+          
+
+        And -> (structure)
+
+          
+
+          Container for specifying rule filters. These filters determine the subset of objects to which the rule applies. The element is required only if you specify more than one filter. For example: 
+
+           
+
+           
+          * You specify both a ``Prefix`` and a ``Tag`` filters. Then you wrap these in an ``And`` tag. 
+           
+          * You specify filter based on multiple tags. Then you wrap the ``Tag`` elements in an ``And`` tag. 
+           
+
+          
+
+          Prefix -> (string)
+
+            
+
+            
+
+          Tags -> (list)
+
+            
+
+            (structure)
+
+              
+
+              Key -> (string)
+
+                
+
+                Name of the tag.
+
+                
+
+                
+
+              Value -> (string)
+
+                
+
+                Value of the tag.
+
+                
+
+                
+
+              
+
+            
+
+          
+
+        
+
+      Status -> (string)
+
+        
+
+        The rule is ignored if status is not Enabled.
+
+        
+
+        
+
+      SourceSelectionCriteria -> (structure)
+
+        
+
+        Container that describes additional filters in identifying source objects that you want to replicate. Currently, Amazon S3 supports only the filter that you can specify for objects created with server-side encryption using an AWS KMS-managed key. You can choose to enable or disable replication of these objects. 
+
+         
+
+        if you want Amazon S3 to replicate objects created with server-side encryption using AWS KMS-managed keys. 
+
+        
+
+        SseKmsEncryptedObjects -> (structure)
+
+          
+
+          Container for filter information of selection of KMS Encrypted S3 objects. The element is required if you include ``SourceSelectionCriteria`` in the replication configuration. 
+
+          
+
+          Status -> (string)
+
+            
+
+            The replication for KMS encrypted S3 objects is disabled if status is not Enabled.
+
+            
+
+            
+
+          
+
+        
+
+      Destination -> (structure)
+
+        
+
+        Container for replication destination information.
+
+        
+
+        Bucket -> (string)
+
+          
+
+          Amazon resource name (ARN) of the bucket where you want Amazon S3 to store replicas of the object identified by the rule. 
+
+           
+
+          If you have multiple rules in your replication configuration, all rules must specify the same bucket as the destination. A replication configuration can replicate objects only to one destination bucket. 
+
+          
+
+          
+
+        Account -> (string)
+
+          
+
+          Account ID of the destination bucket. Currently Amazon S3 verifies this value only if Access Control Translation is enabled. 
+
+           
+
+          In a cross-account scenario, if you tell Amazon S3 to change replica ownership to the AWS account that owns the destination bucket by adding the ``AccessControlTranslation`` element, this is the account ID of the destination bucket owner. 
+
+          
+
+          
+
+        StorageClass -> (string)
+
+          
+
+          The class of storage used to store the object.
+
+          
+
+          
+
+        AccessControlTranslation -> (structure)
+
+          
+
+          Container for information regarding the access control for replicas. 
+
+           
+
+          Use only in a cross-account scenario, where source and destination bucket owners are not the same, when you want to change replica ownership to the AWS account that owns the destination bucket. If you don't add this element to the replication configuration, the replicas are owned by same AWS account that owns the source object. 
+
+          
+
+          Owner -> (string)
+
+            
+
+            The override value for the owner of the replica object.
+
+            
+
+            
+
+          
+
+        EncryptionConfiguration -> (structure)
+
+          
+
+          Container that provides encryption-related information. You must specify this element if the ``SourceSelectionCriteria`` is specified. 
+
+          
+
+          ReplicaKmsKeyID -> (string)
+
+            
+
+            The ID of the AWS KMS key for the region where the destination bucket resides. Amazon S3 uses this key to encrypt the replica object. 
+
+            
+
+            
+
+          
+
+        
+
+      DeleteMarkerReplication -> (structure)
+
+        
+
+        Specifies whether Amazon S3 should replicate delete makers.
+
+        
+
+        Status -> (string)
+
+          
+
+          The status of the delete marker replication.
+
+           
+
+          .. note::
+
+             
+
+            In the current implementation, Amazon S3 does not replicate the delete markers. Therefore, the status must be ``Disabled`` . 
+
+             
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+

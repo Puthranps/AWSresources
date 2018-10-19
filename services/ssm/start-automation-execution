@@ -1,0 +1,29 @@
+{
+    "DocumentName": "",
+    "DocumentVersion": "",
+    "Parameters": {
+        "KeyName": [
+            ""
+        ]
+    },
+    "ClientToken": "",
+    "Mode": "Auto",
+    "TargetParameterName": "",
+    "Targets": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "TargetMaps": [
+        {
+            "KeyName": [
+                ""
+            ]
+        }
+    ],
+    "MaxConcurrency": "",
+    "MaxErrors": ""
+}

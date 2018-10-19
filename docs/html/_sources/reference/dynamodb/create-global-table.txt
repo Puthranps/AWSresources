@@ -1,0 +1,227 @@
+[ :ref:`aws <cli:aws>` . :ref:`dynamodb <cli:aws dynamodb>` ]
+
+.. _cli:aws dynamodb create-global-table:
+
+
+*******************
+create-global-table
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a global table from an existing table. A global table creates a replication relationship between two or more DynamoDB tables with the same table name in the provided regions. 
+
+ 
+
+If you want to add a new replica table to a global table, each of the following conditions must be true:
+
+ 
+
+ 
+* The table must have the same primary key as all of the other replicas. 
+ 
+* The table must have the same name as all of the other replicas. 
+ 
+* The table must have DynamoDB Streams enabled, with the stream containing both the new and the old images of the item. 
+ 
+* None of the replica tables in the global table can contain any data. 
+ 
+
+ 
+
+If global secondary indexes are specified, then the following conditions must also be met: 
+
+ 
+
+ 
+* The global secondary indexes must have the same name.  
+ 
+* The global secondary indexes must have the same hash key and sort key (if present).  
+ 
+
+ 
+
+.. warning::
+
+   
+
+  Write capacity settings should be set consistently across your replica tables and secondary indexes. DynamoDB strongly recommends enabling auto scaling to manage the write capacity settings for all of your global tables replicas and indexes. 
+
+   
+
+  If you prefer to manage write capacity settings manually, you should provision equal replicated write capacity units to your replica tables. You should also provision equal replicated write capacity units to matching secondary indexes across your global table. 
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-global-table
+  --global-table-name <value>
+  --replication-group <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--global-table-name`` (string)
+
+
+  The global table name.
+
+  
+
+``--replication-group`` (list)
+
+
+  The regions where the global table needs to be created.
+
+  
+
+
+
+Shorthand Syntax::
+
+    RegionName=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "RegionName": "string"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+GlobalTableDescription -> (structure)
+
+  
+
+  Contains the details of the global table.
+
+  
+
+  ReplicationGroup -> (list)
+
+    
+
+    The regions where the global table has replicas.
+
+    
+
+    (structure)
+
+      
+
+      Contains the details of the replica.
+
+      
+
+      RegionName -> (string)
+
+        
+
+        The name of the region.
+
+        
+
+        
+
+      
+
+    
+
+  GlobalTableArn -> (string)
+
+    
+
+    The unique identifier of the global table.
+
+    
+
+    
+
+  CreationDateTime -> (timestamp)
+
+    
+
+    The creation time of the global table.
+
+    
+
+    
+
+  GlobalTableStatus -> (string)
+
+    
+
+    The current state of the global table:
+
+     
+
+     
+    * ``CREATING`` - The global table is being created. 
+     
+    * ``UPDATING`` - The global table is being updated. 
+     
+    * ``DELETING`` - The global table is being deleted. 
+     
+    * ``ACTIVE`` - The global table is ready for use. 
+     
+
+    
+
+    
+
+  GlobalTableName -> (string)
+
+    
+
+    The global table name.
+
+    
+
+    
+
+  
+

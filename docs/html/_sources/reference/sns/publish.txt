@@ -1,0 +1,260 @@
+[ :ref:`aws <cli:aws>` . :ref:`sns <cli:aws sns>` ]
+
+.. _cli:aws sns publish:
+
+
+*******
+publish
+*******
+
+
+
+===========
+Description
+===========
+
+
+
+Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly to a phone number. 
+
+ 
+
+If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the topic. The format of the message depends on the notification protocol for each subscribed endpoint.
+
+ 
+
+When a ``messageId`` is returned, the message has been saved and Amazon SNS will attempt to deliver it shortly.
+
+ 
+
+To use the ``Publish`` action for sending a message to a mobile endpoint, such as an app on a Kindle device or mobile phone, you must specify the EndpointArn for the TargetArn parameter. The EndpointArn is returned when making a call with the ``CreatePlatformEndpoint`` action. 
+
+ 
+
+For more information about formatting messages, see `Send Custom Platform-Specific Payloads in Messages to Mobile Devices <http://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html>`__ . 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/Publish>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    publish
+  [--topic-arn <value>]
+  [--target-arn <value>]
+  [--phone-number <value>]
+  --message <value>
+  [--subject <value>]
+  [--message-structure <value>]
+  [--message-attributes <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--topic-arn`` (string)
+
+
+  The topic you want to publish to.
+
+   
+
+  If you don't specify a value for the ``TopicArn`` parameter, you must specify a value for the ``PhoneNumber`` or ``TargetArn`` parameters.
+
+  
+
+``--target-arn`` (string)
+
+
+  Either TopicArn or EndpointArn, but not both.
+
+   
+
+  If you don't specify a value for the ``TargetArn`` parameter, you must specify a value for the ``PhoneNumber`` or ``TopicArn`` parameters.
+
+  
+
+``--phone-number`` (string)
+
+
+  The phone number to which you want to deliver an SMS message. Use E.164 format.
+
+   
+
+  If you don't specify a value for the ``PhoneNumber`` parameter, you must specify a value for the ``TargetArn`` or ``TopicArn`` parameters.
+
+  
+
+``--message`` (string)
+
+
+  The message you want to send.
+
+   
+
+  If you are publishing to a topic and you want to send the same message to all transport protocols, include the text of the message as a String value. If you want to send different messages for each transport protocol, set the value of the ``MessageStructure`` parameter to ``json`` and use a JSON object for the ``Message`` parameter. 
+
+   
+
+  
+
+   
+
+  Constraints:
+
+   
+
+   
+  * With the exception of SMS, messages must be UTF-8 encoded strings and at most 256 KB in size (262144 bytes, not 262144 characters). 
+   
+  * For SMS, each message can contain up to 140 bytes, and the character limit depends on the encoding scheme. For example, an SMS message can contain 160 GSM characters, 140 ASCII characters, or 70 UCS-2 characters. If you publish a message that exceeds the size limit, Amazon SNS sends it as multiple messages, each fitting within the size limit. Messages are not cut off in the middle of a word but on whole-word boundaries. The total size limit for a single SMS publish action is 1600 bytes. 
+   
+
+   
+
+  JSON-specific constraints:
+
+   
+
+   
+  * Keys in the JSON object that correspond to supported transport protocols must have simple JSON string values. 
+   
+  * The values will be parsed (unescaped) before they are used in outgoing messages. 
+   
+  * Outbound notifications are JSON encoded (meaning that the characters will be reescaped for sending). 
+   
+  * Values have a minimum length of 0 (the empty string, "", is allowed). 
+   
+  * Values have a maximum length bounded by the overall message size (so, including multiple protocols may limit message sizes). 
+   
+  * Non-string values will cause the key to be ignored. 
+   
+  * Keys that do not correspond to supported transport protocols are ignored. 
+   
+  * Duplicate keys are not allowed. 
+   
+  * Failure to parse or validate any key or value in the message will cause the ``Publish`` call to return an error (no partial delivery). 
+   
+
+  
+
+``--subject`` (string)
+
+
+  Optional parameter to be used as the "Subject" line when the message is delivered to email endpoints. This field will also be included, if present, in the standard JSON messages delivered to other endpoints.
+
+   
+
+  Constraints: Subjects must be ASCII text that begins with a letter, number, or punctuation mark; must not include line breaks or control characters; and must be less than 100 characters long.
+
+  
+
+``--message-structure`` (string)
+
+
+  Set ``MessageStructure`` to ``json`` if you want to send a different message for each protocol. For example, using one publish action, you can send a short message to your SMS subscribers and a longer message to your email subscribers. If you set ``MessageStructure`` to ``json`` , the value of the ``Message`` parameter must: 
+
+   
+
+   
+  * be a syntactically valid JSON object; and 
+   
+  * contain at least a top-level JSON key of "default" with a value that is a string. 
+   
+
+   
+
+  You can define other top-level keys that define the message you want to send to a specific transport protocol (e.g., "http").
+
+   
+
+  For information about sending different messages for each protocol using the AWS Management Console, go to `Create Different Messages for Each Protocol <http://docs.aws.amazon.com/sns/latest/gsg/Publish.html#sns-message-formatting-by-protocol>`__ in the *Amazon Simple Notification Service Getting Started Guide* . 
+
+   
+
+  Valid value: ``json``  
+
+  
+
+``--message-attributes`` (map)
+
+
+  Message attributes for Publish action.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=DataType=string,StringValue=string,BinaryValue=blob,KeyName2=DataType=string,StringValue=string,BinaryValue=blob
+
+
+
+
+JSON Syntax::
+
+  {"string": {
+        "DataType": "string",
+        "StringValue": "string",
+        "BinaryValue": blob
+      }
+    ...}
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+The following command publishes a message to an SNS topic named ``my-topic``::
+
+  aws sns publish --topic-arn "arn:aws:sns:us-west-2:0123456789012:my-topic" --message file://message.txt
+
+``message.txt`` is a text file containing the message to publish::
+
+  Hello World
+  Second Line
+
+Putting the message in a text file allows you to include line breaks.
+
+======
+Output
+======
+
+MessageId -> (string)
+
+  
+
+  Unique identifier assigned to the published message.
+
+   
+
+  Length Constraint: Maximum 100 characters
+
+  
+
+  
+

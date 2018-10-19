@@ -1,0 +1,247 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>workdocs &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="abort-document-version-upload" href="../workdocs/abort-document-version-upload.html" />
+    <link rel="prev" title="update-xss-match-set" href="../waf-regional/update-xss-match-set.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../workdocs/abort-document-version-upload.html" title="abort-document-version-upload"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../waf-regional/update-xss-match-set.html" title="update-xss-match-set"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../waf-regional/update-xss-match-set.html" title="previous chapter (use the left arrow)">&larr; update-xss-match-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workdocs/abort-document-version-upload.html" title="next chapter (use the right arrow)">abort-document-version-upload &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">workdocs</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/workdocs/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="workdocs">
+<span id="cli-aws-workdocs"></span><h1>workdocs<a class="headerlink" href="#workdocs" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>The WorkDocs API is designed for the following use cases:</p>
+<ul class="simple">
+<li>File Migration: File migration applications are supported for users who want to migrate their files from an on-premises or off-premises file system or service. Users can insert files into a user directory structure, as well as allow for basic metadata changes, such as modifications to the permissions of files.</li>
+<li>Security: Support security applications are supported for users who have additional security needs, such as antivirus or data loss prevention. The API actions, along with AWS CloudTrail, allow these applications to detect when changes occur in Amazon WorkDocs. Then, the application can take the necessary actions and replace the target file. If the target file violates the policy, the application can also choose to email the user.</li>
+<li>eDiscovery/Analytics: General administrative applications are supported, such as eDiscovery and analytics. These applications can choose to mimic or record the actions in an Amazon WorkDocs site, along with AWS CloudTrail, to replicate data for eDiscovery, backup, or analytical applications.</li>
+</ul>
+<p>All Amazon WorkDocs API actions are Amazon authenticated and certificate-signed. They not only require the use of the AWS SDK, but also allow for the exclusive use of IAM users and roles to help facilitate access, trust, and permission policies. By creating a role and allowing an IAM user to access the Amazon WorkDocs site, the IAM user gains full administrative visibility into the entire Amazon WorkDocs site (or as set in the IAM policy). This includes, but is not limited to, the ability to modify file permissions and upload any file to any user. This allows developers to perform the three use cases above, as well as give users the ability to grant access on a selective basis using the IAM model.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/abort-document-version-upload.html">abort-document-version-upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/activate-user.html">activate-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/add-resource-permissions.html">add-resource-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/create-comment.html">create-comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/create-custom-metadata.html">create-custom-metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/create-folder.html">create-folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/create-labels.html">create-labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/create-notification-subscription.html">create-notification-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/create-user.html">create-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/deactivate-user.html">deactivate-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-comment.html">delete-comment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-custom-metadata.html">delete-custom-metadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-document.html">delete-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-folder.html">delete-folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-folder-contents.html">delete-folder-contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-labels.html">delete-labels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-notification-subscription.html">delete-notification-subscription</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/delete-user.html">delete-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-activities.html">describe-activities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-comments.html">describe-comments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-document-versions.html">describe-document-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-folder-contents.html">describe-folder-contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-groups.html">describe-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-notification-subscriptions.html">describe-notification-subscriptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-resource-permissions.html">describe-resource-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-root-folders.html">describe-root-folders</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/describe-users.html">describe-users</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/get-current-user.html">get-current-user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/get-document.html">get-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/get-document-path.html">get-document-path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/get-document-version.html">get-document-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/get-folder.html">get-folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/get-folder-path.html">get-folder-path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/initiate-document-version-upload.html">initiate-document-version-upload</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/remove-all-resource-permissions.html">remove-all-resource-permissions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/remove-resource-permission.html">remove-resource-permission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/update-document.html">update-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/update-document-version.html">update-document-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/update-folder.html">update-folder</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workdocs/update-user.html">update-user</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../waf-regional/update-xss-match-set.html" title="previous chapter (use the left arrow)">&larr; update-xss-match-set</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../workdocs/abort-document-version-upload.html" title="next chapter (use the right arrow)">abort-document-version-upload &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../workdocs/abort-document-version-upload.html" title="abort-document-version-upload"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../waf-regional/update-xss-match-set.html" title="update-xss-match-set"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

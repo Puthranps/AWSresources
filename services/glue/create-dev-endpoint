@@ -1,0 +1,16 @@
+{
+    "EndpointName": "",
+    "RoleArn": "",
+    "SecurityGroupIds": [
+        ""
+    ],
+    "SubnetId": "",
+    "PublicKey": "",
+    "PublicKeys": [
+        ""
+    ],
+    "NumberOfNodes": 0,
+    "ExtraPythonLibsS3Path": "",
+    "ExtraJarsS3Path": "",
+    "SecurityConfiguration": ""
+}

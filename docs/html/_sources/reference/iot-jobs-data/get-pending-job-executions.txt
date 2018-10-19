@@ -1,0 +1,225 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot-jobs-data <cli:aws iot-jobs-data>` ]
+
+.. _cli:aws iot-jobs-data get-pending-job-executions:
+
+
+**************************
+get-pending-job-executions
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Gets the list of all jobs for a thing that are not in a terminal status.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-jobs-data-2017-09-29/GetPendingJobExecutions>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-pending-job-executions
+  --thing-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--thing-name`` (string)
+
+
+  The name of the thing that is executing the job.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+inProgressJobs -> (list)
+
+  
+
+  A list of JobExecutionSummary objects with status IN_PROGRESS.
+
+  
+
+  (structure)
+
+    
+
+    Contains a subset of information about a job execution.
+
+    
+
+    jobId -> (string)
+
+      
+
+      The unique identifier you assigned to this job when it was created.
+
+      
+
+      
+
+    queuedAt -> (long)
+
+      
+
+      The time, in milliseconds since the epoch, when the job execution was enqueued.
+
+      
+
+      
+
+    startedAt -> (long)
+
+      
+
+      The time, in milliseconds since the epoch, when the job execution started.
+
+      
+
+      
+
+    lastUpdatedAt -> (long)
+
+      
+
+      The time, in milliseconds since the epoch, when the job execution was last updated.
+
+      
+
+      
+
+    versionNumber -> (long)
+
+      
+
+      The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.
+
+      
+
+      
+
+    executionNumber -> (long)
+
+      
+
+      A number that identifies a particular job execution on a particular device.
+
+      
+
+      
+
+    
+
+  
+
+queuedJobs -> (list)
+
+  
+
+  A list of JobExecutionSummary objects with status QUEUED.
+
+  
+
+  (structure)
+
+    
+
+    Contains a subset of information about a job execution.
+
+    
+
+    jobId -> (string)
+
+      
+
+      The unique identifier you assigned to this job when it was created.
+
+      
+
+      
+
+    queuedAt -> (long)
+
+      
+
+      The time, in milliseconds since the epoch, when the job execution was enqueued.
+
+      
+
+      
+
+    startedAt -> (long)
+
+      
+
+      The time, in milliseconds since the epoch, when the job execution started.
+
+      
+
+      
+
+    lastUpdatedAt -> (long)
+
+      
+
+      The time, in milliseconds since the epoch, when the job execution was last updated.
+
+      
+
+      
+
+    versionNumber -> (long)
+
+      
+
+      The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.
+
+      
+
+      
+
+    executionNumber -> (long)
+
+      
+
+      A number that identifies a particular job execution on a particular device.
+
+      
+
+      
+
+    
+
+  
+

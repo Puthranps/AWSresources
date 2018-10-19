@@ -1,0 +1,26 @@
+{
+    "LayerId": "",
+    "Enable": true,
+    "UpScaling": {
+        "InstanceCount": 0,
+        "ThresholdsWaitTime": 0,
+        "IgnoreMetricsTime": 0,
+        "CpuThreshold": null,
+        "MemoryThreshold": null,
+        "LoadThreshold": null,
+        "Alarms": [
+            ""
+        ]
+    },
+    "DownScaling": {
+        "InstanceCount": 0,
+        "ThresholdsWaitTime": 0,
+        "IgnoreMetricsTime": 0,
+        "CpuThreshold": null,
+        "MemoryThreshold": null,
+        "LoadThreshold": null,
+        "Alarms": [
+            ""
+        ]
+    }
+}

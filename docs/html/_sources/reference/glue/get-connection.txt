@@ -1,0 +1,255 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue get-connection:
+
+
+**************
+get-connection
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a connection definition from the Data Catalog.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnection>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-connection
+  [--catalog-id <value>]
+  --name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--catalog-id`` (string)
+
+
+  The ID of the Data Catalog in which the connection resides. If none is supplied, the AWS account ID is used by default.
+
+  
+
+``--name`` (string)
+
+
+  The name of the connection definition to retrieve.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Connection -> (structure)
+
+  
+
+  The requested connection definition.
+
+  
+
+  Name -> (string)
+
+    
+
+    The name of the connection definition.
+
+    
+
+    
+
+  Description -> (string)
+
+    
+
+    Description of the connection.
+
+    
+
+    
+
+  ConnectionType -> (string)
+
+    
+
+    The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+
+    
+
+    
+
+  MatchCriteria -> (list)
+
+    
+
+    A list of criteria that can be used in selecting this connection.
+
+    
+
+    (string)
+
+      
+
+      
+
+    
+
+  ConnectionProperties -> (map)
+
+    
+
+    These key-value pairs define parameters for the connection:
+
+     
+
+     
+    * ``HOST`` - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host. 
+     
+    * ``PORT`` - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections. 
+     
+    * ``USER_NAME`` - The name under which to log in to the database. The value string for ``USER_NAME`` is "``USERNAME`` ". 
+     
+    * ``PASSWORD`` - A password, if one is used, for the user name. 
+     
+    * ``JDBC_DRIVER_JAR_URI`` - The S3 path of the a jar file that contains the JDBC driver to use. 
+     
+    * ``JDBC_DRIVER_CLASS_NAME`` - The class name of the JDBC driver to use. 
+     
+    * ``JDBC_ENGINE`` - The name of the JDBC engine to use. 
+     
+    * ``JDBC_ENGINE_VERSION`` - The version of the JDBC engine to use. 
+     
+    * ``CONFIG_FILES`` - (Reserved for future use). 
+     
+    * ``INSTANCE_ID`` - The instance ID to use. 
+     
+    * ``JDBC_CONNECTION_URL`` - The URL for the JDBC connection. 
+     
+    * ``JDBC_ENFORCE_SSL`` - A Boolean string (true, false) specifying whether SSL with hostname matching will be enforced for the JDBC connection on the client. The default is false. 
+     
+
+    
+
+    key -> (string)
+
+      
+
+      
+
+    value -> (string)
+
+      
+
+      
+
+    
+
+  PhysicalConnectionRequirements -> (structure)
+
+    
+
+    A map of physical connection requirements, such as VPC and SecurityGroup, needed for making this connection successfully.
+
+    
+
+    SubnetId -> (string)
+
+      
+
+      The subnet ID used by the connection.
+
+      
+
+      
+
+    SecurityGroupIdList -> (list)
+
+      
+
+      The security group ID list used by the connection.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    AvailabilityZone -> (string)
+
+      
+
+      The connection's availability zone. This field is redundant, since the specified subnet implies the availability zone to be used. The field must be populated now, but will be deprecated in the future.
+
+      
+
+      
+
+    
+
+  CreationTime -> (timestamp)
+
+    
+
+    The time this connection definition was created.
+
+    
+
+    
+
+  LastUpdatedTime -> (timestamp)
+
+    
+
+    The last time this connection definition was updated.
+
+    
+
+    
+
+  LastUpdatedBy -> (string)
+
+    
+
+    The user, group or role that last updated this connection definition.
+
+    
+
+    
+
+  
+

@@ -1,0 +1,15 @@
+{
+    "ReplicationInstanceArn": "",
+    "AllocatedStorage": 0,
+    "ApplyImmediately": true,
+    "ReplicationInstanceClass": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "PreferredMaintenanceWindow": "",
+    "MultiAZ": true,
+    "EngineVersion": "",
+    "AllowMajorVersionUpgrade": true,
+    "AutoMinorVersionUpgrade": true,
+    "ReplicationInstanceIdentifier": ""
+}

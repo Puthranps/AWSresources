@@ -1,0 +1,14 @@
+{
+    "FleetId": "",
+    "RuntimeConfiguration": {
+        "ServerProcesses": [
+            {
+                "LaunchPath": "",
+                "Parameters": "",
+                "ConcurrentExecutions": 0
+            }
+        ],
+        "MaxConcurrentGameSessionActivations": 0,
+        "GameSessionActivationTimeoutSeconds": 0
+    }
+}

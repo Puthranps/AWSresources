@@ -1,0 +1,488 @@
+[ :ref:`aws <cli:aws>` . :ref:`polly <cli:aws polly>` ]
+
+.. _cli:aws polly synthesize-speech:
+
+
+*****************
+synthesize-speech
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used. For more information, see `How it Works <http://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html>`__ .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    synthesize-speech
+  [--lexicon-names <value>]
+  --output-format <value>
+  [--sample-rate <value>]
+  [--speech-mark-types <value>]
+  --text <value>
+  [--text-type <value>]
+  --voice-id <value>
+  [--language-code <value>]
+  outfile <value>
+
+
+
+
+=======
+Options
+=======
+
+``--lexicon-names`` (list)
+
+
+  List of one or more pronunciation lexicon names you want the service to apply during synthesis. Lexicons are applied only if the language of the lexicon is the same as the language of the voice. For information about storing lexicons, see `PutLexicon <http://docs.aws.amazon.com/polly/latest/dg/API_PutLexicon.html>`__ .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--output-format`` (string)
+
+
+  The format in which the returned output will be encoded. For audio stream, this will be mp3, ogg_vorbis, or pcm. For speech marks, this will be json. 
+
+   
+
+  When pcm is used, the content returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. 
+
+  
+
+  Possible values:
+
+  
+  *   ``json``
+
+  
+  *   ``mp3``
+
+  
+  *   ``ogg_vorbis``
+
+  
+  *   ``pcm``
+
+  
+
+  
+
+``--sample-rate`` (string)
+
+
+  The audio frequency specified in Hz. 
+
+   
+
+  The valid values for ``mp3`` and ``ogg_vorbis`` are "8000", "16000", and "22050". The default value is "22050". 
+
+   
+
+  Valid values for ``pcm`` are "8000" and "16000" The default value is "16000". 
+
+  
+
+``--speech-mark-types`` (list)
+
+
+  The type of speech marks returned for the input text.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+  Where valid values are:
+    sentence
+    ssml
+    viseme
+    word
+
+
+
+
+
+``--text`` (string)
+
+
+  Input text to synthesize. If you specify ``ssml`` as the ``TextType`` , follow the SSML format for the input text. 
+
+  
+
+``--text-type`` (string)
+
+
+  Specifies whether the input text is plain text or SSML. The default value is plain text. For more information, see `Using SSML <http://docs.aws.amazon.com/polly/latest/dg/ssml.html>`__ .
+
+  
+
+  Possible values:
+
+  
+  *   ``ssml``
+
+  
+  *   ``text``
+
+  
+
+  
+
+``--voice-id`` (string)
+
+
+  Voice ID to use for the synthesis. You can get a list of available voice IDs by calling the `DescribeVoices <http://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html>`__ operation. 
+
+  
+
+  Possible values:
+
+  
+  *   ``Geraint``
+
+  
+  *   ``Gwyneth``
+
+  
+  *   ``Mads``
+
+  
+  *   ``Naja``
+
+  
+  *   ``Hans``
+
+  
+  *   ``Marlene``
+
+  
+  *   ``Nicole``
+
+  
+  *   ``Russell``
+
+  
+  *   ``Amy``
+
+  
+  *   ``Brian``
+
+  
+  *   ``Emma``
+
+  
+  *   ``Raveena``
+
+  
+  *   ``Ivy``
+
+  
+  *   ``Joanna``
+
+  
+  *   ``Joey``
+
+  
+  *   ``Justin``
+
+  
+  *   ``Kendra``
+
+  
+  *   ``Kimberly``
+
+  
+  *   ``Matthew``
+
+  
+  *   ``Salli``
+
+  
+  *   ``Conchita``
+
+  
+  *   ``Enrique``
+
+  
+  *   ``Miguel``
+
+  
+  *   ``Penelope``
+
+  
+  *   ``Chantal``
+
+  
+  *   ``Celine``
+
+  
+  *   ``Lea``
+
+  
+  *   ``Mathieu``
+
+  
+  *   ``Dora``
+
+  
+  *   ``Karl``
+
+  
+  *   ``Carla``
+
+  
+  *   ``Giorgio``
+
+  
+  *   ``Mizuki``
+
+  
+  *   ``Liv``
+
+  
+  *   ``Lotte``
+
+  
+  *   ``Ruben``
+
+  
+  *   ``Ewa``
+
+  
+  *   ``Jacek``
+
+  
+  *   ``Jan``
+
+  
+  *   ``Maja``
+
+  
+  *   ``Ricardo``
+
+  
+  *   ``Vitoria``
+
+  
+  *   ``Cristiano``
+
+  
+  *   ``Ines``
+
+  
+  *   ``Carmen``
+
+  
+  *   ``Maxim``
+
+  
+  *   ``Tatyana``
+
+  
+  *   ``Astrid``
+
+  
+  *   ``Filiz``
+
+  
+  *   ``Vicki``
+
+  
+  *   ``Takumi``
+
+  
+  *   ``Seoyeon``
+
+  
+  *   ``Aditi``
+
+  
+  *   ``Zhiyu``
+
+  
+
+  
+
+``--language-code`` (string)
+
+
+  Optional language code for the Synthesize Speech request. This is only necessary if using a bilingual voice, such as Aditi, which can be used for either Indian English (en-IN) or Hindi (hi-IN). 
+
+   
+
+  If a bilingual voice is used and no language code is specified, Amazon Polly will use the default language of the bilingual voice. The default language for any voice is the one returned by the `DescribeVoices <https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html>`__ operation for the ``LanguageCode`` parameter. For example, if no language code is specified, Aditi will use Indian English rather than Hindi.
+
+  
+
+  Possible values:
+
+  
+  *   ``cmn-CN``
+
+  
+  *   ``cy-GB``
+
+  
+  *   ``da-DK``
+
+  
+  *   ``de-DE``
+
+  
+  *   ``en-AU``
+
+  
+  *   ``en-GB``
+
+  
+  *   ``en-GB-WLS``
+
+  
+  *   ``en-IN``
+
+  
+  *   ``en-US``
+
+  
+  *   ``es-ES``
+
+  
+  *   ``es-US``
+
+  
+  *   ``fr-CA``
+
+  
+  *   ``fr-FR``
+
+  
+  *   ``is-IS``
+
+  
+  *   ``it-IT``
+
+  
+  *   ``ja-JP``
+
+  
+  *   ``hi-IN``
+
+  
+  *   ``ko-KR``
+
+  
+  *   ``nb-NO``
+
+  
+  *   ``nl-NL``
+
+  
+  *   ``pl-PL``
+
+  
+  *   ``pt-BR``
+
+  
+  *   ``pt-PT``
+
+  
+  *   ``ro-RO``
+
+  
+  *   ``ru-RU``
+
+  
+  *   ``sv-SE``
+
+  
+  *   ``tr-TR``
+
+  
+
+  
+
+``outfile`` (string)
+Filename where the content will be saved
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+AudioStream -> (blob)
+
+  
+
+  Stream containing the synthesized speech. 
+
+  
+
+  
+
+ContentType -> (string)
+
+  
+
+  Specifies the type audio stream. This should reflect the ``OutputFormat`` parameter in your request. 
+
+   
+
+   
+  * If you request ``mp3`` as the ``OutputFormat`` , the ``ContentType`` returned is audio/mpeg.  
+   
+  * If you request ``ogg_vorbis`` as the ``OutputFormat`` , the ``ContentType`` returned is audio/ogg.  
+   
+  * If you request ``pcm`` as the ``OutputFormat`` , the ``ContentType`` returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.  
+   
+  * If you request ``json`` as the ``OutputFormat`` , the ``ContentType`` returned is audio/json. 
+   
+
+   
+
+   
+
+  
+
+  
+
+RequestCharacters -> (integer)
+
+  
+
+  Number of characters synthesized.
+
+  
+
+  
+

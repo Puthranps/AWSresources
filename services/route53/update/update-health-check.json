@@ -1,0 +1,27 @@
+{
+    "HealthCheckId": "",
+    "HealthCheckVersion": 0,
+    "IPAddress": "",
+    "Port": 0,
+    "ResourcePath": "",
+    "FullyQualifiedDomainName": "",
+    "SearchString": "",
+    "FailureThreshold": 0,
+    "Inverted": true,
+    "HealthThreshold": 0,
+    "ChildHealthChecks": [
+        ""
+    ],
+    "EnableSNI": true,
+    "Regions": [
+        "ap-southeast-1"
+    ],
+    "AlarmIdentifier": {
+        "Region": "ap-northeast-1",
+        "Name": ""
+    },
+    "InsufficientDataHealthStatus": "Healthy",
+    "ResetElements": [
+        "ChildHealthChecks"
+    ]
+}

@@ -1,0 +1,52 @@
+{
+    "pipeline": {
+        "name": "",
+        "roleArn": "",
+        "artifactStore": {
+            "type": "S3",
+            "location": "",
+            "encryptionKey": {
+                "id": "",
+                "type": "KMS"
+            }
+        },
+        "stages": [
+            {
+                "name": "",
+                "blockers": [
+                    {
+                        "name": "",
+                        "type": "Schedule"
+                    }
+                ],
+                "actions": [
+                    {
+                        "name": "",
+                        "actionTypeId": {
+                            "category": "Approval",
+                            "owner": "Custom",
+                            "provider": "",
+                            "version": ""
+                        },
+                        "runOrder": 0,
+                        "configuration": {
+                            "KeyName": ""
+                        },
+                        "outputArtifacts": [
+                            {
+                                "name": ""
+                            }
+                        ],
+                        "inputArtifacts": [
+                            {
+                                "name": ""
+                            }
+                        ],
+                        "roleArn": ""
+                    }
+                ]
+            }
+        ],
+        "version": 0
+    }
+}

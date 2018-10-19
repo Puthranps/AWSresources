@@ -1,0 +1,13 @@
+{
+    "ApplicationId": "",
+    "ImportJobRequest": {
+        "DefineSegment": true,
+        "ExternalId": "",
+        "Format": "JSON",
+        "RegisterEndpoints": true,
+        "RoleArn": "",
+        "S3Url": "",
+        "SegmentId": "",
+        "SegmentName": ""
+    }
+}

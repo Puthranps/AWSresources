@@ -1,0 +1,40 @@
+{
+    "assessmentRunArns": [
+        ""
+    ],
+    "filter": {
+        "agentIds": [
+            ""
+        ],
+        "autoScalingGroups": [
+            ""
+        ],
+        "ruleNames": [
+            ""
+        ],
+        "severities": [
+            "Medium"
+        ],
+        "rulesPackageArns": [
+            ""
+        ],
+        "attributes": [
+            {
+                "key": "",
+                "value": ""
+            }
+        ],
+        "userAttributes": [
+            {
+                "key": "",
+                "value": ""
+            }
+        ],
+        "creationTimeRange": {
+            "beginDate": "1970-01-01T00:00:00",
+            "endDate": "1970-01-01T00:00:00"
+        }
+    },
+    "nextToken": "",
+    "maxResults": 0
+}

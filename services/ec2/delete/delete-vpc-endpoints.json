@@ -1,0 +1,6 @@
+{
+    "DryRun": true,
+    "VpcEndpointIds": [
+        ""
+    ]
+}

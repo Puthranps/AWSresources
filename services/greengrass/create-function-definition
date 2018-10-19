@@ -1,0 +1,32 @@
+{
+    "AmznClientToken": "",
+    "InitialVersion": {
+        "Functions": [
+            {
+                "FunctionArn": "",
+                "FunctionConfiguration": {
+                    "EncodingType": "json",
+                    "Environment": {
+                        "AccessSysfs": true,
+                        "ResourceAccessPolicies": [
+                            {
+                                "Permission": "ro",
+                                "ResourceId": ""
+                            }
+                        ],
+                        "Variables": {
+                            "KeyName": ""
+                        }
+                    },
+                    "ExecArgs": "",
+                    "Executable": "",
+                    "MemorySize": 0,
+                    "Pinned": true,
+                    "Timeout": 0
+                },
+                "Id": ""
+            }
+        ]
+    },
+    "Name": ""
+}

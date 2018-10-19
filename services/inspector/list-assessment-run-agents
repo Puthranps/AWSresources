@@ -1,0 +1,13 @@
+{
+    "assessmentRunArn": "",
+    "filter": {
+        "agentHealths": [
+            "HEALTHY"
+        ],
+        "agentHealthCodes": [
+            "RUNNING"
+        ]
+    },
+    "nextToken": "",
+    "maxResults": 0
+}

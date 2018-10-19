@@ -1,0 +1,7 @@
+{
+    "Domain": "",
+    "UserPoolId": "",
+    "CustomDomainConfig": {
+        "CertificateArn": ""
+    }
+}

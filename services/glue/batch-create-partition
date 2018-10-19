@@ -1,0 +1,62 @@
+{
+    "CatalogId": "",
+    "DatabaseName": "",
+    "TableName": "",
+    "PartitionInputList": [
+        {
+            "Values": [
+                ""
+            ],
+            "LastAccessTime": "1970-01-01T00:00:00",
+            "StorageDescriptor": {
+                "Columns": [
+                    {
+                        "Name": "",
+                        "Type": "",
+                        "Comment": ""
+                    }
+                ],
+                "Location": "",
+                "InputFormat": "",
+                "OutputFormat": "",
+                "Compressed": true,
+                "NumberOfBuckets": 0,
+                "SerdeInfo": {
+                    "Name": "",
+                    "SerializationLibrary": "",
+                    "Parameters": {
+                        "KeyName": ""
+                    }
+                },
+                "BucketColumns": [
+                    ""
+                ],
+                "SortColumns": [
+                    {
+                        "Column": "",
+                        "SortOrder": 0
+                    }
+                ],
+                "Parameters": {
+                    "KeyName": ""
+                },
+                "SkewedInfo": {
+                    "SkewedColumnNames": [
+                        ""
+                    ],
+                    "SkewedColumnValues": [
+                        ""
+                    ],
+                    "SkewedColumnValueLocationMaps": {
+                        "KeyName": ""
+                    }
+                },
+                "StoredAsSubDirectories": true
+            },
+            "Parameters": {
+                "KeyName": ""
+            },
+            "LastAnalyzedTime": "1970-01-01T00:00:00"
+        }
+    ]
+}

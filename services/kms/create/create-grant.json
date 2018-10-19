@@ -1,0 +1,20 @@
+{
+    "KeyId": "",
+    "GranteePrincipal": "",
+    "RetiringPrincipal": "",
+    "Operations": [
+        "ReEncryptTo"
+    ],
+    "Constraints": {
+        "EncryptionContextSubset": {
+            "KeyName": ""
+        },
+        "EncryptionContextEquals": {
+            "KeyName": ""
+        }
+    },
+    "GrantTokens": [
+        ""
+    ],
+    "Name": ""
+}

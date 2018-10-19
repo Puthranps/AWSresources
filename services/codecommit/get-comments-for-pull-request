@@ -1,0 +1,8 @@
+{
+    "pullRequestId": "",
+    "repositoryName": "",
+    "beforeCommitId": "",
+    "afterCommitId": "",
+    "nextToken": "",
+    "maxResults": 0
+}

@@ -1,0 +1,392 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-application &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="serverlessrepo" href="../serverlessrepo/index.html" />
+    <link rel="next" title="servicecatalog" href="../servicecatalog/index.html" />
+    <link rel="prev" title="put-application-policy" href="../serverlessrepo/put-application-policy.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../servicecatalog/index.html" title="servicecatalog"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../serverlessrepo/put-application-policy.html" title="put-application-policy"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../serverlessrepo/index.html" accesskey="U">serverlessrepo</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../serverlessrepo/put-application-policy.html" title="previous chapter (use the left arrow)">&larr; put-application-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../servicecatalog/index.html" title="next chapter (use the right arrow)">servicecatalog &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-application</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/serverlessrepo/update-application">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../serverlessrepo/index.html#cli-aws-serverlessrepo"><em>serverlessrepo</em></a> ]</p>
+<div class="section" id="update-application">
+<span id="cli-aws-serverlessrepo-update-application"></span><h1>update-application<a class="headerlink" href="#update-application" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates the specified application.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/UpdateApplication">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-application
+--application-id &lt;value&gt;
+[--author &lt;value&gt;]
+[--description &lt;value&gt;]
+[--home-page-url &lt;value&gt;]
+[--labels &lt;value&gt;]
+[--readme-body &lt;value&gt;]
+[--readme-url &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--application-id</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the application.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--author</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the author publishing the app.</p>
+<p>Minimum length=1. Maximum length=127.</p>
+<p>Pattern &quot;^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$&quot;;</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div><p>The description of the application.</p>
+<p>Minimum length=1. Maximum length=256</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--home-page-url</span></tt> (string)</p>
+<blockquote>
+<div>A URL with more information about the application, for example the location of your GitHub repository for the application.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--labels</span></tt> (list)</p>
+<blockquote>
+<div><p>Labels to improve discovery of apps in search results.</p>
+<p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+<p>Pattern: &quot;^[a-zA-Z0-9+\-_:\/&#64;]+$&quot;;</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--readme-body</span></tt> (string)</p>
+<blockquote>
+<div><p>A text readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+<p>Maximum size 5 MB</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--readme-url</span></tt> (string)</p>
+<blockquote>
+<div><p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+<p>Maximum size 5 MB</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ApplicationId -&gt; (string)</p>
+<blockquote>
+<div>The application Amazon Resource Name (ARN).</div></blockquote>
+<p>Author -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the author publishing the app.</p>
+<p>Minimum length=1. Maximum length=127.</p>
+<p>Pattern &quot;^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$&quot;;</p>
+</div></blockquote>
+<p>CreationTime -&gt; (string)</p>
+<blockquote>
+<div>The date and time this resource was created.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div><p>The description of the application.</p>
+<p>Minimum length=1. Maximum length=256</p>
+</div></blockquote>
+<p>HomePageUrl -&gt; (string)</p>
+<blockquote>
+<div>A URL with more information about the application, for example the location of your GitHub repository for the application.</div></blockquote>
+<p>Labels -&gt; (list)</p>
+<blockquote>
+<div><p>Labels to improve discovery of apps in search results.</p>
+<p>Minimum length=1. Maximum length=127. Maximum number of labels: 10</p>
+<p>Pattern: &quot;^[a-zA-Z0-9+\-_:\/&#64;]+$&quot;;</p>
+<p>(string)</p>
+</div></blockquote>
+<p>LicenseUrl -&gt; (string)</p>
+<blockquote>
+<div><p>A link to a license file of the app that matches the spdxLicenseID value of your application.</p>
+<p>Maximum size 5 MB</p>
+</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the application.</p>
+<p>Minimum length=1. Maximum length=140</p>
+<p>Pattern: &quot;[a-zA-Z0-9\-]+&quot;;</p>
+</div></blockquote>
+<p>ReadmeUrl -&gt; (string)</p>
+<blockquote>
+<div><p>A link to the readme file in Markdown language that contains a more detailed description of the application and how it works.</p>
+<p>Maximum size 5 MB</p>
+</div></blockquote>
+<p>SpdxLicenseId -&gt; (string)</p>
+<blockquote>
+<div>A valid identifier from <a class="reference external" href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</div></blockquote>
+<p>Version -&gt; (structure)</p>
+<blockquote>
+<div><p>Version information about the application.</p>
+<p>ApplicationId -&gt; (string)</p>
+<blockquote>
+<div>The application Amazon Resource Name (ARN).</div></blockquote>
+<p>CreationTime -&gt; (string)</p>
+<blockquote>
+<div>The date and time this resource was created.</div></blockquote>
+<p>ParameterDefinitions -&gt; (list)</p>
+<blockquote>
+<div><p>An array of parameter types supported by the application.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Parameters supported by the application.</p>
+<p>AllowedPattern -&gt; (string)</p>
+<blockquote>
+<div>A regular expression that represents the patterns to allow for String types.</div></blockquote>
+<p>AllowedValues -&gt; (list)</p>
+<blockquote>
+<div><p>An array containing the list of values allowed for the parameter.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ConstraintDescription -&gt; (string)</p>
+<blockquote>
+<div><p>A string that explains a constraint when the constraint is violated. For example, without a constraint description, a parameter that has an allowed pattern of [A-Za-z0-9]+ displays the following error message when the user specifies an invalid value:</p>
+<p>Malformed input-Parameter MyParameter must match pattern [A-Za-z0-9]+</p>
+<p>By adding a constraint description, such as &quot;must contain only uppercase and lowercase letters and numbers,&quot; you can display the following customized error message:</p>
+<p>Malformed input-Parameter MyParameter must contain only uppercase and lowercase letters and numbers.</p>
+</div></blockquote>
+<p>DefaultValue -&gt; (string)</p>
+<blockquote>
+<div>A value of the appropriate type for the template to use if no value is specified when a stack is created. If you define constraints for the parameter, you must specify a value that adheres to those constraints.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>A string of up to 4,000 characters that describes the parameter.</div></blockquote>
+<p>MaxLength -&gt; (integer)</p>
+<blockquote>
+<div>An integer value that determines the largest number of characters that you want to allow for String types.</div></blockquote>
+<p>MaxValue -&gt; (integer)</p>
+<blockquote>
+<div>A numeric value that determines the largest numeric value that you want to allow for Number types.</div></blockquote>
+<p>MinLength -&gt; (integer)</p>
+<blockquote>
+<div>An integer value that determines the smallest number of characters that you want to allow for String types.</div></blockquote>
+<p>MinValue -&gt; (integer)</p>
+<blockquote>
+<div>A numeric value that determines the smallest numeric value that you want to allow for Number types.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the parameter.</div></blockquote>
+<p>NoEcho -&gt; (boolean)</p>
+<blockquote>
+<div>Whether to mask the parameter value whenever anyone makes a call that describes the stack. If you set the value to true, the parameter value is masked with asterisks (<strong>*</strong>).</div></blockquote>
+<p>ReferencedByResources -&gt; (list)</p>
+<blockquote>
+<div><p>A list of AWS SAM resources that use this parameter.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of the parameter.</p>
+<p>Valid values: String | Number | List&lt;Number&gt; | CommaDelimitedList</p>
+<p>String: A literal string.</p>
+<p>For example, users can specify &quot;MyUserName&quot;.</p>
+<p>Number: An integer or float. AWS CloudFormation validates the parameter value as a number. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a string.</p>
+<p>For example, users might specify &quot;8888&quot;.</p>
+<p>List&lt;Number&gt;: An array of integers or floats that are separated by commas. AWS CloudFormation validates the parameter value as numbers. However, when you use the parameter elsewhere in your template (for example, by using the Ref intrinsic function), the parameter value becomes a list of strings.</p>
+<p>For example, users might specify &quot;80,20&quot;, and then Ref results in [&quot;80&quot;,&quot;20&quot;].</p>
+<p>CommaDelimitedList: An array of literal strings that are separated by commas. The total number of strings should be one more than the total number of commas. Also, each member string is space-trimmed.</p>
+<p>For example, users might specify &quot;test,dev,prod&quot;, and then Ref results in [&quot;test&quot;,&quot;dev&quot;,&quot;prod&quot;].</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>SemanticVersion -&gt; (string)</p>
+<blockquote>
+<div><p>The semantic version of the application:</p>
+<blockquote>
+<div><a class="reference external" href="https://semver.org/">https://semver.org/</a></div></blockquote>
+</div></blockquote>
+<p>SourceCodeUrl -&gt; (string)</p>
+<blockquote>
+<div>A link to a public repository for the source code of your application.</div></blockquote>
+<p>TemplateUrl -&gt; (string)</p>
+<blockquote>
+<div>A link to the packaged AWS SAM template of your application.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../serverlessrepo/put-application-policy.html" title="previous chapter (use the left arrow)">&larr; put-application-policy</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../servicecatalog/index.html" title="next chapter (use the right arrow)">servicecatalog &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../servicecatalog/index.html" title="servicecatalog"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../serverlessrepo/put-application-policy.html" title="put-application-policy"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../serverlessrepo/index.html" >serverlessrepo</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

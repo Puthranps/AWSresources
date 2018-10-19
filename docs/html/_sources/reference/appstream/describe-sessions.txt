@@ -1,0 +1,240 @@
+[ :ref:`aws <cli:aws>` . :ref:`appstream <cli:aws appstream>` ]
+
+.. _cli:aws appstream describe-sessions:
+
+
+*****************
+describe-sessions
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves a list that describes the streaming sessions for a specified stack and fleet. If a user ID is provided for the stack and fleet, only streaming sessions for that user are described. If an authentication type is not provided, the default is to authenticate users using a streaming URL.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeSessions>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-sessions
+  --stack-name <value>
+  --fleet-name <value>
+  [--user-id <value>]
+  [--next-token <value>]
+  [--limit <value>]
+  [--authentication-type <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--stack-name`` (string)
+
+
+  The name of the stack. This value is case-sensitive.
+
+  
+
+``--fleet-name`` (string)
+
+
+  The name of the fleet. This value is case-sensitive.
+
+  
+
+``--user-id`` (string)
+
+
+  The user ID.
+
+  
+
+``--next-token`` (string)
+
+
+  The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
+
+  
+
+``--limit`` (integer)
+
+
+  The size of each page of results. The default value is 20 and the maximum value is 50.
+
+  
+
+``--authentication-type`` (string)
+
+
+  The authentication method. Specify ``API`` for a user authenticated using a streaming URL or ``SAML`` for a SAML federated user. The default is to authenticate users using a streaming URL.
+
+  
+
+  Possible values:
+
+  
+  *   ``API``
+
+  
+  *   ``SAML``
+
+  
+  *   ``USERPOOL``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Sessions -> (list)
+
+  
+
+  Information about the streaming sessions.
+
+  
+
+  (structure)
+
+    
+
+    Describes a streaming session.
+
+    
+
+    Id -> (string)
+
+      
+
+      The ID of the streaming session.
+
+      
+
+      
+
+    UserId -> (string)
+
+      
+
+      The identifier of the user for whom the session was created.
+
+      
+
+      
+
+    StackName -> (string)
+
+      
+
+      The name of the stack for the streaming session.
+
+      
+
+      
+
+    FleetName -> (string)
+
+      
+
+      The name of the fleet for the streaming session.
+
+      
+
+      
+
+    State -> (string)
+
+      
+
+      The current state of the streaming session.
+
+      
+
+      
+
+    AuthenticationType -> (string)
+
+      
+
+      The authentication method. The user is authenticated using a streaming URL (``API`` ) or SAML federation (``SAML`` ).
+
+      
+
+      
+
+    NetworkAccessConfiguration -> (structure)
+
+      
+
+      The network details for the streaming session.
+
+      
+
+      EniPrivateIpAddress -> (string)
+
+        
+
+        The private IP address of the elastic network interface that is attached to instances in your VPC.
+
+        
+
+        
+
+      EniId -> (string)
+
+        
+
+        The resource identifier of the elastic network interface that is attached to instances in your VPC. All network interfaces have the eni-xxxxxxxx resource identifier.
+
+        
+
+        
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.
+
+  
+
+  
+

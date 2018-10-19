@@ -1,0 +1,46 @@
+{
+    "EndpointArn": "",
+    "EndpointIdentifier": "",
+    "EndpointType": "target",
+    "EngineName": "",
+    "Username": "",
+    "Password": "",
+    "ServerName": "",
+    "Port": 0,
+    "DatabaseName": "",
+    "ExtraConnectionAttributes": "",
+    "CertificateArn": "",
+    "SslMode": "require",
+    "ServiceAccessRoleArn": "",
+    "ExternalTableDefinition": "",
+    "DynamoDbSettings": {
+        "ServiceAccessRoleArn": ""
+    },
+    "S3Settings": {
+        "ServiceAccessRoleArn": "",
+        "ExternalTableDefinition": "",
+        "CsvRowDelimiter": "",
+        "CsvDelimiter": "",
+        "BucketFolder": "",
+        "BucketName": "",
+        "CompressionType": "none"
+    },
+    "DmsTransferSettings": {
+        "ServiceAccessRoleArn": "",
+        "BucketName": ""
+    },
+    "MongoDbSettings": {
+        "Username": "",
+        "Password": "",
+        "ServerName": "",
+        "Port": 0,
+        "DatabaseName": "",
+        "AuthType": "no",
+        "AuthMechanism": "scram_sha_1",
+        "NestingLevel": "none",
+        "ExtractDocId": "",
+        "DocsToInvestigate": "",
+        "AuthSource": "",
+        "KmsKeyId": ""
+    }
+}

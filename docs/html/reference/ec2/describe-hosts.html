@@ -1,0 +1,421 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-hosts &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ec2" href="../ec2/index.html" />
+    <link rel="next" title="describe-iam-instance-profile-associations" href="../ec2/describe-iam-instance-profile-associations.html" />
+    <link rel="prev" title="describe-host-reservations" href="../ec2/describe-host-reservations.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ec2/describe-iam-instance-profile-associations.html" title="describe-iam-instance-profile-associations"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/describe-host-reservations.html" title="describe-host-reservations"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" accesskey="U">ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/describe-host-reservations.html" title="previous chapter (use the left arrow)">&larr; describe-host-reservations</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/describe-iam-instance-profile-associations.html" title="next chapter (use the right arrow)">describe-iam-instance-profile-associations &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-hosts</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/describe-hosts">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> ]</p>
+<div class="section" id="describe-hosts">
+<span id="cli-aws-ec2-describe-hosts"></span><h1>describe-hosts<a class="headerlink" href="#describe-hosts" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes one or more of your Dedicated Hosts.</p>
+<p>The results describe only the Dedicated Hosts in the region you're currently using. All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that have recently been released are listed with the state <tt class="docutils literal"><span class="pre">released</span></tt> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeHosts">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-hosts
+[--filter &lt;value&gt;]
+[--host-ids &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--filter</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">auto-placement</span></tt> - Whether auto-placement is enabled or disabled (<tt class="docutils literal"><span class="pre">on</span></tt> | <tt class="docutils literal"><span class="pre">off</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">availability-zone</span></tt> - The Availability Zone of the host.</li>
+<li><tt class="docutils literal"><span class="pre">client-token</span></tt> - The idempotency token that you provided when you allocated the host.</li>
+<li><tt class="docutils literal"><span class="pre">host-reservation-id</span></tt> - The ID of the reservation assigned to this host.</li>
+<li><tt class="docutils literal"><span class="pre">instance-type</span></tt> - The instance type size that the Dedicated Host is configured to support.</li>
+<li><tt class="docutils literal"><span class="pre">state</span></tt> - The allocation state of the Dedicated Host (<tt class="docutils literal"><span class="pre">available</span></tt> | <tt class="docutils literal"><span class="pre">under-assessment</span></tt> | <tt class="docutils literal"><span class="pre">permanent-failure</span></tt> | <tt class="docutils literal"><span class="pre">released</span></tt> | <tt class="docutils literal"><span class="pre">released-permanent-failure</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">tag-key</span></tt> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</li>
+</ul>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Values&quot;: [&quot;string&quot;, ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--host-ids</span></tt> (list)</p>
+<blockquote>
+<div>The IDs of the Dedicated Hosts. The IDs are used for targeted instance launches.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of results to return for the request in a single page. The remaining results can be seen by sending another request with the returned <tt class="docutils literal"><span class="pre">nextToken</span></tt> value. This value can be between 5 and 500. If <tt class="docutils literal"><span class="pre">maxResults</span></tt> is given a larger value than 500, you receive an error. You cannot specify this parameter and the host IDs parameter in the same request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token to retrieve the next page of results.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe Dedicated hosts in your account and generate a machine-readable list</strong></p>
+<p>To output a list of Dedicated host IDs in JSON (comma separated).</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-hosts --query &#x27;Hosts[].HostId&#x27; --output json</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="s2">&quot;h-085664df5899941c&quot;</span><span class="p">,</span>
+<span class="s2">&quot;h-056c1b0724170dc38&quot;</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>To output a list of Dedicated host IDs in plaintext (comma separated).</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-hosts --query &#x27;Hosts[].HostId&#x27; --output text</pre>
+</div>
+<p>Output::
+h-085664df5899941c
+h-056c1b0724170dc38</p>
+<p><strong>To describe available Dedicated hosts in your account</strong></p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ec2 describe-hosts --filter &quot;Name=state,Values=available&quot;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><pre>{
+  &quot;Hosts&quot;:  [
+      {
+          &quot;HostId&quot;: &quot;h-085664df5899941c&quot;
+          &quot;HostProperties: {
+              &quot;Cores&quot;: 20,
+               &quot;Sockets&quot;: 2,
+                &quot;InstanceType&quot;: &quot;m3.medium&quot;.
+                &quot;TotalVCpus&quot;: 32
+           },
+           &quot;Instances&quot;: [],
+            &quot;State&quot;: &quot;available&quot;,
+            &quot;AvailabilityZone&quot;: &quot;us-east-1b&quot;,
+            &quot;AvailableCapacity&quot;: {
+                &quot;AvailableInstanceCapacity&quot;: [
+                    {
+                          &quot;AvailableCapacity&quot;: 32,
+                          &quot;InstanceType&quot;: &quot;m3.medium&quot;,
+                          &quot;TotalCapacity&quot;: 32
+                    }
+                 ],
+                 &quot;AvailableVCpus&quot;: 32
+            },
+            &quot;AutoPlacement&quot;: &quot;off&quot;
+     }
+  ]
+}</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Hosts -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the Dedicated Hosts.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes the properties of the Dedicated Host.</p>
+<p>AutoPlacement -&gt; (string)</p>
+<blockquote>
+<div>Whether auto-placement is on or off.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>The Availability Zone of the Dedicated Host.</div></blockquote>
+<p>AvailableCapacity -&gt; (structure)</p>
+<blockquote>
+<div><p>The number of new instances that can be launched onto the Dedicated Host.</p>
+<p>AvailableInstanceCapacity -&gt; (list)</p>
+<blockquote>
+<div><p>The total number of instances supported by the Dedicated Host.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about the instance type that the Dedicated Host supports.</p>
+<p>AvailableCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The number of instances that can still be launched onto the Dedicated Host.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type size supported by the Dedicated Host.</div></blockquote>
+<p>TotalCapacity -&gt; (integer)</p>
+<blockquote>
+<div>The total number of instances that can be launched onto the Dedicated Host.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AvailableVCpus -&gt; (integer)</p>
+<blockquote>
+<div>The number of vCPUs available on the Dedicated Host.</div></blockquote>
+</div></blockquote>
+<p>ClientToken -&gt; (string)</p>
+<blockquote>
+<div>Unique, case-sensitive identifier that you provide to ensure idempotency of the request. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to Ensure Idempotency</a> in the <em>Amazon Elastic Compute Cloud User Guide</em> .</div></blockquote>
+<p>HostId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Dedicated Host.</div></blockquote>
+<p>HostProperties -&gt; (structure)</p>
+<blockquote>
+<div><p>The hardware specifications of the Dedicated Host.</p>
+<p>Cores -&gt; (integer)</p>
+<blockquote>
+<div>The number of cores on the Dedicated Host.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type size that the Dedicated Host supports (for example, <tt class="docutils literal"><span class="pre">m3.medium</span></tt> ).</div></blockquote>
+<p>Sockets -&gt; (integer)</p>
+<blockquote>
+<div>The number of sockets on the Dedicated Host.</div></blockquote>
+<p>TotalVCpus -&gt; (integer)</p>
+<blockquote>
+<div>The number of vCPUs on the Dedicated Host.</div></blockquote>
+</div></blockquote>
+<p>HostReservationId -&gt; (string)</p>
+<blockquote>
+<div>The reservation ID of the Dedicated Host. This returns a <tt class="docutils literal"><span class="pre">null</span></tt> response if the Dedicated Host doesn't have an associated reservation.</div></blockquote>
+<p>Instances -&gt; (list)</p>
+<blockquote>
+<div><p>The IDs and instance type that are currently running on the Dedicated Host.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an instance running on a Dedicated Host.</p>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>the IDs of instances that are running on the Dedicated Host.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type size (for example, <tt class="docutils literal"><span class="pre">m3.medium</span></tt> ) of the running instance.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The Dedicated Host's state.</div></blockquote>
+<p>AllocationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time that the Dedicated Host was allocated.</div></blockquote>
+<p>ReleaseTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time that the Dedicated Host was released.</div></blockquote>
+<p>Tags -&gt; (list)</p>
+<blockquote>
+<div><p>Any tags assigned to the Dedicated Host.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a tag.</p>
+<p>Key -&gt; (string)</p>
+<blockquote>
+<div><p>The key of the tag.</p>
+<p>Constraints: Tag keys are case-sensitive and accept a maximum of 127 Unicode characters. May not begin with <tt class="docutils literal"><span class="pre">aws:</span></tt> .</p>
+</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the tag.</p>
+<p>Constraints: Tag values are case-sensitive and accept a maximum of 255 Unicode characters.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ec2/describe-host-reservations.html" title="previous chapter (use the left arrow)">&larr; describe-host-reservations</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ec2/describe-iam-instance-profile-associations.html" title="next chapter (use the right arrow)">describe-iam-instance-profile-associations &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ec2/describe-iam-instance-profile-associations.html" title="describe-iam-instance-profile-associations"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ec2/describe-host-reservations.html" title="describe-host-reservations"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ec2/index.html" >ec2</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

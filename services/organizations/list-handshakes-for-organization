@@ -1,0 +1,8 @@
+{
+    "Filter": {
+        "ActionType": "INVITE",
+        "ParentHandshakeId": ""
+    },
+    "NextToken": "",
+    "MaxResults": 0
+}

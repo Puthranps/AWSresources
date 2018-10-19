@@ -1,0 +1,14 @@
+{
+    "assessmentTargetArn": "",
+    "assessmentTemplateName": "",
+    "durationInSeconds": 0,
+    "rulesPackageArns": [
+        ""
+    ],
+    "userAttributesForFindings": [
+        {
+            "key": "",
+            "value": ""
+        }
+    ]
+}

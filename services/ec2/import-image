@@ -1,0 +1,29 @@
+{
+    "Architecture": "",
+    "ClientData": {
+        "Comment": "",
+        "UploadEnd": "1970-01-01T00:00:00",
+        "UploadSize": null,
+        "UploadStart": "1970-01-01T00:00:00"
+    },
+    "ClientToken": "",
+    "Description": "",
+    "DiskContainers": [
+        {
+            "Description": "",
+            "DeviceName": "",
+            "Format": "",
+            "SnapshotId": "",
+            "Url": "",
+            "UserBucket": {
+                "S3Bucket": "",
+                "S3Key": ""
+            }
+        }
+    ],
+    "DryRun": true,
+    "Hypervisor": "",
+    "LicenseType": "",
+    "Platform": "",
+    "RoleName": ""
+}

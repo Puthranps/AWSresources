@@ -1,0 +1,323 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-stack-set &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="cloudformation" href="../cloudformation/index.html" />
+    <link rel="next" title="delete-change-set" href="../cloudformation/delete-change-set.html" />
+    <link rel="prev" title="create-stack-instances" href="../cloudformation/create-stack-instances.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../cloudformation/delete-change-set.html" title="delete-change-set"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../cloudformation/create-stack-instances.html" title="create-stack-instances"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cloudformation/index.html" accesskey="U">cloudformation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudformation/create-stack-instances.html" title="previous chapter (use the left arrow)">&larr; create-stack-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cloudformation/delete-change-set.html" title="next chapter (use the right arrow)">delete-change-set &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-stack-set</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/cloudformation/create-stack-set">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../cloudformation/index.html#cli-aws-cloudformation"><em>cloudformation</em></a> ]</p>
+<div class="section" id="create-stack-set">
+<span id="cli-aws-cloudformation-create-stack-set"></span><h1>create-stack-set<a class="headerlink" href="#create-stack-set" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a stack set.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/CreateStackSet">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-stack-set
+--stack-set-name &lt;value&gt;
+[--description &lt;value&gt;]
+[--template-body &lt;value&gt;]
+[--template-url &lt;value&gt;]
+[--parameters &lt;value&gt;]
+[--capabilities &lt;value&gt;]
+[--tags &lt;value&gt;]
+[--administration-role-arn &lt;value&gt;]
+[--execution-role-name &lt;value&gt;]
+[--client-request-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--stack-set-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name to associate with the stack set. The name must be unique in the region where you create your stack set.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">A stack name can contain only alphanumeric characters (case-sensitive) and hyphens. It must start with an alphabetic character and can't be longer than 128 characters.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>A description of the stack set. You can use the description to identify the stack set's purpose or other important information.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--template-body</span></tt> (string)</p>
+<blockquote>
+<div><p>The structure that contains the template body, with a minimum length of 1 byte and a maximum length of 51,200 bytes. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+<p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--template-url</span></tt> (string)</p>
+<blockquote>
+<div><p>The location of the file that contains the template body. The URL must point to a template (maximum size: 460,800 bytes) that's located in an Amazon S3 bucket. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a> in the AWS CloudFormation User Guide.</p>
+<p>Conditional: You must specify either the TemplateBody or the TemplateURL parameter, but not both.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--parameters</span></tt> (list)</p>
+<blockquote>
+<div>The input parameters for the stack set template.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>ParameterKey=string,ParameterValue=string,UsePreviousValue=boolean,ResolvedValue=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;ParameterKey&quot;: &quot;string&quot;,
+    &quot;ParameterValue&quot;: &quot;string&quot;,
+    &quot;UsePreviousValue&quot;: true|false,
+    &quot;ResolvedValue&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--capabilities</span></tt> (list)</p>
+<blockquote>
+<div><p>A list of values that you must specify before AWS CloudFormation can create certain stack sets. Some stack set templates might include resources that can affect permissions in your AWS account—for example, by creating new AWS Identity and Access Management (IAM) users. For those stack sets, you must explicitly acknowledge their capabilities by specifying this parameter.</p>
+<p>The only valid values are CAPABILITY_IAM and CAPABILITY_NAMED_IAM. The following resources require you to specify this parameter:</p>
+<ul class="simple">
+<li>AWS::IAM::AccessKey</li>
+<li>AWS::IAM::Group</li>
+<li>AWS::IAM::InstanceProfile</li>
+<li>AWS::IAM::Policy</li>
+<li>AWS::IAM::Role</li>
+<li>AWS::IAM::User</li>
+<li>AWS::IAM::UserToGroupAddition</li>
+</ul>
+<p>If your stack template contains these resources, we recommend that you review all permissions that are associated with them and edit their permissions if necessary.</p>
+<p>If you have IAM resources, you can specify either capability. If you have IAM resources with custom names, you must specify CAPABILITY_NAMED_IAM. If you don't specify this parameter, this action returns an <tt class="docutils literal"><span class="pre">InsufficientCapabilities</span></tt> error.</p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-iam-template.html#capabilities">Acknowledging IAM Resources in AWS CloudFormation Templates.</a></p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...
+
+Where valid values are:
+  CAPABILITY_IAM
+  CAPABILITY_NAMED_IAM</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--tags</span></tt> (list)</p>
+<blockquote>
+<div><p>The key-value pairs to associate with this stack set and the stacks created from it. AWS CloudFormation also propagates these tags to supported resources that are created in the stacks. A maximum number of 50 tags can be specified.</p>
+<p>If you specify tags as part of a <tt class="docutils literal"><span class="pre">CreateStackSet</span></tt> action, AWS CloudFormation checks to see if you have the required IAM permission to tag resources. If you don't, the entire <tt class="docutils literal"><span class="pre">CreateStackSet</span></tt> action fails with an <tt class="docutils literal"><span class="pre">access</span> <span class="pre">denied</span></tt> error, and the stack set is not created.</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Value=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Value&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--administration-role-arn</span></tt> (string)</p>
+<blockquote>
+<div><p>The Amazon Resource Number (ARN) of the IAM role to use to create this stack set.</p>
+<p>Specify an IAM role only if you are using customized administrator roles to control which users or groups can manage specific stack sets within the same administrator account. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs.html">Prerequisites: Granting Permissions for Stack Set Operations</a> in the <em>AWS CloudFormation User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--execution-role-name</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of the IAM execution role to use to create the stack set. If you do not specify an execution role, AWS CloudFormation uses the <tt class="docutils literal"><span class="pre">AWSCloudFormationStackSetExecutionRole</span></tt> role for the stack set operation.</p>
+<p>Specify an IAM role only if you are using customized execution roles to control which stack resources users and groups can include in their stack sets.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--client-request-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A unique identifier for this <tt class="docutils literal"><span class="pre">CreateStackSet</span></tt> request. Specify this token if you plan to retry requests so that AWS CloudFormation knows that you're not attempting to create another stack set with the same name. You might retry <tt class="docutils literal"><span class="pre">CreateStackSet</span></tt> requests to ensure that AWS CloudFormation successfully received them.</p>
+<p>If you don't specify an operation ID, the SDK generates one automatically.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>StackSetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the stack set that you're creating.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../cloudformation/create-stack-instances.html" title="previous chapter (use the left arrow)">&larr; create-stack-instances</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../cloudformation/delete-change-set.html" title="next chapter (use the right arrow)">delete-change-set &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../cloudformation/delete-change-set.html" title="delete-change-set"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../cloudformation/create-stack-instances.html" title="create-stack-instances"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../cloudformation/index.html" >cloudformation</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

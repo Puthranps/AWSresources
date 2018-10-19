@@ -1,0 +1,37 @@
+{
+    "ApplicationName": "",
+    "EnvironmentName": "",
+    "GroupName": "",
+    "Description": "",
+    "CNAMEPrefix": "",
+    "Tier": {
+        "Name": "",
+        "Type": "",
+        "Version": ""
+    },
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "VersionLabel": "",
+    "TemplateName": "",
+    "SolutionStackName": "",
+    "PlatformArn": "",
+    "OptionSettings": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": "",
+            "Value": ""
+        }
+    ],
+    "OptionsToRemove": [
+        {
+            "ResourceName": "",
+            "Namespace": "",
+            "OptionName": ""
+        }
+    ]
+}

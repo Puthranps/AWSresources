@@ -1,0 +1,8 @@
+{
+    "ResourceQuery": {
+        "Type": "TAG_FILTERS_1_0",
+        "Query": ""
+    },
+    "MaxResults": 0,
+    "NextToken": ""
+}

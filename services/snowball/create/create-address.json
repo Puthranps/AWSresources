@@ -1,0 +1,18 @@
+{
+    "Address": {
+        "AddressId": "",
+        "Name": "",
+        "Company": "",
+        "Street1": "",
+        "Street2": "",
+        "Street3": "",
+        "City": "",
+        "StateOrProvince": "",
+        "PrefectureOrDistrict": "",
+        "Landmark": "",
+        "Country": "",
+        "PostalCode": "",
+        "PhoneNumber": "",
+        "IsRestricted": true
+    }
+}

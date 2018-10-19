@@ -1,0 +1,5 @@
+{
+    "VpcId": "",
+    "InstanceTenancy": "default",
+    "DryRun": true
+}

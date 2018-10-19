@@ -1,0 +1,14 @@
+{
+    "MetricName": "",
+    "Namespace": "",
+    "Statistic": "SampleCount",
+    "ExtendedStatistic": "",
+    "Dimensions": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "Period": 0,
+    "Unit": "Bytes"
+}

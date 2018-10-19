@@ -1,0 +1,7 @@
+{
+    "datastoreName": "",
+    "retentionPeriod": {
+        "unlimited": true,
+        "numberOfDays": 0
+    }
+}

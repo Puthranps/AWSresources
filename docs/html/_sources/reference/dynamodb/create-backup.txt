@@ -1,0 +1,197 @@
+[ :ref:`aws <cli:aws>` . :ref:`dynamodb <cli:aws dynamodb>` ]
+
+.. _cli:aws dynamodb create-backup:
+
+
+*************
+create-backup
+*************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a backup for an existing table.
+
+ 
+
+Each time you create an On-Demand Backup, the entire table data is backed up. There is no limit to the number of on-demand backups that can be taken. 
+
+ 
+
+When you create an On-Demand Backup, a time marker of the request is cataloged, and the backup is created asynchronously, by applying all changes until the time of the request to the last full table snapshot. Backup requests are processed instantaneously and become available for restore within minutes. 
+
+ 
+
+You can call ``CreateBackup`` at a maximum rate of 50 times per second.
+
+ 
+
+All backups in DynamoDB work without consuming any provisioned throughput on the table.
+
+ 
+
+If you submit a backup request on 2018-12-14 at 14:25:00, the backup is guaranteed to contain all data committed to the table up to 14:24:00, and data committed after 14:26:00 will not be. The backup may or may not contain data modifications made between 14:24:00 and 14:26:00. On-Demand Backup does not support causal consistency. 
+
+ 
+
+Along with data, the following are also included on the backups: 
+
+ 
+
+ 
+* Global secondary indexes (GSIs) 
+ 
+* Local secondary indexes (LSIs) 
+ 
+* Streams 
+ 
+* Provisioned read and write capacity 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-backup
+  --table-name <value>
+  --backup-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--table-name`` (string)
+
+
+  The name of the table.
+
+  
+
+``--backup-name`` (string)
+
+
+  Specified name for the backup.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+BackupDetails -> (structure)
+
+  
+
+  Contains the details of the backup created for the table.
+
+  
+
+  BackupArn -> (string)
+
+    
+
+    ARN associated with the backup.
+
+    
+
+    
+
+  BackupName -> (string)
+
+    
+
+    Name of the requested backup.
+
+    
+
+    
+
+  BackupSizeBytes -> (long)
+
+    
+
+    Size of the backup in bytes.
+
+    
+
+    
+
+  BackupStatus -> (string)
+
+    
+
+    Backup can be in one of the following states: CREATING, ACTIVE, DELETED. 
+
+    
+
+    
+
+  BackupType -> (string)
+
+    
+
+    BackupType:
+
+     
+
+     
+    * ``USER`` - On-demand backup created by you. 
+     
+    * ``SYSTEM`` - On-demand backup automatically created by DynamoDB. 
+     
+
+    
+
+    
+
+  BackupCreationDateTime -> (timestamp)
+
+    
+
+    Time at which the backup was created. This is the request time of the backup. 
+
+    
+
+    
+
+  BackupExpiryDateTime -> (timestamp)
+
+    
+
+    Time at which the automatic on-demand backup created by DynamoDB will expire. This ``SYSTEM`` on-demand backup expires automatically 35 days after its creation.
+
+    
+
+    
+
+  
+

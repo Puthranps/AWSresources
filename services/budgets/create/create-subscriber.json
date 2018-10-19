@@ -1,0 +1,14 @@
+{
+    "AccountId": "",
+    "BudgetName": "",
+    "Notification": {
+        "NotificationType": "ACTUAL",
+        "ComparisonOperator": "GREATER_THAN",
+        "Threshold": null,
+        "ThresholdType": "ABSOLUTE_VALUE"
+    },
+    "Subscriber": {
+        "SubscriptionType": "SNS",
+        "Address": ""
+    }
+}

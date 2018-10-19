@@ -1,0 +1,24 @@
+{
+    "restApiId": "",
+    "resourceId": "",
+    "httpMethod": "",
+    "type": "AWS",
+    "integrationHttpMethod": "",
+    "uri": "",
+    "connectionType": "INTERNET",
+    "connectionId": "",
+    "credentials": "",
+    "requestParameters": {
+        "KeyName": ""
+    },
+    "requestTemplates": {
+        "KeyName": ""
+    },
+    "passthroughBehavior": "",
+    "cacheNamespace": "",
+    "cacheKeyParameters": [
+        ""
+    ],
+    "contentHandling": "CONVERT_TO_TEXT",
+    "timeoutInMillis": 0
+}

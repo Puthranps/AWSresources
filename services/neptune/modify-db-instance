@@ -1,0 +1,49 @@
+{
+    "DBInstanceIdentifier": "",
+    "AllocatedStorage": 0,
+    "DBInstanceClass": "",
+    "DBSubnetGroupName": "",
+    "DBSecurityGroups": [
+        ""
+    ],
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "ApplyImmediately": true,
+    "MasterUserPassword": "",
+    "DBParameterGroupName": "",
+    "BackupRetentionPeriod": 0,
+    "PreferredBackupWindow": "",
+    "PreferredMaintenanceWindow": "",
+    "MultiAZ": true,
+    "EngineVersion": "",
+    "AllowMajorVersionUpgrade": true,
+    "AutoMinorVersionUpgrade": true,
+    "LicenseModel": "",
+    "Iops": 0,
+    "OptionGroupName": "",
+    "NewDBInstanceIdentifier": "",
+    "StorageType": "",
+    "TdeCredentialArn": "",
+    "TdeCredentialPassword": "",
+    "CACertificateIdentifier": "",
+    "Domain": "",
+    "CopyTagsToSnapshot": true,
+    "MonitoringInterval": 0,
+    "DBPortNumber": 0,
+    "PubliclyAccessible": true,
+    "MonitoringRoleArn": "",
+    "DomainIAMRoleName": "",
+    "PromotionTier": 0,
+    "EnableIAMDatabaseAuthentication": true,
+    "EnablePerformanceInsights": true,
+    "PerformanceInsightsKMSKeyId": "",
+    "CloudwatchLogsExportConfiguration": {
+        "EnableLogTypes": [
+            ""
+        ],
+        "DisableLogTypes": [
+            ""
+        ]
+    }
+}

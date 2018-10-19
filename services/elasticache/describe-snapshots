@@ -1,0 +1,9 @@
+{
+    "ReplicationGroupId": "",
+    "CacheClusterId": "",
+    "SnapshotName": "",
+    "SnapshotSource": "",
+    "Marker": "",
+    "MaxRecords": 0,
+    "ShowNodeGroupConfig": true
+}

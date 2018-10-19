@@ -1,0 +1,16 @@
+{
+    "TranscriptionJobName": "",
+    "LanguageCode": "en-US",
+    "MediaSampleRateHertz": 0,
+    "MediaFormat": "wav",
+    "Media": {
+        "MediaFileUri": ""
+    },
+    "OutputBucketName": "",
+    "Settings": {
+        "VocabularyName": "",
+        "ShowSpeakerLabels": true,
+        "MaxSpeakerLabels": 0,
+        "ChannelIdentification": true
+    }
+}

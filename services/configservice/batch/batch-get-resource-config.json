@@ -1,0 +1,8 @@
+{
+    "resourceKeys": [
+        {
+            "resourceType": "AWS::CloudFront::Distribution",
+            "resourceId": ""
+        }
+    ]
+}

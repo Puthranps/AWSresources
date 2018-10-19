@@ -1,0 +1,15 @@
+{
+    "Filter": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "HostReservationIdSet": [
+        ""
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

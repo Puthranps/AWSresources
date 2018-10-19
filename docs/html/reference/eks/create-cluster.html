@@ -1,0 +1,339 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-cluster &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="eks" href="../eks/index.html" />
+    <link rel="next" title="delete-cluster" href="../eks/delete-cluster.html" />
+    <link rel="prev" title="eks" href="../eks/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../eks/delete-cluster.html" title="delete-cluster"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../eks/index.html" title="eks"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../eks/index.html" accesskey="U">eks</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../eks/index.html" title="previous chapter (use the left arrow)">&larr; eks</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../eks/delete-cluster.html" title="next chapter (use the right arrow)">delete-cluster &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-cluster</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/eks/create-cluster">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../eks/index.html#cli-aws-eks"><em>eks</em></a> ]</p>
+<div class="section" id="create-cluster">
+<span id="cli-aws-eks-create-cluster"></span><h1>create-cluster<a class="headerlink" href="#create-cluster" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates an Amazon EKS control plane.</p>
+<p>The Amazon EKS control plane consists of control plane instances that run the Kubernetes software, like <tt class="docutils literal"><span class="pre">etcd</span></tt> and the API server. The control plane runs in an account managed by AWS, and the Kubernetes API is exposed via the Amazon EKS API server endpoint.</p>
+<p>Amazon EKS worker nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes API server endpoint and a certificate file that is created for your cluster.</p>
+<p>The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic network interfaces in your VPC subnets to provide connectivity from the control plane instances to the worker nodes (for example, to support <tt class="docutils literal"><span class="pre">kubectl</span> <span class="pre">exec</span></tt> , <tt class="docutils literal"><span class="pre">logs</span></tt> , and <tt class="docutils literal"><span class="pre">proxy</span></tt> data flows).</p>
+<p>After you create an Amazon EKS cluster, you must configure your Kubernetes tooling to communicate with the API server and launch worker nodes into your cluster. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster Authentication</a> and <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker Nodes</a> in the <em>Amazon EKS User Guide</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateCluster">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-cluster
+--name &lt;value&gt;
+--role-arn &lt;value&gt;
+--resources-vpc-config &lt;value&gt;
+[--client-request-token &lt;value&gt;]
+[--kubernetes-version &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The unique name to give to your cluster.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--role-arn</span></tt> (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other AWS API operations on your behalf. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in the * <em>Amazon EKS User Guide</em> * .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--resources-vpc-config</span></tt> (structure)</p>
+<blockquote>
+<div>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <em>Amazon EKS User Guide</em> . You must specify at least two subnets. You may specify up to 5 security groups, but we recommend that you use a dedicated security group for your cluster control plane.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">subnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">securityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;subnetIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;securityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--client-request-token</span></tt> (string)</p>
+<blockquote>
+<div>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--kubernetes-version</span></tt> (string)</p>
+<blockquote>
+<div>The desired Kubernetes version for your cluster. If you do not specify a value here, the latest version available in Amazon EKS is used.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a new cluster</strong></p>
+<p>This example command creates a cluster named <cite>prod</cite> in your default region.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws eks create-cluster --name prod --role-arn arn:aws:iam::012345678910:role/eks-service-role-AWSServiceRoleForAmazonEKS-J7ONKE3BQ4PI --resources-vpc-config subnetIds=subnet-6782e71e,subnet-e7e761ac,securityGroupIds=sg-6979fe18</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;cluster&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;prod&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;arn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:eks:us-west-2:012345678910:cluster/prod&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;createdAt&quot;</span><span class="p">:</span> <span class="mf">1527808069.147</span><span class="p">,</span>
+        <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="s2">&quot;1.10&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;roleArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::012345678910:role/eks-service-role-AWSServiceRoleForAmazonEKS-J7ONKE3BQ4PI&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;resourcesVpcConfig&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;subnetIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;subnet-6782e71e&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;subnet-e7e761ac&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;securityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;sg-6979fe18&quot;</span>
+            <span class="p">],</span>
+            <span class="s2">&quot;vpcId&quot;</span><span class="p">:</span> <span class="s2">&quot;vpc-950809ec&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;CREATING&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;certificateAuthority&quot;</span><span class="p">:</span> <span class="p">{}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>cluster -&gt; (structure)</p>
+<blockquote>
+<div><p>The full description of your new cluster.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the cluster.</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the cluster.</div></blockquote>
+<p>createdAt -&gt; (timestamp)</p>
+<blockquote>
+<div>The Unix epoch time stamp in seconds for when the cluster was created.</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div>The Kubernetes server version for the cluster.</div></blockquote>
+<p>endpoint -&gt; (string)</p>
+<blockquote>
+<div>The endpoint for your Kubernetes API server.</div></blockquote>
+<p>roleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make calls to AWS API operations on your behalf.</div></blockquote>
+<p>resourcesVpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC subnets and security groups used by the cluster control plane. Amazon EKS VPC resources have specific requirements to work properly with Kubernetes. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster VPC Considerations</a> and <a class="reference external" href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster Security Group Considerations</a> in the <em>Amazon EKS User Guide</em> .</p>
+<p>subnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>The subnets associated with your cluster.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>securityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The security groups associated with the cross-account elastic network interfaces that are used to allow communication between your worker nodes and the Kubernetes control plane.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>vpcId -&gt; (string)</p>
+<blockquote>
+<div>The VPC associated with your cluster.</div></blockquote>
+</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div>The current status of the cluster.</div></blockquote>
+<p>certificateAuthority -&gt; (structure)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">certificate-authority-data</span></tt> for your cluster.</p>
+<p>data -&gt; (string)</p>
+<blockquote>
+<div>The base64 encoded certificate data required to communicate with your cluster. Add this to the <tt class="docutils literal"><span class="pre">certificate-authority-data</span></tt> section of the <tt class="docutils literal"><span class="pre">kubeconfig</span></tt> file for your cluster.</div></blockquote>
+</div></blockquote>
+<p>clientRequestToken -&gt; (string)</p>
+<blockquote>
+<div>Unique, case-sensitive identifier you provide to ensure the idempotency of the request.</div></blockquote>
+<p>platformVersion -&gt; (string)</p>
+<blockquote>
+<div>The platform version of your Amazon EKS cluster. For more information, see <a class="reference external" href="eks/latest/userguide/platform-versions.html">Platform Versions</a> in the * <em>Amazon EKS User Guide</em> * .</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../eks/index.html" title="previous chapter (use the left arrow)">&larr; eks</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../eks/delete-cluster.html" title="next chapter (use the right arrow)">delete-cluster &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../eks/delete-cluster.html" title="delete-cluster"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../eks/index.html" title="eks"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../eks/index.html" >eks</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

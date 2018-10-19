@@ -1,0 +1,10 @@
+{
+    "WorkspaceId": "",
+    "WorkspaceProperties": {
+        "RunningMode": "ALWAYS_ON",
+        "RunningModeAutoStopTimeoutInMinutes": 0,
+        "RootVolumeSizeGib": 0,
+        "UserVolumeSizeGib": 0,
+        "ComputeTypeName": "VALUE"
+    }
+}

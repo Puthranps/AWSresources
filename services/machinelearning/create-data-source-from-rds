@@ -1,0 +1,27 @@
+{
+    "DataSourceId": "",
+    "DataSourceName": "",
+    "RDSData": {
+        "DatabaseInformation": {
+            "InstanceIdentifier": "",
+            "DatabaseName": ""
+        },
+        "SelectSqlQuery": "",
+        "DatabaseCredentials": {
+            "Username": "",
+            "Password": ""
+        },
+        "S3StagingLocation": "",
+        "DataRearrangement": "",
+        "DataSchema": "",
+        "DataSchemaUri": "",
+        "ResourceRole": "",
+        "ServiceRole": "",
+        "SubnetId": "",
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "RoleARN": "",
+    "ComputeStatistics": true
+}

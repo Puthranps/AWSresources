@@ -1,0 +1,9 @@
+{
+    "logGroupName": "",
+    "logStreamName": "",
+    "startTime": 0,
+    "endTime": 0,
+    "nextToken": "",
+    "limit": 0,
+    "startFromHead": true
+}

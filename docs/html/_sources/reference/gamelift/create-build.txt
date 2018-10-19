@@ -1,0 +1,342 @@
+[ :ref:`aws <cli:aws>` . :ref:`gamelift <cli:aws gamelift>` ]
+
+.. _cli:aws gamelift create-build:
+
+
+************
+create-build
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates a new Amazon GameLift build record for your game server binary files and points to the location of your game server build files in an Amazon Simple Storage Service (Amazon S3) location. 
+
+ 
+
+Game server binaries must be combined into a ``.zip`` file for use with Amazon GameLift. See `Uploading Your Game <http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-intro.html>`__ for more information. 
+
+ 
+
+.. warning::
+
+   
+
+  To create new builds quickly and easily, use the AWS CLI command ** `upload-build <http://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html>`__ ** . This helper command uploads your build and creates a new build record in one step, and automatically handles the necessary permissions. See `Upload Build Files to Amazon GameLift <http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html>`__ for more help.
+
+   
+
+ 
+
+The ``CreateBuild`` operation should be used only when you need to manually upload your build files, as in the following scenarios:
+
+ 
+
+ 
+* Store a build file in an Amazon S3 bucket under your own AWS account. To use this option, you must first give Amazon GameLift access to that Amazon S3 bucket. See `Create a Build with Files in Amazon S3 <http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-build-cli-uploading.html#gamelift-build-cli-uploading-create-build>`__ for detailed help. To create a new build record using files in your Amazon S3 bucket, call ``CreateBuild`` and specify a build name, operating system, and the storage location of your game build. 
+ 
+* Upload a build file directly to Amazon GameLift's Amazon S3 account. To use this option, you first call ``CreateBuild`` with a build name and operating system. This action creates a new build record and returns an Amazon S3 storage location (bucket and key only) and temporary access credentials. Use the credentials to manually upload your build file to the storage location (see the Amazon S3 topic `Uploading Objects <http://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html>`__ ). You can upload files to a location only once.  
+ 
+
+ 
+
+If successful, this operation creates a new build record with a unique build ID and places it in ``INITIALIZED`` status. You can use  DescribeBuild to check the status of your build. A build must be in ``READY`` status before it can be used to create fleets.
+
+ 
+
+Build-related operations include:
+
+ 
+
+ 
+*  CreateBuild   
+ 
+*  ListBuilds   
+ 
+*  DescribeBuild   
+ 
+*  UpdateBuild   
+ 
+*  DeleteBuild   
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CreateBuild>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-build
+  [--name <value>]
+  [--storage-location <value>]
+  [--operating-system <value>]
+  [--build-version <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--name`` (string)
+
+
+  Descriptive label that is associated with a build. Build names do not need to be unique. You can use  UpdateBuild to change this value later. 
+
+  
+
+``--storage-location`` (structure)
+
+
+  Information indicating where your game build files are stored. Use this parameter only when creating a build with files stored in an Amazon S3 bucket that you own. The storage location must specify an Amazon S3 bucket name and key, as well as a role ARN that you set up to allow Amazon GameLift to access your Amazon S3 bucket. The S3 bucket must be in the same region that you want to create a new build in.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Bucket=string,Key=string,RoleArn=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "Bucket": "string",
+    "Key": "string",
+    "RoleArn": "string"
+  }
+
+
+
+``--operating-system`` (string)
+
+
+  Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build. If your game build contains multiple executables, they all must run on the same operating system. If an operating system is not specified when creating a build, Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be changed later.
+
+  
+
+  Possible values:
+
+  
+  *   ``WINDOWS_2012``
+
+  
+  *   ``AMAZON_LINUX``
+
+  
+
+  
+
+``--build-version`` (string)
+
+
+  Version that is associated with this build. Version strings do not need to be unique. You can use  UpdateBuild to change this value later. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Build -> (structure)
+
+  
+
+  The newly created build record, including a unique build ID and status. 
+
+  
+
+  BuildId -> (string)
+
+    
+
+    Unique identifier for a build.
+
+    
+
+    
+
+  Name -> (string)
+
+    
+
+    Descriptive label that is associated with a build. Build names do not need to be unique. It can be set using  CreateBuild or  UpdateBuild .
+
+    
+
+    
+
+  Version -> (string)
+
+    
+
+    Version that is associated with this build. Version strings do not need to be unique. This value can be set using  CreateBuild or  UpdateBuild .
+
+    
+
+    
+
+  Status -> (string)
+
+    
+
+    Current status of the build.
+
+     
+
+    Possible build statuses include the following:
+
+     
+
+     
+    * **INITIALIZED** -- A new build has been defined, but no files have been uploaded. You cannot create fleets for builds that are in this status. When a build is successfully created, the build status is set to this value.  
+     
+    * **READY** -- The game build has been successfully uploaded. You can now create new fleets for this build. 
+     
+    * **FAILED** -- The game build upload failed. You cannot create new fleets for this build.  
+     
+
+    
+
+    
+
+  SizeOnDisk -> (long)
+
+    
+
+    File size of the uploaded game build, expressed in bytes. When the build status is ``INITIALIZED`` , this value is 0.
+
+    
+
+    
+
+  OperatingSystem -> (string)
+
+    
+
+    Operating system that the game server binaries are built to run on. This value determines the type of fleet resources that you can use for this build.
+
+    
+
+    
+
+  CreationTime -> (timestamp)
+
+    
+
+    Time stamp indicating when this data object was created. Format is a number expressed in Unix time as milliseconds (for example "1469498468.057").
+
+    
+
+    
+
+  
+
+UploadCredentials -> (structure)
+
+  
+
+  This element is returned only when the operation is called without a storage location. It contains credentials to use when you are uploading a build file to an Amazon S3 bucket that is owned by Amazon GameLift. Credentials have a limited life span. To refresh these credentials, call  RequestUploadCredentials . 
+
+  
+
+  AccessKeyId -> (string)
+
+    
+
+    Temporary key allowing access to the Amazon GameLift S3 account.
+
+    
+
+    
+
+  SecretAccessKey -> (string)
+
+    
+
+    Temporary secret key allowing access to the Amazon GameLift S3 account.
+
+    
+
+    
+
+  SessionToken -> (string)
+
+    
+
+    Token used to associate a specific build ID with the files uploaded using these credentials.
+
+    
+
+    
+
+  
+
+StorageLocation -> (structure)
+
+  
+
+  Amazon S3 location for your game build file, including bucket name and key.
+
+  
+
+  Bucket -> (string)
+
+    
+
+    Amazon S3 bucket identifier. This is the name of your S3 bucket.
+
+    
+
+    
+
+  Key -> (string)
+
+    
+
+    Name of the zip file containing your build files. 
+
+    
+
+    
+
+  RoleArn -> (string)
+
+    
+
+    Amazon Resource Name (`ARN <http://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html>`__ ) for the access role that allows Amazon GameLift to access your S3 bucket.
+
+    
+
+    
+
+  
+

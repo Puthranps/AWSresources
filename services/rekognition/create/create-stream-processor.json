@@ -1,0 +1,20 @@
+{
+    "Input": {
+        "KinesisVideoStream": {
+            "Arn": ""
+        }
+    },
+    "Output": {
+        "KinesisDataStream": {
+            "Arn": ""
+        }
+    },
+    "Name": "",
+    "Settings": {
+        "FaceSearch": {
+            "CollectionId": "",
+            "FaceMatchThreshold": 0.0
+        }
+    },
+    "RoleArn": ""
+}

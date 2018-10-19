@@ -1,0 +1,233 @@
+[ :ref:`aws <cli:aws>` . :ref:`ec2 <cli:aws ec2>` ]
+
+.. _cli:aws ec2 describe-instance-credit-specifications:
+
+
+***************************************
+describe-instance-credit-specifications
+***************************************
+
+
+
+===========
+Description
+===========
+
+
+
+Describes the credit option for CPU usage of one or more of your T2 or T3 instances. The credit options are ``standard`` and ``unlimited`` .
+
+ 
+
+If you do not specify an instance ID, Amazon EC2 returns T2 and T3 instances with the ``unlimited`` credit option, as well as instances that were previously configured as T2 or T3 with the ``unlimited`` credit option. For example, if you resize a T2 instance, while it is configured as ``unlimited`` , to an M4 instance, Amazon EC2 returns the M4 instance.
+
+ 
+
+If you specify one or more instance IDs, Amazon EC2 returns the credit option (``standard`` or ``unlimited`` ) of those instances. If you specify an instance ID that is not valid, such as an instance that is not a T2 or T3 instance, an error is returned.
+
+ 
+
+Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
+
+ 
+
+If an Availability Zone is experiencing a service disruption and you specify instance IDs in the affected zone, or do not specify any instance IDs at all, the call fails. If you specify only instance IDs in an unaffected zone, the call works normally.
+
+ 
+
+For more information, see `Burstable Performance Instances <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html>`__ in the *Amazon Elastic Compute Cloud User Guide* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceCreditSpecifications>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-instance-credit-specifications
+  [--dry-run | --no-dry-run]
+  [--filters <value>]
+  [--instance-ids <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--dry-run`` | ``--no-dry-run`` (boolean)
+
+
+  Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is ``DryRunOperation`` . Otherwise, it is ``UnauthorizedOperation`` .
+
+  
+
+``--filters`` (list)
+
+
+  One or more filters.
+
+   
+
+   
+  * ``instance-id`` - The ID of the instance. 
+   
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--instance-ids`` (list)
+
+
+  One or more instance IDs.
+
+   
+
+  Default: Describes all your instances.
+
+   
+
+  Constraints: Maximum 1000 explicitly specified instance IDs.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to return in a single call. To retrieve the remaining results, make another call with the returned ``NextToken`` value. This value can be between 5 and 1000. You cannot specify this parameter and the instance IDs parameter in the same call.
+
+  
+
+``--next-token`` (string)
+
+
+  The token to retrieve the next page of results.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To describe the credit option for CPU usage of one or more instances**
+
+This example describes the current credit option for CPU usage of the specified instance.
+
+Command::
+
+  aws ec2 describe-instance-credit-specifications --instance-id i-1234567890abcdef0
+
+Output::
+
+  {
+    "InstanceCreditSpecifications": [
+      {
+          "InstanceId": "i-1234567890abcdef0",
+          "CpuCredits": "unlimited"
+      }
+    ]
+  }
+
+======
+Output
+======
+
+InstanceCreditSpecifications -> (list)
+
+  
+
+  Information about the credit option for CPU usage of an instance.
+
+  
+
+  (structure)
+
+    
+
+    Describes the credit option for CPU usage of a T2 or T3 instance. 
+
+    
+
+    InstanceId -> (string)
+
+      
+
+      The ID of the instance.
+
+      
+
+      
+
+    CpuCredits -> (string)
+
+      
+
+      The credit option for CPU usage of the instance. Valid values are ``standard`` and ``unlimited`` .
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The token to use to retrieve the next page of results. This value is ``null`` when there are no more results to return.
+
+  
+
+  
+

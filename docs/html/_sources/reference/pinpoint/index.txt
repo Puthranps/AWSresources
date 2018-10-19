@@ -1,0 +1,97 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws pinpoint:
+
+
+********
+pinpoint
+********
+
+
+
+===========
+Description
+===========
+
+Amazon Pinpoint
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  create-app
+  create-campaign
+  create-export-job
+  create-import-job
+  create-segment
+  delete-adm-channel
+  delete-apns-channel
+  delete-apns-sandbox-channel
+  delete-apns-voip-channel
+  delete-apns-voip-sandbox-channel
+  delete-app
+  delete-baidu-channel
+  delete-campaign
+  delete-email-channel
+  delete-endpoint
+  delete-event-stream
+  delete-gcm-channel
+  delete-segment
+  delete-sms-channel
+  delete-user-endpoints
+  get-adm-channel
+  get-apns-channel
+  get-apns-sandbox-channel
+  get-apns-voip-channel
+  get-apns-voip-sandbox-channel
+  get-app
+  get-application-settings
+  get-apps
+  get-baidu-channel
+  get-campaign
+  get-campaign-activities
+  get-campaign-version
+  get-campaign-versions
+  get-campaigns
+  get-channels
+  get-email-channel
+  get-endpoint
+  get-event-stream
+  get-export-job
+  get-export-jobs
+  get-gcm-channel
+  get-import-job
+  get-import-jobs
+  get-segment
+  get-segment-export-jobs
+  get-segment-import-jobs
+  get-segment-version
+  get-segment-versions
+  get-segments
+  get-sms-channel
+  get-user-endpoints
+  phone-number-validate
+  put-event-stream
+  put-events
+  remove-attributes
+  send-messages
+  send-users-messages
+  update-adm-channel
+  update-apns-channel
+  update-apns-sandbox-channel
+  update-apns-voip-channel
+  update-apns-voip-sandbox-channel
+  update-application-settings
+  update-baidu-channel
+  update-campaign
+  update-email-channel
+  update-endpoint
+  update-endpoints-batch
+  update-gcm-channel
+  update-segment
+  update-sms-channel

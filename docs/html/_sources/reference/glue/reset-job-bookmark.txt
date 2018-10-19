@@ -1,0 +1,125 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue reset-job-bookmark:
+
+
+******************
+reset-job-bookmark
+******************
+
+
+
+===========
+Description
+===========
+
+
+
+Resets a bookmark entry.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/ResetJobBookmark>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    reset-job-bookmark
+  --job-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--job-name`` (string)
+
+
+  The name of the job in question.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+JobBookmarkEntry -> (structure)
+
+  
+
+  The reset bookmark entry.
+
+  
+
+  JobName -> (string)
+
+    
+
+    Name of the job in question.
+
+    
+
+    
+
+  Version -> (integer)
+
+    
+
+    Version of the job.
+
+    
+
+    
+
+  Run -> (integer)
+
+    
+
+    The run ID number.
+
+    
+
+    
+
+  Attempt -> (integer)
+
+    
+
+    The attempt ID number.
+
+    
+
+    
+
+  JobBookmark -> (string)
+
+    
+
+    The bookmark itself.
+
+    
+
+    
+
+  
+

@@ -1,0 +1,209 @@
+{
+    "DirectoryArn": "",
+    "Operations": [
+        {
+            "ListObjectAttributes": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0,
+                "FacetFilter": {
+                    "SchemaArn": "",
+                    "FacetName": ""
+                }
+            },
+            "ListObjectChildren": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "ListAttachedIndices": {
+                "TargetReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "ListObjectParentPaths": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "GetObjectInformation": {
+                "ObjectReference": {
+                    "Selector": ""
+                }
+            },
+            "GetObjectAttributes": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "SchemaFacet": {
+                    "SchemaArn": "",
+                    "FacetName": ""
+                },
+                "AttributeNames": [
+                    ""
+                ]
+            },
+            "ListObjectPolicies": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "ListPolicyAttachments": {
+                "PolicyReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "LookupPolicy": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "ListIndex": {
+                "RangesOnIndexedValues": [
+                    {
+                        "AttributeKey": {
+                            "SchemaArn": "",
+                            "FacetName": "",
+                            "Name": ""
+                        },
+                        "Range": {
+                            "StartMode": "LAST_BEFORE_MISSING_VALUES",
+                            "StartValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            },
+                            "EndMode": "LAST_BEFORE_MISSING_VALUES",
+                            "EndValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    }
+                ],
+                "IndexReference": {
+                    "Selector": ""
+                },
+                "MaxResults": 0,
+                "NextToken": ""
+            },
+            "ListOutgoingTypedLinks": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "FilterAttributeRanges": [
+                    {
+                        "AttributeName": "",
+                        "Range": {
+                            "StartMode": "LAST",
+                            "StartValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            },
+                            "EndMode": "INCLUSIVE",
+                            "EndValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    }
+                ],
+                "FilterTypedLink": {
+                    "SchemaArn": "",
+                    "TypedLinkName": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "ListIncomingTypedLinks": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "FilterAttributeRanges": [
+                    {
+                        "AttributeName": "",
+                        "Range": {
+                            "StartMode": "INCLUSIVE",
+                            "StartValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            },
+                            "EndMode": "INCLUSIVE",
+                            "EndValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    }
+                ],
+                "FilterTypedLink": {
+                    "SchemaArn": "",
+                    "TypedLinkName": ""
+                },
+                "NextToken": "",
+                "MaxResults": 0
+            },
+            "GetLinkAttributes": {
+                "TypedLinkSpecifier": {
+                    "TypedLinkFacet": {
+                        "SchemaArn": "",
+                        "TypedLinkName": ""
+                    },
+                    "SourceObjectReference": {
+                        "Selector": ""
+                    },
+                    "TargetObjectReference": {
+                        "Selector": ""
+                    },
+                    "IdentityAttributeValues": [
+                        {
+                            "AttributeName": "",
+                            "Value": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    ]
+                },
+                "AttributeNames": [
+                    ""
+                ]
+            }
+        }
+    ],
+    "ConsistencyLevel": "EVENTUAL"
+}

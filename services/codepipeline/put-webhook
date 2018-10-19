@@ -1,0 +1,18 @@
+{
+    "webhook": {
+        "name": "",
+        "targetPipeline": "",
+        "targetAction": "",
+        "filters": [
+            {
+                "jsonPath": "",
+                "matchEquals": ""
+            }
+        ],
+        "authentication": "UNAUTHENTICATED",
+        "authenticationConfiguration": {
+            "AllowedIPRange": "",
+            "SecretToken": ""
+        }
+    }
+}

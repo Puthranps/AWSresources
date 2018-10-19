@@ -1,0 +1,37 @@
+{
+    "AvailabilityZones": [
+        ""
+    ],
+    "DBClusterIdentifier": "",
+    "SnapshotIdentifier": "",
+    "Engine": "",
+    "EngineVersion": "",
+    "Port": 0,
+    "DBSubnetGroupName": "",
+    "DatabaseName": "",
+    "OptionGroupName": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "KmsKeyId": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "BacktrackWindow": 0,
+    "EnableCloudwatchLogsExports": [
+        ""
+    ],
+    "EngineMode": "",
+    "ScalingConfiguration": {
+        "MinCapacity": 0,
+        "MaxCapacity": 0,
+        "AutoPause": true,
+        "SecondsUntilAutoPause": 0
+    },
+    "DBClusterParameterGroupName": "",
+    "DeletionProtection": true
+}

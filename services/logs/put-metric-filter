@@ -1,0 +1,13 @@
+{
+    "logGroupName": "",
+    "filterName": "",
+    "filterPattern": "",
+    "metricTransformations": [
+        {
+            "metricName": "",
+            "metricNamespace": "",
+            "metricValue": "",
+            "defaultValue": null
+        }
+    ]
+}

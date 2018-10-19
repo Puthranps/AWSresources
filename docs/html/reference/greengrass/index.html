@@ -1,0 +1,275 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>greengrass &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="associate-role-to-group" href="../greengrass/associate-role-to-group.html" />
+    <link rel="prev" title="update-user-defined-function" href="../glue/update-user-defined-function.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../greengrass/associate-role-to-group.html" title="associate-role-to-group"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../glue/update-user-defined-function.html" title="update-user-defined-function"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glue/update-user-defined-function.html" title="previous chapter (use the left arrow)">&larr; update-user-defined-function</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../greengrass/associate-role-to-group.html" title="next chapter (use the right arrow)">associate-role-to-group &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">greengrass</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/greengrass/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="greengrass">
+<span id="cli-aws-greengrass"></span><h1>greengrass<a class="headerlink" href="#greengrass" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS Greengrass seamlessly extends AWS onto physical devices so they can act locally on the data they generate, while still using the cloud for management, analytics, and durable storage. AWS Greengrass ensures your devices can respond quickly to local events and operate with intermittent connectivity. AWS Greengrass minimizes the cost of transmitting data to the cloud by allowing you to author AWS Lambda functions that execute locally.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/associate-role-to-group.html">associate-role-to-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/associate-service-role-to-account.html">associate-service-role-to-account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-core-definition.html">create-core-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-core-definition-version.html">create-core-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-deployment.html">create-deployment</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-device-definition.html">create-device-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-device-definition-version.html">create-device-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-function-definition.html">create-function-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-function-definition-version.html">create-function-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-group.html">create-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-group-certificate-authority.html">create-group-certificate-authority</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-group-version.html">create-group-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-logger-definition.html">create-logger-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-logger-definition-version.html">create-logger-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-resource-definition.html">create-resource-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-resource-definition-version.html">create-resource-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-software-update-job.html">create-software-update-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-subscription-definition.html">create-subscription-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/create-subscription-definition-version.html">create-subscription-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-core-definition.html">delete-core-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-device-definition.html">delete-device-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-function-definition.html">delete-function-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-group.html">delete-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-logger-definition.html">delete-logger-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-resource-definition.html">delete-resource-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/delete-subscription-definition.html">delete-subscription-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/disassociate-role-from-group.html">disassociate-role-from-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/disassociate-service-role-from-account.html">disassociate-service-role-from-account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-associated-role.html">get-associated-role</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-connectivity-info.html">get-connectivity-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-core-definition.html">get-core-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-core-definition-version.html">get-core-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-deployment-status.html">get-deployment-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-device-definition.html">get-device-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-device-definition-version.html">get-device-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-function-definition.html">get-function-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-function-definition-version.html">get-function-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-group.html">get-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-group-certificate-authority.html">get-group-certificate-authority</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-group-certificate-configuration.html">get-group-certificate-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-group-version.html">get-group-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-logger-definition.html">get-logger-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-logger-definition-version.html">get-logger-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-resource-definition.html">get-resource-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-resource-definition-version.html">get-resource-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-service-role-for-account.html">get-service-role-for-account</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-subscription-definition.html">get-subscription-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/get-subscription-definition-version.html">get-subscription-definition-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-core-definition-versions.html">list-core-definition-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-core-definitions.html">list-core-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-deployments.html">list-deployments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-device-definition-versions.html">list-device-definition-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-device-definitions.html">list-device-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-function-definition-versions.html">list-function-definition-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-function-definitions.html">list-function-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-group-certificate-authorities.html">list-group-certificate-authorities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-group-versions.html">list-group-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-groups.html">list-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-logger-definition-versions.html">list-logger-definition-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-logger-definitions.html">list-logger-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-resource-definition-versions.html">list-resource-definition-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-resource-definitions.html">list-resource-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-subscription-definition-versions.html">list-subscription-definition-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/list-subscription-definitions.html">list-subscription-definitions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/reset-deployments.html">reset-deployments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-connectivity-info.html">update-connectivity-info</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-core-definition.html">update-core-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-device-definition.html">update-device-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-function-definition.html">update-function-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-group.html">update-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-group-certificate-configuration.html">update-group-certificate-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-logger-definition.html">update-logger-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-resource-definition.html">update-resource-definition</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../greengrass/update-subscription-definition.html">update-subscription-definition</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../glue/update-user-defined-function.html" title="previous chapter (use the left arrow)">&larr; update-user-defined-function</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../greengrass/associate-role-to-group.html" title="next chapter (use the right arrow)">associate-role-to-group &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../greengrass/associate-role-to-group.html" title="associate-role-to-group"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../glue/update-user-defined-function.html" title="update-user-defined-function"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

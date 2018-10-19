@@ -1,0 +1,280 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-media &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="kinesis-video-media" href="../kinesis-video-media/index.html" />
+    <link rel="next" title="kinesisanalytics" href="../kinesisanalytics/index.html" />
+    <link rel="prev" title="kinesis-video-media" href="../kinesis-video-media/index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../kinesisanalytics/index.html" title="kinesisanalytics"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../kinesis-video-media/index.html" title="kinesis-video-media"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../kinesis-video-media/index.html" accesskey="U">kinesis-video-media</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kinesis-video-media/index.html" title="previous chapter (use the left arrow)">&larr; kinesis-video-media</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../kinesisanalytics/index.html" title="next chapter (use the right arrow)">kinesisanalytics &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-media</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/kinesis-video-media/get-media">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../kinesis-video-media/index.html#cli-aws-kinesis-video-media"><em>kinesis-video-media</em></a> ]</p>
+<div class="section" id="get-media">
+<span id="cli-aws-kinesis-video-media-get-media"></span><h1>get-media<a class="headerlink" href="#get-media" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Use this API to retrieve media content from a Kinesis video stream. In the request, you identify stream name or stream Amazon Resource Name (ARN), and the starting chunk. Kinesis Video Streams then returns a stream of chunks in order by fragment number.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You must first call the <tt class="docutils literal"><span class="pre">GetDataEndpoint</span></tt> API to get an endpoint to which you can then send the <tt class="docutils literal"><span class="pre">GetMedia</span></tt> requests.</p>
+</div>
+<p>When you put media data (fragments) on a stream, Kinesis Video Streams stores each incoming fragment and related metadata in what is called a &quot;chunk.&quot; For more information, see . The <tt class="docutils literal"><span class="pre">GetMedia</span></tt> API returns a stream of these chunks starting from the chunk that you specify in the request.</p>
+<p>The following limits apply when using the <tt class="docutils literal"><span class="pre">GetMedia</span></tt> API:</p>
+<ul class="simple">
+<li>A client can call <tt class="docutils literal"><span class="pre">GetMedia</span></tt> up to five times per second per stream.</li>
+<li>Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second (or 200 megabits per second) during a <tt class="docutils literal"><span class="pre">GetMedia</span></tt> session.</li>
+</ul>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/kinesis-video-media-2017-09-30/GetMedia">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-media
+[--stream-name &lt;value&gt;]
+[--stream-arn &lt;value&gt;]
+--start-selector &lt;value&gt;
+outfile &lt;value&gt;</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--stream-name</span></tt> (string)</p>
+<blockquote>
+<div>The Kinesis video stream name from where you want to get the media content. If you don't specify the <tt class="docutils literal"><span class="pre">streamName</span></tt> , you must specify the <tt class="docutils literal"><span class="pre">streamARN</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--stream-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN of the stream from where you want to get the media content. If you don't specify the <tt class="docutils literal"><span class="pre">streamARN</span></tt> , you must specify the <tt class="docutils literal"><span class="pre">streamName</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--start-selector</span></tt> (structure)</p>
+<blockquote>
+<div>Identifies the starting chunk to get from the specified stream.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">StartSelectorType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">AfterFragmentNumber</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">StartTimestamp</span><span class="o">=</span><span class="n">timestamp</span><span class="p">,</span><span class="n">ContinuationToken</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;StartSelectorType&quot;</span><span class="p">:</span> <span class="s2">&quot;FRAGMENT_NUMBER&quot;</span><span class="o">|</span><span class="s2">&quot;SERVER_TIMESTAMP&quot;</span><span class="o">|</span><span class="s2">&quot;PRODUCER_TIMESTAMP&quot;</span><span class="o">|</span><span class="s2">&quot;NOW&quot;</span><span class="o">|</span><span class="s2">&quot;EARLIEST&quot;</span><span class="o">|</span><span class="s2">&quot;CONTINUATION_TOKEN&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;AfterFragmentNumber&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;StartTimestamp&quot;</span><span class="p">:</span> <span class="n">timestamp</span><span class="p">,</span>
+  <span class="s2">&quot;ContinuationToken&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">outfile</span></tt> (string)
+Filename where the content will be saved</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ContentType -&gt; (string)</p>
+<blockquote>
+<div>The content type of the requested media.</div></blockquote>
+<p>Payload -&gt; (blob)</p>
+<blockquote>
+<div><p>The payload Kinesis Video Streams returns is a sequence of chunks from the specified stream. For information about the chunks, see . The chunks that Kinesis Video Streams returns in the <tt class="docutils literal"><span class="pre">GetMedia</span></tt> call also include the following additional Matroska (MKV) tags:</p>
+<ul class="simple">
+<li>AWS_KINESISVIDEO_CONTINUATION_TOKEN (UTF-8 string) - In the event your <tt class="docutils literal"><span class="pre">GetMedia</span></tt> call terminates, you can use this continuation token in your next request to get the next chunk where the last request terminated.</li>
+<li>AWS_KINESISVIDEO_MILLIS_BEHIND_NOW (UTF-8 string) - Client applications can use this tag value to determine how far behind the chunk returned in the response is from the latest chunk on the stream.</li>
+<li>AWS_KINESISVIDEO_FRAGMENT_NUMBER - Fragment number returned in the chunk.</li>
+<li>AWS_KINESISVIDEO_SERVER_TIMESTAMP - Server time stamp of the fragment.</li>
+<li>AWS_KINESISVIDEO_PRODUCER_TIMESTAMP - Producer time stamp of the fragment.</li>
+</ul>
+<p>The following tags will be present if an error occurs:</p>
+<ul class="simple">
+<li>AWS_KINESISVIDEO_ERROR_CODE - String description of an error that caused GetMedia to stop.</li>
+<li>AWS_KINESISVIDEO_ERROR_ID: Integer code of the error.</li>
+</ul>
+<p>The error codes are as follows:</p>
+<ul class="simple">
+<li>3002 - Error writing to the stream</li>
+<li>4000 - Requested fragment is not found</li>
+<li>4500 - Access denied for the stream's KMS key</li>
+<li>4501 - Stream's KMS key is disabled</li>
+<li>4502 - Validation error on the Stream's KMS key</li>
+<li>4503 - KMS key specified in the stream is unavailable</li>
+<li>4504 - Invalid usage of the KMS key specified in the stream</li>
+<li>4505 - Invalid state of the KMS key specified in the stream</li>
+<li>4506 - Unable to find the KMS key specified in the stream</li>
+<li>5000 - Internal error</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../kinesis-video-media/index.html" title="previous chapter (use the left arrow)">&larr; kinesis-video-media</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../kinesisanalytics/index.html" title="next chapter (use the right arrow)">kinesisanalytics &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../kinesisanalytics/index.html" title="kinesisanalytics"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../kinesis-video-media/index.html" title="kinesis-video-media"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../kinesis-video-media/index.html" >kinesis-video-media</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

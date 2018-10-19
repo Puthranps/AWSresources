@@ -1,0 +1,961 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>start-build &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="codebuild" href="../codebuild/index.html" />
+    <link rel="next" title="stop-build" href="../codebuild/stop-build.html" />
+    <link rel="prev" title="list-projects" href="../codebuild/list-projects.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../codebuild/stop-build.html" title="stop-build"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../codebuild/list-projects.html" title="list-projects"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../codebuild/index.html" accesskey="U">codebuild</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../codebuild/list-projects.html" title="previous chapter (use the left arrow)">&larr; list-projects</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codebuild/stop-build.html" title="next chapter (use the right arrow)">stop-build &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">start-build</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/codebuild/start-build">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../codebuild/index.html#cli-aws-codebuild"><em>codebuild</em></a> ]</p>
+<div class="section" id="start-build">
+<span id="cli-aws-codebuild-start-build"></span><h1>start-build<a class="headerlink" href="#start-build" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Starts running a build.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuild">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  start-build
+--project-name &lt;value&gt;
+[--secondary-sources-override &lt;value&gt;]
+[--secondary-sources-version-override &lt;value&gt;]
+[--source-version &lt;value&gt;]
+[--artifacts-override &lt;value&gt;]
+[--secondary-artifacts-override &lt;value&gt;]
+[--environment-variables-override &lt;value&gt;]
+[--source-type-override &lt;value&gt;]
+[--source-location-override &lt;value&gt;]
+[--source-auth-override &lt;value&gt;]
+[--git-clone-depth-override &lt;value&gt;]
+[--buildspec-override &lt;value&gt;]
+[--insecure-ssl-override | --no-insecure-ssl-override]
+[--report-build-status-override | --no-report-build-status-override]
+[--environment-type-override &lt;value&gt;]
+[--image-override &lt;value&gt;]
+[--compute-type-override &lt;value&gt;]
+[--certificate-override &lt;value&gt;]
+[--cache-override &lt;value&gt;]
+[--service-role-override &lt;value&gt;]
+[--privileged-mode-override | --no-privileged-mode-override]
+[--timeout-in-minutes-override &lt;value&gt;]
+[--idempotency-token &lt;value&gt;]
+[--logs-config-override &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--project-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the AWS CodeBuild build project to start running a build.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--secondary-sources-override</span></tt> (list)</p>
+<blockquote>
+<div>An array of <tt class="docutils literal"><span class="pre">ProjectSource</span></tt> objects.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>type=string,location=string,gitCloneDepth=integer,buildspec=string,auth={type=string,resource=string},reportBuildStatus=boolean,insecureSsl=boolean,sourceIdentifier=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;type&quot;: &quot;CODECOMMIT&quot;|&quot;CODEPIPELINE&quot;|&quot;GITHUB&quot;|&quot;S3&quot;|&quot;BITBUCKET&quot;|&quot;GITHUB_ENTERPRISE&quot;|&quot;NO_SOURCE&quot;,
+    &quot;location&quot;: &quot;string&quot;,
+    &quot;gitCloneDepth&quot;: integer,
+    &quot;buildspec&quot;: &quot;string&quot;,
+    &quot;auth&quot;: {
+      &quot;type&quot;: &quot;OAUTH&quot;,
+      &quot;resource&quot;: &quot;string&quot;
+    },
+    &quot;reportBuildStatus&quot;: true|false,
+    &quot;insecureSsl&quot;: true|false,
+    &quot;sourceIdentifier&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--secondary-sources-version-override</span></tt> (list)</p>
+<blockquote>
+<div>An array of <tt class="docutils literal"><span class="pre">ProjectSourceVersion</span></tt> objects that specify one or more versions of the project's secondary sources to be used for this build only.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>sourceIdentifier=string,sourceVersion=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;sourceIdentifier&quot;: &quot;string&quot;,
+    &quot;sourceVersion&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--source-version</span></tt> (string)</p>
+<blockquote>
+<div><p>A version of the build input to be built, for this build only. If not specified, the latest version will be used. If specified, must be one of:</p>
+<ul class="simple">
+<li>For AWS CodeCommit: the commit ID to use.</li>
+<li>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <tt class="docutils literal"><span class="pre">pr/pull-request-ID</span></tt> (for example <tt class="docutils literal"><span class="pre">pr/25</span></tt> ). If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.</li>
+<li>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.</li>
+<li>For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file to use.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--artifacts-override</span></tt> (structure)</p>
+<blockquote>
+<div>Build output artifact settings that override, for this build only, the latest ones already defined in the build project.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">path</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">namespaceType</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">packaging</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">overrideArtifactName</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">encryptionDisabled</span><span class="o">=</span><span class="n">boolean</span><span class="p">,</span><span class="n">artifactIdentifier</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;CODEPIPELINE&quot;</span><span class="o">|</span><span class="s2">&quot;S3&quot;</span><span class="o">|</span><span class="s2">&quot;NO_ARTIFACTS&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;namespaceType&quot;</span><span class="p">:</span> <span class="s2">&quot;NONE&quot;</span><span class="o">|</span><span class="s2">&quot;BUILD_ID&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;packaging&quot;</span><span class="p">:</span> <span class="s2">&quot;NONE&quot;</span><span class="o">|</span><span class="s2">&quot;ZIP&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;overrideArtifactName&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;encryptionDisabled&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span><span class="p">,</span>
+  <span class="s2">&quot;artifactIdentifier&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--secondary-artifacts-override</span></tt> (list)</p>
+<blockquote>
+<div>An array of <tt class="docutils literal"><span class="pre">ProjectArtifacts</span></tt> objects.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>type=string,location=string,path=string,namespaceType=string,name=string,packaging=string,overrideArtifactName=boolean,encryptionDisabled=boolean,artifactIdentifier=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;type&quot;: &quot;CODEPIPELINE&quot;|&quot;S3&quot;|&quot;NO_ARTIFACTS&quot;,
+    &quot;location&quot;: &quot;string&quot;,
+    &quot;path&quot;: &quot;string&quot;,
+    &quot;namespaceType&quot;: &quot;NONE&quot;|&quot;BUILD_ID&quot;,
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;packaging&quot;: &quot;NONE&quot;|&quot;ZIP&quot;,
+    &quot;overrideArtifactName&quot;: true|false,
+    &quot;encryptionDisabled&quot;: true|false,
+    &quot;artifactIdentifier&quot;: &quot;string&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--environment-variables-override</span></tt> (list)</p>
+<blockquote>
+<div>A set of environment variables that overrides, for this build only, the latest ones already defined in the build project.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>name=string,value=string,type=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;value&quot;: &quot;string&quot;,
+    &quot;type&quot;: &quot;PLAINTEXT&quot;|&quot;PARAMETER_STORE&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--source-type-override</span></tt> (string)</p>
+<blockquote>
+<div><p>A source input type for this build that overrides the source input defined in the build project.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">CODECOMMIT</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">CODEPIPELINE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GITHUB</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">S3</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">BITBUCKET</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">GITHUB_ENTERPRISE</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">NO_SOURCE</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--source-location-override</span></tt> (string)</p>
+<blockquote>
+<div>A location that overrides for this build the source location for the one defined in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--source-auth-override</span></tt> (structure)</p>
+<blockquote>
+<div>An authorization type for this build that overrides the one defined in the build project. This override applies only if the build project's source is BitBucket or GitHub.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">resource</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;OAUTH&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;resource&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--git-clone-depth-override</span></tt> (integer)</p>
+<blockquote>
+<div>The user-defined depth of history, with a minimum value of 0, that overrides, for this build only, any previous depth of history defined in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--buildspec-override</span></tt> (string)</p>
+<blockquote>
+<div>A build spec declaration that overrides, for this build only, the latest one already defined in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--insecure-ssl-override</span></tt> | <tt class="docutils literal"><span class="pre">--no-insecure-ssl-override</span></tt> (boolean)</p>
+<blockquote>
+<div>Enable this flag to override the insecure SSL setting that is specified in the build project. The insecure SSL setting determines whether to ignore SSL warnings while connecting to the project source code. This override applies only if the build's source is GitHub Enterprise.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--report-build-status-override</span></tt> | <tt class="docutils literal"><span class="pre">--no-report-build-status-override</span></tt> (boolean)</p>
+<blockquote>
+<div>Set to true to report to your source provider the status of a build's start and completion. If you use this option with a source provider other than GitHub, an invalidInputException is thrown.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--environment-type-override</span></tt> (string)</p>
+<blockquote>
+<div><p>A container type for this build that overrides the one specified in the build project.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">WINDOWS_CONTAINER</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">LINUX_CONTAINER</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--image-override</span></tt> (string)</p>
+<blockquote>
+<div>The name of an image for this build that overrides the one specified in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--compute-type-override</span></tt> (string)</p>
+<blockquote>
+<div><p>The name of a compute type for this build that overrides the one specified in the build project.</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_SMALL</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_MEDIUM</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_LARGE</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--certificate-override</span></tt> (string)</p>
+<blockquote>
+<div>The name of a certificate for this build that overrides the one specified in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cache-override</span></tt> (structure)</p>
+<blockquote>
+<div>A ProjectCache object specified for this build that overrides the one defined in the build project.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">location</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;NO_CACHE&quot;</span><span class="o">|</span><span class="s2">&quot;S3&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--service-role-override</span></tt> (string)</p>
+<blockquote>
+<div>The name of a service role for this build that overrides the one specified in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--privileged-mode-override</span></tt> | <tt class="docutils literal"><span class="pre">--no-privileged-mode-override</span></tt> (boolean)</p>
+<blockquote>
+<div>Enable this flag to override privileged mode in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--timeout-in-minutes-override</span></tt> (integer)</p>
+<blockquote>
+<div>The number of build timeout minutes, from 5 to 480 (8 hours), that overrides, for this build only, the latest setting already defined in the build project.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--idempotency-token</span></tt> (string)</p>
+<blockquote>
+<div>A unique, case sensitive identifier you provide to ensure the idempotency of the StartBuild request. The token is included in the StartBuild request and is valid for 12 hours. If you repeat the StartBuild request with the same token, but change a parameter, AWS CodeBuild returns a parameter mismatch error.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--logs-config-override</span></tt> (structure)</p>
+<blockquote>
+<div>Log settings for this build that override the log settings defined in the build project.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>cloudWatchLogs={status=string,groupName=string,streamName=string},s3Logs={status=string,location=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;cloudWatchLogs&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ENABLED&quot;</span><span class="o">|</span><span class="s2">&quot;DISABLED&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;groupName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;streamName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;s3Logs&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;ENABLED&quot;</span><span class="o">|</span><span class="s2">&quot;DISABLED&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;location&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>build -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the build to be run.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The unique ID for the build.</div></blockquote>
+<p>arn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the build.</div></blockquote>
+<p>startTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build process started, expressed in Unix time format.</div></blockquote>
+<p>endTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build process ended, expressed in Unix time format.</div></blockquote>
+<p>currentPhase -&gt; (string)</p>
+<blockquote>
+<div>The current build phase.</div></blockquote>
+<p>buildStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the build. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">FAILED</span></tt> : The build failed.</li>
+<li><tt class="docutils literal"><span class="pre">FAULT</span></tt> : The build faulted.</li>
+<li><tt class="docutils literal"><span class="pre">IN_PROGRESS</span></tt> : The build is still in progress.</li>
+<li><tt class="docutils literal"><span class="pre">STOPPED</span></tt> : The build stopped.</li>
+<li><tt class="docutils literal"><span class="pre">SUCCEEDED</span></tt> : The build succeeded.</li>
+<li><tt class="docutils literal"><span class="pre">TIMED_OUT</span></tt> : The build timed out.</li>
+</ul>
+</div></blockquote>
+<p>sourceVersion -&gt; (string)</p>
+<blockquote>
+<div>Any version identifier for the version of the source code to be built.</div></blockquote>
+<p>resolvedSourceVersion -&gt; (string)</p>
+<blockquote>
+<div><p>An identifier for the version of this build's source code.</p>
+<ul class="simple">
+<li>For AWS CodeCommit, GitHub, GitHub Enterprise, and BitBucket, the commit ID.</li>
+<li>For AWS CodePipeline, the source revision provided by AWS CodePipeline.</li>
+<li>For Amazon Simple Storage Service (Amazon S3), this does not apply.</li>
+</ul>
+</div></blockquote>
+<p>projectName -&gt; (string)</p>
+<blockquote>
+<div>The name of the AWS CodeBuild project.</div></blockquote>
+<p>phases -&gt; (list)</p>
+<blockquote>
+<div><p>Information about all previous build phases that are completed and information about any current build phase that is not yet complete.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about a stage for a build.</p>
+<p>phaseType -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the build phase. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BUILD</span></tt> : Core build activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">COMPLETED</span></tt> : The build has been completed.</li>
+<li><tt class="docutils literal"><span class="pre">DOWNLOAD_SOURCE</span></tt> : Source code is being downloaded in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">FINALIZING</span></tt> : The build process is completing in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">INSTALL</span></tt> : Installation activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">POST_BUILD</span></tt> : Post-build activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">PRE_BUILD</span></tt> : Pre-build activities typically occur in this build phase.</li>
+<li><tt class="docutils literal"><span class="pre">PROVISIONING</span></tt> : The build environment is being set up.</li>
+<li><tt class="docutils literal"><span class="pre">SUBMITTED</span></tt> : The build has been submitted.</li>
+<li><tt class="docutils literal"><span class="pre">UPLOAD_ARTIFACTS</span></tt> : Build output artifacts are being uploaded to the output location.</li>
+</ul>
+</div></blockquote>
+<p>phaseStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the build phase. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">FAILED</span></tt> : The build phase failed.</li>
+<li><tt class="docutils literal"><span class="pre">FAULT</span></tt> : The build phase faulted.</li>
+<li><tt class="docutils literal"><span class="pre">IN_PROGRESS</span></tt> : The build phase is still in progress.</li>
+<li><tt class="docutils literal"><span class="pre">STOPPED</span></tt> : The build phase stopped.</li>
+<li><tt class="docutils literal"><span class="pre">SUCCEEDED</span></tt> : The build phase succeeded.</li>
+<li><tt class="docutils literal"><span class="pre">TIMED_OUT</span></tt> : The build phase timed out.</li>
+</ul>
+</div></blockquote>
+<p>startTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build phase started, expressed in Unix time format.</div></blockquote>
+<p>endTime -&gt; (timestamp)</p>
+<blockquote>
+<div>When the build phase ended, expressed in Unix time format.</div></blockquote>
+<p>durationInSeconds -&gt; (long)</p>
+<blockquote>
+<div>How long, in seconds, between the starting and ending times of the build's phase.</div></blockquote>
+<p>contexts -&gt; (list)</p>
+<blockquote>
+<div><p>Additional information about a build phase, especially to help troubleshoot a failed build.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Additional information about a build phase that has an error. You can use this information to help troubleshoot a failed build.</p>
+<p>statusCode -&gt; (string)</p>
+<blockquote>
+<div>The status code for the context of the build phase.</div></blockquote>
+<p>message -&gt; (string)</p>
+<blockquote>
+<div>An explanation of the build phase's context. This explanation might include a command ID and an exit code.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>source -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the source code to be built.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of repository that contains the source code to be built. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BITBUCKET</span></tt> : The source code is in a Bitbucket repository.</li>
+<li><tt class="docutils literal"><span class="pre">CODECOMMIT</span></tt> : The source code is in an AWS CodeCommit repository.</li>
+<li><tt class="docutils literal"><span class="pre">CODEPIPELINE</span></tt> : The source code settings are specified in the source action of a pipeline in AWS CodePipeline.</li>
+<li><tt class="docutils literal"><span class="pre">GITHUB</span></tt> : The source code is in a GitHub repository.</li>
+<li><tt class="docutils literal"><span class="pre">NO_SOURCE</span></tt> : The project does not have input source code.</li>
+<li><tt class="docutils literal"><span class="pre">S3</span></tt> : The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</li>
+</ul>
+</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the location of the source code to be built. Valid values include:</p>
+<ul class="simple">
+<li>For source code settings that are specified in the source action of a pipeline in AWS CodePipeline, <tt class="docutils literal"><span class="pre">location</span></tt> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.</li>
+<li>For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec (for example, <a href="#id1"><span class="problematic" id="id2">``</span></a><a class="reference external" href="https://git-codecommit.*region-ID*">https://git-codecommit.*region-ID*</a> .amazonaws.com/v1/repos/<em>repo-name</em> `` ).</li>
+<li>For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that contains the source code (for example, `` <em>bucket-name</em> /<em>path</em> /<em>to</em> /<em>object-name</em> .zip`` )</li>
+<li>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <strong>Authorize application</strong> page that displays, for <strong>Organization access</strong> , choose <strong>Request access</strong> next to each repository you want to allow AWS CodeBuild to have access to. Then choose <strong>Authorize application</strong> . (After you have connected to your GitHub account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the <tt class="docutils literal"><span class="pre">source</span></tt> object, set the <tt class="docutils literal"><span class="pre">auth</span></tt> object's <tt class="docutils literal"><span class="pre">type</span></tt> value to <tt class="docutils literal"><span class="pre">OAUTH</span></tt> .</li>
+<li>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <strong>Confirm access to your account</strong> page that displays, choose <strong>Grant access</strong> . (After you have connected to your Bitbucket account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the <tt class="docutils literal"><span class="pre">source</span></tt> object, set the <tt class="docutils literal"><span class="pre">auth</span></tt> object's <tt class="docutils literal"><span class="pre">type</span></tt> value to <tt class="docutils literal"><span class="pre">OAUTH</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>gitCloneDepth -&gt; (integer)</p>
+<blockquote>
+<div>Information about the git clone depth for the build project.</div></blockquote>
+<p>buildspec -&gt; (string)</p>
+<blockquote>
+<div><p>The build spec declaration to use for the builds in this build project.</p>
+<p>If this value is not specified, a build spec must be included along with the source code to be built.</p>
+</div></blockquote>
+<p>auth -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
+<p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly (unless the build project's source <tt class="docutils literal"><span class="pre">type</span></tt> value is <tt class="docutils literal"><span class="pre">BITBUCKET</span></tt> or <tt class="docutils literal"><span class="pre">GITHUB</span></tt> ).</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The authorization type to use. The only valid value is <tt class="docutils literal"><span class="pre">OAUTH</span></tt> , which represents the OAuth authorization type.</div></blockquote>
+<p>resource -&gt; (string)</p>
+<blockquote>
+<div>The resource value that applies to the specified authorization type.</div></blockquote>
+</div></blockquote>
+<p>reportBuildStatus -&gt; (boolean)</p>
+<blockquote>
+<div>Set to true to report the status of a build's start and finish to your source provider. This option is only valid when your source provider is GitHub. If this is set and you use a different source provider, an invalidInputException is thrown.</div></blockquote>
+<p>insecureSsl -&gt; (boolean)</p>
+<blockquote>
+<div>Enable this flag to ignore SSL warnings while connecting to the project source code.</div></blockquote>
+<p>sourceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>An identifier for this project source.</div></blockquote>
+</div></blockquote>
+<p>secondarySources -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">ProjectSource</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about the build input source code for the build project.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of repository that contains the source code to be built. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BITBUCKET</span></tt> : The source code is in a Bitbucket repository.</li>
+<li><tt class="docutils literal"><span class="pre">CODECOMMIT</span></tt> : The source code is in an AWS CodeCommit repository.</li>
+<li><tt class="docutils literal"><span class="pre">CODEPIPELINE</span></tt> : The source code settings are specified in the source action of a pipeline in AWS CodePipeline.</li>
+<li><tt class="docutils literal"><span class="pre">GITHUB</span></tt> : The source code is in a GitHub repository.</li>
+<li><tt class="docutils literal"><span class="pre">NO_SOURCE</span></tt> : The project does not have input source code.</li>
+<li><tt class="docutils literal"><span class="pre">S3</span></tt> : The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.</li>
+</ul>
+</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the location of the source code to be built. Valid values include:</p>
+<ul class="simple">
+<li>For source code settings that are specified in the source action of a pipeline in AWS CodePipeline, <tt class="docutils literal"><span class="pre">location</span></tt> should not be specified. If it is specified, AWS CodePipeline will ignore it. This is because AWS CodePipeline uses the settings in a pipeline's source action instead of this value.</li>
+<li>For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source code and the build spec (for example, <a href="#id3"><span class="problematic" id="id4">``</span></a><a class="reference external" href="https://git-codecommit.*region-ID*">https://git-codecommit.*region-ID*</a> .amazonaws.com/v1/repos/<em>repo-name</em> `` ).</li>
+<li>For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, the path to the ZIP file that contains the source code (for example, `` <em>bucket-name</em> /<em>path</em> /<em>to</em> /<em>object-name</em> .zip`` )</li>
+<li>For source code in a GitHub repository, the HTTPS clone URL to the repository that contains the source and the build spec. Also, you must connect your AWS account to your GitHub account. To do this, use the AWS CodeBuild console to begin creating a build project. When you use the console to connect (or reconnect) with GitHub, on the GitHub <strong>Authorize application</strong> page that displays, for <strong>Organization access</strong> , choose <strong>Request access</strong> next to each repository you want to allow AWS CodeBuild to have access to. Then choose <strong>Authorize application</strong> . (After you have connected to your GitHub account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the <tt class="docutils literal"><span class="pre">source</span></tt> object, set the <tt class="docutils literal"><span class="pre">auth</span></tt> object's <tt class="docutils literal"><span class="pre">type</span></tt> value to <tt class="docutils literal"><span class="pre">OAUTH</span></tt> .</li>
+<li>For source code in a Bitbucket repository, the HTTPS clone URL to the repository that contains the source and the build spec. Also, you must connect your AWS account to your Bitbucket account. To do this, use the AWS CodeBuild console to begin creating a build project. When you use the console to connect (or reconnect) with Bitbucket, on the Bitbucket <strong>Confirm access to your account</strong> page that displays, choose <strong>Grant access</strong> . (After you have connected to your Bitbucket account, you do not need to finish creating the build project, and you may then leave the AWS CodeBuild console.) To instruct AWS CodeBuild to then use this connection, in the <tt class="docutils literal"><span class="pre">source</span></tt> object, set the <tt class="docutils literal"><span class="pre">auth</span></tt> object's <tt class="docutils literal"><span class="pre">type</span></tt> value to <tt class="docutils literal"><span class="pre">OAUTH</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>gitCloneDepth -&gt; (integer)</p>
+<blockquote>
+<div>Information about the git clone depth for the build project.</div></blockquote>
+<p>buildspec -&gt; (string)</p>
+<blockquote>
+<div><p>The build spec declaration to use for the builds in this build project.</p>
+<p>If this value is not specified, a build spec must be included along with the source code to be built.</p>
+</div></blockquote>
+<p>auth -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the authorization settings for AWS CodeBuild to access the source code to be built.</p>
+<p>This information is for the AWS CodeBuild console's use only. Your code should not get or set this information directly (unless the build project's source <tt class="docutils literal"><span class="pre">type</span></tt> value is <tt class="docutils literal"><span class="pre">BITBUCKET</span></tt> or <tt class="docutils literal"><span class="pre">GITHUB</span></tt> ).</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The authorization type to use. The only valid value is <tt class="docutils literal"><span class="pre">OAUTH</span></tt> , which represents the OAuth authorization type.</div></blockquote>
+<p>resource -&gt; (string)</p>
+<blockquote>
+<div>The resource value that applies to the specified authorization type.</div></blockquote>
+</div></blockquote>
+<p>reportBuildStatus -&gt; (boolean)</p>
+<blockquote>
+<div>Set to true to report the status of a build's start and finish to your source provider. This option is only valid when your source provider is GitHub. If this is set and you use a different source provider, an invalidInputException is thrown.</div></blockquote>
+<p>insecureSsl -&gt; (boolean)</p>
+<blockquote>
+<div>Enable this flag to ignore SSL warnings while connecting to the project source code.</div></blockquote>
+<p>sourceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>An identifier for this project source.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>secondarySourceVersions -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">ProjectSourceVersion</span></tt> objects. Each <tt class="docutils literal"><span class="pre">ProjectSourceVersion</span></tt> must be one of:</p>
+<ul class="simple">
+<li>For AWS CodeCommit: the commit ID to use.</li>
+<li>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <tt class="docutils literal"><span class="pre">pr/pull-request-ID</span></tt> (for example <tt class="docutils literal"><span class="pre">pr/25</span></tt> ). If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.</li>
+<li>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.</li>
+<li>For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file to use.</li>
+</ul>
+<p>(structure)</p>
+<blockquote>
+<div><p>A source identifier and its corresponding version.</p>
+<p>sourceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>An identifier for a source in the build project.</div></blockquote>
+<p>sourceVersion -&gt; (string)</p>
+<blockquote>
+<div><p>The source version for the corresponding source identifier. If specified, must be one of:</p>
+<ul class="simple">
+<li>For AWS CodeCommit: the commit ID to use.</li>
+<li>For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a pull request ID is specified, it must use the format <tt class="docutils literal"><span class="pre">pr/pull-request-ID</span></tt> (for example <tt class="docutils literal"><span class="pre">pr/25</span></tt> ). If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.</li>
+<li>For Bitbucket: the commit ID, branch name, or tag name that corresponds to the version of the source code you want to build. If a branch name is specified, the branch's HEAD commit ID will be used. If not specified, the default branch's HEAD commit ID will be used.</li>
+<li>For Amazon Simple Storage Service (Amazon S3): the version ID of the object representing the build input ZIP file to use.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>artifacts -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the output artifacts for the build.</p>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div>Information about the location of the build artifacts.</div></blockquote>
+<p>sha256sum -&gt; (string)</p>
+<blockquote>
+<div><p>The SHA-256 hash of the build artifact.</p>
+<p>You can use this hash along with a checksum tool to confirm both file integrity and authenticity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value is available only if the build project's <tt class="docutils literal"><span class="pre">packaging</span></tt> value is set to <tt class="docutils literal"><span class="pre">ZIP</span></tt> .</p>
+</div>
+</div></blockquote>
+<p>md5sum -&gt; (string)</p>
+<blockquote>
+<div><p>The MD5 hash of the build artifact.</p>
+<p>You can use this hash along with a checksum tool to confirm both file integrity and authenticity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value is available only if the build project's <tt class="docutils literal"><span class="pre">packaging</span></tt> value is set to <tt class="docutils literal"><span class="pre">ZIP</span></tt> .</p>
+</div>
+</div></blockquote>
+<p>overrideArtifactName -&gt; (boolean)</p>
+<blockquote>
+<div>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</div></blockquote>
+<p>encryptionDisabled -&gt; (boolean)</p>
+<blockquote>
+<div>Information that tells you if encryption for build artifacts is disabled.</div></blockquote>
+<p>artifactIdentifier -&gt; (string)</p>
+<blockquote>
+<div>An identifier for this artifact definition.</div></blockquote>
+</div></blockquote>
+<p>secondaryArtifacts -&gt; (list)</p>
+<blockquote>
+<div><p>An array of <tt class="docutils literal"><span class="pre">ProjectArtifacts</span></tt> objects.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about build output artifacts.</p>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div>Information about the location of the build artifacts.</div></blockquote>
+<p>sha256sum -&gt; (string)</p>
+<blockquote>
+<div><p>The SHA-256 hash of the build artifact.</p>
+<p>You can use this hash along with a checksum tool to confirm both file integrity and authenticity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value is available only if the build project's <tt class="docutils literal"><span class="pre">packaging</span></tt> value is set to <tt class="docutils literal"><span class="pre">ZIP</span></tt> .</p>
+</div>
+</div></blockquote>
+<p>md5sum -&gt; (string)</p>
+<blockquote>
+<div><p>The MD5 hash of the build artifact.</p>
+<p>You can use this hash along with a checksum tool to confirm both file integrity and authenticity.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This value is available only if the build project's <tt class="docutils literal"><span class="pre">packaging</span></tt> value is set to <tt class="docutils literal"><span class="pre">ZIP</span></tt> .</p>
+</div>
+</div></blockquote>
+<p>overrideArtifactName -&gt; (boolean)</p>
+<blockquote>
+<div>If this flag is set, a name specified in the buildspec file overrides the artifact name. The name specified in a buildspec file is calculated at build time and uses the Shell Command Language. For example, you can append a date and time to your artifact name so that it is always unique.</div></blockquote>
+<p>encryptionDisabled -&gt; (boolean)</p>
+<blockquote>
+<div>Information that tells you if encryption for build artifacts is disabled.</div></blockquote>
+<p>artifactIdentifier -&gt; (string)</p>
+<blockquote>
+<div>An identifier for this artifact definition.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>cache -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the cache for the build.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of cache used by the build project. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NO_CACHE</span></tt> : The build project will not use any cache.</li>
+<li><tt class="docutils literal"><span class="pre">S3</span></tt> : The build project will read and write from/to S3.</li>
+</ul>
+</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the cache location, as follows:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">NO_CACHE</span></tt> : This value will be ignored.</li>
+<li><tt class="docutils literal"><span class="pre">S3</span></tt> : This is the S3 bucket name/prefix.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>environment -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the build environment for this build.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of build environment to use for related builds.</div></blockquote>
+<p>image -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Docker image to use for this build project.</div></blockquote>
+<p>computeType -&gt; (string)</p>
+<blockquote>
+<div><p>Information about the compute resources the build project will use. Available values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_SMALL</span></tt> : Use up to 3 GB memory and 2 vCPUs for builds.</li>
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_MEDIUM</span></tt> : Use up to 7 GB memory and 4 vCPUs for builds.</li>
+<li><tt class="docutils literal"><span class="pre">BUILD_GENERAL1_LARGE</span></tt> : Use up to 15 GB memory and 8 vCPUs for builds.</li>
+</ul>
+</div></blockquote>
+<p>environmentVariables -&gt; (list)</p>
+<blockquote>
+<div><p>A set of environment variables to make available to builds for this build project.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Information about an environment variable for a build project or a build.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name or key of the environment variable.</div></blockquote>
+<p>value -&gt; (string)</p>
+<blockquote>
+<div><p>The value of the environment variable.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">We strongly discourage using environment variables to store sensitive values, especially AWS secret key IDs and secret access keys. Environment variables can be displayed in plain text using tools such as the AWS CodeBuild console and the AWS Command Line Interface (AWS CLI).</p>
+</div>
+</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div><p>The type of environment variable. Valid values include:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">PARAMETER_STORE</span></tt> : An environment variable stored in Amazon EC2 Systems Manager Parameter Store.</li>
+<li><tt class="docutils literal"><span class="pre">PLAINTEXT</span></tt> : An environment variable in plaintext format.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>privilegedMode -&gt; (boolean)</p>
+<blockquote>
+<div><p>Enables running the Docker daemon inside a Docker container. Set to true only if the build project is be used to build Docker images, and the specified build environment image is not provided by AWS CodeBuild with Docker support. Otherwise, all associated builds that attempt to interact with the Docker daemon will fail. Note that you must also start the Docker daemon so that builds can interact with it. One way to do this is to initialize the Docker daemon during the install phase of your build spec by running the following build commands. (Do not run the following build commands if the specified build environment image is provided by AWS CodeBuild with Docker support.)</p>
+<p>If the operating system's base image is Ubuntu Linux:</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">-</span> <span class="pre">nohup</span> <span class="pre">/usr/local/bin/dockerd</span> <span class="pre">--host=unix:///var/run/docker.sock</span> <span class="pre">--host=tcp://0.0.0.0:2375</span> <span class="pre">--storage-driver=overlay&amp;</span> <span class="pre">-</span> <span class="pre">timeout</span> <span class="pre">15</span> <span class="pre">sh</span> <span class="pre">-c</span> <span class="pre">&quot;until</span> <span class="pre">docker</span> <span class="pre">info;</span> <span class="pre">do</span> <span class="pre">echo</span> <span class="pre">.;</span> <span class="pre">sleep</span> <span class="pre">1;</span> <span class="pre">done&quot;</span></tt></div></blockquote>
+<p>If the operating system's base image is Alpine Linux, add the <tt class="docutils literal"><span class="pre">-t</span></tt> argument to <tt class="docutils literal"><span class="pre">timeout</span></tt> :</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">-</span> <span class="pre">nohup</span> <span class="pre">/usr/local/bin/dockerd</span> <span class="pre">--host=unix:///var/run/docker.sock</span> <span class="pre">--host=tcp://0.0.0.0:2375</span> <span class="pre">--storage-driver=overlay&amp;</span> <span class="pre">-</span> <span class="pre">timeout</span> <span class="pre">15</span> <span class="pre">-t</span> <span class="pre">sh</span> <span class="pre">-c</span> <span class="pre">&quot;until</span> <span class="pre">docker</span> <span class="pre">info;</span> <span class="pre">do</span> <span class="pre">echo</span> <span class="pre">.;</span> <span class="pre">sleep</span> <span class="pre">1;</span> <span class="pre">done&quot;</span></tt></div></blockquote>
+</div></blockquote>
+<p>certificate -&gt; (string)</p>
+<blockquote>
+<div>The certificate to use with this build project.</div></blockquote>
+</div></blockquote>
+<p>serviceRole -&gt; (string)</p>
+<blockquote>
+<div>The name of a service role used for this build.</div></blockquote>
+<p>logs -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the build's logs in Amazon CloudWatch Logs.</p>
+<p>groupName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon CloudWatch Logs group for the build logs.</div></blockquote>
+<p>streamName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon CloudWatch Logs stream for the build logs.</div></blockquote>
+<p>deepLink -&gt; (string)</p>
+<blockquote>
+<div>The URL to an individual build log in Amazon CloudWatch Logs.</div></blockquote>
+<p>s3DeepLink -&gt; (string)</p>
+<blockquote>
+<div>The URL to an individual build log in an S3 bucket.</div></blockquote>
+<p>cloudWatchLogs -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about Amazon CloudWatch Logs for a build project.</p>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the Amazon CloudWatch Logs for a build project. Valid values are:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ENABLED</span></tt> : Amazon CloudWatch Logs are enabled for this build project.</li>
+<li><tt class="docutils literal"><span class="pre">DISABLED</span></tt> : Amazon CloudWatch Logs are not enabled for this build project.</li>
+</ul>
+</div></blockquote>
+<p>groupName -&gt; (string)</p>
+<blockquote>
+<div>The group name of the Amazon CloudWatch Logs. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a></div></blockquote>
+<p>streamName -&gt; (string)</p>
+<blockquote>
+<div>The prefix of the stream name of the Amazon CloudWatch Logs. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html">Working with Log Groups and Log Streams</a></div></blockquote>
+</div></blockquote>
+<p>s3Logs -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about S3 logs for a build project.</p>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div><p>The current status of the S3 build logs. Valid values are:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ENABLED</span></tt> : S3 build logs are enabled for this build project.</li>
+<li><tt class="docutils literal"><span class="pre">DISABLED</span></tt> : S3 build logs are not enabled for this build project.</li>
+</ul>
+</div></blockquote>
+<p>location -&gt; (string)</p>
+<blockquote>
+<div>The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket name is <tt class="docutils literal"><span class="pre">my-bucket</span></tt> , and your path prefix is <tt class="docutils literal"><span class="pre">build-log</span></tt> , then acceptable formats are <tt class="docutils literal"><span class="pre">my-bucket/build-log</span></tt> or <tt class="docutils literal"><span class="pre">arn:aws:s3:::my-bucket/build-log</span></tt> .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>timeoutInMinutes -&gt; (integer)</p>
+<blockquote>
+<div>How long, in minutes, for AWS CodeBuild to wait before timing out this build if it does not get marked as completed.</div></blockquote>
+<p>buildComplete -&gt; (boolean)</p>
+<blockquote>
+<div>Whether the build has finished. True if completed; otherwise, false.</div></blockquote>
+<p>initiator -&gt; (string)</p>
+<blockquote>
+<div><p>The entity that started the build. Valid values include:</p>
+<ul class="simple">
+<li>If AWS CodePipeline started the build, the pipeline's name (for example, <tt class="docutils literal"><span class="pre">codepipeline/my-demo-pipeline</span></tt> ).</li>
+<li>If an AWS Identity and Access Management (IAM) user started the build, the user's name (for example <tt class="docutils literal"><span class="pre">MyUserName</span></tt> ).</li>
+<li>If the Jenkins plugin for AWS CodeBuild started the build, the string <tt class="docutils literal"><span class="pre">CodeBuild-Jenkins-Plugin</span></tt> .</li>
+</ul>
+</div></blockquote>
+<p>vpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>If your AWS CodeBuild project accesses resources in an Amazon VPC, you provide this parameter that identifies the VPC ID and the list of security group IDs and subnet IDs. The security groups and subnets must belong to the same VPC. You must provide at least one security group and one subnet ID.</p>
+<p>vpcId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the Amazon VPC.</div></blockquote>
+<p>subnets -&gt; (list)</p>
+<blockquote>
+<div><p>A list of one or more subnet IDs in your Amazon VPC.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>securityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>A list of one or more security groups IDs in your Amazon VPC.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>networkInterface -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes a network interface.</p>
+<p>subnetId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the subnet.</div></blockquote>
+<p>networkInterfaceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the network interface.</div></blockquote>
+</div></blockquote>
+<p>encryptionKey -&gt; (string)</p>
+<blockquote>
+<div><p>The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build output artifacts.</p>
+<p>This is expressed either as the CMK's Amazon Resource Name (ARN) or, if specified, the CMK's alias (using the format <a href="#id5"><span class="problematic" id="id6">``</span></a>alias/<em>alias-name</em> `` ).</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../codebuild/list-projects.html" title="previous chapter (use the left arrow)">&larr; list-projects</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codebuild/stop-build.html" title="next chapter (use the right arrow)">stop-build &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../codebuild/stop-build.html" title="stop-build"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../codebuild/list-projects.html" title="list-projects"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../codebuild/index.html" >codebuild</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

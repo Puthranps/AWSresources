@@ -1,0 +1,350 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>iot &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="accept-certificate-transfer" href="../iot/accept-certificate-transfer.html" />
+    <link rel="prev" title="update-assessment-target" href="../inspector/update-assessment-target.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../iot/accept-certificate-transfer.html" title="accept-certificate-transfer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../inspector/update-assessment-target.html" title="update-assessment-target"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../inspector/update-assessment-target.html" title="previous chapter (use the left arrow)">&larr; update-assessment-target</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iot/accept-certificate-transfer.html" title="next chapter (use the right arrow)">accept-certificate-transfer &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">iot</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/iot/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="iot">
+<span id="cli-aws-iot"></span><h1>iot<a class="headerlink" href="#iot" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS IoT provides secure, bi-directional communication between Internet-connected devices (such as sensors, actuators, embedded devices, or smart appliances) and the AWS cloud. You can discover your custom IoT-Data endpoint to communicate with, configure rules for data processing and integration with other services, organize resources associated with each device (Registry), configure logging, and create and manage policies and credentials to authenticate devices.</p>
+<p>For more information about how AWS IoT works, see the <a class="reference external" href="http://docs.aws.amazon.com/iot/latest/developerguide/aws-iot-how-it-works.html">Developer Guide</a> .</p>
+<p>For information about how to use the credentials provider for AWS IoT, see <a class="reference external" href="http://docs.aws.amazon.com/iot/latest/developerguide/authorizing-direct-aws.html">Authorizing Direct Calls to AWS Services</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../iot/accept-certificate-transfer.html">accept-certificate-transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/add-thing-to-thing-group.html">add-thing-to-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/associate-targets-with-job.html">associate-targets-with-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/attach-policy.html">attach-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/attach-security-profile.html">attach-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/attach-thing-principal.html">attach-thing-principal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/cancel-audit-task.html">cancel-audit-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/cancel-certificate-transfer.html">cancel-certificate-transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/cancel-job.html">cancel-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/cancel-job-execution.html">cancel-job-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/clear-default-authorizer.html">clear-default-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-authorizer.html">create-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-certificate-from-csr.html">create-certificate-from-csr</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-job.html">create-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-keys-and-certificate.html">create-keys-and-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-ota-update.html">create-ota-update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-policy.html">create-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-policy-version.html">create-policy-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-role-alias.html">create-role-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-scheduled-audit.html">create-scheduled-audit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-security-profile.html">create-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-stream.html">create-stream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-thing.html">create-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-thing-group.html">create-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-thing-type.html">create-thing-type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/create-topic-rule.html">create-topic-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-account-audit-configuration.html">delete-account-audit-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-authorizer.html">delete-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-ca-certificate.html">delete-ca-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-certificate.html">delete-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-job.html">delete-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-job-execution.html">delete-job-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-ota-update.html">delete-ota-update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-policy.html">delete-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-policy-version.html">delete-policy-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-registration-code.html">delete-registration-code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-role-alias.html">delete-role-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-scheduled-audit.html">delete-scheduled-audit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-security-profile.html">delete-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-stream.html">delete-stream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-thing.html">delete-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-thing-group.html">delete-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-thing-type.html">delete-thing-type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-topic-rule.html">delete-topic-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/delete-v2-logging-level.html">delete-v2-logging-level</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/deprecate-thing-type.html">deprecate-thing-type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-account-audit-configuration.html">describe-account-audit-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-audit-task.html">describe-audit-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-authorizer.html">describe-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-ca-certificate.html">describe-ca-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-certificate.html">describe-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-default-authorizer.html">describe-default-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-endpoint.html">describe-endpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-event-configurations.html">describe-event-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-index.html">describe-index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-job.html">describe-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-job-execution.html">describe-job-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-role-alias.html">describe-role-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-scheduled-audit.html">describe-scheduled-audit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-security-profile.html">describe-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-stream.html">describe-stream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-thing.html">describe-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-thing-group.html">describe-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-thing-registration-task.html">describe-thing-registration-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/describe-thing-type.html">describe-thing-type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/detach-policy.html">detach-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/detach-security-profile.html">detach-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/detach-thing-principal.html">detach-thing-principal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/disable-topic-rule.html">disable-topic-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/enable-topic-rule.html">enable-topic-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-effective-policies.html">get-effective-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-indexing-configuration.html">get-indexing-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-job-document.html">get-job-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-logging-options.html">get-logging-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-ota-update.html">get-ota-update</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-policy.html">get-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-policy-version.html">get-policy-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-registration-code.html">get-registration-code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-topic-rule.html">get-topic-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/get-v2-logging-options.html">get-v2-logging-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-active-violations.html">list-active-violations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-attached-policies.html">list-attached-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-audit-findings.html">list-audit-findings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-audit-tasks.html">list-audit-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-authorizers.html">list-authorizers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-ca-certificates.html">list-ca-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-certificates.html">list-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-certificates-by-ca.html">list-certificates-by-ca</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-indices.html">list-indices</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-job-executions-for-job.html">list-job-executions-for-job</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-job-executions-for-thing.html">list-job-executions-for-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-jobs.html">list-jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-ota-updates.html">list-ota-updates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-outgoing-certificates.html">list-outgoing-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-policies.html">list-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-policy-versions.html">list-policy-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-principal-things.html">list-principal-things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-role-aliases.html">list-role-aliases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-scheduled-audits.html">list-scheduled-audits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-security-profiles.html">list-security-profiles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-security-profiles-for-target.html">list-security-profiles-for-target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-streams.html">list-streams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-targets-for-policy.html">list-targets-for-policy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-targets-for-security-profile.html">list-targets-for-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-thing-groups.html">list-thing-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-thing-groups-for-thing.html">list-thing-groups-for-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-thing-principals.html">list-thing-principals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-thing-registration-task-reports.html">list-thing-registration-task-reports</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-thing-registration-tasks.html">list-thing-registration-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-thing-types.html">list-thing-types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-things.html">list-things</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-things-in-thing-group.html">list-things-in-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-topic-rules.html">list-topic-rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-v2-logging-levels.html">list-v2-logging-levels</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/list-violation-events.html">list-violation-events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/register-ca-certificate.html">register-ca-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/register-certificate.html">register-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/register-thing.html">register-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/reject-certificate-transfer.html">reject-certificate-transfer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/remove-thing-from-thing-group.html">remove-thing-from-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/replace-topic-rule.html">replace-topic-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/search-index.html">search-index</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/set-default-authorizer.html">set-default-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/set-default-policy-version.html">set-default-policy-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/set-logging-options.html">set-logging-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/set-v2-logging-level.html">set-v2-logging-level</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/set-v2-logging-options.html">set-v2-logging-options</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/start-on-demand-audit-task.html">start-on-demand-audit-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/start-thing-registration-task.html">start-thing-registration-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/stop-thing-registration-task.html">stop-thing-registration-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/test-authorization.html">test-authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/test-invoke-authorizer.html">test-invoke-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/transfer-certificate.html">transfer-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-account-audit-configuration.html">update-account-audit-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-authorizer.html">update-authorizer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-ca-certificate.html">update-ca-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-certificate.html">update-certificate</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-event-configurations.html">update-event-configurations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-indexing-configuration.html">update-indexing-configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-role-alias.html">update-role-alias</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-scheduled-audit.html">update-scheduled-audit</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-security-profile.html">update-security-profile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-stream.html">update-stream</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-thing.html">update-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-thing-group.html">update-thing-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/update-thing-groups-for-thing.html">update-thing-groups-for-thing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../iot/validate-security-profile-behaviors.html">validate-security-profile-behaviors</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../inspector/update-assessment-target.html" title="previous chapter (use the left arrow)">&larr; update-assessment-target</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iot/accept-certificate-transfer.html" title="next chapter (use the right arrow)">accept-certificate-transfer &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../iot/accept-certificate-transfer.html" title="accept-certificate-transfer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../inspector/update-assessment-target.html" title="update-assessment-target"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

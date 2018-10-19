@@ -1,0 +1,24 @@
+{
+    "cluster": "",
+    "service": "",
+    "desiredCount": 0,
+    "taskDefinition": "",
+    "deploymentConfiguration": {
+        "maximumPercent": 0,
+        "minimumHealthyPercent": 0
+    },
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                ""
+            ],
+            "securityGroups": [
+                ""
+            ],
+            "assignPublicIp": "DISABLED"
+        }
+    },
+    "platformVersion": "",
+    "forceNewDeployment": true,
+    "healthCheckGracePeriodSeconds": 0
+}

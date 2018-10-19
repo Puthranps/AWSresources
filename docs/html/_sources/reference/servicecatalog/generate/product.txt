@@ -1,0 +1,98 @@
+[ :ref:`aws <cli:aws>` . :ref:`servicecatalog <cli:aws servicecatalog>` . :ref:`generate <cli:aws servicecatalog generate>` ]
+
+.. _cli:aws servicecatalog generate product:
+
+
+*******
+product
+*******
+
+
+
+===========
+Description
+===========
+
+Create a new product using a CloudFormation template specified as a local file path
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    product
+  --product-name <value>
+  --product-owner <value>
+  --product-type <value>
+  [--product-description <value>]
+  [--product-distributor <value>]
+  [--tags Key=key1,Value=value1 Key=key2,Value=value2]
+  --file-path <value>
+  --bucket-name <value>
+  [--support-description <value>]
+  [--support-email <value>]
+  --provisioning-artifact-name <value>
+  --provisioning-artifact-description <value>
+  --provisioning-artifact-type <value>
+
+
+
+
+=======
+Options
+=======
+
+``--product-name`` (string)
+The name of the product
+
+``--product-owner`` (string)
+The owner of the product
+
+``--product-type`` (string)
+The type of the product to create
+
+``--product-description`` (string)
+The text description of the product
+
+``--product-distributor`` (string)
+The distributor of the product
+
+``--tags`` (list)
+Tags to associate with the new product.
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--file-path`` (string)
+A local file path that references the CloudFormation template
+
+``--bucket-name`` (string)
+Name of the S3 bucket name where the CloudFormation template will be uploaded to
+
+``--support-description`` (string)
+Support information about the product
+
+``--support-email`` (string)
+Contact email for product support
+
+``--provisioning-artifact-name`` (string)
+The name assigned to the provisioning artifact
+
+``--provisioning-artifact-description`` (string)
+The text description of the provisioning artifact
+
+``--provisioning-artifact-type`` (string)
+The type of the provisioning artifact
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

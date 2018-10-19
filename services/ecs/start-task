@@ -1,0 +1,41 @@
+{
+    "cluster": "",
+    "taskDefinition": "",
+    "overrides": {
+        "containerOverrides": [
+            {
+                "name": "",
+                "command": [
+                    ""
+                ],
+                "environment": [
+                    {
+                        "name": "",
+                        "value": ""
+                    }
+                ],
+                "cpu": 0,
+                "memory": 0,
+                "memoryReservation": 0
+            }
+        ],
+        "taskRoleArn": "",
+        "executionRoleArn": ""
+    },
+    "containerInstances": [
+        ""
+    ],
+    "startedBy": "",
+    "group": "",
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                ""
+            ],
+            "securityGroups": [
+                ""
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    }
+}

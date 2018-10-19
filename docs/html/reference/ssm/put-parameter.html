@@ -1,0 +1,304 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>put-parameter &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ssm" href="../ssm/index.html" />
+    <link rel="next" title="register-default-patch-baseline" href="../ssm/register-default-patch-baseline.html" />
+    <link rel="prev" title="put-inventory" href="../ssm/put-inventory.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/register-default-patch-baseline.html" title="register-default-patch-baseline"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/put-inventory.html" title="put-inventory"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" accesskey="U">ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/put-inventory.html" title="previous chapter (use the left arrow)">&larr; put-inventory</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/register-default-patch-baseline.html" title="next chapter (use the right arrow)">register-default-patch-baseline &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">put-parameter</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/put-parameter">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ssm/index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="put-parameter">
+<span id="cli-aws-ssm-put-parameter"></span><h1>put-parameter<a class="headerlink" href="#put-parameter" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Add a parameter to the system.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PutParameter">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  put-parameter
+--name &lt;value&gt;
+[--description &lt;value&gt;]
+--value &lt;value&gt;
+--type &lt;value&gt;
+[--key-id &lt;value&gt;]
+[--overwrite | --no-overwrite]
+[--allowed-pattern &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div><p>The fully qualified name of the parameter that you want to add to the system. The fully qualified name includes the complete hierarchy of the parameter path and name. For example: <tt class="docutils literal"><span class="pre">/Dev/DBServer/MySQL/db-string13</span></tt></p>
+<p>Naming Constraints:</p>
+<ul class="simple">
+<li>Parameter names are case sensitive.</li>
+<li>A parameter name must be unique within an AWS Region</li>
+<li>A parameter name can't be prefixed with &quot;aws&quot; or &quot;ssm&quot; (case-insensitive).</li>
+<li>Parameter names can include only the following symbols and letters: <tt class="docutils literal"><span class="pre">a-zA-Z0-9_.-/</span></tt></li>
+<li>A parameter name can't include spaces.</li>
+<li>Parameter hierarchies are limited to a maximum depth of fifteen levels.</li>
+</ul>
+<p>For additional information about valid values for parameter names, see <a class="reference external" href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-parameter-name-constraints.html">Requirements and Constraints for Parameter Names</a> in the <em>AWS Systems Manager User Guide</em> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The maximum length constraint listed below includes capacity for additional system attributes that are not part of the name. The maximum length for the fully qualified parameter name is 1011 characters.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div><p>Information about the parameter that you want to add to the system. Optional but recommended.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Do not enter personally identifiable information in this field.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--value</span></tt> (string)</p>
+<blockquote>
+<div>The parameter value that you want to add to the system.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of parameter that you want to add to the system.</p>
+<p>Items in a <tt class="docutils literal"><span class="pre">StringList</span></tt> must be separated by a comma (,). You can't use other punctuation or special character to escape items in the list. If you have a parameter value that requires a comma, then use the <tt class="docutils literal"><span class="pre">String</span></tt> data type.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last"><tt class="docutils literal"><span class="pre">SecureString</span></tt> is not currently supported for AWS CloudFormation templates or in the China Regions.</p>
+</div>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">String</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">StringList</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">SecureString</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--key-id</span></tt> (string)</p>
+<blockquote>
+<div><p>The KMS Key ID that you want to use to encrypt a parameter. Either the default AWS Key Management Service (AWS KMS) key automatically assigned to your AWS account or a custom key. Required for parameters that use the <tt class="docutils literal"><span class="pre">SecureString</span></tt> data type.</p>
+<p>If you don't specify a key ID, the system uses the default key associated with your AWS account.</p>
+<ul class="simple">
+<li>To use your default AWS KMS key, choose the <tt class="docutils literal"><span class="pre">SecureString</span></tt> data type, and do <em>not</em> specify the <tt class="docutils literal"><span class="pre">Key</span> <span class="pre">ID</span></tt> when you create the parameter. The system automatically populates <tt class="docutils literal"><span class="pre">Key</span> <span class="pre">ID</span></tt> with your default KMS key.</li>
+<li>To use a custom KMS key, choose the <tt class="docutils literal"><span class="pre">SecureString</span></tt> data type with the <tt class="docutils literal"><span class="pre">Key</span> <span class="pre">ID</span></tt> parameter.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--overwrite</span></tt> | <tt class="docutils literal"><span class="pre">--no-overwrite</span></tt> (boolean)</p>
+<blockquote>
+<div>Overwrite an existing parameter. If not specified, will default to &quot;false&quot;.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--allowed-pattern</span></tt> (string)</p>
+<blockquote>
+<div>A regular expression used to validate the parameter value. For example, for String types with values restricted to numbers, you can specify the following: AllowedPattern=^d+$</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To create a parameter that uses a String data type</strong></p>
+<p>This example creates a parameter. There is no output if the command succeeds.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm put-parameter --name &quot;welcome&quot; --type &quot;String&quot; --value &quot;helloWorld&quot;</pre>
+</div>
+<p><strong>To create a Secure String parameter</strong></p>
+<p>This example creates a Secure String parameter. Singles quotes are used so that the literal value is passed. There is no output if the command succeeds.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm put-parameter --name &#x27;password&#x27; --type &quot;SecureString&quot; --value &#x27;a value, for example P@ssW%rd#1&#x27;</pre>
+</div>
+<p><strong>To change a parameter value</strong></p>
+<p>This example changes the value of a parameter. There is no output if the command succeeds.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm put-parameter --name &quot;welcome&quot; --type &quot;String&quot; --value &quot;good day sunshine&quot; --overwrite</pre>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Version -&gt; (long)</p>
+<blockquote>
+<div>The new version number of a parameter. If you edit a parameter value, Parameter Store automatically creates a new version and assigns this new version a unique ID. You can reference a parameter version ID in API actions or in Systems Manager documents (SSM documents). By default, if you don't specify a specific version, the system returns the latest parameter value when a parameter is called.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/put-inventory.html" title="previous chapter (use the left arrow)">&larr; put-inventory</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/register-default-patch-baseline.html" title="next chapter (use the right arrow)">register-default-patch-baseline &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/register-default-patch-baseline.html" title="register-default-patch-baseline"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/put-inventory.html" title="put-inventory"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" >ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

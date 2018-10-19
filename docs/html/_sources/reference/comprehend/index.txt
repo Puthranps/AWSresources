@@ -1,0 +1,59 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws comprehend:
+
+
+**********
+comprehend
+**********
+
+
+
+===========
+Description
+===========
+
+
+
+Amazon Comprehend is an AWS service for gaining insight into the content of documents. Use these actions to determine the topics contained in your documents, the topics they discuss, the predominant sentiment expressed in them, the predominant language used, and more.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  batch-detect-dominant-language
+  batch-detect-entities
+  batch-detect-key-phrases
+  batch-detect-sentiment
+  batch-detect-syntax
+  describe-dominant-language-detection-job
+  describe-entities-detection-job
+  describe-key-phrases-detection-job
+  describe-sentiment-detection-job
+  describe-topics-detection-job
+  detect-dominant-language
+  detect-entities
+  detect-key-phrases
+  detect-sentiment
+  detect-syntax
+  list-dominant-language-detection-jobs
+  list-entities-detection-jobs
+  list-key-phrases-detection-jobs
+  list-sentiment-detection-jobs
+  list-topics-detection-jobs
+  start-dominant-language-detection-job
+  start-entities-detection-job
+  start-key-phrases-detection-job
+  start-sentiment-detection-job
+  start-topics-detection-job
+  stop-dominant-language-detection-job
+  stop-entities-detection-job
+  stop-key-phrases-detection-job
+  stop-sentiment-detection-job

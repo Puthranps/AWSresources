@@ -1,0 +1,258 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>customer-gateway-available &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../../index.html" />
+    <link rel="up" title="wait" href="../wait/index.html" />
+    <link rel="next" title="export-task-cancelled" href="../wait/export-task-cancelled.html" />
+    <link rel="prev" title="conversion-task-deleted" href="../wait/conversion-task-deleted.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../wait/export-task-cancelled.html" title="export-task-cancelled"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../wait/conversion-task-deleted.html" title="conversion-task-deleted"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../../index.html" >aws</a> &raquo;</li>
+          <li><a href="../../ec2/index.html" >ec2</a> &raquo;</li>
+          <li><a href="../wait/index.html" accesskey="U">wait</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../wait/conversion-task-deleted.html" title="previous chapter (use the left arrow)">&larr; conversion-task-deleted</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../wait/export-task-cancelled.html" title="next chapter (use the right arrow)">export-task-cancelled &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../../index.html">
+    <img class="logo" src="../../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">customer-gateway-available</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ec2/wait/customer-gateway-available">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../../ec2/index.html#cli-aws-ec2"><em>ec2</em></a> . <a class="reference internal" href="../wait/index.html#cli-aws-ec2-wait"><em>wait</em></a> ]</p>
+<div class="section" id="customer-gateway-available">
+<span id="cli-aws-ec2-wait-customer-gateway-available"></span><h1>customer-gateway-available<a class="headerlink" href="#customer-gateway-available" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Wait until JMESPath query CustomerGateways[].State returns available for all elements when polling with <tt class="docutils literal"><span class="pre">describe-customer-gateways</span></tt>. It will poll every 15 seconds until a successful state has been reached. This will exit with a return code of 255 after 40 failed checks.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeCustomerGateways">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  customer-gateway-available
+[--customer-gateway-ids &lt;value&gt;]
+[--filters &lt;value&gt;]
+[--dry-run | --no-dry-run]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--customer-gateway-ids</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more customer gateway IDs.</p>
+<p>Default: Describes all your customer gateways.</p>
+</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>One or more filters.</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">bgp-asn</span></tt> - The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</li>
+<li><tt class="docutils literal"><span class="pre">customer-gateway-id</span></tt> - The ID of the customer gateway.</li>
+<li><tt class="docutils literal"><span class="pre">ip-address</span></tt> - The IP address of the customer gateway's Internet-routable external interface.</li>
+<li><tt class="docutils literal"><span class="pre">state</span></tt> - The state of the customer gateway (<tt class="docutils literal"><span class="pre">pending</span></tt> | <tt class="docutils literal"><span class="pre">available</span></tt> | <tt class="docutils literal"><span class="pre">deleting</span></tt> | <tt class="docutils literal"><span class="pre">deleted</span></tt> ).</li>
+<li><tt class="docutils literal"><span class="pre">type</span></tt> - The type of customer gateway. Currently, the only supported type is <tt class="docutils literal"><span class="pre">ipsec.1</span></tt> .</li>
+<li><tt class="docutils literal"><span class="pre">tag</span></tt> :&lt;key&gt; - The key/value combination of a tag assigned to the resource. Use the tag key in the filter name and the tag value as the filter value. For example, to find all resources that have a tag with the key <tt class="docutils literal"><span class="pre">Owner</span></tt> and the value <tt class="docutils literal"><span class="pre">TeamA</span></tt> , specify <tt class="docutils literal"><span class="pre">tag:Owner</span></tt> for the filter name and <tt class="docutils literal"><span class="pre">TeamA</span></tt> for the filter value.</li>
+<li><tt class="docutils literal"><span class="pre">tag-key</span></tt> - The key of a tag assigned to the resource. Use this filter to find all resources assigned a tag with a specific key, regardless of the tag value.</li>
+</ul>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Values&quot;: [&quot;string&quot;, ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--dry-run</span></tt> | <tt class="docutils literal"><span class="pre">--no-dry-run</span></tt> (boolean)</p>
+<blockquote>
+<div>Checks whether you have the required permissions for the action, without actually making the request, and provides an error response. If you have the required permissions, the error response is <tt class="docutils literal"><span class="pre">DryRunOperation</span></tt> . Otherwise, it is <tt class="docutils literal"><span class="pre">UnauthorizedOperation</span></tt> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>None</p>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../wait/conversion-task-deleted.html" title="previous chapter (use the left arrow)">&larr; conversion-task-deleted</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../wait/export-task-cancelled.html" title="next chapter (use the right arrow)">export-task-cancelled &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../wait/export-task-cancelled.html" title="export-task-cancelled"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../wait/conversion-task-deleted.html" title="conversion-task-deleted"
+             >previous</a> |</li>
+        <li><a href="../../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../../index.html" >aws</a> &raquo;</li>
+          <li><a href="../../ec2/index.html" >ec2</a> &raquo;</li>
+          <li><a href="../wait/index.html" >wait</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

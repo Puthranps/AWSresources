@@ -1,0 +1,54 @@
+{
+    "DryRun": true,
+    "ClientToken": "",
+    "SpotOptions": {
+        "AllocationStrategy": "lowest-price",
+        "InstanceInterruptionBehavior": "terminate",
+        "InstancePoolsToUseCount": 0
+    },
+    "OnDemandOptions": {
+        "AllocationStrategy": "lowest-price"
+    },
+    "ExcessCapacityTerminationPolicy": "no-termination",
+    "LaunchTemplateConfigs": [
+        {
+            "LaunchTemplateSpecification": {
+                "LaunchTemplateId": "",
+                "LaunchTemplateName": "",
+                "Version": ""
+            },
+            "Overrides": [
+                {
+                    "InstanceType": "r5d.xlarge",
+                    "MaxPrice": "",
+                    "SubnetId": "",
+                    "AvailabilityZone": "",
+                    "WeightedCapacity": null,
+                    "Priority": null
+                }
+            ]
+        }
+    ],
+    "TargetCapacitySpecification": {
+        "TotalTargetCapacity": 0,
+        "OnDemandTargetCapacity": 0,
+        "SpotTargetCapacity": 0,
+        "DefaultTargetCapacityType": "spot"
+    },
+    "TerminateInstancesWithExpiration": true,
+    "Type": "request",
+    "ValidFrom": "1970-01-01T00:00:00",
+    "ValidUntil": "1970-01-01T00:00:00",
+    "ReplaceUnhealthyInstances": true,
+    "TagSpecifications": [
+        {
+            "ResourceType": "subnet",
+            "Tags": [
+                {
+                    "Key": "",
+                    "Value": ""
+                }
+            ]
+        }
+    ]
+}

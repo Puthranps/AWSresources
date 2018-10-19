@@ -1,0 +1,14 @@
+{
+    "name": "",
+    "version": "",
+    "roleArn": "",
+    "resourcesVpcConfig": {
+        "subnetIds": [
+            ""
+        ],
+        "securityGroupIds": [
+            ""
+        ]
+    },
+    "clientRequestToken": ""
+}

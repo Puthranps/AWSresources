@@ -1,0 +1,16 @@
+{
+    "cluster": "",
+    "task": "",
+    "containerName": "",
+    "status": "",
+    "exitCode": 0,
+    "reason": "",
+    "networkBindings": [
+        {
+            "bindIP": "",
+            "containerPort": 0,
+            "hostPort": 0,
+            "protocol": "tcp"
+        }
+    ]
+}

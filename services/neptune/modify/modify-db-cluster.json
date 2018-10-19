@@ -1,0 +1,17 @@
+{
+    "DBClusterIdentifier": "",
+    "NewDBClusterIdentifier": "",
+    "ApplyImmediately": true,
+    "BackupRetentionPeriod": 0,
+    "DBClusterParameterGroupName": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "Port": 0,
+    "MasterUserPassword": "",
+    "OptionGroupName": "",
+    "PreferredBackupWindow": "",
+    "PreferredMaintenanceWindow": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "EngineVersion": ""
+}

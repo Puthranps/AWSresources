@@ -1,0 +1,31 @@
+{
+    "DirectoryArn": "",
+    "TypedLinkSpecifier": {
+        "TypedLinkFacet": {
+            "SchemaArn": "",
+            "TypedLinkName": ""
+        },
+        "SourceObjectReference": {
+            "Selector": ""
+        },
+        "TargetObjectReference": {
+            "Selector": ""
+        },
+        "IdentityAttributeValues": [
+            {
+                "AttributeName": "",
+                "Value": {
+                    "StringValue": "",
+                    "BinaryValue": null,
+                    "BooleanValue": true,
+                    "NumberValue": "",
+                    "DatetimeValue": "1970-01-01T00:00:00"
+                }
+            }
+        ]
+    },
+    "AttributeNames": [
+        ""
+    ],
+    "ConsistencyLevel": "SERIALIZABLE"
+}

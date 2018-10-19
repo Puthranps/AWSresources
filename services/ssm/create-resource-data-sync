@@ -1,0 +1,10 @@
+{
+    "SyncName": "",
+    "S3Destination": {
+        "BucketName": "",
+        "Prefix": "",
+        "SyncFormat": "JsonSerDe",
+        "Region": "",
+        "AWSKMSKeyARN": ""
+    }
+}

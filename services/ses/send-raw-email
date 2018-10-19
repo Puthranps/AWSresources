@@ -1,0 +1,19 @@
+{
+    "Source": "",
+    "Destinations": [
+        ""
+    ],
+    "RawMessage": {
+        "Data": null
+    },
+    "FromArn": "",
+    "SourceArn": "",
+    "ReturnPathArn": "",
+    "Tags": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "ConfigurationSetName": ""
+}

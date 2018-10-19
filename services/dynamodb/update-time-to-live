@@ -1,0 +1,7 @@
+{
+    "TableName": "",
+    "TimeToLiveSpecification": {
+        "Enabled": true,
+        "AttributeName": ""
+    }
+}

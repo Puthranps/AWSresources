@@ -1,0 +1,12 @@
+{
+    "AssociationId": "",
+    "Filters": [
+        {
+            "Key": "CreatedTime",
+            "Value": "",
+            "Type": "GREATER_THAN"
+        }
+    ],
+    "MaxResults": 0,
+    "NextToken": ""
+}

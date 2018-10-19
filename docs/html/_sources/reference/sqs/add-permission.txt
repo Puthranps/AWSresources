@@ -1,0 +1,174 @@
+[ :ref:`aws <cli:aws>` . :ref:`sqs <cli:aws sqs>` ]
+
+.. _cli:aws sqs add-permission:
+
+
+**************
+add-permission
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Adds a permission to a queue for a specific `principal <http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P>`__ . This allows sharing access to the queue.
+
+ 
+
+When you create a queue, you have full control access rights for the queue. Only you, the owner of the queue, can grant or deny permissions to the queue. For more information about these permissions, see `Allow Developers to Write Messages to a Shared Queue <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+ 
+
+.. note::
+
+   
+
+   ``AddPermission`` writes an Amazon-SQS-generated policy. If you want to write your own policy, use ``  SetQueueAttributes `` to upload your policy. For more information about writing your own policy, see `Using Custom Policies with the Amazon SQS Access Policy Language <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+   
+
+  An Amazon SQS policy can have a maximum of 7 actions.
+
+   
+
+ 
+
+Some actions take lists of parameters. These lists are specified using the ``param.n`` notation. Values of ``n`` are integers starting from 1. For example, a parameter list with two elements looks like this:
+
+ 
+
+ ``&Attribute.1=first``  
+
+ 
+
+ ``&Attribute.2=second``  
+
+ 
+
+.. note::
+
+   
+
+  Cross-account permissions don't apply to this action. For more information, see see `Grant Cross-Account Permissions to a Role and a User Name <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    add-permission
+  --queue-url <value>
+  --label <value>
+  --aws-account-ids <value>
+  --actions <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--queue-url`` (string)
+
+
+  The URL of the Amazon SQS queue to which permissions are added.
+
+   
+
+  Queue URLs and names are case-sensitive.
+
+  
+
+``--label`` (string)
+
+
+  The unique identification of the permission you're setting (for example, ``AliceSendMessage`` ). Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens (``-`` ), and underscores (``_`` ).
+
+  
+
+``--aws-account-ids`` (list)
+
+
+  The AWS account number of the `principal <http://docs.aws.amazon.com/general/latest/gr/glos-chap.html#P>`__ who is given permission. The principal must have an AWS account, but does not need to be signed up for Amazon SQS. For information about locating the AWS account identification, see `Your AWS Identifiers <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-making-api-requests.html#sqs-api-request-authentication>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--actions`` (list)
+
+
+  The action the client wants to allow for the specified principal. Valid values: the name of any action or ``*`` .
+
+   
+
+  For more information about these actions, see `Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource <http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html>`__ in the *Amazon Simple Queue Service Developer Guide* .
+
+   
+
+  Specifying ``SendMessage`` , ``DeleteMessage`` , or ``ChangeMessageVisibility`` for ``ActionName.n`` also grants permissions for the corresponding batch versions of those actions: ``SendMessageBatch`` , ``DeleteMessageBatch`` , and ``ChangeMessageVisibilityBatch`` .
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To add a permission to a queue**
+
+This example enables the specified AWS account to send messages to the specified queue.
+
+Command::
+
+  aws sqs add-permission --queue-url https://sqs.us-east-1.amazonaws.com/80398EXAMPLE/MyQueue --label SendMessagesFromMyQueue --aws-account-ids 12345EXAMPLE --actions SendMessage
+
+Output::
+
+  None.
+
+======
+Output
+======
+
+None

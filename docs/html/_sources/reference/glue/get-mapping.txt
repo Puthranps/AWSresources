@@ -1,0 +1,240 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue get-mapping:
+
+
+***********
+get-mapping
+***********
+
+
+
+===========
+Description
+===========
+
+
+
+Creates mappings.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetMapping>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-mapping
+  --source <value>
+  [--sinks <value>]
+  [--location <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--source`` (structure)
+
+
+  Specifies the source table.
+
+  
+
+
+
+Shorthand Syntax::
+
+    DatabaseName=string,TableName=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "DatabaseName": "string",
+    "TableName": "string"
+  }
+
+
+
+``--sinks`` (list)
+
+
+  A list of target tables.
+
+  
+
+
+
+Shorthand Syntax::
+
+    DatabaseName=string,TableName=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "DatabaseName": "string",
+      "TableName": "string"
+    }
+    ...
+  ]
+
+
+
+``--location`` (structure)
+
+
+  Parameters for the mapping.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Jdbc=[{Name=string,Value=string,Param=boolean},{Name=string,Value=string,Param=boolean}],S3=[{Name=string,Value=string,Param=boolean},{Name=string,Value=string,Param=boolean}],DynamoDB=[{Name=string,Value=string,Param=boolean},{Name=string,Value=string,Param=boolean}]
+
+
+
+
+JSON Syntax::
+
+  {
+    "Jdbc": [
+      {
+        "Name": "string",
+        "Value": "string",
+        "Param": true|false
+      }
+      ...
+    ],
+    "S3": [
+      {
+        "Name": "string",
+        "Value": "string",
+        "Param": true|false
+      }
+      ...
+    ],
+    "DynamoDB": [
+      {
+        "Name": "string",
+        "Value": "string",
+        "Param": true|false
+      }
+      ...
+    ]
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Mapping -> (list)
+
+  
+
+  A list of mappings to the specified targets.
+
+  
+
+  (structure)
+
+    
+
+    Defines a mapping.
+
+    
+
+    SourceTable -> (string)
+
+      
+
+      The name of the source table.
+
+      
+
+      
+
+    SourcePath -> (string)
+
+      
+
+      The source path.
+
+      
+
+      
+
+    SourceType -> (string)
+
+      
+
+      The source type.
+
+      
+
+      
+
+    TargetTable -> (string)
+
+      
+
+      The target table.
+
+      
+
+      
+
+    TargetPath -> (string)
+
+      
+
+      The target path.
+
+      
+
+      
+
+    TargetType -> (string)
+
+      
+
+      The target type.
+
+      
+
+      
+
+    
+
+  
+

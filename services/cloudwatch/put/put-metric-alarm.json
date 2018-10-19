@@ -1,0 +1,32 @@
+{
+    "AlarmName": "",
+    "AlarmDescription": "",
+    "ActionsEnabled": true,
+    "OKActions": [
+        ""
+    ],
+    "AlarmActions": [
+        ""
+    ],
+    "InsufficientDataActions": [
+        ""
+    ],
+    "MetricName": "",
+    "Namespace": "",
+    "Statistic": "Sum",
+    "ExtendedStatistic": "",
+    "Dimensions": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ],
+    "Period": 0,
+    "Unit": "Terabytes/Second",
+    "EvaluationPeriods": 0,
+    "DatapointsToAlarm": 0,
+    "Threshold": null,
+    "ComparisonOperator": "LessThanOrEqualToThreshold",
+    "TreatMissingData": "",
+    "EvaluateLowSampleCountPercentile": ""
+}

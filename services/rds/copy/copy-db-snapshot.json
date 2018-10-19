@@ -1,0 +1,15 @@
+{
+    "SourceDBSnapshotIdentifier": "",
+    "TargetDBSnapshotIdentifier": "",
+    "KmsKeyId": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "CopyTags": true,
+    "PreSignedUrl": "",
+    "OptionGroupName": "",
+    "SourceRegion": ""
+}

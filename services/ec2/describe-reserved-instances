@@ -1,0 +1,16 @@
+{
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "OfferingClass": "convertible",
+    "ReservedInstancesIds": [
+        ""
+    ],
+    "DryRun": true,
+    "OfferingType": "Partial Upfront"
+}

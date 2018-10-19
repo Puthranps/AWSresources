@@ -1,0 +1,18 @@
+{
+    "SizeConstraintSetId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "SizeConstraint": {
+                "FieldToMatch": {
+                    "Type": "METHOD",
+                    "Data": ""
+                },
+                "TextTransformation": "HTML_ENTITY_DECODE",
+                "ComparisonOperator": "GE",
+                "Size": 0
+            }
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "IdentityPoolId": "",
+    "Roles": {
+        "KeyName": ""
+    },
+    "RoleMappings": {
+        "KeyName": {
+            "Type": "Token",
+            "AmbiguousRoleResolution": "AuthenticatedRole",
+            "RulesConfiguration": {
+                "Rules": [
+                    {
+                        "Claim": "",
+                        "MatchType": "StartsWith",
+                        "Value": "",
+                        "RoleARN": ""
+                    }
+                ]
+            }
+        }
+    }
+}

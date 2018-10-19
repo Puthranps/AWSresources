@@ -1,0 +1,7 @@
+{
+    "DBSecurityGroupName": "",
+    "CIDRIP": "",
+    "EC2SecurityGroupName": "",
+    "EC2SecurityGroupId": "",
+    "EC2SecurityGroupOwnerId": ""
+}

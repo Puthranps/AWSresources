@@ -1,0 +1,6 @@
+{
+    "AvailabilityZone": "",
+    "Type": "ipsec.1",
+    "AmazonSideAsn": 0,
+    "DryRun": true
+}

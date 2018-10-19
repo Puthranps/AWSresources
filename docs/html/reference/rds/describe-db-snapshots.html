@@ -1,0 +1,417 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-db-snapshots &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="rds" href="../rds/index.html" />
+    <link rel="next" title="describe-db-subnet-groups" href="../rds/describe-db-subnet-groups.html" />
+    <link rel="prev" title="describe-db-snapshot-attributes" href="../rds/describe-db-snapshot-attributes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../rds/describe-db-subnet-groups.html" title="describe-db-subnet-groups"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../rds/describe-db-snapshot-attributes.html" title="describe-db-snapshot-attributes"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../rds/index.html" accesskey="U">rds</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../rds/describe-db-snapshot-attributes.html" title="previous chapter (use the left arrow)">&larr; describe-db-snapshot-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../rds/describe-db-subnet-groups.html" title="next chapter (use the right arrow)">describe-db-subnet-groups &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-db-snapshots</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/rds/describe-db-snapshots">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../rds/index.html#cli-aws-rds"><em>rds</em></a> ]</p>
+<div class="section" id="describe-db-snapshots">
+<span id="cli-aws-rds-describe-db-snapshots"></span><h1>describe-db-snapshots<a class="headerlink" href="#describe-db-snapshots" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns information about DB snapshots. This API action supports pagination.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBSnapshots">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+<p><tt class="docutils literal"><span class="pre">describe-db-snapshots</span></tt> is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the <tt class="docutils literal"><span class="pre">--no-paginate</span></tt> argument.
+When using <tt class="docutils literal"><span class="pre">--output</span> <span class="pre">text</span></tt> and the <tt class="docutils literal"><span class="pre">--query</span></tt> argument on a paginated response, the <tt class="docutils literal"><span class="pre">--query</span></tt> argument must extract data from the results of the following query expressions: <tt class="docutils literal"><span class="pre">DBSnapshots</span></tt></p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-db-snapshots
+[--db-instance-identifier &lt;value&gt;]
+[--db-snapshot-identifier &lt;value&gt;]
+[--snapshot-type &lt;value&gt;]
+[--filters &lt;value&gt;]
+[--include-shared | --no-include-shared]
+[--include-public | --no-include-public]
+[--cli-input-json &lt;value&gt;]
+[--starting-token &lt;value&gt;]
+[--page-size &lt;value&gt;]
+[--max-items &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--db-instance-identifier</span></tt> (string)</p>
+<blockquote>
+<div><p>The ID of the DB instance to retrieve the list of DB snapshots for. This parameter can't be used in conjunction with <tt class="docutils literal"><span class="pre">DBSnapshotIdentifier</span></tt> . This parameter is not case-sensitive.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>If supplied, must match the identifier of an existing DBInstance.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--db-snapshot-identifier</span></tt> (string)</p>
+<blockquote>
+<div><p>A specific DB snapshot identifier to describe. This parameter can't be used in conjunction with <tt class="docutils literal"><span class="pre">DBInstanceIdentifier</span></tt> . This value is stored as a lowercase string.</p>
+<p>Constraints:</p>
+<ul class="simple">
+<li>If supplied, must match the identifier of an existing DBSnapshot.</li>
+<li>If this identifier is for an automated snapshot, the <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> parameter must also be specified.</li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--snapshot-type</span></tt> (string)</p>
+<blockquote>
+<div><p>The type of snapshots to be returned. You can specify one of the following values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">automated</span></tt> - Return all DB snapshots that have been automatically taken by Amazon RDS for my AWS account.</li>
+<li><tt class="docutils literal"><span class="pre">manual</span></tt> - Return all DB snapshots that have been taken by my AWS account.</li>
+<li><tt class="docutils literal"><span class="pre">shared</span></tt> - Return all manual DB snapshots that have been shared to my AWS account.</li>
+<li><tt class="docutils literal"><span class="pre">public</span></tt> - Return all DB snapshots that have been marked as public.</li>
+</ul>
+<p>If you don't specify a <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> value, then both automated and manual snapshots are returned. Shared and public DB snapshots are not included in the returned results by default. You can include shared snapshots with these results by setting the <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> parameter to <tt class="docutils literal"><span class="pre">true</span></tt> . You can include public snapshots with these results by setting the <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameter to <tt class="docutils literal"><span class="pre">true</span></tt> .</p>
+<p>The <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> and <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameters don't apply for <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> values of <tt class="docutils literal"><span class="pre">manual</span></tt> or <tt class="docutils literal"><span class="pre">automated</span></tt> . The <tt class="docutils literal"><span class="pre">IncludePublic</span></tt> parameter doesn't apply when <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> is set to <tt class="docutils literal"><span class="pre">shared</span></tt> . The <tt class="docutils literal"><span class="pre">IncludeShared</span></tt> parameter doesn't apply when <tt class="docutils literal"><span class="pre">SnapshotType</span></tt> is set to <tt class="docutils literal"><span class="pre">public</span></tt> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div>This parameter is not currently supported.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Name=string,Values=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Name&quot;: &quot;string&quot;,
+    &quot;Values&quot;: [&quot;string&quot;, ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--include-shared</span></tt> | <tt class="docutils literal"><span class="pre">--no-include-shared</span></tt> (boolean)</p>
+<blockquote>
+<div><p>True to include shared manual DB snapshots from other AWS accounts that this AWS account has been given permission to copy or restore, and otherwise false. The default is <tt class="docutils literal"><span class="pre">false</span></tt> .</p>
+<p>You can give an AWS account permission to restore a manual DB snapshot from another AWS account by using the  ModifyDBSnapshotAttribute API action.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--include-public</span></tt> | <tt class="docutils literal"><span class="pre">--no-include-public</span></tt> (boolean)</p>
+<blockquote>
+<div><p>True to include manual DB snapshots that are public and can be copied or restored by any AWS account, and otherwise false. The default is false.</p>
+<p>You can share a manual DB snapshot as public by using the  ModifyDBSnapshotAttribute API.</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--starting-token</span></tt> (string)</p>
+<blockquote>
+<div><p>A token to specify where to start paginating. This is the <tt class="docutils literal"><span class="pre">NextToken</span></tt> from a previously truncated response.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--page-size</span></tt> (integer)</p>
+<blockquote>
+<div><p>The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-items</span></tt> (integer)</p>
+<blockquote>
+<div><p>The total number of items to return in the command's output. If the total number of items available is more than the value specified, a <tt class="docutils literal"><span class="pre">NextToken</span></tt> is provided in the command's output. To resume pagination, provide the <tt class="docutils literal"><span class="pre">NextToken</span></tt> value in the <tt class="docutils literal"><span class="pre">starting-token</span></tt> argument of a subsequent command. <strong>Do not</strong> use the <tt class="docutils literal"><span class="pre">NextToken</span></tt> response element directly outside of the AWS CLI.</p>
+<p>For usage examples, see <a class="reference external" href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a> in the <em>AWS Command Line Interface User Guide</em> .</p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Marker -&gt; (string)</p>
+<blockquote>
+<div>An optional pagination token provided by a previous request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by <tt class="docutils literal"><span class="pre">MaxRecords</span></tt> .</div></blockquote>
+<p>DBSnapshots -&gt; (list)</p>
+<blockquote>
+<div><p>A list of  DBSnapshot instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains the details of an Amazon RDS DB snapshot.</p>
+<p>This data type is used as a response element in the  DescribeDBSnapshots action.</p>
+<p>DBSnapshotIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the identifier for the DB snapshot.</div></blockquote>
+<p>DBInstanceIdentifier -&gt; (string)</p>
+<blockquote>
+<div>Specifies the DB instance identifier of the DB instance this DB snapshot was created from.</div></blockquote>
+<p>SnapshotCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).</div></blockquote>
+<p>Engine -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the database engine.</div></blockquote>
+<p>AllocatedStorage -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the allocated storage size in gibibytes (GiB).</div></blockquote>
+<p>Status -&gt; (string)</p>
+<blockquote>
+<div>Specifies the status of this DB snapshot.</div></blockquote>
+<p>Port -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the port that the database engine was listening on at the time of the snapshot.</div></blockquote>
+<p>AvailabilityZone -&gt; (string)</p>
+<blockquote>
+<div>Specifies the name of the Availability Zone the DB instance was located in at the time of the DB snapshot.</div></blockquote>
+<p>VpcId -&gt; (string)</p>
+<blockquote>
+<div>Provides the VPC ID associated with the DB snapshot.</div></blockquote>
+<p>InstanceCreateTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).</div></blockquote>
+<p>MasterUsername -&gt; (string)</p>
+<blockquote>
+<div>Provides the master username for the DB snapshot.</div></blockquote>
+<p>EngineVersion -&gt; (string)</p>
+<blockquote>
+<div>Specifies the version of the database engine.</div></blockquote>
+<p>LicenseModel -&gt; (string)</p>
+<blockquote>
+<div>License model information for the restored DB instance.</div></blockquote>
+<p>SnapshotType -&gt; (string)</p>
+<blockquote>
+<div>Provides the type of the DB snapshot.</div></blockquote>
+<p>Iops -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the Provisioned IOPS (I/O operations per second) value of the DB instance at the time of the snapshot.</div></blockquote>
+<p>OptionGroupName -&gt; (string)</p>
+<blockquote>
+<div>Provides the option group name for the DB snapshot.</div></blockquote>
+<p>PercentProgress -&gt; (integer)</p>
+<blockquote>
+<div>The percentage of the estimated data that has been transferred.</div></blockquote>
+<p>SourceRegion -&gt; (string)</p>
+<blockquote>
+<div>The AWS Region that the DB snapshot was created in or copied from.</div></blockquote>
+<p>SourceDBSnapshotIdentifier -&gt; (string)</p>
+<blockquote>
+<div>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied from. It only has value in case of cross-customer or cross-region copy.</div></blockquote>
+<p>StorageType -&gt; (string)</p>
+<blockquote>
+<div>Specifies the storage type associated with DB snapshot.</div></blockquote>
+<p>TdeCredentialArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN from the key store with which to associate the instance for TDE encryption.</div></blockquote>
+<p>Encrypted -&gt; (boolean)</p>
+<blockquote>
+<div>Specifies whether the DB snapshot is encrypted.</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>If <tt class="docutils literal"><span class="pre">Encrypted</span></tt> is true, the AWS KMS key identifier for the encrypted DB snapshot.</div></blockquote>
+<p>DBSnapshotArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) for the DB snapshot.</div></blockquote>
+<p>Timezone -&gt; (string)</p>
+<blockquote>
+<div>The time zone of the DB snapshot. In most cases, the <tt class="docutils literal"><span class="pre">Timezone</span></tt> element is empty. <tt class="docutils literal"><span class="pre">Timezone</span></tt> content appears only for snapshots taken from Microsoft SQL Server DB instances that were created with a time zone specified.</div></blockquote>
+<p>IAMDatabaseAuthenticationEnabled -&gt; (boolean)</p>
+<blockquote>
+<div>True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and otherwise false.</div></blockquote>
+<p>ProcessorFeatures -&gt; (list)</p>
+<blockquote>
+<div><p>The number of CPU cores and the number of threads per core for the DB instance class of the DB instance when the DB snapshot was created.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains the processor features of a DB instance class.</p>
+<p>To specify the number of CPU cores, use the <tt class="docutils literal"><span class="pre">coreCount</span></tt> feature name for the <tt class="docutils literal"><span class="pre">Name</span></tt> parameter. To specify the number of threads per core, use the <tt class="docutils literal"><span class="pre">threadsPerCore</span></tt> feature name for the <tt class="docutils literal"><span class="pre">Name</span></tt> parameter.</p>
+<p>You can set the processor features of the DB instance class for a DB instance when you call one of the following actions:</p>
+<ul class="simple">
+<li>CreateDBInstance</li>
+<li>ModifyDBInstance</li>
+<li>RestoreDBInstanceFromDBSnapshot</li>
+<li>RestoreDBInstanceFromS3</li>
+<li>RestoreDBInstanceToPointInTime</li>
+</ul>
+<p>You can view the valid processor values for a particular instance class by calling the  DescribeOrderableDBInstanceOptions action and specifying the instance class for the <tt class="docutils literal"><span class="pre">DBInstanceClass</span></tt> parameter.</p>
+<p>In addition, you can use the following actions for DB instance class processor information:</p>
+<ul class="simple">
+<li>DescribeDBInstances</li>
+<li>DescribeDBSnapshots</li>
+<li>DescribeValidDBInstanceModifications</li>
+</ul>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring the Processor of the DB Instance Class</a> in the <em>Amazon RDS User Guide.</em></p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the processor feature. Valid names are <tt class="docutils literal"><span class="pre">coreCount</span></tt> and <tt class="docutils literal"><span class="pre">threadsPerCore</span></tt> .</div></blockquote>
+<p>Value -&gt; (string)</p>
+<blockquote>
+<div>The value of a processor feature name.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../rds/describe-db-snapshot-attributes.html" title="previous chapter (use the left arrow)">&larr; describe-db-snapshot-attributes</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../rds/describe-db-subnet-groups.html" title="next chapter (use the right arrow)">describe-db-subnet-groups &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../rds/describe-db-subnet-groups.html" title="describe-db-subnet-groups"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../rds/describe-db-snapshot-attributes.html" title="describe-db-snapshot-attributes"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../rds/index.html" >rds</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

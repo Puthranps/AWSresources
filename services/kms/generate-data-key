@@ -1,0 +1,11 @@
+{
+    "KeyId": "",
+    "EncryptionContext": {
+        "KeyName": ""
+    },
+    "NumberOfBytes": 0,
+    "KeySpec": "AES_128",
+    "GrantTokens": [
+        ""
+    ]
+}

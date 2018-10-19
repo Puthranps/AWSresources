@@ -1,0 +1,60 @@
+{
+    "Name": "",
+    "Description": "",
+    "Container": "",
+    "Video": {
+        "Codec": "",
+        "CodecOptions": {
+            "KeyName": ""
+        },
+        "KeyframesMaxDist": "",
+        "FixedGOP": "",
+        "BitRate": "",
+        "FrameRate": "",
+        "MaxFrameRate": "",
+        "Resolution": "",
+        "AspectRatio": "",
+        "MaxWidth": "",
+        "MaxHeight": "",
+        "DisplayAspectRatio": "",
+        "SizingPolicy": "",
+        "PaddingPolicy": "",
+        "Watermarks": [
+            {
+                "Id": "",
+                "MaxWidth": "",
+                "MaxHeight": "",
+                "SizingPolicy": "",
+                "HorizontalAlign": "",
+                "HorizontalOffset": "",
+                "VerticalAlign": "",
+                "VerticalOffset": "",
+                "Opacity": "",
+                "Target": ""
+            }
+        ]
+    },
+    "Audio": {
+        "Codec": "",
+        "SampleRate": "",
+        "BitRate": "",
+        "Channels": "",
+        "AudioPackingMode": "",
+        "CodecOptions": {
+            "Profile": "",
+            "BitDepth": "",
+            "BitOrder": "",
+            "Signed": ""
+        }
+    },
+    "Thumbnails": {
+        "Format": "",
+        "Interval": "",
+        "Resolution": "",
+        "AspectRatio": "",
+        "MaxWidth": "",
+        "MaxHeight": "",
+        "SizingPolicy": "",
+        "PaddingPolicy": ""
+    }
+}

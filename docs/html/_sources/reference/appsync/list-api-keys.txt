@@ -1,0 +1,191 @@
+[ :ref:`aws <cli:aws>` . :ref:`appsync <cli:aws appsync>` ]
+
+.. _cli:aws appsync list-api-keys:
+
+
+*************
+list-api-keys
+*************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists the API keys for a given API.
+
+ 
+
+.. note::
+
+   
+
+  API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call ``DeleteApiKey`` to manually delete a key before it's automatically deleted.
+
+   
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListApiKeys>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-api-keys
+  --api-id <value>
+  [--next-token <value>]
+  [--max-results <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--api-id`` (string)
+
+
+  The API ID.
+
+  
+
+``--next-token`` (string)
+
+
+  An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of results you want the request to return.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+apiKeys -> (list)
+
+  
+
+  The ``ApiKey`` objects.
+
+  
+
+  (structure)
+
+    
+
+    Describes an API key.
+
+     
+
+    Customers invoke AWS AppSync GraphQL APIs with API keys as an identity mechanism. There are two key versions:
+
+     
+
+     **da1** : This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by DynamoDB TTL. The keys will cease to be valid after Feb 21, 2018 and should not be used after that date.
+
+     
+
+     
+    * ``ListApiKeys`` returns the expiration time in milliseconds. 
+     
+    * ``CreateApiKey`` returns the expiration time in milliseconds. 
+     
+    * ``UpdateApiKey`` is not available for this key version. 
+     
+    * ``DeleteApiKey`` deletes the item from the table. 
+     
+    * Expiration is stored in DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after Feb 21, 2018. 
+     
+
+     
+
+     **da2** : This version was introduced in February 2018 when AppSync added support to extend key expiration.
+
+     
+
+     
+    * ``ListApiKeys`` returns the expiration time in seconds. 
+     
+    * ``CreateApiKey`` returns the expiration time in seconds and accepts a user-provided expiration time in seconds. 
+     
+    * ``UpdateApiKey`` returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired. 
+     
+    * ``DeleteApiKey`` deletes the item from the table. 
+     
+    * Expiration is stored in DynamoDB as seconds. 
+     
+
+    
+
+    id -> (string)
+
+      
+
+      The API key ID.
+
+      
+
+      
+
+    description -> (string)
+
+      
+
+      A description of the purpose of the API key.
+
+      
+
+      
+
+    expires -> (long)
+
+      
+
+      The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.
+
+      
+
+      
+
+    
+
+  
+
+nextToken -> (string)
+
+  
+
+  An identifier to be passed in the next request to this operation to return the next set of items in the list.
+
+  
+
+  
+

@@ -1,0 +1,37 @@
+{
+    "SchemaArn": "",
+    "Name": "",
+    "AttributeUpdates": [
+        {
+            "Attribute": {
+                "Name": "",
+                "AttributeDefinition": {
+                    "Type": "STRING",
+                    "DefaultValue": {
+                        "StringValue": "",
+                        "BinaryValue": null,
+                        "BooleanValue": true,
+                        "NumberValue": "",
+                        "DatetimeValue": "1970-01-01T00:00:00"
+                    },
+                    "IsImmutable": true,
+                    "Rules": {
+                        "KeyName": {
+                            "Type": "STRING_LENGTH",
+                            "Parameters": {
+                                "KeyName": ""
+                            }
+                        }
+                    }
+                },
+                "AttributeReference": {
+                    "TargetFacetName": "",
+                    "TargetAttributeName": ""
+                },
+                "RequiredBehavior": "REQUIRED_ALWAYS"
+            },
+            "Action": "DELETE"
+        }
+    ],
+    "ObjectType": "NODE"
+}

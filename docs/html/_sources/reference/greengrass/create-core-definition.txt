@@ -1,0 +1,132 @@
+[ :ref:`aws <cli:aws>` . :ref:`greengrass <cli:aws greengrass>` ]
+
+.. _cli:aws greengrass create-core-definition:
+
+
+**********************
+create-core-definition
+**********************
+
+
+
+===========
+Description
+===========
+
+Creates a core definition. You may provide the initial version of the core definition now or use ''CreateCoreDefinitionVersion'' at a later time. AWS Greengrass groups must each contain exactly one AWS Greengrass core.
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/CreateCoreDefinition>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-core-definition
+  [--amzn-client-token <value>]
+  [--initial-version <value>]
+  [--name <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--amzn-client-token`` (string)
+A client token used to correlate requests and responses.
+
+``--initial-version`` (structure)
+Information about the initial version of the core definition.
+
+
+
+Shorthand Syntax::
+
+    Cores=[{CertificateArn=string,Id=string,SyncShadow=boolean,ThingArn=string},{CertificateArn=string,Id=string,SyncShadow=boolean,ThingArn=string}]
+
+
+
+
+JSON Syntax::
+
+  {
+    "Cores": [
+      {
+        "CertificateArn": "string",
+        "Id": "string",
+        "SyncShadow": true|false,
+        "ThingArn": "string"
+      }
+      ...
+    ]
+  }
+
+
+
+``--name`` (string)
+The name of the core definition.
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Arn -> (string)
+
+  The ARN of the definition.
+
+  
+
+CreationTimestamp -> (string)
+
+  The time, in milliseconds since the epoch, when the definition was created.
+
+  
+
+Id -> (string)
+
+  The ID of the definition.
+
+  
+
+LastUpdatedTimestamp -> (string)
+
+  The time, in milliseconds since the epoch, when the definition was last updated.
+
+  
+
+LatestVersion -> (string)
+
+  The latest version of the definition.
+
+  
+
+LatestVersionArn -> (string)
+
+  The ARN of the latest version of the definition.
+
+  
+
+Name -> (string)
+
+  The name of the definition.
+
+  
+

@@ -1,0 +1,7 @@
+{
+    "DryRun": true,
+    "FleetIds": [
+        ""
+    ],
+    "TerminateInstances": true
+}

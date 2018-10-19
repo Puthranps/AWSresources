@@ -1,0 +1,14 @@
+{
+    "Bucket": "",
+    "ContentMD5": "",
+    "ServerSideEncryptionConfiguration": {
+        "Rules": [
+            {
+                "ApplyServerSideEncryptionByDefault": {
+                    "SSEAlgorithm": "AES256",
+                    "KMSMasterKeyID": ""
+                }
+            }
+        ]
+    }
+}

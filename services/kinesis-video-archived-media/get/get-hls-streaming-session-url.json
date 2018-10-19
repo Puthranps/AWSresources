@@ -1,0 +1,15 @@
+{
+    "StreamName": "",
+    "StreamARN": "",
+    "PlaybackMode": "ON_DEMAND",
+    "HLSFragmentSelector": {
+        "FragmentSelectorType": "PRODUCER_TIMESTAMP",
+        "TimestampRange": {
+            "StartTimestamp": "1970-01-01T00:00:00",
+            "EndTimestamp": "1970-01-01T00:00:00"
+        }
+    },
+    "DiscontinuityMode": "ALWAYS",
+    "Expires": 0,
+    "MaxMediaPlaylistFragmentResults": 0
+}

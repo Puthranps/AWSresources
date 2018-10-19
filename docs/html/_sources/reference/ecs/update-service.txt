@@ -1,0 +1,1034 @@
+[ :ref:`aws <cli:aws>` . :ref:`ecs <cli:aws ecs>` ]
+
+.. _cli:aws ecs update-service:
+
+
+**************
+update-service
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Modifies the desired count, deployment configuration, network configuration, or task definition used in a service.
+
+ 
+
+You can add to or subtract from the number of instantiations of a task definition in a service by specifying the cluster that the service is running in and a new ``desiredCount`` parameter.
+
+ 
+
+If you have updated the Docker image of your application, you can create a new task definition with that image and deploy it to your service. The service scheduler uses the minimum healthy percent and maximum percent parameters (in the service's deployment configuration) to determine the deployment strategy.
+
+ 
+
+.. note::
+
+   
+
+  If your updated Docker image uses the same tag as what is in the existing task definition for your service (for example, ``my_image:latest`` ), you do not need to create a new revision of your task definition. You can update the service using the ``forceNewDeployment`` option. The new tasks launched by the deployment pull the current image/tag combination from your repository when they start.
+
+   
+
+ 
+
+You can also update the deployment configuration of a service. When a deployment is triggered by updating the task definition of a service, the service scheduler uses the deployment configuration parameters, ``minimumHealthyPercent`` and ``maximumPercent`` , to determine the deployment strategy.
+
+ 
+
+ 
+* If ``minimumHealthyPercent`` is below 100%, the scheduler can ignore ``desiredCount`` temporarily during a deployment. For example, if ``desiredCount`` is four tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting two new tasks. Tasks for services that do not use a load balancer are considered healthy if they are in the ``RUNNING`` state. Tasks for services that use a load balancer are considered healthy if they are in the ``RUNNING`` state and the container instance they are hosted on is reported as healthy by the load balancer. 
+ 
+* The ``maximumPercent`` parameter represents an upper limit on the number of running tasks during a deployment, which enables you to define the deployment batch size. For example, if ``desiredCount`` is four tasks, a maximum of 200% starts four new tasks before stopping the four older tasks (provided that the cluster resources required to do this are available). 
+ 
+
+ 
+
+When  UpdateService stops a task during a deployment, the equivalent of ``docker stop`` is issued to the containers running in the task. This results in a ``SIGTERM`` and a 30-second timeout, after which ``SIGKILL`` is sent and the containers are forcibly stopped. If the container handles the ``SIGTERM`` gracefully and exits within 30 seconds from receiving it, no ``SIGKILL`` is sent.
+
+ 
+
+When the service scheduler launches new tasks, it determines task placement in your cluster with the following logic:
+
+ 
+
+ 
+* Determine which of the container instances in your cluster can support your service's task definition (for example, they have the required CPU, memory, ports, and container instance attributes). 
+ 
+* By default, the service scheduler attempts to balance tasks across Availability Zones in this manner (although you can choose a different placement strategy): 
+
+   
+  * Sort the valid container instances by the fewest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have zero, valid container instances in either zone B or C are considered optimal for placement. 
+   
+  * Place the new service task on a valid container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the fewest number of running tasks for this service. 
+   
+
+ 
+ 
+
+ 
+
+When the service scheduler stops running tasks, it attempts to maintain balance across the Availability Zones in your cluster using the following logic: 
+
+ 
+
+ 
+* Sort the container instances by the largest number of running tasks for this service in the same Availability Zone as the instance. For example, if zone A has one running service task and zones B and C each have two, container instances in either zone B or C are considered optimal for termination. 
+ 
+* Stop the task on a container instance in an optimal Availability Zone (based on the previous steps), favoring container instances with the largest number of running tasks for this service. 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateService>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-service
+  [--cluster <value>]
+  --service <value>
+  [--desired-count <value>]
+  [--task-definition <value>]
+  [--deployment-configuration <value>]
+  [--network-configuration <value>]
+  [--platform-version <value>]
+  [--force-new-deployment | --no-force-new-deployment]
+  [--health-check-grace-period-seconds <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster`` (string)
+
+
+  The short name or full Amazon Resource Name (ARN) of the cluster that your service is running on. If you do not specify a cluster, the default cluster is assumed.
+
+  
+
+``--service`` (string)
+
+
+  The name of the service to update.
+
+  
+
+``--desired-count`` (integer)
+
+
+  The number of instantiations of the task to place and keep running in your service.
+
+  
+
+``--task-definition`` (string)
+
+
+  The ``family`` and ``revision`` (``family:revision`` ) or full ARN of the task definition to run in your service. If a ``revision`` is not specified, the latest ``ACTIVE`` revision is used. If you modify the task definition with ``UpdateService`` , Amazon ECS spawns a task with the new version of the task definition and then stops an old task after the new version is running.
+
+  
+
+``--deployment-configuration`` (structure)
+
+
+  Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
+
+  
+
+
+
+Shorthand Syntax::
+
+    maximumPercent=integer,minimumHealthyPercent=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "maximumPercent": integer,
+    "minimumHealthyPercent": integer
+  }
+
+
+
+``--network-configuration`` (structure)
+
+
+  The network configuration for the service. This parameter is required for task definitions that use the ``awsvpc`` network mode to receive their own elastic network interface, and it is not supported for other network modes. For more information, see `Task Networking <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+   
+
+  .. note::
+
+     
+
+    Updating a service to add a subnet to a list of existing subnets does not trigger a service deployment. For example, if your network configuration change is to keep the existing subnets and simply add another subnet to the network configuration, this does not trigger a new service deployment.
+
+     
+
+  
+
+
+
+Shorthand Syntax::
+
+    awsvpcConfiguration={subnets=[string,string],securityGroups=[string,string],assignPublicIp=string}
+
+
+
+
+JSON Syntax::
+
+  {
+    "awsvpcConfiguration": {
+      "subnets": ["string", ...],
+      "securityGroups": ["string", ...],
+      "assignPublicIp": "ENABLED"|"DISABLED"
+    }
+  }
+
+
+
+``--platform-version`` (string)
+
+
+  The platform version that your service should run.
+
+  
+
+``--force-new-deployment`` | ``--no-force-new-deployment`` (boolean)
+
+
+  Whether to force a new deployment of the service. Deployments are not forced by default. You can use this option to trigger a new deployment with no service definition changes. For example, you can update a service's tasks to use a newer Docker image with the same image/tag combination (``my_image:latest`` ) or to roll Fargate tasks onto a newer platform version.
+
+  
+
+``--health-check-grace-period-seconds`` (integer)
+
+
+  The period of time, in seconds, that the Amazon ECS service scheduler should ignore unhealthy Elastic Load Balancing target health checks after a task has first started. This is only valid if your service is configured to use a load balancer. If your service's tasks take a while to start and respond to Elastic Load Balancing health checks, you can specify a health check grace period of up to 1,800 seconds during which the ECS service scheduler ignores the Elastic Load Balancing health check status. This grace period can prevent the ECS service scheduler from marking tasks as unhealthy and stopping them before they have time to come up.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To change the task definition used in a service**
+
+This example command updates the ``my-http-service`` service to use the ``amazon-ecs-sample`` task definition. 
+
+Command::
+
+  aws ecs update-service --service my-http-service --task-definition amazon-ecs-sample
+
+**To change the number of tasks in a service**
+
+This example command updates the desired count of the ``my-http-service`` service to 10. 
+
+Command::
+
+  aws ecs update-service --service my-http-service --desired-count 10
+
+======
+Output
+======
+
+service -> (structure)
+
+  
+
+  The full description of your service following the update call.
+
+  
+
+  serviceArn -> (string)
+
+    
+
+    The ARN that identifies the service. The ARN contains the ``arn:aws:ecs`` namespace, followed by the Region of the service, the AWS account ID of the service owner, the ``service`` namespace, and then the service name. For example, ``arn:aws:ecs:*region* :*012345678910* :service/*my-service* `` .
+
+    
+
+    
+
+  serviceName -> (string)
+
+    
+
+    The name of your service. Up to 255 letters (uppercase and lowercase), numbers, hyphens, and underscores are allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple clusters within a Region or across multiple Regions.
+
+    
+
+    
+
+  clusterArn -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of the cluster that hosts the service.
+
+    
+
+    
+
+  loadBalancers -> (list)
+
+    
+
+    A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as it appears in a container definition), and the container port to access from the load balancer.
+
+     
+
+    Services with tasks that use the ``awsvpc`` network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+    
+
+    (structure)
+
+      
+
+      Details on a load balancer that is used with a service.
+
+       
+
+      Services with tasks that use the ``awsvpc`` network mode (for example, those with the Fargate launch type) only support Application Load Balancers and Network Load Balancers; Classic Load Balancers are not supported. Also, when you create any target groups for these services, you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+      
+
+      targetGroupArn -> (string)
+
+        
+
+        The full Amazon Resource Name (ARN) of the Elastic Load Balancing target group associated with a service.
+
+         
+
+        .. warning::
+
+           
+
+          If your service's task definition uses the ``awsvpc`` network mode (which is required for the Fargate launch type), you must choose ``ip`` as the target type, not ``instance`` , because tasks that use the ``awsvpc`` network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+
+           
+
+        
+
+        
+
+      loadBalancerName -> (string)
+
+        
+
+        The name of a load balancer.
+
+        
+
+        
+
+      containerName -> (string)
+
+        
+
+        The name of the container (as it appears in a container definition) to associate with the load balancer.
+
+        
+
+        
+
+      containerPort -> (integer)
+
+        
+
+        The port on the container to associate with the load balancer. This port must correspond to a ``containerPort`` in the service's task definition. Your container instances must allow ingress traffic on the ``hostPort`` of the port mapping.
+
+        
+
+        
+
+      
+
+    
+
+  serviceRegistries -> (list)
+
+    
+
+    
+
+    
+
+    (structure)
+
+      
+
+      Details of the service registry.
+
+      
+
+      registryArn -> (string)
+
+        
+
+        The Amazon Resource Name (ARN) of the service registry. The currently supported service registry is Amazon Route 53 Auto Naming. For more information, see `Service <https://docs.aws.amazon.com/Route53/latest/APIReference/API_autonaming_Service.html>`__ .
+
+        
+
+        
+
+      port -> (integer)
+
+        
+
+        The port value used if your service discovery service specified an SRV record. This field may be used if both the ``awsvpc`` network mode and SRV records are used.
+
+        
+
+        
+
+      containerName -> (string)
+
+        
+
+        The container name value, already specified in the task definition, to be used for your service discovery service. If the task definition that your service task specifies uses the ``bridge`` or ``host`` network mode, you must specify a ``containerName`` and ``containerPort`` combination from the task definition. If the task definition that your service task specifies uses the ``awsvpc`` network mode and a type SRV DNS record is used, you must specify either a ``containerName`` and ``containerPort`` combination or a ``port`` value, but not both.
+
+        
+
+        
+
+      containerPort -> (integer)
+
+        
+
+        The port value, already specified in the task definition, to be used for your service discovery service. If the task definition your service task specifies uses the ``bridge`` or ``host`` network mode, you must specify a ``containerName`` and ``containerPort`` combination from the task definition. If the task definition your service task specifies uses the ``awsvpc`` network mode and a type SRV DNS record is used, you must specify either a ``containerName`` and ``containerPort`` combination or a ``port`` value, but not both.
+
+        
+
+        
+
+      
+
+    
+
+  status -> (string)
+
+    
+
+    The status of the service. The valid values are ``ACTIVE`` , ``DRAINING`` , or ``INACTIVE`` .
+
+    
+
+    
+
+  desiredCount -> (integer)
+
+    
+
+    The desired number of instantiations of the task definition to keep running on the service. This value is specified when the service is created with  CreateService , and it can be modified with  UpdateService .
+
+    
+
+    
+
+  runningCount -> (integer)
+
+    
+
+    The number of tasks in the cluster that are in the ``RUNNING`` state.
+
+    
+
+    
+
+  pendingCount -> (integer)
+
+    
+
+    The number of tasks in the cluster that are in the ``PENDING`` state.
+
+    
+
+    
+
+  launchType -> (string)
+
+    
+
+    The launch type on which your service is running.
+
+    
+
+    
+
+  platformVersion -> (string)
+
+    
+
+    The platform version on which your task is running. For more information, see `AWS Fargate Platform Versions <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+    
+
+    
+
+  taskDefinition -> (string)
+
+    
+
+    The task definition to use for tasks in the service. This value is specified when the service is created with  CreateService , and it can be modified with  UpdateService .
+
+    
+
+    
+
+  deploymentConfiguration -> (structure)
+
+    
+
+    Optional deployment parameters that control how many tasks run during the deployment and the ordering of stopping and starting tasks.
+
+    
+
+    maximumPercent -> (integer)
+
+      
+
+      The upper limit (as a percentage of the service's ``desiredCount`` ) of the number of tasks that are allowed in the ``RUNNING`` or ``PENDING`` state in a service during a deployment. The maximum number of tasks during a deployment is the ``desiredCount`` multiplied by ``maximumPercent`` /100, rounded down to the nearest integer value.
+
+      
+
+      
+
+    minimumHealthyPercent -> (integer)
+
+      
+
+      The lower limit (as a percentage of the service's ``desiredCount`` ) of the number of running tasks that must remain in the ``RUNNING`` state in a service during a deployment. The minimum number of healthy tasks during a deployment is the ``desiredCount`` multiplied by ``minimumHealthyPercent`` /100, rounded up to the nearest integer value.
+
+      
+
+      
+
+    
+
+  deployments -> (list)
+
+    
+
+    The current state of deployments for the service.
+
+    
+
+    (structure)
+
+      
+
+      The details of an Amazon ECS service deployment.
+
+      
+
+      id -> (string)
+
+        
+
+        The ID of the deployment.
+
+        
+
+        
+
+      status -> (string)
+
+        
+
+        The status of the deployment. Valid values are ``PRIMARY`` (for the most recent deployment), ``ACTIVE`` (for previous deployments that still have tasks running, but are being replaced with the ``PRIMARY`` deployment), and ``INACTIVE`` (for deployments that have been completely replaced).
+
+        
+
+        
+
+      taskDefinition -> (string)
+
+        
+
+        The most recent task definition that was specified for the service to use.
+
+        
+
+        
+
+      desiredCount -> (integer)
+
+        
+
+        The most recent desired count of tasks that was specified for the service to deploy or maintain.
+
+        
+
+        
+
+      pendingCount -> (integer)
+
+        
+
+        The number of tasks in the deployment that are in the ``PENDING`` status.
+
+        
+
+        
+
+      runningCount -> (integer)
+
+        
+
+        The number of tasks in the deployment that are in the ``RUNNING`` status.
+
+        
+
+        
+
+      createdAt -> (timestamp)
+
+        
+
+        The Unix time stamp for when the service was created.
+
+        
+
+        
+
+      updatedAt -> (timestamp)
+
+        
+
+        The Unix time stamp for when the service was last updated.
+
+        
+
+        
+
+      launchType -> (string)
+
+        
+
+        The launch type on which your service is running.
+
+        
+
+        
+
+      platformVersion -> (string)
+
+        
+
+        The platform version on which your service is running.
+
+        
+
+        
+
+      networkConfiguration -> (structure)
+
+        
+
+        The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the ``awsvpc`` networking mode.
+
+        
+
+        awsvpcConfiguration -> (structure)
+
+          
+
+          The VPC subnets and security groups associated with a task.
+
+           
+
+          .. note::
+
+             
+
+            All specified subnets and security groups must be from the same VPC.
+
+             
+
+          
+
+          subnets -> (list)
+
+            
+
+            The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per ``AwsVpcConfiguration`` .
+
+             
+
+            .. note::
+
+               
+
+              All specified subnets must be from the same VPC.
+
+               
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          securityGroups -> (list)
+
+            
+
+            The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups able to be specified per ``AwsVpcConfiguration`` .
+
+             
+
+            .. note::
+
+               
+
+              All specified security groups must be from the same VPC.
+
+               
+
+            
+
+            (string)
+
+              
+
+              
+
+            
+
+          assignPublicIp -> (string)
+
+            
+
+            Whether the task's elastic network interface receives a public IP address. The default value is ``DISABLED`` .
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    
+
+  roleArn -> (string)
+
+    
+
+    The ARN of the IAM role associated with the service that allows the Amazon ECS container agent to register container instances with an Elastic Load Balancing load balancer.
+
+    
+
+    
+
+  events -> (list)
+
+    
+
+    The event stream for your service. A maximum of 100 of the latest events are displayed.
+
+    
+
+    (structure)
+
+      
+
+      Details on an event associated with a service.
+
+      
+
+      id -> (string)
+
+        
+
+        The ID string of the event.
+
+        
+
+        
+
+      createdAt -> (timestamp)
+
+        
+
+        The Unix time stamp for when the event was triggered.
+
+        
+
+        
+
+      message -> (string)
+
+        
+
+        The event message.
+
+        
+
+        
+
+      
+
+    
+
+  createdAt -> (timestamp)
+
+    
+
+    The Unix time stamp for when the service was created.
+
+    
+
+    
+
+  placementConstraints -> (list)
+
+    
+
+    The placement constraints for the tasks in the service.
+
+    
+
+    (structure)
+
+      
+
+      An object representing a constraint on task placement. For more information, see `Task Placement Constraints <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+      
+
+      type -> (string)
+
+        
+
+        The type of constraint. Use ``distinctInstance`` to ensure that each task in a particular group is running on a different container instance. Use ``memberOf`` to restrict the selection to a group of valid candidates. The value ``distinctInstance`` is not supported in task definitions.
+
+        
+
+        
+
+      expression -> (string)
+
+        
+
+        A cluster query language expression to apply to the constraint. You cannot specify an expression if the constraint type is ``distinctInstance`` . For more information, see `Cluster Query Language <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+        
+
+        
+
+      
+
+    
+
+  placementStrategy -> (list)
+
+    
+
+    The placement strategy that determines how tasks for the service are placed.
+
+    
+
+    (structure)
+
+      
+
+      The task placement strategy for a task or service. For more information, see `Task Placement Strategies <http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-strategies.html>`__ in the *Amazon Elastic Container Service Developer Guide* .
+
+      
+
+      type -> (string)
+
+        
+
+        The type of placement strategy. The ``random`` placement strategy randomly places tasks on available candidates. The ``spread`` placement strategy spreads placement across available candidates evenly based on the ``field`` parameter. The ``binpack`` strategy places tasks on available candidates that have the least available amount of the resource that is specified with the ``field`` parameter. For example, if you binpack on memory, a task is placed on the instance with the least amount of remaining memory (but still enough to run the task).
+
+        
+
+        
+
+      field -> (string)
+
+        
+
+        The field to apply the placement strategy against. For the ``spread`` placement strategy, valid values are ``instanceId`` (or ``host`` , which has the same effect), or any platform or custom attribute that is applied to a container instance, such as ``attribute:ecs.availability-zone`` . For the ``binpack`` placement strategy, valid values are ``cpu`` and ``memory`` . For the ``random`` placement strategy, this field is not used.
+
+        
+
+        
+
+      
+
+    
+
+  networkConfiguration -> (structure)
+
+    
+
+    The VPC subnet and security group configuration for tasks that receive their own elastic network interface by using the ``awsvpc`` networking mode.
+
+    
+
+    awsvpcConfiguration -> (structure)
+
+      
+
+      The VPC subnets and security groups associated with a task.
+
+       
+
+      .. note::
+
+         
+
+        All specified subnets and security groups must be from the same VPC.
+
+         
+
+      
+
+      subnets -> (list)
+
+        
+
+        The subnets associated with the task or service. There is a limit of 16 subnets able to be specified per ``AwsVpcConfiguration`` .
+
+         
+
+        .. note::
+
+           
+
+          All specified subnets must be from the same VPC.
+
+           
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      securityGroups -> (list)
+
+        
+
+        The security groups associated with the task or service. If you do not specify a security group, the default security group for the VPC is used. There is a limit of 5 security groups able to be specified per ``AwsVpcConfiguration`` .
+
+         
+
+        .. note::
+
+           
+
+          All specified security groups must be from the same VPC.
+
+           
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      assignPublicIp -> (string)
+
+        
+
+        Whether the task's elastic network interface receives a public IP address. The default value is ``DISABLED`` .
+
+        
+
+        
+
+      
+
+    
+
+  healthCheckGracePeriodSeconds -> (integer)
+
+    
+
+    The period of time, in seconds, that the Amazon ECS service scheduler ignores unhealthy Elastic Load Balancing target health checks after a task has first started.
+
+    
+
+    
+
+  schedulingStrategy -> (string)
+
+    
+
+    The scheduling strategy to use for the service. For more information, see `Services <http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html>`__ .
+
+     
+
+    There are two service scheduler strategies available:
+
+     
+
+     
+    * ``REPLICA`` -The replica scheduling strategy places and maintains the desired number of tasks across your cluster. By default, the service scheduler spreads tasks across Availability Zones. You can use task placement strategies and constraints to customize task placement decisions. 
+     
+    * ``DAEMON`` -The daemon scheduling strategy deploys exactly one task on each container instance in your cluster. When using this strategy, do not specify a desired number of tasks or any task placement strategies. 
+
+    .. note::
+
+       Fargate tasks do not support the ``DAEMON`` scheduling strategy. 
+
+     
+     
+
+    
+
+    
+
+  
+

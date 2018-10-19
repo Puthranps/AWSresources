@@ -1,0 +1,9 @@
+{
+    "ProgressUpdateStream": "",
+    "MigrationTaskName": "",
+    "DiscoveredResource": {
+        "ConfigurationId": "",
+        "Description": ""
+    },
+    "DryRun": true
+}

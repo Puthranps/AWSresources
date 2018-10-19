@@ -1,0 +1,6 @@
+{
+    "ServiceNamespace": "sagemaker",
+    "ScheduledActionName": "",
+    "ResourceId": "",
+    "ScalableDimension": "elasticmapreduce:instancegroup:InstanceCount"
+}

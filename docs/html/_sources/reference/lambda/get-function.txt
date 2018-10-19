@@ -1,0 +1,485 @@
+[ :ref:`aws <cli:aws>` . :ref:`lambda <cli:aws lambda>` ]
+
+.. _cli:aws lambda get-function:
+
+
+************
+get-function
+************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the configuration information of the Lambda function and a presigned URL link to the .zip file you uploaded with  CreateFunction so you can download the .zip file. Note that the URL is valid for up to 10 minutes. The configuration information is the same information you provided as parameters when uploading the function.
+
+ 
+
+Use the ``Qualifier`` parameter to retrieve a published version of the function. Otherwise, returns the unpublished version (``$LATEST`` ). For more information, see `AWS Lambda Function Versioning and Aliases <http://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html>`__ .
+
+ 
+
+This operation requires permission for the ``lambda:GetFunction`` action.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunction>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-function
+  --function-name <value>
+  [--qualifier <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--function-name`` (string)
+
+
+  The name of the lambda function.
+
+   
+
+   **Name formats**  
+
+   
+
+   
+  * **Function name** - ``MyFunction`` . 
+   
+  * **Function ARN** - ``arn:aws:lambda:us-west-2:123456789012:function:MyFunction`` . 
+   
+  * **Partial ARN** - ``123456789012:function:MyFunction`` . 
+   
+
+   
+
+  The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.
+
+  
+
+``--qualifier`` (string)
+
+
+  Specify a version or alias to get details about a published version of the function.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Configuration -> (structure)
+
+  
+
+  The function's configuration.
+
+  
+
+  FunctionName -> (string)
+
+    
+
+    The name of the function.
+
+    
+
+    
+
+  FunctionArn -> (string)
+
+    
+
+    The function's Amazon Resource Name.
+
+    
+
+    
+
+  Runtime -> (string)
+
+    
+
+    The runtime environment for the Lambda function.
+
+    
+
+    
+
+  Role -> (string)
+
+    
+
+    The function's execution role.
+
+    
+
+    
+
+  Handler -> (string)
+
+    
+
+    The function Lambda calls to begin executing your function.
+
+    
+
+    
+
+  CodeSize -> (long)
+
+    
+
+    The size of the function's deployment package in bytes.
+
+    
+
+    
+
+  Description -> (string)
+
+    
+
+    The function's description.
+
+    
+
+    
+
+  Timeout -> (integer)
+
+    
+
+    The amount of time that Lambda allows a function to run before terminating it.
+
+    
+
+    
+
+  MemorySize -> (integer)
+
+    
+
+    The memory allocated to the function
+
+    
+
+    
+
+  LastModified -> (string)
+
+    
+
+    The date and time that the function was last updated, in `ISO-8601 format <https://www.w3.org/TR/NOTE-datetime>`__ (YYYY-MM-DDThh:mm:ssTZD).
+
+    
+
+    
+
+  CodeSha256 -> (string)
+
+    
+
+    The SHA256 hash of the function's deployment package.
+
+    
+
+    
+
+  Version -> (string)
+
+    
+
+    The version of the Lambda function.
+
+    
+
+    
+
+  VpcConfig -> (structure)
+
+    
+
+    The function's networking configuration.
+
+    
+
+    SubnetIds -> (list)
+
+      
+
+      A list of VPC subnet IDs.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    SecurityGroupIds -> (list)
+
+      
+
+      A list of VPC security groups IDs.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    VpcId -> (string)
+
+      
+
+      The ID of the VPC.
+
+      
+
+      
+
+    
+
+  DeadLetterConfig -> (structure)
+
+    
+
+    The function's dead letter queue.
+
+    
+
+    TargetArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of an Amazon SQS queue or Amazon SNS topic.
+
+      
+
+      
+
+    
+
+  Environment -> (structure)
+
+    
+
+    The function's environment variables.
+
+    
+
+    Variables -> (map)
+
+      
+
+      Environment variable key-value pairs.
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (string)
+
+        
+
+        
+
+      
+
+    Error -> (structure)
+
+      
+
+      Error messages for environment variables that could not be applied.
+
+      
+
+      ErrorCode -> (string)
+
+        
+
+        The error code.
+
+        
+
+        
+
+      Message -> (string)
+
+        
+
+        The error message.
+
+        
+
+        
+
+      
+
+    
+
+  KMSKeyArn -> (string)
+
+    
+
+    The KMS key used to encrypt the function's environment variables. Only returned if you've configured a customer managed CMK.
+
+    
+
+    
+
+  TracingConfig -> (structure)
+
+    
+
+    The function's AWS X-Ray tracing configuration.
+
+    
+
+    Mode -> (string)
+
+      
+
+      The tracing mode.
+
+      
+
+      
+
+    
+
+  MasterArn -> (string)
+
+    
+
+    The ARN of the master function.
+
+    
+
+    
+
+  RevisionId -> (string)
+
+    
+
+    Represents the latest updated revision of the function or alias.
+
+    
+
+    
+
+  
+
+Code -> (structure)
+
+  
+
+  The function's code.
+
+  
+
+  RepositoryType -> (string)
+
+    
+
+    The repository from which you can download the function.
+
+    
+
+    
+
+  Location -> (string)
+
+    
+
+    The presigned URL you can use to download the function's .zip file that you previously uploaded. The URL is valid for up to 10 minutes.
+
+    
+
+    
+
+  
+
+Tags -> (map)
+
+  
+
+  Returns the list of tags associated with the function. For more information, see `Tagging Lambda Functions <http://docs.aws.amazon.com/lambda/latest/dg/tagging.html>`__ in the **AWS Lambda Developer Guide** .
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (string)
+
+    
+
+    
+
+  
+
+Concurrency -> (structure)
+
+  
+
+  The concurrent execution limit set for this function. For more information, see `Managing Concurrency <http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html>`__ .
+
+  
+
+  ReservedConcurrentExecutions -> (integer)
+
+    
+
+    The number of concurrent executions reserved for this function. For more information, see `Managing Concurrency <http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html>`__ .
+
+    
+
+    
+
+  
+

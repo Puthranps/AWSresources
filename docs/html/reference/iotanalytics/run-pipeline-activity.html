@@ -1,0 +1,298 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>run-pipeline-activity &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="iotanalytics" href="../iotanalytics/index.html" />
+    <link rel="next" title="sample-channel-data" href="../iotanalytics/sample-channel-data.html" />
+    <link rel="prev" title="put-logging-options" href="../iotanalytics/put-logging-options.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../iotanalytics/sample-channel-data.html" title="sample-channel-data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iotanalytics/put-logging-options.html" title="put-logging-options"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iotanalytics/index.html" accesskey="U">iotanalytics</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iotanalytics/put-logging-options.html" title="previous chapter (use the left arrow)">&larr; put-logging-options</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iotanalytics/sample-channel-data.html" title="next chapter (use the right arrow)">sample-channel-data &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">run-pipeline-activity</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/iotanalytics/run-pipeline-activity">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../iotanalytics/index.html#cli-aws-iotanalytics"><em>iotanalytics</em></a> ]</p>
+<div class="section" id="run-pipeline-activity">
+<span id="cli-aws-iotanalytics-run-pipeline-activity"></span><h1>run-pipeline-activity<a class="headerlink" href="#run-pipeline-activity" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Simulates the results of running a pipeline activity on a message payload.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/RunPipelineActivity">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  run-pipeline-activity
+--pipeline-activity &lt;value&gt;
+--payloads &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--pipeline-activity</span></tt> (structure)</p>
+<blockquote>
+<div>The pipeline activity that is run. This must not be a 'channel' activity or a 'datastore' activity because these activities are used in a pipeline only to load the original message and to store the (possibly) transformed message. If a 'lambda' activity is specified, only short-running Lambda functions (those with a timeout of less than 30 seconds or less) can be used.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>channel={name=string,channelName=string,next=string},lambda={name=string,lambdaName=string,batchSize=integer,next=string},datastore={name=string,datastoreName=string},addAttributes={name=string,attributes={KeyName1=string,KeyName2=string},next=string},removeAttributes={name=string,attributes=[string,string],next=string},selectAttributes={name=string,attributes=[string,string],next=string},filter={name=string,filter=string,next=string},math={name=string,attribute=string,math=string,next=string},deviceRegistryEnrich={name=string,attribute=string,thingName=string,roleArn=string,next=string},deviceShadowEnrich={name=string,attribute=string,thingName=string,roleArn=string,next=string}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;channel&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;channelName&quot;: &quot;string&quot;,
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;lambda&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;lambdaName&quot;: &quot;string&quot;,
+    &quot;batchSize&quot;: integer,
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;datastore&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;datastoreName&quot;: &quot;string&quot;
+  },
+  &quot;addAttributes&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;attributes&quot;: {&quot;string&quot;: &quot;string&quot;
+      ...},
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;removeAttributes&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;attributes&quot;: [&quot;string&quot;, ...],
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;selectAttributes&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;attributes&quot;: [&quot;string&quot;, ...],
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;filter&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;filter&quot;: &quot;string&quot;,
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;math&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;attribute&quot;: &quot;string&quot;,
+    &quot;math&quot;: &quot;string&quot;,
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;deviceRegistryEnrich&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;attribute&quot;: &quot;string&quot;,
+    &quot;thingName&quot;: &quot;string&quot;,
+    &quot;roleArn&quot;: &quot;string&quot;,
+    &quot;next&quot;: &quot;string&quot;
+  },
+  &quot;deviceShadowEnrich&quot;: {
+    &quot;name&quot;: &quot;string&quot;,
+    &quot;attribute&quot;: &quot;string&quot;,
+    &quot;thingName&quot;: &quot;string&quot;,
+    &quot;roleArn&quot;: &quot;string&quot;,
+    &quot;next&quot;: &quot;string&quot;
+  }
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--payloads</span></tt> (list)</p>
+<blockquote>
+<div>The sample message payloads on which the pipeline activity is run.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>blob blob ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>payloads -&gt; (list)</p>
+<blockquote>
+<div><p>The enriched or transformed sample message payloads as base64-encoded strings. (The results of running the pipeline activity on each input sample message payload, encoded in base64.)</p>
+<p>(blob)</p>
+</div></blockquote>
+<p>logResult -&gt; (string)</p>
+<blockquote>
+<div>In case the pipeline activity fails, the log message that is generated.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iotanalytics/put-logging-options.html" title="previous chapter (use the left arrow)">&larr; put-logging-options</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iotanalytics/sample-channel-data.html" title="next chapter (use the right arrow)">sample-channel-data &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../iotanalytics/sample-channel-data.html" title="sample-channel-data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iotanalytics/put-logging-options.html" title="put-logging-options"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iotanalytics/index.html" >iotanalytics</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

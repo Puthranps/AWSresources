@@ -1,0 +1,12 @@
+{
+    "Image": {
+        "Bytes": null,
+        "S3Object": {
+            "Bucket": "",
+            "Name": "",
+            "Version": ""
+        }
+    },
+    "MaxLabels": 0,
+    "MinConfidence": 0.0
+}

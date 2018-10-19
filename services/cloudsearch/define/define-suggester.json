@@ -1,0 +1,11 @@
+{
+    "DomainName": "",
+    "Suggester": {
+        "SuggesterName": "",
+        "DocumentSuggesterOptions": {
+            "SourceField": "",
+            "FuzzyMatching": "none",
+            "SortExpression": ""
+        }
+    }
+}

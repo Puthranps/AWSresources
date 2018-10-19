@@ -1,0 +1,15 @@
+{
+    "Filter": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxResults": 0,
+    "NatGatewayIds": [
+        ""
+    ],
+    "NextToken": ""
+}

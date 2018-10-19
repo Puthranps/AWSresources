@@ -1,0 +1,17 @@
+{
+    "CatalogId": "",
+    "DatabaseName": "",
+    "FunctionName": "",
+    "FunctionInput": {
+        "FunctionName": "",
+        "ClassName": "",
+        "OwnerName": "",
+        "OwnerType": "GROUP",
+        "ResourceUris": [
+            {
+                "ResourceType": "FILE",
+                "Uri": ""
+            }
+        ]
+    }
+}

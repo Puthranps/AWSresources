@@ -1,0 +1,11 @@
+{
+    "AmznClientToken": "",
+    "S3UrlSignerRole": "",
+    "SoftwareToUpdate": "core",
+    "UpdateAgentLogLevel": "FATAL",
+    "UpdateTargets": [
+        ""
+    ],
+    "UpdateTargetsArchitecture": "x86_64",
+    "UpdateTargetsOperatingSystem": "ubuntu"
+}

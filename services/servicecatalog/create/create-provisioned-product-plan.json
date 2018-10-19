@@ -1,0 +1,26 @@
+{
+    "AcceptLanguage": "",
+    "PlanName": "",
+    "PlanType": "CLOUDFORMATION",
+    "NotificationArns": [
+        ""
+    ],
+    "PathId": "",
+    "ProductId": "",
+    "ProvisionedProductName": "",
+    "ProvisioningArtifactId": "",
+    "ProvisioningParameters": [
+        {
+            "Key": "",
+            "Value": "",
+            "UsePreviousValue": true
+        }
+    ],
+    "IdempotencyToken": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

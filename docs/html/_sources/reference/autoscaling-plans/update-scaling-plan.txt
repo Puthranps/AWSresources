@@ -1,0 +1,154 @@
+[ :ref:`aws <cli:aws>` . :ref:`autoscaling-plans <cli:aws autoscaling-plans>` ]
+
+.. _cli:aws autoscaling-plans update-scaling-plan:
+
+
+*******************
+update-scaling-plan
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Updates the scaling plan for the specified scaling plan.
+
+ 
+
+You cannot update a scaling plan if it is in the process of being created, updated, or deleted.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/UpdateScalingPlan>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-scaling-plan
+  [--application-source <value>]
+  --scaling-plan-name <value>
+  [--scaling-instructions <value>]
+  --scaling-plan-version <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--application-source`` (structure)
+
+
+  A CloudFormation stack or set of tags.
+
+  
+
+
+
+JSON Syntax::
+
+  {
+    "CloudFormationStackARN": "string",
+    "TagFilters": [
+      {
+        "Key": "string",
+        "Values": ["string", ...]
+      }
+      ...
+    ]
+  }
+
+
+
+``--scaling-plan-name`` (string)
+
+
+  The name of the scaling plan.
+
+  
+
+``--scaling-instructions`` (list)
+
+
+  The scaling instructions.
+
+  
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "ServiceNamespace": "autoscaling"|"ecs"|"ec2"|"rds"|"dynamodb",
+      "ResourceId": "string",
+      "ScalableDimension": "autoscaling:autoScalingGroup:DesiredCapacity"|"ecs:service:DesiredCount"|"ec2:spot-fleet-request:TargetCapacity"|"rds:cluster:ReadReplicaCount"|"dynamodb:table:ReadCapacityUnits"|"dynamodb:table:WriteCapacityUnits"|"dynamodb:index:ReadCapacityUnits"|"dynamodb:index:WriteCapacityUnits",
+      "MinCapacity": integer,
+      "MaxCapacity": integer,
+      "TargetTrackingConfigurations": [
+        {
+          "PredefinedScalingMetricSpecification": {
+            "PredefinedScalingMetricType": "ASGAverageCPUUtilization"|"ASGAverageNetworkIn"|"ASGAverageNetworkOut"|"DynamoDBReadCapacityUtilization"|"DynamoDBWriteCapacityUtilization"|"ECSServiceAverageCPUUtilization"|"ECSServiceAverageMemoryUtilization"|"ALBRequestCountPerTarget"|"RDSReaderAverageCPUUtilization"|"RDSReaderAverageDatabaseConnections"|"EC2SpotFleetRequestAverageCPUUtilization"|"EC2SpotFleetRequestAverageNetworkIn"|"EC2SpotFleetRequestAverageNetworkOut",
+            "ResourceLabel": "string"
+          },
+          "CustomizedScalingMetricSpecification": {
+            "MetricName": "string",
+            "Namespace": "string",
+            "Dimensions": [
+              {
+                "Name": "string",
+                "Value": "string"
+              }
+              ...
+            ],
+            "Statistic": "Average"|"Minimum"|"Maximum"|"SampleCount"|"Sum",
+            "Unit": "string"
+          },
+          "TargetValue": double,
+          "DisableScaleIn": true|false,
+          "ScaleOutCooldown": integer,
+          "ScaleInCooldown": integer,
+          "EstimatedInstanceWarmup": integer
+        }
+        ...
+      ]
+    }
+    ...
+  ]
+
+
+
+``--scaling-plan-version`` (long)
+
+
+  The version number.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+

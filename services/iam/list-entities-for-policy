@@ -1,0 +1,8 @@
+{
+    "PolicyArn": "",
+    "EntityFilter": "LocalManagedPolicy",
+    "PathPrefix": "",
+    "PolicyUsageFilter": "PermissionsPolicy",
+    "Marker": "",
+    "MaxItems": 0
+}

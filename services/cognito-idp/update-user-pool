@@ -1,0 +1,67 @@
+{
+    "UserPoolId": "",
+    "Policies": {
+        "PasswordPolicy": {
+            "MinimumLength": 0,
+            "RequireUppercase": true,
+            "RequireLowercase": true,
+            "RequireNumbers": true,
+            "RequireSymbols": true
+        }
+    },
+    "LambdaConfig": {
+        "PreSignUp": "",
+        "CustomMessage": "",
+        "PostConfirmation": "",
+        "PreAuthentication": "",
+        "PostAuthentication": "",
+        "DefineAuthChallenge": "",
+        "CreateAuthChallenge": "",
+        "VerifyAuthChallengeResponse": "",
+        "PreTokenGeneration": "",
+        "UserMigration": ""
+    },
+    "AutoVerifiedAttributes": [
+        "phone_number"
+    ],
+    "SmsVerificationMessage": "",
+    "EmailVerificationMessage": "",
+    "EmailVerificationSubject": "",
+    "VerificationMessageTemplate": {
+        "SmsMessage": "",
+        "EmailMessage": "",
+        "EmailSubject": "",
+        "EmailMessageByLink": "",
+        "EmailSubjectByLink": "",
+        "DefaultEmailOption": "CONFIRM_WITH_CODE"
+    },
+    "SmsAuthenticationMessage": "",
+    "MfaConfiguration": "OPTIONAL",
+    "DeviceConfiguration": {
+        "ChallengeRequiredOnNewDevice": true,
+        "DeviceOnlyRememberedOnUserPrompt": true
+    },
+    "EmailConfiguration": {
+        "SourceArn": "",
+        "ReplyToEmailAddress": ""
+    },
+    "SmsConfiguration": {
+        "SnsCallerArn": "",
+        "ExternalId": ""
+    },
+    "UserPoolTags": {
+        "KeyName": ""
+    },
+    "AdminCreateUserConfig": {
+        "AllowAdminCreateUserOnly": true,
+        "UnusedAccountValidityDays": 0,
+        "InviteMessageTemplate": {
+            "SMSMessage": "",
+            "EmailMessage": "",
+            "EmailSubject": ""
+        }
+    },
+    "UserPoolAddOns": {
+        "AdvancedSecurityMode": "ENFORCED"
+    }
+}

@@ -1,0 +1,144 @@
+{
+    "DryRun": true,
+    "SpotFleetRequestConfig": {
+        "AllocationStrategy": "diversified",
+        "OnDemandAllocationStrategy": "lowestPrice",
+        "ClientToken": "",
+        "ExcessCapacityTerminationPolicy": "noTermination",
+        "FulfilledCapacity": null,
+        "OnDemandFulfilledCapacity": null,
+        "IamFleetRole": "",
+        "LaunchSpecifications": [
+            {
+                "SecurityGroups": [
+                    {
+                        "GroupName": "",
+                        "GroupId": ""
+                    }
+                ],
+                "AddressingType": "",
+                "BlockDeviceMappings": [
+                    {
+                        "DeviceName": "",
+                        "VirtualName": "",
+                        "Ebs": {
+                            "DeleteOnTermination": true,
+                            "Iops": 0,
+                            "SnapshotId": "",
+                            "VolumeSize": 0,
+                            "VolumeType": "standard",
+                            "Encrypted": true,
+                            "KmsKeyId": ""
+                        },
+                        "NoDevice": ""
+                    }
+                ],
+                "EbsOptimized": true,
+                "IamInstanceProfile": {
+                    "Arn": "",
+                    "Name": ""
+                },
+                "ImageId": "",
+                "InstanceType": "i3.xlarge",
+                "KernelId": "",
+                "KeyName": "",
+                "Monitoring": {
+                    "Enabled": true
+                },
+                "NetworkInterfaces": [
+                    {
+                        "AssociatePublicIpAddress": true,
+                        "DeleteOnTermination": true,
+                        "Description": "",
+                        "DeviceIndex": 0,
+                        "Groups": [
+                            ""
+                        ],
+                        "Ipv6AddressCount": 0,
+                        "Ipv6Addresses": [
+                            {
+                                "Ipv6Address": ""
+                            }
+                        ],
+                        "NetworkInterfaceId": "",
+                        "PrivateIpAddress": "",
+                        "PrivateIpAddresses": [
+                            {
+                                "Primary": true,
+                                "PrivateIpAddress": ""
+                            }
+                        ],
+                        "SecondaryPrivateIpAddressCount": 0,
+                        "SubnetId": ""
+                    }
+                ],
+                "Placement": {
+                    "AvailabilityZone": "",
+                    "GroupName": "",
+                    "Tenancy": "host"
+                },
+                "RamdiskId": "",
+                "SpotPrice": "",
+                "SubnetId": "",
+                "UserData": "",
+                "WeightedCapacity": null,
+                "TagSpecifications": [
+                    {
+                        "ResourceType": "dhcp-options",
+                        "Tags": [
+                            {
+                                "Key": "",
+                                "Value": ""
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "LaunchTemplateConfigs": [
+            {
+                "LaunchTemplateSpecification": {
+                    "LaunchTemplateId": "",
+                    "LaunchTemplateName": "",
+                    "Version": ""
+                },
+                "Overrides": [
+                    {
+                        "InstanceType": "c5.2xlarge",
+                        "SpotPrice": "",
+                        "SubnetId": "",
+                        "AvailabilityZone": "",
+                        "WeightedCapacity": null,
+                        "Priority": null
+                    }
+                ]
+            }
+        ],
+        "SpotPrice": "",
+        "TargetCapacity": 0,
+        "OnDemandTargetCapacity": 0,
+        "TerminateInstancesWithExpiration": true,
+        "Type": "maintain",
+        "ValidFrom": "1970-01-01T00:00:00",
+        "ValidUntil": "1970-01-01T00:00:00",
+        "ReplaceUnhealthyInstances": true,
+        "InstanceInterruptionBehavior": "terminate",
+        "LoadBalancersConfig": {
+            "ClassicLoadBalancersConfig": {
+                "ClassicLoadBalancers": [
+                    {
+                        "Name": ""
+                    }
+                ]
+            },
+            "TargetGroupsConfig": {
+                "TargetGroups": [
+                    {
+                        "Arn": ""
+                    }
+                ]
+            }
+        },
+        "InstancePoolsToUseCount": 0
+    }
+}

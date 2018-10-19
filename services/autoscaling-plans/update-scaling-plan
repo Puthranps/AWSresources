@@ -1,0 +1,49 @@
+{
+    "ApplicationSource": {
+        "CloudFormationStackARN": "",
+        "TagFilters": [
+            {
+                "Key": "",
+                "Values": [
+                    ""
+                ]
+            }
+        ]
+    },
+    "ScalingPlanName": "",
+    "ScalingInstructions": [
+        {
+            "ServiceNamespace": "rds",
+            "ResourceId": "",
+            "ScalableDimension": "dynamodb:table:ReadCapacityUnits",
+            "MinCapacity": 0,
+            "MaxCapacity": 0,
+            "TargetTrackingConfigurations": [
+                {
+                    "PredefinedScalingMetricSpecification": {
+                        "PredefinedScalingMetricType": "ECSServiceAverageCPUUtilization",
+                        "ResourceLabel": ""
+                    },
+                    "CustomizedScalingMetricSpecification": {
+                        "MetricName": "",
+                        "Namespace": "",
+                        "Dimensions": [
+                            {
+                                "Name": "",
+                                "Value": ""
+                            }
+                        ],
+                        "Statistic": "Average",
+                        "Unit": ""
+                    },
+                    "TargetValue": null,
+                    "DisableScaleIn": true,
+                    "ScaleOutCooldown": 0,
+                    "ScaleInCooldown": 0,
+                    "EstimatedInstanceWarmup": 0
+                }
+            ]
+        }
+    ],
+    "ScalingPlanVersion": 0
+}

@@ -1,0 +1,6 @@
+{
+    "ClusterSecurityGroupName": "",
+    "CIDRIP": "",
+    "EC2SecurityGroupName": "",
+    "EC2SecurityGroupOwnerId": ""
+}

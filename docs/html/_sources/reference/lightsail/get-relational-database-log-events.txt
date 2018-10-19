@@ -1,0 +1,197 @@
+[ :ref:`aws <cli:aws>` . :ref:`lightsail <cli:aws lightsail>` ]
+
+.. _cli:aws lightsail get-relational-database-log-events:
+
+
+**********************************
+get-relational-database-log-events
+**********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns a list of log events for a database in Amazon Lightsail.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseLogEvents>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-relational-database-log-events
+  --relational-database-name <value>
+  --log-stream-name <value>
+  [--start-time <value>]
+  [--end-time <value>]
+  [--start-from-head | --no-start-from-head]
+  [--page-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--relational-database-name`` (string)
+
+
+  The name of your database for which to get log events.
+
+  
+
+``--log-stream-name`` (string)
+
+
+  The name of the log stream.
+
+   
+
+  Use the ``get relational database log streams`` operation to get a list of available log streams.
+
+  
+
+``--start-time`` (timestamp)
+
+
+  The start of the time interval from which to get log events.
+
+   
+
+  Constraints:
+
+   
+
+   
+  * Specified in Universal Coordinated Time (UTC). 
+   
+  * Specified in the Unix time format. For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input ``1538424000`` as the start time. 
+   
+
+  
+
+``--end-time`` (timestamp)
+
+
+  The end of the time interval from which to get log events.
+
+   
+
+  Constraints:
+
+   
+
+   
+  * Specified in Universal Coordinated Time (UTC). 
+   
+  * Specified in the Unix time format. For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input ``1538424000`` as the end time. 
+   
+
+  
+
+``--start-from-head`` | ``--no-start-from-head`` (boolean)
+
+
+  Parameter to specify if the log should start from head or tail. If ``true`` is specified, the log event starts from the head of the log. If ``false`` is specified, the log event starts from the tail of the log.
+
+   
+
+  Default: ``false``  
+
+  
+
+``--page-token`` (string)
+
+
+  A token used for advancing to a specific page of results for your get relational database log events request.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+resourceLogEvents -> (list)
+
+  
+
+  An object describing the result of your get relational database log events request.
+
+  
+
+  (structure)
+
+    
+
+    Describes a database log event.
+
+    
+
+    createdAt -> (timestamp)
+
+      
+
+      The timestamp when the database log event was created.
+
+      
+
+      
+
+    message -> (string)
+
+      
+
+      The message of the database log event.
+
+      
+
+      
+
+    
+
+  
+
+nextBackwardToken -> (string)
+
+  
+
+  A token used for advancing to the previous page of results from your get relational database log events request.
+
+  
+
+  
+
+nextForwardToken -> (string)
+
+  
+
+  A token used for advancing to the next page of results from your get relational database log events request.
+
+  
+
+  
+

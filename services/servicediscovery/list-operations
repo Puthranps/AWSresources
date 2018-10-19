@@ -1,0 +1,13 @@
+{
+    "NextToken": "",
+    "MaxResults": 0,
+    "Filters": [
+        {
+            "Name": "SERVICE_ID",
+            "Values": [
+                ""
+            ],
+            "Condition": "BETWEEN"
+        }
+    ]
+}

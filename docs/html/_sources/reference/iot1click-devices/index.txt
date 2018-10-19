@@ -1,0 +1,40 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws iot1click-devices:
+
+
+*****************
+iot1click-devices
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+Stub description
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  claim-devices-by-claim-code
+  describe-device
+  finalize-device-claim
+  get-device-methods
+  initiate-device-claim
+  invoke-device-method
+  list-device-events
+  list-devices
+  unclaim-device
+  update-device-state

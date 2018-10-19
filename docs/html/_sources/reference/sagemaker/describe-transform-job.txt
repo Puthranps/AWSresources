@@ -1,0 +1,409 @@
+[ :ref:`aws <cli:aws>` . :ref:`sagemaker <cli:aws sagemaker>` ]
+
+.. _cli:aws sagemaker describe-transform-job:
+
+
+**********************
+describe-transform-job
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns information about a transform job.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-transform-job
+  --transform-job-name <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--transform-job-name`` (string)
+
+
+  The name of the transform job that you want to view details of.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+TransformJobName -> (string)
+
+  
+
+  The name of the transform job.
+
+  
+
+  
+
+TransformJobArn -> (string)
+
+  
+
+  The Amazon Resource Name (ARN) of the transform job.
+
+  
+
+  
+
+TransformJobStatus -> (string)
+
+  
+
+  The status of the transform job. If the transform job failed, the reason is returned in the ``FailureReason`` field.
+
+  
+
+  
+
+FailureReason -> (string)
+
+  
+
+  If the transform job failed, the reason that it failed.
+
+  
+
+  
+
+ModelName -> (string)
+
+  
+
+  The name of the model used in the transform job.
+
+  
+
+  
+
+MaxConcurrentTransforms -> (integer)
+
+  
+
+  The maximum number of parallel requests on each instance node that can be launched in a transform job. The default value is 1.
+
+  
+
+  
+
+MaxPayloadInMB -> (integer)
+
+  
+
+  The maximum payload size , in MB used in the transform job.
+
+  
+
+  
+
+BatchStrategy -> (string)
+
+  
+
+  SingleRecord means only one record was used per a batch. ``MultiRecord`` means batches contained as many records that could possibly fit within the ``MaxPayloadInMB`` limit.
+
+  
+
+  
+
+Environment -> (map)
+
+  
+
+  
+
+  
+
+  key -> (string)
+
+    
+
+    
+
+  value -> (string)
+
+    
+
+    
+
+  
+
+TransformInput -> (structure)
+
+  
+
+  Describes the dataset to be transformed and the Amazon S3 location where it is stored.
+
+  
+
+  DataSource -> (structure)
+
+    
+
+    Describes the location of the channel data, meaning the S3 location of the input data that the model can consume.
+
+    
+
+    S3DataSource -> (structure)
+
+      
+
+      The S3 location of the data source that is associated with a channel.
+
+      
+
+      S3DataType -> (string)
+
+        
+
+        If you choose ``S3Prefix`` , ``S3Uri`` identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform. 
+
+         
+
+        If you choose ``ManifestFile`` , ``S3Uri`` identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform. 
+
+        
+
+        
+
+      S3Uri -> (string)
+
+        
+
+        Depending on the value specified for the ``S3DataType`` , identifies either a key name prefix or a manifest. For example:
+
+         
+
+         
+        * A key name prefix might look like this: ``s3://bucketname/exampleprefix`` .  
+         
+        * A manifest might look like this: ``s3://bucketname/example.manifest``   The manifest is an S3 object which is a JSON file with the following format:   ``[``    ``{"prefix": "s3://customer_bucket/some/prefix/"},``    ``"relative/path/to/custdata-1",``    ``"relative/path/custdata-2",``    ``...``    ``]``   The preceding JSON matches the following ``S3Uris`` :   ``s3://customer_bucket/some/prefix/relative/path/to/custdata-1``    ``s3://customer_bucket/some/prefix/relative/path/custdata-1``    ``...``   The complete set of ``S3Uris`` in this manifest constitutes the input data for the channel for this datasource. The object that each ``S3Uris`` points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf. 
+         
+
+        
+
+        
+
+      
+
+    
+
+  ContentType -> (string)
+
+    
+
+    The multipurpose internet mail extension (MIME) type of the data. Amazon SageMaker uses the MIME type with each http call to transfer data to the transform job.
+
+    
+
+    
+
+  CompressionType -> (string)
+
+    
+
+    Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default value is ``None`` .
+
+    
+
+    
+
+  SplitType -> (string)
+
+    
+
+    The method to use to split the transform job's data into smaller batches. The default value is ``None`` . If you don't want to split the data, specify ``None`` . If you want to split records on a newline character boundary, specify ``Line`` . To split records according to the RecordIO format, specify ``RecordIO`` .
+
+     
+
+    Amazon SageMaker will send maximum number of records per batch in each request up to the MaxPayloadInMB limit. For more information, see `RecordIO data format <http://mxnet.io/architecture/note_data_loading.html#data-format>`__ .
+
+     
+
+    .. note::
+
+       
+
+      For information about the ``RecordIO`` format, see `Data Format <http://mxnet.io/architecture/note_data_loading.html#data-format>`__ .
+
+       
+
+    
+
+    
+
+  
+
+TransformOutput -> (structure)
+
+  
+
+  Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.
+
+  
+
+  S3OutputPath -> (string)
+
+    
+
+    The Amazon S3 path where you want Amazon SageMaker to store the results of the transform job. For example, ``s3://bucket-name/key-name-prefix`` .
+
+     
+
+    For every S3 object used as input for the transform job, the transformed data is stored in a corresponding subfolder in the location under the output prefix. For example, the input data ``s3://bucket-name/input-name-prefix/dataset01/data.csv`` will have the transformed data stored at ``s3://bucket-name/key-name-prefix/dataset01/`` , based on the original name, as a series of .part files (.part0001, part0002, etc).
+
+    
+
+    
+
+  Accept -> (string)
+
+    
+
+    The MIME type used to specify the output data. Amazon SageMaker uses the MIME type with each http call to transfer data from the transform job.
+
+    
+
+    
+
+  AssembleWith -> (string)
+
+    
+
+    Defines how to assemble the results of the transform job as a single S3 object. You should select a format that is most convenient to you. To concatenate the results in binary format, specify ``None`` . To add a newline character at the end of every transformed record, specify ``Line`` . To assemble the output in RecordIO format, specify ``RecordIO`` . The default value is ``None`` .
+
+     
+
+    For information about the ``RecordIO`` format, see `Data Format <http://mxnet.io/architecture/note_data_loading.html#data-format>`__ .
+
+    
+
+    
+
+  KmsKeyId -> (string)
+
+    
+
+    The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker uses to encrypt the transformed data.
+
+     
+
+    If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see `KMS-Managed Encryption Keys <https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html>`__ in the *Amazon Simple Storage Service Developer Guide.*  
+
+     
+
+    The KMS key policy must grant permission to the IAM role that you specify in your ``CreateTramsformJob`` request. For more information, see `Using Key Policies in AWS KMS <http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html>`__ in the *AWS Key Management Service Developer Guide* .
+
+    
+
+    
+
+  
+
+TransformResources -> (structure)
+
+  
+
+  Describes the resources, including ML instance types and ML instance count, to use for the transform job.
+
+  
+
+  InstanceType -> (string)
+
+    
+
+    The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized datasets, ml.m4.xlarge or ``ml.m5.large`` should suffice. There is no default value for ``InstanceType`` .
+
+    
+
+    
+
+  InstanceCount -> (integer)
+
+    
+
+    The number of ML compute instances to use in the transform job. For distributed transform, provide a value greater than 1. The default value is ``1`` .
+
+    
+
+    
+
+  VolumeKmsKeyId -> (string)
+
+    
+
+    The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the batch transform job.
+
+    
+
+    
+
+  
+
+CreationTime -> (timestamp)
+
+  
+
+  A timestamp that shows when the transform Job was created.
+
+  
+
+  
+
+TransformStartTime -> (timestamp)
+
+  
+
+  Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of ``TransformEndTime`` .
+
+  
+
+  
+
+TransformEndTime -> (timestamp)
+
+  
+
+  Indicates when the transform job is ``Completed`` , ``Stopped`` , or ``Failed`` . You are billed for the time interval between this time and the value of ``TransformStartTime`` .
+
+  
+
+  
+

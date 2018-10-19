@@ -1,0 +1,9 @@
+{
+    "memberAccountId": "",
+    "associatedS3Resources": [
+        {
+            "bucketName": "",
+            "prefix": ""
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "DryRun": true,
+    "ReservedInstanceIds": [
+        ""
+    ],
+    "TargetConfigurations": [
+        {
+            "InstanceCount": 0,
+            "OfferingId": ""
+        }
+    ]
+}

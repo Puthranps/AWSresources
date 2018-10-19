@@ -1,0 +1,12 @@
+{
+    "AmznClientToken": "",
+    "CoreDefinitionId": "",
+    "Cores": [
+        {
+            "CertificateArn": "",
+            "Id": "",
+            "SyncShadow": true,
+            "ThingArn": ""
+        }
+    ]
+}

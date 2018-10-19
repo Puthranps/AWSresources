@@ -1,0 +1,338 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-fleets &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="appstream" href="../appstream/index.html" />
+    <link rel="next" title="describe-image-builders" href="../appstream/describe-image-builders.html" />
+    <link rel="prev" title="describe-directory-configs" href="../appstream/describe-directory-configs.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../appstream/describe-image-builders.html" title="describe-image-builders"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../appstream/describe-directory-configs.html" title="describe-directory-configs"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../appstream/index.html" accesskey="U">appstream</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../appstream/describe-directory-configs.html" title="previous chapter (use the left arrow)">&larr; describe-directory-configs</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appstream/describe-image-builders.html" title="next chapter (use the right arrow)">describe-image-builders &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-fleets</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/appstream/describe-fleets">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../appstream/index.html#cli-aws-appstream"><em>appstream</em></a> ]</p>
+<div class="section" id="describe-fleets">
+<span id="cli-aws-appstream-describe-fleets"></span><h1>describe-fleets<a class="headerlink" href="#describe-fleets" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves a list that describes one or more specified fleets, if the fleet names are provided. Otherwise, all fleets in the account are described.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DescribeFleets">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-fleets
+[--names &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--names</span></tt> (list)</p>
+<blockquote>
+<div>The names of the fleets to describe.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Fleets -&gt; (list)</p>
+<blockquote>
+<div><p>Information about the fleets.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Contains the parameters for a fleet.</p>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The ARN for the fleet.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the fleet.</div></blockquote>
+<p>DisplayName -&gt; (string)</p>
+<blockquote>
+<div>The fleet name for display.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description for display.</div></blockquote>
+<p>ImageName -&gt; (string)</p>
+<blockquote>
+<div>The name of the image used to create the fleet.</div></blockquote>
+<p>ImageArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN for the public, private, or shared image.</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type to use when launching fleet instances.</div></blockquote>
+<p>FleetType -&gt; (string)</p>
+<blockquote>
+<div><p>The fleet type.</p>
+<blockquote>
+<div>ALWAYS_ON</div></blockquote>
+<p>Provides users with instant-on access to their apps. You are charged for all running instances in your fleet, even if no users are streaming apps.</p>
+<blockquote>
+<div>ON_DEMAND</div></blockquote>
+<p>Provide users with access to applications after they connect, which takes one to two minutes. You are charged for instance streaming when users are connected and a small hourly fee for instances that are not streaming apps.</p>
+</div></blockquote>
+<p>ComputeCapacityStatus -&gt; (structure)</p>
+<blockquote>
+<div><p>The capacity status for the fleet.</p>
+<p>Desired -&gt; (integer)</p>
+<blockquote>
+<div>The desired number of streaming instances.</div></blockquote>
+<p>Running -&gt; (integer)</p>
+<blockquote>
+<div>The total number of simultaneous streaming instances that are running.</div></blockquote>
+<p>InUse -&gt; (integer)</p>
+<blockquote>
+<div>The number of instances in use for streaming.</div></blockquote>
+<p>Available -&gt; (integer)</p>
+<blockquote>
+<div>The number of currently available instances that can be used to stream sessions.</div></blockquote>
+</div></blockquote>
+<p>MaxUserDurationInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The maximum time that a streaming session can run, in seconds. Specify a value between 600 and 57600.</div></blockquote>
+<p>DisconnectTimeoutInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The time after disconnection when a session is considered to have ended, in seconds. If a user who was disconnected reconnects within this time interval, the user is connected to their previous session. Specify a value between 60 and 57600.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The current state for the fleet.</div></blockquote>
+<p>VpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC configuration for the fleet.</p>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>The subnets to which a network interface is established from the fleet instance.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The security groups for the fleet.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>CreatedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the fleet was created.</div></blockquote>
+<p>FleetErrors -&gt; (list)</p>
+<blockquote>
+<div><p>The fleet errors.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a fleet error.</p>
+<p>ErrorCode -&gt; (string)</p>
+<blockquote>
+<div>The error code.</div></blockquote>
+<p>ErrorMessage -&gt; (string)</p>
+<blockquote>
+<div>The error message.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EnableDefaultInternetAccess -&gt; (boolean)</p>
+<blockquote>
+<div>Indicates whether default internet access is enabled for the fleet.</div></blockquote>
+<p>DomainJoinInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>The information needed to join a Microsoft Active Directory domain.</p>
+<p>DirectoryName -&gt; (string)</p>
+<blockquote>
+<div>The fully qualified name of the directory (for example, corp.example.com).</div></blockquote>
+<p>OrganizationalUnitDistinguishedName -&gt; (string)</p>
+<blockquote>
+<div>The distinguished name of the organizational unit for computer accounts.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The pagination token to use to retrieve the next page of results for this operation. If there are no more pages, this value is null.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../appstream/describe-directory-configs.html" title="previous chapter (use the left arrow)">&larr; describe-directory-configs</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appstream/describe-image-builders.html" title="next chapter (use the right arrow)">describe-image-builders &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../appstream/describe-image-builders.html" title="describe-image-builders"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../appstream/describe-directory-configs.html" title="describe-directory-configs"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../appstream/index.html" >appstream</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

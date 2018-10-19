@@ -1,0 +1,9 @@
+{
+    "ApplicationId": "",
+    "AttributeType": "",
+    "UpdateAttributesRequest": {
+        "Blacklist": [
+            ""
+        ]
+    }
+}

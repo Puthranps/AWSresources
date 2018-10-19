@@ -1,0 +1,75 @@
+[ :ref:`aws <cli:aws>` . :ref:`emr <cli:aws emr>` ]
+
+.. _cli:aws emr install-applications:
+
+
+********************
+install-applications
+********************
+
+
+
+===========
+Description
+===========
+
+Installs applications on a running cluster. Currently only Hive and Pig can be installed using this command, and this command is only supported by AMI versions (3.x and 2.x).
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    install-applications
+  --cluster-id <value>
+  --applications <value> [<value>...]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster-id`` (string)
+
+
+  A unique string that identifies a cluster. The ``create-cluster`` command returns this identifier. You can use the ``list-clusters`` command to get cluster IDs.
+
+  
+
+``--applications`` (list)
+
+
+  The applications to be installed. Takes the following parameters: ``Name`` and ``Args`` .
+
+  
+
+
+
+Shorthand Syntax::
+
+    Name=string,Args=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Name": "MapR"|"HUE"|"HIVE"|"PIG"|"HBASE"|"IMPALA"|"GANGLIA"|"HADOOP"|"SPARK",
+      "Args": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.

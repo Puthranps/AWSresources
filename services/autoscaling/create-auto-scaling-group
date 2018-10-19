@@ -1,0 +1,52 @@
+{
+    "AutoScalingGroupName": "",
+    "LaunchConfigurationName": "",
+    "LaunchTemplate": {
+        "LaunchTemplateId": "",
+        "LaunchTemplateName": "",
+        "Version": ""
+    },
+    "InstanceId": "",
+    "MinSize": 0,
+    "MaxSize": 0,
+    "DesiredCapacity": 0,
+    "DefaultCooldown": 0,
+    "AvailabilityZones": [
+        ""
+    ],
+    "LoadBalancerNames": [
+        ""
+    ],
+    "TargetGroupARNs": [
+        ""
+    ],
+    "HealthCheckType": "",
+    "HealthCheckGracePeriod": 0,
+    "PlacementGroup": "",
+    "VPCZoneIdentifier": "",
+    "TerminationPolicies": [
+        ""
+    ],
+    "NewInstancesProtectedFromScaleIn": true,
+    "LifecycleHookSpecificationList": [
+        {
+            "LifecycleHookName": "",
+            "LifecycleTransition": "",
+            "NotificationMetadata": "",
+            "HeartbeatTimeout": 0,
+            "DefaultResult": "",
+            "NotificationTargetARN": "",
+            "RoleARN": ""
+        }
+    ],
+    "Tags": [
+        {
+            "ResourceId": "",
+            "ResourceType": "",
+            "Key": "",
+            "Value": "",
+            "PropagateAtLaunch": true
+        }
+    ],
+    "ServiceLinkedRoleARN": ""
+}

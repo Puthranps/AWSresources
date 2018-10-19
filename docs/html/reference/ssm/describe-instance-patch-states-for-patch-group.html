@@ -1,0 +1,357 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-instance-patch-states-for-patch-group &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="ssm" href="../ssm/index.html" />
+    <link rel="next" title="describe-instance-patches" href="../ssm/describe-instance-patches.html" />
+    <link rel="prev" title="describe-instance-patch-states" href="../ssm/describe-instance-patch-states.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/describe-instance-patches.html" title="describe-instance-patches"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/describe-instance-patch-states.html" title="describe-instance-patch-states"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" accesskey="U">ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/describe-instance-patch-states.html" title="previous chapter (use the left arrow)">&larr; describe-instance-patch-states</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/describe-instance-patches.html" title="next chapter (use the right arrow)">describe-instance-patches &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-instance-patch-states-for-patch-group</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/describe-instance-patch-states-for-patch-group">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../ssm/index.html#cli-aws-ssm"><em>ssm</em></a> ]</p>
+<div class="section" id="describe-instance-patch-states-for-patch-group">
+<span id="cli-aws-ssm-describe-instance-patch-states-for-patch-group"></span><h1>describe-instance-patch-states-for-patch-group<a class="headerlink" href="#describe-instance-patch-states-for-patch-group" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Retrieves the high-level patch state for the instances in the specified patch group.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeInstancePatchStatesForPatchGroup">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-instance-patch-states-for-patch-group
+--patch-group &lt;value&gt;
+[--filters &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--patch-group</span></tt> (string)</p>
+<blockquote>
+<div>The name of the patch group for which the patch state information should be retrieved.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--filters</span></tt> (list)</p>
+<blockquote>
+<div><p>Each entry in the array is a structure containing:</p>
+<p>Key (string between 1 and 200 characters)</p>
+<p>Values (array containing a single string)</p>
+<p>Type (string &quot;Equal&quot;, &quot;NotEqual&quot;, &quot;LessThan&quot;, &quot;GreaterThan&quot;)</p>
+</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Key=string,Values=string,string,Type=string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Key&quot;: &quot;string&quot;,
+    &quot;Values&quot;: [&quot;string&quot;, ...],
+    &quot;Type&quot;: &quot;Equal&quot;|&quot;NotEqual&quot;|&quot;LessThan&quot;|&quot;GreaterThan&quot;
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div>The token for the next set of items to return. (You received this token from a previous call.)</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of patches to return (per page).</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To get the instance states for a patch group</strong></p>
+<p>This example gets the patch summary states per-instance for a patch group.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws ssm describe-instance-patch-states-for-patch-group --patch-group &quot;Production&quot;</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;InstancePatchStates&quot;</span><span class="p">:</span> <span class="p">[</span>
+         <span class="p">{</span>
+       <span class="s2">&quot;OperationStartTime&quot;</span><span class="p">:</span><span class="mf">1481259600.0</span><span class="p">,</span>
+       <span class="s2">&quot;FailedCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+       <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span><span class="s2">&quot;i-08ee91c0b17045407&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;OwnerInformation&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;NotApplicableCount&quot;</span><span class="p">:</span><span class="mi">2077</span><span class="p">,</span>
+       <span class="s2">&quot;OperationEndTime&quot;</span><span class="p">:</span><span class="mf">1481259757.0</span><span class="p">,</span>
+       <span class="s2">&quot;PatchGroup&quot;</span><span class="p">:</span><span class="s2">&quot;Production&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;InstalledOtherCount&quot;</span><span class="p">:</span><span class="mi">186</span><span class="p">,</span>
+       <span class="s2">&quot;MissingCount&quot;</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span>
+       <span class="s2">&quot;SnapshotId&quot;</span><span class="p">:</span><span class="s2">&quot;b0e65479-79be-4288-9f88-81c96bc3ed5e&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;Operation&quot;</span><span class="p">:</span><span class="s2">&quot;Scan&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;InstalledCount&quot;</span><span class="p">:</span><span class="mi">72</span>
+     <span class="p">},</span>
+     <span class="p">{</span>
+       <span class="s2">&quot;OperationStartTime&quot;</span><span class="p">:</span><span class="mf">1481259602.0</span><span class="p">,</span>
+       <span class="s2">&quot;FailedCount&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span>
+       <span class="s2">&quot;InstanceId&quot;</span><span class="p">:</span><span class="s2">&quot;i-0fff3aab684d01b23&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;OwnerInformation&quot;</span><span class="p">:</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;NotApplicableCount&quot;</span><span class="p">:</span><span class="mi">2692</span><span class="p">,</span>
+       <span class="s2">&quot;OperationEndTime&quot;</span><span class="p">:</span><span class="mf">1481259613.0</span><span class="p">,</span>
+       <span class="s2">&quot;PatchGroup&quot;</span><span class="p">:</span><span class="s2">&quot;Production&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;InstalledOtherCount&quot;</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span>
+       <span class="s2">&quot;MissingCount&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span>
+       <span class="s2">&quot;SnapshotId&quot;</span><span class="p">:</span><span class="s2">&quot;b0e65479-79be-4288-9f88-81c96bc3ed5e&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;Operation&quot;</span><span class="p">:</span><span class="s2">&quot;Scan&quot;</span><span class="p">,</span>
+       <span class="s2">&quot;InstalledCount&quot;</span><span class="p">:</span><span class="mi">1</span>
+     <span class="p">},</span>
+         <span class="o">...</span>
+      <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>InstancePatchStates -&gt; (list)</p>
+<blockquote>
+<div><p>The high-level patch state for the requested instances.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Defines the high-level patch compliance state for a managed instance, providing information about the number of installed, missing, not applicable, and failed patches along with metadata about the operation when this information was gathered for the instance.</p>
+<p>InstanceId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the managed instance the high-level patch compliance information was collected for.</div></blockquote>
+<p>PatchGroup -&gt; (string)</p>
+<blockquote>
+<div>The name of the patch group the managed instance belongs to.</div></blockquote>
+<p>BaselineId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the patch baseline used to patch the instance.</div></blockquote>
+<p>SnapshotId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the patch baseline snapshot used during the patching operation when this compliance data was collected.</div></blockquote>
+<p>InstallOverrideList -&gt; (string)</p>
+<blockquote>
+<div><p>An https URL or an Amazon S3 path-style URL to a list of patches to be installed. This patch installation list, which you maintain in an Amazon S3 bucket in YAML format and specify in the SSM document <tt class="docutils literal"><span class="pre">AWS-RunPatchBaseline</span></tt> , overrides the patches specified by the default patch baseline.</p>
+<p>For more information about the <tt class="docutils literal"><span class="pre">InstallOverrideList</span></tt> parameter, see <a class="reference external" href="http://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About the SSM Document AWS-RunPatchBaseline</a> in the <em>AWS Systems Manager User Guide</em> .</p>
+</div></blockquote>
+<p>OwnerInformation -&gt; (string)</p>
+<blockquote>
+<div>Placeholder information. This field will always be empty in the current release of the service.</div></blockquote>
+<p>InstalledCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of patches from the patch baseline that are installed on the instance.</div></blockquote>
+<p>InstalledOtherCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of patches not specified in the patch baseline that are installed on the instance.</div></blockquote>
+<p>InstalledRejectedCount -&gt; (integer)</p>
+<blockquote>
+<div><p>The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a status of <em>InstalledRejected</em> were typically installed before they were added to a RejectedPatches list.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount will always be 0 (zero).</p>
+</div>
+</div></blockquote>
+<p>MissingCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of patches from the patch baseline that are applicable for the instance but aren't currently installed.</div></blockquote>
+<p>FailedCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of patches from the patch baseline that were attempted to be installed during the last patching operation, but failed to install.</div></blockquote>
+<p>NotApplicableCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of patches from the patch baseline that aren't applicable for the instance and hence aren't installed on the instance.</div></blockquote>
+<p>OperationStartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the most recent patching operation was started on the instance.</div></blockquote>
+<p>OperationEndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the most recent patching operation completed on the instance.</div></blockquote>
+<p>Operation -&gt; (string)</p>
+<blockquote>
+<div>The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install missing patches).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NextToken -&gt; (string)</p>
+<blockquote>
+<div>The token to use when requesting the next set of items. If there are no additional items to return, the string is empty.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../ssm/describe-instance-patch-states.html" title="previous chapter (use the left arrow)">&larr; describe-instance-patch-states</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/describe-instance-patches.html" title="next chapter (use the right arrow)">describe-instance-patches &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/describe-instance-patches.html" title="describe-instance-patches"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../ssm/describe-instance-patch-states.html" title="describe-instance-patch-states"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../ssm/index.html" >ssm</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

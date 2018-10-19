@@ -1,0 +1,257 @@
+{
+    "DirectoryArn": "",
+    "Operations": [
+        {
+            "CreateObject": {
+                "SchemaFacet": [
+                    {
+                        "SchemaArn": "",
+                        "FacetName": ""
+                    }
+                ],
+                "ObjectAttributeList": [
+                    {
+                        "Key": {
+                            "SchemaArn": "",
+                            "FacetName": "",
+                            "Name": ""
+                        },
+                        "Value": {
+                            "StringValue": "",
+                            "BinaryValue": null,
+                            "BooleanValue": true,
+                            "NumberValue": "",
+                            "DatetimeValue": "1970-01-01T00:00:00"
+                        }
+                    }
+                ],
+                "ParentReference": {
+                    "Selector": ""
+                },
+                "LinkName": "",
+                "BatchReferenceName": ""
+            },
+            "AttachObject": {
+                "ParentReference": {
+                    "Selector": ""
+                },
+                "ChildReference": {
+                    "Selector": ""
+                },
+                "LinkName": ""
+            },
+            "DetachObject": {
+                "ParentReference": {
+                    "Selector": ""
+                },
+                "LinkName": "",
+                "BatchReferenceName": ""
+            },
+            "UpdateObjectAttributes": {
+                "ObjectReference": {
+                    "Selector": ""
+                },
+                "AttributeUpdates": [
+                    {
+                        "ObjectAttributeKey": {
+                            "SchemaArn": "",
+                            "FacetName": "",
+                            "Name": ""
+                        },
+                        "ObjectAttributeAction": {
+                            "ObjectAttributeActionType": "DELETE",
+                            "ObjectAttributeUpdateValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    }
+                ]
+            },
+            "DeleteObject": {
+                "ObjectReference": {
+                    "Selector": ""
+                }
+            },
+            "AddFacetToObject": {
+                "SchemaFacet": {
+                    "SchemaArn": "",
+                    "FacetName": ""
+                },
+                "ObjectAttributeList": [
+                    {
+                        "Key": {
+                            "SchemaArn": "",
+                            "FacetName": "",
+                            "Name": ""
+                        },
+                        "Value": {
+                            "StringValue": "",
+                            "BinaryValue": null,
+                            "BooleanValue": true,
+                            "NumberValue": "",
+                            "DatetimeValue": "1970-01-01T00:00:00"
+                        }
+                    }
+                ],
+                "ObjectReference": {
+                    "Selector": ""
+                }
+            },
+            "RemoveFacetFromObject": {
+                "SchemaFacet": {
+                    "SchemaArn": "",
+                    "FacetName": ""
+                },
+                "ObjectReference": {
+                    "Selector": ""
+                }
+            },
+            "AttachPolicy": {
+                "PolicyReference": {
+                    "Selector": ""
+                },
+                "ObjectReference": {
+                    "Selector": ""
+                }
+            },
+            "DetachPolicy": {
+                "PolicyReference": {
+                    "Selector": ""
+                },
+                "ObjectReference": {
+                    "Selector": ""
+                }
+            },
+            "CreateIndex": {
+                "OrderedIndexedAttributeList": [
+                    {
+                        "SchemaArn": "",
+                        "FacetName": "",
+                        "Name": ""
+                    }
+                ],
+                "IsUnique": true,
+                "ParentReference": {
+                    "Selector": ""
+                },
+                "LinkName": "",
+                "BatchReferenceName": ""
+            },
+            "AttachToIndex": {
+                "IndexReference": {
+                    "Selector": ""
+                },
+                "TargetReference": {
+                    "Selector": ""
+                }
+            },
+            "DetachFromIndex": {
+                "IndexReference": {
+                    "Selector": ""
+                },
+                "TargetReference": {
+                    "Selector": ""
+                }
+            },
+            "AttachTypedLink": {
+                "SourceObjectReference": {
+                    "Selector": ""
+                },
+                "TargetObjectReference": {
+                    "Selector": ""
+                },
+                "TypedLinkFacet": {
+                    "SchemaArn": "",
+                    "TypedLinkName": ""
+                },
+                "Attributes": [
+                    {
+                        "AttributeName": "",
+                        "Value": {
+                            "StringValue": "",
+                            "BinaryValue": null,
+                            "BooleanValue": true,
+                            "NumberValue": "",
+                            "DatetimeValue": "1970-01-01T00:00:00"
+                        }
+                    }
+                ]
+            },
+            "DetachTypedLink": {
+                "TypedLinkSpecifier": {
+                    "TypedLinkFacet": {
+                        "SchemaArn": "",
+                        "TypedLinkName": ""
+                    },
+                    "SourceObjectReference": {
+                        "Selector": ""
+                    },
+                    "TargetObjectReference": {
+                        "Selector": ""
+                    },
+                    "IdentityAttributeValues": [
+                        {
+                            "AttributeName": "",
+                            "Value": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    ]
+                }
+            },
+            "UpdateLinkAttributes": {
+                "TypedLinkSpecifier": {
+                    "TypedLinkFacet": {
+                        "SchemaArn": "",
+                        "TypedLinkName": ""
+                    },
+                    "SourceObjectReference": {
+                        "Selector": ""
+                    },
+                    "TargetObjectReference": {
+                        "Selector": ""
+                    },
+                    "IdentityAttributeValues": [
+                        {
+                            "AttributeName": "",
+                            "Value": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    ]
+                },
+                "AttributeUpdates": [
+                    {
+                        "AttributeKey": {
+                            "SchemaArn": "",
+                            "FacetName": "",
+                            "Name": ""
+                        },
+                        "AttributeAction": {
+                            "AttributeActionType": "CREATE_OR_UPDATE",
+                            "AttributeUpdateValue": {
+                                "StringValue": "",
+                                "BinaryValue": null,
+                                "BooleanValue": true,
+                                "NumberValue": "",
+                                "DatetimeValue": "1970-01-01T00:00:00"
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

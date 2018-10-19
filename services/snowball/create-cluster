@@ -1,0 +1,44 @@
+{
+    "JobType": "LOCAL_USE",
+    "Resources": {
+        "S3Resources": [
+            {
+                "BucketArn": "",
+                "KeyRange": {
+                    "BeginMarker": "",
+                    "EndMarker": ""
+                }
+            }
+        ],
+        "LambdaResources": [
+            {
+                "LambdaArn": "",
+                "EventTriggers": [
+                    {
+                        "EventResourceARN": ""
+                    }
+                ]
+            }
+        ],
+        "Ec2AmiResources": [
+            {
+                "AmiId": "",
+                "SnowballAmiId": ""
+            }
+        ]
+    },
+    "Description": "",
+    "AddressId": "",
+    "KmsKeyARN": "",
+    "RoleARN": "",
+    "SnowballType": "EDGE",
+    "ShippingOption": "EXPRESS",
+    "Notification": {
+        "SnsTopicARN": "",
+        "JobStatesToNotify": [
+            "WithCustomer"
+        ],
+        "NotifyAll": true
+    },
+    "ForwardingAddressId": ""
+}

@@ -1,0 +1,21 @@
+{
+    "ApplicationId": "",
+    "WriteApplicationSettingsRequest": {
+        "CampaignHook": {
+            "LambdaFunctionName": "",
+            "Mode": "FILTER",
+            "WebUrl": ""
+        },
+        "CloudWatchMetricsEnabled": true,
+        "Limits": {
+            "Daily": 0,
+            "MaximumDuration": 0,
+            "MessagesPerSecond": 0,
+            "Total": 0
+        },
+        "QuietTime": {
+            "End": "",
+            "Start": ""
+        }
+    }
+}

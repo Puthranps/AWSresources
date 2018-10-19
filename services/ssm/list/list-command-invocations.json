@@ -1,0 +1,13 @@
+{
+    "CommandId": "",
+    "InstanceId": "",
+    "MaxResults": 0,
+    "NextToken": "",
+    "Filters": [
+        {
+            "key": "InvokedBefore",
+            "value": ""
+        }
+    ],
+    "Details": true
+}

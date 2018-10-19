@@ -1,0 +1,25 @@
+{
+    "DetectorId": "",
+    "FindingCriteria": {
+        "Criterion": {
+            "KeyName": {
+                "Eq": [
+                    ""
+                ],
+                "Gt": 0,
+                "Gte": 0,
+                "Lt": 0,
+                "Lte": 0,
+                "Neq": [
+                    ""
+                ]
+            }
+        }
+    },
+    "MaxResults": 0,
+    "NextToken": "",
+    "SortCriteria": {
+        "AttributeName": "",
+        "OrderBy": "DESC"
+    }
+}

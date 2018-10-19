@@ -1,0 +1,253 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>elbv2 &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-listener-certificates" href="../elbv2/add-listener-certificates.html" />
+    <link rel="prev" title="instance-in-service" href="../elb/wait/instance-in-service.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../elbv2/add-listener-certificates.html" title="add-listener-certificates"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../elb/wait/instance-in-service.html" title="instance-in-service"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elb/wait/instance-in-service.html" title="previous chapter (use the left arrow)">&larr; instance-in-service</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elbv2/add-listener-certificates.html" title="next chapter (use the right arrow)">add-listener-certificates &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">elbv2</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/elbv2/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="elbv2">
+<span id="cli-aws-elbv2"></span><h1>elbv2<a class="headerlink" href="#elbv2" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>A load balancer distributes incoming traffic across targets, such as your EC2 instances. This enables you to increase the availability of your application. The load balancer also monitors the health of its registered targets and ensures that it routes traffic only to healthy targets. You configure your load balancer to accept incoming traffic by specifying one or more listeners, which are configured with a protocol and port number for connections from clients to the load balancer. You configure a target group with a protocol and port number for connections from the load balancer to the targets, and with health check settings to be used when checking the health status of the targets.</p>
+<p>Elastic Load Balancing supports the following types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers.</p>
+<p>An Application Load Balancer makes routing and load balancing decisions at the application layer (HTTP/HTTPS). A Network Load Balancer makes routing and load balancing decisions at the transport layer (TCP). Both Application Load Balancers and Network Load Balancers can route requests to one or more ports on each EC2 instance or container instance in your virtual private cloud (VPC).</p>
+<p>A Classic Load Balancer makes routing and load balancing decisions either at the transport layer (TCP/SSL) or the application layer (HTTP/HTTPS), and supports either EC2-Classic or a VPC. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/">Elastic Load Balancing User Guide</a> .</p>
+<p>This reference covers the 2015-12-01 API, which supports Application Load Balancers and Network Load Balancers. The 2012-06-01 API supports Classic Load Balancers.</p>
+<p>To get started, complete the following tasks:</p>
+<ul class="simple">
+<li>Create a load balancer using  CreateLoadBalancer .</li>
+<li>Create a target group using  CreateTargetGroup .</li>
+<li>Register targets for the target group using  RegisterTargets .</li>
+<li>Create one or more listeners for your load balancer using  CreateListener .</li>
+</ul>
+<p>To delete a load balancer and its related resources, complete the following tasks:</p>
+<ul class="simple">
+<li>Delete the load balancer using  DeleteLoadBalancer .</li>
+<li>Delete the target group using  DeleteTargetGroup .</li>
+</ul>
+<p>All Elastic Load Balancing operations are idempotent, which means that they complete at most one time. If you repeat an operation, it succeeds.</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/add-listener-certificates.html">add-listener-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/add-tags.html">add-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/create-listener.html">create-listener</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/create-load-balancer.html">create-load-balancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/create-rule.html">create-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/create-target-group.html">create-target-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/delete-listener.html">delete-listener</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/delete-load-balancer.html">delete-load-balancer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/delete-rule.html">delete-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/delete-target-group.html">delete-target-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/deregister-targets.html">deregister-targets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-account-limits.html">describe-account-limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-listener-certificates.html">describe-listener-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-listeners.html">describe-listeners</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-load-balancer-attributes.html">describe-load-balancer-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-load-balancers.html">describe-load-balancers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-rules.html">describe-rules</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-ssl-policies.html">describe-ssl-policies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-tags.html">describe-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-target-group-attributes.html">describe-target-group-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-target-groups.html">describe-target-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/describe-target-health.html">describe-target-health</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/modify-listener.html">modify-listener</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/modify-load-balancer-attributes.html">modify-load-balancer-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/modify-rule.html">modify-rule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/modify-target-group.html">modify-target-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/modify-target-group-attributes.html">modify-target-group-attributes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/register-targets.html">register-targets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/remove-listener-certificates.html">remove-listener-certificates</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/remove-tags.html">remove-tags</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/set-ip-address-type.html">set-ip-address-type</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/set-rule-priorities.html">set-rule-priorities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/set-security-groups.html">set-security-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/set-subnets.html">set-subnets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../elbv2/wait/index.html">wait</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../elb/wait/instance-in-service.html" title="previous chapter (use the left arrow)">&larr; instance-in-service</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../elbv2/add-listener-certificates.html" title="next chapter (use the right arrow)">add-listener-certificates &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../elbv2/add-listener-certificates.html" title="add-listener-certificates"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../elb/wait/instance-in-service.html" title="instance-in-service"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

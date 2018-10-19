@@ -1,0 +1,39 @@
+{
+    "FunctionName": "",
+    "Runtime": "nodejs6.10",
+    "Role": "",
+    "Handler": "",
+    "Code": {
+        "ZipFile": null,
+        "S3Bucket": "",
+        "S3Key": "",
+        "S3ObjectVersion": ""
+    },
+    "Description": "",
+    "Timeout": 0,
+    "MemorySize": 0,
+    "Publish": true,
+    "VpcConfig": {
+        "SubnetIds": [
+            ""
+        ],
+        "SecurityGroupIds": [
+            ""
+        ]
+    },
+    "DeadLetterConfig": {
+        "TargetArn": ""
+    },
+    "Environment": {
+        "Variables": {
+            "KeyName": ""
+        }
+    },
+    "KMSKeyArn": "",
+    "TracingConfig": {
+        "Mode": "Active"
+    },
+    "Tags": {
+        "KeyName": ""
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "AccountId": "",
+    "Service": "",
+    "AccountScope": "PAYER",
+    "LookbackPeriodInDays": "SIXTY_DAYS",
+    "TermInYears": "THREE_YEARS",
+    "PaymentOption": "HEAVY_UTILIZATION",
+    "ServiceSpecification": {
+        "EC2Specification": {
+            "OfferingClass": "STANDARD"
+        }
+    },
+    "PageSize": 0,
+    "NextPageToken": ""
+}

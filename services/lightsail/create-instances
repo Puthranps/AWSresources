@@ -1,0 +1,11 @@
+{
+    "instanceNames": [
+        ""
+    ],
+    "availabilityZone": "",
+    "customImageName": "",
+    "blueprintId": "",
+    "bundleId": "",
+    "userData": "",
+    "keyPairName": ""
+}

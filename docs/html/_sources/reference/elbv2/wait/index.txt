@@ -1,0 +1,37 @@
+[ :ref:`aws <cli:aws>` . :ref:`elbv2 <cli:aws elbv2>` ]
+
+.. _cli:aws elbv2 wait:
+
+
+****
+wait
+****
+
+
+
+===========
+Description
+===========
+
+Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  load-balancer-available
+  load-balancer-exists
+  load-balancers-deleted
+  target-deregistered
+  target-in-service

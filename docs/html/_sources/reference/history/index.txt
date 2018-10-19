@@ -1,0 +1,54 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws history:
+
+
+*******
+history
+*******
+
+
+
+===========
+Description
+===========
+
+Commands to interact with the history of AWS CLI commands ran over time. To record the history of AWS CLI commands set ``cli_history`` to ``enabled`` in the ``~/.aws/config`` file. This can be done by running:
+
+``$ aws configure set cli_history enabled``
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    history
+
+
+
+
+=======
+Options
+=======
+
+*None*
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  list
+  show

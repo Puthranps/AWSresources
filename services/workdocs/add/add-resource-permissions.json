@@ -1,0 +1,15 @@
+{
+    "AuthenticationToken": "",
+    "ResourceId": "",
+    "Principals": [
+        {
+            "Id": "",
+            "Type": "INVITE",
+            "Role": "CONTRIBUTOR"
+        }
+    ],
+    "NotificationOptions": {
+        "SendEmail": true,
+        "EmailMessage": ""
+    }
+}

@@ -1,0 +1,129 @@
+[ :ref:`aws <cli:aws>` . :ref:`ses <cli:aws ses>` ]
+
+.. _cli:aws ses list-configuration-sets:
+
+
+***********************
+list-configuration-sets
+***********************
+
+
+
+===========
+Description
+===========
+
+
+
+Provides a list of the configuration sets associated with your Amazon SES account in the current AWS Region. For information about using configuration sets, see `Monitoring Your Amazon SES Sending Activity <http://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html>`__ in the *Amazon SES Developer Guide.*  
+
+ 
+
+You can execute this operation no more than once per second. This operation will return up to 1,000 configuration sets each time it is run. If your Amazon SES account has more than 1,000 configuration sets, this operation will also return a NextToken element. You can then execute the ``ListConfigurationSets`` operation again, passing the ``NextToken`` parameter and the value of the NextToken element to retrieve additional results.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/ListConfigurationSets>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-configuration-sets
+  [--next-token <value>]
+  [--max-items <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--next-token`` (string)
+
+
+  A token returned from a previous call to ``ListConfigurationSets`` to indicate the position of the configuration set in the configuration set list.
+
+  
+
+``--max-items`` (integer)
+
+
+  The number of configuration sets to return.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ConfigurationSets -> (list)
+
+  
+
+  A list of configuration sets.
+
+  
+
+  (structure)
+
+    
+
+    The name of the configuration set.
+
+     
+
+    Configuration sets let you create groups of rules that you can apply to the emails you send using Amazon SES. For more information about using configuration sets, see `Using Amazon SES Configuration Sets <http://docs.aws.amazon.com/ses/latest/DeveloperGuide/using-configuration-sets.html>`__ in the `Amazon SES Developer Guide <http://docs.aws.amazon.com/ses/latest/DeveloperGuide/>`__ .
+
+    
+
+    Name -> (string)
+
+      
+
+      The name of the configuration set. The name must meet the following requirements:
+
+       
+
+       
+      * Contain only letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-). 
+       
+      * Contain 64 characters or fewer. 
+       
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  A token indicating that there are additional configuration sets available to be listed. Pass this token to successive calls of ``ListConfigurationSets`` . 
+
+  
+
+  
+

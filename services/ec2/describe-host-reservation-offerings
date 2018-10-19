@@ -1,0 +1,15 @@
+{
+    "Filter": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxDuration": 0,
+    "MaxResults": 0,
+    "MinDuration": 0,
+    "NextToken": "",
+    "OfferingId": ""
+}

@@ -1,0 +1,12 @@
+{
+    "restApiId": "",
+    "modelName": "",
+    "patchOperations": [
+        {
+            "op": "remove",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

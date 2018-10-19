@@ -1,0 +1,9 @@
+{
+    "applicationName": "",
+    "sortBy": "firstUsedTime",
+    "sortOrder": "descending",
+    "s3Bucket": "",
+    "s3KeyPrefix": "",
+    "deployed": "ignore",
+    "nextToken": ""
+}

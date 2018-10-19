@@ -1,0 +1,63 @@
+{
+    "otaUpdateId": "",
+    "description": "",
+    "targets": [
+        ""
+    ],
+    "targetSelection": "CONTINUOUS",
+    "awsJobExecutionsRolloutConfig": {
+        "maximumPerMinute": 0
+    },
+    "files": [
+        {
+            "fileName": "",
+            "fileVersion": "",
+            "fileLocation": {
+                "stream": {
+                    "streamId": "",
+                    "fileId": 0
+                },
+                "s3Location": {
+                    "bucket": "",
+                    "key": "",
+                    "version": ""
+                }
+            },
+            "codeSigning": {
+                "awsSignerJobId": "",
+                "startSigningJobParameter": {
+                    "signingProfileParameter": {
+                        "certificateArn": "",
+                        "platform": "",
+                        "certificatePathOnDevice": ""
+                    },
+                    "signingProfileName": "",
+                    "destination": {
+                        "s3Destination": {
+                            "bucket": "",
+                            "prefix": ""
+                        }
+                    }
+                },
+                "customCodeSigning": {
+                    "signature": {
+                        "inlineDocument": null
+                    },
+                    "certificateChain": {
+                        "certificateName": "",
+                        "inlineDocument": ""
+                    },
+                    "hashAlgorithm": "",
+                    "signatureAlgorithm": ""
+                }
+            },
+            "attributes": {
+                "KeyName": ""
+            }
+        }
+    ],
+    "roleArn": "",
+    "additionalParameters": {
+        "KeyName": ""
+    }
+}

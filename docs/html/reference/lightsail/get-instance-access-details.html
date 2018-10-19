@@ -1,0 +1,283 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-instance-access-details &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="lightsail" href="../lightsail/index.html" />
+    <link rel="next" title="get-instance-metric-data" href="../lightsail/get-instance-metric-data.html" />
+    <link rel="prev" title="get-instance" href="../lightsail/get-instance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../lightsail/get-instance-metric-data.html" title="get-instance-metric-data"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../lightsail/get-instance.html" title="get-instance"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lightsail/index.html" accesskey="U">lightsail</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lightsail/get-instance.html" title="previous chapter (use the left arrow)">&larr; get-instance</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lightsail/get-instance-metric-data.html" title="next chapter (use the right arrow)">get-instance-metric-data &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-instance-access-details</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/lightsail/get-instance-access-details">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../lightsail/index.html#cli-aws-lightsail"><em>lightsail</em></a> ]</p>
+<div class="section" id="get-instance-access-details">
+<span id="cli-aws-lightsail-get-instance-access-details"></span><h1>get-instance-access-details<a class="headerlink" href="#get-instance-access-details" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or <em>instance</em> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-instance-access-details
+--instance-name &lt;value&gt;
+[--protocol &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--instance-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the instance to access.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--protocol</span></tt> (string)</p>
+<blockquote>
+<div><p>The protocol to use to connect to your instance. Defaults to <tt class="docutils literal"><span class="pre">ssh</span></tt> .</p>
+<p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ssh</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">rdp</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>accessDetails -&gt; (structure)</p>
+<blockquote>
+<div><p>An array of key-value pairs containing information about a get instance access request.</p>
+<p>certKey -&gt; (string)</p>
+<blockquote>
+<div>For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to <tt class="docutils literal"><span class="pre">tempkey-cert.pub</span></tt> .</div></blockquote>
+<p>expiresAt -&gt; (timestamp)</p>
+<blockquote>
+<div>For SSH access, the date on which the temporary keys expire.</div></blockquote>
+<p>ipAddress -&gt; (string)</p>
+<blockquote>
+<div>The public IP address of the Amazon Lightsail instance.</div></blockquote>
+<p>password -&gt; (string)</p>
+<blockquote>
+<div><p>For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you create an instance using any key pair other than the default (<tt class="docutils literal"><span class="pre">LightsailDefaultKeyPair</span></tt> ), <tt class="docutils literal"><span class="pre">password</span></tt> will always be an empty string.</p>
+<p class="last">If you change the Administrator password on the instance, Lightsail will continue to return the original password value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
+</div>
+</div></blockquote>
+<p>passwordData -&gt; (structure)</p>
+<blockquote>
+<div><p>For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if <tt class="docutils literal"><span class="pre">password</span></tt> is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
+<p>ciphertext -&gt; (string)</p>
+<blockquote>
+<div><p>The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you use the default key pair (<tt class="docutils literal"><span class="pre">LightsailDefaultKeyPair</span></tt> ), the decrypted password will be available in the password field.</p>
+<p>If you are using a custom key pair, you need to use your own means of decryption.</p>
+<p class="last">If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.</p>
+</div>
+</div></blockquote>
+<p>keyPairName -&gt; (string)</p>
+<blockquote>
+<div><p>The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (<tt class="docutils literal"><span class="pre">LightsailDefaultKeyPair</span></tt> ).</p>
+<p>If you are using a custom key pair, you need to use your own means of decrypting your password using the <tt class="docutils literal"><span class="pre">ciphertext</span></tt> . Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.</p>
+</div></blockquote>
+</div></blockquote>
+<p>privateKey -&gt; (string)</p>
+<blockquote>
+<div>For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to <tt class="docutils literal"><span class="pre">tempkey</span></tt> ).</div></blockquote>
+<p>protocol -&gt; (string)</p>
+<blockquote>
+<div>The protocol for these Amazon Lightsail instance access details.</div></blockquote>
+<p>instanceName -&gt; (string)</p>
+<blockquote>
+<div>The name of this Amazon Lightsail instance.</div></blockquote>
+<p>username -&gt; (string)</p>
+<blockquote>
+<div>The user name to use when logging in to the Amazon Lightsail instance.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../lightsail/get-instance.html" title="previous chapter (use the left arrow)">&larr; get-instance</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../lightsail/get-instance-metric-data.html" title="next chapter (use the right arrow)">get-instance-metric-data &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../lightsail/get-instance-metric-data.html" title="get-instance-metric-data"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../lightsail/get-instance.html" title="get-instance"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../lightsail/index.html" >lightsail</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

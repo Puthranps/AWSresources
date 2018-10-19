@@ -1,0 +1,14 @@
+{
+    "AccountId": "",
+    "BudgetName": "",
+    "Notification": {
+        "NotificationType": "FORECASTED",
+        "ComparisonOperator": "GREATER_THAN",
+        "Threshold": null,
+        "ThresholdType": "PERCENTAGE"
+    },
+    "Subscriber": {
+        "SubscriptionType": "SNS",
+        "Address": ""
+    }
+}

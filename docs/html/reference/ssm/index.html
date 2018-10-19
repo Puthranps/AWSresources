@@ -1,0 +1,315 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>ssm &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="aws" href="../index.html" />
+    <link rel="next" title="add-tags-to-resource" href="../ssm/add-tags-to-resource.html" />
+    <link rel="prev" title="untag-queue" href="../sqs/untag-queue.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../ssm/add-tags-to-resource.html" title="add-tags-to-resource"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sqs/untag-queue.html" title="untag-queue"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" accesskey="U">aws</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sqs/untag-queue.html" title="previous chapter (use the left arrow)">&larr; untag-queue</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">ssm</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#available-commands">Available Commands</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/ssm/index">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> ]</p>
+<div class="section" id="ssm">
+<span id="cli-aws-ssm"></span><h1>ssm<a class="headerlink" href="#ssm" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>AWS Systems Manager is a collection of capabilities that helps you automate management tasks such as collecting system inventory, applying operating system (OS) patches, automating the creation of Amazon Machine Images (AMIs), and configuring operating systems (OSs) and applications at scale. Systems Manager lets you remotely and securely manage the configuration of your managed instances. A <em>managed instance</em> is any Amazon EC2 instance or on-premises machine in your hybrid environment that has been configured for Systems Manager.</p>
+<p>This reference is intended to be used with the <a class="reference external" href="http://docs.aws.amazon.com/systems-manager/latest/userguide/">AWS Systems Manager User Guide</a> .</p>
+<p>To get started, verify prerequisites and configure managed instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Systems Manager Prerequisites</a> in the <em>AWS Systems Manager User Guide</em> .</p>
+<p>For information about other API actions you can perform on Amazon EC2 instances, see the <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a> . For information about how to use a Query API, see <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API Requests</a> .</p>
+</div>
+<div class="section" id="available-commands">
+<h2>Available Commands<a class="headerlink" href="#available-commands" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/add-tags-to-resource.html">add-tags-to-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/cancel-command.html">cancel-command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/cancel-maintenance-window-execution.html">cancel-maintenance-window-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-activation.html">create-activation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-association.html">create-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-association-batch.html">create-association-batch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-document.html">create-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-maintenance-window.html">create-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-patch-baseline.html">create-patch-baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/create-resource-data-sync.html">create-resource-data-sync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-activation.html">delete-activation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-association.html">delete-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-document.html">delete-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-inventory.html">delete-inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-maintenance-window.html">delete-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-parameter.html">delete-parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-parameters.html">delete-parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-patch-baseline.html">delete-patch-baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/delete-resource-data-sync.html">delete-resource-data-sync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/deregister-managed-instance.html">deregister-managed-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/deregister-patch-baseline-for-patch-group.html">deregister-patch-baseline-for-patch-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/deregister-target-from-maintenance-window.html">deregister-target-from-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/deregister-task-from-maintenance-window.html">deregister-task-from-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-activations.html">describe-activations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-association.html">describe-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-association-execution-targets.html">describe-association-execution-targets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-association-executions.html">describe-association-executions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-automation-executions.html">describe-automation-executions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-automation-step-executions.html">describe-automation-step-executions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-available-patches.html">describe-available-patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-document.html">describe-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-document-permission.html">describe-document-permission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-effective-instance-associations.html">describe-effective-instance-associations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-effective-patches-for-patch-baseline.html">describe-effective-patches-for-patch-baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-instance-associations-status.html">describe-instance-associations-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-instance-information.html">describe-instance-information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-instance-patch-states.html">describe-instance-patch-states</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-instance-patch-states-for-patch-group.html">describe-instance-patch-states-for-patch-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-instance-patches.html">describe-instance-patches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-inventory-deletions.html">describe-inventory-deletions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-window-execution-task-invocations.html">describe-maintenance-window-execution-task-invocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-window-execution-tasks.html">describe-maintenance-window-execution-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-window-executions.html">describe-maintenance-window-executions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-window-schedule.html">describe-maintenance-window-schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-window-targets.html">describe-maintenance-window-targets</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-window-tasks.html">describe-maintenance-window-tasks</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-windows.html">describe-maintenance-windows</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-maintenance-windows-for-target.html">describe-maintenance-windows-for-target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-parameters.html">describe-parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-patch-baselines.html">describe-patch-baselines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-patch-group-state.html">describe-patch-group-state</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-patch-groups.html">describe-patch-groups</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/describe-sessions.html">describe-sessions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-automation-execution.html">get-automation-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-command-invocation.html">get-command-invocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-connection-status.html">get-connection-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-default-patch-baseline.html">get-default-patch-baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-deployable-patch-snapshot-for-instance.html">get-deployable-patch-snapshot-for-instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-document.html">get-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-inventory.html">get-inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-inventory-schema.html">get-inventory-schema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-maintenance-window.html">get-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-maintenance-window-execution.html">get-maintenance-window-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-maintenance-window-execution-task.html">get-maintenance-window-execution-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-maintenance-window-execution-task-invocation.html">get-maintenance-window-execution-task-invocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-maintenance-window-task.html">get-maintenance-window-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-parameter.html">get-parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-parameter-history.html">get-parameter-history</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-parameters.html">get-parameters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-parameters-by-path.html">get-parameters-by-path</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-patch-baseline.html">get-patch-baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/get-patch-baseline-for-patch-group.html">get-patch-baseline-for-patch-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/label-parameter-version.html">label-parameter-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-association-versions.html">list-association-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-associations.html">list-associations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-command-invocations.html">list-command-invocations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-commands.html">list-commands</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-compliance-items.html">list-compliance-items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-compliance-summaries.html">list-compliance-summaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-document-versions.html">list-document-versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-documents.html">list-documents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-inventory-entries.html">list-inventory-entries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-resource-compliance-summaries.html">list-resource-compliance-summaries</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-resource-data-sync.html">list-resource-data-sync</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/list-tags-for-resource.html">list-tags-for-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/modify-document-permission.html">modify-document-permission</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/put-compliance-items.html">put-compliance-items</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/put-inventory.html">put-inventory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/put-parameter.html">put-parameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/register-default-patch-baseline.html">register-default-patch-baseline</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/register-patch-baseline-for-patch-group.html">register-patch-baseline-for-patch-group</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/register-target-with-maintenance-window.html">register-target-with-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/register-task-with-maintenance-window.html">register-task-with-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/remove-tags-from-resource.html">remove-tags-from-resource</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/resume-session.html">resume-session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/send-automation-signal.html">send-automation-signal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/send-command.html">send-command</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/start-associations-once.html">start-associations-once</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/start-automation-execution.html">start-automation-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/start-session.html">start-session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/stop-automation-execution.html">stop-automation-execution</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/terminate-session.html">terminate-session</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-association.html">update-association</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-association-status.html">update-association-status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-document.html">update-document</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-document-default-version.html">update-document-default-version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-maintenance-window.html">update-maintenance-window</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-maintenance-window-target.html">update-maintenance-window-target</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-maintenance-window-task.html">update-maintenance-window-task</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-managed-instance-role.html">update-managed-instance-role</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ssm/update-patch-baseline.html">update-patch-baseline</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sqs/untag-queue.html" title="previous chapter (use the left arrow)">&larr; untag-queue</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../ssm/add-tags-to-resource.html" title="next chapter (use the right arrow)">add-tags-to-resource &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../ssm/add-tags-to-resource.html" title="add-tags-to-resource"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sqs/untag-queue.html" title="untag-queue"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

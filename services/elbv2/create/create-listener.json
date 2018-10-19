@@ -1,0 +1,59 @@
+{
+    "LoadBalancerArn": "",
+    "Protocol": "HTTPS",
+    "Port": 0,
+    "SslPolicy": "",
+    "Certificates": [
+        {
+            "CertificateArn": "",
+            "IsDefault": true
+        }
+    ],
+    "DefaultActions": [
+        {
+            "Type": "fixed-response",
+            "TargetGroupArn": "",
+            "AuthenticateOidcConfig": {
+                "Issuer": "",
+                "AuthorizationEndpoint": "",
+                "TokenEndpoint": "",
+                "UserInfoEndpoint": "",
+                "ClientId": "",
+                "ClientSecret": "",
+                "SessionCookieName": "",
+                "Scope": "",
+                "SessionTimeout": 0,
+                "AuthenticationRequestExtraParams": {
+                    "KeyName": ""
+                },
+                "OnUnauthenticatedRequest": "authenticate"
+            },
+            "AuthenticateCognitoConfig": {
+                "UserPoolArn": "",
+                "UserPoolClientId": "",
+                "UserPoolDomain": "",
+                "SessionCookieName": "",
+                "Scope": "",
+                "SessionTimeout": 0,
+                "AuthenticationRequestExtraParams": {
+                    "KeyName": ""
+                },
+                "OnUnauthenticatedRequest": "allow"
+            },
+            "Order": 0,
+            "RedirectConfig": {
+                "Protocol": "",
+                "Port": "",
+                "Host": "",
+                "Path": "",
+                "Query": "",
+                "StatusCode": "HTTP_302"
+            },
+            "FixedResponseConfig": {
+                "MessageBody": "",
+                "StatusCode": "",
+                "ContentType": ""
+            }
+        }
+    ]
+}

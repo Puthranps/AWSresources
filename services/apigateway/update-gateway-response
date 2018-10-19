@@ -1,0 +1,12 @@
+{
+    "restApiId": "",
+    "responseType": "BAD_REQUEST_PARAMETERS",
+    "patchOperations": [
+        {
+            "op": "add",
+            "path": "",
+            "value": "",
+            "from": ""
+        }
+    ]
+}

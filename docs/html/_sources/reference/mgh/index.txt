@@ -1,0 +1,46 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws mgh:
+
+
+***
+mgh
+***
+
+
+
+===========
+Description
+===========
+
+
+
+The AWS Migration Hub API methods help to obtain server and application migration status and integrate your resource-specific migration tool by providing a programmatic interface to Migration Hub. 
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  associate-created-artifact
+  associate-discovered-resource
+  create-progress-update-stream
+  delete-progress-update-stream
+  describe-application-state
+  describe-migration-task
+  disassociate-created-artifact
+  disassociate-discovered-resource
+  import-migration-task
+  list-created-artifacts
+  list-discovered-resources
+  list-migration-tasks
+  list-progress-update-streams
+  notify-application-state
+  notify-migration-task-state
+  put-resource-attributes

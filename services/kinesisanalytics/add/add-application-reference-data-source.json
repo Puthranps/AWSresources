@@ -1,0 +1,34 @@
+{
+    "ApplicationName": "",
+    "CurrentApplicationVersionId": 0,
+    "ReferenceDataSource": {
+        "TableName": "",
+        "S3ReferenceDataSource": {
+            "BucketARN": "",
+            "FileKey": "",
+            "ReferenceRoleARN": ""
+        },
+        "ReferenceSchema": {
+            "RecordFormat": {
+                "RecordFormatType": "CSV",
+                "MappingParameters": {
+                    "JSONMappingParameters": {
+                        "RecordRowPath": ""
+                    },
+                    "CSVMappingParameters": {
+                        "RecordRowDelimiter": "",
+                        "RecordColumnDelimiter": ""
+                    }
+                }
+            },
+            "RecordEncoding": "",
+            "RecordColumns": [
+                {
+                    "Name": "",
+                    "Mapping": "",
+                    "SqlType": ""
+                }
+            ]
+        }
+    }
+}

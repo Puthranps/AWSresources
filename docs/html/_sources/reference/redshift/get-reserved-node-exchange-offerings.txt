@@ -1,0 +1,227 @@
+[ :ref:`aws <cli:aws>` . :ref:`redshift <cli:aws redshift>` ]
+
+.. _cli:aws redshift get-reserved-node-exchange-offerings:
+
+
+************************************
+get-reserved-node-exchange-offerings
+************************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/GetReservedNodeExchangeOfferings>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-reserved-node-exchange-offerings
+  --reserved-node-id <value>
+  [--max-records <value>]
+  [--marker <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--reserved-node-id`` (string)
+
+
+  A string representing the node identifier for the DC1 Reserved Node to be exchanged.
+
+  
+
+``--max-records`` (integer)
+
+
+  An integer setting the maximum number of ReservedNodeOfferings to retrieve.
+
+  
+
+``--marker`` (string)
+
+
+  A value that indicates the starting point for the next set of ReservedNodeOfferings.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Marker -> (string)
+
+  
+
+  An optional parameter that specifies the starting point for returning a set of response records. When the results of a ``GetReservedNodeExchangeOfferings`` request exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker field of the response. You can retrieve the next set of response records by providing the returned marker value in the marker parameter and retrying the request. 
+
+  
+
+  
+
+ReservedNodeOfferings -> (list)
+
+  
+
+  Returns an array of  ReservedNodeOffering objects.
+
+  
+
+  (structure)
+
+    
+
+    Describes a reserved node offering.
+
+    
+
+    ReservedNodeOfferingId -> (string)
+
+      
+
+      The offering identifier.
+
+      
+
+      
+
+    NodeType -> (string)
+
+      
+
+      The node type offered by the reserved node offering.
+
+      
+
+      
+
+    Duration -> (integer)
+
+      
+
+      The duration, in seconds, for which the offering will reserve the node.
+
+      
+
+      
+
+    FixedPrice -> (double)
+
+      
+
+      The upfront fixed charge you will pay to purchase the specific reserved node offering.
+
+      
+
+      
+
+    UsagePrice -> (double)
+
+      
+
+      The rate you are charged for each hour the cluster that is using the offering is running.
+
+      
+
+      
+
+    CurrencyCode -> (string)
+
+      
+
+      The currency code for the compute nodes offering.
+
+      
+
+      
+
+    OfferingType -> (string)
+
+      
+
+      The anticipated utilization of the reserved node, as defined in the reserved node offering.
+
+      
+
+      
+
+    RecurringCharges -> (list)
+
+      
+
+      The charge to your account regardless of whether you are creating any clusters using the node offering. Recurring charges are only in effect for heavy-utilization reserved nodes.
+
+      
+
+      (structure)
+
+        
+
+        Describes a recurring charge.
+
+        
+
+        RecurringChargeAmount -> (double)
+
+          
+
+          The amount charged per the period of time specified by the recurring charge frequency.
+
+          
+
+          
+
+        RecurringChargeFrequency -> (string)
+
+          
+
+          The frequency at which the recurring charge amount is applied.
+
+          
+
+          
+
+        
+
+      
+
+    ReservedNodeOfferingType -> (string)
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,31 @@
+{
+    "Entries": [
+        {
+            "Name": "",
+            "InstanceId": "",
+            "Parameters": {
+                "KeyName": [
+                    ""
+                ]
+            },
+            "DocumentVersion": "",
+            "Targets": [
+                {
+                    "Key": "",
+                    "Values": [
+                        ""
+                    ]
+                }
+            ],
+            "ScheduleExpression": "",
+            "OutputLocation": {
+                "S3Location": {
+                    "OutputS3Region": "",
+                    "OutputS3BucketName": "",
+                    "OutputS3KeyPrefix": ""
+                }
+            },
+            "AssociationName": ""
+        }
+    ]
+}

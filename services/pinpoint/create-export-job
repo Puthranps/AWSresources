@@ -1,0 +1,9 @@
+{
+    "ApplicationId": "",
+    "ExportJobRequest": {
+        "RoleArn": "",
+        "S3UrlPrefix": "",
+        "SegmentId": "",
+        "SegmentVersion": 0
+    }
+}

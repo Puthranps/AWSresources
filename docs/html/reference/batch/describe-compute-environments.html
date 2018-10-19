@@ -1,0 +1,372 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-compute-environments &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="batch" href="../batch/index.html" />
+    <link rel="next" title="describe-job-definitions" href="../batch/describe-job-definitions.html" />
+    <link rel="prev" title="deregister-job-definition" href="../batch/deregister-job-definition.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../batch/describe-job-definitions.html" title="describe-job-definitions"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../batch/deregister-job-definition.html" title="deregister-job-definition"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../batch/index.html" accesskey="U">batch</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../batch/deregister-job-definition.html" title="previous chapter (use the left arrow)">&larr; deregister-job-definition</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../batch/describe-job-definitions.html" title="next chapter (use the right arrow)">describe-job-definitions &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-compute-environments</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/batch/describe-compute-environments">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../batch/index.html#cli-aws-batch"><em>batch</em></a> ]</p>
+<div class="section" id="describe-compute-environments">
+<span id="cli-aws-batch-describe-compute-environments"></span><h1>describe-compute-environments<a class="headerlink" href="#describe-compute-environments" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Describes one or more of your compute environments.</p>
+<p>If you are using an unmanaged compute environment, you can use the <tt class="docutils literal"><span class="pre">DescribeComputeEnvironment</span></tt> operation to determine the <tt class="docutils literal"><span class="pre">ecsClusterArn</span></tt> that you should launch your Amazon ECS container instances into.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/DescribeComputeEnvironments">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-compute-environments
+[--compute-environments &lt;value&gt;]
+[--max-results &lt;value&gt;]
+[--next-token &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--compute-environments</span></tt> (list)</p>
+<blockquote>
+<div>A list of up to 100 compute environment names or full Amazon Resource Name (ARN) entries.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--max-results</span></tt> (integer)</p>
+<blockquote>
+<div>The maximum number of cluster results returned by <tt class="docutils literal"><span class="pre">DescribeComputeEnvironments</span></tt> in paginated output. When this parameter is used, <tt class="docutils literal"><span class="pre">DescribeComputeEnvironments</span></tt> only returns <tt class="docutils literal"><span class="pre">maxResults</span></tt> results in a single page along with a <tt class="docutils literal"><span class="pre">nextToken</span></tt> response element. The remaining results of the initial request can be seen by sending another <tt class="docutils literal"><span class="pre">DescribeComputeEnvironments</span></tt> request with the returned <tt class="docutils literal"><span class="pre">nextToken</span></tt> value. This value can be between 1 and 100. If this parameter is not used, then <tt class="docutils literal"><span class="pre">DescribeComputeEnvironments</span></tt> returns up to 100 results and a <tt class="docutils literal"><span class="pre">nextToken</span></tt> value if applicable.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--next-token</span></tt> (string)</p>
+<blockquote>
+<div><p>The <tt class="docutils literal"><span class="pre">nextToken</span></tt> value returned from a previous paginated <tt class="docutils literal"><span class="pre">DescribeComputeEnvironments</span></tt> request where <tt class="docutils literal"><span class="pre">maxResults</span></tt> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <tt class="docutils literal"><span class="pre">nextToken</span></tt> value. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To describe a compute environment</strong></p>
+<p>This example describes the <cite>P2OnDemand</cite> compute environment.</p>
+<p>Command:</p>
+<div class="highlight-python"><pre>aws batch describe-compute-environments --compute-environments P2OnDemand</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+    <span class="s2">&quot;computeEnvironments&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="s2">&quot;status&quot;</span><span class="p">:</span> <span class="s2">&quot;VALID&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;serviceRole&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:iam::012345678910:role/AWSBatchServiceRole&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;computeEnvironmentArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:batch:us-east-1:012345678910:compute-environment/P2OnDemand&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;computeResources&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;subnets&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;subnet-220c0e0a&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;subnet-1a95556d&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;subnet-978f6dce&quot;</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;tags&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="s2">&quot;Name&quot;</span><span class="p">:</span> <span class="s2">&quot;Batch Instance - P2OnDemand&quot;</span>
+                <span class="p">},</span>
+                <span class="s2">&quot;desiredvCpus&quot;</span><span class="p">:</span> <span class="mi">48</span><span class="p">,</span>
+                <span class="s2">&quot;minvCpus&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;instanceTypes&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;p2&quot;</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;securityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="s2">&quot;sg-cf5093b2&quot;</span>
+                <span class="p">],</span>
+                <span class="s2">&quot;instanceRole&quot;</span><span class="p">:</span> <span class="s2">&quot;ecsInstanceRole&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;maxvCpus&quot;</span><span class="p">:</span> <span class="mi">128</span><span class="p">,</span>
+                <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;EC2&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;ec2KeyPair&quot;</span><span class="p">:</span> <span class="s2">&quot;id_rsa&quot;</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;statusReason&quot;</span><span class="p">:</span> <span class="s2">&quot;ComputeEnvironment Healthy&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;ecsClusterArn&quot;</span><span class="p">:</span> <span class="s2">&quot;arn:aws:ecs:us-east-1:012345678910:cluster/P2OnDemand_Batch_2c06f29d-d1fe-3a49-879d-42394c86effc&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;state&quot;</span><span class="p">:</span> <span class="s2">&quot;ENABLED&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;computeEnvironmentName&quot;</span><span class="p">:</span> <span class="s2">&quot;P2OnDemand&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;MANAGED&quot;</span>
+        <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>computeEnvironments -&gt; (list)</p>
+<blockquote>
+<div><p>The list of compute environments.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>An object representing an AWS Batch compute environment.</p>
+<p>computeEnvironmentName -&gt; (string)</p>
+<blockquote>
+<div>The name of the compute environment.</div></blockquote>
+<p>computeEnvironmentArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the compute environment.</div></blockquote>
+<p>ecsClusterArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the underlying Amazon ECS cluster used by the compute environment.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of the compute environment.</div></blockquote>
+<p>state -&gt; (string)</p>
+<blockquote>
+<div>The state of the compute environment. The valid values are <tt class="docutils literal"><span class="pre">ENABLED</span></tt> or <tt class="docutils literal"><span class="pre">DISABLED</span></tt> . An <tt class="docutils literal"><span class="pre">ENABLED</span></tt> state indicates that you can register instances with the compute environment and that the associated instances can accept jobs.</div></blockquote>
+<p>status -&gt; (string)</p>
+<blockquote>
+<div>The current status of the compute environment (for example, <tt class="docutils literal"><span class="pre">CREATING</span></tt> or <tt class="docutils literal"><span class="pre">VALID</span></tt> ).</div></blockquote>
+<p>statusReason -&gt; (string)</p>
+<blockquote>
+<div>A short, human-readable string to provide additional details about the current status of the compute environment.</div></blockquote>
+<p>computeResources -&gt; (structure)</p>
+<blockquote>
+<div><p>The compute resources defined for the compute environment.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of compute environment.</div></blockquote>
+<p>minvCpus -&gt; (integer)</p>
+<blockquote>
+<div>The minimum number of EC2 vCPUs that an environment should maintain.</div></blockquote>
+<p>maxvCpus -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of EC2 vCPUs that an environment can reach.</div></blockquote>
+<p>desiredvCpus -&gt; (integer)</p>
+<blockquote>
+<div>The desired number of EC2 vCPUS in the compute environment.</div></blockquote>
+<p>instanceTypes -&gt; (list)</p>
+<blockquote>
+<div><p>The instances types that may be launched. You can specify instance families to launch any instance type within those families (for example, <tt class="docutils literal"><span class="pre">c4</span></tt> or <tt class="docutils literal"><span class="pre">p3</span></tt> ), or you can specify specific sizes within a family (such as <tt class="docutils literal"><span class="pre">c4.8xlarge</span></tt> ). You can also choose <tt class="docutils literal"><span class="pre">optimal</span></tt> to pick instance types (from the latest C, M, and R instance families) on the fly that match the demand of your job queues.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>imageId -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Machine Image (AMI) ID used for instances launched in the compute environment.</div></blockquote>
+<p>subnets -&gt; (list)</p>
+<blockquote>
+<div><p>The VPC subnets into which the compute resources are launched.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>securityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The EC2 security group that is associated with instances launched in the compute environment.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>ec2KeyPair -&gt; (string)</p>
+<blockquote>
+<div>The EC2 key pair that is used for instances launched in the compute environment.</div></blockquote>
+<p>instanceRole -&gt; (string)</p>
+<blockquote>
+<div>The Amazon ECS instance profile applied to Amazon EC2 instances in a compute environment. You can specify the short name or full Amazon Resource Name (ARN) of an instance profile. For example, <tt class="docutils literal"><span class="pre">ecsInstanceRole</span></tt> or <tt class="docutils literal"><span class="pre">arn:aws:iam::&lt;aws_account_id&gt;:instance-profile/ecsInstanceRole</span></tt> . For more information, see <a class="reference external" href="http://docs.aws.amazon.com/batch/latest/userguide/instance_IAM_role.html">Amazon ECS Instance Role</a> in the <em>AWS Batch User Guide</em> .</div></blockquote>
+<p>tags -&gt; (map)</p>
+<blockquote>
+<div><p>Key-value pair tags to be applied to resources that are launched in the compute environment.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>bidPercentage -&gt; (integer)</p>
+<blockquote>
+<div>The minimum percentage that a Spot Instance price must be when compared with the On-Demand price for that instance type before instances are launched. For example, if your bid percentage is 20%, then the Spot price must be below 20% of the current On-Demand price for that EC2 instance.</div></blockquote>
+<p>spotIamFleetRole -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the Amazon EC2 Spot Fleet IAM role applied to a <tt class="docutils literal"><span class="pre">SPOT</span></tt> compute environment.</div></blockquote>
+</div></blockquote>
+<p>serviceRole -&gt; (string)</p>
+<blockquote>
+<div>The service role associated with the compute environment that allows AWS Batch to make calls to AWS API operations on your behalf.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nextToken -&gt; (string)</p>
+<blockquote>
+<div>The <tt class="docutils literal"><span class="pre">nextToken</span></tt> value to include in a future <tt class="docutils literal"><span class="pre">DescribeComputeEnvironments</span></tt> request. When the results of a <tt class="docutils literal"><span class="pre">DescribeJobDefinitions</span></tt> request exceed <tt class="docutils literal"><span class="pre">maxResults</span></tt> , this value can be used to retrieve the next page of results. This value is <tt class="docutils literal"><span class="pre">null</span></tt> when there are no more results to return.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../batch/deregister-job-definition.html" title="previous chapter (use the left arrow)">&larr; deregister-job-definition</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../batch/describe-job-definitions.html" title="next chapter (use the right arrow)">describe-job-definitions &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../batch/describe-job-definitions.html" title="describe-job-definitions"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../batch/deregister-job-definition.html" title="deregister-job-definition"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../batch/index.html" >batch</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

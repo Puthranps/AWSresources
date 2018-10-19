@@ -1,0 +1,14 @@
+{
+    "AutomationExecutionId": "",
+    "Filters": [
+        {
+            "Key": "StepExecutionStatus",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0,
+    "ReverseOrder": true
+}

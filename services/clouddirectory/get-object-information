@@ -1,0 +1,7 @@
+{
+    "DirectoryArn": "",
+    "ObjectReference": {
+        "Selector": ""
+    },
+    "ConsistencyLevel": "SERIALIZABLE"
+}

@@ -1,0 +1,53 @@
+{
+    "OperatingSystem": "AMAZON_LINUX",
+    "Name": "",
+    "GlobalFilters": {
+        "PatchFilters": [
+            {
+                "Key": "CLASSIFICATION",
+                "Values": [
+                    ""
+                ]
+            }
+        ]
+    },
+    "ApprovalRules": {
+        "PatchRules": [
+            {
+                "PatchFilterGroup": {
+                    "PatchFilters": [
+                        {
+                            "Key": "PRIORITY",
+                            "Values": [
+                                ""
+                            ]
+                        }
+                    ]
+                },
+                "ComplianceLevel": "UNSPECIFIED",
+                "ApproveAfterDays": 0,
+                "EnableNonSecurity": true
+            }
+        ]
+    },
+    "ApprovedPatches": [
+        ""
+    ],
+    "ApprovedPatchesComplianceLevel": "HIGH",
+    "ApprovedPatchesEnableNonSecurity": true,
+    "RejectedPatches": [
+        ""
+    ],
+    "RejectedPatchesAction": "BLOCK",
+    "Description": "",
+    "Sources": [
+        {
+            "Name": "",
+            "Products": [
+                ""
+            ],
+            "Configuration": ""
+        }
+    ],
+    "ClientToken": ""
+}

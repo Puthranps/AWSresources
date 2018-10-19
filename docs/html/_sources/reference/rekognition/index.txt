@@ -1,0 +1,64 @@
+[ :ref:`aws <cli:aws>` ]
+
+.. _cli:aws rekognition:
+
+
+***********
+rekognition
+***********
+
+
+
+===========
+Description
+===========
+
+
+
+This is the Amazon Rekognition API reference.
+
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  compare-faces
+  create-collection
+  create-stream-processor
+  delete-collection
+  delete-faces
+  delete-stream-processor
+  describe-collection
+  describe-stream-processor
+  detect-faces
+  detect-labels
+  detect-moderation-labels
+  detect-text
+  get-celebrity-info
+  get-celebrity-recognition
+  get-content-moderation
+  get-face-detection
+  get-face-search
+  get-label-detection
+  get-person-tracking
+  index-faces
+  list-collections
+  list-faces
+  list-stream-processors
+  recognize-celebrities
+  search-faces
+  search-faces-by-image
+  start-celebrity-recognition
+  start-content-moderation
+  start-face-detection
+  start-face-search
+  start-label-detection
+  start-person-tracking
+  start-stream-processor
+  stop-stream-processor

@@ -1,0 +1,15 @@
+{
+    "domainName": "",
+    "certificateName": "",
+    "certificateBody": "",
+    "certificatePrivateKey": "",
+    "certificateChain": "",
+    "certificateArn": "",
+    "regionalCertificateName": "",
+    "regionalCertificateArn": "",
+    "endpointConfiguration": {
+        "types": [
+            "PRIVATE"
+        ]
+    }
+}

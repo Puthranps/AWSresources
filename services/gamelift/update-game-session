@@ -1,0 +1,7 @@
+{
+    "GameSessionId": "",
+    "MaximumPlayerSessionCount": 0,
+    "Name": "",
+    "PlayerSessionCreationPolicy": "ACCEPT_ALL",
+    "ProtectionPolicy": "FullProtection"
+}

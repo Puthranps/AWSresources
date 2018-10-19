@@ -1,0 +1,335 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-endpoint &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="pinpoint" href="../pinpoint/index.html" />
+    <link rel="next" title="get-event-stream" href="../pinpoint/get-event-stream.html" />
+    <link rel="prev" title="get-email-channel" href="../pinpoint/get-email-channel.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../pinpoint/get-event-stream.html" title="get-event-stream"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../pinpoint/get-email-channel.html" title="get-email-channel"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../pinpoint/index.html" accesskey="U">pinpoint</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../pinpoint/get-email-channel.html" title="previous chapter (use the left arrow)">&larr; get-email-channel</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../pinpoint/get-event-stream.html" title="next chapter (use the right arrow)">get-event-stream &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-endpoint</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/pinpoint/get-endpoint">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../pinpoint/index.html#cli-aws-pinpoint"><em>pinpoint</em></a> ]</p>
+<div class="section" id="get-endpoint">
+<span id="cli-aws-pinpoint-get-endpoint"></span><h1>get-endpoint<a class="headerlink" href="#get-endpoint" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns information about an endpoint.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetEndpoint">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-endpoint
+--application-id &lt;value&gt;
+--endpoint-id &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--application-id</span></tt> (string)
+The unique ID of your Amazon Pinpoint application.</p>
+<p><tt class="docutils literal"><span class="pre">--endpoint-id</span></tt> (string)
+The unique ID of the endpoint.</p>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>EndpointResponse -&gt; (structure)</p>
+<blockquote>
+<div><p>Endpoint response</p>
+<p>Address -&gt; (string)</p>
+<blockquote>
+<div>The address of the endpoint as provided by your push provider. For example, the DeviceToken or RegistrationId.</div></blockquote>
+<p>ApplicationId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the application that is associated with the endpoint.</div></blockquote>
+<p>Attributes -&gt; (map)</p>
+<blockquote>
+<div><p>Custom attributes that describe the endpoint by associating a name with an array of values. For example, an attribute named &quot;interests&quot; might have the following values: [&quot;science&quot;, &quot;politics&quot;, &quot;travel&quot;]. You can use these attributes as selection criteria when you create segments. The Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign (#), colon (:), question mark (?), backslash (), and forward slash (/). For this reason, you should avoid using these characters in the names of custom attributes.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (list)</p>
+<blockquote>
+<div>(string)</div></blockquote>
+</div></blockquote>
+<p>ChannelType -&gt; (string)</p>
+<blockquote>
+<div>The channel type. Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP | APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU</div></blockquote>
+<p>CohortId -&gt; (string)</p>
+<blockquote>
+<div>A number from 0-99 that represents the cohort the endpoint is assigned to. Endpoints are grouped into cohorts randomly, and each cohort contains approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns cohorts to the holdout or treatment allocations for a campaign.</div></blockquote>
+<p>CreationDate -&gt; (string)</p>
+<blockquote>
+<div>The date and time when the endpoint was created, shown in ISO 8601 format.</div></blockquote>
+<p>Demographic -&gt; (structure)</p>
+<blockquote>
+<div><p>The endpoint demographic attributes.</p>
+<p>AppVersion -&gt; (string)</p>
+<blockquote>
+<div>The version of the application associated with the endpoint.</div></blockquote>
+<p>Locale -&gt; (string)</p>
+<blockquote>
+<div>The endpoint locale in the following format: The ISO 639-1 alpha-2 code, followed by an underscore, followed by an ISO 3166-1 alpha-2 value.</div></blockquote>
+<p>Make -&gt; (string)</p>
+<blockquote>
+<div>The manufacturer of the endpoint device, such as Apple or Samsung.</div></blockquote>
+<p>Model -&gt; (string)</p>
+<blockquote>
+<div>The model name or number of the endpoint device, such as iPhone.</div></blockquote>
+<p>ModelVersion -&gt; (string)</p>
+<blockquote>
+<div>The model version of the endpoint device.</div></blockquote>
+<p>Platform -&gt; (string)</p>
+<blockquote>
+<div>The platform of the endpoint device, such as iOS or Android.</div></blockquote>
+<p>PlatformVersion -&gt; (string)</p>
+<blockquote>
+<div>The platform version of the endpoint device.</div></blockquote>
+<p>Timezone -&gt; (string)</p>
+<blockquote>
+<div>The timezone of the endpoint. Specified as a tz database value, such as Americas/Los_Angeles.</div></blockquote>
+</div></blockquote>
+<p>EffectiveDate -&gt; (string)</p>
+<blockquote>
+<div>The date and time when the endpoint was last updated, shown in ISO 8601 format.</div></blockquote>
+<p>EndpointStatus -&gt; (string)</p>
+<blockquote>
+<div>Unused.</div></blockquote>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The unique ID that you assigned to the endpoint. The ID should be a globally unique identifier (GUID) to ensure that it doesn't conflict with other endpoint IDs associated with the application.</div></blockquote>
+<p>Location -&gt; (structure)</p>
+<blockquote>
+<div><p>The endpoint location attributes.</p>
+<p>City -&gt; (string)</p>
+<blockquote>
+<div>The city where the endpoint is located.</div></blockquote>
+<p>Country -&gt; (string)</p>
+<blockquote>
+<div>The two-letter code for the country or region of the endpoint. Specified as an ISO 3166-1 Alpha-2 code, such as &quot;US&quot; for the United States.</div></blockquote>
+<p>Latitude -&gt; (double)</p>
+<blockquote>
+<div>The latitude of the endpoint location, rounded to one decimal place.</div></blockquote>
+<p>Longitude -&gt; (double)</p>
+<blockquote>
+<div>The longitude of the endpoint location, rounded to one decimal place.</div></blockquote>
+<p>PostalCode -&gt; (string)</p>
+<blockquote>
+<div>The postal code or zip code of the endpoint.</div></blockquote>
+<p>Region -&gt; (string)</p>
+<blockquote>
+<div>The region of the endpoint location. For example, in the United States, this corresponds to a state.</div></blockquote>
+</div></blockquote>
+<p>Metrics -&gt; (map)</p>
+<blockquote>
+<div><p>Custom metrics that your app reports to Amazon Pinpoint.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (double)</p>
+</div></blockquote>
+<p>OptOut -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether a user has opted out of receiving messages with one of the following values: ALL - User has opted out of all messages. NONE - Users has not opted out and receives all messages.</div></blockquote>
+<p>RequestId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID for the most recent request to update the endpoint.</div></blockquote>
+<p>User -&gt; (structure)</p>
+<blockquote>
+<div><p>Custom user-specific attributes that your app reports to Amazon Pinpoint.</p>
+<p>UserAttributes -&gt; (map)</p>
+<blockquote>
+<div><p>Custom attributes that describe the user by associating a name with an array of values. For example, an attribute named &quot;interests&quot; might have the following values: [&quot;science&quot;, &quot;politics&quot;, &quot;travel&quot;]. You can use these attributes as selection criteria when you create segments. The Amazon Pinpoint console can't display attribute names that include the following characters: hash/pound sign (#), colon (:), question mark (?), backslash (), and forward slash (/). For this reason, you should avoid using these characters in the names of custom attributes.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (list)</p>
+<blockquote>
+<div>(string)</div></blockquote>
+</div></blockquote>
+<p>UserId -&gt; (string)</p>
+<blockquote>
+<div>The unique ID of the user.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../pinpoint/get-email-channel.html" title="previous chapter (use the left arrow)">&larr; get-email-channel</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../pinpoint/get-event-stream.html" title="next chapter (use the right arrow)">get-event-stream &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../pinpoint/get-event-stream.html" title="get-event-stream"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../pinpoint/get-email-channel.html" title="get-email-channel"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../pinpoint/index.html" >pinpoint</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

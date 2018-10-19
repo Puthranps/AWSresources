@@ -1,0 +1,6 @@
+{
+    "DryRun": true,
+    "Egress": true,
+    "NetworkAclId": "",
+    "RuleNumber": 0
+}

@@ -1,0 +1,9 @@
+{
+    "ConfigurationAggregatorName": "",
+    "ConfigRuleName": "",
+    "AccountId": "",
+    "AwsRegion": "",
+    "ComplianceType": "NON_COMPLIANT",
+    "Limit": 0,
+    "NextToken": ""
+}

@@ -1,0 +1,126 @@
+[ :ref:`aws <cli:aws>` . :ref:`gamelift <cli:aws gamelift>` ]
+
+.. _cli:aws gamelift start-fleet-actions:
+
+
+*******************
+start-fleet-actions
+*******************
+
+
+
+===========
+Description
+===========
+
+
+
+Resumes activity on a fleet that was suspended with  StopFleetActions . Currently, this operation is used to restart a fleet's auto-scaling activity. 
+
+ 
+
+To start fleet actions, specify the fleet ID and the type of actions to restart. When auto-scaling fleet actions are restarted, Amazon GameLift once again initiates scaling events as triggered by the fleet's scaling policies. If actions on the fleet were never stopped, this operation will have no effect. You can view a fleet's stopped actions using  DescribeFleetAttributes .
+
+ 
+
+Operations related to fleet capacity scaling include:
+
+ 
+
+ 
+*  DescribeFleetCapacity   
+ 
+*  UpdateFleetCapacity   
+ 
+*  DescribeEC2InstanceLimits   
+ 
+* Manage scaling policies: 
+
+   
+  *  PutScalingPolicy (auto-scaling) 
+   
+  *  DescribeScalingPolicies (auto-scaling) 
+   
+  *  DeleteScalingPolicy (auto-scaling) 
+   
+
+ 
+ 
+* Manage fleet actions: 
+
+   
+  *  StartFleetActions   
+   
+  *  StopFleetActions   
+   
+
+ 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/StartFleetActions>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    start-fleet-actions
+  --fleet-id <value>
+  --actions <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--fleet-id`` (string)
+
+
+  Unique identifier for a fleet
+
+  
+
+``--actions`` (list)
+
+
+  List of actions to restart on the fleet.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+  Where valid values are:
+    AUTO_SCALING
+
+
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+

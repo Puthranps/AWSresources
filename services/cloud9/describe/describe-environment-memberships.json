@@ -1,0 +1,9 @@
+{
+    "userArn": "",
+    "environmentId": "",
+    "permissions": [
+        "read-only"
+    ],
+    "nextToken": "",
+    "maxResults": 0
+}

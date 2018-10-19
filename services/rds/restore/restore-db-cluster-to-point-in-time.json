@@ -1,0 +1,27 @@
+{
+    "DBClusterIdentifier": "",
+    "RestoreType": "",
+    "SourceDBClusterIdentifier": "",
+    "RestoreToTime": "1970-01-01T00:00:00",
+    "UseLatestRestorableTime": true,
+    "Port": 0,
+    "DBSubnetGroupName": "",
+    "OptionGroupName": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "KmsKeyId": "",
+    "EnableIAMDatabaseAuthentication": true,
+    "BacktrackWindow": 0,
+    "EnableCloudwatchLogsExports": [
+        ""
+    ],
+    "DBClusterParameterGroupName": "",
+    "DeletionProtection": true
+}

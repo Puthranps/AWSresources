@@ -1,0 +1,18 @@
+{
+    "DryRun": true,
+    "VpcEndpointType": "Interface",
+    "VpcId": "",
+    "ServiceName": "",
+    "PolicyDocument": "",
+    "RouteTableIds": [
+        ""
+    ],
+    "SubnetIds": [
+        ""
+    ],
+    "SecurityGroupIds": [
+        ""
+    ],
+    "ClientToken": "",
+    "PrivateDnsEnabled": true
+}

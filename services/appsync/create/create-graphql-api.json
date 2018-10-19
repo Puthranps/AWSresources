@@ -1,0 +1,20 @@
+{
+    "name": "",
+    "logConfig": {
+        "fieldLogLevel": "ERROR",
+        "cloudWatchLogsRoleArn": ""
+    },
+    "authenticationType": "API_KEY",
+    "userPoolConfig": {
+        "userPoolId": "",
+        "awsRegion": "",
+        "defaultAction": "DENY",
+        "appIdClientRegex": ""
+    },
+    "openIDConnectConfig": {
+        "issuer": "",
+        "clientId": "",
+        "iatTTL": 0,
+        "authTTL": 0
+    }
+}

@@ -1,0 +1,241 @@
+[ :ref:`aws <cli:aws>` . :ref:`lightsail <cli:aws lightsail>` ]
+
+.. _cli:aws lightsail get-instance-access-details:
+
+
+***************************
+get-instance-access-details
+***************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns temporary SSH keys you can use to connect to a specific virtual private server, or *instance* .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetInstanceAccessDetails>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-instance-access-details
+  --instance-name <value>
+  [--protocol <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--instance-name`` (string)
+
+
+  The name of the instance to access.
+
+  
+
+``--protocol`` (string)
+
+
+  The protocol to use to connect to your instance. Defaults to ``ssh`` .
+
+  
+
+  Possible values:
+
+  
+  *   ``ssh``
+
+  
+  *   ``rdp``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+accessDetails -> (structure)
+
+  
+
+  An array of key-value pairs containing information about a get instance access request.
+
+  
+
+  certKey -> (string)
+
+    
+
+    For SSH access, the public key to use when accessing your instance For OpenSSH clients (e.g., command line SSH), you should save this value to ``tempkey-cert.pub`` .
+
+    
+
+    
+
+  expiresAt -> (timestamp)
+
+    
+
+    For SSH access, the date on which the temporary keys expire.
+
+    
+
+    
+
+  ipAddress -> (string)
+
+    
+
+    The public IP address of the Amazon Lightsail instance.
+
+    
+
+    
+
+  password -> (string)
+
+    
+
+    For RDP access, the password for your Amazon Lightsail instance. Password will be an empty string if the password for your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.
+
+     
+
+    .. note::
+
+       
+
+      If you create an instance using any key pair other than the default (``LightsailDefaultKeyPair`` ), ``password`` will always be an empty string.
+
+       
+
+      If you change the Administrator password on the instance, Lightsail will continue to return the original password value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.
+
+       
+
+    
+
+    
+
+  passwordData -> (structure)
+
+    
+
+    For a Windows Server-based instance, an object with the data you can use to retrieve your password. This is only needed if ``password`` is empty and the instance is not new (and therefore the password is not ready yet). When you create an instance, it can take up to 15 minutes for the instance to be ready.
+
+    
+
+    ciphertext -> (string)
+
+      
+
+      The encrypted password. Ciphertext will be an empty string if access to your new instance is not ready yet. When you create an instance, it can take up to 15 minutes for the instance to be ready.
+
+       
+
+      .. note::
+
+         
+
+        If you use the default key pair (``LightsailDefaultKeyPair`` ), the decrypted password will be available in the password field.
+
+         
+
+        If you are using a custom key pair, you need to use your own means of decryption.
+
+         
+
+        If you change the Administrator password on the instance, Lightsail will continue to return the original ciphertext value. When accessing the instance using RDP, you need to manually enter the Administrator password after changing it from the default.
+
+         
+
+      
+
+      
+
+    keyPairName -> (string)
+
+      
+
+      The name of the key pair that you used when creating your instance. If no key pair name was specified when creating the instance, Lightsail uses the default key pair (``LightsailDefaultKeyPair`` ).
+
+       
+
+      If you are using a custom key pair, you need to use your own means of decrypting your password using the ``ciphertext`` . Lightsail creates the ciphertext by encrypting your password with the public key part of this key pair.
+
+      
+
+      
+
+    
+
+  privateKey -> (string)
+
+    
+
+    For SSH access, the temporary private key. For OpenSSH clients (e.g., command line SSH), you should save this value to ``tempkey`` ).
+
+    
+
+    
+
+  protocol -> (string)
+
+    
+
+    The protocol for these Amazon Lightsail instance access details.
+
+    
+
+    
+
+  instanceName -> (string)
+
+    
+
+    The name of this Amazon Lightsail instance.
+
+    
+
+    
+
+  username -> (string)
+
+    
+
+    The user name to use when logging in to the Amazon Lightsail instance.
+
+    
+
+    
+
+  
+

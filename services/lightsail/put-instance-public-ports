@@ -1,0 +1,10 @@
+{
+    "portInfos": [
+        {
+            "fromPort": 0,
+            "toPort": 0,
+            "protocol": "all"
+        }
+    ],
+    "instanceName": ""
+}

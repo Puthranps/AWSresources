@@ -1,0 +1,14 @@
+{
+    "HsmConfigurationIdentifier": "",
+    "Description": "",
+    "HsmIpAddress": "",
+    "HsmPartitionName": "",
+    "HsmPartitionPassword": "",
+    "HsmServerPublicCertificate": "",
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ]
+}

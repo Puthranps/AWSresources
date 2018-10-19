@@ -1,0 +1,305 @@
+[ :ref:`aws <cli:aws>` . :ref:`signer <cli:aws signer>` ]
+
+.. _cli:aws signer list-signing-platforms:
+
+
+**********************
+list-signing-platforms
+**********************
+
+
+
+===========
+Description
+===========
+
+
+
+Lists all signing platforms available in AWS Signer that match the request parameters. If additional jobs remain to be listed, AWS Signer returns a ``nextToken`` value. Use this value in subsequent calls to ``ListSigningJobs`` to fetch the remaining values. You can continue calling ``ListSigningJobs`` with your ``maxResults`` parameter and with new values that AWS Signer returns in the ``nextToken`` parameter until all of your signing jobs have been returned.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListSigningPlatforms>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    list-signing-platforms
+  [--category <value>]
+  [--partner <value>]
+  [--target <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--category`` (string)
+
+
+  The category type of a signing platform.
+
+  
+
+``--partner`` (string)
+
+
+  Any partner entities connected to a signing platform.
+
+  
+
+``--target`` (string)
+
+
+  The validation template that is used by the target signing platform.
+
+  
+
+``--max-results`` (integer)
+
+
+  The maximum number of results to be returned by this operation.
+
+  
+
+``--next-token`` (string)
+
+
+  Value for specifying the next set of paginated results to return. After you receive a response with truncated results, use this parameter in a subsequent request. Set it to the value of ``nextToken`` from the response that you just received.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+platforms -> (list)
+
+  
+
+  A list of all platforms that match the request parameters.
+
+  
+
+  (structure)
+
+    
+
+    Contains information about the signing configurations and parameters that is used to perform an AWS Signer job.
+
+    
+
+    platformId -> (string)
+
+      
+
+      The ID of an AWS Signer platform.
+
+      
+
+      
+
+    displayName -> (string)
+
+      
+
+      The display name of an AWS Signer platform.
+
+      
+
+      
+
+    partner -> (string)
+
+      
+
+      Any partner entities linked to an AWS Signer platform.
+
+      
+
+      
+
+    target -> (string)
+
+      
+
+      The types of targets that can be signed by an AWS Signer platform.
+
+      
+
+      
+
+    category -> (string)
+
+      
+
+      The category of an AWS Signer platform.
+
+      
+
+      
+
+    signingConfiguration -> (structure)
+
+      
+
+      The configuration of an AWS Signer platform. This includes the designated hash algorithm and encryption algorithm of a signing platform.
+
+      
+
+      encryptionAlgorithmOptions -> (structure)
+
+        
+
+        The encryption algorithm options that are available for an AWS Signer job.
+
+        
+
+        allowedValues -> (list)
+
+          
+
+          The set of accepted encryption algorithms that are allowed in an AWS Signer job.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        defaultValue -> (string)
+
+          
+
+          The default encryption algorithm that is used by an AWS Signer job.
+
+          
+
+          
+
+        
+
+      hashAlgorithmOptions -> (structure)
+
+        
+
+        The hash algorithm options that are available for an AWS Signer job.
+
+        
+
+        allowedValues -> (list)
+
+          
+
+          The set of accepted hash algorithms allowed in an AWS Signer job.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        defaultValue -> (string)
+
+          
+
+          The default hash algorithm that is used in an AWS Signer job.
+
+          
+
+          
+
+        
+
+      
+
+    signingImageFormat -> (structure)
+
+      
+
+      The signing image format that is used by an AWS Signer platform.
+
+      
+
+      supportedFormats -> (list)
+
+        
+
+        The supported formats of an AWS Signer signing image.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      defaultFormat -> (string)
+
+        
+
+        The default format of an AWS Signer signing image.
+
+        
+
+        
+
+      
+
+    maxSizeInMB -> (integer)
+
+      
+
+      The maximum size (in MB) of code that can be signed by a AWS Signer platform.
+
+      
+
+      
+
+    
+
+  
+
+nextToken -> (string)
+
+  
+
+  Value for specifying the next set of paginated results to return.
+
+  
+
+  
+

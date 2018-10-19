@@ -1,0 +1,22 @@
+{
+    "TelemetryRecords": [
+        {
+            "Timestamp": "1970-01-01T00:00:00",
+            "SegmentsReceivedCount": 0,
+            "SegmentsSentCount": 0,
+            "SegmentsSpilloverCount": 0,
+            "SegmentsRejectedCount": 0,
+            "BackendConnectionErrors": {
+                "TimeoutCount": 0,
+                "ConnectionRefusedCount": 0,
+                "HTTPCode4XXCount": 0,
+                "HTTPCode5XXCount": 0,
+                "UnknownHostCount": 0,
+                "OtherCount": 0
+            }
+        }
+    ],
+    "EC2InstanceId": "",
+    "Hostname": "",
+    "ResourceARN": ""
+}

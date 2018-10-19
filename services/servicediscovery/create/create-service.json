@@ -1,0 +1,23 @@
+{
+    "Name": "",
+    "CreatorRequestId": "",
+    "Description": "",
+    "DnsConfig": {
+        "NamespaceId": "",
+        "RoutingPolicy": "MULTIVALUE",
+        "DnsRecords": [
+            {
+                "Type": "A",
+                "TTL": 0
+            }
+        ]
+    },
+    "HealthCheckConfig": {
+        "Type": "HTTP",
+        "ResourcePath": "",
+        "FailureThreshold": 0
+    },
+    "HealthCheckCustomConfig": {
+        "FailureThreshold": 0
+    }
+}

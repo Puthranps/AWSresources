@@ -1,0 +1,271 @@
+[ :ref:`aws <cli:aws>` . :ref:`organizations <cli:aws organizations>` ]
+
+.. _cli:aws organizations list-policies:
+
+
+*************
+list-policies
+*************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves the list of all policies in an organization of a specified type.
+
+ 
+
+.. note::
+
+   
+
+  Always check the ``NextToken`` response parameter for a ``null`` value when calling a ``List*`` operation. These operations can occasionally return an empty set of results even when there are more results available. The ``NextToken`` response parameter value is ``null``  *only* when there are no more results to display.
+
+   
+
+ 
+
+This operation can be called only from the organization's master account.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``list-policies`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``Policies``
+
+
+========
+Synopsis
+========
+
+::
+
+    list-policies
+  --filter <value>
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--filter`` (string)
+
+
+  Specifies the type of policy that you want to include in the response.
+
+  
+
+  Possible values:
+
+  
+  *   ``SERVICE_CONTROL_POLICY``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To retrieve a list of all policies in an organization of a certain type**
+
+The following example shows you how to get a list of SCPs, as specified by the filter parameter: ::
+
+	aws organizations list-policies --filter SERVICE_CONTROL_POLICY
+  
+The output includes a list of policies with summary information: ::
+
+	{
+		"Policies": [
+			{
+				"Type": "SERVICE_CONTROL_POLICY",
+				"Name": "AllowAllS3Actions",
+				"AwsManaged": false,
+				"Id": "p-examplepolicyid111",
+				"Arn": "arn:aws:organizations::111111111111:policy/service_control_policy/p-examplepolicyid111",
+				"Description": "Enables account admins to delegate permissions for any S3 actions to users and roles in their accounts."
+			},
+			{
+				"Type": "SERVICE_CONTROL_POLICY",
+				"Name": "AllowAllEC2Actions",
+				"AwsManaged": false,
+				"Id": "p-examplepolicyid222",
+				"Arn": "arn:aws:organizations::111111111111:policy/service_control_policy/p-examplepolicyid222",
+				"Description": "Enables account admins to delegate permissions for any EC2 actions to users and roles in their accounts."
+			},
+			{
+				"AwsManaged": true,
+				"Description": "Allows access to every operation",
+				"Type": "SERVICE_CONTROL_POLICY",
+				"Id": "p-FullAWSAccess",
+				"Arn": "arn:aws:organizations::aws:policy/service_control_policy/p-FullAWSAccess",
+				"Name": "FullAWSAccess"
+			}
+		]
+	}
+
+======
+Output
+======
+
+Policies -> (list)
+
+  
+
+  A list of policies that match the filter criteria in the request. The output list does not include the policy contents. To see the content for a policy, see  DescribePolicy .
+
+  
+
+  (structure)
+
+    
+
+    Contains information about a policy, but does not include the content. To see the content of a policy, see  DescribePolicy .
+
+    
+
+    Id -> (string)
+
+      
+
+      The unique identifier (ID) of the policy.
+
+       
+
+      The `regex pattern <http://wikipedia.org/wiki/regex>`__ for a policy ID string requires "p-" followed by from 8 to 128 lower-case letters or digits.
+
+      
+
+      
+
+    Arn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the policy.
+
+       
+
+      For more information about ARNs in Organizations, see `ARN Formats Supported by Organizations <http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns>`__ in the *AWS Organizations User Guide* .
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The friendly name of the policy.
+
+       
+
+      The `regex pattern <http://wikipedia.org/wiki/regex>`__ that is used to validate this parameter is a string of any of the characters in the ASCII character range.
+
+      
+
+      
+
+    Description -> (string)
+
+      
+
+      The description of the policy.
+
+      
+
+      
+
+    Type -> (string)
+
+      
+
+      The type of policy.
+
+      
+
+      
+
+    AwsManaged -> (boolean)
+
+      
+
+      A boolean value that indicates whether the specified policy is an AWS managed policy. If true, then you can attach the policy to roots, OUs, or accounts, but you cannot edit it.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  If present, this value indicates that there is more output available than is included in the current response. Use this value in the ``NextToken`` request parameter in a subsequent call to the operation to get the next part of the output. You should repeat this until the ``NextToken`` response element comes back as ``null`` .
+
+  
+
+  
+

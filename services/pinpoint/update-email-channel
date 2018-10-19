@@ -1,0 +1,9 @@
+{
+    "ApplicationId": "",
+    "EmailChannelRequest": {
+        "Enabled": true,
+        "FromAddress": "",
+        "Identity": "",
+        "RoleArn": ""
+    }
+}

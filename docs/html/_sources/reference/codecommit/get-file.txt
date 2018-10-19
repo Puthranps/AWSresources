@@ -1,0 +1,151 @@
+[ :ref:`aws <cli:aws>` . :ref:`codecommit <cli:aws codecommit>` ]
+
+.. _cli:aws codecommit get-file:
+
+
+********
+get-file
+********
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the base-64 encoded contents of a specified file and its metadata.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetFile>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-file
+  --repository-name <value>
+  [--commit-specifier <value>]
+  --file-path <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--repository-name`` (string)
+
+
+  The name of the repository that contains the file.
+
+  
+
+``--commit-specifier`` (string)
+
+
+  The fully-quaified reference that identifies the commit that contains the file. For example, you could specify a full commit ID, a tag, a branch name, or a reference such as refs/heads/master. If none is provided, then the head commit will be used.
+
+  
+
+``--file-path`` (string)
+
+
+  The fully-qualified path to the file, including the full name and extension of the file. For example, /examples/file.md is the fully-qualified path to a file named file.md in a folder named examples.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+commitId -> (string)
+
+  
+
+  The full commit ID of the commit that contains the content returned by GetFile.
+
+  
+
+  
+
+blobId -> (string)
+
+  
+
+  The blob ID of the object that represents the file content.
+
+  
+
+  
+
+filePath -> (string)
+
+  
+
+  The fully qualified path to the specified file. This returns the name and extension of the file.
+
+  
+
+  
+
+fileMode -> (string)
+
+  
+
+  The extrapolated file mode permissions of the blob. Valid values include strings such as EXECUTABLE and not numeric values.
+
+   
+
+  .. note::
+
+     
+
+    The file mode permissions returned by this API are not the standard file mode permission values, such as 100644, but rather extrapolated values. See below for a full list of supported return values.
+
+     
+
+  
+
+  
+
+fileSize -> (long)
+
+  
+
+  The size of the contents of the file, in bytes.
+
+  
+
+  
+
+fileContent -> (blob)
+
+  
+
+  The base-64 encoded binary data object that represents the content of the file.
+
+  
+
+  
+

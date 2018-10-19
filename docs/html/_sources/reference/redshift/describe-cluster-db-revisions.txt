@@ -1,0 +1,203 @@
+[ :ref:`aws <cli:aws>` . :ref:`redshift <cli:aws redshift>` ]
+
+.. _cli:aws redshift describe-cluster-db-revisions:
+
+
+*****************************
+describe-cluster-db-revisions
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns an array of ``ClusterDbRevision`` objects.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterDbRevisions>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-cluster-db-revisions
+  [--cluster-identifier <value>]
+  [--max-records <value>]
+  [--marker <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--cluster-identifier`` (string)
+
+
+  A unique identifier for a cluster whose ``ClusterDbRevisions`` you are requesting. This parameter is case sensitive. All clusters defined for an account are returned by default.
+
+  
+
+``--max-records`` (integer)
+
+
+  The maximum number of response records to return in each call. If the number of remaining response records exceeds the specified MaxRecords value, a value is returned in the ``marker`` field of the response. You can retrieve the next set of response records by providing the returned ``marker`` value in the ``marker`` parameter and retrying the request. 
+
+   
+
+  Default: 100
+
+   
+
+  Constraints: minimum 20, maximum 100.
+
+  
+
+``--marker`` (string)
+
+
+  An optional parameter that specifies the starting point for returning a set of response records. When the results of a ``DescribeClusterDbRevisions`` request exceed the value specified in ``MaxRecords`` , Amazon Redshift returns a value in the ``marker`` field of the response. You can retrieve the next set of response records by providing the returned ``marker`` value in the ``marker`` parameter and retrying the request. 
+
+   
+
+  Constraints: You can specify either the ``ClusterIdentifier`` parameter, or the ``marker`` parameter, but not both.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Marker -> (string)
+
+  
+
+  A string representing the starting point for the next set of revisions. If a value is returned in a response, you can retrieve the next set of revisions by providing the value in the ``marker`` parameter and retrying the command. If the ``marker`` field is empty, all revisions have already been returned.
+
+  
+
+  
+
+ClusterDbRevisions -> (list)
+
+  
+
+  A list of revisions.
+
+  
+
+  (structure)
+
+    
+
+    Describes a ``ClusterDbRevision`` .
+
+    
+
+    ClusterIdentifier -> (string)
+
+      
+
+      The unique identifier of the cluster.
+
+      
+
+      
+
+    CurrentDatabaseRevision -> (string)
+
+      
+
+      A string representing the current cluster version.
+
+      
+
+      
+
+    DatabaseRevisionReleaseDate -> (timestamp)
+
+      
+
+      The date on which the database revision was released.
+
+      
+
+      
+
+    RevisionTargets -> (list)
+
+      
+
+      A list of ``RevisionTarget`` objects, where each object describes the database revision that a cluster can be updated to.
+
+      
+
+      (structure)
+
+        
+
+        Describes a ``RevisionTarget`` .
+
+        
+
+        DatabaseRevision -> (string)
+
+          
+
+          A unique string that identifies the version to update the cluster to. You can use this value in  ModifyClusterDbRevision .
+
+          
+
+          
+
+        Description -> (string)
+
+          
+
+          A string that describes the changes and features that will be applied to the cluster when it is updated to the corresponding  ClusterDbRevision .
+
+          
+
+          
+
+        DatabaseRevisionReleaseDate -> (timestamp)
+
+          
+
+          The date on which the database revision was released.
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+

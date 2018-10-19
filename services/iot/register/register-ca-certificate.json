@@ -1,0 +1,10 @@
+{
+    "caCertificate": "",
+    "verificationCertificate": "",
+    "setAsActive": true,
+    "allowAutoRegistration": true,
+    "registrationConfig": {
+        "templateBody": "",
+        "roleArn": ""
+    }
+}

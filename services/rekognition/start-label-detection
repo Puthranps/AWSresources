@@ -1,0 +1,16 @@
+{
+    "Video": {
+        "S3Object": {
+            "Bucket": "",
+            "Name": "",
+            "Version": ""
+        }
+    },
+    "ClientRequestToken": "",
+    "MinConfidence": 0.0,
+    "NotificationChannel": {
+        "SNSTopicArn": "",
+        "RoleArn": ""
+    },
+    "JobTag": ""
+}

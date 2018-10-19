@@ -1,0 +1,334 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-transform-job &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sagemaker" href="../sagemaker/index.html" />
+    <link rel="next" title="list-endpoint-configs" href="../sagemaker/list-endpoint-configs.html" />
+    <link rel="prev" title="describe-training-job" href="../sagemaker/describe-training-job.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/list-endpoint-configs.html" title="list-endpoint-configs"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/describe-training-job.html" title="describe-training-job"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" accesskey="U">sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/describe-training-job.html" title="previous chapter (use the left arrow)">&larr; describe-training-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/list-endpoint-configs.html" title="next chapter (use the right arrow)">list-endpoint-configs &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-transform-job</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sagemaker/describe-transform-job">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sagemaker/index.html#cli-aws-sagemaker"><em>sagemaker</em></a> ]</p>
+<div class="section" id="describe-transform-job">
+<span id="cli-aws-sagemaker-describe-transform-job"></span><h1>describe-transform-job<a class="headerlink" href="#describe-transform-job" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Returns information about a transform job.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeTransformJob">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-transform-job
+--transform-job-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--transform-job-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the transform job that you want to view details of.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>TransformJobName -&gt; (string)</p>
+<blockquote>
+<div>The name of the transform job.</div></blockquote>
+<p>TransformJobArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the transform job.</div></blockquote>
+<p>TransformJobStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the transform job. If the transform job failed, the reason is returned in the <tt class="docutils literal"><span class="pre">FailureReason</span></tt> field.</div></blockquote>
+<p>FailureReason -&gt; (string)</p>
+<blockquote>
+<div>If the transform job failed, the reason that it failed.</div></blockquote>
+<p>ModelName -&gt; (string)</p>
+<blockquote>
+<div>The name of the model used in the transform job.</div></blockquote>
+<p>MaxConcurrentTransforms -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of parallel requests on each instance node that can be launched in a transform job. The default value is 1.</div></blockquote>
+<p>MaxPayloadInMB -&gt; (integer)</p>
+<blockquote>
+<div>The maximum payload size , in MB used in the transform job.</div></blockquote>
+<p>BatchStrategy -&gt; (string)</p>
+<blockquote>
+<div>SingleRecord means only one record was used per a batch. <tt class="docutils literal"><span class="pre">MultiRecord</span></tt> means batches contained as many records that could possibly fit within the <tt class="docutils literal"><span class="pre">MaxPayloadInMB</span></tt> limit.</div></blockquote>
+<p>Environment -&gt; (map)</p>
+<blockquote>
+<div><p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>TransformInput -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the dataset to be transformed and the Amazon S3 location where it is stored.</p>
+<p>DataSource -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the location of the channel data, meaning the S3 location of the input data that the model can consume.</p>
+<p>S3DataSource -&gt; (structure)</p>
+<blockquote>
+<div><p>The S3 location of the data source that is associated with a channel.</p>
+<p>S3DataType -&gt; (string)</p>
+<blockquote>
+<div><p>If you choose <tt class="docutils literal"><span class="pre">S3Prefix</span></tt> , <tt class="docutils literal"><span class="pre">S3Uri</span></tt> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for batch transform.</p>
+<p>If you choose <tt class="docutils literal"><span class="pre">ManifestFile</span></tt> , <tt class="docutils literal"><span class="pre">S3Uri</span></tt> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for batch transform.</p>
+</div></blockquote>
+<p>S3Uri -&gt; (string)</p>
+<blockquote>
+<div><p>Depending on the value specified for the <tt class="docutils literal"><span class="pre">S3DataType</span></tt> , identifies either a key name prefix or a manifest. For example:</p>
+<ul class="simple">
+<li>A key name prefix might look like this: <tt class="docutils literal"><span class="pre">s3://bucketname/exampleprefix</span></tt> .</li>
+<li>A manifest might look like this: <tt class="docutils literal"><span class="pre">s3://bucketname/example.manifest</span></tt>   The manifest is an S3 object which is a JSON file with the following format:   <tt class="docutils literal"><span class="pre">[</span></tt>    <tt class="docutils literal"><span class="pre">{&quot;prefix&quot;:</span> <span class="pre">&quot;s3://customer_bucket/some/prefix/&quot;},</span></tt>    <tt class="docutils literal"><span class="pre">&quot;relative/path/to/custdata-1&quot;,</span></tt>    <tt class="docutils literal"><span class="pre">&quot;relative/path/custdata-2&quot;,</span></tt>    <tt class="docutils literal"><span class="pre">...</span></tt>    <tt class="docutils literal"><span class="pre">]</span></tt>   The preceding JSON matches the following <tt class="docutils literal"><span class="pre">S3Uris</span></tt> :   <tt class="docutils literal"><span class="pre">s3://customer_bucket/some/prefix/relative/path/to/custdata-1</span></tt>    <tt class="docutils literal"><span class="pre">s3://customer_bucket/some/prefix/relative/path/custdata-1</span></tt>    <tt class="docutils literal"><span class="pre">...</span></tt>   The complete set of <tt class="docutils literal"><span class="pre">S3Uris</span></tt> in this manifest constitutes the input data for the channel for this datasource. The object that each <tt class="docutils literal"><span class="pre">S3Uris</span></tt> points to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ContentType -&gt; (string)</p>
+<blockquote>
+<div>The multipurpose internet mail extension (MIME) type of the data. Amazon SageMaker uses the MIME type with each http call to transfer data to the transform job.</div></blockquote>
+<p>CompressionType -&gt; (string)</p>
+<blockquote>
+<div>Compressing data helps save on storage space. If your transform data is compressed, specify the compression type.and Amazon SageMaker will automatically decompress the data for the transform job accordingly. The default value is <tt class="docutils literal"><span class="pre">None</span></tt> .</div></blockquote>
+<p>SplitType -&gt; (string)</p>
+<blockquote>
+<div><p>The method to use to split the transform job's data into smaller batches. The default value is <tt class="docutils literal"><span class="pre">None</span></tt> . If you don't want to split the data, specify <tt class="docutils literal"><span class="pre">None</span></tt> . If you want to split records on a newline character boundary, specify <tt class="docutils literal"><span class="pre">Line</span></tt> . To split records according to the RecordIO format, specify <tt class="docutils literal"><span class="pre">RecordIO</span></tt> .</p>
+<p>Amazon SageMaker will send maximum number of records per batch in each request up to the MaxPayloadInMB limit. For more information, see <a class="reference external" href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO data format</a> .</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">For information about the <tt class="docutils literal"><span class="pre">RecordIO</span></tt> format, see <a class="reference external" href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a> .</p>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p>TransformOutput -&gt; (structure)</p>
+<blockquote>
+<div><p>Identifies the Amazon S3 location where you want Amazon SageMaker to save the results from the transform job.</p>
+<p>S3OutputPath -&gt; (string)</p>
+<blockquote>
+<div><p>The Amazon S3 path where you want Amazon SageMaker to store the results of the transform job. For example, <tt class="docutils literal"><span class="pre">s3://bucket-name/key-name-prefix</span></tt> .</p>
+<p>For every S3 object used as input for the transform job, the transformed data is stored in a corresponding subfolder in the location under the output prefix. For example, the input data <tt class="docutils literal"><span class="pre">s3://bucket-name/input-name-prefix/dataset01/data.csv</span></tt> will have the transformed data stored at <tt class="docutils literal"><span class="pre">s3://bucket-name/key-name-prefix/dataset01/</span></tt> , based on the original name, as a series of .part files (.part0001, part0002, etc).</p>
+</div></blockquote>
+<p>Accept -&gt; (string)</p>
+<blockquote>
+<div>The MIME type used to specify the output data. Amazon SageMaker uses the MIME type with each http call to transfer data from the transform job.</div></blockquote>
+<p>AssembleWith -&gt; (string)</p>
+<blockquote>
+<div><p>Defines how to assemble the results of the transform job as a single S3 object. You should select a format that is most convenient to you. To concatenate the results in binary format, specify <tt class="docutils literal"><span class="pre">None</span></tt> . To add a newline character at the end of every transformed record, specify <tt class="docutils literal"><span class="pre">Line</span></tt> . To assemble the output in RecordIO format, specify <tt class="docutils literal"><span class="pre">RecordIO</span></tt> . The default value is <tt class="docutils literal"><span class="pre">None</span></tt> .</p>
+<p>For information about the <tt class="docutils literal"><span class="pre">RecordIO</span></tt> format, see <a class="reference external" href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data Format</a> .</p>
+</div></blockquote>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div><p>The AWS Key Management Service (AWS KMS) key for Amazon S3 server-side encryption that Amazon SageMaker uses to encrypt the transformed data.</p>
+<p>If you don't provide a KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in the <em>Amazon Simple Storage Service Developer Guide.</em></p>
+<p>The KMS key policy must grant permission to the IAM role that you specify in your <tt class="docutils literal"><span class="pre">CreateTramsformJob</span></tt> request. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a> in the <em>AWS Key Management Service Developer Guide</em> .</p>
+</div></blockquote>
+</div></blockquote>
+<p>TransformResources -&gt; (structure)</p>
+<blockquote>
+<div><p>Describes the resources, including ML instance types and ML instance count, to use for the transform job.</p>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The ML compute instance type for the transform job. For using built-in algorithms to transform moderately sized datasets, ml.m4.xlarge or <tt class="docutils literal"><span class="pre">ml.m5.large</span></tt> should suffice. There is no default value for <tt class="docutils literal"><span class="pre">InstanceType</span></tt> .</div></blockquote>
+<p>InstanceCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of ML compute instances to use in the transform job. For distributed transform, provide a value greater than 1. The default value is <tt class="docutils literal"><span class="pre">1</span></tt> .</div></blockquote>
+<p>VolumeKmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the batch transform job.</div></blockquote>
+</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>A timestamp that shows when the transform Job was created.</div></blockquote>
+<p>TransformStartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Indicates when the transform job starts on ML instances. You are billed for the time interval between this time and the value of <tt class="docutils literal"><span class="pre">TransformEndTime</span></tt> .</div></blockquote>
+<p>TransformEndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>Indicates when the transform job is <tt class="docutils literal"><span class="pre">Completed</span></tt> , <tt class="docutils literal"><span class="pre">Stopped</span></tt> , or <tt class="docutils literal"><span class="pre">Failed</span></tt> . You are billed for the time interval between this time and the value of <tt class="docutils literal"><span class="pre">TransformStartTime</span></tt> .</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/describe-training-job.html" title="previous chapter (use the left arrow)">&larr; describe-training-job</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/list-endpoint-configs.html" title="next chapter (use the right arrow)">list-endpoint-configs &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/list-endpoint-configs.html" title="list-endpoint-configs"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/describe-training-job.html" title="describe-training-job"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" >sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,9 @@
+{
+    "AccessToken": "",
+    "MFAOptions": [
+        {
+            "DeliveryMedium": "EMAIL",
+            "AttributeName": ""
+        }
+    ]
+}

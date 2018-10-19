@@ -1,0 +1,11 @@
+{
+    "ApplicationName": "",
+    "CurrentApplicationVersionId": 0,
+    "InputId": "",
+    "InputProcessingConfiguration": {
+        "InputLambdaProcessor": {
+            "ResourceARN": "",
+            "RoleARN": ""
+        }
+    }
+}

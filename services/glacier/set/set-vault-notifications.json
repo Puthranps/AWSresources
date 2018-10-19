@@ -1,0 +1,10 @@
+{
+    "accountId": "",
+    "vaultName": "",
+    "vaultNotificationConfig": {
+        "SNSTopic": "",
+        "Events": [
+            ""
+        ]
+    }
+}

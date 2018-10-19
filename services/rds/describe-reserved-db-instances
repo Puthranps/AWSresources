@@ -1,0 +1,19 @@
+{
+    "ReservedDBInstanceId": "",
+    "ReservedDBInstancesOfferingId": "",
+    "DBInstanceClass": "",
+    "Duration": "",
+    "ProductDescription": "",
+    "OfferingType": "",
+    "MultiAZ": true,
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "MaxRecords": 0,
+    "Marker": ""
+}

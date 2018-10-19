@@ -1,0 +1,13 @@
+{
+    "caseIdList": [
+        ""
+    ],
+    "displayId": "",
+    "afterTime": "",
+    "beforeTime": "",
+    "includeResolvedCases": true,
+    "nextToken": "",
+    "maxResults": 0,
+    "language": "",
+    "includeCommunications": true
+}

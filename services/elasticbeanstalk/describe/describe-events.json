@@ -1,0 +1,14 @@
+{
+    "ApplicationName": "",
+    "VersionLabel": "",
+    "TemplateName": "",
+    "EnvironmentId": "",
+    "EnvironmentName": "",
+    "PlatformArn": "",
+    "RequestId": "",
+    "Severity": "WARN",
+    "StartTime": "1970-01-01T00:00:00",
+    "EndTime": "1970-01-01T00:00:00",
+    "MaxRecords": 0,
+    "NextToken": ""
+}

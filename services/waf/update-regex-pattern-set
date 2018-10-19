@@ -1,0 +1,10 @@
+{
+    "RegexPatternSetId": "",
+    "Updates": [
+        {
+            "Action": "DELETE",
+            "RegexPatternString": ""
+        }
+    ],
+    "ChangeToken": ""
+}

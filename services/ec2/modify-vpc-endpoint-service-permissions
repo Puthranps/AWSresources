@@ -1,0 +1,10 @@
+{
+    "DryRun": true,
+    "ServiceId": "",
+    "AddAllowedPrincipals": [
+        ""
+    ],
+    "RemoveAllowedPrincipals": [
+        ""
+    ]
+}

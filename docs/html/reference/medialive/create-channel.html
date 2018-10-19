@@ -1,0 +1,2834 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-channel &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="medialive" href="../medialive/index.html" />
+    <link rel="next" title="create-input" href="../medialive/create-input.html" />
+    <link rel="prev" title="batch-update-schedule" href="../medialive/batch-update-schedule.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../medialive/create-input.html" title="create-input"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../medialive/batch-update-schedule.html" title="batch-update-schedule"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../medialive/index.html" accesskey="U">medialive</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../medialive/batch-update-schedule.html" title="previous chapter (use the left arrow)">&larr; batch-update-schedule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../medialive/create-input.html" title="next chapter (use the right arrow)">create-input &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-channel</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/medialive/create-channel">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../medialive/index.html#cli-aws-medialive"><em>medialive</em></a> ]</p>
+<div class="section" id="create-channel">
+<span id="cli-aws-medialive-create-channel"></span><h1>create-channel<a class="headerlink" href="#create-channel" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates a new channel</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreateChannel">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-channel
+[--destinations &lt;value&gt;]
+[--encoder-settings &lt;value&gt;]
+[--input-attachments &lt;value&gt;]
+[--input-specification &lt;value&gt;]
+[--log-level &lt;value&gt;]
+[--name &lt;value&gt;]
+[--request-id &lt;value&gt;]
+[--reserved &lt;value&gt;]
+[--role-arn &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--destinations</span></tt> (list)
+Placeholder documentation for __listOfOutputDestination</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Id=string,Settings=[{PasswordParam=string,StreamName=string,Url=string,Username=string},{PasswordParam=string,StreamName=string,Url=string,Username=string}] ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;Id&quot;: &quot;string&quot;,
+    &quot;Settings&quot;: [
+      {
+        &quot;PasswordParam&quot;: &quot;string&quot;,
+        &quot;StreamName&quot;: &quot;string&quot;,
+        &quot;Url&quot;: &quot;string&quot;,
+        &quot;Username&quot;: &quot;string&quot;
+      }
+      ...
+    ]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--encoder-settings</span></tt> (structure)
+Placeholder documentation for EncoderSettings</p>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;AudioDescriptions&quot;: [
+    {
+      &quot;AudioNormalizationSettings&quot;: {
+        &quot;Algorithm&quot;: &quot;ITU_1770_1&quot;|&quot;ITU_1770_2&quot;,
+        &quot;AlgorithmControl&quot;: &quot;CORRECT_AUDIO&quot;,
+        &quot;TargetLkfs&quot;: double
+      },
+      &quot;AudioSelectorName&quot;: &quot;string&quot;,
+      &quot;AudioType&quot;: &quot;CLEAN_EFFECTS&quot;|&quot;HEARING_IMPAIRED&quot;|&quot;UNDEFINED&quot;|&quot;VISUAL_IMPAIRED_COMMENTARY&quot;,
+      &quot;AudioTypeControl&quot;: &quot;FOLLOW_INPUT&quot;|&quot;USE_CONFIGURED&quot;,
+      &quot;CodecSettings&quot;: {
+        &quot;AacSettings&quot;: {
+          &quot;Bitrate&quot;: double,
+          &quot;CodingMode&quot;: &quot;AD_RECEIVER_MIX&quot;|&quot;CODING_MODE_1_0&quot;|&quot;CODING_MODE_1_1&quot;|&quot;CODING_MODE_2_0&quot;|&quot;CODING_MODE_5_1&quot;,
+          &quot;InputType&quot;: &quot;BROADCASTER_MIXED_AD&quot;|&quot;NORMAL&quot;,
+          &quot;Profile&quot;: &quot;HEV1&quot;|&quot;HEV2&quot;|&quot;LC&quot;,
+          &quot;RateControlMode&quot;: &quot;CBR&quot;|&quot;VBR&quot;,
+          &quot;RawFormat&quot;: &quot;LATM_LOAS&quot;|&quot;NONE&quot;,
+          &quot;SampleRate&quot;: double,
+          &quot;Spec&quot;: &quot;MPEG2&quot;|&quot;MPEG4&quot;,
+          &quot;VbrQuality&quot;: &quot;HIGH&quot;|&quot;LOW&quot;|&quot;MEDIUM_HIGH&quot;|&quot;MEDIUM_LOW&quot;
+        },
+        &quot;Ac3Settings&quot;: {
+          &quot;Bitrate&quot;: double,
+          &quot;BitstreamMode&quot;: &quot;COMMENTARY&quot;|&quot;COMPLETE_MAIN&quot;|&quot;DIALOGUE&quot;|&quot;EMERGENCY&quot;|&quot;HEARING_IMPAIRED&quot;|&quot;MUSIC_AND_EFFECTS&quot;|&quot;VISUALLY_IMPAIRED&quot;|&quot;VOICE_OVER&quot;,
+          &quot;CodingMode&quot;: &quot;CODING_MODE_1_0&quot;|&quot;CODING_MODE_1_1&quot;|&quot;CODING_MODE_2_0&quot;|&quot;CODING_MODE_3_2_LFE&quot;,
+          &quot;Dialnorm&quot;: integer,
+          &quot;DrcProfile&quot;: &quot;FILM_STANDARD&quot;|&quot;NONE&quot;,
+          &quot;LfeFilter&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;MetadataControl&quot;: &quot;FOLLOW_INPUT&quot;|&quot;USE_CONFIGURED&quot;
+        },
+        &quot;Eac3Settings&quot;: {
+          &quot;AttenuationControl&quot;: &quot;ATTENUATE_3_DB&quot;|&quot;NONE&quot;,
+          &quot;Bitrate&quot;: double,
+          &quot;BitstreamMode&quot;: &quot;COMMENTARY&quot;|&quot;COMPLETE_MAIN&quot;|&quot;EMERGENCY&quot;|&quot;HEARING_IMPAIRED&quot;|&quot;VISUALLY_IMPAIRED&quot;,
+          &quot;CodingMode&quot;: &quot;CODING_MODE_1_0&quot;|&quot;CODING_MODE_2_0&quot;|&quot;CODING_MODE_3_2&quot;,
+          &quot;DcFilter&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;Dialnorm&quot;: integer,
+          &quot;DrcLine&quot;: &quot;FILM_LIGHT&quot;|&quot;FILM_STANDARD&quot;|&quot;MUSIC_LIGHT&quot;|&quot;MUSIC_STANDARD&quot;|&quot;NONE&quot;|&quot;SPEECH&quot;,
+          &quot;DrcRf&quot;: &quot;FILM_LIGHT&quot;|&quot;FILM_STANDARD&quot;|&quot;MUSIC_LIGHT&quot;|&quot;MUSIC_STANDARD&quot;|&quot;NONE&quot;|&quot;SPEECH&quot;,
+          &quot;LfeControl&quot;: &quot;LFE&quot;|&quot;NO_LFE&quot;,
+          &quot;LfeFilter&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;LoRoCenterMixLevel&quot;: double,
+          &quot;LoRoSurroundMixLevel&quot;: double,
+          &quot;LtRtCenterMixLevel&quot;: double,
+          &quot;LtRtSurroundMixLevel&quot;: double,
+          &quot;MetadataControl&quot;: &quot;FOLLOW_INPUT&quot;|&quot;USE_CONFIGURED&quot;,
+          &quot;PassthroughControl&quot;: &quot;NO_PASSTHROUGH&quot;|&quot;WHEN_POSSIBLE&quot;,
+          &quot;PhaseControl&quot;: &quot;NO_SHIFT&quot;|&quot;SHIFT_90_DEGREES&quot;,
+          &quot;StereoDownmix&quot;: &quot;DPL2&quot;|&quot;LO_RO&quot;|&quot;LT_RT&quot;|&quot;NOT_INDICATED&quot;,
+          &quot;SurroundExMode&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;|&quot;NOT_INDICATED&quot;,
+          &quot;SurroundMode&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;|&quot;NOT_INDICATED&quot;
+        },
+        &quot;Mp2Settings&quot;: {
+          &quot;Bitrate&quot;: double,
+          &quot;CodingMode&quot;: &quot;CODING_MODE_1_0&quot;|&quot;CODING_MODE_2_0&quot;,
+          &quot;SampleRate&quot;: double
+        },
+        &quot;PassThroughSettings&quot;: {
+
+        }
+      },
+      &quot;LanguageCode&quot;: &quot;string&quot;,
+      &quot;LanguageCodeControl&quot;: &quot;FOLLOW_INPUT&quot;|&quot;USE_CONFIGURED&quot;,
+      &quot;Name&quot;: &quot;string&quot;,
+      &quot;RemixSettings&quot;: {
+        &quot;ChannelMappings&quot;: [
+          {
+            &quot;InputChannelLevels&quot;: [
+              {
+                &quot;Gain&quot;: integer,
+                &quot;InputChannel&quot;: integer
+              }
+              ...
+            ],
+            &quot;OutputChannel&quot;: integer
+          }
+          ...
+        ],
+        &quot;ChannelsIn&quot;: integer,
+        &quot;ChannelsOut&quot;: integer
+      },
+      &quot;StreamName&quot;: &quot;string&quot;
+    }
+    ...
+  ],
+  &quot;AvailBlanking&quot;: {
+    &quot;AvailBlankingImage&quot;: {
+      &quot;PasswordParam&quot;: &quot;string&quot;,
+      &quot;Uri&quot;: &quot;string&quot;,
+      &quot;Username&quot;: &quot;string&quot;
+    },
+    &quot;State&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;
+  },
+  &quot;AvailConfiguration&quot;: {
+    &quot;AvailSettings&quot;: {
+      &quot;Scte35SpliceInsert&quot;: {
+        &quot;AdAvailOffset&quot;: integer,
+        &quot;NoRegionalBlackoutFlag&quot;: &quot;FOLLOW&quot;|&quot;IGNORE&quot;,
+        &quot;WebDeliveryAllowedFlag&quot;: &quot;FOLLOW&quot;|&quot;IGNORE&quot;
+      },
+      &quot;Scte35TimeSignalApos&quot;: {
+        &quot;AdAvailOffset&quot;: integer,
+        &quot;NoRegionalBlackoutFlag&quot;: &quot;FOLLOW&quot;|&quot;IGNORE&quot;,
+        &quot;WebDeliveryAllowedFlag&quot;: &quot;FOLLOW&quot;|&quot;IGNORE&quot;
+      }
+    }
+  },
+  &quot;BlackoutSlate&quot;: {
+    &quot;BlackoutSlateImage&quot;: {
+      &quot;PasswordParam&quot;: &quot;string&quot;,
+      &quot;Uri&quot;: &quot;string&quot;,
+      &quot;Username&quot;: &quot;string&quot;
+    },
+    &quot;NetworkEndBlackout&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+    &quot;NetworkEndBlackoutImage&quot;: {
+      &quot;PasswordParam&quot;: &quot;string&quot;,
+      &quot;Uri&quot;: &quot;string&quot;,
+      &quot;Username&quot;: &quot;string&quot;
+    },
+    &quot;NetworkId&quot;: &quot;string&quot;,
+    &quot;State&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;
+  },
+  &quot;CaptionDescriptions&quot;: [
+    {
+      &quot;CaptionSelectorName&quot;: &quot;string&quot;,
+      &quot;DestinationSettings&quot;: {
+        &quot;AribDestinationSettings&quot;: {
+
+        },
+        &quot;BurnInDestinationSettings&quot;: {
+          &quot;Alignment&quot;: &quot;CENTERED&quot;|&quot;LEFT&quot;|&quot;SMART&quot;,
+          &quot;BackgroundColor&quot;: &quot;BLACK&quot;|&quot;NONE&quot;|&quot;WHITE&quot;,
+          &quot;BackgroundOpacity&quot;: integer,
+          &quot;Font&quot;: {
+            &quot;PasswordParam&quot;: &quot;string&quot;,
+            &quot;Uri&quot;: &quot;string&quot;,
+            &quot;Username&quot;: &quot;string&quot;
+          },
+          &quot;FontColor&quot;: &quot;BLACK&quot;|&quot;BLUE&quot;|&quot;GREEN&quot;|&quot;RED&quot;|&quot;WHITE&quot;|&quot;YELLOW&quot;,
+          &quot;FontOpacity&quot;: integer,
+          &quot;FontResolution&quot;: integer,
+          &quot;FontSize&quot;: &quot;string&quot;,
+          &quot;OutlineColor&quot;: &quot;BLACK&quot;|&quot;BLUE&quot;|&quot;GREEN&quot;|&quot;RED&quot;|&quot;WHITE&quot;|&quot;YELLOW&quot;,
+          &quot;OutlineSize&quot;: integer,
+          &quot;ShadowColor&quot;: &quot;BLACK&quot;|&quot;NONE&quot;|&quot;WHITE&quot;,
+          &quot;ShadowOpacity&quot;: integer,
+          &quot;ShadowXOffset&quot;: integer,
+          &quot;ShadowYOffset&quot;: integer,
+          &quot;TeletextGridControl&quot;: &quot;FIXED&quot;|&quot;SCALED&quot;,
+          &quot;XPosition&quot;: integer,
+          &quot;YPosition&quot;: integer
+        },
+        &quot;DvbSubDestinationSettings&quot;: {
+          &quot;Alignment&quot;: &quot;CENTERED&quot;|&quot;LEFT&quot;|&quot;SMART&quot;,
+          &quot;BackgroundColor&quot;: &quot;BLACK&quot;|&quot;NONE&quot;|&quot;WHITE&quot;,
+          &quot;BackgroundOpacity&quot;: integer,
+          &quot;Font&quot;: {
+            &quot;PasswordParam&quot;: &quot;string&quot;,
+            &quot;Uri&quot;: &quot;string&quot;,
+            &quot;Username&quot;: &quot;string&quot;
+          },
+          &quot;FontColor&quot;: &quot;BLACK&quot;|&quot;BLUE&quot;|&quot;GREEN&quot;|&quot;RED&quot;|&quot;WHITE&quot;|&quot;YELLOW&quot;,
+          &quot;FontOpacity&quot;: integer,
+          &quot;FontResolution&quot;: integer,
+          &quot;FontSize&quot;: &quot;string&quot;,
+          &quot;OutlineColor&quot;: &quot;BLACK&quot;|&quot;BLUE&quot;|&quot;GREEN&quot;|&quot;RED&quot;|&quot;WHITE&quot;|&quot;YELLOW&quot;,
+          &quot;OutlineSize&quot;: integer,
+          &quot;ShadowColor&quot;: &quot;BLACK&quot;|&quot;NONE&quot;|&quot;WHITE&quot;,
+          &quot;ShadowOpacity&quot;: integer,
+          &quot;ShadowXOffset&quot;: integer,
+          &quot;ShadowYOffset&quot;: integer,
+          &quot;TeletextGridControl&quot;: &quot;FIXED&quot;|&quot;SCALED&quot;,
+          &quot;XPosition&quot;: integer,
+          &quot;YPosition&quot;: integer
+        },
+        &quot;EmbeddedDestinationSettings&quot;: {
+
+        },
+        &quot;EmbeddedPlusScte20DestinationSettings&quot;: {
+
+        },
+        &quot;RtmpCaptionInfoDestinationSettings&quot;: {
+
+        },
+        &quot;Scte20PlusEmbeddedDestinationSettings&quot;: {
+
+        },
+        &quot;Scte27DestinationSettings&quot;: {
+
+        },
+        &quot;SmpteTtDestinationSettings&quot;: {
+
+        },
+        &quot;TeletextDestinationSettings&quot;: {
+
+        },
+        &quot;TtmlDestinationSettings&quot;: {
+          &quot;StyleControl&quot;: &quot;PASSTHROUGH&quot;|&quot;USE_CONFIGURED&quot;
+        },
+        &quot;WebvttDestinationSettings&quot;: {
+
+        }
+      },
+      &quot;LanguageCode&quot;: &quot;string&quot;,
+      &quot;LanguageDescription&quot;: &quot;string&quot;,
+      &quot;Name&quot;: &quot;string&quot;
+    }
+    ...
+  ],
+  &quot;GlobalConfiguration&quot;: {
+    &quot;InitialAudioGain&quot;: integer,
+    &quot;InputEndAction&quot;: &quot;NONE&quot;|&quot;SWITCH_AND_LOOP_INPUTS&quot;,
+    &quot;InputLossBehavior&quot;: {
+      &quot;BlackFrameMsec&quot;: integer,
+      &quot;InputLossImageColor&quot;: &quot;string&quot;,
+      &quot;InputLossImageSlate&quot;: {
+        &quot;PasswordParam&quot;: &quot;string&quot;,
+        &quot;Uri&quot;: &quot;string&quot;,
+        &quot;Username&quot;: &quot;string&quot;
+      },
+      &quot;InputLossImageType&quot;: &quot;COLOR&quot;|&quot;SLATE&quot;,
+      &quot;RepeatFrameMsec&quot;: integer
+    },
+    &quot;OutputTimingSource&quot;: &quot;INPUT_CLOCK&quot;|&quot;SYSTEM_CLOCK&quot;,
+    &quot;SupportLowFramerateInputs&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;
+  },
+  &quot;OutputGroups&quot;: [
+    {
+      &quot;Name&quot;: &quot;string&quot;,
+      &quot;OutputGroupSettings&quot;: {
+        &quot;ArchiveGroupSettings&quot;: {
+          &quot;Destination&quot;: {
+            &quot;DestinationRefId&quot;: &quot;string&quot;
+          },
+          &quot;RolloverInterval&quot;: integer
+        },
+        &quot;HlsGroupSettings&quot;: {
+          &quot;AdMarkers&quot;: [&quot;ADOBE&quot;|&quot;ELEMENTAL&quot;|&quot;ELEMENTAL_SCTE35&quot;, ...],
+          &quot;BaseUrlContent&quot;: &quot;string&quot;,
+          &quot;BaseUrlManifest&quot;: &quot;string&quot;,
+          &quot;CaptionLanguageMappings&quot;: [
+            {
+              &quot;CaptionChannel&quot;: integer,
+              &quot;LanguageCode&quot;: &quot;string&quot;,
+              &quot;LanguageDescription&quot;: &quot;string&quot;
+            }
+            ...
+          ],
+          &quot;CaptionLanguageSetting&quot;: &quot;INSERT&quot;|&quot;NONE&quot;|&quot;OMIT&quot;,
+          &quot;ClientCache&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;CodecSpecification&quot;: &quot;RFC_4281&quot;|&quot;RFC_6381&quot;,
+          &quot;ConstantIv&quot;: &quot;string&quot;,
+          &quot;Destination&quot;: {
+            &quot;DestinationRefId&quot;: &quot;string&quot;
+          },
+          &quot;DirectoryStructure&quot;: &quot;SINGLE_DIRECTORY&quot;|&quot;SUBDIRECTORY_PER_STREAM&quot;,
+          &quot;EncryptionType&quot;: &quot;AES128&quot;|&quot;SAMPLE_AES&quot;,
+          &quot;HlsCdnSettings&quot;: {
+            &quot;HlsAkamaiSettings&quot;: {
+              &quot;ConnectionRetryInterval&quot;: integer,
+              &quot;FilecacheDuration&quot;: integer,
+              &quot;HttpTransferMode&quot;: &quot;CHUNKED&quot;|&quot;NON_CHUNKED&quot;,
+              &quot;NumRetries&quot;: integer,
+              &quot;RestartDelay&quot;: integer,
+              &quot;Salt&quot;: &quot;string&quot;,
+              &quot;Token&quot;: &quot;string&quot;
+            },
+            &quot;HlsBasicPutSettings&quot;: {
+              &quot;ConnectionRetryInterval&quot;: integer,
+              &quot;FilecacheDuration&quot;: integer,
+              &quot;NumRetries&quot;: integer,
+              &quot;RestartDelay&quot;: integer
+            },
+            &quot;HlsMediaStoreSettings&quot;: {
+              &quot;ConnectionRetryInterval&quot;: integer,
+              &quot;FilecacheDuration&quot;: integer,
+              &quot;MediaStoreStorageClass&quot;: &quot;TEMPORAL&quot;,
+              &quot;NumRetries&quot;: integer,
+              &quot;RestartDelay&quot;: integer
+            },
+            &quot;HlsWebdavSettings&quot;: {
+              &quot;ConnectionRetryInterval&quot;: integer,
+              &quot;FilecacheDuration&quot;: integer,
+              &quot;HttpTransferMode&quot;: &quot;CHUNKED&quot;|&quot;NON_CHUNKED&quot;,
+              &quot;NumRetries&quot;: integer,
+              &quot;RestartDelay&quot;: integer
+            }
+          },
+          &quot;IndexNSegments&quot;: integer,
+          &quot;InputLossAction&quot;: &quot;EMIT_OUTPUT&quot;|&quot;PAUSE_OUTPUT&quot;,
+          &quot;IvInManifest&quot;: &quot;EXCLUDE&quot;|&quot;INCLUDE&quot;,
+          &quot;IvSource&quot;: &quot;EXPLICIT&quot;|&quot;FOLLOWS_SEGMENT_NUMBER&quot;,
+          &quot;KeepSegments&quot;: integer,
+          &quot;KeyFormat&quot;: &quot;string&quot;,
+          &quot;KeyFormatVersions&quot;: &quot;string&quot;,
+          &quot;KeyProviderSettings&quot;: {
+            &quot;StaticKeySettings&quot;: {
+              &quot;KeyProviderServer&quot;: {
+                &quot;PasswordParam&quot;: &quot;string&quot;,
+                &quot;Uri&quot;: &quot;string&quot;,
+                &quot;Username&quot;: &quot;string&quot;
+              },
+              &quot;StaticKeyValue&quot;: &quot;string&quot;
+            }
+          },
+          &quot;ManifestCompression&quot;: &quot;GZIP&quot;|&quot;NONE&quot;,
+          &quot;ManifestDurationFormat&quot;: &quot;FLOATING_POINT&quot;|&quot;INTEGER&quot;,
+          &quot;MinSegmentLength&quot;: integer,
+          &quot;Mode&quot;: &quot;LIVE&quot;|&quot;VOD&quot;,
+          &quot;OutputSelection&quot;: &quot;MANIFESTS_AND_SEGMENTS&quot;|&quot;SEGMENTS_ONLY&quot;,
+          &quot;ProgramDateTime&quot;: &quot;EXCLUDE&quot;|&quot;INCLUDE&quot;,
+          &quot;ProgramDateTimePeriod&quot;: integer,
+          &quot;SegmentLength&quot;: integer,
+          &quot;SegmentationMode&quot;: &quot;USE_INPUT_SEGMENTATION&quot;|&quot;USE_SEGMENT_DURATION&quot;,
+          &quot;SegmentsPerSubdirectory&quot;: integer,
+          &quot;StreamInfResolution&quot;: &quot;EXCLUDE&quot;|&quot;INCLUDE&quot;,
+          &quot;TimedMetadataId3Frame&quot;: &quot;NONE&quot;|&quot;PRIV&quot;|&quot;TDRL&quot;,
+          &quot;TimedMetadataId3Period&quot;: integer,
+          &quot;TimestampDeltaMilliseconds&quot;: integer,
+          &quot;TsFileMode&quot;: &quot;SEGMENTED_FILES&quot;|&quot;SINGLE_FILE&quot;
+        },
+        &quot;MsSmoothGroupSettings&quot;: {
+          &quot;AcquisitionPointId&quot;: &quot;string&quot;,
+          &quot;AudioOnlyTimecodeControl&quot;: &quot;PASSTHROUGH&quot;|&quot;USE_CONFIGURED_CLOCK&quot;,
+          &quot;CertificateMode&quot;: &quot;SELF_SIGNED&quot;|&quot;VERIFY_AUTHENTICITY&quot;,
+          &quot;ConnectionRetryInterval&quot;: integer,
+          &quot;Destination&quot;: {
+            &quot;DestinationRefId&quot;: &quot;string&quot;
+          },
+          &quot;EventId&quot;: &quot;string&quot;,
+          &quot;EventIdMode&quot;: &quot;NO_EVENT_ID&quot;|&quot;USE_CONFIGURED&quot;|&quot;USE_TIMESTAMP&quot;,
+          &quot;EventStopBehavior&quot;: &quot;NONE&quot;|&quot;SEND_EOS&quot;,
+          &quot;FilecacheDuration&quot;: integer,
+          &quot;FragmentLength&quot;: integer,
+          &quot;InputLossAction&quot;: &quot;EMIT_OUTPUT&quot;|&quot;PAUSE_OUTPUT&quot;,
+          &quot;NumRetries&quot;: integer,
+          &quot;RestartDelay&quot;: integer,
+          &quot;SegmentationMode&quot;: &quot;USE_INPUT_SEGMENTATION&quot;|&quot;USE_SEGMENT_DURATION&quot;,
+          &quot;SendDelayMs&quot;: integer,
+          &quot;SparseTrackType&quot;: &quot;NONE&quot;|&quot;SCTE_35&quot;,
+          &quot;StreamManifestBehavior&quot;: &quot;DO_NOT_SEND&quot;|&quot;SEND&quot;,
+          &quot;TimestampOffset&quot;: &quot;string&quot;,
+          &quot;TimestampOffsetMode&quot;: &quot;USE_CONFIGURED_OFFSET&quot;|&quot;USE_EVENT_START_DATE&quot;
+        },
+        &quot;RtmpGroupSettings&quot;: {
+          &quot;AuthenticationScheme&quot;: &quot;AKAMAI&quot;|&quot;COMMON&quot;,
+          &quot;CacheFullBehavior&quot;: &quot;DISCONNECT_IMMEDIATELY&quot;|&quot;WAIT_FOR_SERVER&quot;,
+          &quot;CacheLength&quot;: integer,
+          &quot;CaptionData&quot;: &quot;ALL&quot;|&quot;FIELD1_608&quot;|&quot;FIELD1_AND_FIELD2_608&quot;,
+          &quot;RestartDelay&quot;: integer
+        },
+        &quot;UdpGroupSettings&quot;: {
+          &quot;InputLossAction&quot;: &quot;DROP_PROGRAM&quot;|&quot;DROP_TS&quot;|&quot;EMIT_PROGRAM&quot;,
+          &quot;TimedMetadataId3Frame&quot;: &quot;NONE&quot;|&quot;PRIV&quot;|&quot;TDRL&quot;,
+          &quot;TimedMetadataId3Period&quot;: integer
+        }
+      },
+      &quot;Outputs&quot;: [
+        {
+          &quot;AudioDescriptionNames&quot;: [&quot;string&quot;, ...],
+          &quot;CaptionDescriptionNames&quot;: [&quot;string&quot;, ...],
+          &quot;OutputName&quot;: &quot;string&quot;,
+          &quot;OutputSettings&quot;: {
+            &quot;ArchiveOutputSettings&quot;: {
+              &quot;ContainerSettings&quot;: {
+                &quot;M2tsSettings&quot;: {
+                  &quot;AbsentInputAudioBehavior&quot;: &quot;DROP&quot;|&quot;ENCODE_SILENCE&quot;,
+                  &quot;Arib&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+                  &quot;AribCaptionsPid&quot;: &quot;string&quot;,
+                  &quot;AribCaptionsPidControl&quot;: &quot;AUTO&quot;|&quot;USE_CONFIGURED&quot;,
+                  &quot;AudioBufferModel&quot;: &quot;ATSC&quot;|&quot;DVB&quot;,
+                  &quot;AudioFramesPerPes&quot;: integer,
+                  &quot;AudioPids&quot;: &quot;string&quot;,
+                  &quot;AudioStreamType&quot;: &quot;ATSC&quot;|&quot;DVB&quot;,
+                  &quot;Bitrate&quot;: integer,
+                  &quot;BufferModel&quot;: &quot;MULTIPLEX&quot;|&quot;NONE&quot;,
+                  &quot;CcDescriptor&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+                  &quot;DvbNitSettings&quot;: {
+                    &quot;NetworkId&quot;: integer,
+                    &quot;NetworkName&quot;: &quot;string&quot;,
+                    &quot;RepInterval&quot;: integer
+                  },
+                  &quot;DvbSdtSettings&quot;: {
+                    &quot;OutputSdt&quot;: &quot;SDT_FOLLOW&quot;|&quot;SDT_FOLLOW_IF_PRESENT&quot;|&quot;SDT_MANUAL&quot;|&quot;SDT_NONE&quot;,
+                    &quot;RepInterval&quot;: integer,
+                    &quot;ServiceName&quot;: &quot;string&quot;,
+                    &quot;ServiceProviderName&quot;: &quot;string&quot;
+                  },
+                  &quot;DvbSubPids&quot;: &quot;string&quot;,
+                  &quot;DvbTdtSettings&quot;: {
+                    &quot;RepInterval&quot;: integer
+                  },
+                  &quot;DvbTeletextPid&quot;: &quot;string&quot;,
+                  &quot;Ebif&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;EbpAudioInterval&quot;: &quot;VIDEO_AND_FIXED_INTERVALS&quot;|&quot;VIDEO_INTERVAL&quot;,
+                  &quot;EbpLookaheadMs&quot;: integer,
+                  &quot;EbpPlacement&quot;: &quot;VIDEO_AND_AUDIO_PIDS&quot;|&quot;VIDEO_PID&quot;,
+                  &quot;EcmPid&quot;: &quot;string&quot;,
+                  &quot;EsRateInPes&quot;: &quot;EXCLUDE&quot;|&quot;INCLUDE&quot;,
+                  &quot;EtvPlatformPid&quot;: &quot;string&quot;,
+                  &quot;EtvSignalPid&quot;: &quot;string&quot;,
+                  &quot;FragmentTime&quot;: double,
+                  &quot;Klv&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;KlvDataPids&quot;: &quot;string&quot;,
+                  &quot;NullPacketBitrate&quot;: double,
+                  &quot;PatInterval&quot;: integer,
+                  &quot;PcrControl&quot;: &quot;CONFIGURED_PCR_PERIOD&quot;|&quot;PCR_EVERY_PES_PACKET&quot;,
+                  &quot;PcrPeriod&quot;: integer,
+                  &quot;PcrPid&quot;: &quot;string&quot;,
+                  &quot;PmtInterval&quot;: integer,
+                  &quot;PmtPid&quot;: &quot;string&quot;,
+                  &quot;ProgramNum&quot;: integer,
+                  &quot;RateMode&quot;: &quot;CBR&quot;|&quot;VBR&quot;,
+                  &quot;Scte27Pids&quot;: &quot;string&quot;,
+                  &quot;Scte35Control&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;Scte35Pid&quot;: &quot;string&quot;,
+                  &quot;SegmentationMarkers&quot;: &quot;EBP&quot;|&quot;EBP_LEGACY&quot;|&quot;NONE&quot;|&quot;PSI_SEGSTART&quot;|&quot;RAI_ADAPT&quot;|&quot;RAI_SEGSTART&quot;,
+                  &quot;SegmentationStyle&quot;: &quot;MAINTAIN_CADENCE&quot;|&quot;RESET_CADENCE&quot;,
+                  &quot;SegmentationTime&quot;: double,
+                  &quot;TimedMetadataBehavior&quot;: &quot;NO_PASSTHROUGH&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;TimedMetadataPid&quot;: &quot;string&quot;,
+                  &quot;TransportStreamId&quot;: integer,
+                  &quot;VideoPid&quot;: &quot;string&quot;
+                }
+              },
+              &quot;Extension&quot;: &quot;string&quot;,
+              &quot;NameModifier&quot;: &quot;string&quot;
+            },
+            &quot;HlsOutputSettings&quot;: {
+              &quot;HlsSettings&quot;: {
+                &quot;AudioOnlyHlsSettings&quot;: {
+                  &quot;AudioGroupId&quot;: &quot;string&quot;,
+                  &quot;AudioOnlyImage&quot;: {
+                    &quot;PasswordParam&quot;: &quot;string&quot;,
+                    &quot;Uri&quot;: &quot;string&quot;,
+                    &quot;Username&quot;: &quot;string&quot;
+                  },
+                  &quot;AudioTrackType&quot;: &quot;ALTERNATE_AUDIO_AUTO_SELECT&quot;|&quot;ALTERNATE_AUDIO_AUTO_SELECT_DEFAULT&quot;|&quot;ALTERNATE_AUDIO_NOT_AUTO_SELECT&quot;|&quot;AUDIO_ONLY_VARIANT_STREAM&quot;
+                },
+                &quot;StandardHlsSettings&quot;: {
+                  &quot;AudioRenditionSets&quot;: &quot;string&quot;,
+                  &quot;M3u8Settings&quot;: {
+                    &quot;AudioFramesPerPes&quot;: integer,
+                    &quot;AudioPids&quot;: &quot;string&quot;,
+                    &quot;EcmPid&quot;: &quot;string&quot;,
+                    &quot;PatInterval&quot;: integer,
+                    &quot;PcrControl&quot;: &quot;CONFIGURED_PCR_PERIOD&quot;|&quot;PCR_EVERY_PES_PACKET&quot;,
+                    &quot;PcrPeriod&quot;: integer,
+                    &quot;PcrPid&quot;: &quot;string&quot;,
+                    &quot;PmtInterval&quot;: integer,
+                    &quot;PmtPid&quot;: &quot;string&quot;,
+                    &quot;ProgramNum&quot;: integer,
+                    &quot;Scte35Behavior&quot;: &quot;NO_PASSTHROUGH&quot;|&quot;PASSTHROUGH&quot;,
+                    &quot;Scte35Pid&quot;: &quot;string&quot;,
+                    &quot;TimedMetadataBehavior&quot;: &quot;NO_PASSTHROUGH&quot;|&quot;PASSTHROUGH&quot;,
+                    &quot;TimedMetadataPid&quot;: &quot;string&quot;,
+                    &quot;TransportStreamId&quot;: integer,
+                    &quot;VideoPid&quot;: &quot;string&quot;
+                  }
+                }
+              },
+              &quot;NameModifier&quot;: &quot;string&quot;,
+              &quot;SegmentModifier&quot;: &quot;string&quot;
+            },
+            &quot;MsSmoothOutputSettings&quot;: {
+              &quot;NameModifier&quot;: &quot;string&quot;
+            },
+            &quot;RtmpOutputSettings&quot;: {
+              &quot;CertificateMode&quot;: &quot;SELF_SIGNED&quot;|&quot;VERIFY_AUTHENTICITY&quot;,
+              &quot;ConnectionRetryInterval&quot;: integer,
+              &quot;Destination&quot;: {
+                &quot;DestinationRefId&quot;: &quot;string&quot;
+              },
+              &quot;NumRetries&quot;: integer
+            },
+            &quot;UdpOutputSettings&quot;: {
+              &quot;BufferMsec&quot;: integer,
+              &quot;ContainerSettings&quot;: {
+                &quot;M2tsSettings&quot;: {
+                  &quot;AbsentInputAudioBehavior&quot;: &quot;DROP&quot;|&quot;ENCODE_SILENCE&quot;,
+                  &quot;Arib&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+                  &quot;AribCaptionsPid&quot;: &quot;string&quot;,
+                  &quot;AribCaptionsPidControl&quot;: &quot;AUTO&quot;|&quot;USE_CONFIGURED&quot;,
+                  &quot;AudioBufferModel&quot;: &quot;ATSC&quot;|&quot;DVB&quot;,
+                  &quot;AudioFramesPerPes&quot;: integer,
+                  &quot;AudioPids&quot;: &quot;string&quot;,
+                  &quot;AudioStreamType&quot;: &quot;ATSC&quot;|&quot;DVB&quot;,
+                  &quot;Bitrate&quot;: integer,
+                  &quot;BufferModel&quot;: &quot;MULTIPLEX&quot;|&quot;NONE&quot;,
+                  &quot;CcDescriptor&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+                  &quot;DvbNitSettings&quot;: {
+                    &quot;NetworkId&quot;: integer,
+                    &quot;NetworkName&quot;: &quot;string&quot;,
+                    &quot;RepInterval&quot;: integer
+                  },
+                  &quot;DvbSdtSettings&quot;: {
+                    &quot;OutputSdt&quot;: &quot;SDT_FOLLOW&quot;|&quot;SDT_FOLLOW_IF_PRESENT&quot;|&quot;SDT_MANUAL&quot;|&quot;SDT_NONE&quot;,
+                    &quot;RepInterval&quot;: integer,
+                    &quot;ServiceName&quot;: &quot;string&quot;,
+                    &quot;ServiceProviderName&quot;: &quot;string&quot;
+                  },
+                  &quot;DvbSubPids&quot;: &quot;string&quot;,
+                  &quot;DvbTdtSettings&quot;: {
+                    &quot;RepInterval&quot;: integer
+                  },
+                  &quot;DvbTeletextPid&quot;: &quot;string&quot;,
+                  &quot;Ebif&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;EbpAudioInterval&quot;: &quot;VIDEO_AND_FIXED_INTERVALS&quot;|&quot;VIDEO_INTERVAL&quot;,
+                  &quot;EbpLookaheadMs&quot;: integer,
+                  &quot;EbpPlacement&quot;: &quot;VIDEO_AND_AUDIO_PIDS&quot;|&quot;VIDEO_PID&quot;,
+                  &quot;EcmPid&quot;: &quot;string&quot;,
+                  &quot;EsRateInPes&quot;: &quot;EXCLUDE&quot;|&quot;INCLUDE&quot;,
+                  &quot;EtvPlatformPid&quot;: &quot;string&quot;,
+                  &quot;EtvSignalPid&quot;: &quot;string&quot;,
+                  &quot;FragmentTime&quot;: double,
+                  &quot;Klv&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;KlvDataPids&quot;: &quot;string&quot;,
+                  &quot;NullPacketBitrate&quot;: double,
+                  &quot;PatInterval&quot;: integer,
+                  &quot;PcrControl&quot;: &quot;CONFIGURED_PCR_PERIOD&quot;|&quot;PCR_EVERY_PES_PACKET&quot;,
+                  &quot;PcrPeriod&quot;: integer,
+                  &quot;PcrPid&quot;: &quot;string&quot;,
+                  &quot;PmtInterval&quot;: integer,
+                  &quot;PmtPid&quot;: &quot;string&quot;,
+                  &quot;ProgramNum&quot;: integer,
+                  &quot;RateMode&quot;: &quot;CBR&quot;|&quot;VBR&quot;,
+                  &quot;Scte27Pids&quot;: &quot;string&quot;,
+                  &quot;Scte35Control&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;Scte35Pid&quot;: &quot;string&quot;,
+                  &quot;SegmentationMarkers&quot;: &quot;EBP&quot;|&quot;EBP_LEGACY&quot;|&quot;NONE&quot;|&quot;PSI_SEGSTART&quot;|&quot;RAI_ADAPT&quot;|&quot;RAI_SEGSTART&quot;,
+                  &quot;SegmentationStyle&quot;: &quot;MAINTAIN_CADENCE&quot;|&quot;RESET_CADENCE&quot;,
+                  &quot;SegmentationTime&quot;: double,
+                  &quot;TimedMetadataBehavior&quot;: &quot;NO_PASSTHROUGH&quot;|&quot;PASSTHROUGH&quot;,
+                  &quot;TimedMetadataPid&quot;: &quot;string&quot;,
+                  &quot;TransportStreamId&quot;: integer,
+                  &quot;VideoPid&quot;: &quot;string&quot;
+                }
+              },
+              &quot;Destination&quot;: {
+                &quot;DestinationRefId&quot;: &quot;string&quot;
+              },
+              &quot;FecOutputSettings&quot;: {
+                &quot;ColumnDepth&quot;: integer,
+                &quot;IncludeFec&quot;: &quot;COLUMN&quot;|&quot;COLUMN_AND_ROW&quot;,
+                &quot;RowLength&quot;: integer
+              }
+            }
+          },
+          &quot;VideoDescriptionName&quot;: &quot;string&quot;
+        }
+        ...
+      ]
+    }
+    ...
+  ],
+  &quot;TimecodeConfig&quot;: {
+    &quot;Source&quot;: &quot;EMBEDDED&quot;|&quot;SYSTEMCLOCK&quot;|&quot;ZEROBASED&quot;,
+    &quot;SyncThreshold&quot;: integer
+  },
+  &quot;VideoDescriptions&quot;: [
+    {
+      &quot;CodecSettings&quot;: {
+        &quot;H264Settings&quot;: {
+          &quot;AdaptiveQuantization&quot;: &quot;HIGH&quot;|&quot;HIGHER&quot;|&quot;LOW&quot;|&quot;MAX&quot;|&quot;MEDIUM&quot;|&quot;OFF&quot;,
+          &quot;AfdSignaling&quot;: &quot;AUTO&quot;|&quot;FIXED&quot;|&quot;NONE&quot;,
+          &quot;Bitrate&quot;: integer,
+          &quot;BufFillPct&quot;: integer,
+          &quot;BufSize&quot;: integer,
+          &quot;ColorMetadata&quot;: &quot;IGNORE&quot;|&quot;INSERT&quot;,
+          &quot;EntropyEncoding&quot;: &quot;CABAC&quot;|&quot;CAVLC&quot;,
+          &quot;FixedAfd&quot;: &quot;AFD_0000&quot;|&quot;AFD_0010&quot;|&quot;AFD_0011&quot;|&quot;AFD_0100&quot;|&quot;AFD_1000&quot;|&quot;AFD_1001&quot;|&quot;AFD_1010&quot;|&quot;AFD_1011&quot;|&quot;AFD_1101&quot;|&quot;AFD_1110&quot;|&quot;AFD_1111&quot;,
+          &quot;FlickerAq&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;FramerateControl&quot;: &quot;INITIALIZE_FROM_SOURCE&quot;|&quot;SPECIFIED&quot;,
+          &quot;FramerateDenominator&quot;: integer,
+          &quot;FramerateNumerator&quot;: integer,
+          &quot;GopBReference&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;GopClosedCadence&quot;: integer,
+          &quot;GopNumBFrames&quot;: integer,
+          &quot;GopSize&quot;: double,
+          &quot;GopSizeUnits&quot;: &quot;FRAMES&quot;|&quot;SECONDS&quot;,
+          &quot;Level&quot;: &quot;H264_LEVEL_1&quot;|&quot;H264_LEVEL_1_1&quot;|&quot;H264_LEVEL_1_2&quot;|&quot;H264_LEVEL_1_3&quot;|&quot;H264_LEVEL_2&quot;|&quot;H264_LEVEL_2_1&quot;|&quot;H264_LEVEL_2_2&quot;|&quot;H264_LEVEL_3&quot;|&quot;H264_LEVEL_3_1&quot;|&quot;H264_LEVEL_3_2&quot;|&quot;H264_LEVEL_4&quot;|&quot;H264_LEVEL_4_1&quot;|&quot;H264_LEVEL_4_2&quot;|&quot;H264_LEVEL_5&quot;|&quot;H264_LEVEL_5_1&quot;|&quot;H264_LEVEL_5_2&quot;|&quot;H264_LEVEL_AUTO&quot;,
+          &quot;LookAheadRateControl&quot;: &quot;HIGH&quot;|&quot;LOW&quot;|&quot;MEDIUM&quot;,
+          &quot;MaxBitrate&quot;: integer,
+          &quot;MinIInterval&quot;: integer,
+          &quot;NumRefFrames&quot;: integer,
+          &quot;ParControl&quot;: &quot;INITIALIZE_FROM_SOURCE&quot;|&quot;SPECIFIED&quot;,
+          &quot;ParDenominator&quot;: integer,
+          &quot;ParNumerator&quot;: integer,
+          &quot;Profile&quot;: &quot;BASELINE&quot;|&quot;HIGH&quot;|&quot;HIGH_10BIT&quot;|&quot;HIGH_422&quot;|&quot;HIGH_422_10BIT&quot;|&quot;MAIN&quot;,
+          &quot;RateControlMode&quot;: &quot;CBR&quot;|&quot;VBR&quot;,
+          &quot;ScanType&quot;: &quot;INTERLACED&quot;|&quot;PROGRESSIVE&quot;,
+          &quot;SceneChangeDetect&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;Slices&quot;: integer,
+          &quot;Softness&quot;: integer,
+          &quot;SpatialAq&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;Syntax&quot;: &quot;DEFAULT&quot;|&quot;RP2027&quot;,
+          &quot;TemporalAq&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+          &quot;TimecodeInsertion&quot;: &quot;DISABLED&quot;|&quot;PIC_TIMING_SEI&quot;
+        }
+      },
+      &quot;Height&quot;: integer,
+      &quot;Name&quot;: &quot;string&quot;,
+      &quot;RespondToAfd&quot;: &quot;NONE&quot;|&quot;PASSTHROUGH&quot;|&quot;RESPOND&quot;,
+      &quot;ScalingBehavior&quot;: &quot;DEFAULT&quot;|&quot;STRETCH_TO_OUTPUT&quot;,
+      &quot;Sharpness&quot;: integer,
+      &quot;Width&quot;: integer
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--input-attachments</span></tt> (list)
+List of input attachments for channel.</p>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;InputId&quot;: &quot;string&quot;,
+    &quot;InputSettings&quot;: {
+      &quot;AudioSelectors&quot;: [
+        {
+          &quot;Name&quot;: &quot;string&quot;,
+          &quot;SelectorSettings&quot;: {
+            &quot;AudioLanguageSelection&quot;: {
+              &quot;LanguageCode&quot;: &quot;string&quot;,
+              &quot;LanguageSelectionPolicy&quot;: &quot;LOOSE&quot;|&quot;STRICT&quot;
+            },
+            &quot;AudioPidSelection&quot;: {
+              &quot;Pid&quot;: integer
+            }
+          }
+        }
+        ...
+      ],
+      &quot;CaptionSelectors&quot;: [
+        {
+          &quot;LanguageCode&quot;: &quot;string&quot;,
+          &quot;Name&quot;: &quot;string&quot;,
+          &quot;SelectorSettings&quot;: {
+            &quot;AribSourceSettings&quot;: {
+
+            },
+            &quot;DvbSubSourceSettings&quot;: {
+              &quot;Pid&quot;: integer
+            },
+            &quot;EmbeddedSourceSettings&quot;: {
+              &quot;Convert608To708&quot;: &quot;DISABLED&quot;|&quot;UPCONVERT&quot;,
+              &quot;Scte20Detection&quot;: &quot;AUTO&quot;|&quot;OFF&quot;,
+              &quot;Source608ChannelNumber&quot;: integer,
+              &quot;Source608TrackNumber&quot;: integer
+            },
+            &quot;Scte20SourceSettings&quot;: {
+              &quot;Convert608To708&quot;: &quot;DISABLED&quot;|&quot;UPCONVERT&quot;,
+              &quot;Source608ChannelNumber&quot;: integer
+            },
+            &quot;Scte27SourceSettings&quot;: {
+              &quot;Pid&quot;: integer
+            },
+            &quot;TeletextSourceSettings&quot;: {
+              &quot;PageNumber&quot;: &quot;string&quot;
+            }
+          }
+        }
+        ...
+      ],
+      &quot;DeblockFilter&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+      &quot;DenoiseFilter&quot;: &quot;DISABLED&quot;|&quot;ENABLED&quot;,
+      &quot;FilterStrength&quot;: integer,
+      &quot;InputFilter&quot;: &quot;AUTO&quot;|&quot;DISABLED&quot;|&quot;FORCED&quot;,
+      &quot;NetworkInputSettings&quot;: {
+        &quot;HlsInputSettings&quot;: {
+          &quot;Bandwidth&quot;: integer,
+          &quot;BufferSegments&quot;: integer,
+          &quot;Retries&quot;: integer,
+          &quot;RetryInterval&quot;: integer
+        },
+        &quot;ServerValidation&quot;: &quot;CHECK_CRYPTOGRAPHY_AND_VALIDATE_NAME&quot;|&quot;CHECK_CRYPTOGRAPHY_ONLY&quot;
+      },
+      &quot;SourceEndBehavior&quot;: &quot;CONTINUE&quot;|&quot;LOOP&quot;,
+      &quot;VideoSelector&quot;: {
+        &quot;ColorSpace&quot;: &quot;FOLLOW&quot;|&quot;REC_601&quot;|&quot;REC_709&quot;,
+        &quot;ColorSpaceUsage&quot;: &quot;FALLBACK&quot;|&quot;FORCE&quot;,
+        &quot;SelectorSettings&quot;: {
+          &quot;VideoSelectorPid&quot;: {
+            &quot;Pid&quot;: integer
+          },
+          &quot;VideoSelectorProgramId&quot;: {
+            &quot;ProgramId&quot;: integer
+          }
+        }
+      }
+    }
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--input-specification</span></tt> (structure)
+Specification of input for this channel (max. bitrate, resolution, codec, etc.)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Codec</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">MaximumBitrate</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">Resolution</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Codec&quot;</span><span class="p">:</span> <span class="s2">&quot;MPEG2&quot;</span><span class="o">|</span><span class="s2">&quot;AVC&quot;</span><span class="o">|</span><span class="s2">&quot;HEVC&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;MaximumBitrate&quot;</span><span class="p">:</span> <span class="s2">&quot;MAX_10_MBPS&quot;</span><span class="o">|</span><span class="s2">&quot;MAX_20_MBPS&quot;</span><span class="o">|</span><span class="s2">&quot;MAX_50_MBPS&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Resolution&quot;</span><span class="p">:</span> <span class="s2">&quot;SD&quot;</span><span class="o">|</span><span class="s2">&quot;HD&quot;</span><span class="o">|</span><span class="s2">&quot;UHD&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--log-level</span></tt> (string)
+The log level to write to CloudWatch Logs.</p>
+<blockquote>
+<div><p>Possible values:</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">ERROR</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">WARNING</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">INFO</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DEBUG</span></tt></li>
+<li><tt class="docutils literal"><span class="pre">DISABLED</span></tt></li>
+</ul>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)
+Name of channel.</p>
+<p><tt class="docutils literal"><span class="pre">--request-id</span></tt> (string)
+Unique request ID to be specified. This is needed to prevent retries from creating multiple resources.</p>
+<p><tt class="docutils literal"><span class="pre">--reserved</span></tt> (string)
+Deprecated field that's only usable by whitelisted customers.</p>
+<p><tt class="docutils literal"><span class="pre">--role-arn</span></tt> (string)
+An optional Amazon Resource Name (ARN) of the role to assume when running the Channel.</p>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>Channel -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Channel</p>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The unique arn of the channel.</div></blockquote>
+<p>Destinations -&gt; (list)</p>
+<blockquote>
+<div><p>A list of destinations of the channel. For UDP outputs, there is one destination per output. For other types (HLS, for example), there is one destination per packager.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for OutputDestination</p>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>User-specified id. This is used in an output group or an output.</div></blockquote>
+<p>Settings -&gt; (list)</p>
+<blockquote>
+<div><p>Destination settings for output; one for each redundant encoder.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for OutputDestinationSettings</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>StreamName -&gt; (string)</p>
+<blockquote>
+<div>Stream name for RTMP destinations (URLs of type rtmp://)</div></blockquote>
+<p>Url -&gt; (string)</p>
+<blockquote>
+<div>A URL specifying a destination</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>username for destination</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EgressEndpoints -&gt; (list)</p>
+<blockquote>
+<div><p>The endpoints where outgoing connections initiate from</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for ChannelEgressEndpoint</p>
+<p>SourceIp -&gt; (string)</p>
+<blockquote>
+<div>Public IP of where a channel's output comes from</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>EncoderSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for EncoderSettings</p>
+<p>AudioDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>Placeholder documentation for __listOfAudioDescription</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AudioDescription</p>
+<p>AudioNormalizationSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Advanced audio normalization settings.</p>
+<p>Algorithm -&gt; (string)</p>
+<blockquote>
+<div>Audio normalization algorithm to use. itu17701 conforms to the CALM Act specification, itu17702 conforms to the EBU R-128 specification.</div></blockquote>
+<p>AlgorithmControl -&gt; (string)</p>
+<blockquote>
+<div>When set to correctAudio the output audio is corrected using the chosen algorithm. If set to measureOnly, the audio will be measured but not adjusted.</div></blockquote>
+<p>TargetLkfs -&gt; (double)</p>
+<blockquote>
+<div>Target LKFS(loudness) to adjust volume to. If no value is entered, a default value will be used according to the chosen algorithm. The CALM Act (1770-1) recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends a target of -23 LKFS.</div></blockquote>
+</div></blockquote>
+<p>AudioSelectorName -&gt; (string)</p>
+<blockquote>
+<div>The name of the AudioSelector used as the source for this AudioDescription.</div></blockquote>
+<p>AudioType -&gt; (string)</p>
+<blockquote>
+<div>Applies only if audioTypeControl is useConfigured. The values for audioType are defined in ISO-IEC 13818-1.</div></blockquote>
+<p>AudioTypeControl -&gt; (string)</p>
+<blockquote>
+<div>Determines how audio type is determined. followInput: If the input contains an ISO 639 audioType, then that value is passed through to the output. If the input contains no ISO 639 audioType, the value in Audio Type is included in the output. useConfigured: The value in Audio Type is included in the output. Note that this field and audioType are both ignored if inputType is broadcasterMixedAd.</div></blockquote>
+<p>CodecSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Audio codec settings.</p>
+<p>AacSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AacSettings</p>
+<p>Bitrate -&gt; (double)</p>
+<blockquote>
+<div>Average bitrate in bits/second. Valid values depend on rate control mode and profile.</div></blockquote>
+<p>CodingMode -&gt; (string)</p>
+<blockquote>
+<div>Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode and profile. The adReceiverMix setting receives a stereo description plus control track and emits a mono AAC encode of the description track, with control data emitted in the PES header as per ETSI TS 101 154 Annex E.</div></blockquote>
+<p>InputType -&gt; (string)</p>
+<blockquote>
+<div>Set to &quot;broadcasterMixedAd&quot; when input contains pre-mixed main audio + AD (narration) as a stereo pair. The Audio Type field (audioType) will be set to 3, which signals to downstream systems that this stream contains &quot;broadcaster mixed AD&quot;. Note that the input received by the encoder must contain pre-mixed audio; the encoder does not perform the mixing. The values in audioTypeControl and audioType (in AudioDescription) are ignored when set to broadcasterMixedAd. Leave set to &quot;normal&quot; when input does not contain pre-mixed audio + AD.</div></blockquote>
+<p>Profile -&gt; (string)</p>
+<blockquote>
+<div>AAC Profile.</div></blockquote>
+<p>RateControlMode -&gt; (string)</p>
+<blockquote>
+<div>Rate Control Mode.</div></blockquote>
+<p>RawFormat -&gt; (string)</p>
+<blockquote>
+<div>Sets LATM / LOAS AAC output for raw containers.</div></blockquote>
+<p>SampleRate -&gt; (double)</p>
+<blockquote>
+<div>Sample rate in Hz. Valid values depend on rate control mode and profile.</div></blockquote>
+<p>Spec -&gt; (string)</p>
+<blockquote>
+<div>Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport Stream containers.</div></blockquote>
+<p>VbrQuality -&gt; (string)</p>
+<blockquote>
+<div>VBR Quality Level - Only used if rateControlMode is VBR.</div></blockquote>
+</div></blockquote>
+<p>Ac3Settings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Ac3Settings</p>
+<p>Bitrate -&gt; (double)</p>
+<blockquote>
+<div>Average bitrate in bits/second. Valid bitrates depend on the coding mode.</div></blockquote>
+<p>BitstreamMode -&gt; (string)</p>
+<blockquote>
+<div>Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC A/52-2012 for background on these values.</div></blockquote>
+<p>CodingMode -&gt; (string)</p>
+<blockquote>
+<div>Dolby Digital coding mode. Determines number of channels.</div></blockquote>
+<p>Dialnorm -&gt; (integer)</p>
+<blockquote>
+<div>Sets the dialnorm for the output. If excluded and input audio is Dolby Digital, dialnorm will be passed through.</div></blockquote>
+<p>DrcProfile -&gt; (string)</p>
+<blockquote>
+<div>If set to filmStandard, adds dynamic range compression signaling to the output bitstream as defined in the Dolby Digital specification.</div></blockquote>
+<p>LfeFilter -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid in codingMode32Lfe mode.</div></blockquote>
+<p>MetadataControl -&gt; (string)</p>
+<blockquote>
+<div>When set to &quot;followInput&quot;, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.</div></blockquote>
+</div></blockquote>
+<p>Eac3Settings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Eac3Settings</p>
+<p>AttenuationControl -&gt; (string)</p>
+<blockquote>
+<div>When set to attenuate3Db, applies a 3 dB attenuation to the surround channels. Only used for 3/2 coding mode.</div></blockquote>
+<p>Bitrate -&gt; (double)</p>
+<blockquote>
+<div>Average bitrate in bits/second. Valid bitrates depend on the coding mode.</div></blockquote>
+<p>BitstreamMode -&gt; (string)</p>
+<blockquote>
+<div>Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC A/52-2012 (Annex E) for background on these values.</div></blockquote>
+<p>CodingMode -&gt; (string)</p>
+<blockquote>
+<div>Dolby Digital Plus coding mode. Determines number of channels.</div></blockquote>
+<p>DcFilter -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, activates a DC highpass filter for all input channels.</div></blockquote>
+<p>Dialnorm -&gt; (integer)</p>
+<blockquote>
+<div>Sets the dialnorm for the output. If blank and input audio is Dolby Digital Plus, dialnorm will be passed through.</div></blockquote>
+<p>DrcLine -&gt; (string)</p>
+<blockquote>
+<div>Sets the Dolby dynamic range compression profile.</div></blockquote>
+<p>DrcRf -&gt; (string)</p>
+<blockquote>
+<div>Sets the profile for heavy Dolby dynamic range compression, ensures that the instantaneous signal peaks do not exceed specified levels.</div></blockquote>
+<p>LfeControl -&gt; (string)</p>
+<blockquote>
+<div>When encoding 3/2 audio, setting to lfe enables the LFE channel</div></blockquote>
+<p>LfeFilter -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with codingMode32 coding mode.</div></blockquote>
+<p>LoRoCenterMixLevel -&gt; (double)</p>
+<blockquote>
+<div>Left only/Right only center mix level. Only used for 3/2 coding mode.</div></blockquote>
+<p>LoRoSurroundMixLevel -&gt; (double)</p>
+<blockquote>
+<div>Left only/Right only surround mix level. Only used for 3/2 coding mode.</div></blockquote>
+<p>LtRtCenterMixLevel -&gt; (double)</p>
+<blockquote>
+<div>Left total/Right total center mix level. Only used for 3/2 coding mode.</div></blockquote>
+<p>LtRtSurroundMixLevel -&gt; (double)</p>
+<blockquote>
+<div>Left total/Right total surround mix level. Only used for 3/2 coding mode.</div></blockquote>
+<p>MetadataControl -&gt; (string)</p>
+<blockquote>
+<div>When set to followInput, encoder metadata will be sourced from the DD, DD+, or DolbyE decoder that supplied this audio data. If audio was not supplied from one of these streams, then the static metadata settings will be used.</div></blockquote>
+<p>PassthroughControl -&gt; (string)</p>
+<blockquote>
+<div>When set to whenPossible, input DD+ audio will be passed through if it is present on the input. This detection is dynamic over the life of the transcode. Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+ output as the system alternates between passthrough and encoding.</div></blockquote>
+<p>PhaseControl -&gt; (string)</p>
+<blockquote>
+<div>When set to shift90Degrees, applies a 90-degree phase shift to the surround channels. Only used for 3/2 coding mode.</div></blockquote>
+<p>StereoDownmix -&gt; (string)</p>
+<blockquote>
+<div>Stereo downmix preference. Only used for 3/2 coding mode.</div></blockquote>
+<p>SurroundExMode -&gt; (string)</p>
+<blockquote>
+<div>When encoding 3/2 audio, sets whether an extra center back surround channel is matrix encoded into the left and right surround channels.</div></blockquote>
+<p>SurroundMode -&gt; (string)</p>
+<blockquote>
+<div>When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the two channels.</div></blockquote>
+</div></blockquote>
+<p>Mp2Settings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Mp2Settings</p>
+<p>Bitrate -&gt; (double)</p>
+<blockquote>
+<div>Average bitrate in bits/second.</div></blockquote>
+<p>CodingMode -&gt; (string)</p>
+<blockquote>
+<div>The MPEG2 Audio coding mode. Valid values are codingMode10 (for mono) or codingMode20 (for stereo).</div></blockquote>
+<p>SampleRate -&gt; (double)</p>
+<blockquote>
+<div>Sample rate in Hz.</div></blockquote>
+</div></blockquote>
+<p>PassThroughSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for PassThroughSettings</div></blockquote>
+</div></blockquote>
+<p>LanguageCode -&gt; (string)</p>
+<blockquote>
+<div>Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.</div></blockquote>
+<p>LanguageCodeControl -&gt; (string)</p>
+<blockquote>
+<div>Choosing followInput will cause the ISO 639 language code of the output to follow the ISO 639 language code of the input. The languageCode will be used when useConfigured is set, or when followInput is selected but there is no ISO 639 language code specified by the input.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of this AudioDescription. Outputs will use this name to uniquely identify this AudioDescription. Description names should be unique within this Live Event.</div></blockquote>
+<p>RemixSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings that control how input audio channels are remixed into the output audio channels.</p>
+<p>ChannelMappings -&gt; (list)</p>
+<blockquote>
+<div><p>Mapping of input channels to output channels, with appropriate gain adjustments.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AudioChannelMapping</p>
+<p>InputChannelLevels -&gt; (list)</p>
+<blockquote>
+<div><p>Indices and gain values for each input channel that should be remixed into this output channel.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for InputChannelLevel</p>
+<p>Gain -&gt; (integer)</p>
+<blockquote>
+<div>Remixing value. Units are in dB and acceptable values are within the range from -60 (mute) and 6 dB.</div></blockquote>
+<p>InputChannel -&gt; (integer)</p>
+<blockquote>
+<div>The index of the input channel used as a source.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>OutputChannel -&gt; (integer)</p>
+<blockquote>
+<div>The index of the output channel being produced.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ChannelsIn -&gt; (integer)</p>
+<blockquote>
+<div>Number of input channels to be used.</div></blockquote>
+<p>ChannelsOut -&gt; (integer)</p>
+<blockquote>
+<div>Number of output channels to be produced. Valid values: 1, 2, 4, 6, 8</div></blockquote>
+</div></blockquote>
+<p>StreamName -&gt; (string)</p>
+<blockquote>
+<div>Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the player (eg. English, or Director Commentary).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AvailBlanking -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings for ad avail blanking.</p>
+<p>AvailBlankingImage -&gt; (structure)</p>
+<blockquote>
+<div><p>Blanking image to be used. Leave empty for solid black. Only bmp and png images are supported.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, causes video, audio and captions to be blanked when insertion metadata is added.</div></blockquote>
+</div></blockquote>
+<p>AvailConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Event-wide configuration settings for ad avail insertion.</p>
+<p>AvailSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Ad avail settings.</p>
+<p>Scte35SpliceInsert -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Scte35SpliceInsert</p>
+<p>AdAvailOffset -&gt; (integer)</p>
+<blockquote>
+<div>When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.</div></blockquote>
+<p>NoRegionalBlackoutFlag -&gt; (string)</p>
+<blockquote>
+<div>When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates</div></blockquote>
+<p>WebDeliveryAllowedFlag -&gt; (string)</p>
+<blockquote>
+<div>When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates</div></blockquote>
+</div></blockquote>
+<p>Scte35TimeSignalApos -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Scte35TimeSignalApos</p>
+<p>AdAvailOffset -&gt; (integer)</p>
+<blockquote>
+<div>When specified, this offset (in milliseconds) is added to the input Ad Avail PTS time. This only applies to embedded SCTE 104/35 messages and does not apply to OOB messages.</div></blockquote>
+<p>NoRegionalBlackoutFlag -&gt; (string)</p>
+<blockquote>
+<div>When set to ignore, Segment Descriptors with noRegionalBlackoutFlag set to 0 will no longer trigger blackouts or Ad Avail slates</div></blockquote>
+<p>WebDeliveryAllowedFlag -&gt; (string)</p>
+<blockquote>
+<div>When set to ignore, Segment Descriptors with webDeliveryAllowedFlag set to 0 will no longer trigger blackouts or Ad Avail slates</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>BlackoutSlate -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings for blackout slate.</p>
+<p>BlackoutSlateImage -&gt; (structure)</p>
+<blockquote>
+<div><p>Blackout slate image to be used. Leave empty for solid black. Only bmp and png images are supported.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>NetworkEndBlackout -&gt; (string)</p>
+<blockquote>
+<div>Setting to enabled causes the encoder to blackout the video, audio, and captions, and raise the &quot;Network Blackout Image&quot; slate when an SCTE104/35 Network End Segmentation Descriptor is encountered. The blackout will be lifted when the Network Start Segmentation Descriptor is encountered. The Network End and Network Start descriptors must contain a network ID that matches the value entered in &quot;Network ID&quot;.</div></blockquote>
+<p>NetworkEndBlackoutImage -&gt; (structure)</p>
+<blockquote>
+<div><p>Path to local file to use as Network End Blackout image. Image will be scaled to fill the entire output raster.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>NetworkId -&gt; (string)</p>
+<blockquote>
+<div>Provides Network ID that matches EIDR ID format (e.g., &quot;10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C&quot;).</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, causes video, audio and captions to be blanked when indicated by program metadata.</div></blockquote>
+</div></blockquote>
+<p>CaptionDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>Settings for caption decriptions</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Output groups for this Live Event. Output groups contain information about where streams should be distributed.</p>
+<p>CaptionSelectorName -&gt; (string)</p>
+<blockquote>
+<div>Specifies which input caption selector to use as a caption source when generating output captions. This field should match a captionSelector name.</div></blockquote>
+<p>DestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Additional settings for captions destination that depend on the destination type.</p>
+<p>AribDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for AribDestinationSettings</div></blockquote>
+<p>BurnInDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for BurnInDestinationSettings</p>
+<p>Alignment -&gt; (string)</p>
+<blockquote>
+<div>If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting &quot;smart&quot; justification will left-justify live subtitles and center-justify pre-recorded subtitles. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>BackgroundColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>BackgroundOpacity -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>Font -&gt; (structure)</p>
+<blockquote>
+<div><p>External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>FontColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>FontOpacity -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>FontResolution -&gt; (integer)</p>
+<blockquote>
+<div>Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>FontSize -&gt; (string)</p>
+<blockquote>
+<div>When set to 'auto' fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>OutlineColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>OutlineSize -&gt; (integer)</p>
+<blockquote>
+<div>Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowOpacity -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter out is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowXOffset -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowYOffset -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>TeletextGridControl -&gt; (string)</p>
+<blockquote>
+<div>Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.</div></blockquote>
+<p>XPosition -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>YPosition -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+</div></blockquote>
+<p>DvbSubDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for DvbSubDestinationSettings</p>
+<p>Alignment -&gt; (string)</p>
+<blockquote>
+<div>If no explicit xPosition or yPosition is provided, setting alignment to centered will place the captions at the bottom center of the output. Similarly, setting a left alignment will align captions to the bottom left of the output. If x and y positions are given in conjunction with the alignment parameter, the font will be justified (either left or centered) relative to those coordinates. Selecting &quot;smart&quot; justification will left-justify live subtitles and center-justify pre-recorded subtitles. This option is not valid for source captions that are STL or 608/embedded. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>BackgroundColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies the color of the rectangle behind the captions. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>BackgroundOpacity -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the opacity of the background rectangle. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>Font -&gt; (structure)</p>
+<blockquote>
+<div><p>External font file used for caption burn-in. File extension must be 'ttf' or 'tte'. Although the user can select output fonts for many different types of input captions, embedded, STL and teletext sources use a strict grid system. Using external fonts with these caption sources could cause unexpected display of proportional fonts. All burn-in and DVB-Sub font settings must match.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>FontColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies the color of the burned-in captions. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>FontOpacity -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the opacity of the burned-in captions. 255 is opaque; 0 is transparent. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>FontResolution -&gt; (integer)</p>
+<blockquote>
+<div>Font resolution in DPI (dots per inch); default is 96 dpi. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>FontSize -&gt; (string)</p>
+<blockquote>
+<div>When set to auto fontSize will scale depending on the size of the output. Giving a positive integer will specify the exact font size in points. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>OutlineColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies font outline color. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>OutlineSize -&gt; (integer)</p>
+<blockquote>
+<div>Specifies font outline size in pixels. This option is not valid for source captions that are either 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowColor -&gt; (string)</p>
+<blockquote>
+<div>Specifies the color of the shadow cast by the captions. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowOpacity -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the opacity of the shadow. 255 is opaque; 0 is transparent. Leaving this parameter blank is equivalent to setting it to 0 (transparent). All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowXOffset -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the horizontal offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels to the left. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>ShadowYOffset -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the vertical offset of the shadow relative to the captions in pixels. A value of -2 would result in a shadow offset 2 pixels above the text. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>TeletextGridControl -&gt; (string)</p>
+<blockquote>
+<div>Controls whether a fixed grid size will be used to generate the output subtitles bitmap. Only applicable for Teletext inputs and DVB-Sub/Burn-in outputs.</div></blockquote>
+<p>XPosition -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the horizontal position of the caption relative to the left side of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the left of the output. If no explicit xPosition is provided, the horizontal caption position will be determined by the alignment parameter. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+<p>YPosition -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the vertical position of the caption relative to the top of the output in pixels. A value of 10 would result in the captions starting 10 pixels from the top of the output. If no explicit yPosition is provided, the caption will be positioned towards the bottom of the output. This option is not valid for source captions that are STL, 608/embedded or teletext. These source settings are already pre-defined by the caption stream. All burn-in and DVB-Sub font settings must match.</div></blockquote>
+</div></blockquote>
+<p>EmbeddedDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for EmbeddedDestinationSettings</div></blockquote>
+<p>EmbeddedPlusScte20DestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for EmbeddedPlusScte20DestinationSettings</div></blockquote>
+<p>RtmpCaptionInfoDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for RtmpCaptionInfoDestinationSettings</div></blockquote>
+<p>Scte20PlusEmbeddedDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for Scte20PlusEmbeddedDestinationSettings</div></blockquote>
+<p>Scte27DestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for Scte27DestinationSettings</div></blockquote>
+<p>SmpteTtDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for SmpteTtDestinationSettings</div></blockquote>
+<p>TeletextDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for TeletextDestinationSettings</div></blockquote>
+<p>TtmlDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for TtmlDestinationSettings</p>
+<p>StyleControl -&gt; (string)</p>
+<blockquote>
+<div>When set to passthrough, passes through style and position information from a TTML-like input source (TTML, SMPTE-TT, CFF-TT) to the CFF-TT output or TTML output.</div></blockquote>
+</div></blockquote>
+<p>WebvttDestinationSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for WebvttDestinationSettings</div></blockquote>
+</div></blockquote>
+<p>LanguageCode -&gt; (string)</p>
+<blockquote>
+<div>ISO 639-2 three-digit code: <a class="reference external" href="http://www.loc.gov/standards/iso639-2/">http://www.loc.gov/standards/iso639-2/</a></div></blockquote>
+<p>LanguageDescription -&gt; (string)</p>
+<blockquote>
+<div>Human readable information to indicate captions available for players (eg. English, or Spanish).</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name of the caption description. Used to associate a caption description with an output. Names must be unique within an event.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>GlobalConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Configuration settings that apply to the event as a whole.</p>
+<p>InitialAudioGain -&gt; (integer)</p>
+<blockquote>
+<div>Value to set the initial audio gain for the Live Event.</div></blockquote>
+<p>InputEndAction -&gt; (string)</p>
+<blockquote>
+<div>Indicates the action to take when an input completes (e.g. end-of-file.) Options include immediately switching to the next sequential input (via &quot;switchInput&quot;), switching to the next input and looping back to the first input when last input ends (via &quot;switchAndLoopInputs&quot;) or not switching inputs and instead transcoding black / color / slate images per the &quot;Input Loss Behavior&quot; configuration until an activateInput REST command is received (via &quot;none&quot;).</div></blockquote>
+<p>InputLossBehavior -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings for system actions when input is lost.</p>
+<p>BlackFrameMsec -&gt; (integer)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+<p>InputLossImageColor -&gt; (string)</p>
+<blockquote>
+<div>When input loss image type is &quot;color&quot; this field specifies the color to use. Value: 6 hex characters representing the values of RGB.</div></blockquote>
+<p>InputLossImageSlate -&gt; (structure)</p>
+<blockquote>
+<div><p>When input loss image type is &quot;slate&quot; these fields specify the parameters for accessing the slate.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>InputLossImageType -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether to substitute a solid color or a slate into the output after input loss exceeds blackFrameMsec.</div></blockquote>
+<p>RepeatFrameMsec -&gt; (integer)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>OutputTimingSource -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether the rate of frames emitted by the Live encoder should be paced by its system clock (which optionally may be locked to another source via NTP) or should be locked to the clock of the source that is providing the input stream.</div></blockquote>
+<p>SupportLowFramerateInputs -&gt; (string)</p>
+<blockquote>
+<div>Adjusts video input buffer for streams with very low video framerates. This is commonly set to enabled for music channels with less than one video frame per second.</div></blockquote>
+</div></blockquote>
+<p>OutputGroups -&gt; (list)</p>
+<blockquote>
+<div><p>Placeholder documentation for __listOfOutputGroup</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Output groups for this Live Event. Output groups contain information about where streams should be distributed.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Custom output group name optionally defined by the user. Only letters, numbers, and the underscore character allowed; only 32 characters allowed.</div></blockquote>
+<p>OutputGroupSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings associated with the output group.</p>
+<p>ArchiveGroupSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for ArchiveGroupSettings</p>
+<p>Destination -&gt; (structure)</p>
+<blockquote>
+<div><p>A directory and base filename where archive files should be written. If the base filename portion of the URI is left blank, the base filename of the first input will be automatically inserted.</p>
+<p>DestinationRefId -&gt; (string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>RolloverInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to write to archive file before closing and starting a new one.</div></blockquote>
+</div></blockquote>
+<p>HlsGroupSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for HlsGroupSettings</p>
+<p>AdMarkers -&gt; (list)</p>
+<blockquote>
+<div><p>Choose one or more ad marker types to pass SCTE35 signals through to this group of Apple HLS outputs.</p>
+<p>(string)</p>
+<blockquote>
+<div>Placeholder documentation for HlsAdMarkers</div></blockquote>
+</div></blockquote>
+<p>BaseUrlContent -&gt; (string)</p>
+<blockquote>
+<div>A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.</div></blockquote>
+<p>BaseUrlManifest -&gt; (string)</p>
+<blockquote>
+<div>A partial URI prefix that will be prepended to each output in the media .m3u8 file. Can be used if base manifest is delivered from a different URL than the main .m3u8 file.</div></blockquote>
+<p>CaptionLanguageMappings -&gt; (list)</p>
+<blockquote>
+<div><p>Mapping of up to 4 caption channels to caption languages. Is only meaningful if captionLanguageSetting is set to &quot;insert&quot;.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Maps a caption channel to an ISO 693-2 language code (<a class="reference external" href="http://www.loc.gov/standards/iso639-2">http://www.loc.gov/standards/iso639-2</a>), with an optional description.</p>
+<p>CaptionChannel -&gt; (integer)</p>
+<blockquote>
+<div>The closed caption channel being described by this CaptionLanguageMapping. Each channel mapping must have a unique channel number (maximum of 4)</div></blockquote>
+<p>LanguageCode -&gt; (string)</p>
+<blockquote>
+<div>Three character ISO 639-2 language code (see <a class="reference external" href="http://www.loc.gov/standards/iso639-2">http://www.loc.gov/standards/iso639-2</a>)</div></blockquote>
+<p>LanguageDescription -&gt; (string)</p>
+<blockquote>
+<div>Textual description of language</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CaptionLanguageSetting -&gt; (string)</p>
+<blockquote>
+<div>Applies only to 608 Embedded output captions. insert: Include CLOSED-CAPTIONS lines in the manifest. Specify at least one language in the CC1 Language Code field. One CLOSED-CAPTION line is added for each Language Code you specify. Make sure to specify the languages in the order in which they appear in the original source (if the source is embedded format) or the order of the caption selectors (if the source is other than embedded). Otherwise, languages in the manifest will not match up properly with the output captions. none: Include CLOSED-CAPTIONS=NONE line in the manifest. omit: Omit any CLOSED-CAPTIONS line from the manifest.</div></blockquote>
+<p>ClientCache -&gt; (string)</p>
+<blockquote>
+<div>When set to &quot;disabled&quot;, sets the #EXT-X-ALLOW-CACHE:no tag in the manifest, which prevents clients from saving media segments for later replay.</div></blockquote>
+<p>CodecSpecification -&gt; (string)</p>
+<blockquote>
+<div>Specification to use (RFC-6381 or the default RFC-4281) during m3u8 playlist generation.</div></blockquote>
+<p>ConstantIv -&gt; (string)</p>
+<blockquote>
+<div>For use with encryptionType. This is a 128-bit, 16-byte hex value represented by a 32-character text string. If ivSource is set to &quot;explicit&quot; then this parameter is required and is used as the IV for encryption.</div></blockquote>
+<p>Destination -&gt; (structure)</p>
+<blockquote>
+<div><p>A directory or HTTP destination for the HLS segments, manifest files, and encryption keys (if enabled).</p>
+<p>DestinationRefId -&gt; (string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>DirectoryStructure -&gt; (string)</p>
+<blockquote>
+<div>Place segments in subdirectories.</div></blockquote>
+<p>EncryptionType -&gt; (string)</p>
+<blockquote>
+<div>Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.</div></blockquote>
+<p>HlsCdnSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Parameters that control interactions with the CDN.</p>
+<p>HlsAkamaiSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for HlsAkamaiSettings</p>
+<p>ConnectionRetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to wait before retrying connection to the CDN if the connection is lost.</div></blockquote>
+<p>FilecacheDuration -&gt; (integer)</p>
+<blockquote>
+<div>Size in seconds of file cache for streaming outputs.</div></blockquote>
+<p>HttpTransferMode -&gt; (string)</p>
+<blockquote>
+<div>Specify whether or not to use chunked transfer encoding to Akamai. User should contact Akamai to enable this feature.</div></blockquote>
+<p>NumRetries -&gt; (integer)</p>
+<blockquote>
+<div>Number of retry attempts that will be made before the Live Event is put into an error state.</div></blockquote>
+<p>RestartDelay -&gt; (integer)</p>
+<blockquote>
+<div>If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.</div></blockquote>
+<p>Salt -&gt; (string)</p>
+<blockquote>
+<div>Salt for authenticated Akamai.</div></blockquote>
+<p>Token -&gt; (string)</p>
+<blockquote>
+<div>Token parameter for authenticated akamai. If not specified, _gda_ is used.</div></blockquote>
+</div></blockquote>
+<p>HlsBasicPutSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for HlsBasicPutSettings</p>
+<p>ConnectionRetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to wait before retrying connection to the CDN if the connection is lost.</div></blockquote>
+<p>FilecacheDuration -&gt; (integer)</p>
+<blockquote>
+<div>Size in seconds of file cache for streaming outputs.</div></blockquote>
+<p>NumRetries -&gt; (integer)</p>
+<blockquote>
+<div>Number of retry attempts that will be made before the Live Event is put into an error state.</div></blockquote>
+<p>RestartDelay -&gt; (integer)</p>
+<blockquote>
+<div>If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.</div></blockquote>
+</div></blockquote>
+<p>HlsMediaStoreSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for HlsMediaStoreSettings</p>
+<p>ConnectionRetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to wait before retrying connection to the CDN if the connection is lost.</div></blockquote>
+<p>FilecacheDuration -&gt; (integer)</p>
+<blockquote>
+<div>Size in seconds of file cache for streaming outputs.</div></blockquote>
+<p>MediaStoreStorageClass -&gt; (string)</p>
+<blockquote>
+<div>When set to temporal, output files are stored in non-persistent memory for faster reading and writing.</div></blockquote>
+<p>NumRetries -&gt; (integer)</p>
+<blockquote>
+<div>Number of retry attempts that will be made before the Live Event is put into an error state.</div></blockquote>
+<p>RestartDelay -&gt; (integer)</p>
+<blockquote>
+<div>If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.</div></blockquote>
+</div></blockquote>
+<p>HlsWebdavSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for HlsWebdavSettings</p>
+<p>ConnectionRetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to wait before retrying connection to the CDN if the connection is lost.</div></blockquote>
+<p>FilecacheDuration -&gt; (integer)</p>
+<blockquote>
+<div>Size in seconds of file cache for streaming outputs.</div></blockquote>
+<p>HttpTransferMode -&gt; (string)</p>
+<blockquote>
+<div>Specify whether or not to use chunked transfer encoding to WebDAV.</div></blockquote>
+<p>NumRetries -&gt; (integer)</p>
+<blockquote>
+<div>Number of retry attempts that will be made before the Live Event is put into an error state.</div></blockquote>
+<p>RestartDelay -&gt; (integer)</p>
+<blockquote>
+<div>If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>IndexNSegments -&gt; (integer)</p>
+<blockquote>
+<div>If mode is &quot;live&quot;, the number of segments to retain in the manifest (.m3u8) file. This number must be less than or equal to keepSegments. If mode is &quot;vod&quot;, this parameter has no effect.</div></blockquote>
+<p>InputLossAction -&gt; (string)</p>
+<blockquote>
+<div>Parameter that control output group behavior on input loss.</div></blockquote>
+<p>IvInManifest -&gt; (string)</p>
+<blockquote>
+<div>For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If set to &quot;include&quot;, IV is listed in the manifest, otherwise the IV is not in the manifest.</div></blockquote>
+<p>IvSource -&gt; (string)</p>
+<blockquote>
+<div>For use with encryptionType. The IV (Initialization Vector) is a 128-bit number used in conjunction with the key for encrypting blocks. If this setting is &quot;followsSegmentNumber&quot;, it will cause the IV to change every segment (to match the segment number). If this is set to &quot;explicit&quot;, you must enter a constantIv value.</div></blockquote>
+<p>KeepSegments -&gt; (integer)</p>
+<blockquote>
+<div>If mode is &quot;live&quot;, the number of TS segments to retain in the destination directory. If mode is &quot;vod&quot;, this parameter has no effect.</div></blockquote>
+<p>KeyFormat -&gt; (string)</p>
+<blockquote>
+<div>The value specifies how the key is represented in the resource identified by the URI. If parameter is absent, an implicit value of &quot;identity&quot; is used. A reverse DNS string can also be given.</div></blockquote>
+<p>KeyFormatVersions -&gt; (string)</p>
+<blockquote>
+<div>Either a single positive integer version value or a slash delimited list of version values (1/2/3).</div></blockquote>
+<p>KeyProviderSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>The key provider settings.</p>
+<p>StaticKeySettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for StaticKeySettings</p>
+<p>KeyProviderServer -&gt; (structure)</p>
+<blockquote>
+<div><p>The URL of the license server used for protecting content.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>StaticKeyValue -&gt; (string)</p>
+<blockquote>
+<div>Static key value as a 32 character hexadecimal string.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ManifestCompression -&gt; (string)</p>
+<blockquote>
+<div>When set to gzip, compresses HLS playlist.</div></blockquote>
+<p>ManifestDurationFormat -&gt; (string)</p>
+<blockquote>
+<div>Indicates whether the output manifest should use floating point or integer values for segment duration.</div></blockquote>
+<p>MinSegmentLength -&gt; (integer)</p>
+<blockquote>
+<div>When set, minimumSegmentLength is enforced by looking ahead and back within the specified range for a nearby avail and extending the segment size if needed.</div></blockquote>
+<p>Mode -&gt; (string)</p>
+<blockquote>
+<div>If &quot;vod&quot;, all segments are indexed and kept permanently in the destination and manifest. If &quot;live&quot;, only the number segments specified in keepSegments and indexNSegments are kept; newer segments replace older segments, which may prevent players from rewinding all the way to the beginning of the event. VOD mode uses HLS EXT-X-PLAYLIST-TYPE of EVENT while the channel is running, converting it to a &quot;VOD&quot; type manifest on completion of the stream.</div></blockquote>
+<p>OutputSelection -&gt; (string)</p>
+<blockquote>
+<div>Generates the .m3u8 playlist file for this HLS output group. The segmentsOnly option will output segments without the .m3u8 file.</div></blockquote>
+<p>ProgramDateTime -&gt; (string)</p>
+<blockquote>
+<div>Includes or excludes EXT-X-PROGRAM-DATE-TIME tag in .m3u8 manifest files. The value is calculated as follows: either the program date and time are initialized using the input timecode source, or the time is initialized using the input timecode source and the date is initialized using the timestampOffset.</div></blockquote>
+<p>ProgramDateTimePeriod -&gt; (integer)</p>
+<blockquote>
+<div>Period of insertion of EXT-X-PROGRAM-DATE-TIME entry, in seconds.</div></blockquote>
+<p>SegmentLength -&gt; (integer)</p>
+<blockquote>
+<div>Length of MPEG-2 Transport Stream segments to create (in seconds). Note that segments will end on the next keyframe after this number of seconds, so actual segment length may be longer.</div></blockquote>
+<p>SegmentationMode -&gt; (string)</p>
+<blockquote>
+<div>When set to useInputSegmentation, the output segment or fragment points are set by the RAI markers from the input streams.</div></blockquote>
+<p>SegmentsPerSubdirectory -&gt; (integer)</p>
+<blockquote>
+<div>Number of segments to write to a subdirectory before starting a new one. directoryStructure must be subdirectoryPerStream for this setting to have an effect.</div></blockquote>
+<p>StreamInfResolution -&gt; (string)</p>
+<blockquote>
+<div>Include or exclude RESOLUTION attribute for video in EXT-X-STREAM-INF tag of variant manifest.</div></blockquote>
+<p>TimedMetadataId3Frame -&gt; (string)</p>
+<blockquote>
+<div>Indicates ID3 frame that has the timecode.</div></blockquote>
+<p>TimedMetadataId3Period -&gt; (integer)</p>
+<blockquote>
+<div>Timed Metadata interval in seconds.</div></blockquote>
+<p>TimestampDeltaMilliseconds -&gt; (integer)</p>
+<blockquote>
+<div>Provides an extra millisecond delta offset to fine tune the timestamps.</div></blockquote>
+<p>TsFileMode -&gt; (string)</p>
+<blockquote>
+<div>When set to &quot;singleFile&quot;, emits the program as a single media resource (.ts) file, and uses #EXT-X-BYTERANGE tags to index segment for playback. Playback of VOD mode content during event is not guaranteed due to HTTP server caching.</div></blockquote>
+</div></blockquote>
+<p>MsSmoothGroupSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for MsSmoothGroupSettings</p>
+<p>AcquisitionPointId -&gt; (string)</p>
+<blockquote>
+<div>The value of the &quot;Acquisition Point Identity&quot; element used in each message placed in the sparse track. Only enabled if sparseTrackType is not &quot;none&quot;.</div></blockquote>
+<p>AudioOnlyTimecodeControl -&gt; (string)</p>
+<blockquote>
+<div>If set to passthrough for an audio-only MS Smooth output, the fragment absolute time will be set to the current timecode. This option does not write timecodes to the audio elementary stream.</div></blockquote>
+<p>CertificateMode -&gt; (string)</p>
+<blockquote>
+<div>If set to verifyAuthenticity, verify the https certificate chain to a trusted Certificate Authority (CA). This will cause https outputs to self-signed certificates to fail.</div></blockquote>
+<p>ConnectionRetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to wait before retrying connection to the IIS server if the connection is lost. Content will be cached during this time and the cache will be be delivered to the IIS server once the connection is re-established.</div></blockquote>
+<p>Destination -&gt; (structure)</p>
+<blockquote>
+<div><p>Smooth Streaming publish point on an IIS server. Elemental Live acts as a &quot;Push&quot; encoder to IIS.</p>
+<p>DestinationRefId -&gt; (string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>EventId -&gt; (string)</p>
+<blockquote>
+<div>MS Smooth event ID to be sent to the IIS server. Should only be specified if eventIdMode is set to useConfigured.</div></blockquote>
+<p>EventIdMode -&gt; (string)</p>
+<blockquote>
+<div>Specifies whether or not to send an event ID to the IIS server. If no event ID is sent and the same Live Event is used without changing the publishing point, clients might see cached video from the previous run. Options: - &quot;useConfigured&quot; - use the value provided in eventId - &quot;useTimestamp&quot; - generate and send an event ID based on the current timestamp - &quot;noEventId&quot; - do not send an event ID to the IIS server.</div></blockquote>
+<p>EventStopBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to sendEos, send EOS signal to IIS server when stopping the event</div></blockquote>
+<p>FilecacheDuration -&gt; (integer)</p>
+<blockquote>
+<div>Size in seconds of file cache for streaming outputs.</div></blockquote>
+<p>FragmentLength -&gt; (integer)</p>
+<blockquote>
+<div>Length of mp4 fragments to generate (in seconds). Fragment length must be compatible with GOP size and framerate.</div></blockquote>
+<p>InputLossAction -&gt; (string)</p>
+<blockquote>
+<div>Parameter that control output group behavior on input loss.</div></blockquote>
+<p>NumRetries -&gt; (integer)</p>
+<blockquote>
+<div>Number of retry attempts.</div></blockquote>
+<p>RestartDelay -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds before initiating a restart due to output failure, due to exhausting the numRetries on one segment, or exceeding filecacheDuration.</div></blockquote>
+<p>SegmentationMode -&gt; (string)</p>
+<blockquote>
+<div>When set to useInputSegmentation, the output segment or fragment points are set by the RAI markers from the input streams.</div></blockquote>
+<p>SendDelayMs -&gt; (integer)</p>
+<blockquote>
+<div>Outputs that are &quot;output locked&quot; can use this delay. Assign a delay to the output that is &quot;secondary&quot;. Do not assign a delay to the &quot;primary&quot; output. The delay means that the primary output will always reach the downstream system before the secondary, which helps ensure that the downstream system always uses the primary output. (If there were no delay, the downstream system might flip-flop between whichever output happens to arrive first.) If the primary fails, the downstream system will switch to the secondary output. When the primary is restarted, the downstream system will switch back to the primary (because once again it is always arriving first)</div></blockquote>
+<p>SparseTrackType -&gt; (string)</p>
+<blockquote>
+<div>If set to scte35, use incoming SCTE-35 messages to generate a sparse track in this group of MS-Smooth outputs.</div></blockquote>
+<p>StreamManifestBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to send, send stream manifest so publishing point doesn't start until all streams start.</div></blockquote>
+<p>TimestampOffset -&gt; (string)</p>
+<blockquote>
+<div>Timestamp offset for the event. Only used if timestampOffsetMode is set to useConfiguredOffset.</div></blockquote>
+<p>TimestampOffsetMode -&gt; (string)</p>
+<blockquote>
+<div>Type of timestamp date offset to use. - useEventStartDate: Use the date the event was started as the offset - useConfiguredOffset: Use an explicitly configured date as the offset</div></blockquote>
+</div></blockquote>
+<p>RtmpGroupSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for RtmpGroupSettings</p>
+<p>AuthenticationScheme -&gt; (string)</p>
+<blockquote>
+<div>Authentication scheme to use when connecting with CDN</div></blockquote>
+<p>CacheFullBehavior -&gt; (string)</p>
+<blockquote>
+<div>Controls behavior when content cache fills up. If remote origin server stalls the RTMP connection and does not accept content fast enough the 'Media Cache' will fill up. When the cache reaches the duration specified by cacheLength the cache will stop accepting new content. If set to disconnectImmediately, the RTMP output will force a disconnect. Clear the media cache, and reconnect after restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5 minutes to allow the origin server to begin accepting data again.</div></blockquote>
+<p>CacheLength -&gt; (integer)</p>
+<blockquote>
+<div>Cache length, in seconds, is used to calculate buffer size.</div></blockquote>
+<p>CaptionData -&gt; (string)</p>
+<blockquote>
+<div>Controls the types of data that passes to onCaptionInfo outputs. If set to 'all' then 608 and 708 carried DTVCC data will be passed. If set to 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from both fields will be passed. If set to 'field1608' then only the data carried in 608 from field 1 video will be passed.</div></blockquote>
+<p>RestartDelay -&gt; (integer)</p>
+<blockquote>
+<div>If a streaming output fails, number of seconds to wait until a restart is initiated. A value of 0 means never restart.</div></blockquote>
+</div></blockquote>
+<p>UdpGroupSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for UdpGroupSettings</p>
+<p>InputLossAction -&gt; (string)</p>
+<blockquote>
+<div>Specifies behavior of last resort when input video is lost, and no more backup inputs are available. When dropTs is selected the entire transport stream will stop being emitted. When dropProgram is selected the program can be dropped from the transport stream (and replaced with null packets to meet the TS bitrate requirement). Or, when emitProgram is chosen the transport stream will continue to be produced normally with repeat frames, black frames, or slate frames substituted for the absent input video.</div></blockquote>
+<p>TimedMetadataId3Frame -&gt; (string)</p>
+<blockquote>
+<div>Indicates ID3 frame that has the timecode.</div></blockquote>
+<p>TimedMetadataId3Period -&gt; (integer)</p>
+<blockquote>
+<div>Timed Metadata interval in seconds.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Outputs -&gt; (list)</p>
+<blockquote>
+<div><p>Placeholder documentation for __listOfOutput</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Output settings. There can be multiple outputs within a group.</p>
+<p>AudioDescriptionNames -&gt; (list)</p>
+<blockquote>
+<div><p>The names of the AudioDescriptions used as audio sources for this output.</p>
+<p>(string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>CaptionDescriptionNames -&gt; (list)</p>
+<blockquote>
+<div><p>The names of the CaptionDescriptions used as caption sources for this output.</p>
+<p>(string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>OutputName -&gt; (string)</p>
+<blockquote>
+<div>The name used to identify an output.</div></blockquote>
+<p>OutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Output type-specific settings.</p>
+<p>ArchiveOutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for ArchiveOutputSettings</p>
+<p>ContainerSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings specific to the container type of the file.</p>
+<p>M2tsSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for M2tsSettings</p>
+<p>AbsentInputAudioBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.</div></blockquote>
+<p>Arib -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.</div></blockquote>
+<p>AribCaptionsPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>AribCaptionsPidControl -&gt; (string)</p>
+<blockquote>
+<div>If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.</div></blockquote>
+<p>AudioBufferModel -&gt; (string)</p>
+<blockquote>
+<div>When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.</div></blockquote>
+<p>AudioFramesPerPes -&gt; (integer)</p>
+<blockquote>
+<div>The number of audio frames to insert for each PES packet.</div></blockquote>
+<p>AudioPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>AudioStreamType -&gt; (string)</p>
+<blockquote>
+<div>When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.</div></blockquote>
+<p>Bitrate -&gt; (integer)</p>
+<blockquote>
+<div>The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.</div></blockquote>
+<p>BufferModel -&gt; (string)</p>
+<blockquote>
+<div>If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.</div></blockquote>
+<p>CcDescriptor -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, generates captionServiceDescriptor in PMT.</div></blockquote>
+<p>DvbNitSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Inserts DVB Network Information Table (NIT) at the specified table repetition interval.</p>
+<p>NetworkId -&gt; (integer)</p>
+<blockquote>
+<div>The numeric value placed in the Network Information Table (NIT).</div></blockquote>
+<p>NetworkName -&gt; (string)</p>
+<blockquote>
+<div>The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.</div></blockquote>
+<p>RepInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream.</div></blockquote>
+</div></blockquote>
+<p>DvbSdtSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Inserts DVB Service Description Table (SDT) at the specified table repetition interval.</p>
+<p>OutputSdt -&gt; (string)</p>
+<blockquote>
+<div>Selects method of inserting SDT information into output stream. The sdtFollow setting copies SDT information from input stream to output stream. The sdtFollowIfPresent setting copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. The sdtManual setting means user will enter the SDT information. The sdtNone setting means output stream will not contain SDT information.</div></blockquote>
+<p>RepInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream.</div></blockquote>
+<p>ServiceName -&gt; (string)</p>
+<blockquote>
+<div>The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.</div></blockquote>
+<p>ServiceProviderName -&gt; (string)</p>
+<blockquote>
+<div>The service provider name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.</div></blockquote>
+</div></blockquote>
+<p>DvbSubPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>DvbTdtSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.</p>
+<p>RepInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream.</div></blockquote>
+</div></blockquote>
+<p>DvbTeletextPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>Ebif -&gt; (string)</p>
+<blockquote>
+<div>If set to passthrough, passes any EBIF data from the input source to this output.</div></blockquote>
+<p>EbpAudioInterval -&gt; (string)</p>
+<blockquote>
+<div>When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.</div></blockquote>
+<p>EbpLookaheadMs -&gt; (integer)</p>
+<blockquote>
+<div>When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is &quot;stretched&quot; to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.</div></blockquote>
+<p>EbpPlacement -&gt; (string)</p>
+<blockquote>
+<div>Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.</div></blockquote>
+<p>EcmPid -&gt; (string)</p>
+<blockquote>
+<div>This field is unused and deprecated.</div></blockquote>
+<p>EsRateInPes -&gt; (string)</p>
+<blockquote>
+<div>Include or exclude the ES Rate field in the PES header.</div></blockquote>
+<p>EtvPlatformPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>EtvSignalPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>FragmentTime -&gt; (double)</p>
+<blockquote>
+<div>The length in seconds of each fragment. Only used with EBP markers.</div></blockquote>
+<p>Klv -&gt; (string)</p>
+<blockquote>
+<div>If set to passthrough, passes any KLV data from the input source to this output.</div></blockquote>
+<p>KlvDataPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>NullPacketBitrate -&gt; (double)</p>
+<blockquote>
+<div>Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.</div></blockquote>
+<p>PatInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.</div></blockquote>
+<p>PcrControl -&gt; (string)</p>
+<blockquote>
+<div>When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.</div></blockquote>
+<p>PcrPeriod -&gt; (integer)</p>
+<blockquote>
+<div>Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.</div></blockquote>
+<p>PcrPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>PmtInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.</div></blockquote>
+<p>PmtPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>ProgramNum -&gt; (integer)</p>
+<blockquote>
+<div>The value of the program number field in the Program Map Table.</div></blockquote>
+<p>RateMode -&gt; (string)</p>
+<blockquote>
+<div>When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.</div></blockquote>
+<p>Scte27Pids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>Scte35Control -&gt; (string)</p>
+<blockquote>
+<div>Optionally pass SCTE-35 signals from the input source to this output.</div></blockquote>
+<p>Scte35Pid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>SegmentationMarkers -&gt; (string)</p>
+<blockquote>
+<div>Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.</div></blockquote>
+<p>SegmentationStyle -&gt; (string)</p>
+<blockquote>
+<div>The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of &quot;resetCadence&quot; is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of &quot;maintainCadence&quot; is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.</div></blockquote>
+<p>SegmentationTime -&gt; (double)</p>
+<blockquote>
+<div>The length in seconds of each segment. Required unless markers is set to <a href="#id1"><span class="problematic" id="id2">None_</span></a>.</div></blockquote>
+<p>TimedMetadataBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to passthrough, timed metadata will be passed through from input to output.</div></blockquote>
+<p>TimedMetadataPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>TransportStreamId -&gt; (integer)</p>
+<blockquote>
+<div>The value of the transport stream ID field in the Program Map Table.</div></blockquote>
+<p>VideoPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Extension -&gt; (string)</p>
+<blockquote>
+<div>Output file extension. If excluded, this will be auto-selected from the container type.</div></blockquote>
+<p>NameModifier -&gt; (string)</p>
+<blockquote>
+<div>String concatenated to the end of the destination filename. Required for multiple outputs of the same type.</div></blockquote>
+</div></blockquote>
+<p>HlsOutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for HlsOutputSettings</p>
+<p>HlsSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings regarding the underlying stream. These settings are different for audio-only outputs.</p>
+<p>AudioOnlyHlsSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AudioOnlyHlsSettings</p>
+<p>AudioGroupId -&gt; (string)</p>
+<blockquote>
+<div>Specifies the group to which the audio Rendition belongs.</div></blockquote>
+<p>AudioOnlyImage -&gt; (structure)</p>
+<blockquote>
+<div><p>For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons. The iPhone does not resize the image, it crops a centered image on the top/bottom and left/right. Additionally, this image file gets saved bit-for-bit into every 10-second segment file, so will increase bandwidth by {image file size} * {segment count} * {user count.}.</p>
+<p>PasswordParam -&gt; (string)</p>
+<blockquote>
+<div>key used to extract the password from EC2 Parameter store</div></blockquote>
+<p>Uri -&gt; (string)</p>
+<blockquote>
+<div>Uniform Resource Identifier - This should be a path to a file accessible to the Live system (eg. a <a class="reference external" href="http://">http://</a> URI) depending on the output type. For example, a RTMP destination should have a uri simliar to: &quot;rtmp://fmsserver/live&quot;.</div></blockquote>
+<p>Username -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+</div></blockquote>
+<p>AudioTrackType -&gt; (string)</p>
+<blockquote>
+<div>Four types of audio-only tracks are supported: Audio-Only Variant Stream The client can play back this audio-only stream instead of video in low-bandwidth scenarios. Represented as an EXT-X-STREAM-INF in the HLS manifest. Alternate Audio, Auto Select, Default Alternate rendition that the client should try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=YES, AUTOSELECT=YES Alternate Audio, Auto Select, Not Default Alternate rendition that the client may try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=YES Alternate Audio, not Auto Select Alternate rendition that the client will not try to play back by default. Represented as an EXT-X-MEDIA in the HLS manifest with DEFAULT=NO, AUTOSELECT=NO</div></blockquote>
+</div></blockquote>
+<p>StandardHlsSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for StandardHlsSettings</p>
+<p>AudioRenditionSets -&gt; (string)</p>
+<blockquote>
+<div>List all the audio groups that are used with the video output stream. Input all the audio GROUP-IDs that are associated to the video, separate by ','.</div></blockquote>
+<p>M3u8Settings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings information for the .m3u8 container</p>
+<p>AudioFramesPerPes -&gt; (integer)</p>
+<blockquote>
+<div>The number of audio frames to insert for each PES packet.</div></blockquote>
+<p>AudioPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values.</div></blockquote>
+<p>EcmPid -&gt; (string)</p>
+<blockquote>
+<div>This parameter is unused and deprecated.</div></blockquote>
+<p>PatInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream. A value of &quot;0&quot; writes out the PMT once per segment file.</div></blockquote>
+<p>PcrControl -&gt; (string)</p>
+<blockquote>
+<div>When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.</div></blockquote>
+<p>PcrPeriod -&gt; (integer)</p>
+<blockquote>
+<div>Maximum time in milliseconds between Program Clock References (PCRs) inserted into the transport stream.</div></blockquote>
+<p>PcrPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value.</div></blockquote>
+<p>PmtInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream. A value of &quot;0&quot; writes out the PMT once per segment file.</div></blockquote>
+<p>PmtPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value.</div></blockquote>
+<p>ProgramNum -&gt; (integer)</p>
+<blockquote>
+<div>The value of the program number field in the Program Map Table.</div></blockquote>
+<p>Scte35Behavior -&gt; (string)</p>
+<blockquote>
+<div>If set to passthrough, passes any SCTE-35 signals from the input source to this output.</div></blockquote>
+<p>Scte35Pid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value.</div></blockquote>
+<p>TimedMetadataBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to passthrough, timed metadata is passed through from input to output.</div></blockquote>
+<p>TimedMetadataPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>TransportStreamId -&gt; (integer)</p>
+<blockquote>
+<div>The value of the transport stream ID field in the Program Map Table.</div></blockquote>
+<p>VideoPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>NameModifier -&gt; (string)</p>
+<blockquote>
+<div>String concatenated to the end of the destination filename. Accepts &quot;Format Identifiers&quot;:#formatIdentifierParameters.</div></blockquote>
+<p>SegmentModifier -&gt; (string)</p>
+<blockquote>
+<div>String concatenated to end of segment filenames.</div></blockquote>
+</div></blockquote>
+<p>MsSmoothOutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for MsSmoothOutputSettings</p>
+<p>NameModifier -&gt; (string)</p>
+<blockquote>
+<div>String concatenated to the end of the destination filename. Required for multiple outputs of the same type.</div></blockquote>
+</div></blockquote>
+<p>RtmpOutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for RtmpOutputSettings</p>
+<p>CertificateMode -&gt; (string)</p>
+<blockquote>
+<div>If set to verifyAuthenticity, verify the tls certificate chain to a trusted Certificate Authority (CA). This will cause rtmps outputs with self-signed certificates to fail.</div></blockquote>
+<p>ConnectionRetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>Number of seconds to wait before retrying a connection to the Flash Media server if the connection is lost.</div></blockquote>
+<p>Destination -&gt; (structure)</p>
+<blockquote>
+<div><p>The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For connection to Akamai, a username and password must be supplied. URI fields accept format identifiers.</p>
+<p>DestinationRefId -&gt; (string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>NumRetries -&gt; (integer)</p>
+<blockquote>
+<div>Number of retry attempts.</div></blockquote>
+</div></blockquote>
+<p>UdpOutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for UdpOutputSettings</p>
+<p>BufferMsec -&gt; (integer)</p>
+<blockquote>
+<div>UDP output buffering in milliseconds. Larger values increase latency through the transcoder but simultaneously assist the transcoder in maintaining a constant, low-jitter UDP/RTP output while accommodating clock recovery, input switching, input disruptions, picture reordering, etc.</div></blockquote>
+<p>ContainerSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for UdpContainerSettings</p>
+<p>M2tsSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for M2tsSettings</p>
+<p>AbsentInputAudioBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to drop, output audio streams will be removed from the program if the selected input audio stream is removed from the input. This allows the output audio configuration to dynamically change based on input configuration. If this is set to encodeSilence, all output audio streams will output encoded silence when not connected to an active input stream.</div></blockquote>
+<p>Arib -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, uses ARIB-compliant field muxing and removes video descriptor.</div></blockquote>
+<p>AribCaptionsPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for ARIB Captions in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>AribCaptionsPidControl -&gt; (string)</p>
+<blockquote>
+<div>If set to auto, pid number used for ARIB Captions will be auto-selected from unused pids. If set to useConfigured, ARIB Captions will be on the configured pid number.</div></blockquote>
+<p>AudioBufferModel -&gt; (string)</p>
+<blockquote>
+<div>When set to dvb, uses DVB buffer model for Dolby Digital audio. When set to atsc, the ATSC model is used.</div></blockquote>
+<p>AudioFramesPerPes -&gt; (integer)</p>
+<blockquote>
+<div>The number of audio frames to insert for each PES packet.</div></blockquote>
+<p>AudioPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the elementary audio stream(s) in the transport stream. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>AudioStreamType -&gt; (string)</p>
+<blockquote>
+<div>When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for EAC3. When set to dvb, uses stream type = 0x06.</div></blockquote>
+<p>Bitrate -&gt; (integer)</p>
+<blockquote>
+<div>The output bitrate of the transport stream in bits per second. Setting to 0 lets the muxer automatically determine the appropriate bitrate.</div></blockquote>
+<p>BufferModel -&gt; (string)</p>
+<blockquote>
+<div>If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.</div></blockquote>
+<p>CcDescriptor -&gt; (string)</p>
+<blockquote>
+<div>When set to enabled, generates captionServiceDescriptor in PMT.</div></blockquote>
+<p>DvbNitSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Inserts DVB Network Information Table (NIT) at the specified table repetition interval.</p>
+<p>NetworkId -&gt; (integer)</p>
+<blockquote>
+<div>The numeric value placed in the Network Information Table (NIT).</div></blockquote>
+<p>NetworkName -&gt; (string)</p>
+<blockquote>
+<div>The network name text placed in the networkNameDescriptor inside the Network Information Table. Maximum length is 256 characters.</div></blockquote>
+<p>RepInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream.</div></blockquote>
+</div></blockquote>
+<p>DvbSdtSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Inserts DVB Service Description Table (SDT) at the specified table repetition interval.</p>
+<p>OutputSdt -&gt; (string)</p>
+<blockquote>
+<div>Selects method of inserting SDT information into output stream. The sdtFollow setting copies SDT information from input stream to output stream. The sdtFollowIfPresent setting copies SDT information from input stream to output stream if SDT information is present in the input, otherwise it will fall back on the user-defined values. The sdtManual setting means user will enter the SDT information. The sdtNone setting means output stream will not contain SDT information.</div></blockquote>
+<p>RepInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream.</div></blockquote>
+<p>ServiceName -&gt; (string)</p>
+<blockquote>
+<div>The service name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.</div></blockquote>
+<p>ServiceProviderName -&gt; (string)</p>
+<blockquote>
+<div>The service provider name placed in the serviceDescriptor in the Service Description Table. Maximum length is 256 characters.</div></blockquote>
+</div></blockquote>
+<p>DvbSubPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source DVB Subtitle data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>DvbTdtSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Inserts DVB Time and Date Table (TDT) at the specified table repetition interval.</p>
+<p>RepInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream.</div></blockquote>
+</div></blockquote>
+<p>DvbTeletextPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source DVB Teletext data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>Ebif -&gt; (string)</p>
+<blockquote>
+<div>If set to passthrough, passes any EBIF data from the input source to this output.</div></blockquote>
+<p>EbpAudioInterval -&gt; (string)</p>
+<blockquote>
+<div>When videoAndFixedIntervals is selected, audio EBP markers will be added to partitions 3 and 4. The interval between these additional markers will be fixed, and will be slightly shorter than the video EBP marker interval. Only available when EBP Cablelabs segmentation markers are selected. Partitions 1 and 2 will always follow the video interval.</div></blockquote>
+<p>EbpLookaheadMs -&gt; (integer)</p>
+<blockquote>
+<div>When set, enforces that Encoder Boundary Points do not come within the specified time interval of each other by looking ahead at input video. If another EBP is going to come in within the specified time interval, the current EBP is not emitted, and the segment is &quot;stretched&quot; to the next marker. The lookahead value does not add latency to the system. The Live Event must be configured elsewhere to create sufficient latency to make the lookahead accurate.</div></blockquote>
+<p>EbpPlacement -&gt; (string)</p>
+<blockquote>
+<div>Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP markers will be placed on the video PID and all audio PIDs. If set to videoPid, EBP markers will be placed on only the video PID.</div></blockquote>
+<p>EcmPid -&gt; (string)</p>
+<blockquote>
+<div>This field is unused and deprecated.</div></blockquote>
+<p>EsRateInPes -&gt; (string)</p>
+<blockquote>
+<div>Include or exclude the ES Rate field in the PES header.</div></blockquote>
+<p>EtvPlatformPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source ETV Platform data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>EtvSignalPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source ETV Signal data to this output. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>FragmentTime -&gt; (double)</p>
+<blockquote>
+<div>The length in seconds of each fragment. Only used with EBP markers.</div></blockquote>
+<p>Klv -&gt; (string)</p>
+<blockquote>
+<div>If set to passthrough, passes any KLV data from the input source to this output.</div></blockquote>
+<p>KlvDataPids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source KLV data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>NullPacketBitrate -&gt; (double)</p>
+<blockquote>
+<div>Value in bits per second of extra null packets to insert into the transport stream. This can be used if a downstream encryption system requires periodic null packets.</div></blockquote>
+<p>PatInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.</div></blockquote>
+<p>PcrControl -&gt; (string)</p>
+<blockquote>
+<div>When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for every Packetized Elementary Stream (PES) header. This parameter is effective only when the PCR PID is the same as the video or audio elementary stream.</div></blockquote>
+<p>PcrPeriod -&gt; (integer)</p>
+<blockquote>
+<div>Maximum time in milliseconds between Program Clock Reference (PCRs) inserted into the transport stream.</div></blockquote>
+<p>PcrPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport stream. When no value is given, the encoder will assign the same value as the Video PID. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>PmtInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of milliseconds between instances of this table in the output transport stream. Valid values are 0, 10..1000.</div></blockquote>
+<p>PmtPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>ProgramNum -&gt; (integer)</p>
+<blockquote>
+<div>The value of the program number field in the Program Map Table.</div></blockquote>
+<p>RateMode -&gt; (string)</p>
+<blockquote>
+<div>When vbr, does not insert null packets into transport stream to fill specified bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.</div></blockquote>
+<p>Scte27Pids -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple values are accepted, and can be entered in ranges and/or by comma separation. Can be entered as decimal or hexadecimal values. Each PID specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>Scte35Control -&gt; (string)</p>
+<blockquote>
+<div>Optionally pass SCTE-35 signals from the input source to this output.</div></blockquote>
+<p>Scte35Pid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>SegmentationMarkers -&gt; (string)</p>
+<blockquote>
+<div>Inserts segmentation markers at each segmentationTime period. raiSegstart sets the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI bit and adds the current timecode in the private data bytes. psiSegstart inserts PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point information to the adaptation field as per OpenCable specification OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the adaptation field using a legacy proprietary format.</div></blockquote>
+<p>SegmentationStyle -&gt; (string)</p>
+<blockquote>
+<div>The segmentation style parameter controls how segmentation markers are inserted into the transport stream. With avails, it is possible that segments may be truncated, which can influence where future segmentation markers are inserted. When a segmentation style of &quot;resetCadence&quot; is selected and a segment is truncated due to an avail, we will reset the segmentation cadence. This means the subsequent segment will have a duration of $segmentationTime seconds. When a segmentation style of &quot;maintainCadence&quot; is selected and a segment is truncated due to an avail, we will not reset the segmentation cadence. This means the subsequent segment will likely be truncated as well. However, all segments after that will have a duration of $segmentationTime seconds. Note that EBP lookahead is a slight exception to this rule.</div></blockquote>
+<p>SegmentationTime -&gt; (double)</p>
+<blockquote>
+<div>The length in seconds of each segment. Required unless markers is set to <a href="#id3"><span class="problematic" id="id4">None_</span></a>.</div></blockquote>
+<p>TimedMetadataBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to passthrough, timed metadata will be passed through from input to output.</div></blockquote>
+<p>TimedMetadataPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the timed metadata stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+<p>TransportStreamId -&gt; (integer)</p>
+<blockquote>
+<div>The value of the transport stream ID field in the Program Map Table.</div></blockquote>
+<p>VideoPid -&gt; (string)</p>
+<blockquote>
+<div>Packet Identifier (PID) of the elementary video stream in the transport stream. Can be entered as a decimal or hexadecimal value. Valid values are 32 (or 0x20)..8182 (or 0x1ff6).</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Destination -&gt; (structure)</p>
+<blockquote>
+<div><p>Destination address and port number for RTP or UDP packets. Can be unicast or multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).</p>
+<p>DestinationRefId -&gt; (string)</p>
+<blockquote>
+<div>Placeholder documentation for __string</div></blockquote>
+</div></blockquote>
+<p>FecOutputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings for enabling and adjusting Forward Error Correction on UDP outputs.</p>
+<p>ColumnDepth -&gt; (integer)</p>
+<blockquote>
+<div>Parameter D from SMPTE 2022-1. The height of the FEC protection matrix. The number of transport stream packets per column error correction packet. Must be between 4 and 20, inclusive.</div></blockquote>
+<p>IncludeFec -&gt; (string)</p>
+<blockquote>
+<div>Enables column only or column and row based FEC</div></blockquote>
+<p>RowLength -&gt; (integer)</p>
+<blockquote>
+<div>Parameter L from SMPTE 2022-1. The width of the FEC protection matrix. Must be between 1 and 20, inclusive. If only Column FEC is used, then larger values increase robustness. If Row FEC is used, then this is the number of transport stream packets per row error correction packet, and the value must be between 4 and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this value must be 1 to 20, inclusive.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VideoDescriptionName -&gt; (string)</p>
+<blockquote>
+<div>The name of the VideoDescription used as the source for this output.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TimecodeConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>Contains settings used to acquire and adjust timecode information from inputs.</p>
+<p>Source -&gt; (string)</p>
+<blockquote>
+<div>Identifies the source for the timecode that will be associated with the events outputs. -Embedded (embedded): Initialize the output timecode with timecode from the the source. If no embedded timecode is detected in the source, the system falls back to using &quot;Start at 0&quot; (zerobased). -System Clock (systemclock): Use the UTC time. -Start at 0 (zerobased): The time of the first frame of the event will be 00:00:00:00.</div></blockquote>
+<p>SyncThreshold -&gt; (integer)</p>
+<blockquote>
+<div>Threshold in frames beyond which output timecode is resynchronized to the input timecode. Discrepancies below this threshold are permitted to avoid unnecessary discontinuities in the output timecode. No timecode sync when this is not specified.</div></blockquote>
+</div></blockquote>
+<p>VideoDescriptions -&gt; (list)</p>
+<blockquote>
+<div><p>Placeholder documentation for __listOfVideoDescription</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Video settings for this stream.</p>
+<p>CodecSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Video codec settings.</p>
+<p>H264Settings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for H264Settings</p>
+<p>AdaptiveQuantization -&gt; (string)</p>
+<blockquote>
+<div>Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.</div></blockquote>
+<p>AfdSignaling -&gt; (string)</p>
+<blockquote>
+<div>Indicates that AFD values will be written into the output stream. If afdSignaling is &quot;auto&quot;, the system will try to preserve the input AFD value (in cases where multiple AFD values are valid). If set to &quot;fixed&quot;, the AFD value will be the value configured in the fixedAfd parameter.</div></blockquote>
+<p>Bitrate -&gt; (integer)</p>
+<blockquote>
+<div>Average bitrate in bits/second. Required for VBR, CBR, and ABR. For MS Smooth outputs, bitrates must be unique when rounded down to the nearest multiple of 1000.</div></blockquote>
+<p>BufFillPct -&gt; (integer)</p>
+<blockquote>
+<div>Percentage of the buffer that should initially be filled (HRD buffer model).</div></blockquote>
+<p>BufSize -&gt; (integer)</p>
+<blockquote>
+<div>Size of buffer (HRD buffer model) in bits/second.</div></blockquote>
+<p>ColorMetadata -&gt; (string)</p>
+<blockquote>
+<div>Includes colorspace metadata in the output.</div></blockquote>
+<p>EntropyEncoding -&gt; (string)</p>
+<blockquote>
+<div>Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc.</div></blockquote>
+<p>FixedAfd -&gt; (string)</p>
+<blockquote>
+<div>Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to 'Fixed'.</div></blockquote>
+<p>FlickerAq -&gt; (string)</p>
+<blockquote>
+<div>If set to enabled, adjust quantization within each frame to reduce flicker or 'pop' on I-frames.</div></blockquote>
+<p>FramerateControl -&gt; (string)</p>
+<blockquote>
+<div>This field indicates how the output video frame rate is specified. If &quot;specified&quot; is selected then the output video frame rate is determined by framerateNumerator and framerateDenominator, else if &quot;initializeFromSource&quot; is selected then the output video frame rate will be set equal to the input video frame rate of the first input.</div></blockquote>
+<p>FramerateDenominator -&gt; (integer)</p>
+<blockquote>
+<div>Framerate denominator.</div></blockquote>
+<p>FramerateNumerator -&gt; (integer)</p>
+<blockquote>
+<div>Framerate numerator - framerate is a fraction, e.g. 24000 / 1001 = 23.976 fps.</div></blockquote>
+<p>GopBReference -&gt; (string)</p>
+<blockquote>
+<div>Documentation update needed</div></blockquote>
+<p>GopClosedCadence -&gt; (integer)</p>
+<blockquote>
+<div>Frequency of closed GOPs. In streaming applications, it is recommended that this be set to 1 so a decoder joining mid-stream will receive an IDR frame as quickly as possible. Setting this value to 0 will break output segmenting.</div></blockquote>
+<p>GopNumBFrames -&gt; (integer)</p>
+<blockquote>
+<div>Number of B-frames between reference frames.</div></blockquote>
+<p>GopSize -&gt; (double)</p>
+<blockquote>
+<div>GOP size (keyframe interval) in units of either frames or seconds per gopSizeUnits. Must be greater than zero.</div></blockquote>
+<p>GopSizeUnits -&gt; (string)</p>
+<blockquote>
+<div>Indicates if the gopSize is specified in frames or seconds. If seconds the system will convert the gopSize into a frame count at run time.</div></blockquote>
+<p>Level -&gt; (string)</p>
+<blockquote>
+<div>H.264 Level.</div></blockquote>
+<p>LookAheadRateControl -&gt; (string)</p>
+<blockquote>
+<div>Amount of lookahead. A value of low can decrease latency and memory usage, while high can produce better quality for certain content.</div></blockquote>
+<p>MaxBitrate -&gt; (integer)</p>
+<blockquote>
+<div>Maximum bitrate in bits/second (for VBR mode only).</div></blockquote>
+<p>MinIInterval -&gt; (integer)</p>
+<blockquote>
+<div>Only meaningful if sceneChangeDetect is set to enabled. Enforces separation between repeated (cadence) I-frames and I-frames inserted by Scene Change Detection. If a scene change I-frame is within I-interval frames of a cadence I-frame, the GOP is shrunk and/or stretched to the scene change I-frame. GOP stretch requires enabling lookahead as well as setting I-interval. The normal cadence resumes for the next GOP. Note: Maximum GOP stretch = GOP size + Min-I-interval - 1</div></blockquote>
+<p>NumRefFrames -&gt; (integer)</p>
+<blockquote>
+<div>Number of reference frames to use. The encoder may use more than requested if using B-frames and/or interlaced encoding.</div></blockquote>
+<p>ParControl -&gt; (string)</p>
+<blockquote>
+<div>This field indicates how the output pixel aspect ratio is specified. If &quot;specified&quot; is selected then the output video pixel aspect ratio is determined by parNumerator and parDenominator, else if &quot;initializeFromSource&quot; is selected then the output pixsel aspect ratio will be set equal to the input video pixel aspect ratio of the first input.</div></blockquote>
+<p>ParDenominator -&gt; (integer)</p>
+<blockquote>
+<div>Pixel Aspect Ratio denominator.</div></blockquote>
+<p>ParNumerator -&gt; (integer)</p>
+<blockquote>
+<div>Pixel Aspect Ratio numerator.</div></blockquote>
+<p>Profile -&gt; (string)</p>
+<blockquote>
+<div>H.264 Profile.</div></blockquote>
+<p>RateControlMode -&gt; (string)</p>
+<blockquote>
+<div>Rate control mode.</div></blockquote>
+<p>ScanType -&gt; (string)</p>
+<blockquote>
+<div>Sets the scan type of the output to progressive or top-field-first interlaced.</div></blockquote>
+<p>SceneChangeDetect -&gt; (string)</p>
+<blockquote>
+<div>Scene change detection. Inserts I-frames on scene changes when enabled.</div></blockquote>
+<p>Slices -&gt; (integer)</p>
+<blockquote>
+<div>Number of slices per picture. Must be less than or equal to the number of macroblock rows for progressive pictures, and less than or equal to half the number of macroblock rows for interlaced pictures. This field is optional; when no value is specified the encoder will choose the number of slices based on encode resolution.</div></blockquote>
+<p>Softness -&gt; (integer)</p>
+<blockquote>
+<div>Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.</div></blockquote>
+<p>SpatialAq -&gt; (string)</p>
+<blockquote>
+<div>If set to enabled, adjust quantization within each frame based on spatial variation of content complexity.</div></blockquote>
+<p>Syntax -&gt; (string)</p>
+<blockquote>
+<div>Produces a bitstream compliant with SMPTE RP-2027.</div></blockquote>
+<p>TemporalAq -&gt; (string)</p>
+<blockquote>
+<div>If set to enabled, adjust quantization within each frame based on temporal variation of content complexity.</div></blockquote>
+<p>TimecodeInsertion -&gt; (string)</p>
+<blockquote>
+<div>Determines how timecodes should be inserted into the video elementary stream. - 'disabled': Do not include timecodes - 'picTimingSei': Pass through picture timing SEI messages from the source specified in Timecode Config</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Height -&gt; (integer)</p>
+<blockquote>
+<div>Output video height (in pixels). Leave blank to use source video height. If left blank, width must also be unspecified.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of this VideoDescription. Outputs will use this name to uniquely identify this Description. Description names should be unique within this Live Event.</div></blockquote>
+<p>RespondToAfd -&gt; (string)</p>
+<blockquote>
+<div>Indicates how to respond to the AFD values in the input stream. Setting to &quot;respond&quot; causes input video to be clipped, depending on AFD value, input display aspect ratio and output display aspect ratio.</div></blockquote>
+<p>ScalingBehavior -&gt; (string)</p>
+<blockquote>
+<div>When set to &quot;stretchToOutput&quot;, automatically configures the output position to stretch the video to the specified output resolution. This option will override any position value.</div></blockquote>
+<p>Sharpness -&gt; (integer)</p>
+<blockquote>
+<div>Changes the width of the anti-alias filter kernel used for scaling. Only applies if scaling is being performed and antiAlias is set to true. 0 is the softest setting, 100 the sharpest, and 50 recommended for most content.</div></blockquote>
+<p>Width -&gt; (integer)</p>
+<blockquote>
+<div>Output video width (in pixels). Leave out to use source video width. If left out, height must also be left out. Display aspect ratio is always preserved by letterboxing or pillarboxing when necessary.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>Id -&gt; (string)</p>
+<blockquote>
+<div>The unique id of the channel.</div></blockquote>
+<p>InputAttachments -&gt; (list)</p>
+<blockquote>
+<div><p>List of input attachments for channel.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for InputAttachment</p>
+<p>InputId -&gt; (string)</p>
+<blockquote>
+<div>The ID of the input</div></blockquote>
+<p>InputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Settings of an input (caption selector, etc.)</p>
+<p>AudioSelectors -&gt; (list)</p>
+<blockquote>
+<div><p>Used to select the audio stream to decode for inputs that have multiple available.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AudioSelector</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of this AudioSelector. AudioDescriptions will use this name to uniquely identify this Selector. Selector names should be unique per input.</div></blockquote>
+<p>SelectorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>The audio selector settings.</p>
+<p>AudioLanguageSelection -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AudioLanguageSelection</p>
+<p>LanguageCode -&gt; (string)</p>
+<blockquote>
+<div>Selects a specific three-letter language code from within an audio source.</div></blockquote>
+<p>LanguageSelectionPolicy -&gt; (string)</p>
+<blockquote>
+<div>When set to &quot;strict&quot;, the transport stream demux strictly identifies audio streams by their language descriptor. If a PMT update occurs such that an audio stream matching the initially selected language is no longer present then mute will be encoded until the language returns. If &quot;loose&quot;, then on a PMT update the demux will choose another audio stream in the program with the same stream type if it can't find one with the same language.</div></blockquote>
+</div></blockquote>
+<p>AudioPidSelection -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for AudioPidSelection</p>
+<p>Pid -&gt; (integer)</p>
+<blockquote>
+<div>Selects a specific PID from within a source.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CaptionSelectors -&gt; (list)</p>
+<blockquote>
+<div><p>Used to select the caption input to use for inputs that have multiple available.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Output groups for this Live Event. Output groups contain information about where streams should be distributed.</p>
+<p>LanguageCode -&gt; (string)</p>
+<blockquote>
+<div>When specified this field indicates the three letter language code of the caption track to extract from the source.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>Name identifier for a caption selector. This name is used to associate this caption selector with one or more caption descriptions. Names must be unique within an event.</div></blockquote>
+<p>SelectorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Caption selector settings.</p>
+<p>AribSourceSettings -&gt; (structure)</p>
+<blockquote>
+<div>Placeholder documentation for AribSourceSettings</div></blockquote>
+<p>DvbSubSourceSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for DvbSubSourceSettings</p>
+<p>Pid -&gt; (integer)</p>
+<blockquote>
+<div>When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through, regardless of selectors.</div></blockquote>
+</div></blockquote>
+<p>EmbeddedSourceSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for EmbeddedSourceSettings</p>
+<p>Convert608To708 -&gt; (string)</p>
+<blockquote>
+<div>If upconvert, 608 data is both passed through via the &quot;608 compatibility bytes&quot; fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.</div></blockquote>
+<p>Scte20Detection -&gt; (string)</p>
+<blockquote>
+<div>Set to &quot;auto&quot; to handle streams with intermittent and/or non-aligned SCTE-20 and Embedded captions.</div></blockquote>
+<p>Source608ChannelNumber -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.</div></blockquote>
+<p>Source608TrackNumber -&gt; (integer)</p>
+<blockquote>
+<div>This field is unused and deprecated.</div></blockquote>
+</div></blockquote>
+<p>Scte20SourceSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Scte20SourceSettings</p>
+<p>Convert608To708 -&gt; (string)</p>
+<blockquote>
+<div>If upconvert, 608 data is both passed through via the &quot;608 compatibility bytes&quot; fields of the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.</div></blockquote>
+<p>Source608ChannelNumber -&gt; (integer)</p>
+<blockquote>
+<div>Specifies the 608/708 channel number within the video track from which to extract captions. Unused for passthrough.</div></blockquote>
+</div></blockquote>
+<p>Scte27SourceSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for Scte27SourceSettings</p>
+<p>Pid -&gt; (integer)</p>
+<blockquote>
+<div>The pid field is used in conjunction with the caption selector languageCode field as follows: - Specify PID and Language: Extracts captions from that PID; the language is &quot;informational&quot;. - Specify PID and omit Language: Extracts the specified PID. - Omit PID and specify Language: Extracts the specified language, whichever PID that happens to be. - Omit PID and omit Language: Valid only if source is DVB-Sub that is being passed through; all languages will be passed through.</div></blockquote>
+</div></blockquote>
+<p>TeletextSourceSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for TeletextSourceSettings</p>
+<p>PageNumber -&gt; (string)</p>
+<blockquote>
+<div>Specifies the teletext page number within the data stream from which to extract captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should be specified as a hexadecimal string with no &quot;0x&quot; prefix.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>DeblockFilter -&gt; (string)</p>
+<blockquote>
+<div>Enable or disable the deblock filter when filtering.</div></blockquote>
+<p>DenoiseFilter -&gt; (string)</p>
+<blockquote>
+<div>Enable or disable the denoise filter when filtering.</div></blockquote>
+<p>FilterStrength -&gt; (integer)</p>
+<blockquote>
+<div>Adjusts the magnitude of filtering from 1 (minimal) to 5 (strongest).</div></blockquote>
+<p>InputFilter -&gt; (string)</p>
+<blockquote>
+<div>Turns on the filter for this input. MPEG-2 inputs have the deblocking filter enabled by default. 1) auto - filtering will be applied depending on input type/quality 2) disabled - no filtering will be applied to the input 3) forced - filtering will be applied regardless of input type</div></blockquote>
+<p>NetworkInputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Input settings.</p>
+<p>HlsInputSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies HLS input settings when the uri is for a HLS manifest.</p>
+<p>Bandwidth -&gt; (integer)</p>
+<blockquote>
+<div>When specified the HLS stream with the m3u8 BANDWIDTH that most closely matches this value will be chosen, otherwise the highest bandwidth stream in the m3u8 will be chosen. The bitrate is specified in bits per second, as in an HLS manifest.</div></blockquote>
+<p>BufferSegments -&gt; (integer)</p>
+<blockquote>
+<div>When specified, reading of the HLS input will begin this many buffer segments from the end (most recently written segment). When not specified, the HLS input will begin with the first segment specified in the m3u8.</div></blockquote>
+<p>Retries -&gt; (integer)</p>
+<blockquote>
+<div>The number of consecutive times that attempts to read a manifest or segment must fail before the input is considered unavailable.</div></blockquote>
+<p>RetryInterval -&gt; (integer)</p>
+<blockquote>
+<div>The number of seconds between retries when an attempt to read a manifest or segment fails.</div></blockquote>
+</div></blockquote>
+<p>ServerValidation -&gt; (string)</p>
+<blockquote>
+<div>Check HTTPS server certificates. When set to checkCryptographyOnly, cryptography in the certificate will be checked, but not the server's name. Certain subdomains (notably S3 buckets that use dots in the bucket name) do not strictly match the corresponding certificate's wildcard pattern and would otherwise cause the event to error. This setting is ignored for protocols that do not use https.</div></blockquote>
+</div></blockquote>
+<p>SourceEndBehavior -&gt; (string)</p>
+<blockquote>
+<div>Loop input if it is a file. This allows a file input to be streamed indefinitely.</div></blockquote>
+<p>VideoSelector -&gt; (structure)</p>
+<blockquote>
+<div><p>Informs which video elementary stream to decode for input types that have multiple available.</p>
+<p>ColorSpace -&gt; (string)</p>
+<blockquote>
+<div>Specifies the colorspace of an input. This setting works in tandem with colorSpaceConversion to determine if any conversion will be performed.</div></blockquote>
+<p>ColorSpaceUsage -&gt; (string)</p>
+<blockquote>
+<div>Applies only if colorSpace is a value other than follow. This field controls how the value in the colorSpace field will be used. fallback means that when the input does include color space data, that data will be used, but when the input has no color space data, the value in colorSpace will be used. Choose fallback if your input is sometimes missing color space data, but when it does have color space data, that data is correct. force means to always use the value in colorSpace. Choose force if your input usually has no color space data or might have unreliable color space data.</div></blockquote>
+<p>SelectorSettings -&gt; (structure)</p>
+<blockquote>
+<div><p>The video selector settings.</p>
+<p>VideoSelectorPid -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for VideoSelectorPid</p>
+<p>Pid -&gt; (integer)</p>
+<blockquote>
+<div>Selects a specific PID from within a video source.</div></blockquote>
+</div></blockquote>
+<p>VideoSelectorProgramId -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for VideoSelectorProgramId</p>
+<p>ProgramId -&gt; (integer)</p>
+<blockquote>
+<div>Selects a specific program from within a multi-program transport stream. If the program doesn't exist, the first program within the transport stream will be selected by default.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>InputSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>Placeholder documentation for InputSpecification</p>
+<p>Codec -&gt; (string)</p>
+<blockquote>
+<div>Input codec</div></blockquote>
+<p>MaximumBitrate -&gt; (string)</p>
+<blockquote>
+<div>Maximum input bitrate, categorized coarsely</div></blockquote>
+<p>Resolution -&gt; (string)</p>
+<blockquote>
+<div>Input resolution, categorized coarsely</div></blockquote>
+</div></blockquote>
+<p>LogLevel -&gt; (string)</p>
+<blockquote>
+<div>The log level being written to CloudWatch Logs.</div></blockquote>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the channel. (user-mutable)</div></blockquote>
+<p>PipelinesRunningCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of currently healthy pipelines.</div></blockquote>
+<p>RoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the role assumed when running the Channel.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>Placeholder documentation for ChannelState</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../medialive/batch-update-schedule.html" title="previous chapter (use the left arrow)">&larr; batch-update-schedule</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../medialive/create-input.html" title="next chapter (use the right arrow)">create-input &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../medialive/create-input.html" title="create-input"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../medialive/batch-update-schedule.html" title="batch-update-schedule"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../medialive/index.html" >medialive</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

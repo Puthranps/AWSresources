@@ -1,0 +1,53 @@
+{
+    "HITTypeId": "",
+    "MaxAssignments": 0,
+    "LifetimeInSeconds": 0,
+    "Question": "",
+    "RequesterAnnotation": "",
+    "UniqueRequestToken": "",
+    "AssignmentReviewPolicy": {
+        "PolicyName": "",
+        "Parameters": [
+            {
+                "Key": "",
+                "Values": [
+                    ""
+                ],
+                "MapEntries": [
+                    {
+                        "Key": "",
+                        "Values": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "HITReviewPolicy": {
+        "PolicyName": "",
+        "Parameters": [
+            {
+                "Key": "",
+                "Values": [
+                    ""
+                ],
+                "MapEntries": [
+                    {
+                        "Key": "",
+                        "Values": [
+                            ""
+                        ]
+                    }
+                ]
+            }
+        ]
+    },
+    "HITLayoutId": "",
+    "HITLayoutParameters": [
+        {
+            "Name": "",
+            "Value": ""
+        }
+    ]
+}

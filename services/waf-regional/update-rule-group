@@ -1,0 +1,20 @@
+{
+    "RuleGroupId": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "ActivatedRule": {
+                "Priority": 0,
+                "RuleId": "",
+                "Action": {
+                    "Type": "ALLOW"
+                },
+                "OverrideAction": {
+                    "Type": "COUNT"
+                },
+                "Type": "REGULAR"
+            }
+        }
+    ],
+    "ChangeToken": ""
+}

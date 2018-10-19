@@ -1,0 +1,410 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>update-layer &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="opsworks" href="../opsworks/index.html" />
+    <link rel="next" title="update-my-user-profile" href="../opsworks/update-my-user-profile.html" />
+    <link rel="prev" title="update-instance" href="../opsworks/update-instance.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../opsworks/update-my-user-profile.html" title="update-my-user-profile"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../opsworks/update-instance.html" title="update-instance"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../opsworks/index.html" accesskey="U">opsworks</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../opsworks/update-instance.html" title="previous chapter (use the left arrow)">&larr; update-instance</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../opsworks/update-my-user-profile.html" title="next chapter (use the right arrow)">update-my-user-profile &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">update-layer</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/opsworks/update-layer">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../opsworks/index.html#cli-aws-opsworks"><em>opsworks</em></a> ]</p>
+<div class="section" id="update-layer">
+<span id="cli-aws-opsworks-update-layer"></span><h1>update-layer<a class="headerlink" href="#update-layer" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Updates a specified layer.</p>
+<blockquote>
+<div><strong>Required Permissions</strong> : To use this action, an IAM user must have a Manage permissions level for the stack, or an attached policy that explicitly grants permissions. For more information on user permissions, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing User Permissions</a> .</div></blockquote>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/opsworks-2013-02-18/UpdateLayer">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  update-layer
+--layer-id &lt;value&gt;
+[--name &lt;value&gt;]
+[--shortname &lt;value&gt;]
+[--attributes &lt;value&gt;]
+[--cloud-watch-logs-configuration &lt;value&gt;]
+[--custom-instance-profile-arn &lt;value&gt;]
+[--custom-json &lt;value&gt;]
+[--custom-security-group-ids &lt;value&gt;]
+[--packages &lt;value&gt;]
+[--volume-configurations &lt;value&gt;]
+[--enable-auto-healing | --no-enable-auto-healing]
+[--auto-assign-elastic-ips | --no-auto-assign-elastic-ips]
+[--auto-assign-public-ips | --no-auto-assign-public-ips]
+[--custom-recipes &lt;value&gt;]
+[--install-updates-on-boot | --no-install-updates-on-boot]
+[--use-ebs-optimized-instances | --no-use-ebs-optimized-instances]
+[--lifecycle-event-configuration &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--layer-id</span></tt> (string)</p>
+<blockquote>
+<div>The layer ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>The layer name, which is used by the console.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--shortname</span></tt> (string)</p>
+<blockquote>
+<div><p>For custom layers only, use this parameter to specify the layer's short name, which is used internally by AWS OpsWorks Stacks and by Chef. The short name is also used as the name for the directory where your app files are installed. It can have a maximum of 200 characters and must be in the following format: /A[a-z0-9-_.]+Z/.</p>
+<p>The built-in layers' short names are defined by AWS OpsWorks Stacks. For more information, see the <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer Reference</a></p>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--attributes</span></tt> (map)</p>
+<blockquote>
+<div>One or more user-defined key/value pairs to be added to the stack attributes.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>  KeyName1=string,KeyName2=string
+
+Where valid key names are:
+  EcsClusterArn
+  EnableHaproxyStats
+  HaproxyStatsUrl
+  HaproxyStatsUser
+  HaproxyStatsPassword
+  HaproxyHealthCheckUrl
+  HaproxyHealthCheckMethod
+  MysqlRootPassword
+  MysqlRootPasswordUbiquitous
+  GangliaUrl
+  GangliaUser
+  GangliaPassword
+  MemcachedMemory
+  NodejsVersion
+  RubyVersion
+  RubygemsVersion
+  ManageBundler
+  BundlerVersion
+  RailsStack
+  PassengerVersion
+  Jvm
+  JvmVersion
+  JvmOptions
+  JavaAppServer
+  JavaAppServerVersion</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{&quot;EcsClusterArn&quot;|&quot;EnableHaproxyStats&quot;|&quot;HaproxyStatsUrl&quot;|&quot;HaproxyStatsUser&quot;|&quot;HaproxyStatsPassword&quot;|&quot;HaproxyHealthCheckUrl&quot;|&quot;HaproxyHealthCheckMethod&quot;|&quot;MysqlRootPassword&quot;|&quot;MysqlRootPasswordUbiquitous&quot;|&quot;GangliaUrl&quot;|&quot;GangliaUser&quot;|&quot;GangliaPassword&quot;|&quot;MemcachedMemory&quot;|&quot;NodejsVersion&quot;|&quot;RubyVersion&quot;|&quot;RubygemsVersion&quot;|&quot;ManageBundler&quot;|&quot;BundlerVersion&quot;|&quot;RailsStack&quot;|&quot;PassengerVersion&quot;|&quot;Jvm&quot;|&quot;JvmVersion&quot;|&quot;JvmOptions&quot;|&quot;JavaAppServer&quot;|&quot;JavaAppServerVersion&quot;: &quot;string&quot;
+  ...}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cloud-watch-logs-configuration</span></tt> (structure)</p>
+<blockquote>
+<div>Specifies CloudWatch Logs configuration options for the layer. For more information, see  CloudWatchLogsLogStream .</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Enabled=boolean,LogStreams=[{LogGroupName=string,DatetimeFormat=string,TimeZone=string,File=string,FileFingerprintLines=string,MultiLineStartPattern=string,InitialPosition=string,Encoding=string,BufferDuration=integer,BatchCount=integer,BatchSize=integer},{LogGroupName=string,DatetimeFormat=string,TimeZone=string,File=string,FileFingerprintLines=string,MultiLineStartPattern=string,InitialPosition=string,Encoding=string,BufferDuration=integer,BatchCount=integer,BatchSize=integer}]</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>{
+  &quot;Enabled&quot;: true|false,
+  &quot;LogStreams&quot;: [
+    {
+      &quot;LogGroupName&quot;: &quot;string&quot;,
+      &quot;DatetimeFormat&quot;: &quot;string&quot;,
+      &quot;TimeZone&quot;: &quot;LOCAL&quot;|&quot;UTC&quot;,
+      &quot;File&quot;: &quot;string&quot;,
+      &quot;FileFingerprintLines&quot;: &quot;string&quot;,
+      &quot;MultiLineStartPattern&quot;: &quot;string&quot;,
+      &quot;InitialPosition&quot;: &quot;start_of_file&quot;|&quot;end_of_file&quot;,
+      &quot;Encoding&quot;: &quot;ascii&quot;|&quot;big5&quot;|&quot;big5hkscs&quot;|&quot;cp037&quot;|&quot;cp424&quot;|&quot;cp437&quot;|&quot;cp500&quot;|&quot;cp720&quot;|&quot;cp737&quot;|&quot;cp775&quot;|&quot;cp850&quot;|&quot;cp852&quot;|&quot;cp855&quot;|&quot;cp856&quot;|&quot;cp857&quot;|&quot;cp858&quot;|&quot;cp860&quot;|&quot;cp861&quot;|&quot;cp862&quot;|&quot;cp863&quot;|&quot;cp864&quot;|&quot;cp865&quot;|&quot;cp866&quot;|&quot;cp869&quot;|&quot;cp874&quot;|&quot;cp875&quot;|&quot;cp932&quot;|&quot;cp949&quot;|&quot;cp950&quot;|&quot;cp1006&quot;|&quot;cp1026&quot;|&quot;cp1140&quot;|&quot;cp1250&quot;|&quot;cp1251&quot;|&quot;cp1252&quot;|&quot;cp1253&quot;|&quot;cp1254&quot;|&quot;cp1255&quot;|&quot;cp1256&quot;|&quot;cp1257&quot;|&quot;cp1258&quot;|&quot;euc_jp&quot;|&quot;euc_jis_2004&quot;|&quot;euc_jisx0213&quot;|&quot;euc_kr&quot;|&quot;gb2312&quot;|&quot;gbk&quot;|&quot;gb18030&quot;|&quot;hz&quot;|&quot;iso2022_jp&quot;|&quot;iso2022_jp_1&quot;|&quot;iso2022_jp_2&quot;|&quot;iso2022_jp_2004&quot;|&quot;iso2022_jp_3&quot;|&quot;iso2022_jp_ext&quot;|&quot;iso2022_kr&quot;|&quot;latin_1&quot;|&quot;iso8859_2&quot;|&quot;iso8859_3&quot;|&quot;iso8859_4&quot;|&quot;iso8859_5&quot;|&quot;iso8859_6&quot;|&quot;iso8859_7&quot;|&quot;iso8859_8&quot;|&quot;iso8859_9&quot;|&quot;iso8859_10&quot;|&quot;iso8859_13&quot;|&quot;iso8859_14&quot;|&quot;iso8859_15&quot;|&quot;iso8859_16&quot;|&quot;johab&quot;|&quot;koi8_r&quot;|&quot;koi8_u&quot;|&quot;mac_cyrillic&quot;|&quot;mac_greek&quot;|&quot;mac_iceland&quot;|&quot;mac_latin2&quot;|&quot;mac_roman&quot;|&quot;mac_turkish&quot;|&quot;ptcp154&quot;|&quot;shift_jis&quot;|&quot;shift_jis_2004&quot;|&quot;shift_jisx0213&quot;|&quot;utf_32&quot;|&quot;utf_32_be&quot;|&quot;utf_32_le&quot;|&quot;utf_16&quot;|&quot;utf_16_be&quot;|&quot;utf_16_le&quot;|&quot;utf_7&quot;|&quot;utf_8&quot;|&quot;utf_8_sig&quot;,
+      &quot;BufferDuration&quot;: integer,
+      &quot;BatchCount&quot;: integer,
+      &quot;BatchSize&quot;: integer
+    }
+    ...
+  ]
+}</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--custom-instance-profile-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN of an IAM profile to be used for all of the layer's EC2 instances. For more information about IAM ARNs, see <a class="reference external" href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using Identifiers</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--custom-json</span></tt> (string)</p>
+<blockquote>
+<div>A JSON-formatted string containing custom stack configuration and deployment attributes to be installed on the layer's instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">Using Custom JSON</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--custom-security-group-ids</span></tt> (list)</p>
+<blockquote>
+<div>An array containing the layer's custom security group IDs.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--packages</span></tt> (list)</p>
+<blockquote>
+<div>An array of <tt class="docutils literal"><span class="pre">Package</span></tt> objects that describe the layer's packages.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--volume-configurations</span></tt> (list)</p>
+<blockquote>
+<div>A <tt class="docutils literal"><span class="pre">VolumeConfigurations</span></tt> object that describes the layer's Amazon EBS volumes.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>MountPoint=string,RaidLevel=integer,NumberOfDisks=integer,Size=integer,VolumeType=string,Iops=integer,Encrypted=boolean ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;MountPoint&quot;: &quot;string&quot;,
+    &quot;RaidLevel&quot;: integer,
+    &quot;NumberOfDisks&quot;: integer,
+    &quot;Size&quot;: integer,
+    &quot;VolumeType&quot;: &quot;string&quot;,
+    &quot;Iops&quot;: integer,
+    &quot;Encrypted&quot;: true|false
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--enable-auto-healing</span></tt> | <tt class="docutils literal"><span class="pre">--no-enable-auto-healing</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether to disable auto healing for the layer.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--auto-assign-elastic-ips</span></tt> | <tt class="docutils literal"><span class="pre">--no-auto-assign-elastic-ips</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether to automatically assign an <a class="reference external" href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP address</a> to the layer's instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--auto-assign-public-ips</span></tt> | <tt class="docutils literal"><span class="pre">--no-auto-assign-public-ips</span></tt> (boolean)</p>
+<blockquote>
+<div>For stacks that are running in a VPC, whether to automatically assign a public IP address to the layer's instances. For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How to Edit a Layer</a> .</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--custom-recipes</span></tt> (structure)</p>
+<blockquote>
+<div>A <tt class="docutils literal"><span class="pre">LayerCustomRecipes</span></tt> object that specifies the layer's custom recipes.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">Setup</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Configure</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Deploy</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Undeploy</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">Shutdown</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Setup&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Configure&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Deploy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Undeploy&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;Shutdown&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--install-updates-on-boot</span></tt> | <tt class="docutils literal"><span class="pre">--no-install-updates-on-boot</span></tt> (boolean)</p>
+<blockquote>
+<div><p>Whether to install operating system and package updates when the instance boots. The default value is <tt class="docutils literal"><span class="pre">true</span></tt> . To control when updates are installed, set this value to <tt class="docutils literal"><span class="pre">false</span></tt> . You must then update your instances manually by using  CreateDeployment to run the <tt class="docutils literal"><span class="pre">update_dependencies</span></tt> stack command or manually running <tt class="docutils literal"><span class="pre">yum</span></tt> (Amazon Linux) or <tt class="docutils literal"><span class="pre">apt-get</span></tt> (Ubuntu) on the instances.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We strongly recommend using the default value of <tt class="docutils literal"><span class="pre">true</span></tt> , to ensure that your instances have the latest security updates.</p>
+</div>
+</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--use-ebs-optimized-instances</span></tt> | <tt class="docutils literal"><span class="pre">--no-use-ebs-optimized-instances</span></tt> (boolean)</p>
+<blockquote>
+<div>Whether to use Amazon EBS-optimized instances.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--lifecycle-event-configuration</span></tt> (structure)</p>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>Shutdown={ExecutionTimeout=integer,DelayUntilElbConnectionsDrained=boolean}</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;Shutdown&quot;</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s2">&quot;ExecutionTimeout&quot;</span><span class="p">:</span> <span class="n">integer</span><span class="p">,</span>
+    <span class="s2">&quot;DelayUntilElbConnectionsDrained&quot;</span><span class="p">:</span> <span class="n">true</span><span class="o">|</span><span class="n">false</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To update a layer</strong></p>
+<p>The following example updates a specified layer to use Amazon EBS-optimized instances.</p>
+<div class="highlight-python"><pre>aws opsworks --region us-east-1 update-layer --layer-id 888c5645-09a5-4d0e-95a8-812ef1db76a4 --use-ebs-optimized-instances</pre>
+</div>
+<p><em>Output</em>: None.</p>
+<p><strong>More Information</strong></p>
+<p>For more information, see <a class="reference external" href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">Editing an OpsWorks Layer's Configuration</a> in the <em>AWS OpsWorks User Guide</em>.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>None</p>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../opsworks/update-instance.html" title="previous chapter (use the left arrow)">&larr; update-instance</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../opsworks/update-my-user-profile.html" title="next chapter (use the right arrow)">update-my-user-profile &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../opsworks/update-my-user-profile.html" title="update-my-user-profile"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../opsworks/update-instance.html" title="update-instance"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../opsworks/index.html" >opsworks</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

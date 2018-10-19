@@ -1,0 +1,51 @@
+{
+    "RuleSetName": "",
+    "After": "",
+    "Rule": {
+        "Name": "",
+        "Enabled": true,
+        "TlsPolicy": "Optional",
+        "Recipients": [
+            ""
+        ],
+        "Actions": [
+            {
+                "S3Action": {
+                    "TopicArn": "",
+                    "BucketName": "",
+                    "ObjectKeyPrefix": "",
+                    "KmsKeyArn": ""
+                },
+                "BounceAction": {
+                    "TopicArn": "",
+                    "SmtpReplyCode": "",
+                    "StatusCode": "",
+                    "Message": "",
+                    "Sender": ""
+                },
+                "WorkmailAction": {
+                    "TopicArn": "",
+                    "OrganizationArn": ""
+                },
+                "LambdaAction": {
+                    "TopicArn": "",
+                    "FunctionArn": "",
+                    "InvocationType": "RequestResponse"
+                },
+                "StopAction": {
+                    "Scope": "RuleSet",
+                    "TopicArn": ""
+                },
+                "AddHeaderAction": {
+                    "HeaderName": "",
+                    "HeaderValue": ""
+                },
+                "SNSAction": {
+                    "TopicArn": "",
+                    "Encoding": "Base64"
+                }
+            }
+        ],
+        "ScanEnabled": true
+    }
+}

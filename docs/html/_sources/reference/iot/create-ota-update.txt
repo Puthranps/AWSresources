@@ -1,0 +1,279 @@
+[ :ref:`aws <cli:aws>` . :ref:`iot <cli:aws iot>` ]
+
+.. _cli:aws iot create-ota-update:
+
+
+*****************
+create-ota-update
+*****************
+
+
+
+===========
+Description
+===========
+
+
+
+Creates an AWS IoT OTAUpdate on a target group of things or groups.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreateOTAUpdate>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    create-ota-update
+  --ota-update-id <value>
+  [--description <value>]
+  --targets <value>
+  [--target-selection <value>]
+  [--aws-job-executions-rollout-config <value>]
+  --files <value>
+  --role-arn <value>
+  [--additional-parameters <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--ota-update-id`` (string)
+
+
+  The ID of the OTA update to be created.
+
+  
+
+``--description`` (string)
+
+
+  The description of the OTA update.
+
+  
+
+``--targets`` (list)
+
+
+  The targeted devices to receive OTA updates.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+
+
+``--target-selection`` (string)
+
+
+  Specifies whether the update will continue to run (CONTINUOUS), or will be complete after all the things specified as targets have completed the update (SNAPSHOT). If continuous, the update may also be run on a thing when a change is detected in a target. For example, an update will run on a thing when the thing is added to a target group, even after the update was completed by all things originally in the group. Valid values: CONTINUOUS | SNAPSHOT.
+
+  
+
+  Possible values:
+
+  
+  *   ``CONTINUOUS``
+
+  
+  *   ``SNAPSHOT``
+
+  
+
+  
+
+``--aws-job-executions-rollout-config`` (structure)
+
+
+  Configuration for the rollout of OTA updates.
+
+  
+
+
+
+Shorthand Syntax::
+
+    maximumPerMinute=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "maximumPerMinute": integer
+  }
+
+
+
+``--files`` (list)
+
+
+  The files to be streamed by the OTA update.
+
+  
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "fileName": "string",
+      "fileVersion": "string",
+      "fileLocation": {
+        "stream": {
+          "streamId": "string",
+          "fileId": integer
+        },
+        "s3Location": {
+          "bucket": "string",
+          "key": "string",
+          "version": "string"
+        }
+      },
+      "codeSigning": {
+        "awsSignerJobId": "string",
+        "startSigningJobParameter": {
+          "signingProfileParameter": {
+            "certificateArn": "string",
+            "platform": "string",
+            "certificatePathOnDevice": "string"
+          },
+          "signingProfileName": "string",
+          "destination": {
+            "s3Destination": {
+              "bucket": "string",
+              "prefix": "string"
+            }
+          }
+        },
+        "customCodeSigning": {
+          "signature": {
+            "inlineDocument": blob
+          },
+          "certificateChain": {
+            "certificateName": "string",
+            "inlineDocument": "string"
+          },
+          "hashAlgorithm": "string",
+          "signatureAlgorithm": "string"
+        }
+      },
+      "attributes": {"string": "string"
+        ...}
+    }
+    ...
+  ]
+
+
+
+``--role-arn`` (string)
+
+
+  The IAM role that allows access to the AWS IoT Jobs service.
+
+  
+
+``--additional-parameters`` (map)
+
+
+  A list of additional OTA update parameters which are name-value pairs.
+
+  
+
+
+
+Shorthand Syntax::
+
+    KeyName1=string,KeyName2=string
+
+
+
+
+JSON Syntax::
+
+  {"string": "string"
+    ...}
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+otaUpdateId -> (string)
+
+  
+
+  The OTA update ID.
+
+  
+
+  
+
+awsIotJobId -> (string)
+
+  
+
+  The AWS IoT job ID associated with the OTA update.
+
+  
+
+  
+
+otaUpdateArn -> (string)
+
+  
+
+  The OTA update ARN.
+
+  
+
+  
+
+awsIotJobArn -> (string)
+
+  
+
+  The AWS IoT job ARN associated with the OTA update.
+
+  
+
+  
+
+otaUpdateStatus -> (string)
+
+  
+
+  The OTA update status.
+
+  
+
+  
+

@@ -1,0 +1,22 @@
+{
+    "ReplicationInstanceIdentifier": "",
+    "AllocatedStorage": 0,
+    "ReplicationInstanceClass": "",
+    "VpcSecurityGroupIds": [
+        ""
+    ],
+    "AvailabilityZone": "",
+    "ReplicationSubnetGroupIdentifier": "",
+    "PreferredMaintenanceWindow": "",
+    "MultiAZ": true,
+    "EngineVersion": "",
+    "AutoMinorVersionUpgrade": true,
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "KmsKeyId": "",
+    "PubliclyAccessible": true
+}

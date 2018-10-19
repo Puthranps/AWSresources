@@ -1,0 +1,17 @@
+{
+    "RegexMatchSetId": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "RegexMatchTuple": {
+                "FieldToMatch": {
+                    "Type": "QUERY_STRING",
+                    "Data": ""
+                },
+                "TextTransformation": "COMPRESS_WHITE_SPACE",
+                "RegexPatternSetId": ""
+            }
+        }
+    ],
+    "ChangeToken": ""
+}

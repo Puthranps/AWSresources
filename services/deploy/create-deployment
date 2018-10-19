@@ -1,0 +1,56 @@
+{
+    "applicationName": "",
+    "deploymentGroupName": "",
+    "revision": {
+        "revisionType": "GitHub",
+        "s3Location": {
+            "bucket": "",
+            "key": "",
+            "bundleType": "YAML",
+            "version": "",
+            "eTag": ""
+        },
+        "gitHubLocation": {
+            "repository": "",
+            "commitId": ""
+        },
+        "string": {
+            "content": "",
+            "sha256": ""
+        }
+    },
+    "deploymentConfigName": "",
+    "description": "",
+    "ignoreApplicationStopFailures": true,
+    "targetInstances": {
+        "tagFilters": [
+            {
+                "Key": "",
+                "Value": "",
+                "Type": "KEY_AND_VALUE"
+            }
+        ],
+        "autoScalingGroups": [
+            ""
+        ],
+        "ec2TagSet": {
+            "ec2TagSetList": [
+                [
+                    {
+                        "Key": "",
+                        "Value": "",
+                        "Type": "KEY_AND_VALUE"
+                    }
+                ]
+            ]
+        }
+    },
+    "autoRollbackConfiguration": {
+        "enabled": true,
+        "events": [
+            "DEPLOYMENT_STOP_ON_REQUEST"
+        ]
+    },
+    "updateOutdatedInstancesOnly": true,
+    "fileExistsBehavior": "DISALLOW"
+}

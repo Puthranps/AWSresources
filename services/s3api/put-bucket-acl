@@ -1,0 +1,28 @@
+{
+    "ACL": "public-read",
+    "AccessControlPolicy": {
+        "Grants": [
+            {
+                "Grantee": {
+                    "DisplayName": "",
+                    "EmailAddress": "",
+                    "ID": "",
+                    "Type": "Group",
+                    "URI": ""
+                },
+                "Permission": "READ"
+            }
+        ],
+        "Owner": {
+            "DisplayName": "",
+            "ID": ""
+        }
+    },
+    "Bucket": "",
+    "ContentMD5": "",
+    "GrantFullControl": "",
+    "GrantRead": "",
+    "GrantReadACP": "",
+    "GrantWrite": "",
+    "GrantWriteACP": ""
+}

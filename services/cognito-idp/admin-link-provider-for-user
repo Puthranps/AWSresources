@@ -1,0 +1,13 @@
+{
+    "UserPoolId": "",
+    "DestinationUser": {
+        "ProviderName": "",
+        "ProviderAttributeName": "",
+        "ProviderAttributeValue": ""
+    },
+    "SourceUser": {
+        "ProviderName": "",
+        "ProviderAttributeName": "",
+        "ProviderAttributeValue": ""
+    }
+}

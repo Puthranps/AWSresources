@@ -1,0 +1,9 @@
+{
+    "AllocationId": "",
+    "InstanceId": "",
+    "PublicIp": "",
+    "AllowReassociation": true,
+    "DryRun": true,
+    "NetworkInterfaceId": "",
+    "PrivateIpAddress": ""
+}

@@ -1,0 +1,245 @@
+[ :ref:`aws <cli:aws>` . :ref:`servicecatalog <cli:aws servicecatalog>` ]
+
+.. _cli:aws servicecatalog describe-provisioned-product:
+
+
+****************************
+describe-provisioned-product
+****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Gets information about the specified provisioned product.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-provisioned-product
+  [--accept-language <value>]
+  --id <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--accept-language`` (string)
+
+
+  The language code.
+
+   
+
+   
+  * ``en`` - English (default) 
+   
+  * ``jp`` - Japanese 
+   
+  * ``zh`` - Chinese 
+   
+
+  
+
+``--id`` (string)
+
+
+  The provisioned product identifier.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ProvisionedProductDetail -> (structure)
+
+  
+
+  Information about the provisioned product.
+
+  
+
+  Name -> (string)
+
+    
+
+    The user-friendly name of the provisioned product.
+
+    
+
+    
+
+  Arn -> (string)
+
+    
+
+    The ARN of the provisioned product.
+
+    
+
+    
+
+  Type -> (string)
+
+    
+
+    The type of provisioned product. The supported value is ``CFN_STACK`` .
+
+    
+
+    
+
+  Id -> (string)
+
+    
+
+    The identifier of the provisioned product.
+
+    
+
+    
+
+  Status -> (string)
+
+    
+
+    The current status of the provisioned product.
+
+     
+
+     
+    * ``AVAILABLE`` - Stable state, ready to perform any operation. The most recent operation succeeded and completed. 
+     
+    * ``UNDER_CHANGE`` - Transitive state, operations performed might not have valid results. Wait for an ``AVAILABLE`` status before performing operations. 
+     
+    * ``TAINTED`` - Stable state, ready to perform any operation. The stack has completed the requested operation but is not exactly what was requested. For example, a request to update to a new version failed and the stack rolled back to the current version. 
+     
+    * ``ERROR`` - An unexpected error occurred, the provisioned product exists but the stack is not running. For example, CloudFormation received a parameter value that was not valid and could not launch the stack. 
+     
+
+    
+
+    
+
+  StatusMessage -> (string)
+
+    
+
+    The current status message of the provisioned product.
+
+    
+
+    
+
+  CreatedTime -> (timestamp)
+
+    
+
+    The UTC time stamp of the creation time.
+
+    
+
+    
+
+  IdempotencyToken -> (string)
+
+    
+
+    A unique identifier that you provide to ensure idempotency. If multiple requests differ only by the idempotency token, the same response is returned for each repeated request.
+
+    
+
+    
+
+  LastRecordId -> (string)
+
+    
+
+    The record identifier of the last request performed on this provisioned product.
+
+    
+
+    
+
+  ProductId -> (string)
+
+    
+
+    The product identifier. For example, ``prod-abcdzk7xy33qa`` .
+
+    
+
+    
+
+  ProvisioningArtifactId -> (string)
+
+    
+
+    The identifier of the provisioning artifact. For example, ``pa-4abcdjnxjj6ne`` .
+
+    
+
+    
+
+  
+
+CloudWatchDashboards -> (list)
+
+  
+
+  Any CloudWatch dashboards that were created when provisioning the product.
+
+  
+
+  (structure)
+
+    
+
+    Information about a CloudWatch dashboard.
+
+    
+
+    Name -> (string)
+
+      
+
+      The name of the CloudWatch dashboard.
+
+      
+
+      
+
+    
+
+  
+

@@ -1,0 +1,216 @@
+[ :ref:`aws <cli:aws>` . :ref:`ssm <cli:aws ssm>` ]
+
+.. _cli:aws ssm describe-maintenance-window-schedule:
+
+
+************************************
+describe-maintenance-window-schedule
+************************************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves information about upcoming executions of a Maintenance Window.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowSchedule>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-maintenance-window-schedule
+  [--window-id <value>]
+  [--targets <value>]
+  [--resource-type <value>]
+  [--filters <value>]
+  [--max-results <value>]
+  [--next-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--window-id`` (string)
+
+
+  The ID of the Maintenance Window to retrieve information about.
+
+  
+
+``--targets`` (list)
+
+
+  The instance ID or key/value pair to retrieve information about.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--resource-type`` (string)
+
+
+  The type of resource you want to retrieve information about. For example, "INSTANCE".
+
+  
+
+  Possible values:
+
+  
+  *   ``INSTANCE``
+
+  
+
+  
+
+``--filters`` (list)
+
+
+  Filters used to limit the range of results. For example, you can limit Maintenance Window executions to only those scheduled before or after a certain date and time.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Key=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Key": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--max-results`` (integer)
+
+
+  The maximum number of items to return for this call. The call also returns a token that you can specify in a subsequent call to get the next set of results.
+
+  
+
+``--next-token`` (string)
+
+
+  The token for the next set of items to return. (You received this token from a previous call.)
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+ScheduledWindowExecutions -> (list)
+
+  
+
+  Information about Maintenance Window executions scheduled for the specified time range.
+
+  
+
+  (structure)
+
+    
+
+    Information about a scheduled execution for a Maintenance Window.
+
+    
+
+    WindowId -> (string)
+
+      
+
+      The ID of the Maintenance Window to be run.
+
+      
+
+      
+
+    Name -> (string)
+
+      
+
+      The name of the Maintenance Window to be run.
+
+      
+
+      
+
+    ExecutionTime -> (string)
+
+      
+
+      The time, in ISO-8601 Extended format, that the Maintenance Window is scheduled to be run.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  The token for the next set of items to return. (You use this token in the next call.)
+
+  
+
+  
+

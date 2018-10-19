@@ -1,0 +1,171 @@
+[ :ref:`aws <cli:aws>` . :ref:`redshift <cli:aws redshift>` ]
+
+.. _cli:aws redshift describe-cluster-tracks:
+
+
+***********************
+describe-cluster-tracks
+***********************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns a list of all the available maintenance tracks.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterTracks>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    describe-cluster-tracks
+  [--maintenance-track-name <value>]
+  [--max-records <value>]
+  [--marker <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--maintenance-track-name`` (string)
+
+
+  The name of the maintenance track. 
+
+  
+
+``--max-records`` (integer)
+
+
+  An integer value for the maximum number of maintenance tracks to return.
+
+  
+
+``--marker`` (string)
+
+
+  An optional parameter that specifies the starting point to return a set of response records. When the results of a ``DescribeClusterTracks`` request exceed the value specified in ``MaxRecords`` , Amazon Redshift returns a value in the ``Marker`` field of the response. You can retrieve the next set of response records by providing the returned marker value in the ``Marker`` parameter and retrying the request. 
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+MaintenanceTracks -> (list)
+
+  
+
+  A list of maintenance tracks output by the ``DescribeClusterTracks`` operation. 
+
+  
+
+  (structure)
+
+    
+
+    Defines a maintenance track that determines which Amazon Redshift version to apply during a maintenance window. If the value for ``MaintenanceTrack`` is ``current`` , the cluster is updated to the most recently certified maintenance release. If the value is ``trailing`` , the cluster is updated to the previously certified maintenance release. 
+
+    
+
+    MaintenanceTrackName -> (string)
+
+      
+
+      The name of the maintenance track. Possible values are ``current`` and ``trailing`` .
+
+      
+
+      
+
+    DatabaseVersion -> (string)
+
+      
+
+      The version number for the cluster release.
+
+      
+
+      
+
+    UpdateTargets -> (list)
+
+      
+
+      An array of  UpdateTarget objects to update with the maintenance track. 
+
+      
+
+      (structure)
+
+        
+
+        A maintenance track that you can switch the current track to.
+
+        
+
+        MaintenanceTrackName -> (string)
+
+          
+
+          The name of the new maintenance track.
+
+          
+
+          
+
+        DatabaseVersion -> (string)
+
+          
+
+          The cluster version for the new maintenance track.
+
+          
+
+          
+
+        
+
+      
+
+    
+
+  
+
+Marker -> (string)
+
+  
+
+  The starting point to return a set of response tracklist records. You can retrieve the next set of response records by providing the returned marker value in the ``Marker`` parameter and retrying the request.
+
+  
+
+  
+

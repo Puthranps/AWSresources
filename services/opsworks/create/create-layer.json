@@ -1,0 +1,74 @@
+{
+    "StackId": "",
+    "Type": "db-master",
+    "Name": "",
+    "Shortname": "",
+    "Attributes": {
+        "KeyName": ""
+    },
+    "CloudWatchLogsConfiguration": {
+        "Enabled": true,
+        "LogStreams": [
+            {
+                "LogGroupName": "",
+                "DatetimeFormat": "",
+                "TimeZone": "UTC",
+                "File": "",
+                "FileFingerprintLines": "",
+                "MultiLineStartPattern": "",
+                "InitialPosition": "end_of_file",
+                "Encoding": "iso2022_jp_1",
+                "BufferDuration": 0,
+                "BatchCount": 0,
+                "BatchSize": 0
+            }
+        ]
+    },
+    "CustomInstanceProfileArn": "",
+    "CustomJson": "",
+    "CustomSecurityGroupIds": [
+        ""
+    ],
+    "Packages": [
+        ""
+    ],
+    "VolumeConfigurations": [
+        {
+            "MountPoint": "",
+            "RaidLevel": 0,
+            "NumberOfDisks": 0,
+            "Size": 0,
+            "VolumeType": "",
+            "Iops": 0,
+            "Encrypted": true
+        }
+    ],
+    "EnableAutoHealing": true,
+    "AutoAssignElasticIps": true,
+    "AutoAssignPublicIps": true,
+    "CustomRecipes": {
+        "Setup": [
+            ""
+        ],
+        "Configure": [
+            ""
+        ],
+        "Deploy": [
+            ""
+        ],
+        "Undeploy": [
+            ""
+        ],
+        "Shutdown": [
+            ""
+        ]
+    },
+    "InstallUpdatesOnBoot": true,
+    "UseEbsOptimizedInstances": true,
+    "LifecycleEventConfiguration": {
+        "Shutdown": {
+            "ExecutionTimeout": 0,
+            "DelayUntilElbConnectionsDrained": true
+        }
+    }
+}

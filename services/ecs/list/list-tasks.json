@@ -1,0 +1,11 @@
+{
+    "cluster": "",
+    "containerInstance": "",
+    "family": "",
+    "nextToken": "",
+    "maxResults": 0,
+    "startedBy": "",
+    "serviceName": "",
+    "desiredStatus": "STOPPED",
+    "launchType": "FARGATE"
+}

@@ -1,0 +1,19 @@
+{
+    "principal": "",
+    "cognitoIdentityPoolId": "",
+    "authInfos": [
+        {
+            "actionType": "SUBSCRIBE",
+            "resources": [
+                ""
+            ]
+        }
+    ],
+    "clientId": "",
+    "policyNamesToAdd": [
+        ""
+    ],
+    "policyNamesToSkip": [
+        ""
+    ]
+}

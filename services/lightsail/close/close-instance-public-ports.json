@@ -1,0 +1,8 @@
+{
+    "portInfo": {
+        "fromPort": 0,
+        "toPort": 0,
+        "protocol": "tcp"
+    },
+    "instanceName": ""
+}

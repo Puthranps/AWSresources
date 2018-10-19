@@ -1,0 +1,9 @@
+{
+    "AssignIpv6AddressOnCreation": {
+        "Value": true
+    },
+    "MapPublicIpOnLaunch": {
+        "Value": true
+    },
+    "SubnetId": ""
+}

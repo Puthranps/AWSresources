@@ -1,0 +1,28 @@
+{
+    "CallerReference": "",
+    "HealthCheckConfig": {
+        "IPAddress": "",
+        "Port": 0,
+        "Type": "HTTPS",
+        "ResourcePath": "",
+        "FullyQualifiedDomainName": "",
+        "SearchString": "",
+        "RequestInterval": 0,
+        "FailureThreshold": 0,
+        "MeasureLatency": true,
+        "Inverted": true,
+        "HealthThreshold": 0,
+        "ChildHealthChecks": [
+            ""
+        ],
+        "EnableSNI": true,
+        "Regions": [
+            "eu-west-1"
+        ],
+        "AlarmIdentifier": {
+            "Region": "ap-northeast-1",
+            "Name": ""
+        },
+        "InsufficientDataHealthStatus": "Unhealthy"
+    }
+}

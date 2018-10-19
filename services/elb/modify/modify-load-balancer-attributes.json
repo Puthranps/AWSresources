@@ -1,0 +1,27 @@
+{
+    "LoadBalancerName": "",
+    "LoadBalancerAttributes": {
+        "CrossZoneLoadBalancing": {
+            "Enabled": true
+        },
+        "AccessLog": {
+            "Enabled": true,
+            "S3BucketName": "",
+            "EmitInterval": 0,
+            "S3BucketPrefix": ""
+        },
+        "ConnectionDraining": {
+            "Enabled": true,
+            "Timeout": 0
+        },
+        "ConnectionSettings": {
+            "IdleTimeout": 0
+        },
+        "AdditionalAttributes": [
+            {
+                "Key": "",
+                "Value": ""
+            }
+        ]
+    }
+}

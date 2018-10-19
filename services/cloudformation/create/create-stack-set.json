@@ -1,0 +1,26 @@
+{
+    "StackSetName": "",
+    "Description": "",
+    "TemplateBody": "",
+    "TemplateURL": "",
+    "Parameters": [
+        {
+            "ParameterKey": "",
+            "ParameterValue": "",
+            "UsePreviousValue": true,
+            "ResolvedValue": ""
+        }
+    ],
+    "Capabilities": [
+        "CAPABILITY_IAM"
+    ],
+    "Tags": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "AdministrationRoleARN": "",
+    "ExecutionRoleName": "",
+    "ClientRequestToken": ""
+}

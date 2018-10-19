@@ -1,0 +1,367 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>create-image-builder &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="appstream" href="../appstream/index.html" />
+    <link rel="next" title="create-image-builder-streaming-url" href="../appstream/create-image-builder-streaming-url.html" />
+    <link rel="prev" title="create-fleet" href="../appstream/create-fleet.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../appstream/create-image-builder-streaming-url.html" title="create-image-builder-streaming-url"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../appstream/create-fleet.html" title="create-fleet"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../appstream/index.html" accesskey="U">appstream</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../appstream/create-fleet.html" title="previous chapter (use the left arrow)">&larr; create-fleet</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appstream/create-image-builder-streaming-url.html" title="next chapter (use the right arrow)">create-image-builder-streaming-url &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">create-image-builder</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/appstream/create-image-builder">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../appstream/index.html#cli-aws-appstream"><em>appstream</em></a> ]</p>
+<div class="section" id="create-image-builder">
+<span id="cli-aws-appstream-create-image-builder"></span><h1>create-image-builder<a class="headerlink" href="#create-image-builder" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Creates an image builder. An image builder is a virtual machine that is used to create an image.</p>
+<p>The initial state of the builder is <tt class="docutils literal"><span class="pre">PENDING</span></tt> . When it is ready, the state is <tt class="docutils literal"><span class="pre">RUNNING</span></tt> .</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateImageBuilder">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  create-image-builder
+--name &lt;value&gt;
+[--image-name &lt;value&gt;]
+[--image-arn &lt;value&gt;]
+--instance-type &lt;value&gt;
+[--description &lt;value&gt;]
+[--display-name &lt;value&gt;]
+[--vpc-config &lt;value&gt;]
+[--enable-default-internet-access | --no-enable-default-internet-access]
+[--domain-join-info &lt;value&gt;]
+[--appstream-agent-version &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--name</span></tt> (string)</p>
+<blockquote>
+<div>A unique name for the image builder.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--image-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the image used to create the builder.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--image-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN of the public, private, or shared image to use.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--instance-type</span></tt> (string)</p>
+<blockquote>
+<div>The instance type to use when launching the image builder.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--description</span></tt> (string)</p>
+<blockquote>
+<div>The description for display.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--display-name</span></tt> (string)</p>
+<blockquote>
+<div>The image builder name for display.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--vpc-config</span></tt> (structure)</p>
+<blockquote>
+<div>The VPC configuration for the image builder. You can specify only one subnet.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">SubnetIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span><span class="p">,</span><span class="n">SecurityGroupIds</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;SubnetIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">],</span>
+  <span class="s2">&quot;SecurityGroupIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--enable-default-internet-access</span></tt> | <tt class="docutils literal"><span class="pre">--no-enable-default-internet-access</span></tt> (boolean)</p>
+<blockquote>
+<div>Enables or disables default internet access for the image builder.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--domain-join-info</span></tt> (structure)</p>
+<blockquote>
+<div>The information needed to join a Microsoft Active Directory domain.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">DirectoryName</span><span class="o">=</span><span class="n">string</span><span class="p">,</span><span class="n">OrganizationalUnitDistinguishedName</span><span class="o">=</span><span class="n">string</span>
+</pre></div>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;DirectoryName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;OrganizationalUnitDistinguishedName&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">--appstream-agent-version</span></tt> (string)</p>
+<blockquote>
+<div>The version of the AppStream 2.0 agent to use for this image builder. To use the latest version of the AppStream 2.0 agent, specify [LATEST].</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>ImageBuilder -&gt; (structure)</p>
+<blockquote>
+<div><p>Information about the image builder.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the image builder.</div></blockquote>
+<p>Arn -&gt; (string)</p>
+<blockquote>
+<div>The ARN for the image builder.</div></blockquote>
+<p>ImageArn -&gt; (string)</p>
+<blockquote>
+<div>The ARN of the image from which this builder was created.</div></blockquote>
+<p>Description -&gt; (string)</p>
+<blockquote>
+<div>The description for display.</div></blockquote>
+<p>DisplayName -&gt; (string)</p>
+<blockquote>
+<div>The image builder name for display.</div></blockquote>
+<p>VpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The VPC configuration of the image builder.</p>
+<p>SubnetIds -&gt; (list)</p>
+<blockquote>
+<div><p>The subnets to which a network interface is established from the fleet instance.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The security groups for the fleet.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The instance type for the image builder.</div></blockquote>
+<p>Platform -&gt; (string)</p>
+<blockquote>
+<div>The operating system platform of the image builder.</div></blockquote>
+<p>State -&gt; (string)</p>
+<blockquote>
+<div>The state of the image builder.</div></blockquote>
+<p>StateChangeReason -&gt; (structure)</p>
+<blockquote>
+<div><p>The reason why the last state change occurred.</p>
+<p>Code -&gt; (string)</p>
+<blockquote>
+<div>The state change reason code.</div></blockquote>
+<p>Message -&gt; (string)</p>
+<blockquote>
+<div>The state change reason message.</div></blockquote>
+</div></blockquote>
+<p>CreatedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The time stamp when the image builder was created.</div></blockquote>
+<p>EnableDefaultInternetAccess -&gt; (boolean)</p>
+<blockquote>
+<div>Enables or disables default internet access for the image builder.</div></blockquote>
+<p>DomainJoinInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>The information needed to join a Microsoft Active Directory domain.</p>
+<p>DirectoryName -&gt; (string)</p>
+<blockquote>
+<div>The fully qualified name of the directory (for example, corp.example.com).</div></blockquote>
+<p>OrganizationalUnitDistinguishedName -&gt; (string)</p>
+<blockquote>
+<div>The distinguished name of the organizational unit for computer accounts.</div></blockquote>
+</div></blockquote>
+<p>ImageBuilderErrors -&gt; (list)</p>
+<blockquote>
+<div><p>The image builder errors.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes a resource error.</p>
+<p>ErrorCode -&gt; (string)</p>
+<blockquote>
+<div>The error code.</div></blockquote>
+<p>ErrorMessage -&gt; (string)</p>
+<blockquote>
+<div>The error message.</div></blockquote>
+<p>ErrorTimestamp -&gt; (timestamp)</p>
+<blockquote>
+<div>The time the error occurred.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>AppstreamAgentVersion -&gt; (string)</p>
+<blockquote>
+<div>The version of the AppStream 2.0 agent that is currently being used by this image builder.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../appstream/create-fleet.html" title="previous chapter (use the left arrow)">&larr; create-fleet</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../appstream/create-image-builder-streaming-url.html" title="next chapter (use the right arrow)">create-image-builder-streaming-url &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../appstream/create-image-builder-streaming-url.html" title="create-image-builder-streaming-url"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../appstream/create-fleet.html" title="create-fleet"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../appstream/index.html" >appstream</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

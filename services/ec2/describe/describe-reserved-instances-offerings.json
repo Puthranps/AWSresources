@@ -1,0 +1,26 @@
+{
+    "AvailabilityZone": "",
+    "Filters": [
+        {
+            "Name": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "IncludeMarketplace": true,
+    "InstanceType": "cg1.4xlarge",
+    "MaxDuration": 0,
+    "MaxInstanceCount": 0,
+    "MinDuration": 0,
+    "OfferingClass": "standard",
+    "ProductDescription": "Windows",
+    "ReservedInstancesOfferingIds": [
+        ""
+    ],
+    "DryRun": true,
+    "InstanceTenancy": "default",
+    "MaxResults": 0,
+    "NextToken": "",
+    "OfferingType": "No Upfront"
+}

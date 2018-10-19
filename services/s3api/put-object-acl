@@ -1,0 +1,31 @@
+{
+    "ACL": "aws-exec-read",
+    "AccessControlPolicy": {
+        "Grants": [
+            {
+                "Grantee": {
+                    "DisplayName": "",
+                    "EmailAddress": "",
+                    "ID": "",
+                    "Type": "CanonicalUser",
+                    "URI": ""
+                },
+                "Permission": "WRITE"
+            }
+        ],
+        "Owner": {
+            "DisplayName": "",
+            "ID": ""
+        }
+    },
+    "Bucket": "",
+    "ContentMD5": "",
+    "GrantFullControl": "",
+    "GrantRead": "",
+    "GrantReadACP": "",
+    "GrantWrite": "",
+    "GrantWriteACP": "",
+    "Key": "",
+    "RequestPayer": "requester",
+    "VersionId": ""
+}

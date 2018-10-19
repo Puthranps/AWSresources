@@ -1,0 +1,365 @@
+[ :ref:`aws <cli:aws>` . :ref:`lightsail <cli:aws lightsail>` ]
+
+.. _cli:aws lightsail get-relational-database-metric-data:
+
+
+***********************************
+get-relational-database-metric-data
+***********************************
+
+
+
+===========
+Description
+===========
+
+
+
+Returns the data points of the specified metric for a database in Amazon Lightsail.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/lightsail-2016-11-28/GetRelationalDatabaseMetricData>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    get-relational-database-metric-data
+  --relational-database-name <value>
+  --metric-name <value>
+  --period <value>
+  --start-time <value>
+  --end-time <value>
+  --unit <value>
+  --statistics <value>
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--relational-database-name`` (string)
+
+
+  The name of your database from which to get metric data.
+
+  
+
+``--metric-name`` (string)
+
+
+  The name of the metric data to return.
+
+  
+
+  Possible values:
+
+  
+  *   ``CPUUtilization``
+
+  
+  *   ``DatabaseConnections``
+
+  
+  *   ``DiskQueueDepth``
+
+  
+  *   ``FreeStorageSpace``
+
+  
+  *   ``NetworkReceiveThroughput``
+
+  
+  *   ``NetworkTransmitThroughput``
+
+  
+
+  
+
+``--period`` (integer)
+
+
+  The granularity, in seconds, of the returned data points.
+
+  
+
+``--start-time`` (timestamp)
+
+
+  The start of the time interval from which to get metric data.
+
+   
+
+  Constraints:
+
+   
+
+   
+  * Specified in Universal Coordinated Time (UTC). 
+   
+  * Specified in the Unix time format. For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then you input ``1538424000`` as the start time. 
+   
+
+  
+
+``--end-time`` (timestamp)
+
+
+  The end of the time interval from which to get metric data.
+
+   
+
+  Constraints:
+
+   
+
+   
+  * Specified in Universal Coordinated Time (UTC). 
+   
+  * Specified in the Unix time format. For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then you input ``1538424000`` as the end time. 
+   
+
+  
+
+``--unit`` (string)
+
+
+  The unit for the metric data request.
+
+  
+
+  Possible values:
+
+  
+  *   ``Seconds``
+
+  
+  *   ``Microseconds``
+
+  
+  *   ``Milliseconds``
+
+  
+  *   ``Bytes``
+
+  
+  *   ``Kilobytes``
+
+  
+  *   ``Megabytes``
+
+  
+  *   ``Gigabytes``
+
+  
+  *   ``Terabytes``
+
+  
+  *   ``Bits``
+
+  
+  *   ``Kilobits``
+
+  
+  *   ``Megabits``
+
+  
+  *   ``Gigabits``
+
+  
+  *   ``Terabits``
+
+  
+  *   ``Percent``
+
+  
+  *   ``Count``
+
+  
+  *   ``Bytes/Second``
+
+  
+  *   ``Kilobytes/Second``
+
+  
+  *   ``Megabytes/Second``
+
+  
+  *   ``Gigabytes/Second``
+
+  
+  *   ``Terabytes/Second``
+
+  
+  *   ``Bits/Second``
+
+  
+  *   ``Kilobits/Second``
+
+  
+  *   ``Megabits/Second``
+
+  
+  *   ``Gigabits/Second``
+
+  
+  *   ``Terabits/Second``
+
+  
+  *   ``Count/Second``
+
+  
+  *   ``None``
+
+  
+
+  
+
+``--statistics`` (list)
+
+
+  The array of statistics for your metric data request.
+
+  
+
+
+
+Syntax::
+
+  "string" "string" ...
+
+  Where valid values are:
+    Minimum
+    Maximum
+    Sum
+    Average
+    SampleCount
+
+
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+metricName -> (string)
+
+  
+
+  The name of the metric.
+
+  
+
+  
+
+metricData -> (list)
+
+  
+
+  An object describing the result of your get relational database metric data request.
+
+  
+
+  (structure)
+
+    
+
+    Describes the metric data point.
+
+    
+
+    average -> (double)
+
+      
+
+      The average.
+
+      
+
+      
+
+    maximum -> (double)
+
+      
+
+      The maximum.
+
+      
+
+      
+
+    minimum -> (double)
+
+      
+
+      The minimum.
+
+      
+
+      
+
+    sampleCount -> (double)
+
+      
+
+      The sample count.
+
+      
+
+      
+
+    sum -> (double)
+
+      
+
+      The sum.
+
+      
+
+      
+
+    timestamp -> (timestamp)
+
+      
+
+      The timestamp (e.g., ``1479816991.349`` ).
+
+      
+
+      
+
+    unit -> (string)
+
+      
+
+      The unit. 
+
+      
+
+      
+
+    
+
+  
+

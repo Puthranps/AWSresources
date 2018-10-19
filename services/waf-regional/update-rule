@@ -1,0 +1,14 @@
+{
+    "RuleId": "",
+    "ChangeToken": "",
+    "Updates": [
+        {
+            "Action": "INSERT",
+            "Predicate": {
+                "Negated": true,
+                "Type": "SqlInjectionMatch",
+                "DataId": ""
+            }
+        }
+    ]
+}

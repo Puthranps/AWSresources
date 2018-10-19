@@ -1,0 +1,196 @@
+[ :ref:`aws <cli:aws>` . :ref:`comprehend <cli:aws comprehend>` ]
+
+.. _cli:aws comprehend start-sentiment-detection-job:
+
+
+*****************************
+start-sentiment-detection-job
+*****************************
+
+
+
+===========
+Description
+===========
+
+
+
+Starts an asynchronous sentiment detection job for a collection of documents. use the operation to track the status of a job.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartSentimentDetectionJob>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    start-sentiment-detection-job
+  --input-data-config <value>
+  --output-data-config <value>
+  --data-access-role-arn <value>
+  [--job-name <value>]
+  --language-code <value>
+  [--client-request-token <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--input-data-config`` (structure)
+
+
+  Specifies the format and location of the input data for the job.
+
+  
+
+
+
+Shorthand Syntax::
+
+    S3Uri=string,InputFormat=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "S3Uri": "string",
+    "InputFormat": "ONE_DOC_PER_FILE"|"ONE_DOC_PER_LINE"
+  }
+
+
+
+``--output-data-config`` (structure)
+
+
+  Specifies where to send the output files. 
+
+  
+
+
+
+Shorthand Syntax::
+
+    S3Uri=string
+
+
+
+
+JSON Syntax::
+
+  {
+    "S3Uri": "string"
+  }
+
+
+
+``--data-access-role-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that grants Amazon Comprehend read access to your input data. For more information, see `https\://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions <https://docs.aws.amazon.com/comprehend/latest/dg/access-control-managing-permissions.html#auth-role-permissions>`__ .
+
+  
+
+``--job-name`` (string)
+
+
+  The identifier of the job.
+
+  
+
+``--language-code`` (string)
+
+
+  The language of the input documents. You can specify English ("en") or Spanish ("es"). All documents must be in the same language.
+
+  
+
+  Possible values:
+
+  
+  *   ``en``
+
+  
+  *   ``es``
+
+  
+  *   ``fr``
+
+  
+  *   ``de``
+
+  
+  *   ``it``
+
+  
+  *   ``pt``
+
+  
+
+  
+
+``--client-request-token`` (string)
+
+
+  A unique identifier for the request. If you don't set the client request token, Amazon Comprehend generates one.
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+JobId -> (string)
+
+  
+
+  The identifier generated for the job. To get the status of a job, use this identifier with the operation.
+
+  
+
+  
+
+JobStatus -> (string)
+
+  
+
+  The status of the job. 
+
+   
+
+   
+  * SUBMITTED - The job has been received and is queued for processing. 
+   
+  * IN_PROGRESS - Amazon Comprehend is processing the job. 
+   
+  * COMPLETED - The job was successfully completed and the output is available. 
+   
+  * FAILED - The job did not complete. To get details, use the operation. 
+   
+
+  
+
+  
+

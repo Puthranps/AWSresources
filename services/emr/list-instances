@@ -1,0 +1,13 @@
+{
+    "ClusterId": "",
+    "InstanceGroupId": "",
+    "InstanceGroupTypes": [
+        "MASTER"
+    ],
+    "InstanceFleetId": "",
+    "InstanceFleetType": "MASTER",
+    "InstanceStates": [
+        "RUNNING"
+    ],
+    "Marker": ""
+}

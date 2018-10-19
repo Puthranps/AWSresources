@@ -1,0 +1,180 @@
+[ :ref:`aws <cli:aws>` . :ref:`codebuild <cli:aws codebuild>` ]
+
+.. _cli:aws codebuild list-projects:
+
+
+*************
+list-projects
+*************
+
+
+
+===========
+Description
+===========
+
+
+
+Gets a list of build project names, with each build project name representing a single build project.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListProjects>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``list-projects`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``projects``
+
+
+========
+Synopsis
+========
+
+::
+
+    list-projects
+  [--sort-by <value>]
+  [--sort-order <value>]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--sort-by`` (string)
+
+
+  The criterion to be used to list build project names. Valid values include:
+
+   
+
+   
+  * ``CREATED_TIME`` : List the build project names based on when each build project was created. 
+   
+  * ``LAST_MODIFIED_TIME`` : List the build project names based on when information about each build project was last changed. 
+   
+  * ``NAME`` : List the build project names based on each build project's name. 
+   
+
+   
+
+  Use ``sortOrder`` to specify in what order to list the build project names based on the preceding criteria.
+
+  
+
+  Possible values:
+
+  
+  *   ``NAME``
+
+  
+  *   ``CREATED_TIME``
+
+  
+  *   ``LAST_MODIFIED_TIME``
+
+  
+
+  
+
+``--sort-order`` (string)
+
+
+  The order in which to list build projects. Valid values include:
+
+   
+
+   
+  * ``ASCENDING`` : List the build project names in ascending order. 
+   
+  * ``DESCENDING`` : List the build project names in descending order. 
+   
+
+   
+
+  Use ``sortBy`` to specify the criterion to be used to list build project names.
+
+  
+
+  Possible values:
+
+  
+  *   ``ASCENDING``
+
+  
+  *   ``DESCENDING``
+
+  
+
+  
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+nextToken -> (string)
+
+  
+
+  If there are more than 100 items in the list, only the first 100 items are returned, along with a unique string called a *next token* . To get the next batch of items in the list, call this operation again, adding the next token to the call.
+
+  
+
+  
+
+projects -> (list)
+
+  
+
+  The list of build project names, with each build project name representing a single build project.
+
+  
+
+  (string)
+
+    
+
+    
+
+  
+

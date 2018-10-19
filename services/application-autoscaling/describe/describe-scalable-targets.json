@@ -1,0 +1,9 @@
+{
+    "ServiceNamespace": "elasticmapreduce",
+    "ResourceIds": [
+        ""
+    ],
+    "ScalableDimension": "ec2:spot-fleet-request:TargetCapacity",
+    "MaxResults": 0,
+    "NextToken": ""
+}

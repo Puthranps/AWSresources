@@ -1,0 +1,344 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>test-authorization &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="iot" href="../iot/index.html" />
+    <link rel="next" title="test-invoke-authorizer" href="../iot/test-invoke-authorizer.html" />
+    <link rel="prev" title="stop-thing-registration-task" href="../iot/stop-thing-registration-task.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../iot/test-invoke-authorizer.html" title="test-invoke-authorizer"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../iot/stop-thing-registration-task.html" title="stop-thing-registration-task"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iot/index.html" accesskey="U">iot</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iot/stop-thing-registration-task.html" title="previous chapter (use the left arrow)">&larr; stop-thing-registration-task</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iot/test-invoke-authorizer.html" title="next chapter (use the right arrow)">test-invoke-authorizer &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">test-authorization</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/iot/test-authorization">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../iot/index.html#cli-aws-iot"><em>iot</em></a> ]</p>
+<div class="section" id="test-authorization">
+<span id="cli-aws-iot-test-authorization"></span><h1>test-authorization<a class="headerlink" href="#test-authorization" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Tests if a specified principal is authorized to perform an AWS IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the AWS IoT device gateway.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/TestAuthorization">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  test-authorization
+[--principal &lt;value&gt;]
+[--cognito-identity-pool-id &lt;value&gt;]
+--auth-infos &lt;value&gt;
+[--client-id &lt;value&gt;]
+[--policy-names-to-add &lt;value&gt;]
+[--policy-names-to-skip &lt;value&gt;]
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--principal</span></tt> (string)</p>
+<blockquote>
+<div>The principal.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cognito-identity-pool-id</span></tt> (string)</p>
+<blockquote>
+<div>The Cognito identity pool ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--auth-infos</span></tt> (list)</p>
+<blockquote>
+<div>A list of authorization info objects. Simulating authorization will create a response for each <tt class="docutils literal"><span class="pre">authInfo</span></tt> object in the list.</div></blockquote>
+<p>Shorthand Syntax:</p>
+<div class="highlight-python"><pre>actionType=string,resources=string,string ...</pre>
+</div>
+<p>JSON Syntax:</p>
+<div class="highlight-python"><pre>[
+  {
+    &quot;actionType&quot;: &quot;PUBLISH&quot;|&quot;SUBSCRIBE&quot;|&quot;RECEIVE&quot;|&quot;CONNECT&quot;,
+    &quot;resources&quot;: [&quot;string&quot;, ...]
+  }
+  ...
+]</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--client-id</span></tt> (string)</p>
+<blockquote>
+<div>The MQTT client ID.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--policy-names-to-add</span></tt> (list)</p>
+<blockquote>
+<div>When testing custom authorization, the policies specified here are treated as if they are attached to the principal being authorized.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--policy-names-to-skip</span></tt> (list)</p>
+<blockquote>
+<div>When testing custom authorization, the policies specified here are treated as if they are not attached to the principal being authorized.</div></blockquote>
+<p>Syntax:</p>
+<div class="highlight-python"><pre>&quot;string&quot; &quot;string&quot; ...</pre>
+</div>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>authResults -&gt; (list)</p>
+<blockquote>
+<div><p>The authentication results.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The authorizer result.</p>
+<p>authInfo -&gt; (structure)</p>
+<blockquote>
+<div><p>Authorization information.</p>
+<p>actionType -&gt; (string)</p>
+<blockquote>
+<div>The type of action for which the principal is being authorized.</div></blockquote>
+<p>resources -&gt; (list)</p>
+<blockquote>
+<div><p>The resources for which the principal is being authorized to perform the specified action.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>allowed -&gt; (structure)</p>
+<blockquote>
+<div><p>The policies and statements that allowed the specified action.</p>
+<p>policies -&gt; (list)</p>
+<blockquote>
+<div><p>A list of policies that allowed the authentication.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an AWS IoT policy.</p>
+<p>policyName -&gt; (string)</p>
+<blockquote>
+<div>The policy name.</div></blockquote>
+<p>policyArn -&gt; (string)</p>
+<blockquote>
+<div>The policy ARN.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>denied -&gt; (structure)</p>
+<blockquote>
+<div><p>The policies and statements that denied the specified action.</p>
+<p>implicitDeny -&gt; (structure)</p>
+<blockquote>
+<div><p>Information that implicitly denies the authorization. When a policy doesn't explicitly deny or allow an action on a resource it is considered an implicit deny.</p>
+<p>policies -&gt; (list)</p>
+<blockquote>
+<div><p>Policies that don't contain a matching allow or deny statement for the specified action on the specified resource.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an AWS IoT policy.</p>
+<p>policyName -&gt; (string)</p>
+<blockquote>
+<div>The policy name.</div></blockquote>
+<p>policyArn -&gt; (string)</p>
+<blockquote>
+<div>The policy ARN.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>explicitDeny -&gt; (structure)</p>
+<blockquote>
+<div><p>Information that explicitly denies the authorization.</p>
+<p>policies -&gt; (list)</p>
+<blockquote>
+<div><p>The policies that denied the authorization.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Describes an AWS IoT policy.</p>
+<p>policyName -&gt; (string)</p>
+<blockquote>
+<div>The policy name.</div></blockquote>
+<p>policyArn -&gt; (string)</p>
+<blockquote>
+<div>The policy ARN.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>authDecision -&gt; (string)</p>
+<blockquote>
+<div>The final authorization decision of this scenario. Multiple statements are taken into account when determining the authorization decision. An explicit deny statement can override multiple allow statements.</div></blockquote>
+<p>missingContextValues -&gt; (list)</p>
+<blockquote>
+<div><p>Contains any missing context values found while evaluating policy.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../iot/stop-thing-registration-task.html" title="previous chapter (use the left arrow)">&larr; stop-thing-registration-task</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../iot/test-invoke-authorizer.html" title="next chapter (use the right arrow)">test-invoke-authorizer &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../iot/test-invoke-authorizer.html" title="test-invoke-authorizer"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../iot/stop-thing-registration-task.html" title="stop-thing-registration-task"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../iot/index.html" >iot</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

@@ -1,0 +1,377 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-third-party-job-details &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="codepipeline" href="../codepipeline/index.html" />
+    <link rel="next" title="list-action-types" href="../codepipeline/list-action-types.html" />
+    <link rel="prev" title="get-pipeline-state" href="../codepipeline/get-pipeline-state.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../codepipeline/list-action-types.html" title="list-action-types"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../codepipeline/get-pipeline-state.html" title="get-pipeline-state"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../codepipeline/index.html" accesskey="U">codepipeline</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../codepipeline/get-pipeline-state.html" title="previous chapter (use the left arrow)">&larr; get-pipeline-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codepipeline/list-action-types.html" title="next chapter (use the right arrow)">list-action-types &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-third-party-job-details</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/codepipeline/get-third-party-job-details">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../codepipeline/index.html#cli-aws-codepipeline"><em>codepipeline</em></a> ]</p>
+<div class="section" id="get-third-party-job-details">
+<span id="cli-aws-codepipeline-get-third-party-job-details"></span><h1>get-third-party-job-details<a class="headerlink" href="#get-third-party-job-details" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Requests the details of a job for a third party action. Only used for partner actions.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">When this API is called, AWS CodePipeline returns temporary credentials for the Amazon S3 bucket used to store artifacts for the pipeline, if the action requires access to that Amazon S3 bucket for input or output artifacts. Additionally, this API returns any secret values defined for the action.</p>
+</div>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetThirdPartyJobDetails">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-third-party-job-details
+--job-id &lt;value&gt;
+--client-token &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--job-id</span></tt> (string)</p>
+<blockquote>
+<div>The unique system-generated ID used for identifying the job.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--client-token</span></tt> (string)</p>
+<blockquote>
+<div>The clientToken portion of the clientId and clientToken pair used to verify that the calling entity is allowed access to the job and its details.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>jobDetails -&gt; (structure)</p>
+<blockquote>
+<div><p>The details of the job, including any protected values defined for the job.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The identifier used to identify the job details in AWS CodePipeline.</div></blockquote>
+<p>data -&gt; (structure)</p>
+<blockquote>
+<div><p>The data to be returned by the third party job worker.</p>
+<p>actionTypeId -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents information about an action type.</p>
+<p>category -&gt; (string)</p>
+<blockquote>
+<div>A category defines what kind of action can be taken in the stage, and constrains the provider type for the action. Valid categories are limited to one of the values below.</div></blockquote>
+<p>owner -&gt; (string)</p>
+<blockquote>
+<div>The creator of the action being called.</div></blockquote>
+<p>provider -&gt; (string)</p>
+<blockquote>
+<div>The provider of the service being called by the action. Valid providers are determined by the action category. For example, an action in the Deploy category type might have a provider of AWS CodeDeploy, which would be specified as CodeDeploy.</div></blockquote>
+<p>version -&gt; (string)</p>
+<blockquote>
+<div>A string that describes the action version.</div></blockquote>
+</div></blockquote>
+<p>actionConfiguration -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents information about an action configuration.</p>
+<p>configuration -&gt; (map)</p>
+<blockquote>
+<div><p>The configuration data for the action.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>pipelineContext -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents information about a pipeline to a job worker.</p>
+<p>pipelineName -&gt; (string)</p>
+<blockquote>
+<div>The name of the pipeline. This is a user-specified value. Pipeline names must be unique across all pipeline names under an Amazon Web Services account.</div></blockquote>
+<p>stage -&gt; (structure)</p>
+<blockquote>
+<div><p>The stage of the pipeline.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the stage.</div></blockquote>
+</div></blockquote>
+<p>action -&gt; (structure)</p>
+<blockquote>
+<div><p>The context of an action to a job worker within the stage of a pipeline.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The name of the action within the context of a job.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>inputArtifacts -&gt; (list)</p>
+<blockquote>
+<div><p>The name of the artifact that will be worked upon by the action, if any. This name might be system-generated, such as &quot;MyApp&quot;, or might be defined by the user when the action is created. The input artifact name must match the name of an output artifact generated by an action in an earlier action or stage of the pipeline.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about an artifact that will be worked upon by actions in the pipeline.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The artifact's name.</div></blockquote>
+<p>revision -&gt; (string)</p>
+<blockquote>
+<div>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</div></blockquote>
+<p>location -&gt; (structure)</p>
+<blockquote>
+<div><p>The location of an artifact.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of artifact in the location.</div></blockquote>
+<p>s3Location -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon S3 bucket that contains the artifact.</p>
+<p>bucketName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon S3 bucket.</div></blockquote>
+<p>objectKey -&gt; (string)</p>
+<blockquote>
+<div>The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>outputArtifacts -&gt; (list)</p>
+<blockquote>
+<div><p>The name of the artifact that will be the result of the action, if any. This name might be system-generated, such as &quot;MyBuiltApp&quot;, or might be defined by the user when the action is created.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Represents information about an artifact that will be worked upon by actions in the pipeline.</p>
+<p>name -&gt; (string)</p>
+<blockquote>
+<div>The artifact's name.</div></blockquote>
+<p>revision -&gt; (string)</p>
+<blockquote>
+<div>The artifact's revision ID. Depending on the type of object, this could be a commit ID (GitHub) or a revision ID (Amazon S3).</div></blockquote>
+<p>location -&gt; (structure)</p>
+<blockquote>
+<div><p>The location of an artifact.</p>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of artifact in the location.</div></blockquote>
+<p>s3Location -&gt; (structure)</p>
+<blockquote>
+<div><p>The Amazon S3 bucket that contains the artifact.</p>
+<p>bucketName -&gt; (string)</p>
+<blockquote>
+<div>The name of the Amazon S3 bucket.</div></blockquote>
+<p>objectKey -&gt; (string)</p>
+<blockquote>
+<div>The key of the object in the Amazon S3 bucket, which uniquely identifies the object in the bucket.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>artifactCredentials -&gt; (structure)</p>
+<blockquote>
+<div><p>Represents an AWS session credentials object. These credentials are temporary credentials that are issued by AWS Secure Token Service (STS). They can be used to access input and output artifacts in the Amazon S3 bucket used to store artifact for the pipeline in AWS CodePipeline.</p>
+<p>accessKeyId -&gt; (string)</p>
+<blockquote>
+<div>The access key for the session.</div></blockquote>
+<p>secretAccessKey -&gt; (string)</p>
+<blockquote>
+<div>The secret access key for the session.</div></blockquote>
+<p>sessionToken -&gt; (string)</p>
+<blockquote>
+<div>The token for the session.</div></blockquote>
+</div></blockquote>
+<p>continuationToken -&gt; (string)</p>
+<blockquote>
+<div>A system-generated token, such as a AWS CodeDeploy deployment ID, that a job requires in order to continue the job asynchronously.</div></blockquote>
+<p>encryptionKey -&gt; (structure)</p>
+<blockquote>
+<div><p>The encryption key used to encrypt and decrypt data in the artifact store for the pipeline, such as an AWS Key Management Service (AWS KMS) key. This is optional and might not be present.</p>
+<p>id -&gt; (string)</p>
+<blockquote>
+<div>The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.</div></blockquote>
+<p>type -&gt; (string)</p>
+<blockquote>
+<div>The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When creating or updating a pipeline, the value must be set to 'KMS'.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>nonce -&gt; (string)</p>
+<blockquote>
+<div>A system-generated random number that AWS CodePipeline uses to ensure that the job is being worked on by only one job worker. Use this number in an  AcknowledgeThirdPartyJob request.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../codepipeline/get-pipeline-state.html" title="previous chapter (use the left arrow)">&larr; get-pipeline-state</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../codepipeline/list-action-types.html" title="next chapter (use the right arrow)">list-action-types &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../codepipeline/list-action-types.html" title="list-action-types"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../codepipeline/get-pipeline-state.html" title="get-pipeline-state"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../codepipeline/index.html" >codepipeline</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

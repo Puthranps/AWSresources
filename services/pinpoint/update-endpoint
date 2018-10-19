@@ -1,0 +1,46 @@
+{
+    "ApplicationId": "",
+    "EndpointId": "",
+    "EndpointRequest": {
+        "Address": "",
+        "Attributes": {
+            "KeyName": [
+                ""
+            ]
+        },
+        "ChannelType": "SMS",
+        "Demographic": {
+            "AppVersion": "",
+            "Locale": "",
+            "Make": "",
+            "Model": "",
+            "ModelVersion": "",
+            "Platform": "",
+            "PlatformVersion": "",
+            "Timezone": ""
+        },
+        "EffectiveDate": "",
+        "EndpointStatus": "",
+        "Location": {
+            "City": "",
+            "Country": "",
+            "Latitude": null,
+            "Longitude": null,
+            "PostalCode": "",
+            "Region": ""
+        },
+        "Metrics": {
+            "KeyName": null
+        },
+        "OptOut": "",
+        "RequestId": "",
+        "User": {
+            "UserAttributes": {
+                "KeyName": [
+                    ""
+                ]
+            },
+            "UserId": ""
+        }
+    }
+}

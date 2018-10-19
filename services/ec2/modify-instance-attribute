@@ -1,0 +1,50 @@
+{
+    "SourceDestCheck": {
+        "Value": true
+    },
+    "Attribute": "sriovNetSupport",
+    "BlockDeviceMappings": [
+        {
+            "DeviceName": "",
+            "Ebs": {
+                "DeleteOnTermination": true,
+                "VolumeId": ""
+            },
+            "NoDevice": "",
+            "VirtualName": ""
+        }
+    ],
+    "DisableApiTermination": {
+        "Value": true
+    },
+    "DryRun": true,
+    "EbsOptimized": {
+        "Value": true
+    },
+    "EnaSupport": {
+        "Value": true
+    },
+    "Groups": [
+        ""
+    ],
+    "InstanceId": "",
+    "InstanceInitiatedShutdownBehavior": {
+        "Value": ""
+    },
+    "InstanceType": {
+        "Value": ""
+    },
+    "Kernel": {
+        "Value": ""
+    },
+    "Ramdisk": {
+        "Value": ""
+    },
+    "SriovNetSupport": {
+        "Value": ""
+    },
+    "UserData": {
+        "Value": null
+    },
+    "Value": ""
+}

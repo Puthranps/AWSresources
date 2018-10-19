@@ -1,0 +1,12 @@
+{
+    "StackId": "",
+    "Hostname": "",
+    "PublicIp": "",
+    "PrivateIp": "",
+    "RsaPublicKey": "",
+    "RsaPublicKeyFingerprint": "",
+    "InstanceIdentity": {
+        "Document": "",
+        "Signature": ""
+    }
+}

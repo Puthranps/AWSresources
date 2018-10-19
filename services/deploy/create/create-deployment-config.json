@@ -1,0 +1,19 @@
+{
+    "deploymentConfigName": "",
+    "minimumHealthyHosts": {
+        "value": 0,
+        "type": "HOST_COUNT"
+    },
+    "trafficRoutingConfig": {
+        "type": "TimeBasedLinear",
+        "timeBasedCanary": {
+            "canaryPercentage": 0,
+            "canaryInterval": 0
+        },
+        "timeBasedLinear": {
+            "linearPercentage": 0,
+            "linearInterval": 0
+        }
+    },
+    "computePlatform": "Server"
+}

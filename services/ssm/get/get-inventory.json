@@ -1,0 +1,40 @@
+{
+    "Filters": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ],
+            "Type": "Exists"
+        }
+    ],
+    "Aggregators": [
+        {
+            "Expression": "",
+            "Aggregators": [
+                {}
+            ],
+            "Groups": [
+                {
+                    "Name": "",
+                    "Filters": [
+                        {
+                            "Key": "",
+                            "Values": [
+                                ""
+                            ],
+                            "Type": "GreaterThan"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "ResultAttributes": [
+        {
+            "TypeName": ""
+        }
+    ],
+    "NextToken": "",
+    "MaxResults": 0
+}

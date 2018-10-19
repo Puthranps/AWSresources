@@ -1,0 +1,14 @@
+{
+    "DirectoryArn": "",
+    "ObjectReference": {
+        "Selector": ""
+    },
+    "ConsistencyLevel": "EVENTUAL",
+    "SchemaFacet": {
+        "SchemaArn": "",
+        "FacetName": ""
+    },
+    "AttributeNames": [
+        ""
+    ]
+}

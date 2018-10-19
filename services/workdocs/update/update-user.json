@@ -1,0 +1,14 @@
+{
+    "AuthenticationToken": "",
+    "UserId": "",
+    "GivenName": "",
+    "Surname": "",
+    "Type": "WORKSPACESUSER",
+    "StorageRule": {
+        "StorageAllocatedInBytes": 0,
+        "StorageType": "UNLIMITED"
+    },
+    "TimeZoneId": "",
+    "Locale": "zh_CN",
+    "GrantPoweruserPrivileges": "FALSE"
+}

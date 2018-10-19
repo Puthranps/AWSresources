@@ -1,0 +1,14 @@
+{
+    "Name": "",
+    "FleetId": "",
+    "ScalingAdjustment": 0,
+    "ScalingAdjustmentType": "ChangeInCapacity",
+    "Threshold": null,
+    "ComparisonOperator": "GreaterThanOrEqualToThreshold",
+    "EvaluationPeriods": 0,
+    "MetricName": "CurrentPlayerSessions",
+    "PolicyType": "RuleBased",
+    "TargetConfiguration": {
+        "TargetValue": null
+    }
+}

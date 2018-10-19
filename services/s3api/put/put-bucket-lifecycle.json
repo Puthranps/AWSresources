@@ -1,0 +1,33 @@
+{
+    "Bucket": "",
+    "ContentMD5": "",
+    "LifecycleConfiguration": {
+        "Rules": [
+            {
+                "Expiration": {
+                    "Date": "1970-01-01T00:00:00",
+                    "Days": 0,
+                    "ExpiredObjectDeleteMarker": true
+                },
+                "ID": "",
+                "Prefix": "",
+                "Status": "Disabled",
+                "Transition": {
+                    "Date": "1970-01-01T00:00:00",
+                    "Days": 0,
+                    "StorageClass": "ONEZONE_IA"
+                },
+                "NoncurrentVersionTransition": {
+                    "NoncurrentDays": 0,
+                    "StorageClass": "ONEZONE_IA"
+                },
+                "NoncurrentVersionExpiration": {
+                    "NoncurrentDays": 0
+                },
+                "AbortIncompleteMultipartUpload": {
+                    "DaysAfterInitiation": 0
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,563 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>describe-hyper-parameter-tuning-job &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="sagemaker" href="../sagemaker/index.html" />
+    <link rel="next" title="describe-model" href="../sagemaker/describe-model.html" />
+    <link rel="prev" title="describe-endpoint-config" href="../sagemaker/describe-endpoint-config.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/describe-model.html" title="describe-model"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/describe-endpoint-config.html" title="describe-endpoint-config"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" accesskey="U">sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/describe-endpoint-config.html" title="previous chapter (use the left arrow)">&larr; describe-endpoint-config</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/describe-model.html" title="next chapter (use the right arrow)">describe-model &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">describe-hyper-parameter-tuning-job</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/sagemaker/describe-hyper-parameter-tuning-job">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../sagemaker/index.html#cli-aws-sagemaker"><em>sagemaker</em></a> ]</p>
+<div class="section" id="describe-hyper-parameter-tuning-job">
+<span id="cli-aws-sagemaker-describe-hyper-parameter-tuning-job"></span><h1>describe-hyper-parameter-tuning-job<a class="headerlink" href="#describe-hyper-parameter-tuning-job" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Gets a description of a hyperparameter tuning job.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  describe-hyper-parameter-tuning-job
+--hyper-parameter-tuning-job-name &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--hyper-parameter-tuning-job-name</span></tt> (string)</p>
+<blockquote>
+<div>The name of the tuning job to describe.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>HyperParameterTuningJobName -&gt; (string)</p>
+<blockquote>
+<div>The name of the tuning job.</div></blockquote>
+<p>HyperParameterTuningJobArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the tuning job.</div></blockquote>
+<p>HyperParameterTuningJobConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The  HyperParameterTuningJobConfig object that specifies the configuration of the tuning job.</p>
+<p>Strategy -&gt; (string)</p>
+<blockquote>
+<div>Specifies the search strategy for hyperparameters. Currently, the only valid value is <tt class="docutils literal"><span class="pre">Bayesian</span></tt> .</div></blockquote>
+<p>HyperParameterTuningJobObjective -&gt; (structure)</p>
+<blockquote>
+<div><p>The  HyperParameterTuningJobObjective object that specifies the objective metric for this tuning job.</p>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>Whether to minimize or maximize the objective metric.</div></blockquote>
+<p>MetricName -&gt; (string)</p>
+<blockquote>
+<div>The name of the metric to use for the objective metric.</div></blockquote>
+</div></blockquote>
+<p>ResourceLimits -&gt; (structure)</p>
+<blockquote>
+<div><p>The  ResourceLimits object that specifies the maximum number of training jobs and parallel training jobs for this tuning job.</p>
+<p>MaxNumberOfTrainingJobs -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of training jobs that a hyperparameter tuning job can launch.</div></blockquote>
+<p>MaxParallelTrainingJobs -&gt; (integer)</p>
+<blockquote>
+<div>The maximum number of concurrent training jobs that a hyperparameter tuning job can launch.</div></blockquote>
+</div></blockquote>
+<p>ParameterRanges -&gt; (structure)</p>
+<blockquote>
+<div><p>The  ParameterRanges object that specifies the ranges of hyperparameters that this tuning job searches.</p>
+<p>IntegerParameterRanges -&gt; (list)</p>
+<blockquote>
+<div><p>The array of  IntegerParameterRange objects that specify ranges of integer hyperparameters that a hyperparameter tuning job searches.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>For a hyperparameter of the integer type, specifies the range that a hyperparameter tuning job searches.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the hyperparameter to search.</div></blockquote>
+<p>MinValue -&gt; (string)</p>
+<blockquote>
+<div>The minimum value of the hyperparameter to search.</div></blockquote>
+<p>MaxValue -&gt; (string)</p>
+<blockquote>
+<div>The maximum value of the hyperparameter to search.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ContinuousParameterRanges -&gt; (list)</p>
+<blockquote>
+<div><p>The array of  ContinuousParameterRange objects that specify ranges of continuous hyperparameters that a hyperparameter tuning job searches.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A list of continuous hyperparameters to tune.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the continuous hyperparameter to tune.</div></blockquote>
+<p>MinValue -&gt; (string)</p>
+<blockquote>
+<div>The minimum value for the hyperparameter. The tuning job uses floating-point values between this value and <tt class="docutils literal"><span class="pre">MaxValue</span></tt> for tuning.</div></blockquote>
+<p>MaxValue -&gt; (string)</p>
+<blockquote>
+<div>The maximum value for the hyperparameter. The tuning job uses floating-point values between <tt class="docutils literal"><span class="pre">MinValue</span></tt> value and this value for tuning.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>CategoricalParameterRanges -&gt; (list)</p>
+<blockquote>
+<div><p>The array of  CategoricalParameterRange objects that specify ranges of categorical hyperparameters that a hyperparameter tuning job searches.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A list of categorical hyperparameters to tune.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the categorical hyperparameter to tune.</div></blockquote>
+<p>Values -&gt; (list)</p>
+<blockquote>
+<div><p>A list of the categories for the hyperparameter.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>TrainingJobDefinition -&gt; (structure)</p>
+<blockquote>
+<div><p>The  HyperParameterTrainingJobDefinition object that specifies the definition of the training jobs that this tuning job launches.</p>
+<p>StaticHyperParameters -&gt; (map)</p>
+<blockquote>
+<div><p>Specifies the values of hyperparameters that do not change for the tuning job.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>AlgorithmSpecification -&gt; (structure)</p>
+<blockquote>
+<div><p>The  HyperParameterAlgorithmSpecification object that specifies the algorithm to use for the training jobs that the tuning job launches.</p>
+<p>TrainingImage -&gt; (string)</p>
+<blockquote>
+<div>The registry path of the Docker image that contains the training algorithm. For information about Docker registry paths for built-in algorithms, see  sagemaker-algo-docker-registry-paths .</div></blockquote>
+<p>TrainingInputMode -&gt; (string)</p>
+<blockquote>
+<div><p>The input mode that the algorithm supports: File or Pipe. In File input mode, Amazon SageMaker downloads the training data from Amazon S3 to the storage volume that is attached to the training instance and mounts the directory to the Docker volume for the training container. In Pipe input mode, Amazon SageMaker streams data directly from Amazon S3 to the container.</p>
+<p>If you specify File mode, make sure that you provision the storage volume that is attached to the training instance with enough capacity to accommodate the training data downloaded from Amazon S3, the model artifacts, and intermediate information.</p>
+<p>For more information about input modes, see <a class="reference external" href="http://docs.aws.amazon.com/sagemaker/latest/dg/algos.html">Algorithms</a> .</p>
+</div></blockquote>
+<p>MetricDefinitions -&gt; (list)</p>
+<blockquote>
+<div><p>An array of  MetricDefinition objects that specify the metrics that the algorithm emits.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>Specifies a metric that the training algorithm writes to <tt class="docutils literal"><span class="pre">stderr</span></tt> or <tt class="docutils literal"><span class="pre">stdout</span></tt> . Amazon SageMakerHyperparamter tuning captures all defined metrics. You specify one metric that a hyperparameter tuning job uses as its objective metric to choose the best training job.</p>
+<p>Name -&gt; (string)</p>
+<blockquote>
+<div>The name of the metric.</div></blockquote>
+<p>Regex -&gt; (string)</p>
+<blockquote>
+<div>A regular expression that searches the output of a training job and gets the value of the metric. For more information about using regular expressions to define metrics, see  automatic-model-tuning-define-metrics .</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>RoleArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the IAM role associated with the training jobs that the tuning job launches.</div></blockquote>
+<p>InputDataConfig -&gt; (list)</p>
+<blockquote>
+<div><p>An array of  Channel objects that specify the input for the training jobs that the tuning job launches.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>A channel is a named input source that training algorithms can consume.</p>
+<p>ChannelName -&gt; (string)</p>
+<blockquote>
+<div>The name of the channel.</div></blockquote>
+<p>DataSource -&gt; (structure)</p>
+<blockquote>
+<div><p>The location of the channel data.</p>
+<p>S3DataSource -&gt; (structure)</p>
+<blockquote>
+<div><p>The S3 location of the data source that is associated with a channel.</p>
+<p>S3DataType -&gt; (string)</p>
+<blockquote>
+<div><p>If you choose <tt class="docutils literal"><span class="pre">S3Prefix</span></tt> , <tt class="docutils literal"><span class="pre">S3Uri</span></tt> identifies a key name prefix. Amazon SageMaker uses all objects with the specified key name prefix for model training.</p>
+<p>If you choose <tt class="docutils literal"><span class="pre">ManifestFile</span></tt> , <tt class="docutils literal"><span class="pre">S3Uri</span></tt> identifies an object that is a manifest file containing a list of object keys that you want Amazon SageMaker to use for model training.</p>
+</div></blockquote>
+<p>S3Uri -&gt; (string)</p>
+<blockquote>
+<div><p>Depending on the value specified for the <tt class="docutils literal"><span class="pre">S3DataType</span></tt> , identifies either a key name prefix or a manifest. For example:</p>
+<ul class="simple">
+<li>A key name prefix might look like this: <tt class="docutils literal"><span class="pre">s3://bucketname/exampleprefix</span></tt> .</li>
+<li>A manifest might look like this: <tt class="docutils literal"><span class="pre">s3://bucketname/example.manifest</span></tt>   The manifest is an S3 object which is a JSON file with the following format:   <tt class="docutils literal"><span class="pre">[</span></tt>    <tt class="docutils literal"><span class="pre">{&quot;prefix&quot;:</span> <span class="pre">&quot;s3://customer_bucket/some/prefix/&quot;},</span></tt>    <tt class="docutils literal"><span class="pre">&quot;relative/path/to/custdata-1&quot;,</span></tt>    <tt class="docutils literal"><span class="pre">&quot;relative/path/custdata-2&quot;,</span></tt>    <tt class="docutils literal"><span class="pre">...</span></tt>    <tt class="docutils literal"><span class="pre">]</span></tt>   The preceding JSON matches the following <tt class="docutils literal"><span class="pre">s3Uris</span></tt> :   <tt class="docutils literal"><span class="pre">s3://customer_bucket/some/prefix/relative/path/to/custdata-1</span></tt>    <tt class="docutils literal"><span class="pre">s3://customer_bucket/some/prefix/relative/path/custdata-1</span></tt>    <tt class="docutils literal"><span class="pre">...</span></tt>   The complete set of <tt class="docutils literal"><span class="pre">s3uris</span></tt> in this manifest constitutes the input data for the channel for this datasource. The object that each <tt class="docutils literal"><span class="pre">s3uris</span></tt> points to must readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.</li>
+</ul>
+</div></blockquote>
+<p>S3DataDistributionType -&gt; (string)</p>
+<blockquote>
+<div><p>If you want Amazon SageMaker to replicate the entire dataset on each ML compute instance that is launched for model training, specify <tt class="docutils literal"><span class="pre">FullyReplicated</span></tt> .</p>
+<p>If you want Amazon SageMaker to replicate a subset of data on each ML compute instance that is launched for model training, specify <tt class="docutils literal"><span class="pre">ShardedByS3Key</span></tt> . If there are <em>n</em> ML compute instances launched for a training job, each instance gets approximately 1/<em>n</em> of the number of S3 objects. In this case, model training on each machine uses only the subset of training data.</p>
+<p>Don't choose more ML compute instances for training than available S3 objects. If you do, some nodes won't get any data and you will pay for nodes that aren't getting any training data. This applies in both FILE and PIPE modes. Keep this in mind when developing algorithms.</p>
+<p>In distributed training, where you use multiple ML compute EC2 instances, you might choose <tt class="docutils literal"><span class="pre">ShardedByS3Key</span></tt> . If the algorithm requires copying training data to the ML storage volume (when <tt class="docutils literal"><span class="pre">TrainingInputMode</span></tt> is set to <tt class="docutils literal"><span class="pre">File</span></tt> ), this copies 1/<em>n</em> of the number of objects.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>ContentType -&gt; (string)</p>
+<blockquote>
+<div>The MIME type of the data.</div></blockquote>
+<p>CompressionType -&gt; (string)</p>
+<blockquote>
+<div>If training data is compressed, the compression type. The default value is <tt class="docutils literal"><span class="pre">None</span></tt> . <tt class="docutils literal"><span class="pre">CompressionType</span></tt> is used only in Pipe input mode. In File mode, leave this field unset or set it to None.</div></blockquote>
+<p>RecordWrapperType -&gt; (string)</p>
+<blockquote>
+<div><p>Specify RecordIO as the value when input data is in raw format but the training algorithm requires the RecordIO format, in which case, Amazon SageMaker wraps each individual S3 object in a RecordIO record. If the input data is already in RecordIO format, you don't need to set this attribute. For more information, see <a class="reference external" href="https://mxnet.incubator.apache.org/architecture/note_data_loading.html#data-format">Create a Dataset Using RecordIO</a> .</p>
+<p>In FILE mode, leave this field unset or set it to None.</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>VpcConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The  VpcConfig object that specifies the VPC that you want the training jobs that this hyperparameter tuning job launches to connect to. Control access to and from your training container by configuring the VPC. For more information, see  train-vpc .</p>
+<p>SecurityGroupIds -&gt; (list)</p>
+<blockquote>
+<div><p>The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security groups for the VPC that is specified in the <tt class="docutils literal"><span class="pre">Subnets</span></tt> field.</p>
+<p>(string)</p>
+</div></blockquote>
+<p>Subnets -&gt; (list)</p>
+<blockquote>
+<div><p>The ID of the subnets in the VPC to which you want to connect your training job or model.</p>
+<p>(string)</p>
+</div></blockquote>
+</div></blockquote>
+<p>OutputDataConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>Specifies the path to the Amazon S3 bucket where you store model artifacts from the training jobs that the tuning job launches.</p>
+<p>KmsKeyId -&gt; (string)</p>
+<blockquote>
+<div><p>The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side encryption.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you don't provide the KMS key ID, Amazon SageMaker uses the default KMS key for Amazon S3 for your role's account. For more information, see <a class="reference external" href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed Encryption Keys</a> in Amazon Simple Storage Service developer guide.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The KMS key policy must grant permission to the IAM role you specify in your <tt class="docutils literal"><span class="pre">CreateTrainingJob</span></tt> request. <a class="reference external" href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS KMS</a> in the AWS Key Management Service Developer Guide.</p>
+</div>
+</div></blockquote>
+<p>S3OutputPath -&gt; (string)</p>
+<blockquote>
+<div>Identifies the S3 path where you want Amazon SageMaker to store the model artifacts. For example, <tt class="docutils literal"><span class="pre">s3://bucket-name/key-name-prefix</span></tt> .</div></blockquote>
+</div></blockquote>
+<p>ResourceConfig -&gt; (structure)</p>
+<blockquote>
+<div><p>The resources, including the compute instances and storage volumes, to use for the training jobs that the tuning job launches.</p>
+<p>Storage volumes store model artifacts and incremental states. Training algorithms might also use storage volumes for scratch space. If you want Amazon SageMaker to use the storage volume to store the training data, choose <tt class="docutils literal"><span class="pre">File</span></tt> as the <tt class="docutils literal"><span class="pre">TrainingInputMode</span></tt> in the algorithm specification. For distributed training algorithms, specify an instance count greater than 1.</p>
+<p>InstanceType -&gt; (string)</p>
+<blockquote>
+<div>The ML compute instance type.</div></blockquote>
+<p>InstanceCount -&gt; (integer)</p>
+<blockquote>
+<div>The number of ML compute instances to use. For distributed training, provide a value greater than 1.</div></blockquote>
+<p>VolumeSizeInGB -&gt; (integer)</p>
+<blockquote>
+<div><p>The size of the ML storage volume that you want to provision.</p>
+<p>ML storage volumes store model artifacts and incremental states. Training algorithms might also use the ML storage volume for scratch space. If you want to store the training data in the ML storage volume, choose <tt class="docutils literal"><span class="pre">File</span></tt> as the <tt class="docutils literal"><span class="pre">TrainingInputMode</span></tt> in the algorithm specification.</p>
+<p>You must specify sufficient ML storage for your scenario.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Amazon SageMaker supports only the General Purpose SSD (gp2) ML storage volume type.</p>
+</div>
+</div></blockquote>
+<p>VolumeKmsKeyId -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of a AWS Key Management Service key that Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute instance(s) that run the training job.</div></blockquote>
+</div></blockquote>
+<p>StoppingCondition -&gt; (structure)</p>
+<blockquote>
+<div><p>Sets a maximum duration for the training jobs that the tuning job launches. Use this parameter to limit model training costs.</p>
+<p>To stop a job, Amazon SageMaker sends the algorithm the <tt class="docutils literal"><span class="pre">SIGTERM</span></tt> signal. This delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts.</p>
+<p>When Amazon SageMaker terminates a job because the stopping condition has been met, training algorithms provided by Amazon SageMaker save the intermediate results of the job.</p>
+<p>MaxRuntimeInSeconds -&gt; (integer)</p>
+<blockquote>
+<div>The maximum length of time, in seconds, that the training job can run. If model training does not complete during this time, Amazon SageMaker ends the job. If value is not specified, default value is 1 day. Maximum value is 5 days.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>HyperParameterTuningJobStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the tuning job: InProgress, Completed, Failed, Stopping, or Stopped.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the tuning job started.</div></blockquote>
+<p>HyperParameterTuningEndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the tuning job ended.</div></blockquote>
+<p>LastModifiedTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the status of the tuning job was modified.</div></blockquote>
+<p>TrainingJobStatusCounters -&gt; (structure)</p>
+<blockquote>
+<div><p>The  TrainingJobStatusCounters object that specifies the number of training jobs, categorized by status, that this tuning job launched.</p>
+<p>Completed -&gt; (integer)</p>
+<blockquote>
+<div>The number of completed training jobs launched by a hyperparameter tuning job.</div></blockquote>
+<p>InProgress -&gt; (integer)</p>
+<blockquote>
+<div>The number of in-progress training jobs launched by a hyperparameter tuning job.</div></blockquote>
+<p>RetryableError -&gt; (integer)</p>
+<blockquote>
+<div>The number of training jobs that failed, but can be retried. A failed training job can be retried only if it failed because an internal service error occurred.</div></blockquote>
+<p>NonRetryableError -&gt; (integer)</p>
+<blockquote>
+<div>The number of training jobs that failed and can't be retried. A failed training job can't be retried if it failed because a client error occurred.</div></blockquote>
+<p>Stopped -&gt; (integer)</p>
+<blockquote>
+<div>The number of training jobs launched by a hyperparameter tuning job that were manually stopped.</div></blockquote>
+</div></blockquote>
+<p>ObjectiveStatusCounters -&gt; (structure)</p>
+<blockquote>
+<div><p>The  ObjectiveStatusCounters object that specifies the number of training jobs, categorized by the status of their final objective metric, that this tuning job launched.</p>
+<p>Succeeded -&gt; (integer)</p>
+<blockquote>
+<div>The number of training jobs whose final objective metric was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</div></blockquote>
+<p>Pending -&gt; (integer)</p>
+<blockquote>
+<div>The number of training jobs that are in progress and pending evaluation of their final objective metric.</div></blockquote>
+<p>Failed -&gt; (integer)</p>
+<blockquote>
+<div>The number of training jobs whose final objective metric was not evaluated and used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</div></blockquote>
+</div></blockquote>
+<p>BestTrainingJob -&gt; (structure)</p>
+<blockquote>
+<div><p>A  TrainingJobSummary object that describes the training job that completed with the best current  HyperParameterTuningJobObjective .</p>
+<p>TrainingJobName -&gt; (string)</p>
+<blockquote>
+<div>The name of the training job.</div></blockquote>
+<p>TrainingJobArn -&gt; (string)</p>
+<blockquote>
+<div>The Amazon Resource Name (ARN) of the training job.</div></blockquote>
+<p>CreationTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the training job was created.</div></blockquote>
+<p>TrainingStartTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the training job started.</div></blockquote>
+<p>TrainingEndTime -&gt; (timestamp)</p>
+<blockquote>
+<div>The date and time that the training job ended.</div></blockquote>
+<p>TrainingJobStatus -&gt; (string)</p>
+<blockquote>
+<div>The status of the training job.</div></blockquote>
+<p>TunedHyperParameters -&gt; (map)</p>
+<blockquote>
+<div><p>A list of the hyperparameters for which you specified ranges to search.</p>
+<p>key -&gt; (string)</p>
+<p>value -&gt; (string)</p>
+</div></blockquote>
+<p>FailureReason -&gt; (string)</p>
+<blockquote>
+<div>The reason that the training job failed.</div></blockquote>
+<p>FinalHyperParameterTuningJobObjectiveMetric -&gt; (structure)</p>
+<blockquote>
+<div><p>The  FinalHyperParameterTuningJobObjectiveMetric object that specifies the value of the objective metric of the tuning job that launched this training job.</p>
+<p>Type -&gt; (string)</p>
+<blockquote>
+<div>Whether to minimize or maximize the objective metric. Valid values are Minimize and Maximize.</div></blockquote>
+<p>MetricName -&gt; (string)</p>
+<blockquote>
+<div>The name of the objective metric.</div></blockquote>
+<p>Value -&gt; (float)</p>
+<blockquote>
+<div>The value of the objective metric.</div></blockquote>
+</div></blockquote>
+<p>ObjectiveStatus -&gt; (string)</p>
+<blockquote>
+<div><p>The status of the objective metric for the training job:</p>
+<ul class="simple">
+<li>Succeeded: The final objective metric for the training job was evaluated by the hyperparameter tuning job and used in the hyperparameter tuning process.</li>
+<li>Pending: The training job is in progress and evaluation of its final objective metric is pending.</li>
+<li>Failed: The final objective metric for the training job was not evaluated, and was not used in the hyperparameter tuning process. This typically occurs when the training job failed or did not emit an objective metric.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p>FailureReason -&gt; (string)</p>
+<blockquote>
+<div>If the tuning job failed, the reason it failed.</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../sagemaker/describe-endpoint-config.html" title="previous chapter (use the left arrow)">&larr; describe-endpoint-config</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../sagemaker/describe-model.html" title="next chapter (use the right arrow)">describe-model &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../sagemaker/describe-model.html" title="describe-model"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../sagemaker/describe-endpoint-config.html" title="describe-endpoint-config"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../sagemaker/index.html" >sagemaker</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

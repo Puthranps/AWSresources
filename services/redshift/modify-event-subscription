@@ -1,0 +1,13 @@
+{
+    "SubscriptionName": "",
+    "SnsTopicArn": "",
+    "SourceType": "",
+    "SourceIds": [
+        ""
+    ],
+    "EventCategories": [
+        ""
+    ],
+    "Severity": "",
+    "Enabled": true
+}

@@ -1,0 +1,90 @@
+{
+    "DomainName": "",
+    "IndexField": {
+        "IndexFieldName": "",
+        "IndexFieldType": "latlon",
+        "IntOptions": {
+            "DefaultValue": 0,
+            "SourceField": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true,
+            "SortEnabled": true
+        },
+        "DoubleOptions": {
+            "DefaultValue": null,
+            "SourceField": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true,
+            "SortEnabled": true
+        },
+        "LiteralOptions": {
+            "DefaultValue": "",
+            "SourceField": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true,
+            "SortEnabled": true
+        },
+        "TextOptions": {
+            "DefaultValue": "",
+            "SourceField": "",
+            "ReturnEnabled": true,
+            "SortEnabled": true,
+            "HighlightEnabled": true,
+            "AnalysisScheme": ""
+        },
+        "DateOptions": {
+            "DefaultValue": "",
+            "SourceField": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true,
+            "SortEnabled": true
+        },
+        "LatLonOptions": {
+            "DefaultValue": "",
+            "SourceField": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true,
+            "SortEnabled": true
+        },
+        "IntArrayOptions": {
+            "DefaultValue": 0,
+            "SourceFields": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true
+        },
+        "DoubleArrayOptions": {
+            "DefaultValue": null,
+            "SourceFields": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true
+        },
+        "LiteralArrayOptions": {
+            "DefaultValue": "",
+            "SourceFields": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true
+        },
+        "TextArrayOptions": {
+            "DefaultValue": "",
+            "SourceFields": "",
+            "ReturnEnabled": true,
+            "HighlightEnabled": true,
+            "AnalysisScheme": ""
+        },
+        "DateArrayOptions": {
+            "DefaultValue": "",
+            "SourceFields": "",
+            "FacetEnabled": true,
+            "SearchEnabled": true,
+            "ReturnEnabled": true
+        }
+    }
+}

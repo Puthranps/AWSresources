@@ -1,0 +1,20 @@
+{
+    "restApiId": "",
+    "authorizerId": "",
+    "headers": {
+        "KeyName": ""
+    },
+    "multiValueHeaders": {
+        "KeyName": [
+            ""
+        ]
+    },
+    "pathWithQueryString": "",
+    "body": "",
+    "stageVariables": {
+        "KeyName": ""
+    },
+    "additionalContext": {
+        "KeyName": ""
+    }
+}

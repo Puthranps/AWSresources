@@ -1,0 +1,34 @@
+[ :ref:`aws <cli:aws>` . :ref:`glacier <cli:aws glacier>` ]
+
+.. _cli:aws glacier wait:
+
+
+****
+wait
+****
+
+
+
+===========
+Description
+===========
+
+Wait until a particular condition is satisfied. Each subcommand polls an API until the listed requirement is met.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+==================
+Available Commands
+==================
+
+
+.. toctree::
+  :maxdepth: 1
+  :titlesonly:
+
+  vault-exists
+  vault-not-exists

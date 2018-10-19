@@ -1,0 +1,12 @@
+{
+    "ResourceArn": "",
+    "TagsToAdd": [
+        {
+            "Key": "",
+            "Value": ""
+        }
+    ],
+    "TagsToRemove": [
+        ""
+    ]
+}

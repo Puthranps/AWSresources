@@ -1,0 +1,10 @@
+{
+    "resourceType": "AWS::EC2::Subnet",
+    "resourceIds": [
+        ""
+    ],
+    "resourceName": "",
+    "limit": 0,
+    "includeDeletedResources": true,
+    "nextToken": ""
+}

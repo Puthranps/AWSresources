@@ -1,0 +1,11 @@
+{
+    "restApiId": "",
+    "responseType": "RESOURCE_NOT_FOUND",
+    "statusCode": "",
+    "responseParameters": {
+        "KeyName": ""
+    },
+    "responseTemplates": {
+        "KeyName": ""
+    }
+}

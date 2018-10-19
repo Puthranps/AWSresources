@@ -1,0 +1,12 @@
+{
+    "DestinationCidrBlock": "",
+    "DestinationIpv6CidrBlock": "",
+    "DryRun": true,
+    "EgressOnlyInternetGatewayId": "",
+    "GatewayId": "",
+    "InstanceId": "",
+    "NatGatewayId": "",
+    "NetworkInterfaceId": "",
+    "RouteTableId": "",
+    "VpcPeeringConnectionId": ""
+}

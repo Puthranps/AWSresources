@@ -1,0 +1,9 @@
+{
+    "taskName": "",
+    "logGroupName": "",
+    "logStreamNamePrefix": "",
+    "from": 0,
+    "to": 0,
+    "destination": "",
+    "destinationPrefix": ""
+}

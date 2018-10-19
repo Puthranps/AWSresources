@@ -1,0 +1,17 @@
+{
+    "Attachment": {
+        "AttachmentId": "",
+        "DeleteOnTermination": true
+    },
+    "Description": {
+        "Value": ""
+    },
+    "DryRun": true,
+    "Groups": [
+        ""
+    ],
+    "NetworkInterfaceId": "",
+    "SourceDestCheck": {
+        "Value": true
+    }
+}

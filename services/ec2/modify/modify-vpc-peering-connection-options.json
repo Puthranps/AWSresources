@@ -1,0 +1,14 @@
+{
+    "AccepterPeeringConnectionOptions": {
+        "AllowDnsResolutionFromRemoteVpc": true,
+        "AllowEgressFromLocalClassicLinkToRemoteVpc": true,
+        "AllowEgressFromLocalVpcToRemoteClassicLink": true
+    },
+    "DryRun": true,
+    "RequesterPeeringConnectionOptions": {
+        "AllowDnsResolutionFromRemoteVpc": true,
+        "AllowEgressFromLocalClassicLinkToRemoteVpc": true,
+        "AllowEgressFromLocalVpcToRemoteClassicLink": true
+    },
+    "VpcPeeringConnectionId": ""
+}

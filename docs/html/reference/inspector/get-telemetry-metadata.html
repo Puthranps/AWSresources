@@ -1,0 +1,397 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+  
+    <title>get-telemetry-metadata &mdash; AWS CLI 1.16.36 Command Reference</title>
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap.min.css" />
+  <script type="text/javascript" src="../../_static/jquery-1.9.1.min.js"></script>
+  <script src="/SdkStatic/sdk-priv.js" async="true"></script>
+    
+    <link rel="stylesheet" href="../../_static/guzzle.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../',
+        VERSION:     '1.16.36',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../_static/doctools.js"></script>
+    <link rel="top" title="AWS CLI 1.16.36 Command Reference" href="../../index.html" />
+    <link rel="up" title="inspector" href="../inspector/index.html" />
+    <link rel="next" title="list-assessment-run-agents" href="../inspector/list-assessment-run-agents.html" />
+    <link rel="prev" title="get-exclusions-preview" href="../inspector/get-exclusions-preview.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../../_static/bootstrap-responsive.min.css" />
+  
+   
+
+  </head>
+  <body>
+  <div class="navbar navbar-fixed-top ">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="brand" href="../../index.html">AWS CLI Command Reference</a>
+        <ul class="nav">
+<li><a href="../../index.html">Home</a></li>
+<li><a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a></li>
+<li><a href="https://forums.aws.amazon.com/forum.jspa?forumID=150">Forum</a></li>
+<li><a href="https://github.com/aws/aws-cli">GitHub</a></li>
+        </ul>
+        <div class="pull-right" id="github-stars">
+          <iframe src="https://ghbtns.com/github-btn.html?user=aws&repo=aws-cli&type=watch&count=true&size=small"
+                  allowtransparency="true" frameborder="0" scrolling="0" width="110px" height="20px"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--REGION_DISCLAIMER_DO_NOT_REMOVE-->
+
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../inspector/list-assessment-run-agents.html" title="list-assessment-run-agents"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="../inspector/get-exclusions-preview.html" title="get-exclusions-preview"
+             accesskey="P">previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../inspector/index.html" accesskey="U">inspector</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="container">
+        
+    <div class="top-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../inspector/get-exclusions-preview.html" title="previous chapter (use the left arrow)">&larr; get-exclusions-preview</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../inspector/list-assessment-run-agents.html" title="next chapter (use the right arrow)">list-assessment-run-agents &rarr;</a></li>
+      </ul>
+    </div>
+  
+        <div class="document clearer">
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper"><p class="logo left-bar-other">
+  <a href="../../index.html">
+    <img class="logo" src="../../_static/logo.png" alt="Logo" height="63" />
+  </a>
+</p>
+  <h3><a href="../../index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">get-telemetry-metadata</a><ul>
+<li><a class="reference internal" href="#description">Description</a></li>
+<li><a class="reference internal" href="#synopsis">Synopsis</a></li>
+<li><a class="reference internal" href="#options">Options</a></li>
+<li><a class="reference internal" href="#examples">Examples</a></li>
+<li><a class="reference internal" href="#output">Output</a></li>
+</ul>
+</li>
+</ul>
+
+<div id="searchbox" style="display: none">
+    <h3>Quick search</h3>
+    <form class="form-search margin-top-1em" action="../../search.html" method="get">
+        <input type="text" name="q" style="width: 105px" class="input-small search-query" />
+        <button type="submit" class="btn btn-small">Search</button>
+        <input type="hidden" name="check_keywords" value="yes" />
+        <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script><div class="left-bar-other">
+  <h3>Feedback</h3>
+  <p class="feedback">Did you find this page useful? Do you have a suggestion? <a href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=AWS%20Command%20Line%20Interface&hidden_guide_name=Reference&hidden_api_version=1.16.&hidden_file_name=reference/inspector/get-telemetry-metadata">Give us feedback</a> or
+  send us a <a href="https://github.com/aws/aws-cli">pull request</a> on GitHub.</p>
+</div><div class="left-bar-other">
+  <h3>User Guide</h3>
+  <p>First time using the AWS CLI? See the
+  <a href="http://docs.aws.amazon.com/cli/latest/userguide/">User Guide</a> for
+  help getting started.</p>
+</div>
+        </div>
+      </div>
+            <div class="body">
+              
+  <p>[ <a class="reference internal" href="../index.html#cli-aws"><em>aws</em></a> . <a class="reference internal" href="../inspector/index.html#cli-aws-inspector"><em>inspector</em></a> ]</p>
+<div class="section" id="get-telemetry-metadata">
+<span id="cli-aws-inspector-get-telemetry-metadata"></span><h1>get-telemetry-metadata<a class="headerlink" href="#get-telemetry-metadata" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="description">
+<h2>Description<a class="headerlink" href="#description" title="Permalink to this headline">¶</a></h2>
+<p>Information about the data that is collected for the specified assessment run.</p>
+<p>See also: <a class="reference external" href="https://docs.aws.amazon.com/goto/WebAPI/inspector-2016-02-16/GetTelemetryMetadata">AWS API Documentation</a></p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="synopsis">
+<h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-python"><pre>  get-telemetry-metadata
+--assessment-run-arn &lt;value&gt;
+[--cli-input-json &lt;value&gt;]
+[--generate-cli-skeleton &lt;value&gt;]</pre>
+</div>
+</div>
+<div class="section" id="options">
+<h2>Options<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h2>
+<p><tt class="docutils literal"><span class="pre">--assessment-run-arn</span></tt> (string)</p>
+<blockquote>
+<div>The ARN that specifies the assessment run that has the telemetry data that you want to obtain.</div></blockquote>
+<p><tt class="docutils literal"><span class="pre">--cli-input-json</span></tt> (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by <tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt>. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.</p>
+<p><tt class="docutils literal"><span class="pre">--generate-cli-skeleton</span></tt> (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value <tt class="docutils literal"><span class="pre">input</span></tt>, prints a sample input JSON that can be used as an argument for <tt class="docutils literal"><span class="pre">--cli-input-json</span></tt>. If provided with the value <tt class="docutils literal"><span class="pre">output</span></tt>, it validates the command inputs and returns a sample output JSON for that command.</p>
+<p>See <a class="reference internal" href="../index.html"><em>'aws help'</em></a> for descriptions of global parameters.</p>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<p><strong>To get the telemetry metadata</strong></p>
+<p>The following <tt class="docutils literal"><span class="pre">get-telemetry-metadata</span></tt> command generates information about the data that is collected for the assessment run with the ARN of <tt class="docutils literal"><span class="pre">arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE</span></tt>:</p>
+<div class="highlight-python"><pre>aws inspector get-telemetry-metadata --assessment-run-arn arn:aws:inspector:us-west-2:123456789012:target/0-0kFIPusq/template/0-4r1V2mAw/run/0-MKkpXXPE</pre>
+</div>
+<p>Output:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="p">{</span>
+      <span class="s2">&quot;telemetryMetadata&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">345</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorDuplicateProcess&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">255</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorTimeEventMsg&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">1082</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorNetworkInterface&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">349</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorDnsEntry&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">2514</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorDirectoryInfoMsg&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">179</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorTcpV6ListeningPort&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">101</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">10949</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorTerminal&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">26</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">5916</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorUser&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">282</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">32148</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorDynamicallyLoadedCodeModule&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">10172</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorCreateProcess&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">8001</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorProcessPerformance&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">360</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorOperatingSystem&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">546</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorStopProcess&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">1553</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorInstanceMetaData&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">434</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorTcpV4Connection&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">474</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">2960322</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorPackageInfo&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">2235</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorSystemPerformance&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">105</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">46048</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorCodeModule&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">182</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorUdpV6ListeningPort&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">371</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorUdpV4ListeningPort&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">8362</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorKernelModule&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">29</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">48788</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorConfigurationInfo&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">79</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorMonitoringStart&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorSplitMsgBegin&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">51</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">4593</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorGroup&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">184</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorTcpV4ListeningPort&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1159</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">3146579</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;Total&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorSplitMsgEnd&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+              <span class="s2">&quot;count&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+              <span class="s2">&quot;dataSize&quot;</span><span class="p">:</span> <span class="mi">612</span><span class="p">,</span>
+              <span class="s2">&quot;messageType&quot;</span><span class="p">:</span> <span class="s2">&quot;InspectorLoadImageInProcess&quot;</span>
+        <span class="p">}</span>
+      <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>telemetryMetadata -&gt; (list)</p>
+<blockquote>
+<div><p>Telemetry details.</p>
+<p>(structure)</p>
+<blockquote>
+<div><p>The metadata about the Amazon Inspector application data metrics collected by the agent. This data type is used as the response element in the  GetTelemetryMetadata action.</p>
+<p>messageType -&gt; (string)</p>
+<blockquote>
+<div>A specific type of behavioral data that is collected by the agent.</div></blockquote>
+<p>count -&gt; (long)</p>
+<blockquote>
+<div>The count of messages that the agent sends to the Amazon Inspector service.</div></blockquote>
+<p>dataSize -&gt; (long)</p>
+<blockquote>
+<div>The data size of messages that the agent sends to the Amazon Inspector service.</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+            </div>
+          <div class="clearfix"></div>
+        </div>
+        
+    <div class="footer-links">
+      <ul class="breadcrumb pull-right">
+        <li>
+          <a href="../inspector/get-exclusions-preview.html" title="previous chapter (use the left arrow)">&larr; get-exclusions-preview</a>
+          <span class="divider">/</span>
+          
+        </li>
+          <li><a href="../inspector/list-assessment-run-agents.html" title="next chapter (use the right arrow)">list-assessment-run-agents &rarr;</a></li>
+      </ul>
+    </div>
+  
+
+    </div>
+  <script type="text/javascript" src="https://media.amazonwebservices.com/js/sitecatalyst/s_code.min.js"></script>
+  <script type="text/javascript">
+  s.prop66 = 'AWS CLI';
+  s.eVar66 = 'D=c66';
+  s.prop65 = 'API Reference';
+  s.eVar65 = 'D=c65';
+  var s_code = s.t();
+  if (s_code) document.write(s_code);
+  </script>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../inspector/list-assessment-run-agents.html" title="list-assessment-run-agents"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="../inspector/get-exclusions-preview.html" title="get-exclusions-preview"
+             >previous</a> |</li>
+        <li><a href="../../index.html">AWS CLI 1.16.36 Command Reference</a> &raquo;</li>
+          <li><a href="../index.html" >aws</a> &raquo;</li>
+          <li><a href="../inspector/index.html" >inspector</a> &raquo;</li> 
+      </ul>
+    </div>
+  <div class="footer container">
+    &copy; Copyright 2018, Amazon Web Services. Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>.
+  </div>
+
+
+
+  
+    
+  
+  </body>
+</html>

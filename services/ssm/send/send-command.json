@@ -1,0 +1,41 @@
+{
+    "InstanceIds": [
+        ""
+    ],
+    "Targets": [
+        {
+            "Key": "",
+            "Values": [
+                ""
+            ]
+        }
+    ],
+    "DocumentName": "",
+    "DocumentVersion": "",
+    "DocumentHash": "",
+    "DocumentHashType": "Sha1",
+    "TimeoutSeconds": 0,
+    "Comment": "",
+    "Parameters": {
+        "KeyName": [
+            ""
+        ]
+    },
+    "OutputS3Region": "",
+    "OutputS3BucketName": "",
+    "OutputS3KeyPrefix": "",
+    "MaxConcurrency": "",
+    "MaxErrors": "",
+    "ServiceRoleArn": "",
+    "NotificationConfig": {
+        "NotificationArn": "",
+        "NotificationEvents": [
+            "All"
+        ],
+        "NotificationType": "Invocation"
+    },
+    "CloudWatchOutputConfig": {
+        "CloudWatchLogGroupName": "",
+        "CloudWatchOutputEnabled": true
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "name": "",
+    "description": "",
+    "intents": [
+        {
+            "intentName": "",
+            "intentVersion": ""
+        }
+    ],
+    "clarificationPrompt": {
+        "messages": [
+            {
+                "contentType": "PlainText",
+                "content": "",
+                "groupNumber": 0
+            }
+        ],
+        "maxAttempts": 0,
+        "responseCard": ""
+    },
+    "abortStatement": {
+        "messages": [
+            {
+                "contentType": "PlainText",
+                "content": "",
+                "groupNumber": 0
+            }
+        ],
+        "responseCard": ""
+    },
+    "idleSessionTTLInSeconds": 0,
+    "voiceId": "",
+    "checksum": "",
+    "processBehavior": "BUILD",
+    "locale": "de-DE",
+    "childDirected": true,
+    "createVersion": true
+}

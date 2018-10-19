@@ -1,0 +1,195 @@
+[ :ref:`aws <cli:aws>` . :ref:`gamelift <cli:aws gamelift>` ]
+
+.. _cli:aws gamelift update-fleet-port-settings:
+
+
+**************************
+update-fleet-port-settings
+**************************
+
+
+
+===========
+Description
+===========
+
+
+
+Updates port settings for a fleet. To update settings, specify the fleet ID to be updated and list the permissions you want to update. List the permissions you want to add in ``InboundPermissionAuthorizations`` , and permissions you want to remove in ``InboundPermissionRevocations`` . Permissions to be removed must match existing fleet permissions. If successful, the fleet ID for the updated fleet is returned.
+
+ 
+
+Fleet-related operations include:
+
+ 
+
+ 
+*  CreateFleet   
+ 
+*  ListFleets   
+ 
+*  DeleteFleet   
+ 
+* Describe fleets: 
+
+   
+  *  DescribeFleetAttributes   
+   
+  *  DescribeFleetCapacity   
+   
+  *  DescribeFleetPortSettings   
+   
+  *  DescribeFleetUtilization   
+   
+  *  DescribeRuntimeConfiguration   
+   
+  *  DescribeEC2InstanceLimits   
+   
+  *  DescribeFleetEvents   
+   
+
+ 
+ 
+* Update fleets: 
+
+   
+  *  UpdateFleetAttributes   
+   
+  *  UpdateFleetCapacity   
+   
+  *  UpdateFleetPortSettings   
+   
+  *  UpdateRuntimeConfiguration   
+   
+
+ 
+ 
+* Manage fleet actions: 
+
+   
+  *  StartFleetActions   
+   
+  *  StopFleetActions   
+   
+
+ 
+ 
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    update-fleet-port-settings
+  --fleet-id <value>
+  [--inbound-permission-authorizations <value>]
+  [--inbound-permission-revocations <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--fleet-id`` (string)
+
+
+  Unique identifier for a fleet to update port settings for.
+
+  
+
+``--inbound-permission-authorizations`` (list)
+
+
+  Collection of port settings to be added to the fleet record.
+
+  
+
+
+
+Shorthand Syntax::
+
+    FromPort=integer,ToPort=integer,IpRange=string,Protocol=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "FromPort": integer,
+      "ToPort": integer,
+      "IpRange": "string",
+      "Protocol": "TCP"|"UDP"
+    }
+    ...
+  ]
+
+
+
+``--inbound-permission-revocations`` (list)
+
+
+  Collection of port settings to be removed from the fleet record.
+
+  
+
+
+
+Shorthand Syntax::
+
+    FromPort=integer,ToPort=integer,IpRange=string,Protocol=string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "FromPort": integer,
+      "ToPort": integer,
+      "IpRange": "string",
+      "Protocol": "TCP"|"UDP"
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+FleetId -> (string)
+
+  
+
+  Unique identifier for a fleet that was updated.
+
+  
+
+  
+

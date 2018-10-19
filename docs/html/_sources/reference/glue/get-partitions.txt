@@ -1,0 +1,689 @@
+[ :ref:`aws <cli:aws>` . :ref:`glue <cli:aws glue>` ]
+
+.. _cli:aws glue get-partitions:
+
+
+**************
+get-partitions
+**************
+
+
+
+===========
+Description
+===========
+
+
+
+Retrieves information about the partitions in a table.
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetPartitions>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+``get-partitions`` is a paginated operation. Multiple API calls may be issued in order to retrieve the entire data set of results. You can disable pagination by providing the ``--no-paginate`` argument.
+When using ``--output text`` and the ``--query`` argument on a paginated response, the ``--query`` argument must extract data from the results of the following query expressions: ``Partitions``
+
+
+========
+Synopsis
+========
+
+::
+
+    get-partitions
+  [--catalog-id <value>]
+  --database-name <value>
+  --table-name <value>
+  [--expression <value>]
+  [--segment <value>]
+  [--cli-input-json <value>]
+  [--starting-token <value>]
+  [--page-size <value>]
+  [--max-items <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--catalog-id`` (string)
+
+
+  The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.
+
+  
+
+``--database-name`` (string)
+
+
+  The name of the catalog database where the partitions reside.
+
+  
+
+``--table-name`` (string)
+
+
+  The name of the partitions' table.
+
+  
+
+``--expression`` (string)
+
+
+  An expression filtering the partitions to be returned.
+
+   
+
+  The expression uses SQL syntax similar to the SQL ``WHERE`` filter clause. The SQL statement parser `JSQLParser <http://jsqlparser.sourceforge.net/home.php>`__ parses the expression. 
+
+   
+
+   *Operators* : The following are the operators that you can use in the ``Expression`` API call:
+
+    =  
+
+  Checks if the values of the two operands are equal or not; if yes, then the condition becomes true.
+
+   
+
+  Example: Assume 'variable a' holds 10 and 'variable b' holds 20. 
+
+   
+
+  (a = b) is not true.
+
+    < >  
+
+  Checks if the values of two operands are equal or not; if the values are not equal, then the condition becomes true.
+
+   
+
+  Example: (a < > b) is true.
+
+    >  
+
+  Checks if the value of the left operand is greater than the value of the right operand; if yes, then the condition becomes true.
+
+   
+
+  Example: (a > b) is not true.
+
+    <  
+
+  Checks if the value of the left operand is less than the value of the right operand; if yes, then the condition becomes true.
+
+   
+
+  Example: (a < b) is true.
+
+    >=  
+
+  Checks if the value of the left operand is greater than or equal to the value of the right operand; if yes, then the condition becomes true.
+
+   
+
+  Example: (a >= b) is not true.
+
+    <=  
+
+  Checks if the value of the left operand is less than or equal to the value of the right operand; if yes, then the condition becomes true.
+
+   
+
+  Example: (a <= b) is true.
+
+    AND, OR, IN, BETWEEN, LIKE, NOT, IS NULL  
+
+  Logical operators.
+
+     
+
+   *Supported Partition Key Types* : The following are the the supported partition keys.
+
+   
+
+   
+  * ``string``   
+   
+  * ``date``   
+   
+  * ``timestamp``   
+   
+  * ``int``   
+   
+  * ``bigint``   
+   
+  * ``long``   
+   
+  * ``tinyint``   
+   
+  * ``smallint``   
+   
+  * ``decimal``   
+   
+
+   
+
+  If an invalid type is encountered, an exception is thrown. 
+
+   
+
+  The following list shows the valid operators on each type. When you define a crawler, the ``partitionKey`` type is created as a ``STRING`` , to be compatible with the catalog partitions. 
+
+   
+
+   *Sample API Call* : 
+
+  
+
+``--segment`` (structure)
+
+
+  The segment of the table's partitions to scan in this request.
+
+  
+
+
+
+Shorthand Syntax::
+
+    SegmentNumber=integer,TotalSegments=integer
+
+
+
+
+JSON Syntax::
+
+  {
+    "SegmentNumber": integer,
+    "TotalSegments": integer
+  }
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--starting-token`` (string)
+ 
+
+  A token to specify where to start paginating. This is the ``NextToken`` from a previously truncated response.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--page-size`` (integer)
+ 
+
+  The size of each page to get in the AWS service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the AWS service, retrieving fewer items in each call. This can help prevent the AWS service calls from timing out.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--max-items`` (integer)
+ 
+
+  The total number of items to return in the command's output. If the total number of items available is more than the value specified, a ``NextToken`` is provided in the command's output. To resume pagination, provide the ``NextToken`` value in the ``starting-token`` argument of a subsequent command. **Do not** use the ``NextToken`` response element directly outside of the AWS CLI.
+
+   
+
+  For usage examples, see `Pagination <https://docs.aws.amazon.com/cli/latest/userguide/pagination.html>`__ in the *AWS Command Line Interface User Guide* .
+
+   
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+======
+Output
+======
+
+Partitions -> (list)
+
+  
+
+  A list of requested partitions.
+
+  
+
+  (structure)
+
+    
+
+    Represents a slice of table data.
+
+    
+
+    Values -> (list)
+
+      
+
+      The values of the partition.
+
+      
+
+      (string)
+
+        
+
+        
+
+      
+
+    DatabaseName -> (string)
+
+      
+
+      The name of the catalog database where the table in question is located.
+
+      
+
+      
+
+    TableName -> (string)
+
+      
+
+      The name of the table in question.
+
+      
+
+      
+
+    CreationTime -> (timestamp)
+
+      
+
+      The time at which the partition was created.
+
+      
+
+      
+
+    LastAccessTime -> (timestamp)
+
+      
+
+      The last time at which the partition was accessed.
+
+      
+
+      
+
+    StorageDescriptor -> (structure)
+
+      
+
+      Provides information about the physical location where the partition is stored.
+
+      
+
+      Columns -> (list)
+
+        
+
+        A list of the ``Columns`` in the table.
+
+        
+
+        (structure)
+
+          
+
+          A column in a ``Table`` .
+
+          
+
+          Name -> (string)
+
+            
+
+            The name of the ``Column`` .
+
+            
+
+            
+
+          Type -> (string)
+
+            
+
+            The datatype of data in the ``Column`` .
+
+            
+
+            
+
+          Comment -> (string)
+
+            
+
+            Free-form text comment.
+
+            
+
+            
+
+          
+
+        
+
+      Location -> (string)
+
+        
+
+        The physical location of the table. By default this takes the form of the warehouse location, followed by the database location in the warehouse, followed by the table name.
+
+        
+
+        
+
+      InputFormat -> (string)
+
+        
+
+        The input format: ``SequenceFileInputFormat`` (binary), or ``TextInputFormat`` , or a custom format.
+
+        
+
+        
+
+      OutputFormat -> (string)
+
+        
+
+        The output format: ``SequenceFileOutputFormat`` (binary), or ``IgnoreKeyTextOutputFormat`` , or a custom format.
+
+        
+
+        
+
+      Compressed -> (boolean)
+
+        
+
+        True if the data in the table is compressed, or False if not.
+
+        
+
+        
+
+      NumberOfBuckets -> (integer)
+
+        
+
+        Must be specified if the table contains any dimension columns.
+
+        
+
+        
+
+      SerdeInfo -> (structure)
+
+        
+
+        Serialization/deserialization (SerDe) information.
+
+        
+
+        Name -> (string)
+
+          
+
+          Name of the SerDe.
+
+          
+
+          
+
+        SerializationLibrary -> (string)
+
+          
+
+          Usually the class that implements the SerDe. An example is: ``org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe`` .
+
+          
+
+          
+
+        Parameters -> (map)
+
+          
+
+          These key-value pairs define initialization parameters for the SerDe.
+
+          
+
+          key -> (string)
+
+            
+
+            
+
+          value -> (string)
+
+            
+
+            
+
+          
+
+        
+
+      BucketColumns -> (list)
+
+        
+
+        A list of reducer grouping columns, clustering columns, and bucketing columns in the table.
+
+        
+
+        (string)
+
+          
+
+          
+
+        
+
+      SortColumns -> (list)
+
+        
+
+        A list specifying the sort order of each bucket in the table.
+
+        
+
+        (structure)
+
+          
+
+          Specifies the sort order of a sorted column.
+
+          
+
+          Column -> (string)
+
+            
+
+            The name of the column.
+
+            
+
+            
+
+          SortOrder -> (integer)
+
+            
+
+            Indicates that the column is sorted in ascending order (``== 1`` ), or in descending order (``==0`` ).
+
+            
+
+            
+
+          
+
+        
+
+      Parameters -> (map)
+
+        
+
+        User-supplied properties in key-value form.
+
+        
+
+        key -> (string)
+
+          
+
+          
+
+        value -> (string)
+
+          
+
+          
+
+        
+
+      SkewedInfo -> (structure)
+
+        
+
+        Information about values that appear very frequently in a column (skewed values).
+
+        
+
+        SkewedColumnNames -> (list)
+
+          
+
+          A list of names of columns that contain skewed values.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        SkewedColumnValues -> (list)
+
+          
+
+          A list of values that appear so frequently as to be considered skewed.
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        SkewedColumnValueLocationMaps -> (map)
+
+          
+
+          A mapping of skewed values to the columns that contain them.
+
+          
+
+          key -> (string)
+
+            
+
+            
+
+          value -> (string)
+
+            
+
+            
+
+          
+
+        
+
+      StoredAsSubDirectories -> (boolean)
+
+        
+
+        True if the table data is stored in subdirectories, or False if not.
+
+        
+
+        
+
+      
+
+    Parameters -> (map)
+
+      
+
+      These key-value pairs define partition parameters.
+
+      
+
+      key -> (string)
+
+        
+
+        
+
+      value -> (string)
+
+        
+
+        
+
+      
+
+    LastAnalyzedTime -> (timestamp)
+
+      
+
+      The last time at which column statistics were computed for this partition.
+
+      
+
+      
+
+    
+
+  
+
+NextToken -> (string)
+
+  
+
+  A continuation token, if the returned list of partitions does not does not include the last one.
+
+  
+
+  
+

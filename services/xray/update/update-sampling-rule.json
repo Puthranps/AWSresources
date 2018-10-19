@@ -1,0 +1,18 @@
+{
+    "SamplingRuleUpdate": {
+        "RuleName": "",
+        "RuleARN": "",
+        "ResourceARN": "",
+        "Priority": 0,
+        "FixedRate": null,
+        "ReservoirSize": 0,
+        "Host": "",
+        "ServiceName": "",
+        "ServiceType": "",
+        "HTTPMethod": "",
+        "URLPath": "",
+        "Attributes": {
+            "KeyName": ""
+        }
+    }
+}

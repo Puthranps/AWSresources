@@ -1,0 +1,42 @@
+{
+    "PolicyName": "",
+    "ServiceNamespace": "custom-resource",
+    "ResourceId": "",
+    "ScalableDimension": "ec2:spot-fleet-request:TargetCapacity",
+    "PolicyType": "TargetTrackingScaling",
+    "StepScalingPolicyConfiguration": {
+        "AdjustmentType": "ExactCapacity",
+        "StepAdjustments": [
+            {
+                "MetricIntervalLowerBound": null,
+                "MetricIntervalUpperBound": null,
+                "ScalingAdjustment": 0
+            }
+        ],
+        "MinAdjustmentMagnitude": 0,
+        "Cooldown": 0,
+        "MetricAggregationType": "Maximum"
+    },
+    "TargetTrackingScalingPolicyConfiguration": {
+        "TargetValue": null,
+        "PredefinedMetricSpecification": {
+            "PredefinedMetricType": "DynamoDBWriteCapacityUtilization",
+            "ResourceLabel": ""
+        },
+        "CustomizedMetricSpecification": {
+            "MetricName": "",
+            "Namespace": "",
+            "Dimensions": [
+                {
+                    "Name": "",
+                    "Value": ""
+                }
+            ],
+            "Statistic": "Maximum",
+            "Unit": ""
+        },
+        "ScaleOutCooldown": 0,
+        "ScaleInCooldown": 0,
+        "DisableScaleIn": true
+    }
+}

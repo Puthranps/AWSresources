@@ -1,0 +1,9 @@
+{
+    "AccessToken": "",
+    "DeviceKey": "",
+    "DeviceSecretVerifierConfig": {
+        "PasswordVerifier": "",
+        "Salt": ""
+    },
+    "DeviceName": ""
+}

@@ -1,0 +1,11 @@
+{
+    "DirectoryId": "",
+    "RemoteDomainName": "",
+    "TrustPassword": "",
+    "TrustDirection": "One-Way: Outgoing",
+    "TrustType": "Forest",
+    "ConditionalForwarderIpAddrs": [
+        ""
+    ],
+    "SelectiveAuth": "Disabled"
+}

@@ -1,0 +1,811 @@
+[ :ref:`aws <cli:aws>` . :ref:`elbv2 <cli:aws elbv2>` ]
+
+.. _cli:aws elbv2 modify-rule:
+
+
+***********
+modify-rule
+***********
+
+
+
+===========
+Description
+===========
+
+
+
+Modifies the specified rule.
+
+ 
+
+Any existing properties that you do not modify retain their current values.
+
+ 
+
+To modify the actions for the default rule, use  ModifyListener .
+
+
+
+See also: `AWS API Documentation <https://docs.aws.amazon.com/goto/WebAPI/elasticloadbalancingv2-2015-12-01/ModifyRule>`_
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Synopsis
+========
+
+::
+
+    modify-rule
+  --rule-arn <value>
+  [--conditions <value>]
+  [--actions <value>]
+  [--cli-input-json <value>]
+  [--generate-cli-skeleton <value>]
+
+
+
+
+=======
+Options
+=======
+
+``--rule-arn`` (string)
+
+
+  The Amazon Resource Name (ARN) of the rule.
+
+  
+
+``--conditions`` (list)
+
+
+  The conditions. Each condition specifies a field name and a single value.
+
+   
+
+  If the field name is ``host-header`` , you can specify a single host name (for example, my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters. You can include up to three wildcard characters.
+
+   
+
+   
+  * A-Z, a-z, 0-9 
+   
+  * - . 
+   
+  * * (matches 0 or more characters) 
+   
+  * ? (matches exactly 1 character) 
+   
+
+   
+
+  If the field name is ``path-pattern`` , you can specify a single path pattern. A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can include up to three wildcard characters.
+
+   
+
+   
+  * A-Z, a-z, 0-9 
+   
+  * _ - . $ / ~ " ' @ : + 
+   
+  * & (using &amp;) 
+   
+  * * (matches 0 or more characters) 
+   
+  * ? (matches exactly 1 character) 
+   
+
+  
+
+
+
+Shorthand Syntax::
+
+    Field=string,Values=string,string ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Field": "string",
+      "Values": ["string", ...]
+    }
+    ...
+  ]
+
+
+
+``--actions`` (list)
+
+
+  The actions.
+
+   
+
+  If the action type is ``forward`` , you can specify a single target group.
+
+   
+
+  If the action type is ``authenticate-oidc`` , you can use an identity provider that is OpenID Connect (OIDC) compliant to authenticate users as they access your application.
+
+   
+
+  If the action type is ``authenticate-cognito`` , you can use Amazon Cognito to authenticate users as they access your application.
+
+  
+
+
+
+Shorthand Syntax::
+
+    Type=string,TargetGroupArn=string,AuthenticateOidcConfig={Issuer=string,AuthorizationEndpoint=string,TokenEndpoint=string,UserInfoEndpoint=string,ClientId=string,ClientSecret=string,SessionCookieName=string,Scope=string,SessionTimeout=long,AuthenticationRequestExtraParams={KeyName1=string,KeyName2=string},OnUnauthenticatedRequest=string},AuthenticateCognitoConfig={UserPoolArn=string,UserPoolClientId=string,UserPoolDomain=string,SessionCookieName=string,Scope=string,SessionTimeout=long,AuthenticationRequestExtraParams={KeyName1=string,KeyName2=string},OnUnauthenticatedRequest=string},Order=integer,RedirectConfig={Protocol=string,Port=string,Host=string,Path=string,Query=string,StatusCode=string},FixedResponseConfig={MessageBody=string,StatusCode=string,ContentType=string} ...
+
+
+
+
+JSON Syntax::
+
+  [
+    {
+      "Type": "forward"|"authenticate-oidc"|"authenticate-cognito"|"redirect"|"fixed-response",
+      "TargetGroupArn": "string",
+      "AuthenticateOidcConfig": {
+        "Issuer": "string",
+        "AuthorizationEndpoint": "string",
+        "TokenEndpoint": "string",
+        "UserInfoEndpoint": "string",
+        "ClientId": "string",
+        "ClientSecret": "string",
+        "SessionCookieName": "string",
+        "Scope": "string",
+        "SessionTimeout": long,
+        "AuthenticationRequestExtraParams": {"string": "string"
+          ...},
+        "OnUnauthenticatedRequest": "deny"|"allow"|"authenticate"
+      },
+      "AuthenticateCognitoConfig": {
+        "UserPoolArn": "string",
+        "UserPoolClientId": "string",
+        "UserPoolDomain": "string",
+        "SessionCookieName": "string",
+        "Scope": "string",
+        "SessionTimeout": long,
+        "AuthenticationRequestExtraParams": {"string": "string"
+          ...},
+        "OnUnauthenticatedRequest": "deny"|"allow"|"authenticate"
+      },
+      "Order": integer,
+      "RedirectConfig": {
+        "Protocol": "string",
+        "Port": "string",
+        "Host": "string",
+        "Path": "string",
+        "Query": "string",
+        "StatusCode": "HTTP_301"|"HTTP_302"
+      },
+      "FixedResponseConfig": {
+        "MessageBody": "string",
+        "StatusCode": "string",
+        "ContentType": "string"
+      }
+    }
+    ...
+  ]
+
+
+
+``--cli-input-json`` (string)
+Performs service operation based on the JSON string provided. The JSON string follows the format provided by ``--generate-cli-skeleton``. If other arguments are provided on the command line, the CLI values will override the JSON-provided values. It is not possible to pass arbitrary binary values using a JSON-provided value as the string will be taken literally.
+
+``--generate-cli-skeleton`` (string)
+Prints a JSON skeleton to standard output without sending an API request. If provided with no value or the value ``input``, prints a sample input JSON that can be used as an argument for ``--cli-input-json``. If provided with the value ``output``, it validates the command inputs and returns a sample output JSON for that command.
+
+
+See :doc:`'aws help' </reference/index>` for descriptions of global parameters.
+
+
+========
+Examples
+========
+
+**To modify a rule**
+
+This example modifies the condition for the specified rule.
+
+Command::
+
+  aws elbv2 modify-rule --rule-arn arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2/9683b2d02a6cabee --conditions Field=path-pattern,Values='/images/*'
+
+Output::
+
+  {
+    "Rules": [
+        {
+            "Priority": "10",
+            "Conditions": [
+                {
+                    "Field": "path-pattern",
+                    "Values": [
+                        "/images/*"
+                    ]
+                }
+            ],
+            "RuleArn": "arn:aws:elasticloadbalancing:us-west-2:123456789012:listener-rule/app/my-load-balancer/50dc6c495c0c9188/f2f7dc8efc522ab2/9683b2d02a6cabee",
+            "IsDefault": false,
+            "Actions": [
+                {
+                    "TargetGroupArn": "arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/73e2d6bc24d8a067",
+                    "Type": "forward"
+                }
+            ]
+        }
+    ]
+  }
+
+
+======
+Output
+======
+
+Rules -> (list)
+
+  
+
+  Information about the modified rule.
+
+  
+
+  (structure)
+
+    
+
+    Information about a rule.
+
+    
+
+    RuleArn -> (string)
+
+      
+
+      The Amazon Resource Name (ARN) of the rule.
+
+      
+
+      
+
+    Priority -> (string)
+
+      
+
+      The priority.
+
+      
+
+      
+
+    Conditions -> (list)
+
+      
+
+      The conditions.
+
+      
+
+      (structure)
+
+        
+
+        Information about a condition for a rule.
+
+        
+
+        Field -> (string)
+
+          
+
+          The name of the field. The possible values are ``host-header`` and ``path-pattern`` .
+
+          
+
+          
+
+        Values -> (list)
+
+          
+
+          The condition value.
+
+           
+
+          If the field name is ``host-header`` , you can specify a single host name (for example, my.example.com). A host name is case insensitive, can be up to 128 characters in length, and can contain any of the following characters. You can include up to three wildcard characters.
+
+           
+
+           
+          * A-Z, a-z, 0-9 
+           
+          * - . 
+           
+          * * (matches 0 or more characters) 
+           
+          * ? (matches exactly 1 character) 
+           
+
+           
+
+          If the field name is ``path-pattern`` , you can specify a single path pattern (for example, /img/*). A path pattern is case-sensitive, can be up to 128 characters in length, and can contain any of the following characters. You can include up to three wildcard characters.
+
+           
+
+           
+          * A-Z, a-z, 0-9 
+           
+          * _ - . $ / ~ " ' @ : + 
+           
+          * & (using &amp;) 
+           
+          * * (matches 0 or more characters) 
+           
+          * ? (matches exactly 1 character) 
+           
+
+          
+
+          (string)
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    Actions -> (list)
+
+      
+
+      The actions.
+
+      
+
+      (structure)
+
+        
+
+        Information about an action.
+
+        
+
+        Type -> (string)
+
+          
+
+          The type of action. Each rule must include exactly one of the following types of actions: ``forward`` , ``fixed-response`` , or ``redirect`` .
+
+          
+
+          
+
+        TargetGroupArn -> (string)
+
+          
+
+          The Amazon Resource Name (ARN) of the target group. Specify only when ``Type`` is ``forward`` .
+
+          
+
+          
+
+        AuthenticateOidcConfig -> (structure)
+
+          
+
+          [HTTPS listener] Information about an identity provider that is compliant with OpenID Connect (OIDC). Specify only when ``Type`` is ``authenticate-oidc`` .
+
+          
+
+          Issuer -> (string)
+
+            
+
+            The OIDC issuer identifier of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
+            
+
+            
+
+          AuthorizationEndpoint -> (string)
+
+            
+
+            The authorization endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
+            
+
+            
+
+          TokenEndpoint -> (string)
+
+            
+
+            The token endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
+            
+
+            
+
+          UserInfoEndpoint -> (string)
+
+            
+
+            The user info endpoint of the IdP. This must be a full URL, including the HTTPS protocol, the domain, and the path.
+
+            
+
+            
+
+          ClientId -> (string)
+
+            
+
+            The OAuth 2.0 client identifier.
+
+            
+
+            
+
+          ClientSecret -> (string)
+
+            
+
+            The OAuth 2.0 client secret.
+
+            
+
+            
+
+          SessionCookieName -> (string)
+
+            
+
+            The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.
+
+            
+
+            
+
+          Scope -> (string)
+
+            
+
+            The set of user claims to be requested from the IdP. The default is ``openid`` .
+
+             
+
+            To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.
+
+            
+
+            
+
+          SessionTimeout -> (long)
+
+            
+
+            The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).
+
+            
+
+            
+
+          AuthenticationRequestExtraParams -> (map)
+
+            
+
+            The query parameters (up to 10) to include in the redirect request to the authorization endpoint.
+
+            
+
+            key -> (string)
+
+              
+
+              
+
+            value -> (string)
+
+              
+
+              
+
+            
+
+          OnUnauthenticatedRequest -> (string)
+
+            
+
+            The behavior if the user is not authenticated. The following are possible values:
+
+             
+
+             
+            * deny- Return an HTTP 401 Unauthorized error. 
+             
+            * allow- Allow the request to be forwarded to the target. 
+             
+            * authenticate- Redirect the request to the IdP authorization endpoint. This is the default value. 
+             
+
+            
+
+            
+
+          
+
+        AuthenticateCognitoConfig -> (structure)
+
+          
+
+          [HTTPS listener] Information for using Amazon Cognito to authenticate users. Specify only when ``Type`` is ``authenticate-cognito`` .
+
+          
+
+          UserPoolArn -> (string)
+
+            
+
+            The Amazon Resource Name (ARN) of the Amazon Cognito user pool.
+
+            
+
+            
+
+          UserPoolClientId -> (string)
+
+            
+
+            The ID of the Amazon Cognito user pool client.
+
+            
+
+            
+
+          UserPoolDomain -> (string)
+
+            
+
+            The domain prefix or fully-qualified domain name of the Amazon Cognito user pool.
+
+            
+
+            
+
+          SessionCookieName -> (string)
+
+            
+
+            The name of the cookie used to maintain session information. The default is AWSELBAuthSessionCookie.
+
+            
+
+            
+
+          Scope -> (string)
+
+            
+
+            The set of user claims to be requested from the IdP. The default is ``openid`` .
+
+             
+
+            To verify which scope values your IdP supports and how to separate multiple values, see the documentation for your IdP.
+
+            
+
+            
+
+          SessionTimeout -> (long)
+
+            
+
+            The maximum duration of the authentication session, in seconds. The default is 604800 seconds (7 days).
+
+            
+
+            
+
+          AuthenticationRequestExtraParams -> (map)
+
+            
+
+            The query parameters (up to 10) to include in the redirect request to the authorization endpoint.
+
+            
+
+            key -> (string)
+
+              
+
+              
+
+            value -> (string)
+
+              
+
+              
+
+            
+
+          OnUnauthenticatedRequest -> (string)
+
+            
+
+            The behavior if the user is not authenticated. The following are possible values:
+
+             
+
+             
+            * deny- Return an HTTP 401 Unauthorized error. 
+             
+            * allow- Allow the request to be forwarded to the target. 
+             
+            * authenticate- Redirect the request to the IdP authorization endpoint. This is the default value. 
+             
+
+            
+
+            
+
+          
+
+        Order -> (integer)
+
+          
+
+          The order for the action. This value is required for rules with multiple actions. The action with the lowest value for order is performed first. The final action to be performed must be a ``forward`` or a ``fixed-response`` action.
+
+          
+
+          
+
+        RedirectConfig -> (structure)
+
+          
+
+          [Application Load Balancer] Information for creating a redirect action. Specify only when ``Type`` is ``redirect`` .
+
+          
+
+          Protocol -> (string)
+
+            
+
+            The protocol. You can specify HTTP, HTTPS, or #{protocol}. You can redirect HTTP to HTTP, HTTP to HTTPS, and HTTPS to HTTPS. You cannot redirect HTTPS to HTTP.
+
+            
+
+            
+
+          Port -> (string)
+
+            
+
+            The port. You can specify a value from 1 to 65535 or #{port}.
+
+            
+
+            
+
+          Host -> (string)
+
+            
+
+            The hostname. This component is not percent-encoded. The hostname can contain #{host}.
+
+            
+
+            
+
+          Path -> (string)
+
+            
+
+            The absolute path, starting with the leading "/". This component is not percent-encoded. The path can contain #{host}, #{path}, and #{port}.
+
+            
+
+            
+
+          Query -> (string)
+
+            
+
+            The query parameters, URL-encoded when necessary, but not percent-encoded. Do not include the leading "?", as it is automatically added. You can specify any of the reserved keywords.
+
+            
+
+            
+
+          StatusCode -> (string)
+
+            
+
+            The HTTP redirect code. The redirect is either permanent (HTTP 301) or temporary (HTTP 302).
+
+            
+
+            
+
+          
+
+        FixedResponseConfig -> (structure)
+
+          
+
+          [Application Load Balancer] Information for creating an action that returns a custom HTTP response. Specify only when ``Type`` is ``fixed-response`` .
+
+          
+
+          MessageBody -> (string)
+
+            
+
+            The message.
+
+            
+
+            
+
+          StatusCode -> (string)
+
+            
+
+            The HTTP response code (2XX, 4XX, or 5XX).
+
+            
+
+            
+
+          ContentType -> (string)
+
+            
+
+            The content type.
+
+             
+
+            Valid Values: text/plain | text/css | text/html | application/javascript | application/json
+
+            
+
+            
+
+          
+
+        
+
+      
+
+    IsDefault -> (boolean)
+
+      
+
+      Indicates whether this is the default rule.
+
+      
+
+      
+
+    
+
+  
+
